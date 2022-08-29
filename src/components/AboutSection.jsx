@@ -68,6 +68,8 @@ const AboutSectionStyled = styled.section`
         }
         p{
             padding: 1.5rem 0;
+            color: ${props => props.theme.colorGrey5};
+
         }
         .title{
             font-size: 1.6rem;

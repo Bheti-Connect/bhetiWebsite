@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { useTheme } from '../context/themeContext';
+import footerLogo from '../assets/images/footer-logo.png'
 
 
 const Footer = () => {
@@ -10,6 +11,7 @@ const Footer = () => {
             <nav className="bottom-navigation">
                 <ul className="logo-con">
                     <div className="logo">
+                        <img src={footerLogo} alt="Footer Logo"/>
                         <h1>BHETI CONNECT</h1>
                     </div>
                     <p>
@@ -54,7 +56,7 @@ const Footer = () => {
                     </li>
                 </ul>
 
-                <ul className="nav-b comapny">
+                <ul className="nav-b company">
                     <h4>Compagnie</h4>
                     <li className="nav-item">
                         <a href="#">Contact</a>
@@ -104,6 +106,7 @@ const FooterSectionStyled = styled.footer`
     padding-top: 6rem !important;
     color: ${props => props.theme.colorFont};
     padding-bottom: 3rem !important;
+    
     h6{
         font-size: 1.2rem;
         
@@ -112,8 +115,8 @@ const FooterSectionStyled = styled.footer`
         font-size: 1.5rem;
         color: ${props => props.theme.colorGrey4};
     }
-    a{
-        color: ${props => props.theme.colorFont};
+    a{  
+        color: ${props => props.theme.colorGre6};
         transition: all 0.3s ease-in-out;
         margin-left: 2.5rem;
         &:hover{
@@ -121,7 +124,8 @@ const FooterSectionStyled = styled.footer`
             text-decoration: underline;
         }
     }
-    i{
+    i{  
+        color: ${props => props.theme.colorWhite};
         font-size: 1.3rem;
         transition: all 0.3s ease-in-out;
         &:hover{
@@ -145,15 +149,26 @@ const FooterSectionStyled = styled.footer`
                 margin-bottom: 1rem;
             }
         }
+        .company {
+            .nav-item a{
+                color: ${props => props.theme.colorGrey6} ;
+            }
+        }
         .nav-contact{
             .nav-item{
                 display: grid;
                 grid-template-columns: 30px auto;
+                color: ${props => props.theme.colorGrey6};
             }
         }
         .logo-con{
             flex: 5;
-            
+            .logo img{
+                width: 12%;
+            }
+        }
+        .logo-con p{
+            color: ${props => props.theme.colorGrey6};
         }
         .b-nav-icons{
             display: flex;
@@ -166,6 +181,9 @@ const FooterSectionStyled = styled.footer`
                 cursor: pointer;
             }
         }
+        /* .b-nav-icons a{
+            color: ${props => props.theme.colorGre6};
+        } */
         .ig{
             .ig-images{
                 display: grid;
@@ -193,6 +211,9 @@ const FooterSectionStyled = styled.footer`
                 color: ${props => props.theme.colorBheti};
             }
         }
+    }
+    .footer-copyright p{
+        color: ${props => props.theme.colorGrey6} ;
     }
 
 `;
