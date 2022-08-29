@@ -11,7 +11,7 @@ const NavBar = () => {
             <div className='hero'>
             <nav className='navigation navbar'>
                 <div className='logo'>
-                    <NavLink to='/'>
+                    <NavLink to='/bhetiConnectProj'>
                     <img
                         src={theLogo}
                         className='theLogo'
