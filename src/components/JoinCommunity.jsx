@@ -20,7 +20,9 @@ const JoinCommunity = () => {
             </div>
             <div className='latest-container'>
                 <div className='latest-content'>
-                    <img src={mediaImg} alt='' />
+                    <div className='img-com-div'>
+                        <img className='img-community' src={mediaImg} alt='' />
+                    </div>
                     <div className='latest-text'>
                         <h4 className='title'>
                             Qu'est-ce qui se passe dans la communauté?
@@ -46,10 +48,21 @@ const JoinCommunity = () => {
 }
 
 const JoinCommunityStyled = styled.section`
+    .title-con{
+        width: 900px;
+    }
     .latest-container{
         margin-top: 1.5rem;
         background-color: ${props => props.theme.colorBlack};
         border-radius: 7px;
+        @media screen and (max-width: 1150px) {
+                    width: 1150px;
+                    height: 405px;
+                    margin-left: -140px;
+	            }
+        @media screen and (max-width: 420px) {
+                    width: 880px;
+	            }
         .latest-content{
             display: grid;
             grid-template-columns: 40% auto;
@@ -59,9 +72,21 @@ const JoinCommunityStyled = styled.section`
                 width: 100%;
                 border-radius: 7px;
                 object-fit: cover;
+                @media  (min-width: 1200px) and (max-width: 1440px) {
+                    width: 30px;
+                    height: 200px;
+                    margin-left: -100px;
+	            }
+                @media only screen and (max-width: 1800px) {
+                    width: 450px;
+                    height: 250px;
+                    margin-left: -100px;
+	            }
+
             }
             .latest-text{
-                margin-left: 3rem;
+                width: 500px;
+                margin-left: 4rem;
                 h4{
                     color: ${props => props.theme.colorWhite};
                     font-size: 1.5rem;
@@ -81,6 +106,22 @@ const JoinCommunityStyled = styled.section`
                     border: 2px solid ${props => props.theme.colorGrey4};
                     text-transform: inherit;
                 }
+                
+                @media only screen and (min-width: 1440px) {
+                    position: relative;
+                    width: 200px;
+                    height: 200px;
+                    margin-left: 70px;
+                    bottom: 10%;
+	            }
+                @media only screen and (max-width: 1800px) {
+                    position: relative;
+                    width: 400px;
+                    height: 200px;
+                    margin-left: 100px;
+                    bottom: 5%;
+	            }
+
             }
         }
     }

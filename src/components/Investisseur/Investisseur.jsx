@@ -4,7 +4,6 @@ import NavBar from '../NavBar';
 const Investisseur = () => {
     return (
         <InvestisseurStyled>
-            <NavBar />
             <div>
                 <h1>COMPONENT PAGE INVESTISSEUR</h1>
             </div>

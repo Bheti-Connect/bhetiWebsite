@@ -3,8 +3,12 @@ import { useTheme } from './context/themeContext';
 import { BrowserRouter as Router, Routes, Route} from 'react-router-dom'
 import Entrepreneur from './components/Entrepreneur/Entrepreneur';
 import Investisseur from './components/Investisseur/Investisseur';
+import {AccountBox} from './components/Auth/accountBox';
+// import SignIn from './components/Auth/SignIn';
+// import SignUp from './components/Auth/SignUp';
 import Home from './components/Home';
 import Footer from './components/Footer';
+import NavBar from './components/NavBar';
 
 const App = () => {
   const theme = useTheme();
@@ -12,12 +16,15 @@ const App = () => {
   return (
     <Router>
       <AppStyled theme={theme}>
-        
+      <div>
+            <NavBar />
+          </div>
         <main>
           <Routes>
           <Route path='/bhetiConnectProj' element={<Home />} />
             <Route path='entrepreneur' element={<Entrepreneur />} />
             <Route path='investisseur' element={<Investisseur />} />
+            <Route path='connexion' element={<AccountBox />} />
           </Routes>
         </main>
           <div>
@@ -31,7 +38,7 @@ const App = () => {
 const AppStyled = styled.div`
   min-height: 100vh;
   position: relative;
-  z-index: 5;
+  z-index: 0;
   background-color: ${props => props.theme.colorBg};
 
   a{

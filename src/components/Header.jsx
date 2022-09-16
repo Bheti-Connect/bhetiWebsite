@@ -4,27 +4,29 @@ import { useTheme } from '../context/themeContext';
 import premiereImg from '../assets/images/ent-img1.jpg';
 import deuxiemeImg from '../assets/images/ent-img4-2.jpg';
 import Button from './Button';
-import NavBar from './NavBar';
+import { devices } from '../data/Responsive';
 
 const Header = () => {
     const theme = useTheme()
     return (
         <HeaderStyled theme={theme}>
-            <NavBar />
+            
             <div className='header-content u-pad-lg'>
                 <div className='left-h-content'>
                     <h2>
-                        Chez nous<span> les bons projets</span> se voient être réalisé à 100%
+                        Chez nous<span> LES BONS PROJETS</span> se voient être réalisé à 100%
                     </h2>
                     <p>
                         Bheti Connect est la platforme numéro une qui réunnis les entrepreneurs et investisseurs en Afrique francophone.
                     </p>
-                    <Button 
-                        name={'Je réserve une demo'}
-                        icon={'fas fa-chevron-right'}
-                        arrow={'arrow'}
-                        blob={'blob'}
-                    />
+                    <a href='https://airtable.com/shrr2JCtuBUkjXoKz' className='button-demo'>
+                        <Button 
+                            name={'Je réserve une demo'}
+                            icon={'fas fa-chevron-right'}
+                            arrow={'arrow'}
+                            blob={'blob'}
+                        />
+                    </a>
                 </div>
                 <div className='right-h-content'>
                     <img className='h-img-1' src={premiereImg} alt='image-1' />
@@ -40,7 +42,15 @@ const Header = () => {
 
 const HeaderStyled = styled.header`
     min-height: 100vh;
-    position: relative;  
+    position: relative;
+    @media only screen and (max-width: 376px){
+        height: ;
+    }
+    .u-pad-lg{
+        @media only screen and (max-width: 376px) {
+                    padding: 0rem 0rem;
+                }
+        }
     .header-content{
         display: grid;
         grid-template-columns: repeat(2, 1fr);
@@ -58,19 +68,38 @@ const HeaderStyled = styled.header`
                 }
             }
             h2{
-                font-size: 3rem;
+                font-size: 2.4rem;
                 font-weight: 800;
+                font-family: 'Cinzel', serif;
                 span{
                     background:${props => props.theme.colorGradientPrimary2};
                     background-clip: text;
+                    font-family: 'Cinzel', serif;
                     -webkit-background-clip: text;
                     color: transparent;
+                }
+                @media only screen and (max-width: 376px){
+                    font-size: 1.9rem;
+                    margin-top: 10%;
+                    margin-left: 4%;
                 }
             }
             p{
                 font-size: 1.1rem;
                 line-height: 1.6rem;
                 padding: 2rem 0;
+                @media only screen and (max-width: 376px){
+                    margin-left: 6%;
+                    margin-right: 6%;
+                    text-align: justify;
+                }
+            }
+            @media only screen and (max-width: 376px){
+                float: left;
+                width: 200%;
+            }
+            .button-demo{
+                margin-left: 20%;
             }
         }
         .right-h-content{
@@ -101,31 +130,68 @@ const HeaderStyled = styled.header`
                 }
             }
             .h-img-2{
-                position: absolute;
-                width: 350px;
+                position: relative;
+                width: 300px;
                 height: 400px;
                 object-fit: cover;
                 left: 5%;
-                top: 15%;
+                top: 0%;
                 border-bottom-right-radius: 5px;
                 border-bottom-left-radius: 70px;
                 border-top-right-radius: 5px;
                 border-top-left-radius: 5px;
                 transition: all .4s ease-in-out;
+                
+                @media only screen and (max-width: 376px){
+                    position: absolute;
+                    border-bottom-right-radius: 30%;
+                    border-bottom-left-radius: 5px;
+                    border-top-left-radius: 5px;
+                    border-top-right-radius: 5px;
+                    width:150px;
+                    height: 200px;
+                    top: 100%;
+                    left: 10%;
+                    left: 5%;
+                }
+                
             }
             .h-img-1{
                 position: absolute;
                 width: 350px;
-                height: 600px;
+                height: 500px;
                 object-fit: cover;
-                right: 0;
+                top: -15%;
+                left: 40%;
                 border-bottom-right-radius: 70px;
                 border-bottom-left-radius: 5px;
                 border-top-left-radius: 5px;
                 border-top-right-radius: 5px;
                 transition: all .4s ease-in-out;
+                
+                @media only screen and (max-width: 376px){
+                    position: absolute;
+                    border-bottom-left-radius: 30%;
+                    border-bottom-right-radius: 0px ;
+                    width:150px;
+                    height: 250px;
+                    top: 110%;
+                    left: -90%;
+            }
+                
+            }
+            @media only screen and (max-width: 376px){
+                float: left;
             }
         }
+        
+        @media only screen and (max-width: 376px) {
+                    margin-left: auto;
+                    margin-right: auto;
+                    width: auto;
+                    height: auto;
+                }
+        
     }
     .mouse{
         position: absolute;
@@ -162,7 +228,12 @@ const HeaderStyled = styled.header`
                 }
             }
         }
+        @media only screen and (max-width: 376px) {
+                    margin-bottom: 50%;
+                }
     }
+
+
 `;
 
 export default Header

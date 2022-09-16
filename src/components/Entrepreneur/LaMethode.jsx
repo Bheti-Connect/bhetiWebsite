@@ -23,6 +23,10 @@ const LaMethode = () => {
                     <h5>Accompagnement</h5>
                     <p>Un expert vous accompagne pour parfaire votre pitch et gérer votre relation avec les investisseurs (négociation, due dilligence, valorisation du projet, closing)</p>
                 </div>
+                <div className='text-container'>
+                    <h5>Mise en relation avec les investisseurs</h5>
+                    <p>Nous vous connectons à des investisseurs pertinents et identifions les sources de financements disponibles (subventions, AMI, AAP) pour votre projet.</p>
+                </div>
             </div>
             <div className='right-container'>
                 <div className='child two-premier'>
@@ -63,6 +67,10 @@ const LaMethodeStyled = styled.section`
                 color: ${props => props.theme.colorWhite};
             }
         }
+        @media screen and (min-width: 1150px) {
+                    width: 450px;
+                    margin-left: -150px;
+	            }
     }
     .right-container{
         display: grid; 
@@ -90,6 +98,12 @@ const LaMethodeStyled = styled.section`
                 width: 104%;
             }
         }
+        @media screen and (min-width: 1150px) {
+                    width: 700px;
+                    height: 300px;
+                    margin-left: 5px;
+                    margin-top: 25%;
+	            }
     }
 `;
 

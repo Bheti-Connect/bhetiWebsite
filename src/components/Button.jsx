@@ -39,6 +39,12 @@ const ButtonStyled = styled.button`
             top: -15px;
         }
     }
+    @media only screen and (max-width: 375px){
+                    top: 1%;
+                    margin-left: 20%;
+                    margin-bottom: 5%;
+
+                }
     
 `;
 

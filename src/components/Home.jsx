@@ -28,7 +28,7 @@ const Home = () => {
 }
 
 const HomeStyled = styled.section`
-
+position: relative;
 
 `;
 

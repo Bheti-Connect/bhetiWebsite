@@ -82,6 +82,9 @@ const EconomicNewsStyled = styled.section`
             }
         }
     }
+    @media screen and (max-width: 420px) {
+                width: 100%;
+        }
 `;
 
 export default EconomicNews

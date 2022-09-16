@@ -9,15 +9,12 @@ import boxImg from '../assets/images/dots.png';
 const AboutSection = () => {
     const theme = useTheme();
     return (
-        <AboutSectionStyled className='u-pad-lg-2' theme={theme}>
-            
+        <AboutSectionStyled  theme={theme}>
             <div className='left-about'>
                 <h3 className='title'>
                     Nos solutions pour les entrepreneurs
                 </h3>
-                <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-                </p>
+                <p>Ici il faura ajouter du text. Juste deux lignes suffisent</p>
                 <div className='about-info'>
                     <div className='about-info-item'>
                         <div className='icon'>
@@ -28,8 +25,8 @@ const AboutSection = () => {
                                 Accompagnement pour la recherche de financement
                             </h5>
                             <p>
-                            Nous vous proposons un accompagnement, sur mesure, qui permet de maitriser et optimiser votre recherche de financement. 
-                            Grâce à un mix entre Intelligence Artificiel et expertise en financement de projet, nous offrons Bheti Connect Base, un outil clé en main, pour préparer votre levée de fonds et trouver des investisseurs.
+                                Nous vous proposons un accompagnement, sur mesure, qui permet de maitriser et optimiser votre recherche de financement. 
+                                Grâce à un mix entre Intelligence Artificiel et expertise en financement de projet, nous offrons Bheti Connect Base, un outil clé en main, pour préparer votre levée de fonds et trouver des investisseurs.
                             </p>
                         </div>
                         <div className='icon'>
@@ -40,8 +37,8 @@ const AboutSection = () => {
                                 Trouvez le financement qui vous correspond
                             </h5>
                             <p>
-                            Notre équipe d’expert en financement de projet analyse votre dossier et vérifie votre capacité à obtenir du financement. 
-                            Nous identifions les investisseurs dont les critères de financement correspondent à votre projet pour vous fournir une liste exhaustive de solutions de financement adaptées à vos besoins.
+                                Notre équipe d’expert en financement de projet analyse votre dossier et vérifie votre capacité à obtenir du financement. 
+                                Nous identifions les investisseurs dont les critères de financement correspondent à votre projet pour vous fournir une liste exhaustive de solutions de financement adaptées à vos besoins.
                             </p>
                         </div>
                     </div>
@@ -62,12 +59,22 @@ const AboutSectionStyled = styled.section`
     grid-template-columns: 1fr 1fr;
     grid-gap: 2rem;
     padding-top: 10rem !important;
+    @media only screen and (max-width: 376px) {
+        padding-top: 0rem;
+        padding-left: 0rem;
+        padding-right: 0rem;
+        padding-bottom: 0rem;
+    
+    }
     .left-about{
+        width: 90%;
+        margin-left: 10%;
         h3{
             color: ${props => props.theme.colorWhite};
         }
         p{
             padding: 1.5rem 0;
+            font-size: 17px;
             color: ${props => props.theme.colorGrey5};
 
         }
@@ -98,13 +105,21 @@ const AboutSectionStyled = styled.section`
                     .project-img{
                         width: 60px;
                     }
+                    @media screen and (max-width: 376px) {
+                        display: none;
+                    }
                 }
                 .text-container p{
                     text-align: justify;
                     text-justify: inter-word;
+                    
                 }
             }
         }
+        @media screen and (max-width: 376px) {
+                width: 330px;
+                margin-left: 5%;
+	            }
     }
     .right-about{
         position: relative;
@@ -122,6 +137,18 @@ const AboutSectionStyled = styled.section`
             &:hover{
                 transform: scale(1.05);
             }
+            @media only screen and (max-width: 1440px) {
+                    padding-right: 10%;
+                    bottom: 3%;
+                    width: 600px;
+                    height: 420px;
+	            }
+            @media only screen and (max-width: 1800px) {
+                    padding-right: 10%;
+                    bottom: 5%;
+                    width: 750px;
+                    height: 360px;
+	            }
         }
         .box-img{
             position: absolute;
@@ -141,7 +168,16 @@ const AboutSectionStyled = styled.section`
                 }
             }
         }
+        @media screen and (min-width: 1150px) {
+                    margin-left: 20px;
+	            }
+
     }
+    @media screen and (max-width: 420px) {
+                body {
+                    width: 400%;
+                }
+        }
 `;
 
 export default AboutSection

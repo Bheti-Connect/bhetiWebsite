@@ -198,6 +198,17 @@ const FooterSectionStyled = styled.footer`
                 }
             }
         }
+        @media screen and (max-width: 1150px) {
+                    width: 1150px;
+                    height: 300px;
+                    margin-left: -150px;
+	            }
+                @media screen and (max-width: 420px) {
+                    
+                    margin: auto;
+                    width: 150px;
+                    margin-top: 0px;
+	            }
     }
     .footer-copyright{
         padding-top: 3rem;
