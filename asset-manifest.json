@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.js": "/bhetiConnectProj/static/js/main.f04b5f70.js",
+    "main.js": "/bhetiConnectProj/static/js/main.ee443794.js",
     "static/media/discussion.gif": "/bhetiConnectProj/static/media/discussion.c7fb7f18d8aaccb5a2e2.gif",
     "static/media/casseTete.gif": "/bhetiConnectProj/static/media/casseTete.016a12376414daead456.gif",
     "static/media/mediaImage.gif": "/bhetiConnectProj/static/media/mediaImage.92682c82241239f1d393.gif",
@@ -11,6 +11,7 @@
     "static/media/ent-img1.jpg": "/bhetiConnectProj/static/media/ent-img1.bc670ecc1cf467f21520.jpg",
     "static/media/bheti-img.jpg": "/bhetiConnectProj/static/media/bheti-img.fcfef289e09304287f95.jpg",
     "static/media/2nd-action.gif": "/bhetiConnectProj/static/media/2nd-action.fa40b79721791add824d.gif",
+    "static/media/footer-logo.png": "/bhetiConnectProj/static/media/footer-logo.e37f8384db04c83e5a27.png",
     "static/media/logo.png": "/bhetiConnectProj/static/media/logo.49c81948fe9960c5829d.png",
     "static/media/dots.png": "/bhetiConnectProj/static/media/dots.486cffcb04781a859f82.png",
     "static/media/analytics.png": "/bhetiConnectProj/static/media/analytics.8207677dbd110b63fdc6.png",
@@ -19,9 +20,9 @@
     "static/media/list.png": "/bhetiConnectProj/static/media/list.ec94b8c0db9d5ee23d8f.png",
     "static/media/contract.png": "/bhetiConnectProj/static/media/contract.3dba571f27e78ad47efb.png",
     "index.html": "/bhetiConnectProj/index.html",
-    "main.f04b5f70.js.map": "/bhetiConnectProj/static/js/main.f04b5f70.js.map"
+    "main.ee443794.js.map": "/bhetiConnectProj/static/js/main.ee443794.js.map"
   },
   "entrypoints": [
-    "static/js/main.f04b5f70.js"
+    "static/js/main.ee443794.js"
   ]
 }
