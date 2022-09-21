@@ -171,6 +171,9 @@ const NavBarStyled = styled.nav`
     }
 }
 
+
+
+
 @media only screen and (max-width: 800px) {
             .hero{
                 .nav-btn {

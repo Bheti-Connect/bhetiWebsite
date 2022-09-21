@@ -29,12 +29,14 @@ const JoinCommunity = () => {
                         </h4>
                         <h6>Prenez votre Tablette, Smartphone, Desktop ou Laptop</h6>
                         <p>Sur les applications LinkedIn, Instagram et Facebook. Réjoignez rapidement la communauté pour être au coeur de l'actualité économique en Afrique !</p>
-                        <Button 
-                            name={'JE REJOINS DÈS MAINTENANT'}
-                            icon={'fas fa-chevron-right'}
-                            arrow={'arrow'}
-                            blob={''}
-                        />
+                        <a href='https://www.linkedin.com/company/bheti-connect'>
+                            <Button 
+                                name={'JE REJOINS DÈS MAINTENANT'}
+                                icon={'fas fa-chevron-right'}
+                                arrow={'arrow'}
+                                blob={'blob'}
+                            />
+                        </a>
                     </div>
                 </div>
             </div>
@@ -55,14 +57,15 @@ const JoinCommunityStyled = styled.section`
         margin-top: 1.5rem;
         background-color: ${props => props.theme.colorBlack};
         border-radius: 7px;
-        @media screen and (max-width: 1150px) {
-                    width: 1150px;
-                    height: 405px;
-                    margin-left: -140px;
-	            }
-        @media screen and (max-width: 420px) {
-                    width: 880px;
-	            }
+        @media only screen and (max-width: 2560px) and (min-width: 1800px) {
+            width: 1500px;
+            margin-left: -70px;
+        }
+        @media only screen and (max-width: 1800px) and (min-width: 1440px) {
+            width: 1200px;
+            margin-left: -90px;
+        }
+        
         .latest-content{
             display: grid;
             grid-template-columns: 40% auto;
@@ -72,16 +75,19 @@ const JoinCommunityStyled = styled.section`
                 width: 100%;
                 border-radius: 7px;
                 object-fit: cover;
-                @media  (min-width: 1200px) and (max-width: 1440px) {
-                    width: 30px;
+                /* @media only screen and (max-width: 1600px) {
+                    width: 300px;
                     height: 200px;
                     margin-left: -100px;
-	            }
-                @media only screen and (max-width: 1800px) {
+	            } */
+                @media only screen and (max-width: 2560px) and (min-width: 1800px) {
+                    width: 600px;
+                    margin-left: -60px;
+                }
+                @media only screen and (max-width: 1800px) and (min-width: 1440px) {
                     width: 450px;
-                    height: 250px;
-                    margin-left: -100px;
-	            }
+                    margin-left: -80px;
+                }
 
             }
             .latest-text{
@@ -107,20 +113,25 @@ const JoinCommunityStyled = styled.section`
                     text-transform: inherit;
                 }
                 
-                @media only screen and (min-width: 1440px) {
+                /* @media only screen and (min-width: 1440px) {
                     position: relative;
                     width: 200px;
                     height: 200px;
                     margin-left: 70px;
                     bottom: 10%;
-	            }
-                @media only screen and (max-width: 1800px) {
-                    position: relative;
-                    width: 400px;
+	            } */
+                @media only screen and (max-width: 2560px) and (min-width: 1800px) {
+                    width: 600px;
                     height: 200px;
-                    margin-left: 100px;
-                    bottom: 5%;
-	            }
+                    margin-left: 150px;
+                    margin-top: 7%;
+                }
+                @media only screen and (max-width: 1800px) and (min-width: 1440px) {
+                    width: 550px;
+                    height: 200px;
+                    margin-left: 70px;
+                    margin-top: 2%;
+                }
 
             }
         }

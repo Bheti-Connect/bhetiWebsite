@@ -35,9 +35,11 @@ const GlobalStyle = createGlobalStyle`
         font-weight: 500;
         font-family: inherit;
         font-size: inherit;
+        text-decoration: none;
     }
 
-    p{
+    p{  
+        font-family: 'Open Sans', sans-serif;
         font-weight: 500;
         font-size-adjust: 1.6rem;
     }

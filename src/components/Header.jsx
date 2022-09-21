@@ -41,11 +41,15 @@ const Header = () => {
 }
 
 const HeaderStyled = styled.header`
-    min-height: 100vh;
+    height: 85vh;
     position: relative;
-    @media only screen and (max-width: 376px){
-        height: ;
+    @media only screen and (max-width: 2560px) and (min-width: 1800px){
+        height: 84vh;
     }
+    @media only screen and (max-width: 1800px) and (min-width: 1440px){
+        height: 75vh;
+    }
+    
     .u-pad-lg{
         @media only screen and (max-width: 376px) {
                     padding: 0rem 0rem;
@@ -94,12 +98,47 @@ const HeaderStyled = styled.header`
                     text-align: justify;
                 }
             }
+            @media only screen and (max-width: 2560px) and (min-width: 1800px) {
+                    margin-top: 1%;
+                    width: 750px;
+                    height: 550px;
+                    h2{
+                        font-size: 54px;
+                    }
+                    p{
+                        font-size: 21px;
+                    }
+                    .button-demo{
+                        width: 200%;
+                    }
+                }
+            @media only screen and (max-width: 1800px) and (min-width: 1440px) {
+                    margin-top: 1%;
+                    width: 600px;
+                    height: 500px;
+                    h2{
+                        font-size: 50px;
+                    }
+                    p{
+                        font-size: 19px;
+                    }
+                    .button-demo{
+                        width: 100%;
+                    }
+            }
             @media only screen and (max-width: 376px){
                 float: left;
                 width: 200%;
             }
             .button-demo{
                 margin-left: 20%;
+            }
+            @media only screen and (max-width: 1440px){
+                    
+                    margin-left: 2px;
+                }
+            @media only screen and (max-width: 1800px) and (min-width: 1440px){
+                margin-left: -80px;
             }
         }
         .right-h-content{
@@ -141,7 +180,14 @@ const HeaderStyled = styled.header`
                 border-top-right-radius: 5px;
                 border-top-left-radius: 5px;
                 transition: all .4s ease-in-out;
-                
+                @media only screen and (max-width: 2560px) and (min-width: 1800px) {
+                    width: 360px;
+                    height: 460px;
+                }
+                @media only screen and (max-width: 1800px) and (min-width: 1440px) {
+                    width: 330px;
+                    height: 410px;
+                }
                 @media only screen and (max-width: 376px){
                     position: absolute;
                     border-bottom-right-radius: 30%;
@@ -154,7 +200,6 @@ const HeaderStyled = styled.header`
                     left: 10%;
                     left: 5%;
                 }
-                
             }
             .h-img-1{
                 position: absolute;
@@ -168,6 +213,16 @@ const HeaderStyled = styled.header`
                 border-top-left-radius: 5px;
                 border-top-right-radius: 5px;
                 transition: all .4s ease-in-out;
+
+                @media only screen and (max-width: 2560px) and (min-width: 1800px) {
+                    width: 400px;
+                    height: 600px;
+                }
+                @media only screen and (max-width: 1800px) and (min-width: 1440px) {
+                    top: -10%;
+                    width: 340px;
+                    height: 550px;
+                }
                 
                 @media only screen and (max-width: 376px){
                     position: absolute;
@@ -183,8 +238,16 @@ const HeaderStyled = styled.header`
             @media only screen and (max-width: 376px){
                 float: left;
             }
+            @media only screen and (max-width: 1800px) and (min-width: 1440px) {
+                margin-left: 55px;
+            }
         }
-        
+        @media only screen and (max-width: 2560px) and (min-width: 1800px) {
+                    margin-top: 3%;
+                }
+        @media only screen and (max-width: 1800px) and (min-width: 1440px) {
+                    margin-top: 1%;
+                }
         @media only screen and (max-width: 376px) {
                     margin-left: auto;
                     margin-right: auto;
@@ -228,6 +291,12 @@ const HeaderStyled = styled.header`
                 }
             }
         }
+        @media only screen and (max-width: 2560px) and (min-width: 1800px){
+                    margin-bottom: 2%;
+            }
+        @media only screen and (max-width: 1800px) and (min-width: 1440px){
+                    margin-bottom: 3%;
+            }
         @media only screen and (max-width: 376px) {
                     margin-bottom: 50%;
                 }

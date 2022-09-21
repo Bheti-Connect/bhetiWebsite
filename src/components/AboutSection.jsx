@@ -14,7 +14,6 @@ const AboutSection = () => {
                 <h3 className='title'>
                     Nos solutions pour les entrepreneurs
                 </h3>
-                <p>Ici il faura ajouter du text. Juste deux lignes suffisent</p>
                 <div className='about-info'>
                     <div className='about-info-item'>
                         <div className='icon'>
@@ -59,6 +58,12 @@ const AboutSectionStyled = styled.section`
     grid-template-columns: 1fr 1fr;
     grid-gap: 2rem;
     padding-top: 10rem !important;
+    @media only screen and (max-width: 2560px) and (min-width: 1800px) {
+            height: 800px;
+        }
+    @media only screen and (max-width: 1800px) and (min-width: 1440px) {
+            height: 800px;
+        }
     @media only screen and (max-width: 376px) {
         padding-top: 0rem;
         padding-left: 0rem;
@@ -74,12 +79,21 @@ const AboutSectionStyled = styled.section`
         }
         p{
             padding: 1.5rem 0;
-            font-size: 17px;
+            font-size: 17.7px;
             color: ${props => props.theme.colorGrey5};
-
+            
         }
         .title{
+            margin-left: 10%;
+            margin-bottom: 3%;
             font-size: 1.6rem;
+            @media only screen and (max-width: 2560px) and (min-width: 1800px){
+                font-size: 2.7rem;
+            }
+            @media only screen and (max-width: 1800px) and (min-width: 1440px){
+                font-size: 2.4rem;
+                margin-bottom: 5%;
+            }
         }
         .about-info{
             .about-info-item{
@@ -112,9 +126,25 @@ const AboutSectionStyled = styled.section`
                 .text-container p{
                     text-align: justify;
                     text-justify: inter-word;
-                    
+                    @media only screen and (max-width: 2560px) and (min-width: 1800px){
+                        padding-bottom: 10%;
+                    }
+                    @media only screen and (max-width: 1800px) and (min-width: 1440px){
+                        padding-bottom: 10%;
+                    }
+                }
+                @media only screen and (max-width: 2560px) and (min-width: 1800px) {
+                    margin-top: 70px;
                 }
             }
+        }
+        @media only screen and (max-width: 2560px) and (min-width: 1800px) {
+            width: 100%;
+            bottom: 5rem;
+        }
+        @media only screen and (max-width: 1800px) and (min-width: 1440px) {
+            width: 100%;
+            bottom: 5rem;
         }
         @media screen and (max-width: 376px) {
                 width: 330px;
@@ -125,6 +155,9 @@ const AboutSectionStyled = styled.section`
         position: relative;
         display: flex;
         justify-content: flex-end;
+        @media only screen and (max-width: 2560px) and (min-width: 1800px) {
+            bottom: 5%;
+        }
         .about-img{
             width: 90%;
             object-fit: cover;
@@ -137,18 +170,17 @@ const AboutSectionStyled = styled.section`
             &:hover{
                 transform: scale(1.05);
             }
-            @media only screen and (max-width: 1440px) {
-                    padding-right: 10%;
-                    bottom: 3%;
-                    width: 600px;
-                    height: 420px;
-	            }
-            @media only screen and (max-width: 1800px) {
-                    padding-right: 10%;
-                    bottom: 5%;
-                    width: 750px;
-                    height: 360px;
-	            }
+            @media only screen and (max-width: 2560px) and (min-width: 1800px){
+                    margin-right: 10%;
+                    width: 700px;
+                    height: 550px;
+            }
+            @media only screen and (max-width: 1800px) and (min-width: 1440px){
+                    margin-right: 10%;
+                    width: 550px;
+                    height: 460px;
+            }
+            
         }
         .box-img{
             position: absolute;
@@ -167,10 +199,15 @@ const AboutSectionStyled = styled.section`
                     transform: scale(1);
                 }
             }
+            @media only screen and (max-width: 2560px) and (min-width: 1800px){
+                    margin-left: 10%;
+                    
+            }
+            @media only screen and (max-width: 1800px) and (min-width: 1440px){
+                    margin-left: 12%;
+                    
+            }
         }
-        @media screen and (min-width: 1150px) {
-                    margin-left: 20px;
-	            }
 
     }
     @media screen and (max-width: 420px) {

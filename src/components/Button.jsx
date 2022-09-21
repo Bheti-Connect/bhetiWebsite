@@ -39,6 +39,13 @@ const ButtonStyled = styled.button`
             top: -15px;
         }
     }
+    @media only screen and (max-width: 2560px) and (min-width: 1800px) {
+        width: 250px;
+        height: 50px;
+        .name {
+            font-size: 3000px;
+        }
+    }
     @media only screen and (max-width: 375px){
                     top: 1%;
                     margin-left: 20%;
