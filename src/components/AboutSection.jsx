@@ -94,6 +94,14 @@ const AboutSectionStyled = styled.section`
                 font-size: 2.4rem;
                 margin-bottom: 5%;
             }
+            @media only screen and (max-width: 1440px) and (min-width: 1350px){
+                font-size: 1.7rem;
+                margin-bottom: 9%;
+            }
+            @media only screen and (max-width: 1350px) and (min-width: 1024px){
+                font-size: 1.8rem;
+                margin-bottom: 9%;
+            }
         }
         .about-info{
             .about-info-item{
@@ -180,7 +188,16 @@ const AboutSectionStyled = styled.section`
                     width: 550px;
                     height: 460px;
             }
-            
+            @media only screen and (max-width: 1440px) and (min-width: 1350px){
+                    margin-right: 15%;
+                    width: 480px;
+                    height: 480px;
+            }
+            @media only screen and (max-width: 1350px) and (min-width: 1024px){
+                margin-right: 12%;
+                    width: 510px;
+                    height: 480px;
+            }
         }
         .box-img{
             position: absolute;
@@ -207,8 +224,11 @@ const AboutSectionStyled = styled.section`
                     margin-left: 12%;
                     
             }
+            @media only screen and (max-width: 1440px) and (min-width: 1350px){
+                    margin-left: 8%;
+                    
+            }
         }
-
     }
     @media screen and (max-width: 420px) {
                 body {

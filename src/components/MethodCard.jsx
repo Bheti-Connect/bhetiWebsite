@@ -27,11 +27,13 @@ const MethodCard = ({title, desc, icon}) => {
 
 const MethodCardStyled = styled.section`
     position: relative;
+    width: 200;
     background-color: ${props => props.theme.colorWhite};
     text-align: center;
-    padding: 3rem 1rem;
-    border-radius: 7px;
+    padding: 2.5rem 1rem;
+    border-radius: 2px;
     transition: all .4s ease-in-out;
+    
     &::before{
         content: '';
         position: absolute;

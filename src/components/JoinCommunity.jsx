@@ -51,7 +51,14 @@ const JoinCommunity = () => {
 
 const JoinCommunityStyled = styled.section`
     .title-con{
-        width: 900px;
+        width: 1000px;
+        @media only screen and (max-width: 1440px) and (min-width: 1350px) {
+            margin-left: -100px;
+        }
+        @media only screen and (max-width: 1350px) and (min-width: 1024px) {
+            margin-left: -130px;
+            width: 1000px;
+        }
     }
     .latest-container{
         margin-top: 1.5rem;
@@ -65,7 +72,14 @@ const JoinCommunityStyled = styled.section`
             width: 1200px;
             margin-left: -90px;
         }
-        
+        @media only screen and (max-width: 1440px) and (min-width: 1350px) {
+            width: 1000px;
+            margin-left: -90px;
+        }
+        @media only screen and (max-width: 1350px) and (min-width: 1024px) {
+            width: 1000px;
+            margin-left: -130px;
+        }
         .latest-content{
             display: grid;
             grid-template-columns: 40% auto;
@@ -88,7 +102,16 @@ const JoinCommunityStyled = styled.section`
                     width: 450px;
                     margin-left: -80px;
                 }
-
+                @media only screen and (max-width: 1440px) and (min-width: 1350px) {
+                    width: 380px;
+                    height: 250px;
+                    margin-left: -100px;
+                }
+                @media only screen and (max-width: 1350px) and (min-width: 1024px) {
+                    width: 350px;
+                    height: 250px;
+                    margin-left: -100px;
+                }
             }
             .latest-text{
                 width: 500px;
@@ -132,7 +155,12 @@ const JoinCommunityStyled = styled.section`
                     margin-left: 70px;
                     margin-top: 2%;
                 }
-
+                @media only screen and (max-width: 1440px) and (min-width: 1350px) {
+                    width: 500px;
+                    height: 200px;
+                    margin-left: 20px;
+                    margin-top: -2%;
+                }
             }
         }
     }

@@ -1,5 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faLinkedin, faFacebook, faInstagram } from '@fortawesome/free-brands-svg-icons';
+
 import { useTheme } from '../context/themeContext';
 import footerLogo from '../assets/images/footer-logo.png'
 
@@ -18,9 +21,9 @@ const Footer = () => {
                         Préparez votre levée de fonds avec des contenus adaptés et présentez votre projet à des investisseurs pertinents
                     </p>
                     <div className="b-nav-icons">
-                        <a href='https://www.linkedin.com/company/bheti-connect/'><i class="fab fa-linkedin"></i></a>
-                        <a href='https://www.instagram.com/bheticonnect/'><i class="fab fa-instagram"></i></a>
-                        <a href='https://web.facebook.com/bheticonnect/'><i class="fab fa-facebook"></i></a>
+                        <a href='https://www.linkedin.com/company/bheti-connect'><FontAwesomeIcon icon={faLinkedin} className='icon icon-linkedin' /></a>
+                        <a href='https://web.facebook.com/bheticonnect'><FontAwesomeIcon icon={faFacebook} className='icon icon-facebook' /></a>
+                        <a href='https://www.instagram.com/bheticonnect/'><FontAwesomeIcon icon={faInstagram} className='icon icon-instagram'/></a>
                     </div>
                 </ul>
                 <ul className="nav-b nav-contact">
@@ -173,13 +176,27 @@ const FooterSectionStyled = styled.footer`
         .b-nav-icons{
             display: flex;
             margin-top: 2rem;
-            .fa-facebook{
-                margin-right: .3rem;
+            .icon {
+                color: aliceblue;
+                margin-left: .5rem;
+                width: 1rem;
             }
-            i:not(:first-child){
-                margin: 0 .5rem;
-                cursor: pointer;
+            .icon-linkedin{
+                :hover{
+                    color: #2677b5;
+                }
             }
+            .icon-facebook{
+                :hover{
+                    color: #2872e7 ;
+                }
+            } 
+            .icon-instagram{
+                :hover{
+                    color: #a9388b ;
+                }
+            }
+            
         }
         /* .b-nav-icons a{
             color: ${props => props.theme.colorGre6};
@@ -198,11 +215,13 @@ const FooterSectionStyled = styled.footer`
                 }
             }
         }
-        @media screen and (max-width: 1150px) {
-                    width: 1150px;
-                    height: 300px;
-                    margin-left: -150px;
-	            }
+        @media only screen and (max-width: 1440px) and (min-width: 1350px){
+            width: 1000px ;
+        }
+        @media only screen and (max-width: 1350px) and (min-width: 1024px){
+            width: 950px;
+            margin-left: -100px;
+        }
         @media screen and (max-width: 420px) {
                     margin: auto;
                     width: 150px;
