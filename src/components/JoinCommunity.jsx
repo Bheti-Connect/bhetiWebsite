@@ -29,7 +29,7 @@ const JoinCommunity = () => {
                         </h4>
                         <h6>Prenez votre Tablette, Smartphone, Desktop ou Laptop</h6>
                         <p>Sur les applications LinkedIn, Instagram et Facebook. Réjoignez rapidement la communauté pour être au coeur de l'actualité économique en Afrique !</p>
-                        <a href='https://www.linkedin.com/company/bheti-connect'>
+                        <a className='anchor-tag' href='https://www.linkedin.com/company/bheti-connect'>
                             <Button 
                                 name={'JE REJOINS DÈS MAINTENANT'}
                                 icon={'fas fa-chevron-right'}
@@ -53,7 +53,7 @@ const JoinCommunityStyled = styled.section`
     .title-con{
         width: 1000px;
         @media only screen and (max-width: 1440px) and (min-width: 1350px) {
-            margin-left: -100px;
+            margin-left: -60px;
         }
         @media only screen and (max-width: 1350px) and (min-width: 1024px) {
             margin-left: -130px;
@@ -74,7 +74,7 @@ const JoinCommunityStyled = styled.section`
         }
         @media only screen and (max-width: 1440px) and (min-width: 1350px) {
             width: 1000px;
-            margin-left: -90px;
+            margin-left: -60px;
         }
         @media only screen and (max-width: 1350px) and (min-width: 1024px) {
             width: 1000px;
@@ -89,11 +89,7 @@ const JoinCommunityStyled = styled.section`
                 width: 100%;
                 border-radius: 7px;
                 object-fit: cover;
-                /* @media only screen and (max-width: 1600px) {
-                    width: 300px;
-                    height: 200px;
-                    margin-left: -100px;
-	            } */
+                
                 @media only screen and (max-width: 2560px) and (min-width: 1800px) {
                     width: 600px;
                     margin-left: -60px;
@@ -130,19 +126,6 @@ const JoinCommunityStyled = styled.section`
                     color: ${props => props.theme.colorGrey4};
                     padding-bottom: 1.5rem;
                 }
-                a{
-                    background: transparent;
-                    border: 2px solid ${props => props.theme.colorGrey4};
-                    text-transform: inherit;
-                }
-                
-                /* @media only screen and (min-width: 1440px) {
-                    position: relative;
-                    width: 200px;
-                    height: 200px;
-                    margin-left: 70px;
-                    bottom: 10%;
-	            } */
                 @media only screen and (max-width: 2560px) and (min-width: 1800px) {
                     width: 600px;
                     height: 200px;
@@ -159,6 +142,12 @@ const JoinCommunityStyled = styled.section`
                     width: 500px;
                     height: 200px;
                     margin-left: 20px;
+                    margin-top: -2%;
+                }
+                @media only screen and (max-width: 1350px) and (min-width: 1024px) {
+                    width: 500px;
+                    height: 200px;
+                    margin-left: 10px;
                     margin-top: -2%;
                 }
             }

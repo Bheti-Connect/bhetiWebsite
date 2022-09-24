@@ -138,11 +138,22 @@ const HeaderStyled = styled.header`
                     }
                     
             }
-            @media only screen and (max-width: 1350px) and (min-width: 1024px) {
+            @media only screen and (max-width: 1350px) and (min-width: 1250px) {
                     margin-top: 4%;
                     width: 600px;
                     h2{
                         font-size: 49px;
+                    }
+                    p{
+                        font-size: 19px;
+                    }
+                    
+            }
+            @media only screen and (max-width: 1250px) and (min-width: 1024px) {
+                    margin-top: 4%;
+                    width: 500px;
+                    h2{
+                        font-size: 45px;
                     }
                     p{
                         font-size: 19px;
@@ -218,6 +229,10 @@ const HeaderStyled = styled.header`
                     width: 280px;
                     height: 380px;
                 }
+                @media only screen and (max-width: 1250px) and (min-width: 1020px){
+                    width: 280px;
+                    height: 360px;
+                }
                 @media only screen and (max-width: 376px){
                     position: absolute;
                     border-bottom-right-radius: 30%;
@@ -259,10 +274,15 @@ const HeaderStyled = styled.header`
                     width: 280px;
                     height: 450px;
                 }
-                @media only screen and (max-width: 1350px) and (min-width: 1024px) {
+                @media only screen and (max-width: 1350px) and (min-width: 1250px) {
                     top: -9%;
                     width: 300px;
                     height: 480px;
+                }
+                @media only screen and (max-width: 1250px) and (min-width: 1024px){
+                    top: -10%;
+                    width: 300px;
+                    height: 450px;
                 }
                 @media only screen and (max-width: 376px){
                     position: absolute;
@@ -289,10 +309,13 @@ const HeaderStyled = styled.header`
                     margin-top: 1%;
                 }
         @media only screen and (max-width: 1440px) and (min-width: 1350px) {
-                margin-left: -140px; 
+                margin-left: -10px; 
             }
-        @media only screen and (max-width: 1350px) and (min-width: 1024px) {
+        @media only screen and (max-width: 1350px) and (min-width: 1250px) {
                 margin-left: -30px; 
+            }
+        @media only screen and (max-width: 1250px) and (min-width: 1024px) {
+                margin-left: -50px; 
             }
         @media only screen and (max-width: 376px) {
                     margin-left: auto;

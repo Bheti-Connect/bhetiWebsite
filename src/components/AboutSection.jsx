@@ -190,13 +190,13 @@ const AboutSectionStyled = styled.section`
             }
             @media only screen and (max-width: 1440px) and (min-width: 1350px){
                     margin-right: 15%;
-                    width: 480px;
-                    height: 480px;
+                    width: 490px;
+                    height: 400px;
             }
             @media only screen and (max-width: 1350px) and (min-width: 1024px){
-                margin-right: 12%;
-                    width: 510px;
-                    height: 480px;
+                    margin-right: 12%;
+                    width: 500px;
+                    height: 430px;
             }
         }
         .box-img{
@@ -226,6 +226,10 @@ const AboutSectionStyled = styled.section`
             }
             @media only screen and (max-width: 1440px) and (min-width: 1350px){
                     margin-left: 8%;
+                    
+            }
+            @media only screen and (max-width: 1350px) and (min-width: 1024px){
+                    margin-left: 7%;
                     
             }
         }
