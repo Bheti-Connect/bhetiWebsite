@@ -1,7 +1,10 @@
-import React from 'react'
+import React from 'react';
+import styled from 'styled-components';
 
-const Cards = () => {
 
+const Cards = ({number}) => {
+
+    let link = "https://" + `picsum.photos/id/${number}/200/300`;
 
   return (
     <CardItem>
