@@ -266,7 +266,7 @@ const HeaderStyled = styled.header`
                 @media only screen and (max-width: 1800px) and (min-width: 1440px) {
                     top: -10%;
                     width: 340px;
-                    height: 550px;
+                    height: 520px;
                 }
                 @media only screen and (max-width: 1440px) and (min-width: 1350px) {
                     top: -10%;

@@ -55,8 +55,12 @@ const JoinCommunityStyled = styled.section`
         @media only screen and (max-width: 1440px) and (min-width: 1350px) {
             margin-left: -60px;
         }
-        @media only screen and (max-width: 1350px) and (min-width: 1024px) {
+        @media only screen and (max-width: 1350px) and (min-width: 1250px) {
             margin-left: -130px;
+            width: 1000px;
+        }
+        @media only screen and (max-width: 1250px) and (min-width: 1024px) {
+            margin-left: -210px;
             width: 1000px;
         }
     }
@@ -70,15 +74,19 @@ const JoinCommunityStyled = styled.section`
         }
         @media only screen and (max-width: 1800px) and (min-width: 1440px) {
             width: 1200px;
-            margin-left: -90px;
+            margin-left:-1%;
         }
         @media only screen and (max-width: 1440px) and (min-width: 1350px) {
             width: 1000px;
             margin-left: -60px;
         }
-        @media only screen and (max-width: 1350px) and (min-width: 1024px) {
+        @media only screen and (max-width: 1350px) and (min-width: 1250px) {
             width: 1000px;
             margin-left: -130px;
+        }
+        @media only screen and (max-width: 1250px) and (min-width: 1024px) {
+            width: 900px;
+            margin-left: -160px;
         }
         .latest-content{
             display: grid;
@@ -103,10 +111,15 @@ const JoinCommunityStyled = styled.section`
                     height: 250px;
                     margin-left: -100px;
                 }
-                @media only screen and (max-width: 1350px) and (min-width: 1024px) {
+                @media only screen and (max-width: 1350px) and (min-width: 1250px) {
                     width: 350px;
                     height: 250px;
                     margin-left: -100px;
+                }
+                @media only screen and (max-width: 1250px) and (min-width: 1024px) {
+                    width: 290px;
+                    height: 200px;
+                    margin-left: -120px;
                 }
             }
             .latest-text{
@@ -126,6 +139,9 @@ const JoinCommunityStyled = styled.section`
                     color: ${props => props.theme.colorGrey4};
                     padding-bottom: 1.5rem;
                 }
+                a{
+                    margin-left: 25%;
+                }
                 @media only screen and (max-width: 2560px) and (min-width: 1800px) {
                     width: 600px;
                     height: 200px;
@@ -144,11 +160,17 @@ const JoinCommunityStyled = styled.section`
                     margin-left: 20px;
                     margin-top: -2%;
                 }
-                @media only screen and (max-width: 1350px) and (min-width: 1024px) {
+                @media only screen and (max-width: 1350px) and (min-width: 1250px) {
                     width: 500px;
                     height: 200px;
                     margin-left: 10px;
                     margin-top: -2%;
+                }
+                @media only screen and (max-width: 1250px) and (min-width: 1024px) {
+                    width: 450px;
+                    height: 200px;
+                    margin-left: -23px;
+                    margin-top: -10%;
                 }
             }
         }
