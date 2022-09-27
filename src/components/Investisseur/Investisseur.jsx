@@ -10,6 +10,7 @@ import Cards from './Cards';
 const Investisseur = () => {
     const [currentPage, setCurrentPage] = useState(0);
     const [itemsPerPage, setItemsPerPage] = useState(10);
+    const [ind, setInd] = useState(0)
     // cards data
     const [data, setData] = useState([])
 
@@ -17,35 +18,54 @@ const Investisseur = () => {
 
     const addData = () => {
         let tab = []
-        for(let i = 1; i<=100; i++)
+        if(ind == 1)
         {
-            tab.push(<Cards key={i} number={i}/>)
+          // Startup
+          for(let i = 26; i<=100; i++)
+          {
+              tab.push(<Cards key={i} number={i}/>)
+          }
+
+        }else if (ind == 2){
+          // PME
+          for(let i = 105; i<=150; i++)
+          {
+              tab.push(<Cards key={i} number={i}/>)
+          }
+        }
+        else{
+          for(let i = 1; i<=25; i++)
+          {
+              tab.push(<Cards key={i} number={i}/>)
+          }
         }
         setData(tab)
     }
-
-    useEffect(() => {
-        addData()
-    }, [])
     
 
     // handle menu : tous, startup and PME
     const handleMenu = (e) => {
-        let menus = document.querySelectorAll(".menuSection li");
+        let activeBtn = document.querySelector(".menuSection .active");
         let valid = e.target.tagName.toLowerCase()
 
         if(!e.target.classList.contains("active") && valid == "li")
         {
-        for(var i = 0; i<menus.length; i++)
+          activeBtn.classList.remove("active")
+          e.target.classList.add("active")
+        }
+
+        // get index of active li
+        let menus = document.querySelectorAll(".menuSection li");
+        let tabForIndex = Array.prototype.slice.call(menus)
+
+        for(var i = 0; i<tabForIndex.length; i++)
         {
-            if(menus[i].classList.contains("active"))
-            {
-                menus[i].classList.remove("active")
-            }
+          if(tabForIndex[i].classList.contains("active"))
+          {
+            setInd(i)
+          }
         }
-        e.target.classList.add("active")
-        }
-    
+
     }
 
 
@@ -59,6 +79,21 @@ const Investisseur = () => {
     let changePage = ({selected}) => {
         setCurrentPage(selected)
     }
+
+
+
+    useEffect(() => {
+      addData()
+    }, [])
+
+    useEffect(() => {
+      addData()
+
+      if (currentPage != 0)
+      {
+        setCurrentPage(0)
+      }
+    }, [ind])
 
     
 
