@@ -98,8 +98,12 @@ const AboutSectionStyled = styled.section`
                 font-size: 1.7rem;
                 margin-bottom: 9%;
             }
-            @media only screen and (max-width: 1350px) and (min-width: 1024px){
+            @media only screen and (max-width: 1350px) and (min-width: 1250px){
                 font-size: 1.8rem;
+                margin-bottom: 9%;
+            }
+            @media only screen and (max-width: 1250px) and (min-width: 1024px){
+                font-size: 1.6rem;
                 margin-bottom: 9%;
             }
         }
@@ -193,10 +197,15 @@ const AboutSectionStyled = styled.section`
                     width: 490px;
                     height: 400px;
             }
-            @media only screen and (max-width: 1350px) and (min-width: 1024px){
+            @media only screen and (max-width: 1350px) and (min-width: 1250px){
                     margin-right: 12%;
                     width: 500px;
                     height: 430px;
+            }
+            @media only screen and (max-width: 1250px) and (min-width: 1024px){
+                    margin-right: 12%;
+                    width: 430px;
+                    height: 550px;
             }
         }
         .box-img{
@@ -221,15 +230,19 @@ const AboutSectionStyled = styled.section`
                     
             }
             @media only screen and (max-width: 1800px) and (min-width: 1440px){
-                    margin-left: 12%;
+                    margin-left: 20%;
                     
             }
             @media only screen and (max-width: 1440px) and (min-width: 1350px){
                     margin-left: 8%;
                     
             }
-            @media only screen and (max-width: 1350px) and (min-width: 1024px){
+            @media only screen and (max-width: 1350px) and (min-width: 1250px){
                     margin-left: 7%;
+                    
+            }
+            @media only screen and (max-width: 1250px) and (min-width: 1024px){
+                    margin-left: 6.5%;
                     
             }
         }

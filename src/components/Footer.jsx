@@ -218,9 +218,13 @@ const FooterSectionStyled = styled.footer`
         @media only screen and (max-width: 1440px) and (min-width: 1350px){
             width: 1000px ;
         }
-        @media only screen and (max-width: 1350px) and (min-width: 1024px){
+        @media only screen and (max-width: 1350px) and (min-width: 1250px){
             width: 950px;
             margin-left: -100px;
+        }
+        @media only screen and (max-width: 1250px) and (min-width: 1024px){
+            width: 900px;
+            margin-left: -150px;
         }
         @media screen and (max-width: 420px) {
                     margin: auto;
