@@ -4,18 +4,23 @@ import styled from 'styled-components'
 import { useTheme } from '../../context/themeContext';
 import { GrAppsRounded } from "react-icons/gr";
 import ReactPaginate from 'react-paginate';
-import SearchBar from './SearchBar';
+import SearchFilter from './SearchFilter';
 import Cards from './Cards';
 
 const Investisseur = () => {
     const [currentPage, setCurrentPage] = useState(0);
     const [itemsPerPage, setItemsPerPage] = useState(10);
     const [ind, setInd] = useState(0)
+    // query useState for search
+    const [query, setQuery] = useState(null)
     // cards data
     const [data, setData] = useState([])
+    // search items of data
+    const [searchItems, setSearchItems] = useState([])
 
     const theme = useTheme()
 
+    // Add data in data useState
     const addData = () => {
         let tab = []
         if(ind == 1)
@@ -72,7 +77,7 @@ const Investisseur = () => {
     // page visited
     let pagesVisited = currentPage * itemsPerPage
     // display items
-    let displaItems = data.slice(pagesVisited, pagesVisited + itemsPerPage).map(item => item)
+    let displayItems = data.slice(pagesVisited, pagesVisited + itemsPerPage).map(item => item)
     // number of page
     let pageCount = Math.ceil(data.length / itemsPerPage)
     // handle change page
@@ -87,6 +92,7 @@ const Investisseur = () => {
     }, [])
 
     useEffect(() => {
+
       addData()
 
       if (currentPage != 0)
@@ -95,7 +101,12 @@ const Investisseur = () => {
       }
     }, [ind])
 
-    
+/*
+    useEffect(() => {
+      setSearchItems(<Cards number={2}/>)
+    }, [query])
+
+    */
 
 
 
@@ -120,7 +131,7 @@ const Investisseur = () => {
                     </ul>
                     
                     {/* Filter and search */}
-                    <SearchBar />
+                    <SearchFilter setQuery={setQuery} />
                     
                 </div>
                 <hr/>
@@ -133,7 +144,7 @@ const Investisseur = () => {
             <AllCards>
 
             {
-                displaItems
+                displayItems
             }
 
             </AllCards>
@@ -257,6 +268,7 @@ p {
     display: flex;
     flex-direction:row;
     list-style: none;
+    margin-bottom: -4px;
 
     svg{
         padding-top:4px;
