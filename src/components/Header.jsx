@@ -4,7 +4,7 @@ import { useTheme } from '../context/themeContext';
 import premiereImg from '../assets/images/ent-img1.jpg';
 import deuxiemeImg from '../assets/images/ent-img4-2.jpg';
 import Button from './Button';
-import { devices } from '../data/Responsive';
+// import { devices } from '../data/Responsive';
 
 const Header = () => {
     const theme = useTheme()
@@ -49,7 +49,9 @@ const HeaderStyled = styled.header`
     @media only screen and (max-width: 1800px) and (min-width: 1440px){
         height: 75vh;
     }
-    
+    @media only screen and (max-width: 1024px) and (min-width: 900px){
+        height: 100vh;
+    }
     .u-pad-lg{
         @media only screen and (max-width: 376px) {
                     padding: 0rem 0rem;
@@ -160,6 +162,17 @@ const HeaderStyled = styled.header`
                     }
                     
             }
+            @media only screen and (max-width: 1024px) and (min-width: 900px) {
+                    margin-top: 4%;
+                    width: 500px;
+                    h2{
+                        font-size: 47px;
+                    }
+                    p{
+                        font-size: 19px;
+                    }
+                    
+            }
             @media only screen and (max-width: 376px){
                 float: left;
                 width: 200%;
@@ -225,13 +238,17 @@ const HeaderStyled = styled.header`
                     width: 280px;
                     height: 380px;
                 }
-                @media only screen and (max-width: 1350px) and (min-width: 1024px) {
+                @media only screen and (max-width: 1350px) and (min-width: 1250px) {
                     width: 280px;
                     height: 380px;
                 }
-                @media only screen and (max-width: 1250px) and (min-width: 1020px){
+                @media only screen and (max-width: 1250px) and (min-width: 1024px){
                     width: 280px;
                     height: 360px;
+                }
+                @media only screen and (max-width: 1024px) and (min-width: 900px){
+                    width: 180px;
+                    height: 250px;
                 }
                 @media only screen and (max-width: 376px){
                     position: absolute;
@@ -284,6 +301,11 @@ const HeaderStyled = styled.header`
                     width: 300px;
                     height: 450px;
                 }
+                @media only screen and (max-width: 1024px) and (min-width: 900px){
+                    top: -5%;
+                    width: 180px;
+                    height: 300px;
+                }
                 @media only screen and (max-width: 376px){
                     position: absolute;
                     border-bottom-left-radius: 30%;
@@ -316,6 +338,9 @@ const HeaderStyled = styled.header`
             }
         @media only screen and (max-width: 1250px) and (min-width: 1024px) {
                 margin-left: -50px; 
+            }
+        @media only screen and (max-width: 1024px) and (min-width: 900px) {
+                margin-left: -150px; 
             }
         @media only screen and (max-width: 376px) {
                     margin-left: auto;
