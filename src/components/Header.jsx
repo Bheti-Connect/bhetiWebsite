@@ -12,7 +12,7 @@ const Header = () => {
         <HeaderStyled theme={theme}>
             
             <div className='header-content u-pad-lg'>
-                <div className='left-h-content'>
+                <div className='box left-h-content'>
                     <h2>
                         Chez nous<span> LES BONS PROJETS</span> se voient être réalisé à 100%
                     </h2>
@@ -28,7 +28,7 @@ const Header = () => {
                         />
                     </a>
                 </div>
-                <div className='right-h-content'>
+                <div className='box right-h-content'>
                     <img className='h-img-1' src={premiereImg} alt='image-1' />
                     <img className='h-img-2' src={deuxiemeImg} alt='image-2' />
                 </div>
@@ -173,6 +173,20 @@ const HeaderStyled = styled.header`
                     }
                     
             }
+
+            //------------- add others
+
+            @media only screen and (max-width: 600px) and (min-width: 425px) {
+                    margin-top: 4%;
+                    width: 200px;
+                    h2{
+                        font-size: 30px;
+                    }
+                    p{
+                        font-size: 15px;
+                    }
+                    
+            }
             @media only screen and (max-width: 376px){
                 float: left;
                 width: 200%;
@@ -185,6 +199,13 @@ const HeaderStyled = styled.header`
             }
             @media only screen and (max-width: 1440px) and (min-width: 1024px){
                 margin-left: -70px;
+            }
+            @media only screen and (max-width: 600px) and (min-width: 425px) {
+                width: 450px;
+                .button-demo {
+                    position: absolute;
+                    top: 220%;
+                }
             }
         }
         .right-h-content{
@@ -250,18 +271,10 @@ const HeaderStyled = styled.header`
                     width: 180px;
                     height: 250px;
                 }
-                @media only screen and (max-width: 376px){
-                    position: absolute;
-                    border-bottom-right-radius: 30%;
-                    border-bottom-left-radius: 5px;
-                    border-top-left-radius: 5px;
-                    border-top-right-radius: 5px;
-                    width:150px;
-                    height: 200px;
-                    top: 100%;
-                    left: 10%;
-                    left: 5%;
+                @media only screen and (max-width: 600px) and (min-width: 425px){
+                    display: none;
                 }
+                
             }
             .h-img-1{
                 position: absolute;
@@ -306,6 +319,36 @@ const HeaderStyled = styled.header`
                     width: 180px;
                     height: 300px;
                 }
+                @media only screen and (max-width: 1024px) and (min-width: 900px){
+                    top: -5%;
+                    width: 180px;
+                    height: 300px;
+                }
+                @media only screen and (max-width: 900px) and (min-width: 768px){
+                    top: -5%;
+                    width: 180px;
+                    height: 300px;
+                }
+                @media only screen and (max-width: 768px) and (min-width: 600px){
+                    top: -5%;
+                    width: 180px;
+                    height: 300px;
+                }
+                @media only screen and (max-width: 600px) and (min-width: 425px){
+                    position: absolute;
+                    top: 280%;
+                    width: 400px;
+                    height: 300px;
+                    border-bottom-right-radius: 40px;
+                    border-bottom-left-radius: 5px;
+                    border-top-left-radius: 5px;
+                    border-top-right-radius: 5px;
+                }
+                @media only screen and (max-width: 425px) and (min-width: 320px){
+                    top: -5%;
+                    width: 180px;
+                    height: 300px;
+                }
                 @media only screen and (max-width: 376px){
                     position: absolute;
                     border-bottom-left-radius: 30%;
@@ -322,6 +365,9 @@ const HeaderStyled = styled.header`
             }
             @media only screen and (max-width: 1800px) and (min-width: 1440px) {
                 margin-left: 55px;
+            }
+            @media only screen and (max-width: 600px) and (min-width: 425px){
+                margin-left: 30px;
             }
         }
         @media only screen and (max-width: 2560px) and (min-width: 1800px) {
@@ -341,6 +387,18 @@ const HeaderStyled = styled.header`
             }
         @media only screen and (max-width: 1024px) and (min-width: 900px) {
                 margin-left: -150px; 
+            }
+        @media only screen and (max-width: 600px) and (min-width: 425px) {
+            display: flex ;
+            position: relative;
+            margin-left: -200px;
+                .box {
+                    position: absolute;
+                    .right-h-content{
+                        z-index: 9;
+                    }
+                }
+
             }
         @media only screen and (max-width: 376px) {
                     margin-left: auto;

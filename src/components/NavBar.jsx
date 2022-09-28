@@ -6,11 +6,9 @@ import { useTheme } from '../context/themeContext';
 import { NavLink } from 'react-router-dom';
 
 
-
 const NavBar = () => {
     // const navRef = useRef();
     const [etat, setEtat] = useState({clicked: false});
-
 
     // const showNavbar = () => {
     //     navRef.current.classList.toggle("responsive_nav");
@@ -25,41 +23,42 @@ const NavBar = () => {
             <div className='hero'>
                 <div className='logo'>
                         <NavLink to='/bhetiConnectProj'>
-                        <img
-                            src={theLogo}
-                            className='theLogo'
-                            alt='Le logo'
-                        />
+                            <img
+                                src={theLogo}
+                                className='theLogo'
+                                alt='Le logo'
+                            />
                         </NavLink>
                 </div>
                 <nav  className='navigation navbar'>
-                    
-                    <NavLink
-                        to='/entrepreneur'
-                        className={({ isActive }) => (isActive ? 'link active' : 'link')}
-                    >
-                        Entrepreneur
-                    </NavLink>
-                    <NavLink
-                        to='/investisseur'
-                        className={({ isActive }) => (isActive ? 'link active' : 'link')}
-                    >
-                        Investisseur
-                    </NavLink>
-                    <a href='https://bheticonnect.super.site/'>
-                        <NavLink
-                            to=''
-                            className={({ isActive }) => (isActive ? 'link active' : 'link')}
-                        >
-                            Média
-                        </NavLink>
-                    </a>
-                    <NavLink
-                        to='/connexion'
-                        className={({ isActive }) => (isActive ? 'link active' : 'link')}
-                    >
-                        Connexion
-                    </NavLink>
+                        <div className={etat.clicked ? 'nav-menu active' : 'nav-menu'}>
+                            <NavLink
+                                to='/entrepreneur'
+                                className={({ isActive }) => (isActive ? 'link active' : 'link')}
+                            >
+                                Entrepreneur
+                            </NavLink>
+                            <NavLink
+                                to='/investisseur'
+                                className={({ isActive }) => (isActive ? 'link active' : 'link')}
+                            >
+                                Investisseur
+                            </NavLink>
+                            <a href='https://bheticonnect.super.site/'>
+                                <NavLink
+                                    to=''
+                                    className={({ isActive }) => (isActive ? 'link active' : 'link')}
+                                >
+                                    Média 
+                                </NavLink>
+                            </a>
+                            <NavLink
+                                to='/connexion'
+                                className={({ isActive }) => (isActive ? 'link active' : 'link')}
+                            >
+                                Connexion
+                            </NavLink>
+                        </div>
 
                         <div className='nav-btn-container'>
                                 <a href='https://airtable.com/shrxZL75lICeCINRm'>
@@ -74,7 +73,6 @@ const NavBar = () => {
                         <div className='menu-icon' onClick={handleClick}> 
                             <i className={etat.clicked ? 'fa-solid fa-xmark' : 'fa-solid fa-bars-staggered'}></i>
                         </div>
-                    
                     </nav>
             </div>
         </NavBarStyled>
@@ -130,7 +128,21 @@ const NavBarStyled = styled.nav`
                 visibility: visible;
             }
         }
-        
+        .nav-menu {
+            display: grid;
+            grid-template-columns: repeat(5, auto);
+            grid-gap: 10px;
+            text-align: center;
+            width: 70vw;
+            justify-content: end;
+            margin-right: 2rem;
+        }
+        .menu-icon {
+            display: none;
+            .fa-bars-staggered {
+                color: ${props => props.theme.colorBlack} ;
+            }
+        }
         }
 
         .nav-btn-container{
@@ -176,20 +188,50 @@ const NavBarStyled = styled.nav`
 }
 
 
-@media only screen and (max-width: 768px) and (min-width: 320px){
+@media only screen and (max-width: 960px) and (min-width: 320px){
+
 
     .navigation {
-        background: ${props => props.theme.colorBlack};
-        height: 80px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        font-size: 1.5rem;
-    }
+        position: relative;
+        .nav-menu {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            height: 500px;
+            position: absolute;
+            top:  80px;
+            left: -100px;
+            opacity: 1;
+            transition: all 0.5s ease;
 
-    .logo{
-        margin-left: -10px;
-        width: 120%;
+            .link{
+                text-align: center;
+                padding: 2rem;
+                width: 100%;
+                display: table;
+            }
+            .link:hover{
+                background-color: #7577FA;
+                border-radius: 0;
+            }
+        }
+
+        .active {
+            background: #6668f4;
+            left: 0;
+            opacity: 1;
+            transition: all 0.5s ease;
+            z-index: 1;
+        }
+        .menu-icon{
+            display: flex;
+            position: absolute;
+            top: 0;
+            right: 90px;
+            transform: translate(-100%, 60%);
+            font-size: 1.8rem;
+            cursor: pointer;
+        }
     }
 }
 `;
