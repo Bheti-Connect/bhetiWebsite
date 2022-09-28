@@ -15,12 +15,14 @@ const Accueil = () => {
                     <img className='illustration-1' src={casseTete} alt='casse-tête-video'/>
                     <h1 className='centered'>Résolvez le casse tête du financement de votre entreprise</h1>
                     <img className='illustration-2'  src={Discussion} alt='Discussion-video'/>
-                    <Button 
-                        name={'Je réserve une demo'}
-                        icon={'fas fa-chevron-right'}
-                        arrow={'arrow'}
-                        blob={'blob'}
-                    />
+                    <div className='button-demo'>
+                        <Button 
+                            name={'Je réserve une demo'}
+                            icon={'fas fa-chevron-right'}
+                            arrow={'arrow'}
+                            blob={'blob'}
+                        />
+                    </div>
                 </div>
                 <div className='text-highlighted'>
                     <p>Convaincre un investisseur, obtenir des financements, faire une levée de fonds … Autant de choses qui vous paraissent insolubles?</p>
@@ -67,6 +69,9 @@ const AccueilStyled = styled.section`
                 font-weight: 900;
                 font-size: 50px;
                 color: ${props => props.theme.colorWhite};
+            }
+            .button-demo{
+                margin: 20px 450px 10px ;
             }
         }
         .text-highlighted{

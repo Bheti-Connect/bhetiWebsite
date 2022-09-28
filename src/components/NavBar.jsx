@@ -1,77 +1,81 @@
-import { useRef } from 'react';
+import { useState } from 'react';
 import styled from 'styled-components'
-import { FaBars, FaTimes} from 'react-icons/fa'
 import Button from './Button';
 import theLogo from '../assets/images/logo.png';
 import { useTheme } from '../context/themeContext';
 import { NavLink } from 'react-router-dom';
 
-const NavBar = () => {
-    const navRef = useRef();
 
-    const showNavbar = () => {
-        navRef.current.classList.toggle("responsive_nav");
+
+const NavBar = () => {
+    // const navRef = useRef();
+    const [etat, setEtat] = useState({clicked: false});
+
+
+    // const showNavbar = () => {
+    //     navRef.current.classList.toggle("responsive_nav");
+    // }
+    const handleClick = () => {
+        setEtat({clicked: !etat.clicked})
     }
 
     const theme = useTheme();
     return (
         <NavBarStyled theme={theme}>
             <div className='hero'>
-            <div className='logo'>
-                    <NavLink to='/bhetiConnectProj'>
-                    <img
-                        src={theLogo}
-                        className='theLogo'
-                        alt='Le logo'
-                    />
-                    </NavLink>
+                <div className='logo'>
+                        <NavLink to='/bhetiConnectProj'>
+                        <img
+                            src={theLogo}
+                            className='theLogo'
+                            alt='Le logo'
+                        />
+                        </NavLink>
                 </div>
-            <nav ref={navRef} className='navigation navbar'>
-                
-                <NavLink
-                    to='/entrepreneur'
-                    className={({ isActive }) => (isActive ? 'link active' : 'link')}
-                >
-                    Entrepreneur
-                </NavLink>
-                <NavLink
-                    to='/investisseur'
-                    className={({ isActive }) => (isActive ? 'link active' : 'link')}
-                >
-                    Investisseur
-                </NavLink>
-                <a href='https://bheticonnect.super.site/'>
+                <nav  className='navigation navbar'>
+                    
                     <NavLink
-                        to=''
+                        to='/entrepreneur'
                         className={({ isActive }) => (isActive ? 'link active' : 'link')}
                     >
-                        Média
+                        Entrepreneur
                     </NavLink>
-                </a>
-                <NavLink
-                    to='/connexion'
-                    className={({ isActive }) => (isActive ? 'link active' : 'link')}
-                >
-                    Connexion
-                </NavLink>
-                    <div className='nav-btn-container'>
-                            <a href='https://airtable.com/shrxZL75lICeCINRm'>
-                                <Button 
-                                    name={'Parler à un expert'}
-                                    icon={'fas fa-chevron-right'}
-                                    arrow={'arrow'}
-                                    blob={'blob'}
-                                />
-                            </a>
-                    </div>
-                
-                    <button className='nav-btn nav-close-btn' onClick={showNavbar}>
-                        <FaTimes />
-                    </button>
-                </nav>
-                <button className='nav-btn' onClick={showNavbar}>
-                    <FaBars />
-                </button>
+                    <NavLink
+                        to='/investisseur'
+                        className={({ isActive }) => (isActive ? 'link active' : 'link')}
+                    >
+                        Investisseur
+                    </NavLink>
+                    <a href='https://bheticonnect.super.site/'>
+                        <NavLink
+                            to=''
+                            className={({ isActive }) => (isActive ? 'link active' : 'link')}
+                        >
+                            Média
+                        </NavLink>
+                    </a>
+                    <NavLink
+                        to='/connexion'
+                        className={({ isActive }) => (isActive ? 'link active' : 'link')}
+                    >
+                        Connexion
+                    </NavLink>
+
+                        <div className='nav-btn-container'>
+                                <a href='https://airtable.com/shrxZL75lICeCINRm'>
+                                    <Button 
+                                        name={'Parler à un expert'}
+                                        icon={'fas fa-chevron-right'}
+                                        arrow={'arrow'}
+                                        blob={'blob'}
+                                    />
+                                </a>
+                        </div>
+                        <div className='menu-icon' onClick={handleClick}> 
+                            <i className={etat.clicked ? 'fa-solid fa-xmark' : 'fa-solid fa-bars-staggered'}></i>
+                        </div>
+                    
+                    </nav>
             </div>
         </NavBarStyled>
     )
@@ -172,45 +176,22 @@ const NavBarStyled = styled.nav`
 }
 
 
+@media only screen and (max-width: 768px) and (min-width: 320px){
 
-
-@media only screen and (max-width: 800px) {
-            .hero{
-                .nav-btn {
-                visibility: visible;
-                opacity: 1;
-	        }
-            .responsive_nav {
-		        transform: none;
-	        }
-            nav{
-            position: fixed;
-            top: 0;
-            left: 0;
-            height: 100%;
-            width: 100%;
-            opacity: 1;
-            display: flex;
-            align-items: center;
-            flex-direction: column;
-            justify-content: center;
-            gap: 1.5rem;
-            background-color: #000000;
-            transition: .8s;
-            transform: translateY(-100vh);
-            .nav-close-btn {
-                position: absolute;
-                top: 2rem;
-                right: 2rem;
-                color: #fff;
-            }
-        }
-
-            }
-            
-            
+    .navigation {
+        background: ${props => props.theme.colorBlack};
+        height: 80px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 1.5rem;
     }
 
+    .logo{
+        margin-left: -10px;
+        width: 120%;
+    }
+}
 `;
 
 export default NavBar
