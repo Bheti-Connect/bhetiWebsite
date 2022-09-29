@@ -96,7 +96,7 @@ const Investisseur = () => {
     // page visited
     let pagesVisited = currentPage * itemsPerPage
     // display items
-    let displayItems = data.slice(pagesVisited, pagesVisited + itemsPerPage).map(item => item )
+    let displayItems = query ? (data[5]) : (data.slice(pagesVisited, pagesVisited + itemsPerPage).map(item => item ))
     // number of page
     let pageCount = Math.ceil(data.length / itemsPerPage)
     // handle change page
