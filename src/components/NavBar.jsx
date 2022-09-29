@@ -58,16 +58,16 @@ const NavBar = () => {
                             >
                                 Connexion
                             </NavLink>
-                            <div className=' nav-btn-container'>
-                                <a href='https://airtable.com/shrxZL75lICeCINRm'>
-                                    <Button 
-                                        name={'Parler à un expert'}
-                                        icon={'fas fa-chevron-right'}
-                                        arrow={'arrow'}
-                                        blob={'blob'}
-                                    />
-                                </a>
-                        </div>
+                                <div className=' nav-btn-container'>
+                                    <a href='https://airtable.com/shrxZL75lICeCINRm'>
+                                        <Button 
+                                            name={'Parler à un expert'}
+                                            icon={'fas fa-chevron-right'}
+                                            arrow={'arrow'}
+                                            blob={'blob'}
+                                        />
+                                    </a>
+                                </div>
 
                         </div>
 
@@ -125,16 +125,15 @@ const NavBarStyled = styled.nav`
             }
         }
         .nav-menu {
-            display: block;
+            display: grid;
             grid-template-columns: repeat(5, auto);
             grid-gap: 10px;
             text-align: center;
             width: 70vw;
-            justify-content: end;
             margin-right: 2rem;
         }
         .menu-icon {
-            display: flex;
+            display: none;
 
             .fa-bars-staggered {
                 color: ${props => props.theme.colorBlack};
