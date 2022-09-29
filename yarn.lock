@@ -7408,8 +7408,7 @@
     "kleur" "^3.0.3"
     "sisteransi" "^1.0.5"
 
-
-"prop-types@^15.6.0", "prop-types@^15.6.2", "prop-types@^15.8.1":
+"prop-types@^15.6.0", "prop-types@^15.6.1", "prop-types@^15.6.2", "prop-types@^15.8.1":
   "integrity" "sha512-oj87CgZICdulUohogVAR7AjlC0327U4el4L6eAvOqCeudMDVU0NThNaV+b9Df4dXgSP1gXMTnPdhfe/2qDH5cg=="
   "resolved" "https://registry.npmjs.org/prop-types/-/prop-types-15.8.1.tgz"
   "version" "15.8.1"
@@ -7647,7 +7646,6 @@
   optionalDependencies:
     "fsevents" "^2.3.2"
 
-
 "react-select@^5.4.0":
   "integrity" "sha512-CjE9RFLUvChd5SdlfG4vqxZd55AZJRrLrHzkQyTYeHlpOztqcgnyftYAolJ0SGsBev6zAs6qFrjm6KU3eo2hzg=="
   "resolved" "https://registry.npmjs.org/react-select/-/react-select-5.4.0.tgz"
@@ -7671,8 +7669,7 @@
     "loose-envify" "^1.4.0"
     "prop-types" "^15.6.2"
 
-"react@*", "react@^16.8.0 || ^17.0.0 || ^18.0.0", "react@^18.0.0", "react@^18.2.0", "react@>= 16", "react@>= 16.8.0", "react@>=16.3", "react@>=16.6.0", "react@>=16.8", "react@>=16.8.0":
-
+"react@*", "react@^16 || ^17 || ^18", "react@^16.8.0 || ^17.0.0 || ^18.0.0", "react@^18.0.0", "react@^18.2.0", "react@>= 16", "react@>= 16.8.0", "react@>=16.3", "react@>=16.6.0", "react@>=16.8", "react@>=16.8.0":
   "version" "18.2.0"
   dependencies:
     "loose-envify" "^1.1.0"
