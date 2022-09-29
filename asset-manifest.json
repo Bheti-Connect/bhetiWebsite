@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.js": "/bhetiConnectProj/static/js/main.f295e3d4.js",
+    "main.js": "/bhetiConnectProj/static/js/main.0d9dc79c.js",
     "static/media/discussion.gif": "/bhetiConnectProj/static/media/discussion.c7fb7f18d8aaccb5a2e2.gif",
     "static/media/casseTete.gif": "/bhetiConnectProj/static/media/casseTete.016a12376414daead456.gif",
     "static/media/mediaImage.gif": "/bhetiConnectProj/static/media/mediaImage.92682c82241239f1d393.gif",
@@ -20,9 +20,9 @@
     "static/media/list.png": "/bhetiConnectProj/static/media/list.ec94b8c0db9d5ee23d8f.png",
     "static/media/contract.png": "/bhetiConnectProj/static/media/contract.3dba571f27e78ad47efb.png",
     "index.html": "/bhetiConnectProj/index.html",
-    "main.f295e3d4.js.map": "/bhetiConnectProj/static/js/main.f295e3d4.js.map"
+    "main.0d9dc79c.js.map": "/bhetiConnectProj/static/js/main.0d9dc79c.js.map"
   },
   "entrypoints": [
-    "static/js/main.f295e3d4.js"
+    "static/js/main.0d9dc79c.js"
   ]
 }
