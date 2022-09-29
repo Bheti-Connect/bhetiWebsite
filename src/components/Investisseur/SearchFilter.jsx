@@ -2,12 +2,26 @@ import React from 'react';
 import styled from 'styled-components';
 import {GoSearch} from 'react-icons/go';
 import {RiFilter3Fill} from 'react-icons/ri';
+import { useTheme } from '../../context/themeContext';
 
 const SearchFilter = ({setQuery}) => {
 
   const handleQuery = (e) => {
     setQuery(e.target.value)
   }
+
+  const handleFilter = (e) => {
+    if (e.currentTarget.classList.contains("filter-icon-none"))
+    {
+      e.currentTarget.classList.remove("filter-icon-none")
+      e.currentTarget.classList.add("filter-icon-active")
+    }else{
+      e.currentTarget.classList.add("filter-icon-none")
+      e.currentTarget.classList.remove("filter-icon-active")
+    }
+  }
+
+  const theme = useTheme()
 
   return (
     <SearchBox>
@@ -19,8 +33,10 @@ const SearchFilter = ({setQuery}) => {
 
 
       {/* Filter */}
-      <ContainerFilter>
+      <ContainerFilter theme={theme}>
+      <div className='filter-icon-none' onClick={handleFilter}>
         <RiFilter3Fill />
+      </div>
       </ContainerFilter>
     </SearchBox>
   )
@@ -90,6 +106,24 @@ const ContainerFilter = styled.div`
       top: 14px;
       right: 34px;
       font-size: 28px;
+
+      .filter-icon-active {
+        height: 30px;
+        background-color: ${props => props.theme.colorBheti};
+        color: white;
+        border-radius: 5px 5px 0 0 ;
+        transition: .5s ease;
+      }
+
+      .filter-icon-none {
+        height: 30px;
+        background-color: ${props => props.theme.colorGreyDark};
+        color: white;
+        border-radius: 5px 5px 0 0 ;
+        transition: .5s ease;
+      }
 `;
+
+
 
 export default SearchFilter
