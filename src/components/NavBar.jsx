@@ -1,77 +1,80 @@
-import { useRef } from 'react';
+import { useState } from 'react';
 import styled from 'styled-components'
-import { FaBars, FaTimes} from 'react-icons/fa'
 import Button from './Button';
 import theLogo from '../assets/images/logo.png';
 import { useTheme } from '../context/themeContext';
 import { NavLink } from 'react-router-dom';
 
-const NavBar = () => {
-    const navRef = useRef();
 
-    const showNavbar = () => {
-        navRef.current.classList.toggle("responsive_nav");
+const NavBar = () => {
+    // const navRef = useRef();
+    const [etat, setEtat] = useState({clicked: false});
+
+    // const showNavbar = () => {
+    //     navRef.current.classList.toggle("responsive_nav");
+    // }
+    const handleClick = () => {
+        setEtat({clicked: !etat.clicked})
     }
 
     const theme = useTheme();
     return (
         <NavBarStyled theme={theme}>
             <div className='hero'>
-            <div className='logo'>
-                    <NavLink to='/bhetiConnectProj'>
-                    <img
-                        src={theLogo}
-                        className='theLogo'
-                        alt='Le logo'
-                    />
-                    </NavLink>
+                <div className='logo'>
+                        <NavLink to='/bhetiConnectProj'>
+                            <img
+                                src={theLogo}
+                                className='theLogo'
+                                alt='Le logo'
+                            />
+                        </NavLink>
                 </div>
-            <nav ref={navRef} className='navigation navbar'>
-                
-                <NavLink
-                    to='/entrepreneur'
-                    className={({ isActive }) => (isActive ? 'link active' : 'link')}
-                >
-                    Entrepreneur
-                </NavLink>
-                <NavLink
-                    to='/investisseur'
-                    className={({ isActive }) => (isActive ? 'link active' : 'link')}
-                >
-                    Investisseur
-                </NavLink>
-                <a href='https://bheticonnect.super.site/'>
-                    <NavLink
-                        to=''
-                        className={({ isActive }) => (isActive ? 'link active' : 'link')}
-                    >
-                        Média
-                    </NavLink>
-                </a>
-                <NavLink
-                    to='/connexion'
-                    className={({ isActive }) => (isActive ? 'link active' : 'link')}
-                >
-                    Connexion
-                </NavLink>
-                    <div className='nav-btn-container'>
-                            <a href='https://airtable.com/shrxZL75lICeCINRm'>
-                                <Button 
-                                    name={'Parler à un expert'}
-                                    icon={'fas fa-chevron-right'}
-                                    arrow={'arrow'}
-                                    blob={'blob'}
-                                />
+                <nav  className='navigation navbar'>
+                        <div className={etat.clicked ? 'nav-menu active' : 'nav-menu'}>
+                            <NavLink
+                                to='/entrepreneur'
+                                className={({ isActive }) => (isActive ? 'link active' : 'link')}
+                            >
+                                Entrepreneur
+                            </NavLink>
+                            <NavLink
+                                to='/investisseur'
+                                className={({ isActive }) => (isActive ? 'link active' : 'link')}
+                            >
+                                Investisseur
+                            </NavLink>
+                            <a href='https://bheticonnect.super.site/'>
+                                <NavLink
+                                    to=''
+                                    className={({ isActive }) => (isActive ? 'link active' : 'link')}
+                                >
+                                    Média 
+                                </NavLink>
                             </a>
-                    </div>
-                
-                    <button className='nav-btn nav-close-btn' onClick={showNavbar}>
-                        <FaTimes />
-                    </button>
-                </nav>
-                <button className='nav-btn' onClick={showNavbar}>
-                    <FaBars />
-                </button>
+                            <NavLink
+                                to='/connexion'
+                                className={({ isActive }) => (isActive ? 'link active' : 'link')}
+                            >
+                                Connexion
+                            </NavLink>
+                            <div className=' nav-btn-container'>
+                                <a href='https://airtable.com/shrxZL75lICeCINRm'>
+                                    <Button 
+                                        name={'Parler à un expert'}
+                                        icon={'fas fa-chevron-right'}
+                                        arrow={'arrow'}
+                                        blob={'blob'}
+                                    />
+                                </a>
+                        </div>
+
+                        </div>
+
+                        <div className='menu-icon' onClick={handleClick}> 
+                            <i className={etat.clicked ? 'fa-solid fa-xmark' : 'fa-solid fa-bars-staggered'}></i>
+                        </div>
+                    </nav>
             </div>
         </NavBarStyled>
     )
@@ -87,12 +90,7 @@ const NavBarStyled = styled.nav`
 	padding: 0 2rem;
 	background-color: var(--mainColor);
 	color: var(--textColor);
-    .responsive_nav {
-		transform: none;
-	}
-        .responsive_nav{
-        transform: none;
-    }
+    
     .logo{
             display: flex;
             align-items: center;
@@ -126,23 +124,30 @@ const NavBarStyled = styled.nav`
                 visibility: visible;
             }
         }
-        
+        .nav-menu {
+            display: block;
+            grid-template-columns: repeat(5, auto);
+            grid-gap: 10px;
+            text-align: center;
+            width: 70vw;
+            justify-content: end;
+            margin-right: 2rem;
+        }
+        .menu-icon {
+            display: flex;
+
+            .fa-bars-staggered {
+                color: ${props => props.theme.colorBlack};
+                margin-left: -15px;
+                margin-top: 7%;
+            }
+        }
         }
 
         .nav-btn-container{
             right: auto;
         }
-        .nav-btn {
-        padding: 5px;
-        cursor: pointer;
-        background: transparent;
-        border: none;
-        outline: none;
-        color: #000000 ;
-        visibility: hidden;
-        opacity: 0;
-        font-size: 1.8rem;
-    }
+        
     
 }
 
@@ -172,45 +177,62 @@ const NavBarStyled = styled.nav`
 }
 
 
+@media only screen and (max-width: 960px) and (min-width: 320px){
 
-
-@media only screen and (max-width: 800px) {
-            .hero{
-                .nav-btn {
-                visibility: visible;
-                opacity: 1;
-	        }
-            .responsive_nav {
-		        transform: none;
-	        }
-            nav{
-            position: fixed;
-            top: 0;
-            left: 0;
-            height: 100%;
-            width: 100%;
-            opacity: 1;
+    .navigation {
+        position: relative;
+        border-bottom: none;
+        .nav-menu{
             display: flex;
-            align-items: center;
             flex-direction: column;
-            justify-content: center;
-            gap: 1.5rem;
-            background-color: #000000;
-            transition: .8s;
-            transform: translateY(-100vh);
-            .nav-close-btn {
-                position: absolute;
-                top: 2rem;
-                right: 2rem;
-                color: #fff;
+            height: 400px;
+            position: absolute;
+            top:  80px;
+            left: -200%;
+            opacity: 1;
+            transition: all 0.7s ease;
+
+            .link{
+                text-align: center;
+                padding: 2rem;
+                width: 100%;
+                display: table;
+                color: ${props => props.theme.colorWhite};
+            }
+            .link:hover{
+                background-color: ${props => props.theme.colorBheti} ;
+                border-radius: 0;
             }
         }
 
-            }
-            
-            
+        .nav-menu.active {
+            background: #641E16;
+            width: 190%;
+            left: -300px;
+            opacity: 1;
+            transition: all 0.5s ease;
+            z-index: 3;
+        }
+        .nav-btn-container{
+            margin-left: 90px;
+        }
+        
     }
+    .menu-icon {
+            position: absolute;
+            display: none;
+            top: 2px;
+            right: 0;
+            transform: translate(-100%, 100%);
+            font-size: 1.8rem;
+            cursor: pointer;
+            .fa-xmark{
+                color: ${props => props.theme.colorBlack};
+                font-size: 1.9rem;
 
+            }
+        }
+}
 `;
 
 export default NavBar

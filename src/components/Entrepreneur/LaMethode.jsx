@@ -105,6 +105,17 @@ const LaMethodeStyled = styled.section`
                     margin-top: 25%;
 	            }
     }
+
+    @media only screen and (max-width: 2500px) and (min-width: 1800px) {
+
+
+        .right-container{
+            width: 135%;
+            height: 200px;
+        }
+
+    }
+
 `;
 
 export default LaMethode
