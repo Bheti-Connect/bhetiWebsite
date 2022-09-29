@@ -50,22 +50,24 @@ cursor: pointer;
 `
 const CardBody = styled.div`
 padding: 10px;
+
 h3{
   text-transform: uppercase;
   font-family: georgia, serif;
+  font-size: 16px;
 }
 
 ul{
   display: flex;
   list-style:none;
-  font-size: 13px;
+  font-size: 12px;
   margin: 5px;
   padding:0;
 }
 
 ul li {
   margin-right:8px;
-  background-color: blue;
+  background-color: #002B5B;
   color: white;
   border-radius: 40px;
   padding:2px 5px;
@@ -78,7 +80,12 @@ ul li {
   padding: 2px 0;
   margin-top: 3px;
   text-align:center;
+  font-size: 12px;
   width: 30%;
+}
+
+.price{
+  font-size: 13px;
 }
 
 `
