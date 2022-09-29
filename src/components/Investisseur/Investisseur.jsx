@@ -6,47 +6,66 @@ import { GrAppsRounded } from "react-icons/gr";
 import ReactPaginate from 'react-paginate';
 import SearchFilter from './SearchFilter';
 import Cards from './Cards';
+//import axios from 'axios';
+//import CardModal from './CardModal';
 
 const Investisseur = () => {
     const [currentPage, setCurrentPage] = useState(0);
-    const [itemsPerPage, setItemsPerPage] = useState(10);
+    const [itemsPerPage, setItemsPerPage] = useState(20);
     const [ind, setInd] = useState(0)
     // query useState for search
-    const [query, setQuery] = useState(null)
+    const [query, setQuery] = useState("")
+    // select card useState
+    const [select, setSelect] = useState(null)
     // cards data
     const [data, setData] = useState([])
     // search items of data
-    const [searchItems, setSearchItems] = useState([])
+    //const [searchItems, setSearchItems] = useState([])
 
     const theme = useTheme()
 
-    // Add data in data useState
-    const addData = () => {
-        let tab = []
+    // GET data from API
+    /*
+    const getData = () => {
+      let tab = []
+      for(var i = 1; i<=20; i++)
+      {
+        console.log(i)
+        let source = "https://" + `picsum.photos/id/${i}/info`;
+        axios.get(source).then(res => {
+          tab.push(res.data)
+        }).catch(error => console.log("Erreur de l'url"))
+      }
+      setData(tab)
+    }
+    */
+
+    // Add data in Card
+    const addDataCard = () => {
+      let tab = []
         if(ind == 1)
         {
           // Startup
-          for(let i = 26; i<=100; i++)
+          for(let i = 1; i<=50; i++)
           {
-              tab.push(<Cards key={i} number={i}/>)
+            tab.push(<Cards key={i} item={i} setSelect={setSelect}/>)
           }
 
         }else if (ind == 2){
           // PME
-          for(let i = 105; i<=150; i++)
+          for(let i = 51; i<=100; i++)
           {
-              tab.push(<Cards key={i} number={i}/>)
+            tab.push(<Cards key={i} item={i} setSelect={setSelect}/>)
           }
         }
         else{
-          for(let i = 1; i<=25; i++)
+          for(let i =1; i<=100; i++)
           {
-              tab.push(<Cards key={i} number={i}/>)
+            tab.push(<Cards key={i} item={i} setSelect={setSelect}/>)
           }
         }
         setData(tab)
     }
-    
 
     // handle menu : tous, startup and PME
     const handleMenu = (e) => {
@@ -77,7 +96,7 @@ const Investisseur = () => {
     // page visited
     let pagesVisited = currentPage * itemsPerPage
     // display items
-    let displayItems = data.slice(pagesVisited, pagesVisited + itemsPerPage).map(item => item)
+    let displayItems = data.slice(pagesVisited, pagesVisited + itemsPerPage).map(item => item )
     // number of page
     let pageCount = Math.ceil(data.length / itemsPerPage)
     // handle change page
@@ -85,30 +104,20 @@ const Investisseur = () => {
         setCurrentPage(selected)
     }
 
-
-
     useEffect(() => {
-      addData()
+      //getData()
+      addDataCard()
     }, [])
 
     useEffect(() => {
 
-      addData()
+      addDataCard()
 
       if (currentPage != 0)
       {
         setCurrentPage(0)
       }
     }, [ind])
-
-/*
-    useEffect(() => {
-      setSearchItems(<Cards number={2}/>)
-    }, [query])
-
-    */
-
-
 
 
     return (
@@ -129,6 +138,8 @@ const Investisseur = () => {
                         {/* PME */}
                         <li><GrAppsRounded/>PME</li>
                     </ul>
+
+                    
                     
                     {/* Filter and search */}
                     <SearchFilter setQuery={setQuery} />
@@ -139,36 +150,40 @@ const Investisseur = () => {
             </HeaderText>
 
 
-            <AllProject>
+            <AllProject theme={theme}>
 
-            <AllCards>
+              <AllCards>
 
-            {
-                displayItems
-            }
+              {
+                  displayItems
+              }
 
-            </AllCards>
+              </AllCards>
 
-            {/* Pagination */}
+              {/* Pagination */}
 
-            <ReactPaginate 
-            previousLabel={"« Précédent"}
-            nextLabel={"Suivant »"}
-            pageCount={pageCount}
-            onPageChange={changePage}
-            breakLabel="..."
-            pageRangeDisplayed={7}
-            marginPagesDisplayed={1}
-            containerClassName={"containerClassName"}
-            pageClassName={"pageClassName"}
-            previousLinkClassName={"previousLinkClassName"}
-            nextLinkClassName={"nextLinkClassName"}
-            disabledClassName={"disabledClassName"}
-            activeClassName={"activeClassName"}
-            />
+              <ReactPaginate 
+              previousLabel={"« Précédent"}
+              nextLabel={"Suivant »"}
+              pageCount={pageCount}
+              onPageChange={changePage}
+              breakLabel="..."
+              pageRangeDisplayed={7}
+              marginPagesDisplayed={1}
+              containerClassName={"containerClassName"}
+              pageClassName={"pageClassName"}
+              previousLinkClassName={"previousLinkClassName"}
+              nextLinkClassName={"nextLinkClassName"}
+              disabledClassName={"disabledClassName"}
+              activeClassName={"activeClassName"}
+              />
             
 
             </AllProject>
+
+            {/*
+              <CardModal />
+            */}
 
 
         </InvestisseurStyled>
@@ -198,6 +213,7 @@ const AllProject = styled.div`
   justify-content: center;
   align-items:center;
   user-select: none;
+  font-size: 13px;
 }
 
 .containerClassName li {
@@ -205,41 +221,49 @@ const AllProject = styled.div`
 }
 
 .pageClassName{
-  background-color: gray;
+  background-color: ${props => props.theme.colorGrey5};
   border-radius: 5px;
-  color: white;
   cursor: pointer;
   padding: 5px;
   transition: .3s ease;
 
 
   &:hover{
-    background-color: purple;
+    background-color: ${props => props.theme.colorBheti};
+  }
+
+  a{
+    color:white;
   }
 }
 
 .previousLinkClassName{
-  background-color: gray;
+  background-color: ${props => props.theme.colorGrey5};
   padding: 5px;
   border-radius: 5px;
   color: white;
   cursor: pointer;
+  &:hover{
+    background-color: ${props => props.theme.colorBheti};
+  }
 }
 
 .nextLinkClassName{
-  background-color: gray;
+  background-color: ${props => props.theme.colorGrey5};
   padding: 5px;
   border-radius: 5px;
   color: white;
   cursor: pointer;
+  &:hover{
+    background-color: ${props => props.theme.colorBheti};
+  }
 }
 
 
 .activeClassName{
-  background-color: purple;
+  background-color: ${props => props.theme.colorBheti};
   color: white;
   border-radius: 50px;
-  padding: 5px;
 }
 
 .disabledClassName{

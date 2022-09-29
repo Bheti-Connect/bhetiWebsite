@@ -2,18 +2,22 @@ import React from 'react';
 import styled from 'styled-components';
 
 
-const Cards = ({number}) => {
+const Cards = ({item, setSelect}) => {
 
-    let link = "https://" + `picsum.photos/id/${number}/200/300`;
+  let source = "https://" + `picsum.photos/id/${item}/200/300`;
+
+  const handleSelect = () => {
+    console.log(item)
+  }
 
   return (
-    <CardItem>
+    <CardItem onClick={handleSelect}>
           <CardHeader>
-            <img src={link} alt='project'/>
+            <img src={source} alt='project'/>
           </CardHeader>
 
           <CardBody>
-          <h3>Project {number}</h3>
+          <h3>Project {item}</h3>
           <ul>
             <li>Mobility</li>
             <li>Automobile</li>
