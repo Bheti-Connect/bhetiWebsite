@@ -85,11 +85,7 @@ const HeaderStyled = styled.header`
                     -webkit-background-clip: text;
                     color: transparent;
                 }
-                @media only screen and (max-width: 376px){
-                    font-size: 1.9rem;
-                    margin-top: 10%;
-                    margin-left: 4%;
-                }
+                
             }
             p{
                 font-size: 1.1rem;
@@ -177,13 +173,14 @@ const HeaderStyled = styled.header`
             //------------- add others
 
             @media only screen and (max-width: 600px) and (min-width: 425px) {
-                    margin-top: 4%;
-                    width: 200px;
+                    margin-top: -10%;
+                    margin-left: -9.6%;
+                    text-align: justify;
                     h2{
-                        font-size: 30px;
+                        font-size: 37px;
                     }
                     p{
-                        font-size: 15px;
+                        font-size: 16px;
                     }
                     
             }
@@ -204,7 +201,8 @@ const HeaderStyled = styled.header`
                 width: 450px;
                 .button-demo {
                     position: absolute;
-                    top: 220%;
+                    top: 190%;
+                    margin-left: 26%;
                 }
             }
         }
@@ -272,7 +270,13 @@ const HeaderStyled = styled.header`
                     height: 250px;
                 }
                 @media only screen and (max-width: 600px) and (min-width: 425px){
-                    display: none;
+                    width: 150px;
+                    height: 200px;
+                    margin-right: 300px;
+                    border-bottom-right-radius: 5px;
+                border-bottom-left-radius: 30px;
+                border-top-right-radius: 5px;
+                border-top-left-radius: 5px;
                 }
                 
             }
@@ -335,11 +339,10 @@ const HeaderStyled = styled.header`
                     height: 300px;
                 }
                 @media only screen and (max-width: 600px) and (min-width: 425px){
-                    position: absolute;
-                    top: 280%;
-                    width: 400px;
-                    height: 300px;
-                    border-bottom-right-radius: 40px;
+                    top: 0cm;
+                    width: 160px;
+                    height: 200px;
+                    border-bottom-right-radius: 30px;
                     border-bottom-left-radius: 5px;
                     border-top-left-radius: 5px;
                     border-top-right-radius: 5px;
@@ -367,7 +370,8 @@ const HeaderStyled = styled.header`
                 margin-left: 55px;
             }
             @media only screen and (max-width: 600px) and (min-width: 425px){
-                margin-left: 30px;
+                margin-left: -3%;
+                margin-top: 30%;
             }
         }
         @media only screen and (max-width: 2560px) and (min-width: 1800px) {
@@ -377,16 +381,16 @@ const HeaderStyled = styled.header`
                     margin-top: 1%;
                 }
         @media only screen and (max-width: 1440px) and (min-width: 1350px) {
-                margin-left: -10px; 
+                margin-left: -10px;
             }
         @media only screen and (max-width: 1350px) and (min-width: 1250px) {
-                margin-left: -30px; 
+                margin-left: -30px;
             }
         @media only screen and (max-width: 1250px) and (min-width: 1024px) {
-                margin-left: -50px; 
+                margin-left: -50px;
             }
         @media only screen and (max-width: 1024px) and (min-width: 900px) {
-                margin-left: -150px; 
+                margin-left: -150px;
             }
         @media only screen and (max-width: 600px) and (min-width: 425px) {
             display: flex ;
@@ -447,6 +451,9 @@ const HeaderStyled = styled.header`
             }
         @media only screen and (max-width: 1800px) and (min-width: 1440px){
                     margin-bottom: 3%;
+            }
+            @media only screen and (max-width: 600px) and (min-width: 425px){
+                    margin-bottom: -2%;
             }
         @media only screen and (max-width: 376px) {
                     margin-bottom: 50%;

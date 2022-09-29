@@ -58,9 +58,7 @@ const NavBar = () => {
                             >
                                 Connexion
                             </NavLink>
-                        </div>
-
-                        <div className='nav-btn-container'>
+                            <div className=' nav-btn-container'>
                                 <a href='https://airtable.com/shrxZL75lICeCINRm'>
                                     <Button 
                                         name={'Parler à un expert'}
@@ -70,6 +68,9 @@ const NavBar = () => {
                                     />
                                 </a>
                         </div>
+
+                        </div>
+
                         <div className='menu-icon' onClick={handleClick}> 
                             <i className={etat.clicked ? 'fa-solid fa-xmark' : 'fa-solid fa-bars-staggered'}></i>
                         </div>
@@ -89,12 +90,7 @@ const NavBarStyled = styled.nav`
 	padding: 0 2rem;
 	background-color: var(--mainColor);
 	color: var(--textColor);
-    .responsive_nav {
-		transform: none;
-	}
-        .responsive_nav{
-        transform: none;
-    }
+    
     .logo{
             display: flex;
             align-items: center;
@@ -129,7 +125,7 @@ const NavBarStyled = styled.nav`
             }
         }
         .nav-menu {
-            display: grid;
+            display: block;
             grid-template-columns: repeat(5, auto);
             grid-gap: 10px;
             text-align: center;
@@ -138,9 +134,12 @@ const NavBarStyled = styled.nav`
             margin-right: 2rem;
         }
         .menu-icon {
-            display: none;
+            display: flex;
+
             .fa-bars-staggered {
-                color: ${props => props.theme.colorBlack} ;
+                color: ${props => props.theme.colorBlack};
+                margin-left: -15px;
+                margin-top: 7%;
             }
         }
         }
@@ -148,17 +147,7 @@ const NavBarStyled = styled.nav`
         .nav-btn-container{
             right: auto;
         }
-        .nav-btn {
-        padding: 5px;
-        cursor: pointer;
-        background: transparent;
-        border: none;
-        outline: none;
-        color: #000000 ;
-        visibility: hidden;
-        opacity: 0;
-        font-size: 1.8rem;
-    }
+        
     
 }
 
@@ -190,49 +179,59 @@ const NavBarStyled = styled.nav`
 
 @media only screen and (max-width: 960px) and (min-width: 320px){
 
-
     .navigation {
         position: relative;
-        .nav-menu {
+        border-bottom: none;
+        .nav-menu{
             display: flex;
             flex-direction: column;
-            width: 100%;
-            height: 500px;
+            height: 400px;
             position: absolute;
             top:  80px;
-            left: -100px;
+            left: -200%;
             opacity: 1;
-            transition: all 0.5s ease;
+            transition: all 0.7s ease;
 
             .link{
                 text-align: center;
                 padding: 2rem;
                 width: 100%;
                 display: table;
+                color: ${props => props.theme.colorWhite};
             }
             .link:hover{
-                background-color: #7577FA;
+                background-color: ${props => props.theme.colorBheti} ;
                 border-radius: 0;
             }
         }
 
-        .active {
-            background: #6668f4;
-            left: 0;
+        .nav-menu.active {
+            background: #641E16;
+            width: 190%;
+            left: -300px;
             opacity: 1;
             transition: all 0.5s ease;
-            z-index: 1;
+            z-index: 3;
         }
-        .menu-icon{
-            display: flex;
+        .nav-btn-container{
+            margin-left: 90px;
+        }
+        
+    }
+    .menu-icon {
             position: absolute;
-            top: 0;
-            right: 90px;
-            transform: translate(-100%, 60%);
+            display: none;
+            top: 2px;
+            right: 0;
+            transform: translate(-100%, 100%);
             font-size: 1.8rem;
             cursor: pointer;
+            .fa-xmark{
+                color: ${props => props.theme.colorBlack};
+                font-size: 1.9rem;
+
+            }
         }
-    }
 }
 `;
 
