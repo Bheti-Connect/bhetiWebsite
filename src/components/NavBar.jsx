@@ -134,6 +134,10 @@ const NavBarStyled = styled.nav`
             width: 70vw;
             justify-content: end;
             margin-right: 2rem;
+            @media only screen and (min-width: 768px) {
+                display: grid;
+                justify-content: space-around;
+            }
         }
         .menu-icon {
             display: flex;
@@ -180,7 +184,6 @@ const NavBarStyled = styled.nav`
 
 
 @media only screen and (max-width: 960px){
-
     .navigation {
         position: relative;
         border-bottom: none;
