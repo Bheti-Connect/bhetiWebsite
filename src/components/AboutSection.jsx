@@ -81,8 +81,13 @@ const AboutSectionStyled = styled.section`
             padding: 1.5rem 0;
             font-size: 17.7px;
             color: ${props => props.theme.colorGrey5};
-            
+            @media only screen and (max-width: 525px) and (min-width: 425px){
+                padding: 1rem 0;
+                font-size: 14px;
+                margin-left: 35px;
+            }
         }
+        
         .title{
             margin-left: 10%;
             margin-bottom: 3%;
@@ -106,6 +111,16 @@ const AboutSectionStyled = styled.section`
                 font-size: 1.6rem;
                 margin-bottom: 9%;
             }
+            @media only screen and (max-width: 525px) and (min-width: 425px){
+                font-size: 1.35rem;
+                margin-bottom: 9%;
+                margin-top: -30%;
+            }
+            @media only screen and (max-width: 425px) and (min-width: 320px){
+                font-size: 1.35rem;
+                margin-bottom: 9%;
+                margin-top: -30%;
+            }
         }
         .about-info{
             .about-info-item{
@@ -113,11 +128,15 @@ const AboutSectionStyled = styled.section`
                 grid-template-columns: 120px auto;
                 margin-bottom: 1.5rem;
                 p{
-                    padding:.6rem 0;
+                    padding: .7rem 0;
                 }
                 h5{
                     font-size: 1.3rem;
                     color: ${props => props.theme.colorWhite};
+                    @media only screen and (max-width: 525px) and (min-width: 425px){
+                        font-size: 16.3px;
+                        margin-top: 30px;
+                    }
                 }
                 .icon{
                     background-color: ${props => props.theme.colorWhite};
@@ -148,6 +167,24 @@ const AboutSectionStyled = styled.section`
                 @media only screen and (max-width: 2560px) and (min-width: 1800px) {
                     margin-top: 70px;
                 }
+                @media only screen and (max-width: 525px) and (min-width: 425px) {
+                    .icon {
+                        display: none ;
+                    }
+                    .text-container {
+                        margin-top: 10%;
+                        display: contents;
+                    }
+                }
+                @media only screen and (max-width: 425px) and (min-width: 320px) {
+                    .icon {
+                        display: none ;
+                    }
+                    .text-container {
+                        margin-top: 10%;
+                        display: contents;
+                    }
+                }
             }
         }
         @media only screen and (max-width: 2560px) and (min-width: 1800px) {
@@ -162,7 +199,16 @@ const AboutSectionStyled = styled.section`
                 width: 330px;
                 margin-left: 5%;
 	            }
+        @media only screen and (max-width: 525px) and (min-width: 425px) {
+            width: 160%;
+            bottom: 5rem;
+        }
+        @media only screen and (max-width: 425px) and (min-width: 320px) {
+            width: 160%;
+            bottom: 5rem;
+        }
     }
+
     .right-about{
         position: relative;
         display: flex;
@@ -207,6 +253,12 @@ const AboutSectionStyled = styled.section`
                     width: 430px;
                     height: 550px;
             }
+            @media only screen and (max-width: 525px) and (min-width: 425px){
+                    display: none;
+            }
+            @media only screen and (max-width: 425px) and (min-width: 320px){
+                    display: none;
+            }
         }
         .box-img{
             position: absolute;
@@ -243,15 +295,19 @@ const AboutSectionStyled = styled.section`
             }
             @media only screen and (max-width: 1250px) and (min-width: 1024px){
                     margin-left: 6.5%;
-                    
+            }
+            @media only screen and (max-width: 525px) and (min-width: 425px){
+                    display: none;
+            }
+            @media only screen and (max-width: 425px) and (min-width: 320px){
+                    display: none;
             }
         }
+        @media only screen and (max-width: 1250px) and (min-width: 1024px){
+                    margin-left: 6.5%;
+            }
     }
-    @media screen and (max-width: 420px) {
-                body {
-                    width: 400%;
-                }
-        }
+    
 `;
 
 export default AboutSection

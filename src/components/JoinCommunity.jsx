@@ -9,7 +9,7 @@ const JoinCommunity = () => {
     const theme = useTheme();
     return (
 
-        <JoinCommunityStyled className='u-pad-lg-2' theme={theme}>
+        <JoinCommunityStyled className='u-pad-lg-2 community' theme={theme}>
             <div className='title-con'>
                 <Title 
                     name={'Rejoignez notre communauté'}
@@ -50,6 +50,12 @@ const JoinCommunity = () => {
 }
 
 const JoinCommunityStyled = styled.section`
+    
+    .community {
+        width: 10px;
+    }
+
+
     .title-con{
         width: 1000px;
         @media only screen and (max-width: 1440px) and (min-width: 1350px) {
@@ -62,6 +68,10 @@ const JoinCommunityStyled = styled.section`
         @media only screen and (max-width: 1250px) and (min-width: 1024px) {
             margin-left: -210px;
             width: 1000px;
+        }
+        @media only screen and (max-width: 525px) and (min-width: 425px) {
+            margin-left: -200px;
+            width: 350px;
         }
     }
     .latest-container{
@@ -87,6 +97,10 @@ const JoinCommunityStyled = styled.section`
         @media only screen and (max-width: 1250px) and (min-width: 1024px) {
             width: 900px;
             margin-left: -160px;
+        }
+        @media only screen and (max-width: 525px) and (min-width: 425px) {
+            width: 505px;
+            margin-left: -300px;
         }
         .latest-content{
             display: grid;
@@ -120,6 +134,12 @@ const JoinCommunityStyled = styled.section`
                     width: 290px;
                     height: 200px;
                     margin-left: -120px;
+                }
+                @media only screen and (max-width: 525px) and (min-width: 425px) {
+                    width: 380px;
+                    height: 120px;
+                    margin-left: -100px;
+                    margin-top: -57px;
                 }
             }
             .latest-text{
@@ -172,6 +192,13 @@ const JoinCommunityStyled = styled.section`
                     margin-left: -23px;
                     margin-top: -10%;
                 }
+                @media only screen and (max-width: 525px) and (min-width: 425px) {
+                    width: 400px;
+                    height: 280px;
+                    margin-left: -200px;
+                    margin-top: 40%;
+                    
+                }
             }
         }
     }
@@ -199,6 +226,5 @@ const JoinCommunityStyled = styled.section`
         }
     }
 `;
-
 
 export default JoinCommunity;

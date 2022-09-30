@@ -10,7 +10,7 @@ import footerLogo from '../assets/images/footer-logo.png'
 const Footer = () => {
     const theme = useTheme();
     return (
-        <FooterSectionStyled className='u-pad-lg-2' theme={theme}>
+        <FooterSectionStyled className='' theme={theme}>
             <nav className="bottom-navigation">
                 <ul className="logo-con">
                     <div className="logo">
@@ -104,7 +104,9 @@ const Footer = () => {
 }
 
 const FooterSectionStyled = styled.footer`
-    
+        @media only screen and (max-width: 525px) and (min-width: 425px){
+            width: 500px;
+    } 
     background-color: ${props => props.theme.colorBg3};
     padding-top: 6rem !important;
     color: ${props => props.theme.colorFont};
@@ -169,7 +171,8 @@ const FooterSectionStyled = styled.footer`
             .logo img{
                 width: 12%;
             }
-        }
+
+    }
         .logo-con p{
             color: ${props => props.theme.colorGrey6};
         }

@@ -75,16 +75,28 @@ const EconomicNewsStyled = styled.section`
                     height: 2px;
                     background-color: ${props => props.theme.colorAccent};
                 }
+                @media only screen and (max-width: 525px) and (min-width: 425px) {
+                    font-size: 1.5rem;
+                }
             }
             p{
                 color: ${props => props.theme.colorGrey4};
                 padding-bottom: 2rem;
+                @media only screen and (max-width: 525px) and (min-width: 425px){
+                    font-size: 15px ;
+                }
+            }
+            @media only screen and (max-width: 525px) and (min-width: 425px) {
+                width: 320px;
             }
         }
     }
-    @media screen and (max-width: 420px) {
-                width: 100%;
-        }
+    @media only screen and (max-width: 425px) and (min-width: 320px) {
+                    h3 {
+                    font-size: 1rem; 
+                }
+                        
+                }
 `;
 
 export default EconomicNews
