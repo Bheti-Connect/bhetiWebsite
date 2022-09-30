@@ -21,12 +21,19 @@ const TitleStyled = styled.div`
             font-size: 28px;
             margin-top: -10%;
         }
+        @media only screen and (max-width: 425px) and (min-width: 320px){
+            font-size: 33px;
+            margin-top: -10%;
+        }
     }
     p{
         text-align: justify;
         text-justify: inter-word;
         @media only screen and (max-width: 525px) and (min-width: 425px){
             font-size: 15px;
+    }
+    @media only screen and (max-width: 425px) and (min-width: 320px){
+            font-size: 16px;
     }
 }
 `;

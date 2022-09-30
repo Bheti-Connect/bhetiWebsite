@@ -52,11 +52,9 @@ const HeaderStyled = styled.header`
     @media only screen and (max-width: 1024px) and (min-width: 900px){
         height: 100vh;
     }
-    .u-pad-lg{
-        @media only screen and (max-width: 375px) {
-                    padding: 0rem 0rem;
-                }
-        }
+    @media only screen and (max-width: 425px) and (min-width: 325px){
+        height: 90vh;
+    }
     .header-content{
         display: grid;
         grid-template-columns: repeat(2, 1fr);
@@ -219,7 +217,8 @@ const HeaderStyled = styled.header`
                 .button-demo {
                     position: absolute;
                     top: 190%;
-                    margin-left: 20%;
+                    margin-left: 3%;
+                    width: 280px;
                 }
             }
         }
@@ -484,7 +483,7 @@ const HeaderStyled = styled.header`
                     margin-bottom: -2%;
             }
         @media only screen and (max-width: 425px) and (min-width: 320px){
-                    margin-bottom: 10%;
+                    margin-bottom: 1%;
             }
     }
 

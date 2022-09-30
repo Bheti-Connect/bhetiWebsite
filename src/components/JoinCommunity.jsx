@@ -73,6 +73,10 @@ const JoinCommunityStyled = styled.section`
             margin-left: -200px;
             width: 350px;
         }
+        @media only screen and (max-width: 425px) and (min-width: 320px) {
+            margin-left: -255px;
+            width: 320px;
+        }
     }
     .latest-container{
         margin-top: 1.5rem;
@@ -100,6 +104,10 @@ const JoinCommunityStyled = styled.section`
         }
         @media only screen and (max-width: 525px) and (min-width: 425px) {
             width: 505px;
+            margin-left: -300px;
+        }
+        @media only screen and (max-width: 425px) and (min-width: 320px) {
+            width: 400px;
             margin-left: -300px;
         }
         .latest-content{
@@ -141,6 +149,12 @@ const JoinCommunityStyled = styled.section`
                     margin-left: -100px;
                     margin-top: -57px;
                 }
+                @media only screen and (max-width: 425px) and (min-width: 320px) {
+                    width: 320px;
+                    height: 100px;
+                    margin-left: -120px;
+                    margin-top: -57px;
+                }
             }
             .latest-text{
                 width: 500px;
@@ -161,6 +175,9 @@ const JoinCommunityStyled = styled.section`
                 }
                 a{
                     margin-left: 25%;
+                    @media only screen and (max-width: 425px) and (min-width: 320px){
+                        margin-left: 1%;
+                    }
                 }
                 @media only screen and (max-width: 2560px) and (min-width: 1800px) {
                     width: 600px;
@@ -197,7 +214,12 @@ const JoinCommunityStyled = styled.section`
                     height: 280px;
                     margin-left: -200px;
                     margin-top: 40%;
-                    
+                }
+                @media only screen and (max-width: 425px) and (min-width: 320px) {
+                    width: 300px;
+                    height: 300px;
+                    margin-left: -150px;
+                    margin-top: 60%;
                 }
             }
         }

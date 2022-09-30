@@ -50,11 +50,15 @@ const MethodSection = () => {
 
 const MethodSectionStyled = styled.section`
     margin: 50px 80px;
+
     .methods-con{
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
         grid-gap: 2rem;
         padding-top: 3rem;
+        @media only screen and (max-width: 425px) and (min-width: 320px){
+            width: 15px;
+    }
     }
     
 `;
