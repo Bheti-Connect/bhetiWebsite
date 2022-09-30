@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faXmark } from '@fortawesome/free-solid-svg-icons';
 
-const CardModal = ({setModal}) => {
+const CardModal = ({select, setModal}) => {
 
 
 
@@ -13,11 +13,10 @@ const CardModal = ({setModal}) => {
             <div>
                 <div onClick={() => setModal(false)} className="modal-close"><FontAwesomeIcon icon={faXmark} size="lg"/></div>
                 <Header>
-                  <p>Project 1</p>
+                  <p>Project {select}</p>
                 </Header>
 
                 <Body>
-
 
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate commodi quasi deleniti consequatur, sit quae adipisci mollitia dignissimos recusandae sapiente officia a nihil at, asperiores numquam quas eum temporibus dolorum.
                 Temporibus velit veniam, ratione consequuntur dicta magnam minima excepturi sed! Libero similique nesciunt adipisci ipsum cumque perferendis nostrum, atque temporibus rerum nisi architecto, dignissimos et tenetur eius excepturi vitae eum.
@@ -96,35 +95,9 @@ p {
 
 const Body = styled.div`
 
+text-align: justify;
 
 `;
-
-  
-  
-  /*
-  
-  body {
-    font-family: apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans,
-      Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
-    font-weight: 600;
-    color: black;
-    
-  }
-   a {
-    color: inherit;
-    text-decoration: none;
-  }
-  .modal-window div:not(:last-of-type) {
-    margin-bottom: 15px;
-  }
-  
-  
-  
-  small {
-    color: lightgray;
-  }
-  */
-  
   
 
 export default CardModal

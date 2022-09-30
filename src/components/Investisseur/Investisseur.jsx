@@ -184,7 +184,7 @@ const Investisseur = () => {
             </AllProject>
 
             {
-              modal && <CardModal setModal={setModal}/>
+              modal && <CardModal select={select} setModal={setModal}/>
             }
 
 

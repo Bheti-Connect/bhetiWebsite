@@ -7,7 +7,7 @@ const Cards = ({item, setSelect, setModal}) => {
   let source = "https://" + `picsum.photos/id/${item}/200/300`;
 
   const handleSelect = () => {
-    console.log(item)
+    setSelect(item)
     setModal(true)
   }
 
