@@ -7,7 +7,7 @@ import ReactPaginate from 'react-paginate';
 import SearchFilter from './SearchFilter';
 import Cards from './Cards';
 //import axios from 'axios';
-//import CardModal from './CardModal';
+import CardModal from './CardModal';
 
 const Investisseur = () => {
     const [currentPage, setCurrentPage] = useState(0);
@@ -21,6 +21,8 @@ const Investisseur = () => {
     const [data, setData] = useState([])
     // search items of data
     //const [searchItems, setSearchItems] = useState([])
+    // Modal
+    const [modal, setModal] = useState(false)
 
     const theme = useTheme()
 
@@ -48,20 +50,20 @@ const Investisseur = () => {
           // Startup
           for(let i = 1; i<=50; i++)
           {
-            tab.push(<Cards key={i} item={i} setSelect={setSelect}/>)
+            tab.push(<Cards key={i} item={i} setSelect={setSelect} setModal={setModal}/>)
           }
 
         }else if (ind == 2){
           // PME
           for(let i = 51; i<=100; i++)
           {
-            tab.push(<Cards key={i} item={i} setSelect={setSelect}/>)
+            tab.push(<Cards key={i} item={i} setSelect={setSelect} setModal={setModal}/>)
           }
         }
         else{
           for(let i =1; i<=100; i++)
           {
-            tab.push(<Cards key={i} item={i} setSelect={setSelect}/>)
+            tab.push(<Cards key={i} item={i} setSelect={setSelect} setModal={setModal}/>)
           }
         }
         setData(tab)
@@ -181,9 +183,9 @@ const Investisseur = () => {
 
             </AllProject>
 
-            {/*
-              <CardModal />
-            */}
+            {
+              modal && <CardModal setModal={setModal}/>
+            }
 
 
         </InvestisseurStyled>
