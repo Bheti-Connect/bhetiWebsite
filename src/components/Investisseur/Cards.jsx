@@ -2,12 +2,13 @@ import React from 'react';
 import styled from 'styled-components';
 
 
-const Cards = ({item, setSelect}) => {
+const Cards = ({item, setSelect, setModal}) => {
 
   let source = "https://" + `picsum.photos/id/${item}/200/300`;
 
   const handleSelect = () => {
     console.log(item)
+    setModal(true)
   }
 
   return (
@@ -22,9 +23,9 @@ const Cards = ({item, setSelect}) => {
             <li>Mobility</li>
             <li>Automobile</li>
           </ul>
-          <div>
+          <div className='boxPriceCountry'>
             <p className='price'>&euro; 2 000,000</p>
-            <p className='country'>France</p>
+            <p className='country'>Madagascar</p>
           </div>
           
           </CardBody>
@@ -61,7 +62,7 @@ ul{
   display: flex;
   list-style:none;
   font-size: 12px;
-  margin: 5px;
+  margin-top: 10px;
   padding:0;
 }
 
@@ -73,15 +74,21 @@ ul li {
   padding:2px 5px;
 }
 
+.boxPriceCountry{
+  display: flex;
+  flex-direction: column;
+  align-items:flex-start;
+  margin-top: 8px;
+}
+
 .country {
   border-radius: 50px;
   color: white;
   background-color: #47bcd4;
-  padding: 2px 0;
-  margin-top: 3px;
+  padding: 2px 5px;
+  margin-top: 8px;
   text-align:center;
   font-size: 12px;
-  width: 30%;
 }
 
 .price{

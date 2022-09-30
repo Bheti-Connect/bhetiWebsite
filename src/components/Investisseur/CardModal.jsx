@@ -1,8 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
-import GrClose from 'react-icons/gr';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faXmark } from '@fortawesome/free-solid-svg-icons';
 
-const CardModal = () => {
+const CardModal = ({setModal}) => {
 
 
 
@@ -10,7 +11,7 @@ const CardModal = () => {
     <Container>
         <div id="open-modal" className="modal-window">
             <div>
-                <a href="#" title="Close" className="modal-close"><MdClose /></a>
+                <div onClick={() => setModal(false)} className="modal-close"><FontAwesomeIcon icon={faXmark} size="lg"/></div>
                 <Header>
                   <p>Project 1</p>
                 </Header>
@@ -42,23 +43,22 @@ const Container = styled.div`
 
 height: 100%;
 font-size: 16px;
-background-color: gray;
 
 .modal-window {
     position: fixed;
-    background-color: rgba(255, 255, 255, 0.25);
+    background-color: rgba(197, 194, 194, 0.70);
     top: 0;
     right: 0;
     bottom: 0;
     left: 0;
     z-index: 999;
     transition: all 0.3s;
-    visibility: hidden;
+    visibility: visible;
     opacity: 1;
     pointer-events: auto;
     & > div {
       width: 700px;
-      height: 550px;
+      height: 650px;
       overflow: auto;
       position: absolute;
       top: 50%;
@@ -73,15 +73,13 @@ background-color: gray;
 
   .modal-close {
     color: #aaa;
-    font-size: 80%;
     position: absolute;
     right: 0;
     text-align: center;
-    top: 0;
+    top: 15px;
     width: 70px;
-    text-decoration: none;
     &:hover {
-      color: black;
+      color: #EB1D36;
     }
   }
 
