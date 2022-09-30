@@ -35,6 +35,9 @@ const MethodCardStyled = styled.section`
     transition: all .4s ease-in-out;
     
     @media only screen and (max-width: 425px) and (min-width: 320px){
+        width: 80%;
+        height: 100%;
+        margin-left: -25px;
     }
 
     &::before{
@@ -69,6 +72,9 @@ const MethodCardStyled = styled.section`
         p{
             padding-bottom: 1.5rem;
             @media only screen and (max-width: 525px) and (min-width: 425px){
+                font-size: 15px;
+            }
+            @media only screen and (max-width: 425px) and (min-width: 320px){
                 font-size: 15px;
             }
         }
