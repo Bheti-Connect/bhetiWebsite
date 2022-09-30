@@ -80,7 +80,6 @@ const NavBar = () => {
     )
 }
 
-
 const NavBarStyled = styled.nav`
 
 .hero{
@@ -112,6 +111,9 @@ const NavBarStyled = styled.nav`
         flex-wrap: wrap;
         justify-content: space-between;
         border-bottom: 1px solid ${props => props.theme.colorGrey9};
+        @media only screen and (max-width: 425px) and (min-width: 320px) {
+            border-bottom: 0px solid ${props => props.theme.colorBg};
+        }
         animation: navHide 1s ease-in-out;
         @keyframes navHide {
             0%{
@@ -138,7 +140,7 @@ const NavBarStyled = styled.nav`
 
             .fa-bars-staggered {
                 color: ${props => props.theme.colorBlack};
-                margin-left: -15px;
+                margin-left: -29px;
                 margin-top: 7%;
             }
         }
@@ -177,7 +179,7 @@ const NavBarStyled = styled.nav`
 }
 
 
-@media only screen and (max-width: 960px) and (min-width: 320px){
+@media only screen and (max-width: 960px){
 
     .navigation {
         position: relative;
@@ -233,6 +235,61 @@ const NavBarStyled = styled.nav`
             }
         }
 }
+
+@media only screen and (max-width: 425px) and (min-width: 320px) {
+    .logo{
+        width: 300px;
+    }
+    .navigation{
+        .nav-menu{
+            display: flex;
+            flex-direction: column;
+            height: 400px;
+            position: absolute;
+            top:  80px;
+            left: -500%;
+            opacity: 1;
+            transition: all 0.7s ease;
+
+            .link{
+                text-align: center;
+                padding: 2rem;
+                width: 100%;
+                display: table;
+                color: ${props => props.theme.colorWhite};
+            }
+            .link:hover{
+                background-color: ${props => props.theme.colorBheti} ;
+                border-radius: 0;
+            }
+        }
+        .nav-menu.active {
+            background: #641E16;
+            width: 200%;
+            left: -162px;
+            opacity: 1;
+            transition: all 0.5s ease;
+            z-index: 3;
+        }
+    }
+    .menu-icon {
+            position: absolute;
+            display: none;
+            top: 2px;
+            right: 0;
+            transform: translate(-100%, 100%);
+            font-size: 1.8rem;
+            cursor: pointer;
+            .fa-xmark{
+                color: ${props => props.theme.colorBlack};
+                font-size: 2.1rem;
+                margin-left: -19px;
+                margin-top: -3px;
+
+            }
+        }
+}
+
 `;
 
 export default NavBar
