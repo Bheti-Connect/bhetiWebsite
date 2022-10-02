@@ -60,7 +60,12 @@ const MethodSectionStyled = styled.section`
             width: 15px;
     }
     }
-    
+    .title-con {
+        @media only screen and (max-width: 425px) and (min-width: 320px) {
+            width: 120%;
+            margin-left: -20px;
+        }
+    }
 `;
 
 export default MethodSection;
