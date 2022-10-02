@@ -53,7 +53,7 @@ const HeaderStyled = styled.header`
         height: 100vh;
     }
     @media only screen and (max-width: 425px) and (min-width: 325px){
-        height: 90vh;
+        height: 110vh;
     }
     .header-content{
         display: grid;
@@ -392,7 +392,7 @@ const HeaderStyled = styled.header`
             }
             @media only screen and (max-width: 425px) and (min-width: 320px){
                 margin-left: -14%;
-                margin-top: 35%;
+                margin-top: 40%;
                 width: 370px;
             }
         }
@@ -483,7 +483,7 @@ const HeaderStyled = styled.header`
                     margin-bottom: -2%;
             }
         @media only screen and (max-width: 425px) and (min-width: 320px){
-                    margin-bottom: 1%;
+                    margin-bottom: 0%;
             }
     }
 

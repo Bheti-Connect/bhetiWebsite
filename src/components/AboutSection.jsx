@@ -155,9 +155,6 @@ const AboutSectionStyled = styled.section`
                     .project-img{
                         width: 60px;
                     }
-                    @media screen and (max-width: 376px) {
-                        display: none;
-                    }
                 }
                 .text-container p{
                     text-align: justify;

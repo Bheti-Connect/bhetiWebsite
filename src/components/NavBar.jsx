@@ -100,6 +100,10 @@ const NavBarStyled = styled.nav`
             .theLogo{
                 margin-top: 10%;
                 width: 70%;
+                @media only screen and (max-width: 425px) and (min-width: 320px) {
+                    width: 100%;
+                    margin-left: -20px;
+                }
             }
 }
 
@@ -141,7 +145,6 @@ const NavBarStyled = styled.nav`
         }
         .menu-icon {
             display: flex;
-
             .fa-bars-staggered {
                 color: ${props => props.theme.colorBlack};
                 margin-left: -29px;
@@ -149,12 +152,9 @@ const NavBarStyled = styled.nav`
             }
         }
         }
-
         .nav-btn-container{
             right: auto;
         }
-        
-    
 }
 
     .navbar {
@@ -288,7 +288,6 @@ const NavBarStyled = styled.nav`
                 font-size: 2.1rem;
                 margin-left: -19px;
                 margin-top: -3px;
-
             }
         }
 }
