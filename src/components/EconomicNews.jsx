@@ -1,7 +1,6 @@
-import React from 'react'
 import styled from 'styled-components'
-import { useTheme } from '../context/themeContext'
-import newsImage from '../assets/images/newsImage.jpg'
+import { useTheme } from '../context/themeContext';
+import newsImage from '../assets/images/newsImage.jpg';
 import Button from './Button'
 
 const EconomicNews = () => {
@@ -78,6 +77,9 @@ const EconomicNewsStyled = styled.section`
                 @media only screen and (max-width: 525px) and (min-width: 425px) {
                     font-size: 1.5rem;
                 }
+                @media only screen and (max-width: 425px) and (min-width: 320px) {
+                    font-size: 1.5rem;
+                }
             }
             p{
                 color: ${props => props.theme.colorGrey4};
@@ -85,18 +87,18 @@ const EconomicNewsStyled = styled.section`
                 @media only screen and (max-width: 525px) and (min-width: 425px){
                     font-size: 15px ;
                 }
+                @media only screen and (max-width: 425px) and (min-width: 320px) {
+                    font-size: 1rem;
+                }
             }
             @media only screen and (max-width: 525px) and (min-width: 425px) {
                 width: 320px;
             }
         }
+        @media only screen and (max-width: 425px) and (min-width: 320px) {
+                    width: 250px;
+                }
     }
-    @media only screen and (max-width: 425px) and (min-width: 320px) {
-                    h3 {
-                    font-size: 1rem; 
-                }
-                        
-                }
 `;
 
 export default EconomicNews

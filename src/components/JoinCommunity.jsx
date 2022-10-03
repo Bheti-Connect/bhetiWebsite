@@ -1,4 +1,3 @@
-import React from 'react'
 import styled from 'styled-components';
 import Button from './Button';
 import { useTheme } from '../context/themeContext';
@@ -107,8 +106,8 @@ const JoinCommunityStyled = styled.section`
             margin-left: -300px;
         }
         @media only screen and (max-width: 425px) and (min-width: 320px) {
-            width: 400px;
-            margin-left: -300px;
+            width: 300px;
+            margin-left: -255px;
         }
         .latest-content{
             display: grid;
@@ -150,7 +149,7 @@ const JoinCommunityStyled = styled.section`
                     margin-top: -57px;
                 }
                 @media only screen and (max-width: 425px) and (min-width: 320px) {
-                    width: 320px;
+                    width: 220px;
                     height: 100px;
                     margin-left: -120px;
                     margin-top: -57px;
@@ -176,7 +175,8 @@ const JoinCommunityStyled = styled.section`
                 a{
                     margin-left: 25%;
                     @media only screen and (max-width: 425px) and (min-width: 320px){
-                        margin-left: 1%;
+                        margin-left: -15%;
+                        width: 200px;
                     }
                 }
                 @media only screen and (max-width: 2560px) and (min-width: 1800px) {
@@ -216,9 +216,9 @@ const JoinCommunityStyled = styled.section`
                     margin-top: 40%;
                 }
                 @media only screen and (max-width: 425px) and (min-width: 320px) {
-                    width: 300px;
-                    height: 300px;
-                    margin-left: -150px;
+                    width: 280px;
+                    height: 350px;
+                    margin-left: -160px;
                     margin-top: 60%;
                 }
             }
