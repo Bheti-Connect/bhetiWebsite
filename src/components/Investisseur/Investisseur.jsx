@@ -6,7 +6,7 @@ import { GrAppsRounded } from "react-icons/gr";
 import ReactPaginate from 'react-paginate';
 import SearchFilter from './SearchFilter';
 import Cards from './Cards';
-//import axios from 'axios';
+import axios from 'axios';
 import CardModal from './CardModal';
 
 const Investisseur = () => {
@@ -124,7 +124,7 @@ const Investisseur = () => {
 
     return (
         <InvestisseurStyled>
-            <HeaderText theme={theme} >
+            <HeaderText theme={theme}>
             <h3>Découvrez des opportunités d'investissements exclusives</h3>
             <p>Vous trouverez ci-dessous des informations clés sur des startups et PME qui ouvrent leur capital pour prendre une position décisive sur leurs
             marchés.<br/>Vous souhaitez en savoir plus sur ces opportunités et/ou rencontrer les fondateurs ? Cliquez sur "Recevoir le deck".</p>

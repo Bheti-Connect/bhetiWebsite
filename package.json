@@ -26,8 +26,11 @@
     "eject": "react-scripts eject"
   },
   "devDependencies": {
+    "autoprefixer": "^10.4.12",
     "gh-pages": "^4.0.0",
-    "react-scripts": "5.0.1"
+    "postcss": "^8.4.17",
+    "react-scripts": "5.0.1",
+    "tailwindcss": "^3.1.8"
   },
   "browserslist": {
     "production": [
