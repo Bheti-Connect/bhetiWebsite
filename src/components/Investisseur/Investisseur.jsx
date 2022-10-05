@@ -27,20 +27,15 @@ const Investisseur = () => {
     const theme = useTheme()
 
     // GET data from API
-    /*
     const getData = () => {
-      let tab = []
-      for(var i = 1; i<=20; i++)
-      {
-        console.log(i)
-        let source = "https://" + `picsum.photos/id/${i}/info`;
-        axios.get(source).then(res => {
-          tab.push(res.data)
-        }).catch(error => console.log("Erreur de l'url"))
-      }
-      setData(tab)
+      //let tab = []
+      let source = "https://bheti-connect.smirltech.com/api/projets";
+      axios.get(source,  {token: "6|FlShyLlOKWNwO4UQ7jtQPRdzTpY4nTKKGaM6ioED"}, { headers: {"Authorization" : `Bearer ${token}`}).then(res => {
+        //tab.push(res.data)
+        console.log();
+      }).catch(error => console.log("Erreur de l'url"))
+      //setData(tab)
     }
-    */
 
     // Add data in Card
     const addDataCard = () => {
@@ -107,8 +102,8 @@ const Investisseur = () => {
     }
 
     useEffect(() => {
-      //getData()
-      addDataCard()
+      getData()
+      //addDataCard()
     }, [])
 
     useEffect(() => {

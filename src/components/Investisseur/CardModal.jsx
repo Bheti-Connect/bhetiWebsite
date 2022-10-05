@@ -30,7 +30,7 @@ const CardModal = ({select, setModal}) => {
                 Amet vitae, delectus exercitationem officiis consectetur cumque sed dolorem dicta temporibus iure nulla odit ratione eum voluptatem possimus fugit molestiae quisquam blanditiis laborum repudiandae obcaecati repellat in commodi dignissimos. Autem?
 
                 </Body>
-            </div>
+            </div>  
         </div>
     </Container>
   )

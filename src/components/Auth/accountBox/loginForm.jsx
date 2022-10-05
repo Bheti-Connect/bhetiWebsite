@@ -15,7 +15,7 @@ export const LoginForm = (props) => {
   const { switchToSignup } = useContext(AccountContext);
 
   return (
-    <loginFormStyled>      
+    <loginFormStyled>
       <BoxContainer>
         <FormContainer>
           <Input type="email" placeholder="Email" />
