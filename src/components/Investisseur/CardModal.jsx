@@ -13,7 +13,7 @@ const CardModal = ({select, setModal}) => {
             <div>
                 <div onClick={() => setModal(false)} className="modal-close"><FontAwesomeIcon icon={faXmark} size="lg"/></div>
                 <Header>
-                  <p>Project {select}</p>
+                  <p>Project {select.nom}</p>
                 </Header>
 
                 <Body>

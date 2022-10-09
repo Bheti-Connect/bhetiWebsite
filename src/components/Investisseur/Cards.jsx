@@ -4,7 +4,7 @@ import styled from 'styled-components';
 
 const Cards = ({item, setSelect, setModal}) => {
 
-  let source = "https://" + `picsum.photos/id/${item}/200/300`;
+  let source = "https://" + `picsum.photos/id/${item.id}/200/300`;
 
   const handleSelect = () => {
     setSelect(item)
@@ -18,14 +18,14 @@ const Cards = ({item, setSelect, setModal}) => {
           </CardHeader>
 
           <CardBody>
-          <h3>Project {item}</h3>
+          <h3>{item.nom}</h3>
           <ul>
-            <li>Mobility</li>
+            <li>{item.stade}</li>
             <li>Automobile</li>
           </ul>
           <div className='boxPriceCountry'>
             <p className='price'>&euro; 2 000,000</p>
-            <p className='country'>Madagascar</p>
+            <p className='country'>{item.siege}</p>
           </div>
           
           </CardBody>

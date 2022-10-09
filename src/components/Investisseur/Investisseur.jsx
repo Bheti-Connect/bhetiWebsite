@@ -14,7 +14,6 @@ const Investisseur = () => {
     const [itemsPerPage, setItemsPerPage] = useState(0);
     const [totalPage, setTotalPage] = useState(0)
 
-    
     // query useState for search
     const [query, setQuery] = useState("")
     // select card useState
@@ -39,31 +38,6 @@ const Investisseur = () => {
       }else{
         console.log("Tous")
       }
-      /*
-      let tab = []
-        if(ind == 1)
-        {
-          // Startup
-          for(let i = 1; i<=50; i++)
-          {
-            tab.push(<Cards key={i} item={i} setSelect={setSelect} setModal={setModal}/>)
-          }
-
-        }else if (ind == 2){
-          // PME
-          for(let i = 51; i<=100; i++)
-          {
-            tab.push(<Cards key={i} item={i} setSelect={setSelect} setModal={setModal}/>)
-          }
-        }
-        else{
-          for(let i =1; i<=100; i++)
-          {
-            tab.push(<Cards key={i} item={i} setSelect={setSelect} setModal={setModal}/>)
-          }
-        }
-        setData(tab)
-        */
     }
 
     // handle menu : tous, startup and PME
@@ -93,25 +67,39 @@ const Investisseur = () => {
 
     }
 
-    // page visited
-    let pagesVisited = currentPage * itemsPerPage
+
     // display items
-    let displayItems = query ? (data[5]) : (data.slice(pagesVisited, pagesVisited + itemsPerPage).map(item => item ))
+    let displayItems = query ? (<h1>Salut les gens !</h1>) : (data.map((item, index) => {
+      return <Cards key={index} item={item} setModal={setModal} setSelect={setSelect} />
+    }))
     // handle change page
-    let changePage = ({selected}) => {
-      console.log(selected)
-      setCurrentPage(selected)
+    let changePage = async({selected}) => {
+      var pageNumber = selected + 1
+
+      // get Add for another page
+      let source = `https://bheti-connect.smirltech.com/api/projets?page=${pageNumber}`
+      await axios.get(source).then(res => {
+
+        setCurrentPage(res.data.meta.current_page);
+        setTotalPage(res.data.meta.last_page);
+        setItemsPerPage(res.data.meta.limit);
+        setData(res.data.data);
+
+      }).catch(error => console.log("Erreur de l'url"))
+
     }
 
      // GET data from API
     const getData = async () => {
-      //let tab = []
-      let source = "https://bheti-connect.smirltech.com/api/projets?page=2";
+      let source = "https://bheti-connect.smirltech.com/api/projets";
       await axios.get(source).then(res => {
-        //tab.push(res.data)
-        console.log(res.data);
+
+        setCurrentPage(res.data.meta.current_page);
+        setTotalPage(res.data.meta.last_page);
+        setItemsPerPage(res.data.meta.limit);
+        setData(res.data.data);
+
       }).catch(error => console.log("Erreur de l'url"))
-      //setData(tab)
     }
 
     useEffect(() => {
@@ -177,7 +165,7 @@ const Investisseur = () => {
               <ReactPaginate 
               previousLabel={"« Précédent"}
               nextLabel={"Suivant »"}
-              pageCount={pageCount}
+              pageCount={totalPage}
               onPageChange={changePage}
               breakLabel="..."
               pageRangeDisplayed={7}
