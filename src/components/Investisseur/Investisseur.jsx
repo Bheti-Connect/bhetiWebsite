@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import styled from 'styled-components'
+import styled from 'styled-components';
 //import NavBar from '../NavBar';
 import { useTheme } from '../../context/themeContext';
 import { GrAppsRounded } from "react-icons/gr";
@@ -11,8 +11,10 @@ import CardModal from './CardModal';
 
 const Investisseur = () => {
     const [currentPage, setCurrentPage] = useState(0);
-    const [itemsPerPage, setItemsPerPage] = useState(20);
-    const [ind, setInd] = useState(0)
+    const [itemsPerPage, setItemsPerPage] = useState(0);
+    const [totalPage, setTotalPage] = useState(0)
+
+    
     // query useState for search
     const [query, setQuery] = useState("")
     // select card useState
@@ -26,19 +28,18 @@ const Investisseur = () => {
 
     const theme = useTheme()
 
-    // GET data from API
-    const getData = () => {
-      //let tab = []
-      let source = "https://bheti-connect.smirltech.com/api/projets";
-      axios.get(source,  {token: "6|FlShyLlOKWNwO4UQ7jtQPRdzTpY4nTKKGaM6ioED"}, { headers: {"Authorization" : `Bearer ${token}`}).then(res => {
-        //tab.push(res.data)
-        console.log();
-      }).catch(error => console.log("Erreur de l'url"))
-      //setData(tab)
-    }
-
     // Add data in Card
-    const addDataCard = () => {
+    const addDataCard = (position) => {
+      if (position == "pme")
+      {
+        console.log("PME")
+      }else if(position == "startup")
+      {
+        console.log("STARTUP")
+      }else{
+        console.log("Tous")
+      }
+      /*
       let tab = []
         if(ind == 1)
         {
@@ -62,6 +63,7 @@ const Investisseur = () => {
           }
         }
         setData(tab)
+        */
     }
 
     // handle menu : tous, startup and PME
@@ -76,6 +78,7 @@ const Investisseur = () => {
         }
 
         // get index of active li
+        /*
         let menus = document.querySelectorAll(".menuSection li");
         let tabForIndex = Array.prototype.slice.call(menus)
 
@@ -86,26 +89,37 @@ const Investisseur = () => {
             setInd(i)
           }
         }
+        */
 
     }
-
 
     // page visited
     let pagesVisited = currentPage * itemsPerPage
     // display items
     let displayItems = query ? (data[5]) : (data.slice(pagesVisited, pagesVisited + itemsPerPage).map(item => item ))
-    // number of page
-    let pageCount = Math.ceil(data.length / itemsPerPage)
     // handle change page
     let changePage = ({selected}) => {
-        setCurrentPage(selected)
+      console.log(selected)
+      setCurrentPage(selected)
+    }
+
+     // GET data from API
+    const getData = async () => {
+      //let tab = []
+      let source = "https://bheti-connect.smirltech.com/api/projets?page=2";
+      await axios.get(source).then(res => {
+        //tab.push(res.data)
+        console.log(res.data);
+      }).catch(error => console.log("Erreur de l'url"))
+      //setData(tab)
     }
 
     useEffect(() => {
       getData()
-      //addDataCard()
+      addDataCard()
     }, [])
 
+/*
     useEffect(() => {
 
       addDataCard()
@@ -116,6 +130,7 @@ const Investisseur = () => {
       }
     }, [ind])
 
+*/
 
     return (
         <InvestisseurStyled>
@@ -129,11 +144,11 @@ const Investisseur = () => {
                     {/* Section menu */}
                     <ul className='menuSection' onClick={handleMenu}>
                         {/* Tous */}
-                        <li className='active'><GrAppsRounded/>Tous</li>
+                        <li className='active' onClick={() => addDataCard("tous")}><GrAppsRounded/>Tous</li>
                         {/* Startup */}
-                        <li ><GrAppsRounded/>Startup</li>
+                        <li onClick={() => addDataCard("startup")}><GrAppsRounded/>Startup</li>
                         {/* PME */}
-                        <li><GrAppsRounded/>PME</li>
+                        <li onClick={() => addDataCard("pme")}><GrAppsRounded/>PME</li>
                     </ul>
 
                     
