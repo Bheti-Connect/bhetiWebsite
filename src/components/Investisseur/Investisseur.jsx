@@ -51,20 +51,6 @@ const Investisseur = () => {
           e.target.classList.add("active")
         }
 
-        // get index of active li
-        /*
-        let menus = document.querySelectorAll(".menuSection li");
-        let tabForIndex = Array.prototype.slice.call(menus)
-
-        for(var i = 0; i<tabForIndex.length; i++)
-        {
-          if(tabForIndex[i].classList.contains("active"))
-          {
-            setInd(i)
-          }
-        }
-        */
-
     }
 
 
