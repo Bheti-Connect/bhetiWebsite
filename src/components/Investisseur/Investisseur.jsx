@@ -8,6 +8,7 @@ import SearchFilter from './SearchFilter';
 import Cards from './Cards';
 import axios from 'axios';
 import CardModal from './CardModal';
+import LoaderReact from './LoaderReact';
 
 const Investisseur = () => {
     const [currentPage, setCurrentPage] = useState(0);
@@ -24,6 +25,9 @@ const Investisseur = () => {
     //const [searchItems, setSearchItems] = useState([])
     // Modal
     const [modal, setModal] = useState(false)
+
+    // Loading : React content loader
+    const [loading, setLoading] = useState(true) 
 
     const theme = useTheme()
 
@@ -65,14 +69,12 @@ const Investisseur = () => {
       // get Add for another page
       let source = `https://bheti-connect.smirltech.com/api/projets?page=${pageNumber}`
       await axios.get(source).then(res => {
-
         setCurrentPage(res.data.meta.current_page);
         setTotalPage(res.data.meta.last_page);
         setItemsPerPage(res.data.meta.limit);
         setData(res.data.data);
 
       }).catch(error => console.log("Erreur de l'url"))
-
     }
 
      // GET data from API
@@ -88,10 +90,32 @@ const Investisseur = () => {
       }).catch(error => console.log("Erreur de l'url"))
     }
 
+
+    // First UseEffect
     useEffect(() => {
+      const waiting = setTimeout(() => {
+        setLoading(false)
+      }, 4000);
+
       getData()
       addDataCard()
+
+      return () => {
+        clearTimeout(waiting)
+      }
     }, [])
+
+     // UseEffect if currentPage change
+    useEffect(() => {
+      setLoading(true)
+      const waiting = setTimeout(() => {
+        setLoading(false)
+      }, 4000);
+
+      return () => {
+        clearTimeout(waiting)
+      }
+    }, [currentPage])
 
 /*
     useEffect(() => {
@@ -141,7 +165,7 @@ const Investisseur = () => {
               <AllCards>
 
               {
-                  displayItems
+                  loading ? (<LoaderReact test={15}/>) : (displayItems)
               }
 
               </AllCards>
