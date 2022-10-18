@@ -97,14 +97,13 @@ const NavBarStyled = styled.nav`
             animation-delay: 0.2s;
             visibility: hidden;
             animation-fill-mode: forwards;
-            @media only screen and (max-width: 425px) and (min-width: 320px) {
+            .theLogo{
+                margin-top: 10%;
+                width: 70%;
+                @media only screen and (max-width: 425px) and (min-width: 320px) {
                     width: 100%;
                     margin-left: -20px;
                 }
-            .theLogo{
-                margin-top: 10%;
-                width: 80%;
-                
             }
 }
 
@@ -150,6 +149,9 @@ const NavBarStyled = styled.nav`
                 color: ${props => props.theme.colorBlack};
                 margin-left: -29px;
                 margin-top: 7%;
+                @media only screen and (min-width: 900px) {
+                    visibility: hidden;
+                }
             }
         }
         }
