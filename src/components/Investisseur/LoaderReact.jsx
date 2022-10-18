@@ -2,10 +2,10 @@ import React from 'react';
 import ContentLoader from "react-content-loader";
 import styled from 'styled-components';
 
-function LoaderReact({test}) {
+function LoaderReact({count}) {
 
 
-  return Array(test).fill(0).map((_, index) => (
+  return Array(count).fill(0).map((_, index) => (
     <Container  key={index}>
 
          <ContentLoader

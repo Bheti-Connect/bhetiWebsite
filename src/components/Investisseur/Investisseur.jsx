@@ -17,32 +17,94 @@ const Investisseur = () => {
 
     // query useState for search
     const [query, setQuery] = useState("")
+
     // select card useState
     const [select, setSelect] = useState(null)
+
     // cards data
     const [data, setData] = useState([])
+
     // search items of data
     //const [searchItems, setSearchItems] = useState([])
+
     // Modal
     const [modal, setModal] = useState(false)
 
     // Loading : React content loader
     const [loading, setLoading] = useState(true) 
 
+    // Theme 
     const theme = useTheme()
 
-    // Add data in Card
-    const addDataCard = (position) => {
+
+
+    // handle for receive data and set in useState
+    const handleSetData = (response) => {
+      setCurrentPage(response.meta.current_page);
+      setTotalPage(response.meta.last_page);
+      setItemsPerPage(response.meta.limit);
+      setData(response.data);
+    }
+
+    // GET : Axios for API
+
+
+    // POST : Axios for API
+
+
+    // GET data from API
+    const getData = () => {
+      let source = "https://bheti-connect.smirltech.com/api/projets";
+      axios.get(source).then(res => {
+        handleSetData(res.data)
+      }).catch((error) => console.log(error))
+    }
+
+
+    // Change Section of data : Tous, PME ou STARTUP
+    const changeSectionMenu = (position) => {
+      let source = "https://bheti-connect.smirltech.com/api/projets/search";
+
       if (position == "pme")
       {
-        console.log("PME")
+        let pmeFilter = JSON.stringify({"filters": [{field: 'type', value: 'pme'}]})
+
+        axios.post(source, pmeFilter).then(res => {
+          //handleSetData(res.data)
+          console.log(res.data);
+        }).catch((error) => console.log(error))
+
       }else if(position == "startup")
       {
-        console.log("STARTUP")
+        let startupFilter = JSON.stringify({filters: [{field: 'type', value: 'startup'}]})
+
+        axios.post(source, startupFilter).then(res => {
+          //handleSetData(res.data)
+          console.log(res.data);
+        }).catch((error) => console.log(error))
+
       }else{
-        console.log("Tous")
+        getData()
       }
     }
+
+
+
+// -----------------------------------------------------------------------------------------------------------------------
+
+    const test = () => {
+      let source = "https://bheti-connect.smirltech.com/api/projets/search";
+      let startupFilter = JSON.stringify({'filters': [{'field': "type", 'value': "startup"}]})
+
+      axios.post(source, startupFilter).then(res => {
+        //handleSetData(res.data)
+        console.log(res.data);
+      }).catch((error) => console.log(error))
+    }
+
+// -----------------------------------------------------------------------------------------------------------------------
+
+
 
     // handle menu : tous, startup and PME
     const handleMenu = (e) => {
@@ -58,10 +120,41 @@ const Investisseur = () => {
     }
 
 
+
+
+    // Search data from API
+    const searchData = async (val) => {
+      // API : Search
+      let source = "https://bheti-connect.smirltech.com/api/projets/search"
+      // Body POST
+      let toSend = {
+        "search": [{
+          "value": `${val}`
+      }]
+      }
+
+      console.log(val);
+
+      await axios.post(source, toSend).then((resp) =>{
+        handleSetData(resp.data)
+        console.log(resp.data);
+      }).catch((error) => {
+        console.log(error);
+      })
+    }
+
+
+
+
     // display items
-    let displayItems = query ? (<h1>Salut les gens !</h1>) : (data.map((item, index) => {
+    let displayItems = query ? (searchData(query)) : (data.map((item, index) => {
       return <Cards key={index} item={item} setModal={setModal} setSelect={setSelect} />
     }))
+
+
+
+
+
     // handle change page
     let changePage = async({selected}) => {
       var pageNumber = selected + 1
@@ -69,26 +162,13 @@ const Investisseur = () => {
       // get Add for another page
       let source = `https://bheti-connect.smirltech.com/api/projets?page=${pageNumber}`
       await axios.get(source).then(res => {
-        setCurrentPage(res.data.meta.current_page);
-        setTotalPage(res.data.meta.last_page);
-        setItemsPerPage(res.data.meta.limit);
-        setData(res.data.data);
-
-      }).catch(error => console.log("Erreur de l'url"))
+        handleSetData(res.data)
+      }).catch(error => console.log(error))
     }
 
-     // GET data from API
-    const getData = async () => {
-      let source = "https://bheti-connect.smirltech.com/api/projets";
-      await axios.get(source).then(res => {
 
-        setCurrentPage(res.data.meta.current_page);
-        setTotalPage(res.data.meta.last_page);
-        setItemsPerPage(res.data.meta.limit);
-        setData(res.data.data);
 
-      }).catch(error => console.log("Erreur de l'url"))
-    }
+
 
 
     // First UseEffect
@@ -98,12 +178,13 @@ const Investisseur = () => {
       }, 4000);
 
       getData()
-      addDataCard()
+      changeSectionMenu()
 
       return () => {
         clearTimeout(waiting)
       }
     }, [])
+
 
      // UseEffect if currentPage change
     useEffect(() => {
@@ -117,18 +198,6 @@ const Investisseur = () => {
       }
     }, [currentPage])
 
-/*
-    useEffect(() => {
-
-      addDataCard()
-
-      if (currentPage != 0)
-      {
-        setCurrentPage(0)
-      }
-    }, [ind])
-
-*/
 
     return (
         <InvestisseurStyled>
@@ -142,11 +211,11 @@ const Investisseur = () => {
                     {/* Section menu */}
                     <ul className='menuSection' onClick={handleMenu}>
                         {/* Tous */}
-                        <li className='active' onClick={() => addDataCard("tous")}><GrAppsRounded/>Tous</li>
+                        <li className='active' onClick={() => changeSectionMenu("tous")}><GrAppsRounded/>Tous</li>
                         {/* Startup */}
-                        <li onClick={() => addDataCard("startup")}><GrAppsRounded/>Startup</li>
+                        <li onClick={() => changeSectionMenu("startup")}><GrAppsRounded/>Startup</li>
                         {/* PME */}
-                        <li onClick={() => addDataCard("pme")}><GrAppsRounded/>PME</li>
+                        <li onClick={() => changeSectionMenu("pme")}><GrAppsRounded/>PME</li>
                     </ul>
 
                     
@@ -156,6 +225,7 @@ const Investisseur = () => {
                     
                 </div>
                 <hr/>
+                <button type='button' onClick={test}>Appuyez ici</button>
             </div>
             </HeaderText>
 
@@ -165,7 +235,7 @@ const Investisseur = () => {
               <AllCards>
 
               {
-                  loading ? (<LoaderReact test={15}/>) : (displayItems)
+                  loading ? (<LoaderReact count={15}/>) : (displayItems)
               }
 
               </AllCards>

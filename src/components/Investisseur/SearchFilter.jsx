@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useRef} from 'react';
 import styled from 'styled-components';
 import {GoSearch} from 'react-icons/go';
 import {RiFilter3Fill} from 'react-icons/ri';
@@ -6,8 +6,11 @@ import { useTheme } from '../../context/themeContext';
 
 const SearchFilter = ({setQuery}) => {
 
+  const valueSearch = useRef(null); 
+
   const handleQuery = (e) => {
-    setQuery(e.target.value)
+    e.preventDefault();
+    setQuery(valueSearch.current.value)
   }
 
   const handleFilter = (e) => {
@@ -27,8 +30,10 @@ const SearchFilter = ({setQuery}) => {
     <SearchBox>
     {/* Search Bar */}
       <ContainerSearch>
-          <button type='button' className="btn-search"><GoSearch /></button>
-          <input type="text" onChange={handleQuery} className="input-search" placeholder="Votre recherche ..."></input>
+        <form onSubmit={handleQuery}>
+          <button type='submit' className="btn-search"><GoSearch /></button>
+          <input ref={valueSearch} type="text" className="input-search" placeholder="Votre recherche ..."></input>
+        </form>
       </ContainerSearch>
 
 

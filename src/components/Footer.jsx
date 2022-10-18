@@ -46,7 +46,7 @@ const Footer = () => {
                             <span> +33 (0) 123-456-789</span>
                         </div>
                     </li>
-                    <li class="nav-item">
+                    <li className="nav-item">
                         <div className="icon">
                             <i className="fas fa-map-marker-alt"></i>
                         </div>
