@@ -26,6 +26,9 @@ const Accueil = () => {
                     <p>Convaincre un investisseur, obtenir des financements, faire une levée de fonds … Autant de choses qui vous paraissent insolubles?</p>
                     <p>En plus de nos outils prisés par les experts du monde des startups, bénéficiez de l’accompagnement de nos meilleurs conseillers.</p>
                 </div>
+                <div className='bheti-box'>
+
+                </div>
             </div>
         </AccueilStyled>
     )
@@ -49,7 +52,7 @@ const AccueilStyled = styled.section`
             .illustration-1{
                 border-bottom-left-radius: 40px;
                 @media only screen and (max-width: 2560px) and (min-width: 1800px) {
-                    margin-left: 400px;
+                    margin-left: 500px;
                     width: 50%;
                 }
             }
@@ -63,7 +66,8 @@ const AccueilStyled = styled.section`
                 font-size: 50px; 
                 color: ${props => props.theme.colorBheti}; 
                 @media only screen and (max-width: 2560px) and (min-width: 1800px) {
-                    transform: translate(-120%, -50%);
+                    transform: translate(-100%, -90%);
+                    width: 800px;
                 }
             }
             .button-demo{
@@ -74,6 +78,15 @@ const AccueilStyled = styled.section`
             align-items: center;
             margin-top: 2%;
         }
+    }
+    .bheti-box{
+        position: absolute;
+        width: 850px;
+        height: 827px;
+        right: 0px;
+        top: 0px;
+        z-index: -100;
+        background-color: ${props => props.theme.colorBheti}; 
     }
 `;
 
