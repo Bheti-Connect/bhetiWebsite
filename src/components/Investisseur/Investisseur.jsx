@@ -46,11 +46,6 @@ const Investisseur = () => {
       setData(response.data);
     }
 
-    // GET : Axios for API
-
-
-    // POST : Axios for API
-
 
     // GET data from API
     const getData = () => {
@@ -94,9 +89,17 @@ const Investisseur = () => {
 
     const test = () => {
       let source = "https://bheti-connect.smirltech.com/api/projets/search";
-      let startupFilter = JSON.stringify({'filters': [{'field': "type", 'value': "startup"}]})
+      
+      let headers = {
 
-      axios.post(source, startupFilter).then(res => {
+        'Accept': 'application/json', 
+        'Content-Type': 'application/json'
+
+      }
+      
+      let startupFilter = {filters: [{field: "type", value: "startup"}]}
+
+      axios.post(source, startupFilter, { headers }).then(res => {
         //handleSetData(res.data)
         console.log(res.data);
       }).catch((error) => console.log(error))
