@@ -1,7 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import casseTete from '../../assets/images/casseTete.gif';
-import Discussion from '../../assets/images/discussion.gif';
+import Talking from '../../assets/images/pexels-picha-stock-3894383-1.png';
 import Button from '../Button';
 import { useTheme } from '../../context/themeContext';
 
@@ -12,9 +11,8 @@ const Accueil = () => {
         <AccueilStyled className='u-pad-lg-2'  theme={theme}>
             <div className='first-container'>
                 <div className='headache'>
-                    <img className='illustration-1' src={casseTete} alt='casse-tête-video'/>
                     <h1 className='centered'>Résolvez le casse tête du financement de votre entreprise</h1>
-                    <img className='illustration-2'  src={Discussion} alt='Discussion-video'/>
+                    <img className='illustration-1' src={Talking} alt='Image-Femmes'/>
                     <div className='button-demo'>
                         <Button 
                             name={'Je réserve une demo'}
@@ -46,29 +44,27 @@ const AccueilStyled = styled.section`
                 color: ${props => props.theme.colorBheti} ;
             }
             img{
-                width: 50%;
+                width: 70%;
             }
             .illustration-1{
                 border-bottom-left-radius: 40px;
+                @media only screen and (max-width: 2560px) and (min-width: 1800px) {
+                    margin-left: 400px;
+                    width: 50%;
+                }
             }
-            .illustration-2{
-                border-top-right-radius: 40px;
-            }
-            .casseTete-sister{
-                background-color: ${props => props.theme.colorBlack};
-                float: right;
-                width: 50%;
-                height: 395px;
-                border-top-right-radius: 40px;
-            }
+            
             .centered{    
                 position: absolute;
                 top: 50%;
                 left: 50%;
                 transform: translate(-50%, -50%);
                 font-weight: 900;
-                font-size: 50px;
-                color: ${props => props.theme.colorWhite};
+                font-size: 50px; 
+                color: ${props => props.theme.colorBheti}; 
+                @media only screen and (max-width: 2560px) and (min-width: 1800px) {
+                    transform: translate(-120%, -50%);
+                }
             }
             .button-demo{
                 margin: 20px 450px 10px ;
