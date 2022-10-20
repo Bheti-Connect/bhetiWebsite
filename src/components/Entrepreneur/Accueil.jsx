@@ -64,6 +64,10 @@ const AccueilStyled = styled.section`
                     width: 55%;
                     margin-top: 7%;
                 }
+                @media only screen and (max-width: 1440px) and (min-width: 1350px) {
+                    margin-left: 200px;
+                    margin-top: 8%;
+                }
             }
             
             .centered{    
@@ -75,9 +79,13 @@ const AccueilStyled = styled.section`
                 font-size: 50px; 
                 color: ${props => props.theme.colorBheti}; 
                 @media only screen and (max-width: 2560px) and (min-width: 1800px) {
-                    transform: translate(-125%, -90%);
-                    width: 600px;
+                    transform: translate(-150%, -90%);
+                    width: 500px;
                 }
+                @media only screen and (max-width: 1440px) and (min-width: 1350px) {
+                    transform: translate(-150%, -90%);
+                    width: 500px;
+            }
             }
         }
         .text-highlighted{
@@ -85,9 +93,14 @@ const AccueilStyled = styled.section`
             margin-top: 2%;
         }
         .button-demo{
-            margin: 40px 500px 10px;
+            margin: 40px 500px 0px;
+            @media only screen and (max-width: 1440px) and (min-width: 1350px){
+                width: 80%;
+                margin: 40px 350px 0px;
+            }
         }
     }
+
     .bheti-box{
         position: absolute;
         width: 980px;
@@ -99,12 +112,18 @@ const AccueilStyled = styled.section`
         .blobImg-1{
             position: absolute;
             right: -30px;
-            bottom: -160px; 
+            bottom: -160px;
+            @media only screen and (max-width: 1440px) and (min-width: 1350px) {
+                width: 35%;
+            }
         }
         .blobImg-2{
             position: absolute;
             right: -10px;
-            top: -50px; 
+            top: -50px;
+            @media only screen and (max-width: 1440px) and (min-width: 1350px) {
+                width: 20%;
+            }
         }
         .tamtam-img{
             display: block;
@@ -112,6 +131,13 @@ const AccueilStyled = styled.section`
             margin-left: auto;
             margin-right: auto;
             width: 40%;
+            @media only screen and (max-width: 1440px) and (min-width: 1350px){
+                width: 50%;
+                margin-top: 7%;
+            }
+        }
+        @media only screen and (max-width: 1440px) and (min-width: 1350px){
+            width: 720px;
         }
     }
 `;
