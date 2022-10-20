@@ -1,7 +1,7 @@
 import React, {useRef} from 'react';
 import styled from 'styled-components';
 import {GoSearch} from 'react-icons/go';
-import {RiFilter3Fill} from 'react-icons/ri';
+//import {RiFilter3Fill} from 'react-icons/ri';
 import { useTheme } from '../../context/themeContext';
 
 const SearchFilter = ({setQuery}) => {
@@ -39,9 +39,14 @@ const SearchFilter = ({setQuery}) => {
 
       {/* Filter */}
       <ContainerFilter theme={theme}>
-      <div className='filter-icon-none' onClick={handleFilter}>
-        <RiFilter3Fill />
-      </div>
+        <div className='filter bg-gray-800' onClick={handleFilter}>
+        <label for="trie-select"></label>
+          <select name='trie' id='trie-select' className='select-style'>
+            <option value="">Trier par ...</option>
+            <option value="Recent">Recent</option>
+            <option value="">Ancien</option>
+          </select>
+        </div>
       </ContainerFilter>
     </SearchBox>
   )
@@ -110,22 +115,14 @@ const ContainerFilter = styled.div`
       position: relative;
       top: 14px;
       right: 34px;
-      font-size: 28px;
 
-      .filter-icon-active {
-        height: 30px;
-        background-color: ${props => props.theme.colorBheti};
-        color: white;
-        border-radius: 5px 5px 0 0 ;
-        transition: .5s ease;
-      }
+      .filter{
 
-      .filter-icon-none {
-        height: 30px;
-        background-color: ${props => props.theme.colorGreyDark};
-        color: white;
-        border-radius: 5px 5px 0 0 ;
-        transition: .5s ease;
+        .select-style{
+          border-color: #00000036;
+          border-radius: 2px;
+          background-color: #f0f3f4;
+        }
       }
 `;
 
