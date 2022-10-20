@@ -100,7 +100,6 @@ const AccueilStyled = styled.section`
             }
         }
     }
-
     .bheti-box{
         position: absolute;
         width: 980px;
