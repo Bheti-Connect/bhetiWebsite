@@ -4,6 +4,10 @@ import styled from 'styled-components';
 
 const Cards = ({item, setSelect, setModal}) => {
 
+  // Format currency Euro
+  let currencyEuro = new Intl.NumberFormat('de-DE', { style : 'currency', currency: 'EUR'})
+
+  // Generate image
   let source = "https://" + `picsum.photos/id/${item.id}/200/300`;
 
   const handleSelect = () => {
@@ -24,7 +28,7 @@ const Cards = ({item, setSelect, setModal}) => {
             <li>Automobile</li>
           </ul>
           <div className='boxPriceCountry'>
-            <p className='price'>&euro; 2 000,000</p>
+            <p className='price'>{item.financement ? (currencyEuro.format(parseInt(item.financement))) : ("ne pas mentionné")}</p>
             <p className='country'>{item.siege}</p>
           </div>
           

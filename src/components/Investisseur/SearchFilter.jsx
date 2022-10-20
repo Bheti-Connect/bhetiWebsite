@@ -119,7 +119,7 @@ const ContainerFilter = styled.div`
       .filter{
 
         .select-style{
-          border-color: #00000036;
+          border-color: transparent;
           border-radius: 2px;
           background-color: #f0f3f4;
         }
