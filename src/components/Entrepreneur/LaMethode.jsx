@@ -73,6 +73,12 @@ const LaMethodeStyled = styled.section`
                     font-size: 22px;
                 }
             }
+            @media only screen and (max-width: 2500px) and (min-width: 1800px) {
+                font-size: 21px;
+                h5{
+                    font-size: 22px;
+                }
+            }
         }
         @media screen and (min-width: 1150px) {
                     width: 450px;
@@ -118,8 +124,10 @@ const LaMethodeStyled = styled.section`
 
     @media only screen and (max-width: 2500px) and (min-width: 1800px) {
         .right-container{
-            width: 135%;
+            width: 155%;
             height: 200px;
+            margin-top: 240px;
+            margin-left: -200px;
         }
 
     }

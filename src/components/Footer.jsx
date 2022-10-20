@@ -98,7 +98,6 @@ const Footer = () => {
                 </p>
             </div>
         </FooterSectionStyled>
-    
         )
 }
 
@@ -140,10 +139,12 @@ const FooterSectionStyled = styled.footer`
         color: ${props => props.theme.colorWhite};
         margin-bottom: 1rem;
     }
+
     .bottom-navigation{
         display: flex;
         flex-wrap: wrap;
         padding-bottom: 3rem;
+        margin: auto;
         h4{
             padding-bottom: 1.5rem;
         }
@@ -170,7 +171,6 @@ const FooterSectionStyled = styled.footer`
             .logo img{
                 width: 12%;
             }
-
     }
         .logo-con p{
             color: ${props => props.theme.colorGrey6};
@@ -198,7 +198,6 @@ const FooterSectionStyled = styled.footer`
                     color: #a9388b ;
                 }
             }
-            
         }
         /* .b-nav-icons a{
             color: ${props => props.theme.colorGre6};
@@ -217,22 +216,18 @@ const FooterSectionStyled = styled.footer`
                 }
             }
         }
+        @media only screen and (max-width: 2550px) and (min-width: 1800px){
+            width: 1400px;
+        }
         @media only screen and (max-width: 1440px) and (min-width: 1350px){
-            width: 1000px ;
+            width: 1200px ;
         }
         @media only screen and (max-width: 1350px) and (min-width: 1250px){
             width: 950px;
-            margin-left: -100px;
         }
         @media only screen and (max-width: 1250px) and (min-width: 1024px){
             width: 900px;
-            margin-left: -150px;
         }
-        @media screen and (max-width: 420px) {
-                    margin: auto;
-                    width: 150px;
-                    margin-top: 0px;
-	            }
     }
     .footer-copyright{
         padding-top: 3rem;
