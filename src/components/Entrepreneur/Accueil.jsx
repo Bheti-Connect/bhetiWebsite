@@ -105,7 +105,7 @@ const AccueilStyled = styled.section`
         width: 980px;
         height: 700px;
         right: 0px;
-        top: 0px;
+        top: 78px;
         z-index: -100;
         background-color: #641C1C;
         .blobImg-1{
