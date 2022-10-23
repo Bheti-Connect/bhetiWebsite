@@ -40,7 +40,7 @@ const SearchFilter = ({setQuery}) => {
       {/* Filter */}
       <ContainerFilter theme={theme}>
         <div className='filter bg-gray-800' onClick={handleFilter}>
-        <label for="trie-select"></label>
+        <label htmlFor="trie-select"></label>
           <select name='trie' id='trie-select' className='select-style'>
             <option value="">Trier par ...</option>
             <option value="Recent">Recent</option>

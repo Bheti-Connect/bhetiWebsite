@@ -36,6 +36,9 @@ const Investisseur = () => {
     // Theme 
     const theme = useTheme()
 
+    // Position change pagination : Tous, Startup, pme
+    const [paginationSelect, setPaginationSelect] = useState("tous")
+
 
 
     // handle for receive data and set in useState
@@ -62,54 +65,30 @@ const Investisseur = () => {
 
       if (position == "pme")
       {
-        let pmeFilter = JSON.stringify({"filters": [{field: 'type', value: 'pme'}]})
+        let pmeFilter = {filters: [{field: 'type', value: 'pme'}]}
 
         axios.post(source, pmeFilter).then(res => {
-          //handleSetData(res.data)
-          console.log(res.data);
+          handleSetData(res.data)
         }).catch((error) => console.log(error))
+
+        setPaginationSelect("pme")
 
       }else if(position == "startup")
       {
-        let startupFilter = JSON.stringify({filters: [{field: 'type', value: 'startup'}]})
+        let startupFilter = {filters: [{field: 'type', value: 'startup'}]}
 
         axios.post(source, startupFilter).then(res => {
-          //handleSetData(res.data)
-          console.log(res.data);
+          handleSetData(res.data)
         }).catch((error) => console.log(error))
-
+        setPaginationSelect("startup")
       }else{
         getData()
+        setPaginationSelect("tous")
       }
     }
 
 
-
-// -----------------------------------------------------------------------------------------------------------------------
-
-    const test = () => {
-      let source = "https://bheti-connect.smirltech.com/api/projets/search";
-      
-      let headers = {
-
-        'Accept': 'application/json', 
-        'Content-Type': 'application/json'
-
-      }
-      
-      let startupFilter = {filters: [{field: "type", value: "startup"}]}
-
-      axios.post(source, startupFilter, { headers }).then(res => {
-        //handleSetData(res.data)
-        console.log(res.data);
-      }).catch((error) => console.log(error))
-    }
-
-// -----------------------------------------------------------------------------------------------------------------------
-
-
-
-    // handle menu : tous, startup and PME
+    // handle menu : tous, startup and PME for CSS
     const handleMenu = (e) => {
         let activeBtn = document.querySelector(".menuSection .active");
         let valid = e.target.tagName.toLowerCase()
@@ -126,7 +105,7 @@ const Investisseur = () => {
 
 
     // Search data from API
-    const searchData = async (val) => {
+    const searchData = (val) => {
       // API : Search
       let source = "https://bheti-connect.smirltech.com/api/projets/search"
       // Body POST
@@ -138,9 +117,8 @@ const Investisseur = () => {
 
       console.log(val);
 
-      await axios.post(source, toSend).then((resp) =>{
+      axios.post(source, toSend).then((resp) =>{
         handleSetData(resp.data)
-        console.log(resp.data);
       }).catch((error) => {
         console.log(error);
       })
@@ -159,14 +137,42 @@ const Investisseur = () => {
 
 
     // handle change page
-    let changePage = async({selected}) => {
+    let changePage = ({selected}) => {
       var pageNumber = selected + 1
+      let source = ""
+      let filter = ""
+
+      console.log(paginationSelect);
+
+      if(paginationSelect == "pme")
+      {
+
+        source = `https://bheti-connect.smirltech.com/api/projets/search?page=${pageNumber}`
+        filter = {filters: [{field: 'type', value: 'pme'}]}
+
+      }else if(paginationSelect == "startup")
+      {
+
+        source = `https://bheti-connect.smirltech.com/api/projets/search?page=${pageNumber}`
+        filter = {filters: [{field: 'type', value: 'startup'}]}
+
+      }else{
+
+        source = `https://bheti-connect.smirltech.com/api/projets?page=${pageNumber}`
+
+      }
 
       // get Add for another page
-      let source = `https://bheti-connect.smirltech.com/api/projets?page=${pageNumber}`
-      await axios.get(source).then(res => {
-        handleSetData(res.data)
-      }).catch(error => console.log(error))
+      if (filter)
+      {
+        axios.post(source, filter).then(res => {
+          handleSetData(res.data)
+        }).catch(error => console.log(error))
+      }else{
+        axios.get(source).then(res => {
+          handleSetData(res.data)
+        }).catch(error => console.log(error))
+      }
     }
 
 
@@ -205,7 +211,7 @@ const Investisseur = () => {
     return (
         <InvestisseurStyled>
             <HeaderText theme={theme}>
-            <h3>Découvrez des opportunités d'investissements exclusives</h3>
+            <h3 className='hello'>Découvrez des opportunités d'investissements exclusives</h3>
             <p>Vous trouverez ci-dessous des informations clés sur des startups et PME qui ouvrent leur capital pour prendre une position décisive sur leurs
             marchés.<br/>Vous souhaitez en savoir plus sur ces opportunités et/ou rencontrer les fondateurs ? Cliquez sur "Recevoir le deck".</p>
             <div className="containerMenu">
@@ -228,7 +234,6 @@ const Investisseur = () => {
                     
                 </div>
                 <hr/>
-                <button type='button' onClick={test}>Appuyez ici</button>
             </div>
             </HeaderText>
 
@@ -245,7 +250,7 @@ const Investisseur = () => {
 
               {/* Pagination */}
 
-              <ReactPaginate 
+              <ReactPaginate
               previousLabel={"« Précédent"}
               nextLabel={"Suivant »"}
               pageCount={totalPage}
