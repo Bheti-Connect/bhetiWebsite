@@ -11,31 +11,24 @@ import CardModal from './CardModal';
 import LoaderReact from './LoaderReact';
 
 const Investisseur = () => {
+  // useState of pagination
     const [currentPage, setCurrentPage] = useState(0);
     const [itemsPerPage, setItemsPerPage] = useState(0);
     const [totalPage, setTotalPage] = useState(0)
-
     // query useState for search
     const [query, setQuery] = useState("")
-
     // select card useState
     const [select, setSelect] = useState(null)
-
     // cards data
     const [data, setData] = useState([])
-
-    // search items of data
-    //const [searchItems, setSearchItems] = useState([])
-
     // Modal
     const [modal, setModal] = useState(false)
-
     // Loading : React content loader
-    const [loading, setLoading] = useState(true) 
-
-    // Theme 
+    const [loading, setLoading] = useState(true)
+    // Theme
     const theme = useTheme()
-
+    // Trie : Recent and Ancien
+    const [trie, setTrie] = useState("")
     // Position change pagination : Tous, Startup, pme
     const [paginationSelect, setPaginationSelect] = useState("tous")
 
@@ -102,8 +95,6 @@ const Investisseur = () => {
     }
 
 
-
-
     // Search data from API
     const searchData = (val) => {
       // API : Search
@@ -123,15 +114,7 @@ const Investisseur = () => {
       setPaginationSelect("query")
     }
 
-
-
-
-    // display items
-    let displayItems = data.map((item, index) => {
-      return <Cards key={index} item={item} setModal={setModal} setSelect={setSelect} />
-    })
-
-
+    //
 
 
 
@@ -192,6 +175,12 @@ const Investisseur = () => {
 
 
 
+     // display items
+     let displayItems = data.map((item, index) => {
+      return <Cards key={index} item={item} setModal={setModal} setSelect={setSelect} />
+    })
+
+
 
 
     // First UseEffect
@@ -226,6 +215,11 @@ const Investisseur = () => {
       searchData(query)
     }, [query])
 
+    // useEffect of trie
+    useEffect(() => {
+      console.log(trie);
+    }, [trie])
+
 
     return (
         <InvestisseurStyled>
@@ -246,10 +240,8 @@ const Investisseur = () => {
                         <li onClick={() => changeSectionMenu("pme")}><GrAppsRounded/>PME</li>
                     </ul>
 
-                    
-                    
                     {/* Filter and search */}
-                    <SearchFilter setQuery={setQuery} />
+                    <SearchFilter setQuery={setQuery} setTrie={setTrie} />
                     
                 </div>
                 <hr/>

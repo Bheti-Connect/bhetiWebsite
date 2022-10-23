@@ -4,24 +4,21 @@ import {GoSearch} from 'react-icons/go';
 //import {RiFilter3Fill} from 'react-icons/ri';
 import { useTheme } from '../../context/themeContext';
 
-const SearchFilter = ({setQuery}) => {
+const SearchFilter = ({setQuery, setTrie}) => {
 
-  const valueSearch = useRef(null); 
+  const trieValue = ["Trier par ...", "Recent", "Ancien"]
 
+  const valueSearch = useRef(null);
+
+  // Handle query
   const handleQuery = (e) => {
     e.preventDefault();
     setQuery(valueSearch.current.value)
   }
 
-  const handleFilter = (e) => {
-    if (e.currentTarget.classList.contains("filter-icon-none"))
-    {
-      e.currentTarget.classList.remove("filter-icon-none")
-      e.currentTarget.classList.add("filter-icon-active")
-    }else{
-      e.currentTarget.classList.add("filter-icon-none")
-      e.currentTarget.classList.remove("filter-icon-active")
-    }
+  // Handle trie
+  const handleTrie = (e) => {
+    console.log(trieValue[e.target.value]);
   }
 
   const theme = useTheme()
@@ -39,12 +36,14 @@ const SearchFilter = ({setQuery}) => {
 
       {/* Filter */}
       <ContainerFilter theme={theme}>
-        <div className='filter bg-gray-800' onClick={handleFilter}>
+        <div className='filter'>
         <label htmlFor="trie-select"></label>
-          <select name='trie' id='trie-select' className='select-style'>
-            <option value="">Trier par ...</option>
-            <option value="Recent">Recent</option>
-            <option value="">Ancien</option>
+          <select name='trie' id='trie-select' onClick={handleTrie}>
+          {
+            trieValue.map((item, index) => {
+              return <option value={index}>{item}</option>
+            })
+          }
           </select>
         </div>
       </ContainerFilter>
@@ -118,10 +117,11 @@ const ContainerFilter = styled.div`
 
       .filter{
 
-        .select-style{
+        #trie-select{
           border-color: transparent;
           border-radius: 2px;
           background-color: #f0f3f4;
+          cursor: pointer;
         }
       }
 `;
