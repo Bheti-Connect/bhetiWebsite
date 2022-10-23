@@ -1,4 +1,3 @@
-import React from 'react'
 import styled from 'styled-components'
 import { useTheme } from '../context/themeContext';
 import premiereImg from '../assets/images/ent-img1.jpg';
@@ -52,8 +51,8 @@ const HeaderStyled = styled.header`
     @media only screen and (max-width: 1024px) and (min-width: 900px){
         height: 100vh;
     }
-    @media only screen and (max-width: 425px) and (min-width: 325px){
-        height: 110vh;
+    @media only screen and (max-width: 425px) and (min-width: 320px){
+        height: 115vh;
     }
     .header-content{
         display: grid;
@@ -186,13 +185,13 @@ const HeaderStyled = styled.header`
                     margin-top: -10%;
                     margin-left: -12.5%;
                     text-align: justify;
+
                     h2{
-                        font-size: 32px;
+                        font-size: 28px;
                     }
                     p{
                         font-size: 15px;
                     }
-                    
             }
             
             .button-demo{
@@ -213,11 +212,12 @@ const HeaderStyled = styled.header`
                 }
             }
             @media only screen and (max-width: 425px) and (min-width: 320px){
-                width: 350px;
+                width: 290px;
+                margin-left: -45px;
                 .button-demo {
                     position: absolute;
-                    top: 190%;
-                    margin-left: 3%;
+                    top: 175%;
+                    margin-left: -6%;
                     width: 280px;
                 }
             }
@@ -295,7 +295,7 @@ const HeaderStyled = styled.header`
                     border-top-left-radius: 5px;
                 }
                 @media only screen and (max-width: 425px) and (min-width: 320px){
-                    width: 150px;
+                    width: 147px;
                     height: 200px;
                     margin-right: -300px;
                     border-bottom-right-radius: 5px;
@@ -392,7 +392,7 @@ const HeaderStyled = styled.header`
             }
             @media only screen and (max-width: 425px) and (min-width: 320px){
                 margin-left: -14%;
-                margin-top: 40%;
+                margin-top: 45%;
                 width: 370px;
             }
         }
@@ -429,6 +429,7 @@ const HeaderStyled = styled.header`
             display: flex ;
             position: relative;
             margin-left: -200px;
+            margin-top: -13%;
                 .box {
                     position: absolute;
                     .right-h-content{

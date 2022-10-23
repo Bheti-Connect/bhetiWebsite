@@ -149,6 +149,9 @@ const NavBarStyled = styled.nav`
                 color: ${props => props.theme.colorBlack};
                 margin-left: -29px;
                 margin-top: 7%;
+                @media only screen and (min-width: 900px) {
+                    visibility: hidden;
+                }
             }
         }
         }
