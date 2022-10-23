@@ -15,7 +15,6 @@ import styled from "styled-components";
 
 export const LoginForm = (props) => {
   const { switchToSignup } = useContext(AccountContext);
-
   return (
     <loginFormStyled>      
       <BoxContainer>
