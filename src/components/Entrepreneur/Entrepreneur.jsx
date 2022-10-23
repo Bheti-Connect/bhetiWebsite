@@ -8,7 +8,6 @@ const Entrepreneur = () => {
     const theme = useTheme();
     return (
         <EntrepreneurStyled  theme={theme}>
-            
             <Accueil />
             <div className='method-container'>
                 <LaMethode />
