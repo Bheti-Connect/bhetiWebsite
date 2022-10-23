@@ -110,27 +110,26 @@ const Investisseur = () => {
       let source = "https://bheti-connect.smirltech.com/api/projets/search"
       // Body POST
       let toSend = {
-        "search": [{
+        "search": {
           "value": `${val}`
-      }]
       }
-
-      console.log(val);
-
+      }
+      // Get research
       axios.post(source, toSend).then((resp) =>{
         handleSetData(resp.data)
       }).catch((error) => {
         console.log(error);
       })
+      setPaginationSelect("query")
     }
 
 
 
 
     // display items
-    let displayItems = query ? (searchData(query)) : (data.map((item, index) => {
+    let displayItems = data.map((item, index) => {
       return <Cards key={index} item={item} setModal={setModal} setSelect={setSelect} />
-    }))
+    })
 
 
 
@@ -141,8 +140,7 @@ const Investisseur = () => {
       var pageNumber = selected + 1
       let source = ""
       let filter = ""
-
-      console.log(paginationSelect);
+      let request = ""
 
       if(paginationSelect == "pme")
       {
@@ -150,7 +148,15 @@ const Investisseur = () => {
         source = `https://bheti-connect.smirltech.com/api/projets/search?page=${pageNumber}`
         filter = {filters: [{field: 'type', value: 'pme'}]}
 
-      }else if(paginationSelect == "startup")
+      }else if (paginationSelect == "query"){
+        source = `https://bheti-connect.smirltech.com/api/projets/search?page=${pageNumber}`
+        request = {
+          "search": {
+            "value": `${query}`
+        }
+        }
+      }
+      else if(paginationSelect == "startup")
       {
 
         source = `https://bheti-connect.smirltech.com/api/projets/search?page=${pageNumber}`
@@ -168,7 +174,15 @@ const Investisseur = () => {
         axios.post(source, filter).then(res => {
           handleSetData(res.data)
         }).catch(error => console.log(error))
-      }else{
+      }else if (request)
+      {
+        axios.post(source, request).then((resp) =>{
+          handleSetData(resp.data)
+        }).catch((error) => {
+          console.log(error);
+        })
+      }
+      else{
         axios.get(source).then(res => {
           handleSetData(res.data)
         }).catch(error => console.log(error))
@@ -206,6 +220,11 @@ const Investisseur = () => {
         clearTimeout(waiting)
       }
     }, [currentPage])
+
+    // useEffect of query
+    useEffect(() => {
+      searchData(query)
+    }, [query])
 
 
     return (
