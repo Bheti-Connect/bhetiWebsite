@@ -52,6 +52,9 @@ const LaMethodeStyled = styled.section`
     grid-template-columns: 1fr 1fr;
     grid-gap: 3rem;
     padding-top: 10rem !important;
+    @media only screen and (max-width: 525px) and (min-width: 320px) {
+            width: 100px ;
+        }
     .left-container{
         h3{
             color: ${props => props.theme.colorWhite};
@@ -80,10 +83,17 @@ const LaMethodeStyled = styled.section`
                 }
             }
         }
-        @media screen and (min-width: 1150px) {
-                    width: 450px;
-                    margin-left: -150px;
-	            }
+        @media only screen and (max-width: 525px) and (min-width: 425px){
+            width: 300px;
+            font-size: 18px;
+                h5{
+                    font-size: 22px;
+                }
+                .title{
+                    font-size: 2.6rem;
+                }
+                margin-left: -200px;
+        }
     }
     .right-container{
         display: grid; 
@@ -119,6 +129,9 @@ const LaMethodeStyled = styled.section`
 	            }
         @media only screen and (max-width: 1440px) and (min-width: 1350px) {
             margin-top: 250px;
+        }
+        @media only screen and (max-width: 525px) and (min-width: 320px) {
+            display: none;
         }
     }
 

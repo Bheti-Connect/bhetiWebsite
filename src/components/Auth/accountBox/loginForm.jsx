@@ -1,5 +1,4 @@
 import React, { useContext } from "react";
-import Select from 'react-select';
 import options from "../../../data/options";
 import {
   BoldLink,
@@ -20,7 +19,6 @@ export const LoginForm = (props) => {
       <BoxContainer>
         <FormContainer>
           <Input type="email" placeholder="Email" />
-          <Select options={options} placeholder="Qui êtes-vous ?" />
           <Input type="password" placeholder="Mot de passe" />
         </FormContainer>
         <Marginer direction="vertical" margin={10} />
@@ -39,7 +37,5 @@ export const LoginForm = (props) => {
   );
 }
 
-
 const loginFormStyled = styled.section`
-
 `

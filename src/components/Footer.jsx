@@ -153,6 +153,9 @@ const FooterSectionStyled = styled.footer`
             .nav-item{
                 margin-bottom: 1rem;
             }
+            @media only screen and (max-width: 525px) and (min-width: 320px) {
+                margin-top: 25px;
+            }
         }
         .company {
             .nav-item a{
@@ -227,6 +230,12 @@ const FooterSectionStyled = styled.footer`
         }
         @media only screen and (max-width: 1250px) and (min-width: 1024px){
             width: 900px;
+        }
+        @media only screen and (max-width: 525px) and (min-width: 425px) {
+            width: 340px;
+        }
+        @media only screen and (max-width: 425px) and (min-width: 320px){
+            width: 500px;
         }
     }
     .footer-copyright{
