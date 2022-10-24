@@ -18,7 +18,7 @@ const SearchFilter = ({setQuery, setTrie}) => {
 
   // Handle trie
   const handleTrie = (e) => {
-    console.log(trieValue[e.target.value]);
+    setTrie(trieValue[e.target.value]);
   }
 
   const theme = useTheme()
@@ -41,7 +41,7 @@ const SearchFilter = ({setQuery, setTrie}) => {
           <select name='trie' id='trie-select' onClick={handleTrie}>
           {
             trieValue.map((item, index) => {
-              return <option value={index}>{item}</option>
+              return <option key={index} value={index}>{item}</option>
             })
           }
           </select>

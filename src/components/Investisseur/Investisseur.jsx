@@ -31,6 +31,7 @@ const Investisseur = () => {
     const [trie, setTrie] = useState("")
     // Position change pagination : Tous, Startup, pme
     const [paginationSelect, setPaginationSelect] = useState("tous")
+    const [positionTrie, setPositionTrie] = useState("")
 
 
 
@@ -96,25 +97,62 @@ const Investisseur = () => {
 
 
     // Search data from API
-    const searchData = (val) => {
+    const searchData = () => {
       // API : Search
       let source = "https://bheti-connect.smirltech.com/api/projets/search"
       // Body POST
       let toSend = {
-        "search": {
-          "value": `${val}`
+        search: {
+          value: `${query}`
       }
       }
       // Get research
-      axios.post(source, toSend).then((resp) =>{
-        handleSetData(resp.data)
-      }).catch((error) => {
-        console.log(error);
-      })
-      setPaginationSelect("query")
+      if (query)
+      {
+        axios.post(source, toSend).then((resp) =>{
+          handleSetData(resp.data)
+        }).catch((error) => {
+          console.log(error);
+        })
+        setPaginationSelect("query")
+      }
     }
 
-    //
+    // Get Trie data with id as field from API
+    const handleTrieData = () => {
+      let source = "https://bheti-connect.smirltech.com/api/projets/search"
+      let toSend = ""
+
+      if (trie == "Recent")
+      {
+        toSend = {
+          "sort":[ {
+            "field": "id",
+            "direction": "desc"
+          }]
+        }
+        setPositionTrie("Recent")
+      }
+
+      if (trie == "Ancien")
+      {
+        toSend = {
+          "sort":[ {
+            "field": "id",
+            "direction": "asc"
+          }]
+        }
+        setPositionTrie("Ancien")
+      }
+
+      if (toSend)
+      {
+        axios.post(source, toSend).then(res => {
+          handleSetData(res.data)
+        }).catch(error => console.log(error))
+        setPaginationSelect("trieData")
+      }
+    }
 
 
 
@@ -122,14 +160,12 @@ const Investisseur = () => {
     let changePage = ({selected}) => {
       var pageNumber = selected + 1
       let source = ""
-      let filter = ""
       let request = ""
 
       if(paginationSelect == "pme")
       {
-
         source = `https://bheti-connect.smirltech.com/api/projets/search?page=${pageNumber}`
-        filter = {filters: [{field: 'type', value: 'pme'}]}
+        request = {filters: [{field: 'type', value: 'pme'}]}
 
       }else if (paginationSelect == "query"){
         source = `https://bheti-connect.smirltech.com/api/projets/search?page=${pageNumber}`
@@ -143,21 +179,38 @@ const Investisseur = () => {
       {
 
         source = `https://bheti-connect.smirltech.com/api/projets/search?page=${pageNumber}`
-        filter = {filters: [{field: 'type', value: 'startup'}]}
+        request = {filters: [{field: 'type', value: 'startup'}]}
 
-      }else{
+      }else if (paginationSelect == "trieData")
+      {
+        source = `https://bheti-connect.smirltech.com/api/projets/search?page=${pageNumber}`
+        if(positionTrie == "Recent")
+        {
+          request = {
+            "sort":[ {
+              "field": "id",
+              "direction": "desc"
+            }]
+          }
+        }
+        if (positionTrie == "Ancien")
+        {
+          request = {
+            "sort":[ {
+              "field": "id",
+              "direction": "asc"
+            }]
+          }
+        }
+      }
+      else{
 
         source = `https://bheti-connect.smirltech.com/api/projets?page=${pageNumber}`
 
       }
 
       // get Add for another page
-      if (filter)
-      {
-        axios.post(source, filter).then(res => {
-          handleSetData(res.data)
-        }).catch(error => console.log(error))
-      }else if (request)
+     if (request)
       {
         axios.post(source, request).then((resp) =>{
           handleSetData(resp.data)
@@ -208,16 +261,16 @@ const Investisseur = () => {
       return () => {
         clearTimeout(waiting)
       }
-    }, [currentPage])
+    }, [currentPage, query])
 
     // useEffect of query
     useEffect(() => {
-      searchData(query)
+      searchData()
     }, [query])
 
     // useEffect of trie
     useEffect(() => {
-      console.log(trie);
+      handleTrieData()
     }, [trie])
 
 
