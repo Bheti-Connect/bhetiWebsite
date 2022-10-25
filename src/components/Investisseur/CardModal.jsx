@@ -6,6 +6,8 @@ import { faXmark } from '@fortawesome/free-solid-svg-icons';
 const CardModal = ({select, setModal}) => {
 
 
+  // Generate image
+  let source = "https://" + `picsum.photos/id/${select.id}/200/300`;
 
   return (
     <Container>
@@ -17,17 +19,6 @@ const CardModal = ({select, setModal}) => {
                 </Header>
 
                 <Body>
-
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate commodi quasi deleniti consequatur, sit quae adipisci mollitia dignissimos recusandae sapiente officia a nihil at, asperiores numquam quas eum temporibus dolorum.
-                Temporibus velit veniam, ratione consequuntur dicta magnam minima excepturi sed! Libero similique nesciunt adipisci ipsum cumque perferendis nostrum, atque temporibus rerum nisi architecto, dignissimos et tenetur eius excepturi vitae eum.
-                Omnis harum facilis eaque dolor dicta eveniet dolorum, animi tempore ex obcaecati reprehenderit distinctio minima ipsum voluptates commodi inventore ipsam amet numquam velit dignissimos tenetur voluptatum soluta maiores consequuntur. Repellendus?
-                Veritatis ullam blanditiis repudiandae harum cum! Nemo tenetur et libero exercitationem quos optio accusamus quaerat! Ut, dicta deserunt ab dignissimos praesentium ipsa, fugiat commodi ea nulla distinctio, aliquam sapiente quaerat.
-                Suscipit aliquam facilis nisi dolorum voluptas a ipsam aliquid architecto alias, ratione modi laborum similique. Est similique aliquam perspiciatis nihil, obcaecati placeat perferendis cupiditate vel amet explicabo suscipit ad cumque!
-                Qui dolores iure illo sed doloremque, provident eum impedit consectetur atque, excepturi aliquid magnam iste. Nesciunt nihil quisquam dicta eos qui, iusto, adipisci in deserunt id et explicabo odio porro.
-                Maiores id minus adipisci soluta velit officiis sunt atque ipsum repudiandae blanditiis totam, voluptatem quod perspiciatis molestias in! Reiciendis voluptas iure officia molestias neque expedita, qui soluta perspiciatis facere totam?
-                Esse ad laboriosam aliquid, repellendus maxime magnam, provident earum debitis perspiciatis qui iusto similique non fugit praesentium recusandae maiores incidunt. Vero assumenda obcaecati ratione cum modi enim itaque veniam ipsum?
-                Eius debitis libero, quidem repellendus quia inventore, odio aliquam quas quis sunt rem molestias, voluptatibus explicabo? Libero, ad sed consequatur eaque assumenda vel, ipsum, voluptas aliquid consectetur possimus iusto sint.
-                Amet vitae, delectus exercitationem officiis consectetur cumque sed dolorem dicta temporibus iure nulla odit ratione eum voluptatem possimus fugit molestiae quisquam blanditiis laborum repudiandae obcaecati repellat in commodi dignissimos. Autem?
 
                 </Body>
             </div>

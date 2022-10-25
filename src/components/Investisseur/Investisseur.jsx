@@ -15,6 +15,7 @@ const Investisseur = () => {
     const [currentPage, setCurrentPage] = useState(0);
     const [itemsPerPage, setItemsPerPage] = useState(0);
     const [totalPage, setTotalPage] = useState(0)
+    const [initPage, setInitPage] = useState(0)
     // query useState for search
     const [query, setQuery] = useState("")
     // select card useState
@@ -258,6 +259,8 @@ const Investisseur = () => {
         setLoading(false)
       }, 4000);
 
+      setInitPage(currentPage - 1)
+
       return () => {
         clearTimeout(waiting)
       }
@@ -319,6 +322,7 @@ const Investisseur = () => {
               nextLabel={"Suivant »"}
               pageCount={totalPage}
               onPageChange={changePage}
+              forcePage={initPage}
               breakLabel="..."
               pageRangeDisplayed={7}
               marginPagesDisplayed={1}
