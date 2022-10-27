@@ -1,8 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
-
+import { useTheme } from '../../context/themeContext';
 
 const Cards = ({item, setSelect, setModal}) => {
+
+  const theme = useTheme()
 
   // Format currency Euro
   let currencyEuro = new Intl.NumberFormat('de-DE', { style : 'currency', currency: 'EUR'})
@@ -16,7 +18,7 @@ const Cards = ({item, setSelect, setModal}) => {
   }
 
   return (
-    <CardItem onClick={handleSelect}>
+    <CardItem onClick={handleSelect} theme={theme}>
           <CardHeader>
             <img src={source} alt='project'/>
           </CardHeader>
@@ -72,7 +74,7 @@ ul{
 
 ul li {
   margin-right:8px;
-  background-color: #002B5B;
+  background-color: #700b0b;
   color: white;
   border-radius: 40px;
   padding:2px 5px;

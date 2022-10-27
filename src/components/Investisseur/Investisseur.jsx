@@ -298,7 +298,6 @@ const Investisseur = () => {
 
                     {/* Filter and search */}
                     <SearchFilter setQuery={setQuery} setTrie={setTrie} />
-                    
                 </div>
                 <hr/>
             </div>
