@@ -39,11 +39,11 @@ const JoinCommunity = () => {
                     </div>
                 </div>
             </div>
-            {/* <div className='latest-controlls'>
+            <div className='latest-controlls'>
                 <div className='control control-1'></div>
                 <div className='control control-2'></div>
                 <div className='control control-3'></div>
-            </div> */}
+            </div>
         </JoinCommunityStyled>
     )
 }

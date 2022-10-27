@@ -143,10 +143,23 @@ const AccueilStyled = styled.section`
         .blobImg-1{
             position: absolute;
             right: -30px;
-            bottom: -160px;
-            @media only screen and (max-width: 1440px) and (min-width: 1350px) {
+            bottom: -100px;
+            @media all and (max-width: 2500px) {
                 width: 35%;
             }
+            @media all and (max-width: 1800px) {
+                width: 25%;
+            }
+            @media all and (max-width: 1500px) {
+                width: 23%;
+            }
+            @media all and (max-width: 1300px)  {
+
+            }
+            @media all and (max-width: 1080px) {
+                width: 20%;
+            }
+
             @media only screen and (max-width: 525px) and (min-width: 425px) {
                 width: 25%;
                 right: 0px;
@@ -179,7 +192,7 @@ const AccueilStyled = styled.section`
             @media only screen and (max-width: 525px) and (min-width: 425px) {
                 width: 90%;
                 margin-top: 80px;
-            }
+             }
         }
         @media only screen and (max-width: 1440px) and (min-width: 1350px){
             width: 720px;
