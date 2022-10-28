@@ -315,10 +315,9 @@ const Investisseur = () => {
               </AllCards>
 
               {/* Pagination */}
-
               <ReactPaginate
-              previousLabel={"« Précédent"}
-              nextLabel={"Suivant »"}
+              previousLabel={"Précédent"}
+              nextLabel={"Suivant"}
               pageCount={totalPage}
               onPageChange={changePage}
               forcePage={initPage}
@@ -377,9 +376,9 @@ const AllProject = styled.div`
 
 .pageClassName{
   background-color: ${props => props.theme.colorGrey5};
-  border-radius: 5px;
+  border-radius: 50px;
   cursor: pointer;
-  padding: 5px;
+  padding: 4px 7px;
   transition: .3s ease;
 
 
@@ -393,24 +392,28 @@ const AllProject = styled.div`
 }
 
 .previousLinkClassName{
-  background-color: ${props => props.theme.colorGrey5};
+  color: ${props => props.theme.colorBheti};
   padding: 5px;
+  font-family: sans-serif;
   border-radius: 5px;
-  color: white;
   cursor: pointer;
+  font-weight: 600;
+  font-size: 16px;
   &:hover{
-    background-color: ${props => props.theme.colorBheti};
+    opacity: 0.7;
   }
 }
 
 .nextLinkClassName{
-  background-color: ${props => props.theme.colorGrey5};
+  color: ${props => props.theme.colorBheti};
   padding: 5px;
+  font-family: sans-serif;
   border-radius: 5px;
-  color: white;
   cursor: pointer;
+  font-weight: 600;
+  font-size: 16px;
   &:hover{
-    background-color: ${props => props.theme.colorBheti};
+    opacity: 0.7;
   }
 }
 
@@ -447,7 +450,7 @@ p {
     display: flex;
     flex-direction:row;
     list-style: none;
-    margin-bottom: -4px;
+    margin-bottom:-5px;
 
     svg{
         padding-top:4px;
@@ -460,6 +463,10 @@ p {
   padding-bottom: 5px;
   text-transform: uppercase;
   cursor: pointer;
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 20px;
+  font-style: normal;
 
   &:hover{
     color: ${props => props.theme.colorBheti};
@@ -473,6 +480,7 @@ p {
 
     hr {
     margin-top: -9px;
+    border: 0.5px solid rgb(0 0 0 / 11%);
     }
 }
 

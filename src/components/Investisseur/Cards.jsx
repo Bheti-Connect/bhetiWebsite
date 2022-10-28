@@ -46,7 +46,8 @@ margin: 10px;
 border-radius: 10px;
 box-shadow: 0 2px 20px rgba(0, 0, 0, 0.2);
 overflow: hidden;
-width:250px;
+width: 250px;
+height: 330px;
 cursor: pointer;
 
 &:hover{
@@ -60,8 +61,12 @@ padding: 10px;
 
 h3{
   text-transform: uppercase;
-  font-family: georgia, serif;
-  font-size: 16px;
+  font-style: normal;
+  font-family: 'Inter', serif;
+  font-weight: 700;
+  font-size: 15px;
+  line-height: 18px;
+  margin-bottom: 13px;
 }
 
 ul{
@@ -90,7 +95,7 @@ ul li {
 .country {
   border-radius: 50px;
   color: white;
-  background-color: #47bcd4;
+  background-color: #000000;
   padding: 2px 5px;
   margin-top: 8px;
   text-align:center;
@@ -98,7 +103,10 @@ ul li {
 }
 
 .price{
-  font-size: 13px;
+  font-family: 'Inter', serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 12px;
 }
 
 `

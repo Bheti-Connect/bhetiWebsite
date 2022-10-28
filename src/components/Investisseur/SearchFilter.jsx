@@ -1,13 +1,10 @@
 import React, {useRef} from 'react';
 import styled from 'styled-components';
 import {GoSearch} from 'react-icons/go';
-//import {RiFilter3Fill} from 'react-icons/ri';
-import { useTheme } from '../../context/themeContext';
 
 const SearchFilter = ({setQuery, setTrie}) => {
 
   const trieValue = ["Trier par ...", "Recent", "Ancien"]
-
   const valueSearch = useRef(null);
 
   // Handle query
@@ -21,7 +18,6 @@ const SearchFilter = ({setQuery, setTrie}) => {
     setTrie(trieValue[e.target.value]);
   }
 
-  const theme = useTheme()
 
   return (
     <SearchBox>
@@ -35,7 +31,7 @@ const SearchFilter = ({setQuery, setTrie}) => {
 
 
       {/* Filter */}
-      <ContainerFilter theme={theme}>
+      <ContainerFilter>
         <div className='filter'>
         <label htmlFor="trie-select"></label>
           <select name='trie' id='trie-select' onClick={handleTrie}>
@@ -88,11 +84,11 @@ margin-right:20px;
     left:10px;
     top: 5px;
     border-style: none;
-    font-size: 20px;
+    font-size: 25px;
     font-weight: bold;
     outline: none;
     cursor: pointer;
-    color:black;
+    color: #700b0b;
     background-color: transparent;
     }
 
@@ -118,10 +114,18 @@ const ContainerFilter = styled.div`
       .filter{
 
         #trie-select{
-          border-color: transparent;
+          border: none;
           border-radius: 2px;
+          padding: 5px 0;
           background-color: #f0f3f4;
           cursor: pointer;
+          font-weight: 600;
+          color: #700b0b;
+          font-size: 14px;
+
+          &:focus {
+            outline: none;
+          }
         }
       }
 `;
