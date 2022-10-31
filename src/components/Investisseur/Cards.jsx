@@ -13,6 +13,8 @@ const Cards = ({item, setSelect, setModal}) => {
   let source = "https://" + `picsum.photos/id/${item.id}/200/300`;
 
   const handleSelect = () => {
+    const body = document.querySelector("body");
+    body.style.overflow = "hidden";
     setSelect(item)
     setModal(true)
   }

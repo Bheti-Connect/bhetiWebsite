@@ -9,19 +9,26 @@ const CardModal = ({select, setModal}) => {
   // Generate image
   let source = "https://" + `picsum.photos/id/${select.id}/200/300`;
 
+  // handle disable modal
+  const handleModal = () => {
+    const body = document.querySelector("body");
+    body.style.overflow = "auto";
+    setModal(false);
+  }
+
   return (
     <Container>
         <div id="open-modal" className="modal-window">
             <div>
-                <div onClick={() => setModal(false)} className="modal-close"><FontAwesomeIcon icon={faXmark} size="lg"/></div>
+                <div onClick={handleModal} className="modal-close"><FontAwesomeIcon icon={faXmark} size="lg"/></div>
                 <Header>
                   <p>Projet {select.nom}</p>
                   <ul>
-                    <li>Secteurs : N'est pas mentionné</li>
-                    <li>Besoin de financement : {select.financement ? (select.financement) : ("N'est pas mentionné")}</li>
-                    <li>Siège : {select.siege ? (select.siege) : ("N'est pas mentionné")}</li>
-                    <li>Stage : {select.stade ? (select.stade) : ("N'est pas mentionné")}</li>
-                    <li>Type : {select.type ? (select.type) : ("N'est pas mentionné")}</li>
+                    <li><span className='text-head'>Secteurs</span> : N'est pas mentionné</li>
+                    <li><span className='text-head'>Besoin de financement</span> : {select.financement ? (select.financement) : ("N'est pas mentionné")}</li>
+                    <li><span className='text-head'>Siège</span> : {select.siege ? (select.siege) : ("N'est pas mentionné")}</li>
+                    <li><span className='text-head'>Stage</span> : {select.stade ? (select.stade) : ("N'est pas mentionné")}</li>
+                    <li><span className='text-head'>Type</span> : {select.type ? (select.type) : ("N'est pas mentionné")}</li>
                   </ul>
                 </Header>
 
@@ -34,44 +41,44 @@ const CardModal = ({select, setModal}) => {
 
                   <div className='detail'>
                     <h3>Projet {select.nom}</h3>
-                    <p>{select.description}</p>
+                    <p className='flouter'>{select.description}</p>
                   </div>
                 </div>
 
                 {/* Pourquoi maintenant ?  */}
                 <div className='item-detail'>
                   <h3>✅ Pourquoi maintenant ?</h3>
-                  <p>{select.description ? (select.description) : ("")}</p>
+                  <p className='flouter'>{select.description ? (select.description) : ("")}</p>
                 </div>
 
                 {/* Problèmes  */}
                 <div className='item-detail'>
                   <h3>🚨 Problèmes</h3>
-                  <p>{select.problemes ? (select.problemes) : ("")}</p>
+                  <p className='flouter'>{select.problemes ? (select.problemes) : ("")}</p>
                 </div>
 
                 {/* Solutions  */}
                 <div className='item-detail'>
                   <h3>☝ Solutions</h3>
-                  <p>{select.solutions ? (select.solutions) : ("")}</p>
+                  <p className='flouter'>{select.solutions ? (select.solutions) : ("")}</p>
                 </div>
 
                 {/* Equipe  */}
                 <div className='item-detail'>
                   <h3>👬 Equipe</h3>
-                  <p>{select.equipe ? (select.equipe) : ("")}</p>
+                  <p className='flouter'>{select.equipe ? (select.equipe) : ("")}</p>
                 </div>
 
                 {/* Business Modal  */}
                 <div className='item-detail'>
                   <h3>💰 Business Modal</h3>
-                  <p>{select.business_model ? (select.business_model) : ("")}</p>
+                  <p className='flouter'>{select.business_model ? (select.business_model) : ("")}</p>
                 </div>
 
                 {/* KPI  */}
                 <div className='item-detail'>
                 <h3>📊 KPI</h3>
-                <p>{select.kpi ? (select.kpi) : ("")}</p>
+                <p className='flouter'>{select.kpi ? (select.kpi) : ("")}</p>
                 </div>
 
                 </Body>
@@ -125,6 +132,17 @@ font-size: 16px;
     &:hover {
       color: #EB1D36;
     }
+  }
+
+  /* CSS for blur */
+
+  .flouter {
+    filter:blur(2.5px);
+  }
+
+  .text-head{
+    font-weight: 600;
+    font-family: 'Inter', sans-serif;
   }
 
 `
