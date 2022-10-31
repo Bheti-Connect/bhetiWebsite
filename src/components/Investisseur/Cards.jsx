@@ -62,7 +62,7 @@ padding: 10px;
 h3{
   text-transform: uppercase;
   font-style: normal;
-  font-family: 'Inter', serif;
+  font-family: 'Inter', sans-serif;
   font-weight: 700;
   font-size: 15px;
   line-height: 18px;
@@ -103,7 +103,7 @@ ul li {
 }
 
 .price{
-  font-family: 'Inter', serif;
+  font-family: 'Inter', sans-serif;
   font-style: normal;
   font-weight: 700;
   font-size: 12px;

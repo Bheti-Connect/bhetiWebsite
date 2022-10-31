@@ -17,11 +17,11 @@ const CardModal = ({select, setModal}) => {
                 <Header>
                   <p>Projet {select.nom}</p>
                   <ul>
-                    <li>Secteurs : </li>
-                    <li>Besoin de financement : {select.financement}</li>
-                    <li>Siège : {select.siege}</li>
-                    <li>Stage : {select.stade}</li>
-                    <li>Type : {select.type}</li>
+                    <li>Secteurs : N'est pas mentionné</li>
+                    <li>Besoin de financement : {select.financement ? (select.financement) : ("N'est pas mentionné")}</li>
+                    <li>Siège : {select.siege ? (select.siege) : ("N'est pas mentionné")}</li>
+                    <li>Stage : {select.stade ? (select.stade) : ("N'est pas mentionné")}</li>
+                    <li>Type : {select.type ? (select.type) : ("N'est pas mentionné")}</li>
                   </ul>
                 </Header>
 
@@ -40,38 +40,38 @@ const CardModal = ({select, setModal}) => {
 
                 {/* Pourquoi maintenant ?  */}
                 <div className='item-detail'>
-                  <h3>Pourquoi maintenant ?</h3>
-                  <p>{select.description}</p>
+                  <h3>✅ Pourquoi maintenant ?</h3>
+                  <p>{select.description ? (select.description) : ("")}</p>
                 </div>
 
                 {/* Problèmes  */}
                 <div className='item-detail'>
-                  <h3>Problèmes</h3>
-                  <p>{select.problemes}</p>
+                  <h3>🚨 Problèmes</h3>
+                  <p>{select.problemes ? (select.problemes) : ("")}</p>
                 </div>
 
                 {/* Solutions  */}
                 <div className='item-detail'>
-                  <h3>Solutions</h3>
-                  <p>{select.solutions}</p>
+                  <h3>☝ Solutions</h3>
+                  <p>{select.solutions ? (select.solutions) : ("")}</p>
                 </div>
 
                 {/* Equipe  */}
                 <div className='item-detail'>
-                  <h3>Equipe</h3>
-                  <p>{select.equipe}</p>
+                  <h3>👬 Equipe</h3>
+                  <p>{select.equipe ? (select.equipe) : ("")}</p>
                 </div>
 
                 {/* Business Modal  */}
                 <div className='item-detail'>
-                  <h3>Business Modal</h3>
-                  <p>{select.business_model}</p>
+                  <h3>💰 Business Modal</h3>
+                  <p>{select.business_model ? (select.business_model) : ("")}</p>
                 </div>
 
                 {/* KPI  */}
                 <div className='item-detail'>
-                <h3>KPI</h3>
-                <p>{select.kpi}</p>
+                <h3>📊 KPI</h3>
+                <p>{select.kpi ? (select.kpi) : ("")}</p>
                 </div>
 
                 </Body>
@@ -140,6 +140,10 @@ ul {
   margin: 15px 0;
 }
 
+ul li {
+  margin-bottom: 8px;
+}
+
 `;
 
 const Body = styled.div`
@@ -156,7 +160,12 @@ text-align: justify;
     width: 280px;
     margin-right: 20px;
     object-fit: cover;
+    border-radius: 10px;
   }
+}
+
+.detail h3 {
+  margin-bottom: 10px;
 }
 
 .item-detail h3 {
@@ -164,11 +173,12 @@ text-align: justify;
   padding-right: 0px;
   display: grid;
   grid-template-columns: 10fr 1fr;
-  background-color: lightblue;
+  background-color: #700b0b;
+  color: white;
   font-size: 13px;
   grid-gap: 10px;
   border: 1px solid transparent;
-  border-radius: 5px;
+  border-radius: 1px;
   margin: 15px 0;
 }
 
