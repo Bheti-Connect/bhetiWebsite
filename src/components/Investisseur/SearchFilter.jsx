@@ -1,11 +1,13 @@
 import React, {useRef} from 'react';
 import styled from 'styled-components';
 import {GoSearch} from 'react-icons/go';
+import { useTheme } from '../../context/themeContext';
 
 const SearchFilter = ({setQuery, setTrie}) => {
 
   const trieValue = ["Trier par ...", "Recent", "Ancien"]
   const valueSearch = useRef(null);
+  const theme = useTheme();
 
   // Handle query
   const handleQuery = (e) => {
@@ -20,7 +22,7 @@ const SearchFilter = ({setQuery, setTrie}) => {
 
 
   return (
-    <SearchBox>
+    <SearchBox theme={theme}>
     {/* Search Bar */}
       <ContainerSearch>
         <form onSubmit={handleQuery}>
@@ -48,8 +50,10 @@ const SearchFilter = ({setQuery, setTrie}) => {
 }
 
 const SearchBox = styled.div`
+
 display: flex;
 justify-content: space-between;
+
 `;
 
 const ContainerSearch = styled.div`
@@ -88,7 +92,7 @@ margin-right:20px;
     font-weight: bold;
     outline: none;
     cursor: pointer;
-    color: #700b0b;
+    color: ${props => props.theme.colorBheti};
     background-color: transparent;
     }
 
@@ -120,7 +124,7 @@ const ContainerFilter = styled.div`
           background-color: #f0f3f4;
           cursor: pointer;
           font-weight: 600;
-          color: #700b0b;
+          color: ${props => props.theme.colorBheti};
           font-size: 14px;
 
           &:focus {
