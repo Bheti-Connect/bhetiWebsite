@@ -12,14 +12,14 @@ function LoaderReact({count}) {
           speed={2}
           width={280}
           height={300}
-          viewBox="0 0 539 600"
+          viewBox="-60 100 539 600"
           backgroundColor="#d6d6d6"
           foregroundColor="#ffffff">
 
-          <rect x="147" y="132" rx="7" ry="7" width="280" height="240" />
-          <rect x="148" y="384" rx="6" ry="6" width="267" height="27" />
-          <rect x="148" y="421" rx="6" ry="6" width="267" height="27" />
-          <rect x="147" y="456" rx="6" ry="6" width="267" height="27" />
+        <rect x="60" y="103" rx="15" ry="15" width="261" height="209" /> 
+        <rect x="65" y="321" rx="0" ry="0" width="252" height="15" /> 
+        <rect x="65" y="343" rx="0" ry="0" width="252" height="15" /> 
+        <rect x="66" y="366" rx="0" ry="0" width="252" height="15" />
         </ContentLoader>
 
     </Container>

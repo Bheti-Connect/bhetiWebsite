@@ -309,7 +309,7 @@ const Investisseur = () => {
               <AllCards>
 
               {
-                  loading ? (<LoaderReact count={15}/>) : (displayItems)
+                  loading ? (<LoaderReact count={15}/>) : ( <LoaderReact count={15}/>  /*displayItems*/)
               }
 
               </AllCards>
