@@ -9,6 +9,7 @@ import {AccountBox} from './components/Auth/accountBox';
 import Home from './components/Home';
 import Footer from './components/Footer';
 import NavBar from './components/NavBar';
+import Media from './components/Media/Media';
 
 const App = () => {
   const theme = useTheme();
@@ -24,6 +25,7 @@ const App = () => {
           <Route path='/bhetiConnectProj' element={<Home />} />
             <Route path='entrepreneur' element={<Entrepreneur />} />
             <Route path='investisseur' element={<Investisseur />} />
+            <Route path='/media' element={<Media />} />
             <Route path='connexion' element={<AccountBox />} />
           </Routes>
         </main>
