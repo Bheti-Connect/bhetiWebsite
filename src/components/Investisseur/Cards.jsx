@@ -1,33 +1,39 @@
 import React from 'react';
 import styled from 'styled-components';
-
+import { useTheme } from '../../context/themeContext';
 
 const Cards = ({item, setSelect, setModal}) => {
+  const theme = useTheme()
 
-  let source = "https://" + `picsum.photos/id/${item}/200/300`;
+  // Format currency Euro
+  let currencyEuro = new Intl.NumberFormat('de-DE', { style : 'currency', currency: 'EUR'})
+
+  // Generate image
+  let source = "https://" + `picsum.photos/id/${item.id}/200/300`;
 
   const handleSelect = () => {
+    const body = document.querySelector("body");
+    body.style.overflow = "hidden";
     setSelect(item)
     setModal(true)
   }
 
   return (
-    <CardItem onClick={handleSelect}>
+    <CardItem onClick={handleSelect} theme={theme}>
           <CardHeader>
             <img src={source} alt='project'/>
           </CardHeader>
 
           <CardBody>
-          <h3>Project {item}</h3>
+          <h3>{item.nom}</h3>
           <ul>
-            <li>Mobility</li>
+            <li>{item.stade}</li>
             <li>Automobile</li>
           </ul>
           <div className='boxPriceCountry'>
-            <p className='price'>&euro; 2 000,000</p>
-            <p className='country'>Madagascar</p>
+            <p className='price'>{item.financement ? (currencyEuro.format(parseInt(item.financement))) : ("ne pas mentionné")}</p>
+            <p className='country'>{item.siege}</p>
           </div>
-          
           </CardBody>
     </CardItem>
   )
@@ -40,7 +46,8 @@ margin: 10px;
 border-radius: 10px;
 box-shadow: 0 2px 20px rgba(0, 0, 0, 0.2);
 overflow: hidden;
-width:250px;
+width: 250px;
+height: 330px;
 cursor: pointer;
 
 &:hover{
@@ -54,8 +61,12 @@ padding: 10px;
 
 h3{
   text-transform: uppercase;
-  font-family: georgia, serif;
-  font-size: 16px;
+  font-style: normal;
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  font-size: 15px;
+  line-height: 18px;
+  margin-bottom: 13px;
 }
 
 ul{
@@ -68,7 +79,7 @@ ul{
 
 ul li {
   margin-right:8px;
-  background-color: #002B5B;
+  background-color: #700b0b;
   color: white;
   border-radius: 40px;
   padding:2px 5px;
@@ -84,7 +95,7 @@ ul li {
 .country {
   border-radius: 50px;
   color: white;
-  background-color: #47bcd4;
+  background-color: #000000;
   padding: 2px 5px;
   margin-top: 8px;
   text-align:center;
@@ -92,7 +103,10 @@ ul li {
 }
 
 .price{
-  font-size: 13px;
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 12px;
 }
 
 `
