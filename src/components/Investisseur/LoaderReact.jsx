@@ -21,14 +21,6 @@ function LoaderReact({count}) {
         <rect x="38" y="719" rx="0" ry="0" width="446" height="27" /> 
         <rect x="40" y="760" rx="0" ry="0" width="446" height="27" />
 
-        {/*
-        
-        <rect x="60" y="103" rx="15" ry="15" width="261" height="209" />
-        <rect x="65" y="321" rx="0" ry="0" width="252" height="15" />
-        <rect x="65" y="343" rx="0" ry="0" width="252" height="15" />
-        <rect x="66" y="366" rx="0" ry="0" width="252" height="15" />
-        
-         */}
         </ContentLoader>
 
     </Container>
