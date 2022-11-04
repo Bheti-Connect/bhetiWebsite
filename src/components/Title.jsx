@@ -31,8 +31,8 @@ const TitleStyled = styled.div`
         @media only screen and (max-width: 525px) and (min-width: 425px){
             font-size: 15px;
     }
-    @media only screen and (max-width: 425px) and (min-width: 320px){
-            font-size: 16px;
+    @media only screen and (max-width: 425px){
+            font-size: 14.3px;
     }
 }
 `;

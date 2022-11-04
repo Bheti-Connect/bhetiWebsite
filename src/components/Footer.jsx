@@ -155,7 +155,10 @@ const FooterSectionStyled = styled.footer`
         }
         .company {
             .nav-item a{
-                color: ${props => props.theme.colorGrey6} ;
+                color: ${props => props.theme.colorGrey6};
+                @media all and (max-width: 420px) {
+                margin-left: -5px;
+                }
             }
         }
         .nav-contact{
@@ -163,6 +166,9 @@ const FooterSectionStyled = styled.footer`
                 display: grid;
                 grid-template-columns: 30px auto;
                 color: ${props => props.theme.colorGrey6};
+                @media all and (max-width: 420px) {
+                margin-left: -5px;
+                }
             }
         }
         .logo-con{
@@ -233,9 +239,10 @@ const FooterSectionStyled = styled.footer`
         @media all and (max-width: 770px) {
             width: 400px;
         }
-        @media only screen and (max-width: 425px) and (min-width: 320px){
-            width: 500px;
+        @media all and (max-width: 420px) {
+            width: 260px;
         }
+        
     }
     .footer-copyright{
         padding-top: 3rem;
@@ -257,10 +264,7 @@ const FooterSectionStyled = styled.footer`
         margin-left: -50px;
     }
     @media all and (max-width: 420px) {
-        margin-left: -75px;
-    }
-    @media all and (max-width: 380px) {
-        margin-left: -45px;
+        margin-left: -10px;
     }
 `;
 

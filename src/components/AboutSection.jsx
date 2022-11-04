@@ -63,12 +63,11 @@ const AboutSectionStyled = styled.section`
     @media only screen and (max-width: 1800px) and (min-width: 1440px) {
             height: 800px;
         }
-    @media only screen and (max-width: 376px) {
+    @media only screen and (max-width: 425px) {
         padding-top: 0rem;
         padding-left: 0rem;
         padding-right: 0rem;
         padding-bottom: 0rem;
-    
     }
     .left-about{
         width: 90%;
@@ -115,12 +114,12 @@ const AboutSectionStyled = styled.section`
                 margin-bottom: 9%;
                 margin-top: -30%;
             }
-            @media only screen and (max-width: 425px) and (min-width: 320px){
+            @media only screen and (max-width: 425px){
                 font-size: 1.2rem;
                 margin-bottom: 5%;
                 margin-top: -2900%;
-                width: 400px;
-                margin-left: -10px;
+                width: 350px;
+                margin-left: -2px;
             }
         }
         .about-info{
@@ -268,8 +267,8 @@ const AboutSectionStyled = styled.section`
             @media only screen and (max-width: 525px) and (min-width: 425px){
                     display: none;
             }
-            @media only screen and (max-width: 425px) and (min-width: 320px){
-                    display: none;
+            @media only screen and (max-width: 425px){
+                    visibility: hidden;
             }
         }
         .box-img{
