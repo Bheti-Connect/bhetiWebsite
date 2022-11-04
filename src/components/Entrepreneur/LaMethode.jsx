@@ -60,11 +60,24 @@ const LaMethodeStyled = styled.section`
             padding: 1.5rem 0;
         }
         .title{
-            font-size: 1.6rem;
+            font-size: 3rem;
+            margin-bottom: 40px;
         } 
         .text-container{
             h5{
                 color: ${props => props.theme.colorWhite};
+            }
+            @media only screen and (max-width: 1440px) and (min-width: 1350px) {
+                font-size: 20px;
+                h5{
+                    font-size: 22px;
+                }
+            }
+            @media only screen and (max-width: 2500px) and (min-width: 1800px) {
+                font-size: 21px;
+                h5{
+                    font-size: 22px;
+                }
             }
         }
         @media screen and (min-width: 1150px) {
@@ -104,7 +117,21 @@ const LaMethodeStyled = styled.section`
                     margin-left: 5px;
                     margin-top: 25%;
 	            }
+        @media only screen and (max-width: 1440px) and (min-width: 1350px) {
+            margin-top: 250px;
+        }
     }
+
+    @media only screen and (max-width: 2500px) and (min-width: 1800px) {
+        .right-container{
+            width: 155%;
+            height: 200px;
+            margin-top: 240px;
+            margin-left: -200px;
+        }
+
+    }
+
 `;
 
 export default LaMethode

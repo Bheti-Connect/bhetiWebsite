@@ -14,12 +14,10 @@ const SearchFilter = ({setQuery, setTrie}) => {
     e.preventDefault();
     setQuery(valueSearch.current.value)
   }
-
   // Handle trie
   const handleTrie = (e) => {
     setTrie(trieValue[e.target.value]);
   }
-
 
   return (
     <SearchBox>
