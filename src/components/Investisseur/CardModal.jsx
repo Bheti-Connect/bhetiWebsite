@@ -152,7 +152,6 @@ font-size: 16px;
     font-weight: 600;
     font-family: 'Inter', sans-serif;
   }
-
 `
 
 const Header = styled.div`
@@ -169,7 +168,6 @@ ul {
 ul li {
   margin-bottom: 8px;
 }
-
 `;
 
 const Body = styled.div`

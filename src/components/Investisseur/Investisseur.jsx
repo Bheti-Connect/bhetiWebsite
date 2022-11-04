@@ -34,8 +34,6 @@ const Investisseur = () => {
     const [paginationSelect, setPaginationSelect] = useState("tous")
     const [positionTrie, setPositionTrie] = useState("")
 
-
-
     // handle for receive data and set in useState
     const handleSetData = (response) => {
       setCurrentPage(response.meta.current_page);
@@ -96,7 +94,6 @@ const Investisseur = () => {
 
     }
 
-
     // Search data from API
     const searchData = () => {
       // API : Search
@@ -154,7 +151,6 @@ const Investisseur = () => {
         setPaginationSelect("trieData")
       }
     }
-
 
 
     // handle change page
@@ -226,9 +222,6 @@ const Investisseur = () => {
       }
     }
 
-
-
-
      // display items
      let displayItems = data.map((item, index) => {
       return <Cards key={index} item={item} setModal={setModal} setSelect={setSelect} />
@@ -275,7 +268,6 @@ const Investisseur = () => {
     useEffect(() => {
       handleTrieData()
     }, [trie])
-
 
     return (
         <InvestisseurStyled>
