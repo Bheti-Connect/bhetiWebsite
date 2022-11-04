@@ -290,9 +290,11 @@ const Media = () => {
 
             <AllCards>
 
-            {
-              loading ? (<LoaderMedia count={15}/>) : (displayItems)
-            }
+              <div className='container-all-cards'>
+                {
+                  loading ? (<LoaderMedia count={15}/>) : (displayItems)
+                }
+              </div>
 
             </AllCards>
 
@@ -330,15 +332,18 @@ const Media = () => {
 // Style CSS
 
 const AllMedia = styled.div`
+margin: auto;
+
 
 .containerClassName {
   display: flex;
   flex-wrap: wrap;
   list-style: none;
-  justify-content: center;
+  justify-content: right;
   align-items:center;
   user-select: none;
   font-size: 13px;
+  margin-right: 50px;
 }
 
 .containerClassName li {
@@ -406,11 +411,15 @@ const AllMedia = styled.div`
 `;
 
 const AllCards = styled.div`
-
-display: flex;
 width: 100%;
-justify-content: space-evenly;
-flex-wrap: wrap;
+
+.container-all-cards{
+  justify-content: space-around;
+  flex-wrap: wrap;
+  display: flex;
+  width:80%;
+  margin:auto;
+}
 
 `;
 
@@ -575,7 +584,7 @@ const SectionEcouteVoir = styled.div`
   cursor: pointer;
   font-family: 'Inter', sans-serif;
   font-weight: 600;
-  font-size: 20px;
+  font-size: 15px;
   font-style: normal;
 
   &:hover{
@@ -585,7 +594,8 @@ const SectionEcouteVoir = styled.div`
 }
 
 .containerMenu{
-    margin-top: 30px;
+    width:900px;
+    margin: 30px auto;
 }
 
 .containerMenu .Box{

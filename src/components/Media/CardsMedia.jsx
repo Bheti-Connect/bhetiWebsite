@@ -25,7 +25,7 @@ const CardsMedia = ({item, setSelect}) => {
           <img src={source} alt='media'/>
         </CardHeader>
 
-        <CardBody>
+        <CardBody theme={theme}>
         <h3>{item.poste}</h3>
 
         <ul>
@@ -46,9 +46,10 @@ margin: 10px;
 border-radius: 10px;
 box-shadow: 0 2px 20px rgba(0, 0, 0, 0.2);
 overflow: hidden;
-width: 250px;
+width: 360px;
 height: 330px;
 cursor: pointer;
+background-color: ${props => props.theme.colorBheti};
 
 &:hover{
   transition: transform 0.2s ease-in-out;
@@ -63,11 +64,11 @@ const CardBody = styled.div`
 padding: 10px;
 
 h3{
-  text-transform: uppercase;
   font-style: normal;
   font-family: 'Inter', sans-serif;
   font-weight: 700;
   font-size: 15px;
+  color:white;
   line-height: 18px;
   margin-bottom: 13px;
 }
@@ -77,16 +78,18 @@ ul{
   justify-content: space-around;
   list-style:none;
   font-size: 12px;
-  margin-top: 10px;
+  margin-top: 40px;
   padding:0;
 }
 
 ul li {
   margin-right:8px;
-  background-color: #700b0b;
-  color: white;
+  background-color: white;
+  color: ${props => props.theme.colorBheti};
   border-radius: 10px;
-  padding:2px 5px;
+  padding:5px 5px;
+  font-family: 'Inter', sans-serif;
+  font-weight:600;
 }
 
 `;
@@ -95,8 +98,9 @@ const CardHeader = styled.div`
 
 img {
   width: 100%;
-  height: 200px;
+  height: 220px;
   object-fit: cover;
+  border-radius: 10px;
 }
 
 `;
