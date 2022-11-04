@@ -4,17 +4,12 @@ import { BrowserRouter as Router, Routes, Route} from 'react-router-dom'
 import Entrepreneur from './components/Entrepreneur/Entrepreneur';
 import Investisseur from './components/Investisseur/Investisseur';
 import {AccountBox} from './components/Auth/accountBox';
-// import SignIn from './components/Auth/SignIn';
-// import SignUp from './components/Auth/SignUp';
+import EvaluerEligibilite from './components/Forms/EvaluerEligibilite';
 import Home from './components/Home';
 import Footer from './components/Footer';
 import NavBar from './components/NavBar';
-<<<<<<< HEAD
-import PitchDeck from './components/Forms/PitchDeck';
-import EvaluerEligibilite from './components/Forms/EvaluerEligibilite';
-=======
+
 import Media from './components/Media/Media';
->>>>>>> main
 
 const App = () => {
   const theme = useTheme();
@@ -32,8 +27,7 @@ const App = () => {
             <Route path='investisseur' element={<Investisseur />} />
             <Route path='/media' element={<Media />} />
             <Route path='connexion' element={<AccountBox />} />
-            <Route path='evaluer-votre-eligibilite' element={<EvaluerEligibilite />}/>
-            <Route path='pitch-deck' element={<PitchDeck />}/>
+            <Route path='evaluer-eligibilite' element={<EvaluerEligibilite />} />
           </Routes>
         </main>
           <div>
