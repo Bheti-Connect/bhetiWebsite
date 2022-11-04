@@ -1,28 +1,36 @@
 {
   "files": {
-    "main.js": "/bhetiConnectProj/static/js/main.6df67a76.js",
-    "static/media/discussion.gif": "/bhetiConnectProj/static/media/discussion.c7fb7f18d8aaccb5a2e2.gif",
-    "static/media/casseTete.gif": "/bhetiConnectProj/static/media/casseTete.016a12376414daead456.gif",
+    "main.css": "/bhetiConnectProj/static/css/main.29710175.css",
+    "main.js": "/bhetiConnectProj/static/js/main.55a6805b.js",
     "static/media/mediaImage.gif": "/bhetiConnectProj/static/media/mediaImage.92682c82241239f1d393.gif",
     "static/media/3rd-action.gif": "/bhetiConnectProj/static/media/3rd-action.3dfdfeaf00d7370015ad.gif",
     "static/media/1st-action.gif": "/bhetiConnectProj/static/media/1st-action.2f6ca022d88af7465390.gif",
+    "static/media/pexels-picha-stock-3894383-1.png": "/bhetiConnectProj/static/media/pexels-picha-stock-3894383-1.ffa5cf0ca520f67b536f.png",
     "static/media/newsImage.jpg": "/bhetiConnectProj/static/media/newsImage.6bdfbc1660fde0ae059a.jpg",
     "static/media/ent-img4-2.jpg": "/bhetiConnectProj/static/media/ent-img4-2.e987f731f4fd1e496cb9.jpg",
     "static/media/ent-img1.jpg": "/bhetiConnectProj/static/media/ent-img1.bc670ecc1cf467f21520.jpg",
     "static/media/bheti-img.jpg": "/bhetiConnectProj/static/media/bheti-img.fcfef289e09304287f95.jpg",
     "static/media/2nd-action.gif": "/bhetiConnectProj/static/media/2nd-action.fa40b79721791add824d.gif",
     "static/media/footer-logo.png": "/bhetiConnectProj/static/media/footer-logo.e37f8384db04c83e5a27.png",
+    "static/media/tamTam.png": "/bhetiConnectProj/static/media/tamTam.b640b4afcf161c115266.png",
     "static/media/logo.png": "/bhetiConnectProj/static/media/logo.49c81948fe9960c5829d.png",
     "static/media/dots.png": "/bhetiConnectProj/static/media/dots.486cffcb04781a859f82.png",
     "static/media/analytics.png": "/bhetiConnectProj/static/media/analytics.8207677dbd110b63fdc6.png",
     "static/media/investor.png": "/bhetiConnectProj/static/media/investor.93eea338c25f6b50363f.png",
     "static/media/give-money.png": "/bhetiConnectProj/static/media/give-money.b78b229c955370631679.png",
+    "static/media/img-1.png": "/bhetiConnectProj/static/media/img-1.fc2df472d2d48138fd99.png",
+    "static/media/img-2.png": "/bhetiConnectProj/static/media/img-2.fc2df472d2d48138fd99.png",
+    "static/media/img-3.png": "/bhetiConnectProj/static/media/img-3.fc2df472d2d48138fd99.png",
     "static/media/list.png": "/bhetiConnectProj/static/media/list.ec94b8c0db9d5ee23d8f.png",
     "static/media/contract.png": "/bhetiConnectProj/static/media/contract.3dba571f27e78ad47efb.png",
+    "static/media/bheti-white.png": "/bhetiConnectProj/static/media/bheti-white.1b2df4d9b44e2767b445.png",
+    "static/media/a_la_une_media.svg": "/bhetiConnectProj/static/media/a_la_une_media.1974efe9164f7713f8474b74e726a86d.svg",
     "index.html": "/bhetiConnectProj/index.html",
-    "main.6df67a76.js.map": "/bhetiConnectProj/static/js/main.6df67a76.js.map"
+    "static/media/Video_media.svg": "/bhetiConnectProj/static/media/Video_media.b0e6fbc7f4b4092727ada8249828f14c.svg",
+    "main.55a6805b.js.map": "/bhetiConnectProj/static/js/main.55a6805b.js.map"
   },
   "entrypoints": [
-    "static/js/main.6df67a76.js"
+    "static/css/main.29710175.css",
+    "static/js/main.55a6805b.js"
   ]
 }
