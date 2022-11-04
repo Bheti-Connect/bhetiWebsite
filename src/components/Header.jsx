@@ -51,14 +51,17 @@ const HeaderStyled = styled.header`
     @media only screen and (max-width: 1024px) and (min-width: 900px){
         height: 100vh;
     }
-    @media only screen and (max-width: 425px) and (min-width: 320px){
+    @media only screen and (max-width: 768px) {
+        height: 85vh;
+    }
+    @media only screen and (max-width: 425px) {
         height: 115vh;
     }
     .header-content{
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         grid-row-gap: 2rem;
-
+        
         .left-h-content{
             animation: contentHide 1s ease-in-out;
             @keyframes contentHide {
@@ -166,6 +169,19 @@ const HeaderStyled = styled.header`
                     }
                     
             }
+            @media only screen and (max-width: 768px) {
+                        margin-top: 5%;
+                    margin-left: -12.5%;
+                    text-align: justify;
+
+                    h2{
+                        font-size: 32px;
+                    }
+                    p{
+                        font-size: 17px;
+                    }
+                    
+            }
 
             //------------- add others
 
@@ -203,6 +219,15 @@ const HeaderStyled = styled.header`
             @media only screen and (max-width: 1440px) and (min-width: 1024px){
                 margin-left: -70px;
             }
+            @media only screen and (max-width: 768px)  {
+                margin-left: -50px;
+                margin-right: 25px;
+                .button-demo {
+                    position: absolute;
+                    top: 280%;
+                    margin-left: 35%;
+                }
+            }
             @media only screen and (max-width: 525px) and (min-width: 425px) {
                 width: 450px;
                 .button-demo {
@@ -211,12 +236,12 @@ const HeaderStyled = styled.header`
                     margin-left: 26%;
                 }
             }
-            @media only screen and (max-width: 425px) and (min-width: 320px){
+            @media only screen and (max-width: 425px){
                 width: 290px;
-                margin-left: -45px;
+                margin-left: -40px;
                 .button-demo {
                     position: absolute;
-                    top: 175%;
+                    top: 210%;
                     margin-left: -6%;
                     width: 280px;
                 }
@@ -285,6 +310,16 @@ const HeaderStyled = styled.header`
                     width: 180px;
                     height: 250px;
                 }
+                @media only screen and (max-width: 768px) {
+                    top: 250px;
+                    width: 250px;
+                    height: 300px;
+                    margin-right: 400px;
+                    border-bottom-right-radius: 5px;
+                    border-bottom-left-radius: 30px;
+                    border-top-right-radius: 5px;
+                    border-top-left-radius: 5px;
+                }
                 @media only screen and (max-width: 525px) and (min-width: 425px){
                     width: 150px;
                     height: 200px;
@@ -294,7 +329,7 @@ const HeaderStyled = styled.header`
                     border-top-right-radius: 5px;
                     border-top-left-radius: 5px;
                 }
-                @media only screen and (max-width: 425px) and (min-width: 320px){
+                @media only screen and (max-width: 425px) {
                     width: 147px;
                     height: 200px;
                     margin-right: -300px;
@@ -358,21 +393,18 @@ const HeaderStyled = styled.header`
                     width: 180px;
                     height: 300px;
                 }
-                @media only screen and (max-width: 768px) and (min-width: 668px){
-                    top: -5%;
-                    width: 180px;
+                @media only screen and (max-width: 768px){
+                    top: 250px;
+                    left: 360px;
+                    width: 220px;
                     height: 300px;
-                }
-                @media only screen and (max-width: 525px) and (min-width: 425px){
-                    top: 0cm;
-                    width: 160px;
-                    height: 200px;
                     border-bottom-right-radius: 30px;
                     border-bottom-left-radius: 5px;
                     border-top-left-radius: 5px;
                     border-top-right-radius: 5px;
                 }
-                @media only screen and (max-width: 425px) and (min-width: 320px){
+                
+                @media only screen and (max-width: 425px){
                     top: 0cm;
                     width: 140px;
                     height: 200px;
@@ -390,7 +422,7 @@ const HeaderStyled = styled.header`
                 margin-left: -3%;
                 margin-top: 30%;
             }
-            @media only screen and (max-width: 425px) and (min-width: 320px){
+            @media only screen and (max-width: 425px){
                 margin-left: -14%;
                 margin-top: 45%;
                 width: 370px;
@@ -411,9 +443,20 @@ const HeaderStyled = styled.header`
         @media only screen and (max-width: 1250px) and (min-width: 1024px) {
                 margin-left: -50px;
             }
-        @media only screen and (max-width: 1024px) and (min-width: 900px) {
+        @media only screen and (max-width: 1024px) {
                 margin-left: -150px;
             }
+        @media only screen and (max-width: 768px) {
+            display: flex ;
+            position: relative;
+            margin-left: -200px;
+                .box {
+                    position: absolute;
+                    .right-h-content{
+                        z-index: 9;
+                    }
+                }
+        }
         @media only screen and (max-width: 525px) and (min-width: 425px) {
             display: flex ;
             position: relative;
@@ -425,7 +468,7 @@ const HeaderStyled = styled.header`
                     }
                 }
             }
-            @media only screen and (max-width: 425px) and (min-width: 320px) {
+            @media only screen and (max-width: 425px) {
             display: flex ;
             position: relative;
             margin-left: -200px;
@@ -437,7 +480,6 @@ const HeaderStyled = styled.header`
                     }
                 }
             }
-        
     }
     .mouse{
         position: absolute;
@@ -480,15 +522,13 @@ const HeaderStyled = styled.header`
         @media only screen and (max-width: 1800px) and (min-width: 1440px){
                     margin-bottom: 3%;
             }
-        @media only screen and (max-width: 525px) and (min-width: 425px){
-                    margin-bottom: -2%;
+        @media only screen and (max-width: 768px) {
+                    margin-bottom: -1%;
             }
-        @media only screen and (max-width: 425px) and (min-width: 320px){
+        @media only screen and (max-width: 425px) {
                     margin-bottom: 0%;
             }
     }
-
-
 `;
 
 export default Header

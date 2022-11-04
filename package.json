@@ -8,13 +8,20 @@
     "@fortawesome/free-brands-svg-icons": "^6.2.0",
     "@fortawesome/free-solid-svg-icons": "^6.2.0",
     "@fortawesome/react-fontawesome": "^0.2.0",
+<<<<<<< HEAD
+    "formik": "^2.2.9",
+=======
     "axios": "^0.27.2",
+>>>>>>> main
     "framer-motion": "^7.3.2",
     "react": "^18.2.0",
     "react-content-loader": "^6.2.0",
     "react-dom": "^18.2.0",
     "react-icons": "^4.4.0",
+<<<<<<< HEAD
+=======
     "react-loading-skeleton": "^3.1.0",
+>>>>>>> main
     "react-paginate": "^8.1.3",
     "react-router-dom": "^6.3.0",
     "react-select": "^5.5.9",

@@ -9,7 +9,12 @@ import {AccountBox} from './components/Auth/accountBox';
 import Home from './components/Home';
 import Footer from './components/Footer';
 import NavBar from './components/NavBar';
+<<<<<<< HEAD
+import PitchDeck from './components/Forms/PitchDeck';
+import EvaluerEligibilite from './components/Forms/EvaluerEligibilite';
+=======
 import Media from './components/Media/Media';
+>>>>>>> main
 
 const App = () => {
   const theme = useTheme();
@@ -17,7 +22,7 @@ const App = () => {
   return (
     <Router>
       <AppStyled theme={theme}>
-      <div>
+          <div>
             <NavBar />
           </div>
         <main>
@@ -27,6 +32,8 @@ const App = () => {
             <Route path='investisseur' element={<Investisseur />} />
             <Route path='/media' element={<Media />} />
             <Route path='connexion' element={<AccountBox />} />
+            <Route path='evaluer-votre-eligibilite' element={<EvaluerEligibilite />}/>
+            <Route path='pitch-deck' element={<PitchDeck />}/>
           </Routes>
         </main>
           <div>
