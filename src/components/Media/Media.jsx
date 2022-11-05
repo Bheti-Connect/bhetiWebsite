@@ -21,12 +21,11 @@ const Media = () => {
   // cards data
   const [data, setData] = useState([])
   // Modal
-  //const [modal, setModal] = useState(false)
+  const [modal, setModal] = useState(false)
   // Loading : React content loader
   const [loading, setLoading] = useState(true)
-  // Position change pagination : Tous, Startup, pme
-  const [paginationSelect, setPaginationSelect] = useState("tous")
-  const [positionTrie, setPositionTrie] = useState("")
+  // Position change pagination : Tout and success stories
+  const [paginationSelect, setPaginationSelect] = useState("tout")
 
   // theme
   const theme = useTheme();
@@ -318,9 +317,9 @@ const Media = () => {
 
           </AllMedia>
 
-          {/*
+          {
               modal && <CardModal select={select} setModal={setModal}/>
-          */}
+          }
 
         </SectionEcouteVoir>
 
