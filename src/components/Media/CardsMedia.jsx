@@ -75,7 +75,7 @@ h3{
 
 ul{
   display: flex;
-  justify-content: space-around;
+  justify-content: left;
   list-style:none;
   font-size: 12px;
   margin-top: 40px;

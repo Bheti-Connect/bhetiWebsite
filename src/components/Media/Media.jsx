@@ -9,6 +9,7 @@ import CardMediaModal from './CardMediaModal';
 import CardsMedia from './CardsMedia';
 import LoaderMedia from './LoaderMedia';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 
 const Media = () => {
   const [currentPage, setCurrentPage] = useState(0);
@@ -50,38 +51,12 @@ const Media = () => {
   
 
   // Change Section of data : Tout et Success stories
-  const changeSectionMenu = (position) => {
-
-    let source = "https://bheti-connect.smirltech.com/api/entrevues";
-
-    if (position == "success")
-    {
-      //let pmeFilter = {filters: [{field: 'type', value: 'pme'}]}
-
-      axios.get(source).then(res => {
-        handleSetData(res.data)
-      }).catch((error) => console.log(error))
-
-      setPaginationSelect("success")
-
-    }else{
-      getData()
-      setPaginationSelect("tout")
-    }
+  const handleActualise = () => {
+    getData()
+    setPaginationSelect("tout")
   }
 
-  // handle menu : tous, startup and PME for CSS
-  const handleMenu = (e) => {
-    let activeBtn = document.querySelector(".menuSection .active");
-    let valid = e.target.tagName.toLowerCase()
 
-    if(!e.target.classList.contains("active") && valid == "li")
-    {
-      activeBtn.classList.remove("active")
-      e.target.classList.add("active")
-    }
-
-  }
 
   // Search data from API
   const searchData = () => {
@@ -113,12 +88,7 @@ const Media = () => {
     let source = ""
     let request = ""
 
-    if(paginationSelect == "success")
-    {
-      source = `https://bheti-connect.smirltech.com/api/entrevues?page=${pageNumber}`
-      //request = {filters: [{field: 'type', value: 'pme'}]}
-
-    }else if (paginationSelect == "query"){
+    if (paginationSelect == "query"){
       source = `https://bheti-connect.smirltech.com/api/entrevues?page=${pageNumber}`
       /*request = {
         "search": {
@@ -159,7 +129,7 @@ const Media = () => {
     }, 4000);
 
     getData()
-    changeSectionMenu()
+    handleActualise()
 
     return () => {
       clearTimeout(waiting)
@@ -274,11 +244,11 @@ const Media = () => {
                 <div className='Box'>
 
                     {/* Section menu */}
-                    <ul className='menuSection' onClick={handleMenu}>
+                    <ul className='menuSection'>
                         {/* tout */}
-                        <li className='active' onClick={() => changeSectionMenu("tout")}>Tout</li>
+                        <li className='active' onClick={() => handleActualise()}>Tout</li>
                         {/* success stories */}
-                        <li onClick={() => changeSectionMenu("success")}>Les success stories</li>
+                        <li><a href="https://bheticonnect.notion.site/f4dab0820ee64fe7b8e832062d4a30b7?v=6da42011157e44a5bfdfc93d4ad906de">Les success stories</a></li>
                     </ul>
 
                     {/* Filter and search */}
@@ -577,7 +547,7 @@ const SectionEcouteVoir = styled.div`
     margin-bottom:-5px;
 }
 
-.menuSection li {
+.menuSection li, a {
   margin-right: 20px;
   padding-bottom: 5px;
   text-transform: uppercase;
