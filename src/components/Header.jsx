@@ -18,7 +18,7 @@ const Header = () => {
                     <p>
                         Bheti Connect est la platforme numéro une qui réunnis les entrepreneurs et investisseurs en Afrique francophone.
                     </p>
-                    <a href='https://airtable.com/shrr2JCtuBUkjXoKz' className='button-demo'>
+                    <a href='./Forms/EvaluerEligibilite.jsx' className='button-demo'>
                         <Button 
                             name={'Je réserve une demo'}
                             icon={'fas fa-chevron-right'}
@@ -241,7 +241,7 @@ const HeaderStyled = styled.header`
                 margin-left: -40px;
                 .button-demo {
                     position: absolute;
-                    top: 210%;
+                    top: 170%;
                     margin-left: -6%;
                     width: 280px;
                 }
@@ -330,9 +330,9 @@ const HeaderStyled = styled.header`
                     border-top-left-radius: 5px;
                 }
                 @media only screen and (max-width: 425px) {
-                    width: 147px;
+                    top: 0px;
+                    width: 150px;
                     height: 200px;
-                    margin-right: -300px;
                     border-bottom-right-radius: 5px;
                     border-bottom-left-radius: 30px;
                     border-top-right-radius: 5px;
@@ -405,10 +405,10 @@ const HeaderStyled = styled.header`
                 }
                 
                 @media only screen and (max-width: 425px){
-                    top: 0cm;
-                    width: 140px;
+                    top: 0px;
+                    width: 150px;
                     height: 200px;
-                    margin-left: 50px;
+                    margin-left: -168px;
                     border-bottom-right-radius: 30px;
                     border-bottom-left-radius: 5px;
                     border-top-left-radius: 5px;
@@ -471,7 +471,7 @@ const HeaderStyled = styled.header`
             @media only screen and (max-width: 425px) {
             display: flex ;
             position: relative;
-            margin-left: -200px;
+            margin-left: -210px;
             margin-top: -13%;
                 .box {
                     position: absolute;

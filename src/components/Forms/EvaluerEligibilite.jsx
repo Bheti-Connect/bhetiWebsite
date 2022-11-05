@@ -1,7 +1,5 @@
-import { useState } from 'react';
 import styled from 'styled-components';
 import { useTheme } from '../../context/themeContext';
-import Select from 'react-select';
 import {optionsActivity} from './FormInput';
 import Blob from '../../assets/images/img-1.png';
 import Blob2 from '../../assets/images/img-2.png';
@@ -12,23 +10,9 @@ import BhetiWhite from '../../assets/images/bheti-white.png';
 const EvaluerEligibilite = () => {
     const theme = useTheme();
 
-    
-    const state = {
-        step: 1,
-        societe: '',
-        website: '',
-        yearsActive: '',
-        description: '',
-        sector: ''
-    }
-
-
-
-
     const listOptions = optionsActivity.map((option) => 
         <option>{option}</option>
     )
-
 
     return (
         <EvaluerEligibiliteStyled theme={theme}>

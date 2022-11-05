@@ -154,9 +154,9 @@ const JoinCommunityStyled = styled.section`
                     margin-top: -57px;
                 }
                 @media only screen and (max-width: 425px){
-                    width: 220px;
-                    height: 100px;
-                    margin-left: -120px;
+                    width: 260px;
+                    height: 110px;
+                    margin-left: -100px;
                     margin-top: -57px;
                 }
             }
@@ -233,7 +233,8 @@ const JoinCommunityStyled = styled.section`
                     margin-top: 60%;
                 }
                 .anchor-tag {
-                    margin-left: 60px;
+                    margin-top: 40px;
+                    margin-left: -30px;
                 }
             }
         }

@@ -19,12 +19,14 @@ const EconomicNews = () => {
                         Découvrez les codes de la sphère business en Afrique. 
                         Nous vous immergeons dans ce monde encore opaque pour vous apporter des informations transparentes, inédites et exclusives.
                     </p>
+                    <a className='bouton'>
                     <Button 
                         name={"Je m'informe"}
                         icon={'fas fa-chevron-right'}
                         arrow={'arrow'}
                         blob={'blob'}
                     />
+                    </a>
                 </div>
             </div>
         </EconomicNewsStyled>
@@ -93,6 +95,9 @@ const EconomicNewsStyled = styled.section`
             }
             @media only screen and (max-width: 525px) and (min-width: 425px) {
                 width: 320px;
+            }
+            .bouton {
+                margin-left: -50px;
             }
         }
         @media only screen and (max-width: 425px) and (min-width: 320px) {
