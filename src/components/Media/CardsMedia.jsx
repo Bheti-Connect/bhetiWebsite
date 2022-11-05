@@ -2,7 +2,7 @@ import React from 'react'
 import { useTheme } from '../../context/themeContext';
 import styled from 'styled-components';
 
-const CardsMedia = ({item, setSelect}) => {
+const CardsMedia = ({item, setSelect, setModal}) => {
 
   const theme = useTheme()
 
@@ -14,7 +14,7 @@ const CardsMedia = ({item, setSelect}) => {
      const body = document.querySelector("body");
      body.style.overflow = "hidden";
      setSelect(item)
-     //setModal(true)
+     setModal(true)
    }
 
 

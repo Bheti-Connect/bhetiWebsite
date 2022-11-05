@@ -5,6 +5,7 @@ import UneMedia from '../../assets/icons/a_la_une_media.svg';
 import VideoMedia from '../../assets/icons/Video_media.svg';
 import {useTheme} from '../../context/themeContext';
 import Search from './Search';
+import CardMediaModal from './CardMediaModal';
 import CardsMedia from './CardsMedia';
 import LoaderMedia from './LoaderMedia';
 import axios from 'axios';
@@ -148,7 +149,7 @@ const Media = () => {
 
   // display items
   let displayItems = data.map((item, index) => {
-    return <CardsMedia key={index} item={item} setSelect={setSelect} />
+    return <CardsMedia key={index} item={item} setSelect={setSelect} setModal={setModal}/>
   })
 
   // First UseEffect
@@ -318,7 +319,7 @@ const Media = () => {
           </AllMedia>
 
           {
-              modal && <CardModal select={select} setModal={setModal}/>
+              modal && <CardMediaModal select={select} setModal={setModal}/>
           }
 
         </SectionEcouteVoir>

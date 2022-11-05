@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { useTheme } from '../../context/themeContext';
 
 const Cards = ({item, setSelect, setModal}) => {
+
   const theme = useTheme()
 
   // Format currency Euro
@@ -34,6 +35,7 @@ const Cards = ({item, setSelect, setModal}) => {
             <p className='price'>{item.financement ? (currencyEuro.format(parseInt(item.financement))) : ("ne pas mentionné")}</p>
             <p className='country'>{item.siege}</p>
           </div>
+          
           </CardBody>
     </CardItem>
   )
@@ -109,7 +111,7 @@ ul li {
   font-size: 12px;
 }
 
-`
+`;
 
 const CardHeader = styled.div`
 
@@ -119,6 +121,6 @@ img {
   object-fit: cover;
 }
 
-`
+`;
 
 export default Cards

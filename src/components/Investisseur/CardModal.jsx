@@ -81,8 +81,8 @@ const CardModal = ({select, setModal}) => {
 
                 {/* KPI  */}
                 <div className='item-detail'>
-                <h3>📊 KPI</h3>
-                <p className='flouter'>{select.kpi ? (select.kpi) : ("")}</p>
+                  <h3>📊 KPI</h3>
+                  <p className='flouter'>{select.kpi ? (select.kpi) : ("")}</p>
                 </div>
 
                 <div className='deck'>

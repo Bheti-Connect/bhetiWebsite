@@ -10,7 +10,7 @@ const LoaderMedia = ({count}) => {
     
             <ContentLoader
             speed={2}
-            width={280}
+            width={380}
             height={300}
             viewBox="0 150 539 800"
             backgroundColor="#d6d6d6"

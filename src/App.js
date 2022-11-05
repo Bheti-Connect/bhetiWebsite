@@ -25,7 +25,7 @@ const App = () => {
           <Route path='/bhetiConnectProj' element={<Home />} />
             <Route path='entrepreneur' element={<Entrepreneur />} />
             <Route path='investisseur' element={<Investisseur />} />
-            <Route path='/media' element={<Media />} />
+            <Route path='media' element={<Media />} />
             <Route path='connexion' element={<AccountBox />} />
           </Routes>
         </main>
