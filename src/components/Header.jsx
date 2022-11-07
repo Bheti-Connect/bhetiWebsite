@@ -18,7 +18,7 @@ const Header = () => {
                     <p>
                         Bheti Connect est la platforme numéro une qui réunnis les entrepreneurs et investisseurs en Afrique francophone.
                     </p>
-                    <a href='https://airtable.com/shrr2JCtuBUkjXoKz' className='button-demo'>
+                    <a href='./Forms/EvaluerEligibilite.jsx' className='button-demo'>
                         <Button 
                             name={'Je réserve une demo'}
                             icon={'fas fa-chevron-right'}
