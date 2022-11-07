@@ -235,7 +235,7 @@ const JoinCommunityStyled = styled.section`
                 }
                 .anchor-tag {
                     margin-top: 40px;
-                    margin-left: 0px;
+                    margin: 1;
                 }
             }
         }

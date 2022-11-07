@@ -18,7 +18,7 @@ const Header = () => {
                     <p>
                         Bheti Connect est la platforme numéro une qui réunnis les entrepreneurs et investisseurs en Afrique francophone.
                     </p>
-                    <a href='./Forms/EvaluerEligibilite.jsx' className='button-demo'>
+                    <a href='https://airtable.com/shrr2JCtuBUkjXoKz' className='button-demo'>
                         <Button 
                             name={'Je réserve une demo'}
                             icon={'fas fa-chevron-right'}
@@ -51,17 +51,14 @@ const HeaderStyled = styled.header`
     @media only screen and (max-width: 1024px) and (min-width: 900px){
         height: 100vh;
     }
-    @media only screen and (max-width: 425px) {
-        height: 85vh;
-    }
-    @media only screen and (max-width: 375px) {
-        height: 95vh;
+    @media only screen and (max-width: 425px) and (min-width: 320px){
+        height: 115vh;
     }
     .header-content{
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         grid-row-gap: 2rem;
-        
+
         .left-h-content{
             animation: contentHide 1s ease-in-out;
             @keyframes contentHide {
@@ -125,7 +122,7 @@ const HeaderStyled = styled.header`
                         width: 100%;
                     }
             }
-            @media only screen and (max-width: 1440px)  {
+            @media only screen and (max-width: 1440px) and (min-width: 1350px) {
                     margin-top: 4%;
                     width: 600px;
                     h2{
@@ -136,7 +133,7 @@ const HeaderStyled = styled.header`
                     }
                     
             }
-            @media only screen and (max-width: 1350px)  {
+            @media only screen and (max-width: 1350px) and (min-width: 1250px) {
                     margin-top: 4%;
                     width: 600px;
                     h2{
@@ -147,7 +144,7 @@ const HeaderStyled = styled.header`
                     }
                     
             }
-            @media only screen and (max-width: 1250px)  {
+            @media only screen and (max-width: 1250px) and (min-width: 1024px) {
                     margin-top: 4%;
                     width: 500px;
                     h2{
@@ -158,7 +155,7 @@ const HeaderStyled = styled.header`
                     }
                     
             }
-            @media only screen and (max-width: 1024px)  {
+            @media only screen and (max-width: 1024px) and (min-width: 900px) {
                     margin-top: 4%;
                     width: 500px;
                     h2{
@@ -169,36 +166,26 @@ const HeaderStyled = styled.header`
                     }
                     
             }
-            @media only screen and (max-width: 768px) {
-                        margin-top: 5%;
+
+            //------------- add others
+
+            @media only screen and (max-width: 525px) and (min-width: 425px) {
+                    margin-top: -10%;
+                    margin-left: -9.6%;
+                    text-align: justify;
+                    h2{
+                        font-size: 37px;
+                    }
+                    p{
+                        font-size: 16px;
+                    }
+                    
+            }
+            @media only screen and (max-width: 425px) and (min-width: 320px) {
+                    margin-top: -10%;
                     margin-left: -12.5%;
                     text-align: justify;
 
-                    h2{
-                        font-size: 32px;
-                    }
-                    p{
-                        font-size: 17px;
-                    }
-            }
-
-            //------------- add others
-            @media only screen and (max-width: 425px) {
-                    margin-top: -8%;
-                    margin-left: -12%;
-                    text-align: justify;
-
-                    h2{
-                        font-size: 28px;
-                    }
-                    p{
-                        font-size: 15px;
-                    }
-            }
-            @media only screen and (max-width: 375px) {
-                    margin-top: -10%;
-                    margin-left: -15%;
-                    text-align: justify;
                     h2{
                         font-size: 28px;
                     }
@@ -216,15 +203,6 @@ const HeaderStyled = styled.header`
             @media only screen and (max-width: 1440px) and (min-width: 1024px){
                 margin-left: -70px;
             }
-            @media only screen and (max-width: 768px) {
-                margin-left: -50px;
-                margin-right: 25px;
-                .button-demo {
-                    position: absolute;
-                    top: 280%;
-                    margin-left: 35%;
-                }
-            }
             @media only screen and (max-width: 525px) and (min-width: 425px) {
                 width: 450px;
                 .button-demo {
@@ -233,19 +211,9 @@ const HeaderStyled = styled.header`
                     margin-left: 26%;
                 }
             }
-            @media only screen and (max-width: 425px) {
-                width: 340px;
-                margin-left: -35px;
-                .button-demo {
-                    position: absolute;
-                    top: 195%;
-                    margin-left: 60px;
-                    width: 280px;
-                }
-            }
-            @media only screen and (max-width: 375px) {
+            @media only screen and (max-width: 425px) and (min-width: 320px){
                 width: 290px;
-                margin-left: -40px;
+                margin-left: -45px;
                 .button-demo {
                     position: absolute;
                     top: 175%;
@@ -317,30 +285,19 @@ const HeaderStyled = styled.header`
                     width: 180px;
                     height: 250px;
                 }
-                @media only screen and (max-width: 768px) {
-                    top: 250px;
-                    width: 250px;
-                    height: 300px;
-                    margin-right: 400px;
-                    border-bottom-right-radius: 5px;
-                    border-bottom-left-radius: 30px;
-                    border-top-right-radius: 5px;
-                    border-top-left-radius: 5px;
-                }
-                @media only screen and (max-width: 425px) {
-                    top: -100px;
-                    left: 7%;
-                    width: 160px;
-                    height: 220px;
-                    border-bottom-right-radius: 5px;
-                    border-bottom-left-radius: 30px;
-                    border-top-right-radius: 5px;
-                    border-top-left-radius: 5px;
-                }
-                @media only screen and (max-width: 375px) {
-                    top: 0px;
+                @media only screen and (max-width: 525px) and (min-width: 425px){
                     width: 150px;
                     height: 200px;
+                    margin-right: 300px;
+                    border-bottom-right-radius: 5px;
+                    border-bottom-left-radius: 30px;
+                    border-top-right-radius: 5px;
+                    border-top-left-radius: 5px;
+                }
+                @media only screen and (max-width: 425px) and (min-width: 320px){
+                    width: 147px;
+                    height: 200px;
+                    margin-right: -300px;
                     border-bottom-right-radius: 5px;
                     border-bottom-left-radius: 30px;
                     border-top-right-radius: 5px;
@@ -386,27 +343,40 @@ const HeaderStyled = styled.header`
                     width: 300px;
                     height: 450px;
                 }
-                @media only screen and (max-width: 1024px){
+                @media only screen and (max-width: 1024px) and (min-width: 900px){
                     top: -5%;
                     width: 180px;
                     height: 300px;
                 }
-                @media only screen and (max-width: 768px){
-                    top: 250px;
-                    left: 360px;
-                    width: 220px;
+                @media only screen and (max-width: 1024px) and (min-width: 900px){
+                    top: -5%;
+                    width: 180px;
                     height: 300px;
+                }
+                @media only screen and (max-width: 900px) and (min-width: 768px){
+                    top: -5%;
+                    width: 180px;
+                    height: 300px;
+                }
+                @media only screen and (max-width: 768px) and (min-width: 668px){
+                    top: -5%;
+                    width: 180px;
+                    height: 300px;
+                }
+                @media only screen and (max-width: 525px) and (min-width: 425px){
+                    top: 0cm;
+                    width: 160px;
+                    height: 200px;
                     border-bottom-right-radius: 30px;
                     border-bottom-left-radius: 5px;
                     border-top-left-radius: 5px;
                     border-top-right-radius: 5px;
                 }
-        
-                @media only screen and (max-width: 425px){
-                    top: -100px;
-                    width: 160px;
-                    height: 220px;
-                    margin-left: -40%;
+                @media only screen and (max-width: 425px) and (min-width: 320px){
+                    top: 0cm;
+                    width: 140px;
+                    height: 200px;
+                    margin-left: 50px;
                     border-bottom-right-radius: 30px;
                     border-bottom-left-radius: 5px;
                     border-top-left-radius: 5px;
@@ -420,8 +390,8 @@ const HeaderStyled = styled.header`
                 margin-left: -3%;
                 margin-top: 30%;
             }
-            @media only screen and (max-width: 425px){
-                margin-left: -13%;
+            @media only screen and (max-width: 425px) and (min-width: 320px){
+                margin-left: -14%;
                 margin-top: 45%;
                 width: 370px;
             }
@@ -441,20 +411,9 @@ const HeaderStyled = styled.header`
         @media only screen and (max-width: 1250px) and (min-width: 1024px) {
                 margin-left: -50px;
             }
-        @media only screen and (max-width: 1024px) {
+        @media only screen and (max-width: 1024px) and (min-width: 900px) {
                 margin-left: -150px;
             }
-        @media only screen and (max-width: 768px) {
-            display: flex ;
-            position: relative;
-            margin-left: -200px;
-                .box {
-                    position: absolute;
-                    .right-h-content{
-                        z-index: 9;
-                    }
-                }
-        }
         @media only screen and (max-width: 525px) and (min-width: 425px) {
             display: flex ;
             position: relative;
@@ -466,10 +425,10 @@ const HeaderStyled = styled.header`
                     }
                 }
             }
-            @media only screen and (max-width: 425px) {
+            @media only screen and (max-width: 425px) and (min-width: 320px) {
             display: flex ;
             position: relative;
-            margin-left: -210px;
+            margin-left: -200px;
             margin-top: -13%;
                 .box {
                     position: absolute;
@@ -478,6 +437,7 @@ const HeaderStyled = styled.header`
                     }
                 }
             }
+        
     }
     .mouse{
         position: absolute;
@@ -520,13 +480,15 @@ const HeaderStyled = styled.header`
         @media only screen and (max-width: 1800px) and (min-width: 1440px){
                     margin-bottom: 3%;
             }
-        @media only screen and (max-width: 768px) {
-                    margin-bottom: -1%;
+        @media only screen and (max-width: 525px) and (min-width: 425px){
+                    margin-bottom: -2%;
             }
-        @media only screen and (max-width: 425px) {
+        @media only screen and (max-width: 425px) and (min-width: 320px){
                     margin-bottom: 0%;
             }
     }
+
+
 `;
 
 export default Header
