@@ -60,7 +60,15 @@ const MethodSectionStyled = styled.section`
     }
     }
     .title-con {
-        @media only screen and (max-width: 425px) and (min-width: 320px) {
+        @media only screen and (max-width: 425px) {
+            width: 120%;
+            margin-left: -20px;
+        }
+        @media only screen and (max-width: 400px) {
+            width: 130%;
+            margin-left: -30px;
+        }
+        @media only screen and (max-width: 375px) {
             width: 120%;
             margin-left: -20px;
         }

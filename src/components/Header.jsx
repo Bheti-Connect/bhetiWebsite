@@ -51,7 +51,10 @@ const HeaderStyled = styled.header`
     @media only screen and (max-width: 1024px) and (min-width: 900px){
         height: 100vh;
     }
-    @media only screen and (max-width: 425px) and (min-width: 320px){
+    @media only screen and (max-width: 425px) {
+        height: 90vh;
+    }
+    @media only screen and (max-width: 375px) {
         height: 115vh;
     }
     .header-content{
@@ -211,7 +214,28 @@ const HeaderStyled = styled.header`
                     margin-left: 26%;
                 }
             }
-            @media only screen and (max-width: 425px) and (min-width: 320px){
+            
+            @media only screen and (max-width: 425px){
+                width: 290px;
+                margin-left: -45px;
+                .button-demo {
+                    position: absolute;
+                    top: 190%;
+                    margin-left: 12%;
+                    width: 280px;
+                }
+            }
+            @media only screen and (max-width: 400px){
+                width: 290px;
+                margin-left: -45px;
+                .button-demo {
+                    position: absolute;
+                    top: 185%;
+                    margin-left: 12%;
+                    width: 280px;
+                }
+            }
+            @media only screen and (max-width: 375px){
                 width: 290px;
                 margin-left: -45px;
                 .button-demo {
@@ -390,7 +414,12 @@ const HeaderStyled = styled.header`
                 margin-left: -3%;
                 margin-top: 30%;
             }
-            @media only screen and (max-width: 425px) and (min-width: 320px){
+            @media only screen and (max-width: 425px){
+                margin-left: -13%;
+                margin-top: 40%;
+                width: 370px;
+            }
+            @media only screen and (max-width: 375px){
                 margin-left: -14%;
                 margin-top: 45%;
                 width: 370px;
@@ -425,7 +454,31 @@ const HeaderStyled = styled.header`
                     }
                 }
             }
-            @media only screen and (max-width: 425px) and (min-width: 320px) {
+            @media only screen and (max-width: 425px) {
+            display: flex ;
+            position: relative;
+            margin-left: -180px;
+            margin-top: -13%;
+                .box {
+                    position: absolute;
+                    .right-h-content{
+                        z-index: 9;
+                    }
+                }
+            }
+            @media only screen and (max-width: 400px) {
+            display: flex ;
+            position: relative;
+            margin-left: -200px;
+            margin-top: -13%;
+                .box {
+                    position: absolute;
+                    .right-h-content{
+                        z-index: 9;
+                    }
+                }
+            }
+            @media only screen and (max-width: 375px) {
             display: flex ;
             position: relative;
             margin-left: -200px;
@@ -483,7 +536,10 @@ const HeaderStyled = styled.header`
         @media only screen and (max-width: 525px) and (min-width: 425px){
                     margin-bottom: -2%;
             }
-        @media only screen and (max-width: 425px) and (min-width: 320px){
+        @media only screen and (max-width: 425px){
+                    margin-bottom: 0%;
+            }
+            @media only screen and (max-width: 375px){
                     margin-bottom: 0%;
             }
     }

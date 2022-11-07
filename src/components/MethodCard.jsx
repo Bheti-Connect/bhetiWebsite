@@ -37,6 +37,11 @@ const MethodCardStyled = styled.section`
         width: 90%;
         height: 100%;
     }
+    @media only screen and (max-width: 400px){
+        width: 100%;
+        height: 100%;
+        margin-left: -45px;
+    }
     @media only screen and (max-width: 375px){
         width: 80%;
         height: 100%;
