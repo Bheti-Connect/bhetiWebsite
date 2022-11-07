@@ -33,10 +33,14 @@ const MethodCardStyled = styled.section`
     border-radius: 2px;
     transition: all .4s ease-in-out;
     
-    @media only screen and (max-width: 425px) and (min-width: 320px){
+    @media only screen and (max-width: 425px){
+        width: 90%;
+        height: 100%;
+    }
+    @media only screen and (max-width: 375px){
         width: 80%;
         height: 100%;
-        margin-left: -25px;
+        margin-left: -20px;
     }
 
     &::before{
@@ -73,8 +77,8 @@ const MethodCardStyled = styled.section`
             @media only screen and (max-width: 525px) and (min-width: 425px){
                 font-size: 15px;
             }
-            @media only screen and (max-width: 425px) and (min-width: 320px){
-                font-size: 15px;
+            @media only screen and (max-width: 425px){
+                font-size: 16px;
             }
         }
     }

@@ -149,7 +149,7 @@ const FooterSectionStyled = styled.footer`
             .nav-item{
                 margin-bottom: 1rem;
             }
-            @media only screen and (max-width: 525px) and (min-width: 320px) {
+            @media only screen and (max-width: 525px) and (min-width: 320px){
                 margin-top: 25px;
             }
         }
@@ -236,11 +236,15 @@ const FooterSectionStyled = styled.footer`
         @media only screen and (max-width: 1250px) and (min-width: 1024px){
             width: 900px;
         }
-        @media all and (max-width: 770px) {
+        @media all and (max-width: 768px) {
             width: 400px;
         }
-        @media all and (max-width: 420px) {
-            width: 260px;
+        @media all and (max-width: 425px) {
+            width: 280px;
+            margin-left: 150px;
+        }
+        @media all and (max-width: 375px) {
+            width: 250px;
         }
         
     }

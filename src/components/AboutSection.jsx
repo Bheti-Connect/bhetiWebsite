@@ -63,12 +63,6 @@ const AboutSectionStyled = styled.section`
     @media only screen and (max-width: 1800px) and (min-width: 1440px) {
             height: 800px;
         }
-    @media only screen and (max-width: 425px) {
-        padding-top: 0rem;
-        padding-left: 0rem;
-        padding-right: 0rem;
-        padding-bottom: 0rem;
-    }
     .left-about{
         width: 90%;
         margin-left: 10%;
@@ -90,31 +84,45 @@ const AboutSectionStyled = styled.section`
             margin-left: 10%;
             margin-bottom: 3%;
             font-size: 1.6rem;
-            @media only screen and (max-width: 2560px) and (min-width: 1800px){
+            @media only screen and (max-width: 2560px){
                 font-size: 2.7rem;
             }
-            @media only screen and (max-width: 1800px) and (min-width: 1440px){
+            @media only screen and (max-width: 1800px){
                 font-size: 2.4rem;
                 margin-bottom: 5%;
             }
-            @media only screen and (max-width: 1440px) and (min-width: 1350px){
+            @media only screen and (max-width: 1440px){
                 font-size: 1.7rem;
                 margin-bottom: 9%;
             }
-            @media only screen and (max-width: 1350px) and (min-width: 1250px){
+            @media only screen and (max-width: 1350px){
                 font-size: 1.8rem;
                 margin-bottom: 9%;
             }
-            @media only screen and (max-width: 1250px) and (min-width: 1024px){
+            @media only screen and (max-width: 1024px){
                 font-size: 1.6rem;
                 margin-bottom: 9%;
             }
-            @media only screen and (max-width: 525px) and (min-width: 425px){
+            @media only screen and (max-width: 768px){
                 font-size: 1.35rem;
                 margin-bottom: 9%;
                 margin-top: -30%;
             }
             @media only screen and (max-width: 425px){
+                font-size: 1.2rem;
+                margin-bottom: 5%;
+                margin-top: -2900%;
+                width: 350px;
+                margin-left: -2px;
+            }
+            @media only screen and (max-width: 375px){
+                font-size: 1.2rem;
+                margin-bottom: 5%;
+                margin-top: -2900%;
+                width: 350px;
+                margin-left: -2px;
+            }
+            @media only screen and (max-width: 320px){
                 font-size: 1.2rem;
                 margin-bottom: 5%;
                 margin-top: -2900%;
@@ -137,7 +145,7 @@ const AboutSectionStyled = styled.section`
                         font-size: 16.3px;
                         margin-top: 30px;
                     }
-                    @media only screen and (max-width: 425px) and (min-width: 320px){
+                    @media only screen and (max-width: 425px){
                         display: none;
                     }
                 }
@@ -163,7 +171,7 @@ const AboutSectionStyled = styled.section`
                     @media only screen and (max-width: 1800px) and (min-width: 1440px){
                         padding-bottom: 10%;
                     }
-                    @media only screen and (max-width: 425px) and (min-width: 320px) {
+                    @media only screen and (max-width: 425px){
                         font-size: 15px;
                         width: 250px;
                         margin-left: -50px;
@@ -174,14 +182,19 @@ const AboutSectionStyled = styled.section`
                 }
                 @media only screen and (max-width: 525px) and (min-width: 425px) {
                     .icon {
-                        display: none ;
+                        width: 50px;
+                        height: 55px;
+                        margin-top: 30%;
+                        .project-img{
+                            width: 40px;
+                            margin-top: 10%;
+                        }
                     }
                     .text-container {
-                        margin-top: 10%;
                         display: contents;
                     }
                 }
-                @media only screen and (max-width: 425px) and (min-width: 320px) {
+                @media only screen and (max-width: 425px){
                     .icon{
                         width: 50px;
                         height: 55px;
@@ -210,11 +223,11 @@ const AboutSectionStyled = styled.section`
                 width: 330px;
                 margin-left: 5%;
 	            }
-        @media only screen and (max-width: 525px) and (min-width: 425px) {
+        @media only screen and (max-width: 768px){
             width: 160%;
             bottom: 5rem;
         }
-        @media only screen and (max-width: 425px) and (min-width: 320px) {
+        @media only screen and (max-width: 425px){
             width: 1%;
             bottom: 5rem;
         }
@@ -264,11 +277,11 @@ const AboutSectionStyled = styled.section`
                     width: 430px;
                     height: 550px;
             }
-            @media only screen and (max-width: 525px) and (min-width: 425px){
+            @media only screen and (max-width: 525px) and (min-width: 768px){
                     display: none;
             }
             @media only screen and (max-width: 425px){
-                    visibility: hidden;
+                    display: none;
             }
         }
         .box-img{

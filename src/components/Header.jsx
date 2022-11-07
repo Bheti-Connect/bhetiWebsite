@@ -51,11 +51,11 @@ const HeaderStyled = styled.header`
     @media only screen and (max-width: 1024px) and (min-width: 900px){
         height: 100vh;
     }
-    @media only screen and (max-width: 768px) {
+    @media only screen and (max-width: 425px) {
         height: 85vh;
     }
-    @media only screen and (max-width: 425px) {
-        height: 115vh;
+    @media only screen and (max-width: 375px) {
+        height: 95vh;
     }
     .header-content{
         display: grid;
@@ -125,7 +125,7 @@ const HeaderStyled = styled.header`
                         width: 100%;
                     }
             }
-            @media only screen and (max-width: 1440px) and (min-width: 1350px) {
+            @media only screen and (max-width: 1440px)  {
                     margin-top: 4%;
                     width: 600px;
                     h2{
@@ -136,7 +136,7 @@ const HeaderStyled = styled.header`
                     }
                     
             }
-            @media only screen and (max-width: 1350px) and (min-width: 1250px) {
+            @media only screen and (max-width: 1350px)  {
                     margin-top: 4%;
                     width: 600px;
                     h2{
@@ -147,7 +147,7 @@ const HeaderStyled = styled.header`
                     }
                     
             }
-            @media only screen and (max-width: 1250px) and (min-width: 1024px) {
+            @media only screen and (max-width: 1250px)  {
                     margin-top: 4%;
                     width: 500px;
                     h2{
@@ -158,7 +158,7 @@ const HeaderStyled = styled.header`
                     }
                     
             }
-            @media only screen and (max-width: 1024px) and (min-width: 900px) {
+            @media only screen and (max-width: 1024px)  {
                     margin-top: 4%;
                     width: 500px;
                     h2{
@@ -180,28 +180,25 @@ const HeaderStyled = styled.header`
                     p{
                         font-size: 17px;
                     }
-                    
             }
 
             //------------- add others
-
-            @media only screen and (max-width: 525px) and (min-width: 425px) {
-                    margin-top: -10%;
-                    margin-left: -9.6%;
+            @media only screen and (max-width: 425px) {
+                    margin-top: -8%;
+                    margin-left: -12%;
                     text-align: justify;
+
                     h2{
-                        font-size: 37px;
+                        font-size: 28px;
                     }
                     p{
-                        font-size: 16px;
+                        font-size: 15px;
                     }
-                    
             }
-            @media only screen and (max-width: 425px) and (min-width: 320px) {
+            @media only screen and (max-width: 375px) {
                     margin-top: -10%;
-                    margin-left: -12.5%;
+                    margin-left: -15%;
                     text-align: justify;
-
                     h2{
                         font-size: 28px;
                     }
@@ -219,7 +216,7 @@ const HeaderStyled = styled.header`
             @media only screen and (max-width: 1440px) and (min-width: 1024px){
                 margin-left: -70px;
             }
-            @media only screen and (max-width: 768px)  {
+            @media only screen and (max-width: 768px) {
                 margin-left: -50px;
                 margin-right: 25px;
                 .button-demo {
@@ -236,12 +233,22 @@ const HeaderStyled = styled.header`
                     margin-left: 26%;
                 }
             }
-            @media only screen and (max-width: 425px){
+            @media only screen and (max-width: 425px) {
+                width: 340px;
+                margin-left: -35px;
+                .button-demo {
+                    position: absolute;
+                    top: 195%;
+                    margin-left: 60px;
+                    width: 280px;
+                }
+            }
+            @media only screen and (max-width: 375px) {
                 width: 290px;
                 margin-left: -40px;
                 .button-demo {
                     position: absolute;
-                    top: 170%;
+                    top: 175%;
                     margin-left: -6%;
                     width: 280px;
                 }
@@ -320,16 +327,17 @@ const HeaderStyled = styled.header`
                     border-top-right-radius: 5px;
                     border-top-left-radius: 5px;
                 }
-                @media only screen and (max-width: 525px) and (min-width: 425px){
-                    width: 150px;
-                    height: 200px;
-                    margin-right: 300px;
+                @media only screen and (max-width: 425px) {
+                    top: -100px;
+                    left: 7%;
+                    width: 160px;
+                    height: 220px;
                     border-bottom-right-radius: 5px;
                     border-bottom-left-radius: 30px;
                     border-top-right-radius: 5px;
                     border-top-left-radius: 5px;
                 }
-                @media only screen and (max-width: 425px) {
+                @media only screen and (max-width: 375px) {
                     top: 0px;
                     width: 150px;
                     height: 200px;
@@ -378,17 +386,7 @@ const HeaderStyled = styled.header`
                     width: 300px;
                     height: 450px;
                 }
-                @media only screen and (max-width: 1024px) and (min-width: 900px){
-                    top: -5%;
-                    width: 180px;
-                    height: 300px;
-                }
-                @media only screen and (max-width: 1024px) and (min-width: 900px){
-                    top: -5%;
-                    width: 180px;
-                    height: 300px;
-                }
-                @media only screen and (max-width: 900px) and (min-width: 768px){
+                @media only screen and (max-width: 1024px){
                     top: -5%;
                     width: 180px;
                     height: 300px;
@@ -403,12 +401,12 @@ const HeaderStyled = styled.header`
                     border-top-left-radius: 5px;
                     border-top-right-radius: 5px;
                 }
-                
+        
                 @media only screen and (max-width: 425px){
-                    top: 0px;
-                    width: 150px;
-                    height: 200px;
-                    margin-left: -168px;
+                    top: -100px;
+                    width: 160px;
+                    height: 220px;
+                    margin-left: -40%;
                     border-bottom-right-radius: 30px;
                     border-bottom-left-radius: 5px;
                     border-top-left-radius: 5px;
@@ -423,7 +421,7 @@ const HeaderStyled = styled.header`
                 margin-top: 30%;
             }
             @media only screen and (max-width: 425px){
-                margin-left: -14%;
+                margin-left: -13%;
                 margin-top: 45%;
                 width: 370px;
             }

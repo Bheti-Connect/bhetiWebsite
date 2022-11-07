@@ -154,6 +154,12 @@ const JoinCommunityStyled = styled.section`
                     margin-top: -57px;
                 }
                 @media only screen and (max-width: 425px){
+                    width: 300px;
+                    height: 110px;
+                    margin-left: -95px;
+                    margin-top: -57px;
+                }
+                @media only screen and (max-width: 375px){
                     width: 260px;
                     height: 110px;
                     margin-left: -100px;
@@ -220,21 +226,16 @@ const JoinCommunityStyled = styled.section`
                     margin-left: -220px;
                     margin-top: 105%;
                 }
-                @media only screen and (max-width: 525px) and (min-width: 425px) {
-                    width: 400px;
-                    height: 280px;
-                    margin-left: -200px;
-                    margin-top: 40%;
-                }
+                
                 @media only screen and (max-width: 425px){
-                    width: 280px;
+                    width: 320px;
                     height: 350px;
                     margin-left: -160px;
                     margin-top: 60%;
                 }
                 .anchor-tag {
                     margin-top: 40px;
-                    margin-left: -30px;
+                    margin-left: 0px;
                 }
             }
         }
