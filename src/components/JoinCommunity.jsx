@@ -112,8 +112,9 @@ const JoinCommunityStyled = styled.section`
         .latest-content{
             display: grid;
             grid-template-columns: 40% auto;
-            padding: 5rem 10rem;
+            padding: 10rem 10rem;
             grid-gap: 2rem;
+            height: -300px;
             img{
                 width: 100%;
                 border-radius: 7px;
@@ -158,6 +159,10 @@ const JoinCommunityStyled = styled.section`
                     height: 110px;
                     margin-left: -95px;
                     margin-top: -57px;
+                }
+                @media only screen and (max-width: 400px){
+                    margin-left: -110px;
+                    
                 }
                 @media only screen and (max-width: 375px){
                     width: 260px;
@@ -236,6 +241,15 @@ const JoinCommunityStyled = styled.section`
                 .anchor-tag {
                     margin-top: 40px;
                     margin: 1;
+                    @media only screen and (max-width: 425px) {
+                        margin-left: 17px;
+                    }
+                    @media only screen and (max-width: 400px) {
+                        margin-left: 17px;
+                    }
+                    @media only screen and (max-width: 375px) {
+                        margin-left: -50px;
+                    }
                 }
             }
         }

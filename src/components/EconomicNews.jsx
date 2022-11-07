@@ -45,7 +45,7 @@ const EconomicNewsStyled = styled.section`
         border-top-left-radius: 5px;
         img{
             border-top-left-radius: 5px;
-            width: 85%;
+            width: 100%;
             object-fit: cover;
             filter: grayscale(100%);
             height: 100%;
@@ -97,7 +97,16 @@ const EconomicNewsStyled = styled.section`
                 width: 320px;
             }
             .bouton {
-                margin-left: -50px;
+                margin-left: -30px;
+            }
+            @media only screen and (max-width: 425px) {
+                width: 300px ;
+            }
+            @media only screen and (max-width: 400px) {
+                width: 390px;
+            }
+            @media only screen and (max-width: 375px) {
+                
             }
         }
         @media only screen and (max-width: 425px) and (min-width: 320px) {
