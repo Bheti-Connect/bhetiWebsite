@@ -330,7 +330,7 @@ const HeaderStyled = styled.header`
                     border-top-right-radius: 5px;
                     border-top-left-radius: 5px;
                 }
-                @media only screen and (max-width: 425px) and (min-width: 320px){
+                @media only screen and (max-width: 425px) {
                     width: 147px;
                     height: 200px;
                     margin-right: -300px;
@@ -339,7 +339,11 @@ const HeaderStyled = styled.header`
                     border-top-right-radius: 5px;
                     border-top-left-radius: 5px;
                 }
-                
+                @media only screen and (max-width: 320px) {
+                    width: 130px ;
+                    height: 180px;
+                    margin-left: 20px;
+                }
             }
             .h-img-1{
                 position: absolute;
@@ -408,7 +412,7 @@ const HeaderStyled = styled.header`
                     border-top-left-radius: 5px;
                     border-top-right-radius: 5px;
                 }
-                @media only screen and (max-width: 425px) and (min-width: 320px){
+                @media only screen and (max-width: 425px) {
                     top: 0cm;
                     width: 140px;
                     height: 200px;
@@ -417,6 +421,11 @@ const HeaderStyled = styled.header`
                     border-bottom-left-radius: 5px;
                     border-top-left-radius: 5px;
                     border-top-right-radius: 5px;
+                }
+                @media only screen and (max-width: 320px) {
+                    width: 130px ;
+                    height: 180px;
+                    margin-left: 50px;
                 }
             }
             @media only screen and (max-width: 1800px) and (min-width: 1440px) {
@@ -435,6 +444,9 @@ const HeaderStyled = styled.header`
                 margin-left: -14%;
                 margin-top: 45%;
                 width: 370px;
+            }
+            @media only screen and (max-width: 320px) {
+                margin-top: 38%;
             }
         }
         @media only screen and (max-width: 2560px) and (min-width: 1800px) {
@@ -492,7 +504,7 @@ const HeaderStyled = styled.header`
             }
             @media only screen and (max-width: 320px) {
                 margin-left: -230px;
-                margin-top: -15%;
+                margin-top: -18%;
             }
     }
     .mouse{

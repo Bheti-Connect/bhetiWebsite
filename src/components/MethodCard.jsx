@@ -47,6 +47,11 @@ const MethodCardStyled = styled.section`
         height: 100%;
         margin-left: -20px;
     }
+    @media only screen and (max-width: 320px){
+        width: 75%;
+        height: 90%;
+        margin-left: -40px;
+    }
 
     &::before{
         content: '';

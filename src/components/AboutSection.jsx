@@ -123,7 +123,7 @@ const AboutSectionStyled = styled.section`
                 margin-left: -2px;
             }
             @media only screen and (max-width: 320px){
-                font-size: 1.2rem;
+                font-size: 1rem;
                 margin-bottom: 5%;
                 margin-top: -2900%;
                 width: 350px;
@@ -174,6 +174,11 @@ const AboutSectionStyled = styled.section`
                     @media only screen and (max-width: 425px){
                         font-size: 15px;
                         width: 250px;
+                        margin-left: -50px;
+                    }
+                    @media only screen and (max-width: 320px){
+                        font-size: 12.1px;
+                        width: 200px;
                         margin-left: -50px;
                     }
                 }
@@ -231,6 +236,7 @@ const AboutSectionStyled = styled.section`
             width: 1%;
             bottom: 5rem;
         }
+        
     }
 
     .right-about{
