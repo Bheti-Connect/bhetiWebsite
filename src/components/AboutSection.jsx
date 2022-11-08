@@ -126,7 +126,7 @@ const AboutSectionStyled = styled.section`
                 font-size: 1rem;
                 margin-bottom: 5%;
                 margin-top: -2900%;
-                width: 350px;
+                width: 300px;
                 margin-left: -2px;
             }
         }

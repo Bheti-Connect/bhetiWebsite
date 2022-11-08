@@ -198,9 +198,7 @@ const HeaderStyled = styled.header`
             }
             @media only screen and (max-width: 320px){
                     margin-top: -10%;
-                    margin-left: -10.5%;
                     text-align: justify;
-
                     h2{
                         font-size: 27px;
                     }
@@ -256,6 +254,10 @@ const HeaderStyled = styled.header`
                     margin-left: -6%;
                     width: 280px;
                 }
+            }
+            @media only screen and (max-width: 375px){
+                width: 290px;
+                
             }
         }
         .right-h-content{
@@ -446,7 +448,9 @@ const HeaderStyled = styled.header`
                 width: 370px;
             }
             @media only screen and (max-width: 320px) {
+                width: 325px;
                 margin-top: 38%;
+                margin-left: -12%;
             }
         }
         @media only screen and (max-width: 2560px) and (min-width: 1800px) {

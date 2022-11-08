@@ -108,10 +108,10 @@ const FooterSectionStyled = styled.footer`
     padding-bottom: 3rem !important;
     font-size: 14px;
     h6{
-        font-size: 1.2rem;
+        font-size: 1.1rem;
     }
     h4{
-        font-size: 1.5rem;
+        font-size: 1.3rem;
         color: ${props => props.theme.colorGrey4};
     }
     a{  
@@ -156,8 +156,11 @@ const FooterSectionStyled = styled.footer`
         .company {
             .nav-item a{
                 color: ${props => props.theme.colorGrey6};
-                @media all and (max-width: 420px) {
-                margin-left: -5px;
+                @media all and (max-width: 425px) {
+                    margin-left: -5px;
+                }
+                @media all and (max-width: 320px) {
+                    margin-left: -1px;
                 }
             }
         }
@@ -175,6 +178,9 @@ const FooterSectionStyled = styled.footer`
             flex: 5;
             .logo img{
                 width: 12%;
+                @media all and (max-width: 425px) {
+                    width: 25%;
+                }
             }
             @media all and (max-width: 1080px) {
                 
@@ -206,6 +212,7 @@ const FooterSectionStyled = styled.footer`
                     color: #a9388b ;
                 }
             }
+            
         }
         /* .b-nav-icons a{
             color: ${props => props.theme.colorGre6};
@@ -245,6 +252,10 @@ const FooterSectionStyled = styled.footer`
         }
         @media all and (max-width: 375px) {
             width: 250px;
+        }
+        @media all and (max-width: 320px) {
+            width: 230px;
+            margin-left: 55px;
         }
         
     }
