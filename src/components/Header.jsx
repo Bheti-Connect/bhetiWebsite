@@ -184,7 +184,7 @@ const HeaderStyled = styled.header`
                     }
                     
             }
-            @media only screen and (max-width: 425px) and (min-width: 320px) {
+            @media only screen and (max-width: 425px){
                     margin-top: -10%;
                     margin-left: -12.5%;
                     text-align: justify;
@@ -194,6 +194,18 @@ const HeaderStyled = styled.header`
                     }
                     p{
                         font-size: 15px;
+                    }
+            }
+            @media only screen and (max-width: 320px){
+                    margin-top: -10%;
+                    margin-left: -10.5%;
+                    text-align: justify;
+
+                    h2{
+                        font-size: 27px;
+                    }
+                    p{
+                        font-size: 15.5px;
                     }
             }
             
@@ -444,9 +456,9 @@ const HeaderStyled = styled.header`
                 margin-left: -150px;
             }
         @media only screen and (max-width: 525px) and (min-width: 425px) {
-            display: flex ;
-            position: relative;
-            margin-left: -200px;
+                display: flex ;
+                position: relative;
+                margin-left: -200px;
                 .box {
                     position: absolute;
                     .right-h-content{
@@ -455,10 +467,10 @@ const HeaderStyled = styled.header`
                 }
             }
             @media only screen and (max-width: 425px) {
-            display: flex ;
-            position: relative;
-            margin-left: -180px;
-            margin-top: -13%;
+                display: flex ;
+                position: relative;
+                margin-left: -180px;
+                margin-top: -13%;
                 .box {
                     position: absolute;
                     .right-h-content{
@@ -467,10 +479,10 @@ const HeaderStyled = styled.header`
                 }
             }
             @media only screen and (max-width: 400px) {
-            display: flex ;
-            position: relative;
-            margin-left: -200px;
-            margin-top: -13%;
+                display: flex ;
+                position: relative;
+                margin-left: -200px;
+                margin-top: -13%;
                 .box {
                     position: absolute;
                     .right-h-content{
@@ -478,19 +490,10 @@ const HeaderStyled = styled.header`
                     }
                 }
             }
-            @media only screen and (max-width: 375px) {
-            display: flex ;
-            position: relative;
-            margin-left: -200px;
-            margin-top: -13%;
-                .box {
-                    position: absolute;
-                    .right-h-content{
-                        z-index: 9;
-                    }
-                }
+            @media only screen and (max-width: 320px) {
+                margin-left: -230px;
+                margin-top: -15%;
             }
-        
     }
     .mouse{
         position: absolute;
