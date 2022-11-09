@@ -9,6 +9,7 @@ import Cards from './Cards';
 import axios from 'axios';
 import CardModal from './CardModal';
 import LoaderReact from './LoaderReact';
+//import iconBheti from "../../assets/icons/icon_bheti_design.png";
 
 const Investisseur = () => {
   // useState of pagination
@@ -340,13 +341,15 @@ const Investisseur = () => {
 
 const InvestisseurStyled = styled.section`
 
+/*background : no-repeat center/80% url("../../assets/icons/icon_bheti_design.png") ;*/
 
 `;
 
 const AllCards = styled.div`
 display: flex;
-width: 100%;
-justify-content: space-evenly;
+width: 89%;
+justify-content: left;
+margin:auto;
 flex-wrap: wrap;
 `;
 

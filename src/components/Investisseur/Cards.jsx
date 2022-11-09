@@ -10,7 +10,8 @@ const Cards = ({item, setSelect, setModal}) => {
   let currencyEuro = new Intl.NumberFormat('de-DE', { style : 'currency', currency: 'EUR'})
 
   // Generate image
-  let source = "https://" + `picsum.photos/id/${item.id}/200/300`;
+  let source = "https://" + `picsum.photos/id/${Math.floor(Math.random() * 200)}/200/300`;
+
 
   const handleSelect = () => {
     const body = document.querySelector("body");
@@ -29,7 +30,7 @@ const Cards = ({item, setSelect, setModal}) => {
           <h3>{item.nom}</h3>
           <ul>
             <li>{item.stade}</li>
-            <li>Automobile</li>
+            <li>{item.stade}</li>
           </ul>
           <div className='boxPriceCountry'>
             <p className='price'>{item.financement ? (currencyEuro.format(parseInt(item.financement))) : ("ne pas mentionné")}</p>
