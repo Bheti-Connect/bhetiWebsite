@@ -403,9 +403,13 @@ const HeaderStyled = styled.header`
                     height: 300px;
                 }
                 @media only screen and (max-width: 768px) {
-                    top: -5%;
+                    top: -1%;
                     width: 215px;
-                    height: 380px;
+                    height: 350px;
+                    border-bottom-right-radius: 30px;
+                    border-bottom-left-radius: 5px;
+                    border-top-left-radius: 5px;
+                    border-top-right-radius: 5px;
                 }
                 @media only screen and (max-width: 525px) and (min-width: 425px){
                     top: 0cm;

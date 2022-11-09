@@ -182,9 +182,6 @@ const FooterSectionStyled = styled.footer`
                     width: 25%;
                 }
             }
-            @media all and (max-width: 1080px) {
-                
-            }
     }
         .logo-con p{
             color: ${props => props.theme.colorGrey6};
@@ -244,7 +241,7 @@ const FooterSectionStyled = styled.footer`
             width: 900px;
         }
         @media all and (max-width: 768px) {
-            width: 400px;
+            width: 600px;
         }
         @media all and (max-width: 425px) {
             width: 280px;
@@ -275,8 +272,8 @@ const FooterSectionStyled = styled.footer`
     .footer-copyright p{
         color: ${props => props.theme.colorGrey6} ;
     }
-    @media all and (max-width: 770px) {
-        margin-left: -50px;
+    @media all and (max-width: 768px) {
+        margin-left: 0px;
     }
     @media all and (max-width: 420px) {
         margin-left: -10px;
