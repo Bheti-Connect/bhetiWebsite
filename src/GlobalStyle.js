@@ -49,6 +49,9 @@ const GlobalStyle = createGlobalStyle`
         @media only screen and (max-width: 320px){
             padding: 8rem 0.2rem 8rem 18rem;
         }
+        @media only screen and (max-width: 768px){
+            padding: 8rem 18rem 8rem 2rem;
+        }
         
     }
     .u-pad-lg-2{
