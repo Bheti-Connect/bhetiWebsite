@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faXmark } from '@fortawesome/free-solid-svg-icons';
@@ -6,12 +6,13 @@ import { useTheme } from '../../context/themeContext';
 
 const CardModal = ({select, setModal}) => {
   const theme = useTheme();
+  const [connect, setConnect] = useState(false);
 
   // Format currency Euro
   let currencyEuro = new Intl.NumberFormat('de-DE', { style : 'currency', currency: 'EUR'})
 
   // Generate image
-  let source = "https://" + `picsum.photos/id/${select.id}/200/300`;
+  let source = "https://" + `picsum.photos/id/${Math.floor(Math.random() * 200)}/200/300`;
 
   // handle disable modal
   const handleModal = () => {

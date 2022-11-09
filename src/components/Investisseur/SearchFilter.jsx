@@ -25,7 +25,7 @@ const SearchFilter = ({setQuery, setTrie}) => {
       <ContainerSearch theme={theme}>
         <form onSubmit={handleQuery}>
           <button type='submit' className="btn-search"><GoSearch /></button>
-          <input ref={valueSearch} type="text" className="input-search" placeholder="Votre recherche ..."></input>
+          <input ref={valueSearch} type="text" className="input-search" placeholder="Recherche..."></input>
         </form>
       </ContainerSearch>
 
@@ -107,6 +107,47 @@ color: ${props => props.theme.colorBheti};
 background-color: transparent;
 }
 
+@media only screen and (max-width: 768px) {
+  margin-right:15px;
+
+  .btn-search{
+    font-size: 20px;
+  }
+
+  .input-search:focus{
+    width: 120px;
+  }
+
+  .btn-search:focus ~ .input-search{
+    width: 120px;
+  }
+
+  .input-search::placeholder{
+    font-size: 10px;
+  }
+
+}
+
+@media only screen and (max-width: 645px) {
+
+  .btn-search{
+    font-size: 18px;
+  }
+
+  .input-search:focus{
+    width: 120px;
+  }
+
+  .btn-search:focus ~ .input-search{
+    width: 120px;
+  }
+
+  .input-search::placeholder{
+    font-size: 8px;
+  }
+
+}
+
 `;
 
 const ContainerFilter = styled.div`
@@ -131,6 +172,7 @@ const ContainerFilter = styled.div`
           }
         }
       }
+
 `;
 
 

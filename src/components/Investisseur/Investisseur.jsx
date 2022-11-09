@@ -339,6 +339,7 @@ const Investisseur = () => {
 
 // Style CSS with styled component
 
+
 const InvestisseurStyled = styled.section`
 
 /*background : no-repeat center/80% url("../../assets/icons/icon_bheti_design.png") ;*/
@@ -424,16 +425,52 @@ const AllProject = styled.div`
 }
 
 
+
+@media only screen and (max-width: 768px) {
+
+  .containerClassName {
+    font-size: 12px;
+  }
+
+  .previousLinkClassName{
+    font-size: 15px;
+  }
+
+  .nextLinkClassName{
+    font-size: 15px;
+  }
+
+
+}
+
+@media only screen and (max-width: 578px) {
+
+  .containerClassName {
+    font-size: 10px;
+  }
+
+  .previousLinkClassName{
+    font-size: 13px;
+  }
+
+  .nextLinkClassName{
+    font-size: 13px;
+  }
+
+}
+
+
 `;
 
 const HeaderText = styled.div`
+
+
 margin: 55px;
 
 h3 {
   
   font-size: 25px;
   color: ${props => props.theme.colorPrimary};
-  
 }
 
 p {
@@ -487,6 +524,32 @@ p {
 
 .active {
     border-bottom: 2px solid ${props => props.theme.colorBheti};
+}
+
+@media only screen and (max-width: 768px) {
+  h3{
+    font-size: 20px;
+  }
+
+  p {
+  font-size: 10px;
+  }
+
+  .menuSection li {
+  padding-bottom: 10px;
+  font-size: 15px;
+  }
+
+}
+
+@media only screen and (max-width: 578px) {
+
+  margin: 40px;
+
+  .containerMenu .Box{
+    flex-direction: column;
+}
+
 }
 
 `;

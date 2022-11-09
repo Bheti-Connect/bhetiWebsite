@@ -20,6 +20,8 @@ const Cards = ({item, setSelect, setModal}) => {
     setModal(true)
   }
 
+
+
   return (
     <CardItem onClick={handleSelect} theme={theme}>
           <CardHeader>
@@ -58,7 +60,21 @@ cursor: pointer;
   transform: scale(1.05);
   
 }
+
+@media only screen and (max-width: 768px) {
+  width: 215px;
+  height: 310px;
+}
+
+@media only screen and (max-width: 578px) {
+  width: 195px;
+  height: 275px;
+
+}
+
 `
+
+
 const CardBody = styled.div`
 padding: 10px;
 
@@ -112,6 +128,48 @@ ul li {
   font-size: 12px;
 }
 
+@media only screen and (max-width: 768px) {
+  h3{
+    font-size: 12px;
+    margin-bottom: 5px;
+  }
+
+  ul{
+    font-size: 10px;
+    margin-top: 5px;
+  }
+
+  .country {
+    font-size: 10px;
+  }
+
+  .price{
+    font-size: 10px;
+  }
+}
+
+@media only screen and (max-width: 578px) {
+
+h3{
+  font-size: 10px;
+  margin-bottom: 5px;
+}
+
+ul{
+  font-size: 10px;
+  margin-top: 5px;
+}
+
+.country {
+  font-size: 10px;
+}
+
+.price{
+  font-size: 10px;
+}
+
+}
+
 `;
 
 const CardHeader = styled.div`
@@ -120,6 +178,14 @@ img {
   width: 100%;
   height: 200px;
   object-fit: cover;
+}
+
+@media only screen and (max-width: 578px) {
+
+  img {
+  height: 165px;
+  }
+
 }
 
 `;
