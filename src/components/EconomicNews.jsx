@@ -19,7 +19,7 @@ const EconomicNews = () => {
                         Découvrez les codes de la sphère business en Afrique. 
                         Nous vous immergeons dans ce monde encore opaque pour vous apporter des informations transparentes, inédites et exclusives.
                     </p>
-                    <Button 
+                    <Button
                         name={"Je m'informe"}
                         icon={'fas fa-chevron-right'}
                         arrow={'arrow'}

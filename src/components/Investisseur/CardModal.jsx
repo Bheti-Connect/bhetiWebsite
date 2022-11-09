@@ -21,10 +21,21 @@ const CardModal = ({select, setModal}) => {
     setModal(false);
   }
 
+  const handleScroll = (e) => {
+
+    const test = e.target.clientHeight;
+
+    //console.log(e);
+    /*if (test) {
+      console.log("Test scroll");
+    }*/
+
+  }
+
   return (
-    <Container>
-        <div id="open-modal" className="modal-window">
-            <div>
+    <Container >
+        <div id="open-modal" className="modal-window" >
+            <div onScroll={handleScroll}>
                 <div onClick={handleModal} className="modal-close"><FontAwesomeIcon icon={faXmark} size="lg"/></div>
                 <Header>
                   <p>Projet {select.nom}</p>
