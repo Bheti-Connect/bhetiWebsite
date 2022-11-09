@@ -104,9 +104,10 @@ const AboutSectionStyled = styled.section`
                 margin-bottom: 9%;
             }
             @media only screen and (max-width: 768px){
-                font-size: 1.35rem;
-                margin-bottom: 9%;
-                margin-top: -30%;
+                font-size: 1.95rem;
+                margin-bottom: 8%;
+                margin-top: -20%;
+                margin-left: 50px;
             }
             @media only screen and (max-width: 425px){
                 font-size: 1.2rem;
@@ -184,6 +185,9 @@ const AboutSectionStyled = styled.section`
                 }
                 @media only screen and (max-width: 2560px) and (min-width: 1800px) {
                     margin-top: 70px;
+                }
+                @media only screen and (max-width: 2560px) and (min-width: 768px) {
+                    margin-left: 80px;
                 }
                 @media only screen and (max-width: 525px) and (min-width: 425px) {
                     .icon {
@@ -283,10 +287,7 @@ const AboutSectionStyled = styled.section`
                     width: 430px;
                     height: 550px;
             }
-            @media only screen and (max-width: 525px) and (min-width: 768px){
-                    display: none;
-            }
-            @media only screen and (max-width: 425px){
+            @media only screen and (max-width: 768px){
                     display: none;
             }
         }

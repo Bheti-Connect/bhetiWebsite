@@ -79,8 +79,8 @@ const EconomicNewsStyled = styled.section`
                     height: 2px;
                     background-color: ${props => props.theme.colorAccent};
                 }
-                @media only screen and (max-width: 525px) and (min-width: 425px) {
-                    font-size: 1.5rem;
+                @media only screen and (max-width: 768px) {
+                    font-size: 1.82rem;
                 }
                 @media only screen and (max-width: 425px) {
                     font-size: 1.5rem;
@@ -104,6 +104,9 @@ const EconomicNewsStyled = styled.section`
             }
             .bouton {
                 margin-left: -30px;
+                @media only screen and (max-width: 768px) {
+                    margin-left: 80px;
+                }
             }
             @media only screen and (max-width: 425px) {
                 width: 300px ;

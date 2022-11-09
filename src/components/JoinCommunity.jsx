@@ -59,7 +59,7 @@ const JoinCommunityStyled = styled.section`
             width: 1000px;
         }
         @media only screen and (max-width: 768px) {
-            margin-left: -210px;
+            margin-left: -205px;
             width: 600px;
         }
         @media only screen and (max-width: 525px) and (min-width: 425px) {
@@ -96,9 +96,9 @@ const JoinCommunityStyled = styled.section`
             margin-left: -160px;
         }
         @media only screen and (max-width: 768px) {
-            width: 550px;
-            height: 700px;
-            margin-left: -180px;
+            width: 650px;
+            height: 500px;
+            margin-left: -225px;
         }
         @media only screen and (max-width: 525px) and (min-width: 425px) {
             width: 505px;
@@ -119,7 +119,6 @@ const JoinCommunityStyled = styled.section`
                 width: 100%;
                 border-radius: 7px;
                 object-fit: cover;
-                
                 @media only screen and (max-width: 2560px) and (min-width: 1800px) {
                     width: 600px;
                     margin-left: -60px;
@@ -144,9 +143,10 @@ const JoinCommunityStyled = styled.section`
                     margin-left: -120px;
                 }
                 @media only screen and (max-width: 768px) {
-                    width: 400px;
+                    width: 500px;
                     height: 180px;
                     margin-left: -90px;
+                    margin-top: -130px;
                 }
                 @media only screen and (max-width: 525px) and (min-width: 425px) {
                     width: 380px;
@@ -162,7 +162,6 @@ const JoinCommunityStyled = styled.section`
                 }
                 @media only screen and (max-width: 400px){
                     margin-left: -110px;
-                    
                 }
                 @media only screen and (max-width: 375px){
                     width: 260px;
@@ -229,10 +228,10 @@ const JoinCommunityStyled = styled.section`
                     margin-top: -10%;
                 }
                 @media only screen and (max-width: 768px) {
-                    width: 460px;
+                    width: 550px;
                     height: 300px;
-                    margin-left: -220px;
-                    margin-top: 105%;
+                    margin-left: -260px;
+                    margin-top: 25%;
                 }
                 
                 @media only screen and (max-width: 425px){
