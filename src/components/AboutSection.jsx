@@ -100,11 +100,13 @@ const AboutSectionStyled = styled.section`
                 margin-bottom: 9%;
             }
             @media only screen and (max-width: 1024px){
-                font-size: 1.6rem;
-                margin-bottom: 9%;
+                font-size: 1.9rem;
+                margin-bottom: 8%;
+                margin-top: -25%;
+                margin-left: 60px;
             }
             @media only screen and (max-width: 768px){
-                font-size: 1.95rem;
+                font-size: 1.9rem;
                 margin-bottom: 8%;
                 margin-top: -20%;
                 margin-left: 50px;
@@ -172,6 +174,9 @@ const AboutSectionStyled = styled.section`
                     @media only screen and (max-width: 1800px) and (min-width: 1440px){
                         padding-bottom: 10%;
                     }
+                    @media only screen and (max-width: 768px) {
+                        width: 500px;
+                    }
                     @media only screen and (max-width: 425px){
                         font-size: 15px;
                         width: 250px;
@@ -186,9 +191,27 @@ const AboutSectionStyled = styled.section`
                 @media only screen and (max-width: 2560px) and (min-width: 1800px) {
                     margin-top: 70px;
                 }
-                @media only screen and (max-width: 2560px) and (min-width: 768px) {
+                @media only screen and (max-width: 2560px) {
                     margin-left: 80px;
                 }
+                @media only screen and (max-width: 1024px) {
+                    width: 600px;
+                    margin-left: 70px;
+                    .icon {
+                        width: 70px;
+                        height: 65px;
+                        margin-top: 30%;
+                        .project-img{
+                            width: 60px;
+                            margin-top: 10%;
+                        }
+                    }
+                }
+                @media only screen and (max-width: 768px) {
+                    width: 400px;
+                    margin-left: 10px;
+                }
+
                 @media only screen and (max-width: 525px) and (min-width: 425px) {
                     .icon {
                         width: 50px;
@@ -287,8 +310,8 @@ const AboutSectionStyled = styled.section`
                     width: 430px;
                     height: 550px;
             }
-            @media only screen and (max-width: 768px){
-                    display: none;
+            @media only screen and (max-width: 1024px) {
+                display: none;
             }
         }
         .box-img{
@@ -327,10 +350,7 @@ const AboutSectionStyled = styled.section`
             @media only screen and (max-width: 1250px) and (min-width: 1024px){
                     margin-left: 6.5%;
             }
-            @media only screen and (max-width: 525px) and (min-width: 425px){
-                    display: none;
-            }
-            @media only screen and (max-width: 425px) and (min-width: 320px){
+            @media only screen and (max-width: 1024px){
                     display: none;
             }
         }

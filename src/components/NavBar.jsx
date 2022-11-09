@@ -110,7 +110,7 @@ const NavBarStyled = styled.nav`
         flex-wrap: wrap;
         justify-content: space-between;
         border-bottom: 1px solid ${props => props.theme.colorGrey9};
-        @media only screen and (max-width: 675px) and (min-width: 320px) {
+        @media only screen and (max-width: 1024px) {
             border-bottom: 0px solid ${props => props.theme.colorBg};
         }
         animation: navHide 1s ease-in-out;
