@@ -101,6 +101,13 @@ const AboutSectionStyled = styled.section`
             }
             @media only screen and (max-width: 1024px){
                 font-size: 1.9rem;
+                width: 600px;
+                margin-bottom: 6%;
+                margin-top: -20%;
+                margin-left: 250px;
+            }
+            @media only screen and (max-width: 960px){
+                font-size: 1.9rem;
                 margin-bottom: 8%;
                 margin-top: -25%;
                 margin-left: 60px;
@@ -195,8 +202,8 @@ const AboutSectionStyled = styled.section`
                     margin-left: 80px;
                 }
                 @media only screen and (max-width: 1024px) {
-                    width: 600px;
-                    margin-left: 70px;
+                    width: 650px;
+                    margin-left: 30%;
                     .icon {
                         width: 70px;
                         height: 65px;
@@ -207,9 +214,19 @@ const AboutSectionStyled = styled.section`
                         }
                     }
                 }
+                @media only screen and (max-width: 960px) {
+                    width: 600px;
+                    margin-left: 70px;
+                }
                 @media only screen and (max-width: 768px) {
                     width: 400px;
                     margin-left: 10px;
+                }
+                @media only screen and (max-width: 425px) {
+                    width: 300px;
+                }
+                @media only screen and (max-width: 320px) {
+                    width: 280px;
                 }
 
                 @media only screen and (max-width: 525px) and (min-width: 425px) {
