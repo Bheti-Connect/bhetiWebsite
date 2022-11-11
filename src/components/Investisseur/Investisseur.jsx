@@ -11,6 +11,8 @@ import CardModal from './CardModal';
 import LoaderReact from './LoaderReact';
 //import iconBheti from "../../assets/icons/icon_bheti_design.png";
 
+import Swal from 'sweetalert2';
+
 const Investisseur = () => {
   // useState of pagination
     const [currentPage, setCurrentPage] = useState(0);
@@ -34,6 +36,34 @@ const Investisseur = () => {
     // Position change pagination : Tous, Startup, pme
     const [paginationSelect, setPaginationSelect] = useState("tous")
     const [positionTrie, setPositionTrie] = useState("")
+
+// *******************************************************************************************
+
+    // Test connexion Investisseur
+    const [connect, setConnect] = useState(false)
+
+// *******************************************************************************************
+
+    //Ask to connect
+    const handleConnect = () => {
+  
+      Swal.fire({
+        title: "Se connecter",
+        text: `Pour une meilleure experience sur la platforme, veuillez vous connecter ou procéder à la création de votre compte si ce n'est pas encore fait.`,
+        icon: 'info',
+        showCloseButton: true,
+        iconColor: '#700b0b',
+        confirmButtonText: 'Se connecter',
+        confirmButtonColor: "#4BB543",
+        confirmButtonAriaLabel: "sans-serif",
+      }).then((result) => {
+        if (result.isConfirmed)
+        {
+          console.log("C'est confirmé");
+        }
+      })
+
+    }
 
     // handle for receive data and set in useState
     const handleSetData = (response) => {
@@ -233,12 +263,19 @@ const Investisseur = () => {
 
     // First UseEffect
     useEffect(() => {
-      const waiting = setTimeout(() => {
+      let waiting = setTimeout(() => {
         setLoading(false)
       }, 4000);
 
       getData()
       changeSectionMenu()
+
+      if (connect == false)
+      {
+        waiting = setTimeout(() => {
+          handleConnect()
+        }, 10000)
+      }
 
       return () => {
         clearTimeout(waiting)
@@ -329,7 +366,7 @@ const Investisseur = () => {
             </AllProject>
 
             {
-              modal && <CardModal select={select} setModal={setModal}/>
+              modal && <CardModal select={select} setModal={setModal} connect={connect}/>
             }
 
 
@@ -343,6 +380,7 @@ const Investisseur = () => {
 const InvestisseurStyled = styled.section`
 
 /*background : no-repeat center/80% url("../../assets/icons/icon_bheti_design.png") ;*/
+
 
 `;
 
