@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useHistory } from "react-router-dom"
+import { useNavigate } from "react-router-dom";
 import styled from 'styled-components';
 //import NavBar from '../NavBar';
 import { useTheme } from '../../context/themeContext';
@@ -39,7 +39,7 @@ const Investisseur = () => {
     const [positionTrie, setPositionTrie] = useState("")
 
     // redirection
-    const history = useHistory()
+    const navigate = useNavigate()
 
 // *******************************************************************************************
 
@@ -63,7 +63,7 @@ const Investisseur = () => {
       }).then((result) => {
         if (result.isConfirmed)
         {
-          history.push("/connexion")
+          navigate("/connexion")
         }
       })
 
