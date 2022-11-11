@@ -21,7 +21,7 @@ const Search = ({setQuery}) => {
       <ContainerSearch theme={theme}>
         <form onSubmit={handleQuery}>
           <button type='submit' className="btn-search"><GoSearch /></button>
-          <input ref={valueSearch} type="text" className="input-search" placeholder="Votre recherche ..."></input>
+          <input ref={valueSearch} type="text" className="input-search" placeholder="Recherche ..."></input>
         </form>
       </ContainerSearch>
     </SearchBox>

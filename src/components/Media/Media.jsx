@@ -312,7 +312,7 @@ margin: auto;
   justify-content: right;
   align-items:center;
   user-select: none;
-  font-size: 13px;
+  font-size: 10px;
   margin-right: 50px;
 }
 
@@ -334,6 +334,11 @@ margin: auto;
 
   a{
     color:white;
+    margin:auto;
+
+    &:hover{
+      color:white;
+    }
   }
 }
 
@@ -368,6 +373,7 @@ margin: auto;
   background-color: ${props => props.theme.colorBheti};
   color: white;
   border-radius: 50px;
+  padding: 4px 7px;
 }
 
 .disabledClassName{

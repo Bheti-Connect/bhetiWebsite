@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { useHistory } from "react-router-dom"
 import styled from 'styled-components';
 //import NavBar from '../NavBar';
 import { useTheme } from '../../context/themeContext';
@@ -37,6 +38,9 @@ const Investisseur = () => {
     const [paginationSelect, setPaginationSelect] = useState("tous")
     const [positionTrie, setPositionTrie] = useState("")
 
+    // redirection
+    const history = useHistory()
+
 // *******************************************************************************************
 
     // Test connexion Investisseur
@@ -59,7 +63,7 @@ const Investisseur = () => {
       }).then((result) => {
         if (result.isConfirmed)
         {
-          console.log("C'est confirmé");
+          history.push("/connexion")
         }
       })
 

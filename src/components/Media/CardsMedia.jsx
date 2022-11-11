@@ -90,6 +90,10 @@ ul li {
   padding:5px 5px;
   font-family: 'Inter', sans-serif;
   font-weight:600;
+  /* tronque text  */
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 
 `;
