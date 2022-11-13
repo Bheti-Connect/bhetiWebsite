@@ -3,6 +3,7 @@ import { useTheme } from './context/themeContext';
 import { BrowserRouter as Router, Routes, Route} from 'react-router-dom'
 import Entrepreneur from './components/Entrepreneur/Entrepreneur';
 import Investisseur from './components/Investisseur/Investisseur';
+import ParentForm from './components/Forms/ParentForm';
 import {AccountBox} from './components/Auth/accountBox';
 import EvaluerEligibilite from './components/Forms/EvaluerEligibilite';
 import Home from './components/Home';
@@ -28,6 +29,7 @@ const App = () => {
             <Route path='/media' element={<Media />} />
             <Route path='connexion' element={<AccountBox />} />
             <Route path='evaluer-eligibilite' element={<EvaluerEligibilite />} />
+            <Route path='formulaire' element={<ParentForm />} />
           </Routes>
         </main>
           <div>
