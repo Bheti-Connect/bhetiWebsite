@@ -1,8 +1,9 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faXmark } from '@fortawesome/free-solid-svg-icons';
 import { useTheme } from '../../context/themeContext';
+import { Link } from 'react-router-dom';
 
 const CardModal = ({select, setModal, connect}) => {
   const theme = useTheme();
@@ -116,7 +117,9 @@ const CardModal = ({select, setModal, connect}) => {
                 </div>
 
                 <div className='deck'>
-                <button type='button' className='Btn-deck'>Récevoir le deck</button>
+
+                <Link to={'/forminvestisseur'} className='Btn-deck'>Récevoir le deck</Link>
+                
                 </div>
 
                 </Body>

@@ -10,6 +10,7 @@ import Home from './components/Home';
 import Footer from './components/Footer';
 import NavBar from './components/NavBar';
 import Media from './components/Media/Media';
+import FormInvestisseur from './components/Investisseur/form/FormInvestisseur';
 
 const App = () => {
   const theme = useTheme();
@@ -27,6 +28,7 @@ const App = () => {
             <Route path='investisseur' element={<Investisseur />} />
             <Route path='media' element={<Media />} />
             <Route path='connexion' element={<AccountBox />} />
+            <Route path='forminvestisseur' element={<FormInvestisseur />}/>
           </Routes>
         </main>
           <div>
