@@ -31,32 +31,49 @@ const FormInvestisseur = () => {
         </div>
       </Left>
 
-      <Right>
-      <form action="#">
-        <div className="title">
-          <h2>Register here</h2>
+      <Right theme={theme}>
+      <div className='form'>
+
+        <div className="row">
+          <label htmlFor="nom" className="input-label">Votre nom <span className='asterisque'>*</span></label>
+          <input type="text" name='nom' id='nom' className="input-field" placeholder='...' required/>
         </div>
-        <div className="info">
-          <input className="fname" type="text" name="name" placeholder="Full name"/>
-          <input type="text" name="name" placeholder="Email"/>
-          <input type="text" name="name" placeholder="Phone number"/>
-          <input type="password" name="name" placeholder="Password"/>
-          <select>
-            <option value="course-type" selected>Course type*</option>
-            <option value="short-courses">Short courses</option>
-            <option value="featured-courses">Featured courses</option>
-            <option value="undergraduate">Undergraduate</option>
-            <option value="diploma">Diploma</option>
-            <option value="certificate">Certificate</option>
-            <option value="masters-degree">Masters degree</option>
-            <option value="postgraduate">Postgraduate</option>
-          </select>
+
+        <div className="row">
+          <label htmlFor="email" className="input-label">Votre adresse e-mail <span className='asterisque'>*</span></label>
+          <p>Veuillez noter l'adresse à laquelle vous souhaitez recevoir le dossier</p>
+          <input type="email" name='email' id='email' className="input-field" placeholder='example@company.com' required/>
         </div>
-        <div className="checkbox">
-          <input type="checkbox" name="checkbox"/><span>I agree to the <a href="#">Privacy Poalicy for W3Docs.</a></span>
+
+        <div className="row">
+
+          <label htmlFor="select" className="input-label">Opportunité d'investissement <span className='asterisque'>*</span></label>
+
+          <select name='select' id='select' className='select-field'>
+          <option value="course-type" selected>Course type*</option>
+          <option value="short-courses">Short courses</option>
+          <option value="featured-courses">Featured courses</option>
+          <option value="undergraduate">Undergraduate</option>
+          <option value="diploma">Diploma</option>
+          <option value="certificate">Certificate</option>
+          <option value="masters-degree">Masters degree</option>
+          <option value="postgraduate">Postgraduate</option>
+        </select>
         </div>
-        <button type="submit" >Submit</button>
-      </form>
+
+        <div className="row">
+          <label htmlFor="societe" className="input-label">Votre société d'investissement <span className='asterisque'>*</span></label>
+          <p>Veuillez indiquer si vous êtes un Business Angel ou le nom de la société d'investissement pour laquelle vous travaillez</p>
+          <input type="text" name='societe' id='societe' className="input-field" placeholder='...' required/>
+        </div>
+
+        <div className="row last-row">
+            <label htmlFor="message" className="input-label">Autre</label>
+            <p>Avez-vous quoi que ce soit à ajouter ?</p>
+            <textarea className="input-field" name="message" id="message" cols="30" rows="15"></textarea>
+        </div>
+
+      </div>
       </Right>
 
     </Container>
@@ -127,30 +144,55 @@ box-shadow: -5px 0px 10px 1px rgba(128, 128, 128, 0.419);
 const Right = styled.div`
 display: flex;
 flex-direction: column;
-align-items: center;
-justify-content: center;
 border-radius: 0 10px 10px 0;
 height: 950px;
 width: 35%;
 box-shadow: 3px 0px 10px 1px rgba(128, 128, 128, 0.419);
 
-.title{
+.form{
+  padding: 30px;
+}
+
+.row{
   display: flex;
-  align-items: center;
-  margin-bottom: 20px;
+  flex-direction: column;
+  margin: 20px 0;
+
+  .asterisque{
+    color: red;
+    font-size: 20px;
+  }
 }
 
-.info {
-display: flex;
-flex-direction: column;
+.last-row{
+  margin: 40px 0;
 }
 
-input, select {
-padding: 5px;
-margin-bottom: 30px;
-background: transparent;
-border: none;
-border-bottom: 1px solid #eee;
+.input-label{
+  font-size: 16.5px;
+  color: ${props => props.theme.colorPrimary};
+  margin-bottom: 7px;
+  font-weight: 600;
+}
+
+.input-field{
+  border: none;
+  background: #80808042;
+  border-radius: .25rem;
+  padding: .75rem 1rem;
+  outline-color: ${props => props.theme.colorBheti};
+  margin: 10px 0;
+}
+
+p{
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 13px;
+  margin-bottom: 10px; 
+}
+
+.select-field{
+  margin: 10px 0;
 }
 
 `;
