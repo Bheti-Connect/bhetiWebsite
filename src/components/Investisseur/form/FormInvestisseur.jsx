@@ -3,9 +3,18 @@ import { useEffect } from 'react';
 import styled from 'styled-components';
 import { useTheme } from '../../../context/themeContext';
 import LogoBheti from '../../../assets/images/bheti_white_logo.png';
+import Select from 'react-select';
 
 
 const FormInvestisseur = () => {
+
+  const options = [
+    { value: 'Projet 1', label: 'Projet 1' },
+    { value: 'Projet 2', label: 'Projet 2'  },
+    { value: 'Projet 3', label: 'Projet 3' },
+    { value: 'Projet 4', label: 'Projet 4'  },
+    { value: 'Projet 5', label: 'Projet 5'  },
+  ]
 
   const theme = useTheme()
 
@@ -13,6 +22,11 @@ const FormInvestisseur = () => {
   const removeModal = () => {
     const body = document.querySelector("body");
     body.style.overflow = "auto";
+  }
+
+  // handle change select project
+  const handleChange = (selectedOption) => {
+    console.log(selectedOption.value);
   }
 
   useEffect(() => {
@@ -49,14 +63,15 @@ const FormInvestisseur = () => {
 
           <label htmlFor="select" className="input-label">Opportunité d'investissement <span className='asterisque'>*</span></label>
 
-          <select name='select' id='select' className='select-field'>
-          <option value="" selected></option>
-          <option value="Projet 1">Projet 1</option>
-          <option value="Projet 2">Projet 2</option> 
-          <option value="Projet 3">Projet 3</option>
-          <option value="Projet 4">Projet 4</option>
-        
-        </select>
+          <Select
+          placeholder={"Votre choix..."}
+          onChange={handleChange}
+          options={options}
+          className='select-field'
+          isSearchable={false}
+          />
+
+
         </div>
 
         <div className="row">
@@ -191,6 +206,15 @@ p{
 .select-field{
   margin: 10px 0;
 }
+
+.select-field > div{
+  box-shadow: none;
+  border:1px solid rgba(128, 128, 128, 0.511);
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  outline: red;
+}
+
 
 `;
 
