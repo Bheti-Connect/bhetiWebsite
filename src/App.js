@@ -28,6 +28,8 @@ const App = () => {
             <Route path='investisseur' element={<Investisseur />} />
             <Route path='media' element={<Media />} />
             <Route path='connexion' element={<AccountBox />} />
+
+            {/* Route : form investisseur */}
             <Route path='forminvestisseur' element={<FormInvestisseur />}/>
           </Routes>
         </main>
