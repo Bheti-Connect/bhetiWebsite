@@ -50,14 +50,12 @@ const FormInvestisseur = () => {
           <label htmlFor="select" className="input-label">Opportunité d'investissement <span className='asterisque'>*</span></label>
 
           <select name='select' id='select' className='select-field'>
-          <option value="course-type" selected>Course type*</option>
-          <option value="short-courses">Short courses</option>
-          <option value="featured-courses">Featured courses</option>
-          <option value="undergraduate">Undergraduate</option>
-          <option value="diploma">Diploma</option>
-          <option value="certificate">Certificate</option>
-          <option value="masters-degree">Masters degree</option>
-          <option value="postgraduate">Postgraduate</option>
+          <option value="" selected></option>
+          <option value="Projet 1">Projet 1</option>
+          <option value="Projet 2">Projet 2</option> 
+          <option value="Projet 3">Projet 3</option>
+          <option value="Projet 4">Projet 4</option>
+        
         </select>
         </div>
 
@@ -89,7 +87,6 @@ const Container = styled.div`
       justify-content: center;
       align-items: center;
       margin: 40px 0;
-      
 
 `;
 
