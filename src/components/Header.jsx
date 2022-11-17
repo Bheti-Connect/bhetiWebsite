@@ -52,7 +52,7 @@ const HeaderStyled = styled.header`
         height: 85vh;
     }
     @media only screen and (max-width: 960px){
-        height: 50vh;
+        height: 60vh;
     }
     @media only screen and (max-width: 768px){
         height: 55vh;
@@ -505,7 +505,7 @@ const HeaderStyled = styled.header`
                 margin-top: -8%;
             }
             @media only screen and (max-width: 960px) {
-                margin-left: -240px;
+                margin-left: -210px;
             }
             @media only screen and (max-width: 768px) {
                 margin-top: -10%;

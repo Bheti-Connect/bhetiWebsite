@@ -13,6 +13,7 @@ import {
 import { Marginer } from "../../marginer";
 import { AccountContext } from "./accountContext";
 import styled from "styled-components";
+import LoginLinkedin from "./LoginLinkedin";
 
 export const LoginForm = (props) => {
   const { switchToSignup } = useContext(AccountContext);
@@ -28,19 +29,38 @@ export const LoginForm = (props) => {
 
   const tackleEmailChange = (e) => {
     setEmail(e.target.value)
-    setPassword(e.target.value)
   }
   const tacklePasswordChange = (e) => {
     setPassword(e.target.value)
   }
 
+    const url = new URL(
+      "https://bheti-connect.smirltech.com/api/login"
+  );
+
+  const headers = {
+      "Content-Type": "application/json",
+      "Accept": "application/json",
+  };
+
+  let item = { email, password}
+
   const HandleLogin = () => {
-    console.warn(email, password);
+    fetch(url, {
+        method: "POST",
+        headers,
+        body: JSON.stringify(item),
+    }).then(response => response.json());
   }
 
   return (
     <loginFormStyled>
       <BoxContainer>
+        <a href='https://bheti-connect.smirltech.com/login/linkedin'>
+          <LoginLinkedin 
+            name= {'Connexion avec'}
+          />
+        </a>
         <FormContainer>
           <Input 
             type="email" 

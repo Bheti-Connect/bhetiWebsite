@@ -118,7 +118,7 @@ const AccueilStyled = styled.section`
                 font-size: 1.4rem;
                 text-align: justify;
             }
-            @media only screen and (max-width: 525px) and (min-width: 425px) {
+            @media only screen and (max-width: 425px) {
                 margin-top: 10%;
                 font-size: 1.01rem;
                 text-align: justify;
@@ -126,6 +126,15 @@ const AccueilStyled = styled.section`
                 margin-top: 200px;
                 margin-left: -80px;
             }
+            @media only screen and (max-width: 375px) {
+                margin-top: 10%;
+                font-size: 1.01rem;
+                text-align: justify;
+                width: 420px;
+                margin-top: 200px;
+                margin-left: -80px;
+            }
+
         }
         .button-demo{
             margin: 40px 500px 0px;
