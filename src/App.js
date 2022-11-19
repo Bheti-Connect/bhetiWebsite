@@ -3,12 +3,14 @@ import { useTheme } from './context/themeContext';
 import { BrowserRouter as Router, Routes, Route} from 'react-router-dom'
 import Entrepreneur from './components/Entrepreneur/Entrepreneur';
 import Investisseur from './components/Investisseur/Investisseur';
+import ParentForm from './components/Forms/ParentForm';
 import {AccountBox} from './components/Auth/accountBox';
-// import SignIn from './components/Auth/SignIn';
-// import SignUp from './components/Auth/SignUp';
+import EvaluerEligibilite from './components/Forms/EvaluerEligibilite';
 import Home from './components/Home';
 import Footer from './components/Footer';
 import NavBar from './components/NavBar';
+
+import Media from './components/Media/Media';
 
 const App = () => {
   const theme = useTheme();
@@ -16,7 +18,7 @@ const App = () => {
   return (
     <Router>
       <AppStyled theme={theme}>
-      <div>
+          <div>
             <NavBar />
           </div>
         <main>
@@ -24,7 +26,10 @@ const App = () => {
           <Route path='/bhetiConnectProj' element={<Home />} />
             <Route path='entrepreneur' element={<Entrepreneur />} />
             <Route path='investisseur' element={<Investisseur />} />
+            <Route path='/media' element={<Media />} />
             <Route path='connexion' element={<AccountBox />} />
+            <Route path='evaluer-eligibilite' element={<EvaluerEligibilite />} />
+            <Route path='formulaire' element={<ParentForm />} />
           </Routes>
         </main>
           <div>

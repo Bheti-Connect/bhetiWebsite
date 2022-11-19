@@ -8,7 +8,7 @@ import vidThree from '../../assets/images/3rd-action.gif';
 const LaMethode = () => {
     const theme = useTheme();
     return (
-        <LaMethodeStyled className='u-pad-lg-2'  theme={theme}>
+        <LaMethodeStyled className='u-pad-lg-2 other-one'  theme={theme}>
             <div className='left-container'>
                 <h3 className='title'>Notre méthode</h3>
                 <div className='text-container'>
@@ -53,7 +53,7 @@ const LaMethodeStyled = styled.section`
     grid-gap: 3rem;
     padding-top: 10rem !important;
     @media only screen and (max-width: 525px) and (min-width: 320px) {
-            width: 100px ;
+            width: 100px;
         }
     .left-container{
         h3{
@@ -70,30 +70,64 @@ const LaMethodeStyled = styled.section`
             h5{
                 color: ${props => props.theme.colorWhite};
             }
+            @media all and (max-width: 2500px) {
+                font-size: 19px;
+                h5{
+                    font-size: 21px;
+                }
+            }
             @media only screen and (max-width: 1440px) and (min-width: 1350px) {
                 font-size: 20px;
                 h5{
                     font-size: 22px;
                 }
             }
-            @media only screen and (max-width: 2500px) and (min-width: 1800px) {
-                font-size: 21px;
-                h5{
-                    font-size: 22px;
-                }
-            }
         }
         @media only screen and (max-width: 525px) and (min-width: 425px){
-            width: 300px;
-            font-size: 18px;
+            width: 250px;
+            font-size: 16px;
                 h5{
-                    font-size: 22px;
+                    font-size: 20px;
                 }
                 .title{
-                    font-size: 2.6rem;
+                    font-size: 2rem;
                 }
-                margin-left: -200px;
+                margin-left: -250px;
         }
+        //Left-Container Responsive Design
+        @media all and (max-width: 2500px){
+            width: 500px;
+            margin-left: -100px;
+        }
+        @media all and (max-width: 1800px){
+            width: 600px;
+            margin-left: -120px;
+        }
+        @media all and (max-width: 1500px){
+            width: 470px;
+            margin-left: -140px;
+        }
+        @media all and (max-width: 1300px){
+            width: 380px;
+            margin-left: -160px;
+        }
+        @media all and (max-width: 1080px){
+            width: 400px;
+            margin-left: -180px;
+        }
+        @media all and (max-width: 770px){
+            width: 200px;
+            margin-left: -100px;
+        }
+        @media all and (max-width: 420px){
+            width: 500px;
+            margin-left: -100px;
+        }
+        @media all and (max-width: 380px){
+            width: 500px;
+            margin-left: -100px;
+        }
+        
     }
     .right-container{
         display: grid; 
@@ -118,7 +152,7 @@ const LaMethodeStyled = styled.section`
         }
         .neighbor-div{
             img{
-                width: 104%;
+                width: 103%;
             }
         }
         @media screen and (min-width: 1150px) {
@@ -130,21 +164,82 @@ const LaMethodeStyled = styled.section`
         @media only screen and (max-width: 1440px) and (min-width: 1350px) {
             margin-top: 250px;
         }
-        @media only screen and (max-width: 525px) and (min-width: 320px) {
-            display: none;
+        @media only screen and (max-width: 525px) and (min-width: 425px) {
+            width: 200px;
+            height: 500px;
         }
     }
 
-    @media only screen and (max-width: 2500px) and (min-width: 1800px) {
+    @media all and (max-width: 2500px) {
         .right-container{
-            width: 155%;
-            height: 200px;
-            margin-top: 240px;
-            margin-left: -200px;
+            width: 130%;
+            margin-top: 200px;
+            margin-left: -100px;
         }
-
     }
-
+    @media all and (max-width: 1800px) {
+        .right-container{
+            width: 140%;
+            margin-top: 180px;
+            margin-left: -10%;
+        }
+    }
+    @media all and (max-width: 1500px) {
+        .right-container{
+            width: 140%;
+            margin-top: 220px;
+            margin-left: -2%;
+        }
+    }
+    @media all and (max-width: 1300px) {
+        .right-container{
+            width: 170%;
+            margin-top: 260px;
+            margin-left: -10%;
+        }
+    }
+    @media all and (max-width: 1080px) {
+        .right-container{
+            display: inline-block;
+            width: 180%;
+            margin-top: 150px;
+            margin-left: 20%;
+            .neighbor-div{
+                img{
+                    width: 100%;
+                }
+            }
+        }
+    }
+    @media all and (max-width: 770px) {
+        .right-container{
+            display: inline-block;
+            width: 200%;
+            margin-top: 200px;
+            margin-left: 20%;
+            .neighbor-div{
+                img{
+                    width: 100%;
+                }
+            }
+        }
+    }
+    @media all and (max-width: 420px) {
+        .right-container{
+            width: 130%;
+            height: 200px;
+            margin-top: 200px;
+            margin-left: -100px;
+        }
+    }
+    @media all and (max-width: 380px) {
+        .right-container{
+            width: 130%;
+            height: 200px;
+            margin-top: 200px;
+            margin-left: -100px;
+        }
+    }
 `;
 
-export default LaMethode
+export default LaMethode;

@@ -1,6 +1,5 @@
 import { createGlobalStyle } from "styled-components";
 
-
 const GlobalStyle = createGlobalStyle`
     *{
         margin: 0;
@@ -47,12 +46,24 @@ const GlobalStyle = createGlobalStyle`
     //utility classes
     .u-pad-lg{
         padding: 8rem 18rem;
+        @media only screen and (max-width: 768px){
+            padding: 8rem 18rem 8rem 2rem;
+        }
+        @media only screen and (max-width: 425px){
+            padding: 8rem 0.2rem 8rem 18rem;
+        }
     }
     .u-pad-lg-2{
         padding-top: 1rem;
         padding-left: 18rem;
         padding-right: 18rem;
         padding-bottom: 6rem;
+        @media only screen and (max-width: 425px) {
+            padding-top: 0rem;
+            padding-left: 0rem;
+            padding-right: 0rem;
+            padding-bottom: 0rem;
+        }
     }
 
     .arrow{

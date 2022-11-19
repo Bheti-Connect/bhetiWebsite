@@ -10,7 +10,7 @@ const Entrepreneur = () => {
         <EntrepreneurStyled  theme={theme}>
             <Accueil />
             <div className='method-container'>
-                <LaMethode />
+                    <LaMethode />
             </div>
         </EntrepreneurStyled>
     )

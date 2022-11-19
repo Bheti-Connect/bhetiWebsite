@@ -68,9 +68,7 @@ const NavBar = () => {
                                     />
                                 </a>
                         </div>
-
                         </div>
-
                         <div className='menu-icon' onClick={handleClick}> 
                             <i className={etat.clicked ? 'fa-solid fa-xmark' : 'fa-solid fa-bars-staggered'}></i>
                         </div>
@@ -112,7 +110,7 @@ const NavBarStyled = styled.nav`
         flex-wrap: wrap;
         justify-content: space-between;
         border-bottom: 1px solid ${props => props.theme.colorGrey9};
-        @media only screen and (max-width: 675px) and (min-width: 320px) {
+        @media only screen and (max-width: 1024px) {
             border-bottom: 0px solid ${props => props.theme.colorBg};
         }
         animation: navHide 1s ease-in-out;
@@ -156,7 +154,6 @@ const NavBarStyled = styled.nav`
             right: auto;
         }
 }
-
     .navbar {
     width: 100vw;
     max-width: 1480px;
@@ -209,7 +206,6 @@ const NavBarStyled = styled.nav`
                 border-radius: 0;
             }
         }
-
         .nav-menu.active {
             background: #641E16;
             width: 190%;
@@ -234,12 +230,11 @@ const NavBarStyled = styled.nav`
             .fa-xmark{
                 color: ${props => props.theme.colorBlack};
                 font-size: 1.9rem;
-
             }
         }
 }
 
-@media only screen and (max-width: 425px) and (min-width: 320px) {
+@media only screen and (max-width: 425px) {
     .logo{
         width: 300px;
     }

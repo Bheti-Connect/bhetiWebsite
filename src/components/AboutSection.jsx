@@ -63,13 +63,6 @@ const AboutSectionStyled = styled.section`
     @media only screen and (max-width: 1800px) and (min-width: 1440px) {
             height: 800px;
         }
-    @media only screen and (max-width: 376px) {
-        padding-top: 0rem;
-        padding-left: 0rem;
-        padding-right: 0rem;
-        padding-bottom: 0rem;
-    
-    }
     .left-about{
         width: 90%;
         margin-left: 10%;
@@ -91,36 +84,60 @@ const AboutSectionStyled = styled.section`
             margin-left: 10%;
             margin-bottom: 3%;
             font-size: 1.6rem;
-            @media only screen and (max-width: 2560px) and (min-width: 1800px){
+            @media only screen and (max-width: 2560px){
                 font-size: 2.7rem;
             }
-            @media only screen and (max-width: 1800px) and (min-width: 1440px){
+            @media only screen and (max-width: 1800px){
                 font-size: 2.4rem;
                 margin-bottom: 5%;
             }
-            @media only screen and (max-width: 1440px) and (min-width: 1350px){
+            @media only screen and (max-width: 1440px){
                 font-size: 1.7rem;
                 margin-bottom: 9%;
             }
-            @media only screen and (max-width: 1350px) and (min-width: 1250px){
+            @media only screen and (max-width: 1350px){
                 font-size: 1.8rem;
                 margin-bottom: 9%;
             }
-            @media only screen and (max-width: 1250px) and (min-width: 1024px){
-                font-size: 1.6rem;
-                margin-bottom: 9%;
+            @media only screen and (max-width: 1024px){
+                font-size: 1.9rem;
+                width: 600px;
+                margin-bottom: 6%;
+                margin-top: -20%;
+                margin-left: 250px;
             }
-            @media only screen and (max-width: 525px) and (min-width: 425px){
-                font-size: 1.35rem;
-                margin-bottom: 9%;
-                margin-top: -30%;
+            @media only screen and (max-width: 960px){
+                font-size: 1.9rem;
+                margin-bottom: 8%;
+                margin-top: -25%;
+                margin-left: 60px;
             }
-            @media only screen and (max-width: 425px) and (min-width: 320px){
+            @media only screen and (max-width: 768px){
+                font-size: 1.9rem;
+                margin-bottom: 8%;
+                margin-top: -20%;
+                margin-left: 50px;
+            }
+            @media only screen and (max-width: 425px){
                 font-size: 1.2rem;
                 margin-bottom: 5%;
                 margin-top: -2900%;
-                width: 400px;
-                margin-left: -10px;
+                width: 350px;
+                margin-left: -2px;
+            }
+            @media only screen and (max-width: 375px){
+                font-size: 1.2rem;
+                margin-bottom: 5%;
+                margin-top: -2900%;
+                width: 350px;
+                margin-left: -2px;
+            }
+            @media only screen and (max-width: 320px){
+                font-size: 1rem;
+                margin-bottom: 5%;
+                margin-top: -2900%;
+                width: 300px;
+                margin-left: -2px;
             }
         }
         .about-info{
@@ -138,7 +155,7 @@ const AboutSectionStyled = styled.section`
                         font-size: 16.3px;
                         margin-top: 30px;
                     }
-                    @media only screen and (max-width: 425px) and (min-width: 320px){
+                    @media only screen and (max-width: 425px){
                         display: none;
                     }
                 }
@@ -164,25 +181,69 @@ const AboutSectionStyled = styled.section`
                     @media only screen and (max-width: 1800px) and (min-width: 1440px){
                         padding-bottom: 10%;
                     }
-                    @media only screen and (max-width: 425px) and (min-width: 320px) {
+                    @media only screen and (max-width: 768px) {
+                        width: 500px;
+                    }
+                    @media only screen and (max-width: 425px){
                         font-size: 15px;
                         width: 250px;
+                        margin-left: -50px;
+                    }
+                    @media only screen and (max-width: 320px){
+                        font-size: 12.1px;
+                        width: 200px;
                         margin-left: -50px;
                     }
                 }
                 @media only screen and (max-width: 2560px) and (min-width: 1800px) {
                     margin-top: 70px;
                 }
+                @media only screen and (max-width: 2560px) {
+                    margin-left: 80px;
+                }
+                @media only screen and (max-width: 1024px) {
+                    width: 650px;
+                    margin-left: 30%;
+                    .icon {
+                        width: 70px;
+                        height: 65px;
+                        margin-top: 30%;
+                        .project-img{
+                            width: 60px;
+                            margin-top: 10%;
+                        }
+                    }
+                }
+                @media only screen and (max-width: 960px) {
+                    width: 600px;
+                    margin-left: 70px;
+                }
+                @media only screen and (max-width: 768px) {
+                    width: 400px;
+                    margin-left: 10px;
+                }
+                @media only screen and (max-width: 425px) {
+                    width: 300px;
+                }
+                @media only screen and (max-width: 320px) {
+                    width: 280px;
+                }
+
                 @media only screen and (max-width: 525px) and (min-width: 425px) {
                     .icon {
-                        display: none ;
+                        width: 50px;
+                        height: 55px;
+                        margin-top: 30%;
+                        .project-img{
+                            width: 40px;
+                            margin-top: 10%;
+                        }
                     }
                     .text-container {
-                        margin-top: 10%;
                         display: contents;
                     }
                 }
-                @media only screen and (max-width: 425px) and (min-width: 320px) {
+                @media only screen and (max-width: 425px){
                     .icon{
                         width: 50px;
                         height: 55px;
@@ -211,14 +272,15 @@ const AboutSectionStyled = styled.section`
                 width: 330px;
                 margin-left: 5%;
 	            }
-        @media only screen and (max-width: 525px) and (min-width: 425px) {
+        @media only screen and (max-width: 768px){
             width: 160%;
             bottom: 5rem;
         }
-        @media only screen and (max-width: 425px) and (min-width: 320px) {
+        @media only screen and (max-width: 425px){
             width: 1%;
             bottom: 5rem;
         }
+        
     }
 
     .right-about{
@@ -265,11 +327,8 @@ const AboutSectionStyled = styled.section`
                     width: 430px;
                     height: 550px;
             }
-            @media only screen and (max-width: 525px) and (min-width: 425px){
-                    display: none;
-            }
-            @media only screen and (max-width: 425px) and (min-width: 320px){
-                    display: none;
+            @media only screen and (max-width: 1024px) {
+                display: none;
             }
         }
         .box-img{
@@ -308,10 +367,7 @@ const AboutSectionStyled = styled.section`
             @media only screen and (max-width: 1250px) and (min-width: 1024px){
                     margin-left: 6.5%;
             }
-            @media only screen and (max-width: 525px) and (min-width: 425px){
-                    display: none;
-            }
-            @media only screen and (max-width: 425px) and (min-width: 320px){
+            @media only screen and (max-width: 1024px){
                     display: none;
             }
         }

@@ -3,7 +3,6 @@ import styled from 'styled-components'
 import Talking from '../../assets/images/pexels-picha-stock-3894383-1.png';
 import Blob1 from '../../assets/images/magicpattern-blob-1.png';
 import Blob2 from '../../assets/images/magicpattern-blob-2.png'
-import Tamtam from '../../assets/images/tamTam.png'
 
 import Button from '../Button';
 import { useTheme } from '../../context/themeContext';
@@ -34,7 +33,6 @@ const Accueil = () => {
                 <div className='bheti-box'>
                     <img className='blobImg-1' src={Blob1} />
                     <img className='blobImg-2' src={Blob2} />
-                    <img className='tamtam-img' src={Tamtam} />
                 </div>
             </div>
         </AccueilStyled>
@@ -56,6 +54,19 @@ const AccueilStyled = styled.section`
                 width: 70%;
             }
             .girls-talk{
+                animation: contentHide 1s ease-in-out;
+                @keyframes contentHide {
+                    0%{
+                        opacity: 0;
+                        transform: translateX(-10%) scaleX(0);
+                        visibility: none;
+                    }
+                    100%{
+                        opacity: 1;
+                        transform: translateY(0) scale(1);
+                        visibility: visible;
+                    }
+                }
                 border-bottom-left-radius: 40px;
                 @media only screen and (max-width: 2560px) and (min-width: 1800px) {
                     margin-left: 380px;
@@ -107,7 +118,7 @@ const AccueilStyled = styled.section`
                 font-size: 1.4rem;
                 text-align: justify;
             }
-            @media only screen and (max-width: 525px) and (min-width: 425px) {
+            @media only screen and (max-width: 425px) {
                 margin-top: 10%;
                 font-size: 1.01rem;
                 text-align: justify;
@@ -115,6 +126,15 @@ const AccueilStyled = styled.section`
                 margin-top: 200px;
                 margin-left: -80px;
             }
+            @media only screen and (max-width: 375px) {
+                margin-top: 10%;
+                font-size: 1.01rem;
+                text-align: justify;
+                width: 420px;
+                margin-top: 200px;
+                margin-left: -80px;
+            }
+
         }
         .button-demo{
             margin: 40px 500px 0px;
@@ -142,11 +162,24 @@ const AccueilStyled = styled.section`
         background-color: #641C1C;
         .blobImg-1{
             position: absolute;
-            right: -30px;
-            bottom: -160px;
-            @media only screen and (max-width: 1440px) and (min-width: 1350px) {
+            right: 200px;
+            bottom: 60px;
+            @media all and (max-width: 2500px) {
                 width: 35%;
             }
+            @media all and (max-width: 1800px) {
+                width: 25%;
+            }
+            @media all and (max-width: 1500px) {
+                width: 50%;
+            }
+            @media all and (max-width: 1300px)  {
+
+            }
+            @media all and (max-width: 1080px) {
+                width: 20%;
+            }
+
             @media only screen and (max-width: 525px) and (min-width: 425px) {
                 width: 25%;
                 right: 0px;
@@ -155,30 +188,15 @@ const AccueilStyled = styled.section`
         }
         .blobImg-2{
             position: absolute;
-            right: -10px;
-            top: -50px;
+            left: -125px;
+            top: 0px;
             @media only screen and (max-width: 1440px) and (min-width: 1350px) {
-                width: 20%;
+                width: 40%;
             }
             @media only screen and (max-width: 525px) and (min-width: 425px) {
                 width: 35%;
                 left: -45px;
                 top: 0px;
-            }
-        }
-        .tamtam-img{
-            display: block;
-            margin-top: 8%;
-            margin-left: auto;
-            margin-right: auto;
-            width: 40%;
-            @media only screen and (max-width: 1440px) and (min-width: 1350px){
-                width: 50%;
-                margin-top: 7%;
-            }
-            @media only screen and (max-width: 525px) and (min-width: 425px) {
-                width: 90%;
-                margin-top: 80px;
             }
         }
         @media only screen and (max-width: 1440px) and (min-width: 1350px){
