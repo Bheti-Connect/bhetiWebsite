@@ -45,12 +45,16 @@ export const LoginForm = (props) => {
 
   let item = { email, password}
 
-  const HandleLogin = () => {
-    fetch(url, {
+  const HandleLogin = async () => {
+    const result = await fetch(url, {
         method: "POST",
         headers,
         body: JSON.stringify(item),
     }).then(response => response.json());
+    console.warn(email, password)
+    result = await result.json();
+    localStorage.setItem("user-info",json.stringify(result))
+    history.push("/add")
   }
 
   return (

@@ -4,11 +4,10 @@ import vidOne from '../../assets/images/1st-action.gif';
 import vidTwo from '../../assets/images/2nd-action.gif';
 import vidThree from '../../assets/images/3rd-action.gif';
 
-
 const LaMethode = () => {
     const theme = useTheme();
     return (
-        <LaMethodeStyled className='u-pad-lg-2 other-one'  theme={theme}>
+        <LaMethodeStyled  theme={theme}>
             <div className='left-container'>
                 <h3 className='title'>Notre méthode</h3>
                 <div className='text-container'>
@@ -50,10 +49,17 @@ const LaMethodeStyled = styled.section`
     width: 100%;
     background: ${props => props.theme.colorBlack};
     grid-template-columns: 1fr 1fr;
-    grid-gap: 3rem;
+    grid-gap: 2rem;
     padding-top: 10rem !important;
-    @media only screen and (max-width: 525px) and (min-width: 320px) {
-            width: 100px;
+    padding-top: 1rem;
+    padding-left: 18rem;
+    padding-right: 18rem;
+    padding-bottom: 6rem;
+    @media only screen and (max-width: 768px){
+        padding-top: 0rem;
+        padding-left: 0rem;
+        padding-right: 0rem;
+        padding-bottom: 0rem;
         }
     .left-container{
         h3{
@@ -83,7 +89,7 @@ const LaMethodeStyled = styled.section`
                 }
             }
         }
-        @media only screen and (max-width: 525px) and (min-width: 425px){
+        @media only screen and (max-width: 525px){
             width: 250px;
             font-size: 16px;
                 h5{
@@ -116,12 +122,12 @@ const LaMethodeStyled = styled.section`
             margin-left: -180px;
         }
         @media all and (max-width: 770px){
-            width: 200px;
-            margin-left: -100px;
+            width: 350px;
+            margin-left: 10px;
         }
-        @media all and (max-width: 420px){
-            width: 500px;
-            margin-left: -100px;
+        @media all and (max-width: 525px){
+            width: 320px;
+            margin-left: 50px;
         }
         @media all and (max-width: 380px){
             width: 500px;
@@ -164,9 +170,12 @@ const LaMethodeStyled = styled.section`
         @media only screen and (max-width: 1440px) and (min-width: 1350px) {
             margin-top: 250px;
         }
-        @media only screen and (max-width: 525px) and (min-width: 425px) {
+        @media only screen and (max-width: 768px) {
             width: 200px;
             height: 500px;
+        }
+        @media only screen and (max-width: 525px) {
+            visibility: hidden;
         }
     }
 
