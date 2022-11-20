@@ -8,7 +8,9 @@ const SuccessStories = () => {
   return (
 
     <Container>
-    <h2>Success stories component</h2>
+
+    
+
     </Container>
 
   )

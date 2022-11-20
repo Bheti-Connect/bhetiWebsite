@@ -248,7 +248,7 @@ const Media = () => {
                         {/* tout */}
                         <li className='active' onClick={() => handleActualise()}>Tout</li>
                         {/* success stories */}
-                        <li><a href="https://bheticonnect.notion.site/f4dab0820ee64fe7b8e832062d4a30b7?v=6da42011157e44a5bfdfc93d4ad906de">Les success stories</a></li>
+                        <li><Link to={'/success-stories'}>Les success stories</Link></li>
                     </ul>
 
                     {/* Filter and search */}

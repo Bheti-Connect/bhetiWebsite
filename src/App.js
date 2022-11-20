@@ -11,6 +11,7 @@ import Footer from './components/Footer';
 import NavBar from './components/NavBar';
 import Media from './components/Media/Media';
 import FormInvestisseur from './components/Investisseur/form/FormInvestisseur';
+import SuccessStories from './components/Media/SuccessStories/SuccessStories';
 
 const App = () => {
   const theme = useTheme();
@@ -23,7 +24,7 @@ const App = () => {
           </div>
         <main>
           <Routes>
-          <Route path='/bhetiConnectProj' element={<Home />} />
+            <Route path='/bhetiConnectProj' element={<Home />} />
             <Route path='entrepreneur' element={<Entrepreneur />} />
             <Route path='investisseur' element={<Investisseur />} />
             <Route path='media' element={<Media />} />
@@ -31,6 +32,8 @@ const App = () => {
 
             {/* Route : form investisseur */}
             <Route path='forminvestisseur' element={<FormInvestisseur />}/>
+            {/* Route : success stories media */}
+            <Route path='success-stories' element={<SuccessStories />}/>
           </Routes>
         </main>
           <div>
