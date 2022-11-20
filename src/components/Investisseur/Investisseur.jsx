@@ -126,7 +126,6 @@ const Investisseur = () => {
           activeBtn.classList.remove("active")
           e.target.classList.add("active")
         }
-
     }
 
     // Search data from API

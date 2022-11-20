@@ -2,21 +2,22 @@ import React from 'react';
 import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faXmark } from '@fortawesome/free-solid-svg-icons';
-import { useTheme } from '../../context/themeContext';
+import { useTheme } from '../../../context/themeContext';
 
-const CardMediaModal = ({select, setModal}) => {
+const CardModalSuccess = ({select, setModal}) => {
 
-  const theme = useTheme();
+    const theme = useTheme();
 
-  // Generate image
-  let source = "https://" + `picsum.photos/id/${select.id}/200/300`;
+    // Generate image
+    let source = "https://" + `picsum.photos/id/${select.id}/200/300`;
+  
+    // handle disable modal
+    const handleModal = () => {
+      const body = document.querySelector("body");
+      body.style.overflow = "auto";
+      setModal(false);
+    }
 
-  // handle disable modal
-  const handleModal = () => {
-    const body = document.querySelector("body");
-    body.style.overflow = "auto";
-    setModal(false);
-  }
 
 
   return (
@@ -25,7 +26,7 @@ const CardMediaModal = ({select, setModal}) => {
             <div>
                 <div onClick={handleModal} className="modal-close"><FontAwesomeIcon icon={faXmark} size="lg"/></div>
                 <Header>
-                  <p>{select.poste}</p>
+                  <p>{select.pays}</p>
                 </Header>
 
                 <Body theme={theme}>
@@ -37,7 +38,7 @@ const CardMediaModal = ({select, setModal}) => {
                   </div>
 
                   <div className='detail'>
-                    <p>{select.description}</p>
+                    <p>{select.pays}</p>
                   </div>
 
                 </div>
@@ -45,9 +46,9 @@ const CardMediaModal = ({select, setModal}) => {
                  {/* Info  */}
                  <div className='item-detail'>
                     <ul>
-                      <li><span>Entreprise  : </span>{select.entreprise}</li>
-                      <li><span>Représentant : </span>{select.representant}</li>
-                      <li><span>Secteur : </span>{select.secteur}</li>
+                      <li><span>Entreprise  : </span>{select.pays}</li>
+                      <li><span>Représentant : </span>{select.pays}</li>
+                      <li><span>Secteur : </span>{select.pays}</li>
                       <li><span>Pays : </span>{select.pays}</li>
                     </ul>
                   </div>
@@ -66,6 +67,8 @@ const CardMediaModal = ({select, setModal}) => {
     </Container>
   )
 }
+
+
 
 // Style CSS
 
@@ -163,4 +166,6 @@ p {
 
 `;
 
-export default CardMediaModal
+
+
+export default CardModalSuccess
