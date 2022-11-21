@@ -103,6 +103,11 @@ const Container = styled.div`
       align-items: center;
       margin: 40px 0;
 
+      @media only screen and (max-width: 970px) {
+        flex-direction: column;
+
+      }
+
 `;
 
 const Left = styled.div`
@@ -150,6 +155,38 @@ box-shadow: -5px 0px 10px 1px rgba(128, 128, 128, 0.419);
 
 
 }
+
+      @media only screen and (max-width: 1190px) {
+        p{
+        font-size: 14px;
+        }
+      }
+
+      @media only screen and (max-width: 970px) {
+        height: 300px;
+        width: 50%;
+        border-radius: 10px 10px 0 0;
+
+      }
+
+
+      @media only screen and (max-width: 680px) {
+        .text-left{
+
+          img {
+          width: 40%;
+          height: 50px;
+          }
+
+          p{
+            width: 295px;
+          }
+
+          button {
+            right: -50px;
+          }
+        }
+      }
 
 `;
 
@@ -214,6 +251,18 @@ p{
   font-size: 13px;
   outline: red;
 }
+
+
+      @media only screen and (max-width: 970px) {
+        
+        width: 50%;
+        border-radius: 0 0 10px 10px;
+
+      }
+
+      @media only screen and (max-width: 680px) {
+        
+      }
 
 
 `;

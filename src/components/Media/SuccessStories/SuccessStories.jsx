@@ -282,7 +282,7 @@ const Container = styled.div`
 
 const AllCards = styled.div`
 display: flex;
-width: 89%;
+width: 90%;
 justify-content: left;
 margin:auto;
 flex-wrap: wrap;

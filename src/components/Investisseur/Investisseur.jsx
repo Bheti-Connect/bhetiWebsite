@@ -509,7 +509,6 @@ const HeaderText = styled.div`
 margin: 55px;
 
 h3 {
-  
   font-size: 25px;
   color: ${props => props.theme.colorPrimary};
 }
