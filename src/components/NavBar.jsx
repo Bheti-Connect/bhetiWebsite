@@ -67,7 +67,7 @@ const NavBar = () => {
                                         blob={'blob'}
                                     />
                                 </a>
-                        </div>
+                            </div>
                         </div>
                         <div className='menu-icon' onClick={handleClick}> 
                             <i className={etat.clicked ? 'fa-solid fa-xmark' : 'fa-solid fa-bars-staggered'}></i>
@@ -108,6 +108,7 @@ const NavBarStyled = styled.nav`
         padding: 1rem  2rem;
         align-items: center;
         flex-wrap: wrap;
+        
         justify-content: space-between;
         border-bottom: 1px solid ${props => props.theme.colorGrey9};
         @media only screen and (max-width: 1024px) {
@@ -126,13 +127,13 @@ const NavBarStyled = styled.nav`
             }
         }
         .nav-menu {
-            display: block;
+            display: inline-block;
             grid-template-columns: repeat(5, auto);
             grid-gap: 10px;
             text-align: center;
             width: 70vw;
             justify-content: end;
-            margin-right: 2rem;
+            margin-right: .2rem;
             @media only screen and (min-width: 768px) {
                 display: grid;
                 justify-content: space-around;
@@ -180,19 +181,21 @@ const NavBarStyled = styled.nav`
 }
 
 
-@media only screen and (max-width: 960px){
+@media only screen and (max-width: 768px){
     .navigation {
         position: relative;
         border-bottom: none;
+        width: 80vw;
+        margin-left: 0px;
         .nav-menu{
+            list-style: none;
             display: flex;
+            height: 100%;
             flex-direction: column;
-            height: 400px;
-            position: absolute;
-            top:  80px;
-            left: -200%;
-            opacity: 1;
-            transition: all 0.7s ease;
+            justify-content: space-evenly;
+            align-items: center;
+            margin: auto;
+            padding: 0;
 
             .link{
                 text-align: center;

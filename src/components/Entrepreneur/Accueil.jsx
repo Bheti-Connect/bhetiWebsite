@@ -15,7 +15,7 @@ const Accueil = () => {
         <AccueilStyled className=''  theme={theme}>
             <div className='first-container'>
                 <div className='headache'>
-                    <h1 className='centered'>Résolvez le <span>casse</span> tête du financement de votre entreprise</h1>
+                    <h1 className='centered'>Réso<span className='resolvez'>lvez le </span><span className='casse'>casse</span> tête du financement de votre entreprise</h1>
                     <img className='girls-talk' src={Talking} alt='Image-Femmes'/>
                 </div>
                 <div className='text-highlighted'>
@@ -47,8 +47,29 @@ const AccueilStyled = styled.section`
             margin-top: 2%;
             align-items: center;
             border-radius: 7px;
-            span{
+            .casse{
                 color: ${props => props.theme.colorWhite} ;
+                @media only screen and (max-width: 768px){
+
+                }
+                @media only screen and (max-width: 500px){
+                    
+                }
+                @media only screen and (max-width: 425px){
+                    color: ${props => props.theme.colorBheti} ;
+                }
+            }
+            .resolvez{
+                color: ${props => props.theme.colorWhite} ;
+                @media only screen and (max-width: 768px){
+
+                }
+                @media only screen and (max-width: 500px){
+                    
+                }
+                @media only screen and (max-width: 425px){
+                    color: ${props => props.theme.colorWhite} ;
+                }
             }
             img{
                 width: 70%;
@@ -91,9 +112,9 @@ const AccueilStyled = styled.section`
                 }
                 @media only screen and (max-width: 425px){
                     margin-left: -80px;
-                    margin-top: 10%;
-                    width: 125%;
-                    height: 250px;
+                    margin-top: 5%;
+                    width: 115%;
+                    height: 260px;
                 }
                 @media only screen and (max-width: 375px){
                     margin-left: -50px;
@@ -132,10 +153,16 @@ const AccueilStyled = styled.section`
                     transform: translate(-55%, 100%);
                     color: ${props => props.theme.colorBheti}; 
                 }
+                @media only screen and (max-width: 500px){
+                    width: 350px;
+                    font-size: 33px;
+                    transform: translate(-55%, 100%);
+                    color: ${props => props.theme.colorBheti}; 
+                }
                 @media only screen and (max-width: 425px){
-                    width: 420px;
-                    font-size: 40px;
-                    transform: translate(-50%, 100%);
+                    width: 300px;
+                    font-size: 36.9px;
+                    transform: translate(-61%, 95%);
                     color: ${props => props.theme.colorBheti}; 
                 }
                 @media only screen and (max-width: 375px){
@@ -166,7 +193,7 @@ const AccueilStyled = styled.section`
                 margin-top: 10%;
                 font-size: 1.01rem;
                 text-align: justify;
-                width: 420px;
+                width: 320px;
                 margin-top: 200px;
                 margin-left: -80px;
             }
@@ -191,7 +218,7 @@ const AccueilStyled = styled.section`
             }
             @media only screen and (max-width: 425px){
                 width: 100%;
-                margin: 50px 0px 0px;
+                margin: 50px -30px 0px;
             }
             @media only screen and (max-width: 375px){
                 width: 123%;
@@ -207,8 +234,8 @@ const AccueilStyled = styled.section`
             margin-left: 130px;
         }
         @media only screen and (max-width: 425px) {
-            width: 220px;
-            margin-left: -150px;
+            width: 270px;
+            margin-left: 120px;
         }
         @media only screen and (max-width: 375px) {
             width: 220px;

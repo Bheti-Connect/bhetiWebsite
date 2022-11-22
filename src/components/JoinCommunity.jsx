@@ -112,8 +112,9 @@ const JoinCommunityStyled = styled.section`
         @media only screen and (max-width: 768px) {
             margin-left: -225px;
         }
-        @media only screen and (max-width: 525px) and (min-width: 425px) {
+        @media only screen and (max-width: 525px){
             width: 505px;
+            height: 600px;
             margin-left: -300px;
         }
         @media only screen and (max-width: 425px) {
@@ -165,7 +166,7 @@ const JoinCommunityStyled = styled.section`
                     width: 300px;
                     height: 110px;
                     margin-left: -95px;
-                    margin-top: -57px;
+                    margin-top: -120px;
                 }
                 @media only screen and (max-width: 400px){
                     margin-left: -110px;
@@ -241,9 +242,9 @@ const JoinCommunityStyled = styled.section`
                 }
                 @media only screen and (max-width: 425px){
                     width: 320px;
-                    height: 350px;
+                    height: 400px;
                     margin-left: -160px;
-                    margin-top: 60%;
+                    margin-top: 40%;
                 }
                 @media only screen and (max-width: 320px){
                     width: 250px;
@@ -265,6 +266,7 @@ const JoinCommunityStyled = styled.section`
                     margin: 1;
                     @media only screen and (max-width: 425px) {
                         margin-left: 17px;
+
                     }
                     @media only screen and (max-width: 400px) {
                         margin-left: 17px;

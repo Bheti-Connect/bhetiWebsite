@@ -124,14 +124,17 @@ const LaMethodeStyled = styled.section`
         @media all and (max-width: 770px){
             width: 350px;
             margin-left: 10px;
+
         }
         @media all and (max-width: 525px){
             width: 320px;
             margin-left: 50px;
+            margin-top: -100px;
         }
-        @media all and (max-width: 380px){
-            width: 500px;
-            margin-left: -100px;
+        @media all and (max-width: 375px){
+            width: 300px;
+            margin-left: 40px;
+            
         }
         
     }
