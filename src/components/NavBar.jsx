@@ -10,9 +10,6 @@ const NavBar = () => {
     // const navRef = useRef();
     const [etat, setEtat] = useState({clicked: false});
 
-    // const showNavbar = () => {
-    //     navRef.current.classList.toggle("responsive_nav");
-    // }
     const handleClick = () => {
         setEtat({clicked: !etat.clicked})
     }
@@ -30,7 +27,7 @@ const NavBar = () => {
                             />
                         </NavLink>
                 </div>
-                <nav  className='navigation navbar'>
+                <nav  className={etat.clicked ? 'navigation active' : 'navigation'}>
                         <div className={etat.clicked ? 'nav-menu active' : 'nav-menu'}>
                             <NavLink
                                 to='/entrepreneur'
@@ -69,10 +66,10 @@ const NavBar = () => {
                                 </a>
                             </div>
                         </div>
+                    </nav>
                         <div className='menu-icon' onClick={handleClick}> 
                             <i className={etat.clicked ? 'fa-solid fa-xmark' : 'fa-solid fa-bars-staggered'}></i>
                         </div>
-                    </nav>
             </div>
         </NavBarStyled>
     )
@@ -139,22 +136,23 @@ const NavBarStyled = styled.nav`
                 justify-content: space-around;
             }
         }
-        .menu-icon {
-            display: flex;
-            .fa-bars-staggered {
-                color: ${props => props.theme.colorBlack};
-                margin-left: -29px;
-                margin-top: 7%;
-                @media only screen and (min-width: 900px) {
-                    visibility: hidden;
+        
+}
+            .menu-icon {
+                align-items: center;
+                visibility: hidden;
+                .fa-bars-staggered {
+                    color: ${props => props.theme.colorBlack};
                 }
             }
-        }
-        }
-        .nav-btn-container{
-            right: auto;
-        }
-}
+            .menu-icon i{
+                font-size: 2.4rem;
+            }
+            
+            }
+            .nav-btn-container{
+                right: auto;
+            }
     .navbar {
     width: 100vw;
     max-width: 1480px;
@@ -181,26 +179,37 @@ const NavBarStyled = styled.nav`
 }
 
 
-@media only screen and (max-width: 768px){
+@media only screen and (max-width: 769px){
+    .hero{
+        .logo{
+            width: 40%;
+        }
+    }
     .navigation {
-        position: relative;
-        border-bottom: none;
-        width: 80vw;
-        margin-left: 0px;
-        .nav-menu{
-            list-style: none;
-            display: flex;
-            height: 100%;
-            flex-direction: column;
-            justify-content: space-evenly;
-            align-items: center;
-            margin: auto;
-            padding: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        position: fixed;
+        top: 0px;
+        right: -400px;
+        transition: all 0.6s ease;
+        width: 100vw;
+        height: 100vh;
+        background: ${props => props.theme.colorBlack};
+        box-shadow: 0 40px 60px rgba(0, 0, 0, 0.1);
+        padding: 40px 0 0 10px;
+        z-index: 100;
 
+        
+        .nav-menu{
             .link{
                 text-align: center;
-                padding: 2rem;
-                width: 100%;
+                margin-top: 70px;
+                font-size: 2.3rem;
+                margin-bottom: 70px;
+                margin-left: 9vw;
+                width: 80%;
                 display: table;
                 color: ${props => props.theme.colorWhite};
             }
@@ -209,86 +218,35 @@ const NavBarStyled = styled.nav`
                 border-radius: 0;
             }
         }
-        .nav-menu.active {
-            background: #641E16;
-            width: 190%;
-            left: -300px;
-            opacity: 1;
-            transition: all 0.5s ease;
-            z-index: 3;
-        }
+        
         .nav-btn-container{
-            margin-left: 90px;
+            margin-left: 5vw;
         }
         
     }
-    .menu-icon {
-            position: absolute;
-            display: none;
-            top: 2px;
-            right: 0;
-            transform: translate(-100%, 100%);
-            font-size: 1.8rem;
-            cursor: pointer;
-            .fa-xmark{
-                color: ${props => props.theme.colorBlack};
-                font-size: 1.9rem;
-            }
-        }
-}
-
-@media only screen and (max-width: 425px) {
-    .logo{
-        width: 300px;
-    }
-    .navigation{
-        .nav-menu{
-            display: flex;
-            flex-direction: column;
-            height: 400px;
-            position: absolute;
-            top:  80px;
-            left: -500%;
+    .navigation.active{
+            right: 0px;
             opacity: 1;
-            transition: all 0.7s ease;
-
-            .link{
-                text-align: center;
-                padding: 2rem;
-                width: 100%;
-                display: table;
-                color: ${props => props.theme.colorWhite};
-            }
-            .link:hover{
-                background-color: ${props => props.theme.colorBheti} ;
-                border-radius: 0;
-            }
-        }
-        .nav-menu.active {
-            background: #641E16;
-            width: 200%;
-            left: -162px;
-            opacity: 1;
-            transition: all 0.5s ease;
+            transition: all 0.6s ease;
             z-index: 3;
         }
-    }
+    
+
     .menu-icon {
-            position: absolute;
-            display: none;
-            top: 2px;
-            right: 0;
-            transform: translate(-100%, 100%);
-            font-size: 1.8rem;
+            margin-top: 7%;
+            right: 4%;
+            z-index: 50;
             cursor: pointer;
-            .fa-xmark{
-                color: ${props => props.theme.colorBlack};
-                font-size: 2.1rem;
-                margin-left: -19px;
-                margin-top: -3px;
-            }
+            .fa-xmark {
+                    color: ${props => props.theme.colorWhite};
+                }
         }
+    .menu-icon i{
+        visibility: visible;
+    }
+        
 }
+
 
 `;
 
