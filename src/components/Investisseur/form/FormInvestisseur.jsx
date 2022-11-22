@@ -15,6 +15,9 @@ const FormInvestisseur = () => {
   const [society, setSociety] = useState("")
   const [autre, setAutre] = useState("")
 
+  // champs vide
+  const [vide, setVide] = useState(false)
+
   const options = [
     { value: 'Projet 1', label: 'Projet 1' },
     { value: 'Projet 2', label: 'Projet 2'  },
@@ -35,28 +38,28 @@ const FormInvestisseur = () => {
   const handleSubmitForm = (e) => {
     e.preventDefault()
     let formdata = new FormData()
-    let vide = false
+  
     if(nom){
       formdata.append('nom', nom)
     }else{
-      vide = true
+      setVide(true)
     }
     if(email){
       formdata.append('email', email)
     }else{
-      vide = true
+      setVide(true)
     }
 
     if(opportunity){
       formdata.append('opportunity', opportunity)
     }else{
-      vide = true
+      setVide(true)
     }
 
     if(society){
       formdata.append('society', society)
     }else{
-      vide = true
+      setVide(true)
     }
 
     if(autre){
@@ -93,7 +96,7 @@ const FormInvestisseur = () => {
           <div className='text-left'>
             <img src={LogoBheti} alt='Logo bheti connect' />
             <p>Accédez à des opportunités d'investissement exclusives</p>
-            <button type='submit'>Envoyer</button>
+            { nom && email && opportunity && society ? (<button className='btn' type='submit'>Envoyer</button>) : (<button className='btn-hidden' type='submit'>Envoyer</button>)}
           </div>
         </Left>
 
@@ -191,7 +194,7 @@ box-shadow: -5px 0px 10px 1px rgba(128, 128, 128, 0.419);
     margin: 30px;
   }
 
-  button {
+  .btn {
     position: relative;
     color:  ${props => props.theme.colorBheti};
     background-color: white;
@@ -202,6 +205,10 @@ box-shadow: -5px 0px 10px 1px rgba(128, 128, 128, 0.419);
     font-weight: 600;
     right: -100px;
     cursor: pointer;
+  }
+
+  .btn-hidden{
+    display:none;
   }
 
 
