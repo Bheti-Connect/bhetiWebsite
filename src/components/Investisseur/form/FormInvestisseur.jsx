@@ -1,12 +1,19 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useEffect } from 'react';
 import styled from 'styled-components';
 import { useTheme } from '../../../context/themeContext';
 import LogoBheti from '../../../assets/images/bheti_white_logo.png';
 import Select from 'react-select';
+import Swal from 'sweetalert2';
 
 
 const FormInvestisseur = () => {
+
+  const [nom, setNom] = useState("");
+  const [email, setEmail] = useState("");
+  const [opportunity, setOpportunity] = useState("")
+  const [society, setSociety] = useState("")
+  const [autre, setAutre] = useState("")
 
   const options = [
     { value: 'Projet 1', label: 'Projet 1' },
@@ -24,9 +31,55 @@ const FormInvestisseur = () => {
     body.style.overflow = "auto";
   }
 
-  // handle change select project
-  const handleChange = (selectedOption) => {
-    console.log(selectedOption.value);
+  // submit data
+  const handleSubmitForm = (e) => {
+    e.preventDefault()
+    let formdata = new FormData()
+    let vide = false
+    if(nom){
+      formdata.append('nom', nom)
+    }else{
+      vide = true
+    }
+    if(email){
+      formdata.append('email', email)
+    }else{
+      vide = true
+    }
+
+    if(opportunity){
+      formdata.append('opportunity', opportunity)
+    }else{
+      vide = true
+    }
+
+    if(society){
+      formdata.append('society', society)
+    }else{
+      vide = true
+    }
+
+    if(autre){
+      formdata.append('autre', autre)
+    }
+
+    if (vide){
+      Swal.fire({
+        title: "Champ vide",
+        text: `Veuillez remplir tous les champs requis.`,
+        icon: 'info',
+        showCloseButton: true,
+        iconColor: '#700b0b',
+        confirmButtonText: "Ok",
+        confirmButtonColor: "#4BB543",
+        confirmButtonAriaLabel: "sans-serif",
+      })
+    }
+
+    for(let [name, value] of formdata) {
+      console.log(`${name} = ${value}`);
+    }
+
   }
 
   useEffect(() => {
@@ -34,62 +87,61 @@ const FormInvestisseur = () => {
   },[])
 
   return (
+    <form method="post" onSubmit={handleSubmitForm}>
     <Container>
+        <Left theme={theme}>
+          <div className='text-left'>
+            <img src={LogoBheti} alt='Logo bheti connect' />
+            <p>Accédez à des opportunités d'investissement exclusives</p>
+            <button type='submit'>Envoyer</button>
+          </div>
+        </Left>
 
-      <Left theme={theme}>
-        
-        <div className='text-left'>
-          <img src={LogoBheti} alt='Logo bheti connect' />
-          <p>Accédez à des opportunités d'investissement exclusives</p>
-          <button type='button'>Envoyer</button>
+        <Right theme={theme}>
+        <div className='form'>
+
+          <div className="row">
+            <label htmlFor="nom" className="input-label">Votre nom <span className='asterisque'>*</span></label>
+            <input type="text" name='nom' id='nom' className="input-field" onChange={(e) => setNom(e.target.value)} placeholder='...' required/>
+          </div>
+
+          <div className="row">
+            <label htmlFor="email" className="input-label">Votre adresse e-mail <span className='asterisque'>*</span></label>
+            <p>Veuillez noter l'adresse à laquelle vous souhaitez recevoir le dossier</p>
+            <input type="email" name='email' id='email' className="input-field" onChange={(e) => setEmail(e.target.value)} placeholder='example@company.com' required/>
+          </div>
+
+          <div className="row">
+
+            <label htmlFor="select" className="input-label">Opportunité d'investissement <span className='asterisque'>*</span></label>
+
+            <Select
+            placeholder={"Votre choix..."}
+            onChange={(selectedOption) => setOpportunity(selectedOption.value)}
+            options={options}
+            className='select-field'
+            isSearchable
+            />
+
+
+          </div>
+
+          <div className="row">
+            <label htmlFor="societe" className="input-label">Votre société d'investissement <span className='asterisque'>*</span></label>
+            <p>Veuillez indiquer si vous êtes un Business Angel ou le nom de la société d'investissement pour laquelle vous travaillez</p>
+            <input type="text" name='societe' id='societe' className="input-field" onChange={(e) => setSociety(e.target.value)} placeholder='...' required/>
+          </div>
+
+          <div className="row last-row">
+              <label htmlFor="message" className="input-label">Autre</label>
+              <p>Avez-vous quoi que ce soit à ajouter ?</p>
+              <textarea className="input-field" name="message" id="message" onChange={(e) => setAutre(e.target.value)} cols="30" rows="15"></textarea>
+          </div>
+
         </div>
-      </Left>
-
-      <Right theme={theme}>
-      <div className='form'>
-
-        <div className="row">
-          <label htmlFor="nom" className="input-label">Votre nom <span className='asterisque'>*</span></label>
-          <input type="text" name='nom' id='nom' className="input-field" placeholder='...' required/>
-        </div>
-
-        <div className="row">
-          <label htmlFor="email" className="input-label">Votre adresse e-mail <span className='asterisque'>*</span></label>
-          <p>Veuillez noter l'adresse à laquelle vous souhaitez recevoir le dossier</p>
-          <input type="email" name='email' id='email' className="input-field" placeholder='example@company.com' required/>
-        </div>
-
-        <div className="row">
-
-          <label htmlFor="select" className="input-label">Opportunité d'investissement <span className='asterisque'>*</span></label>
-
-          <Select
-          placeholder={"Votre choix..."}
-          onChange={handleChange}
-          options={options}
-          className='select-field'
-          isSearchable={false}
-          />
-
-
-        </div>
-
-        <div className="row">
-          <label htmlFor="societe" className="input-label">Votre société d'investissement <span className='asterisque'>*</span></label>
-          <p>Veuillez indiquer si vous êtes un Business Angel ou le nom de la société d'investissement pour laquelle vous travaillez</p>
-          <input type="text" name='societe' id='societe' className="input-field" placeholder='...' required/>
-        </div>
-
-        <div className="row last-row">
-            <label htmlFor="message" className="input-label">Autre</label>
-            <p>Avez-vous quoi que ce soit à ajouter ?</p>
-            <textarea className="input-field" name="message" id="message" cols="30" rows="15"></textarea>
-        </div>
-
-      </div>
-      </Right>
-
+        </Right>
     </Container>
+    </form>
   )
 }
 
@@ -104,10 +156,10 @@ const Container = styled.div`
       margin: 40px 0;
 
       @media only screen and (max-width: 970px) {
+
         flex-direction: column;
 
       }
-
 `;
 
 const Left = styled.div`
