@@ -21,6 +21,7 @@ const EconomicNews = () => {
                     </p>
                     <a className='bouton'>
                     <Button 
+
                         name={"Je m'informe"}
                         icon={'fas fa-chevron-right'}
                         arrow={'arrow'}

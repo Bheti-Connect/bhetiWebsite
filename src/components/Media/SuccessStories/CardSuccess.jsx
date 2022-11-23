@@ -1,47 +1,61 @@
 import React from 'react'
-import { useTheme } from '../../context/themeContext';
-import styled from 'styled-components';
+import styled from 'styled-components'
+import { useTheme } from '../../../context/themeContext';
 
-const CardsMedia = ({item, setSelect, setModal}) => {
+const CardSuccess = ({item, setSelect, setModal}) => {
 
-  const theme = useTheme()
 
+  // random image API :  https://random.imagecdn.app/500/150
+
+  const theme = useTheme();
 
    // Generate image
-   let source = "https://" + `picsum.photos/id/${item.id}/200/300`;
-
+   let source = "https://" + `picsum.photos/id/${Math.floor(Math.random() * 200)}/200/300`;
+ 
+ 
    const handleSelect = () => {
      const body = document.querySelector("body");
      body.style.overflow = "hidden";
-     setSelect(item)
-     setModal(true)
+     setSelect(item);
+     setModal(true);
    }
 
-
   return (
+    <Container onClick={handleSelect} theme={theme}>
 
-    <CardItem onClick={handleSelect} theme={theme}>
-        <CardHeader>
-          <img src={source} alt='media'/>
-        </CardHeader>
 
-        <CardBody theme={theme}>
-        <h3>{item.poste}</h3>
+          <CardHeader>
+            <img src={source} alt='project'/>
+          </CardHeader>
 
-        <ul>
-          <li>{item.secteur}</li>
-          <li>{item.pays}</li>
-        </ul>
-        
+          <CardBody>
+
+          <h3>{item.nom}</h3>
+          <ul>
+            <li>{item.pays}</li>
+            <li>{item.pays}</li>
+          </ul>
+
+          <ul>
+            <li>{item.pays}</li>
+            <li>{item.pays}</li>
+          </ul>
+
+          <ul>
+            <li>{item.pays}</li>
+            <li>{item.pays}</li>
+          </ul>
+
         </CardBody>
-    </CardItem>
 
+
+    </Container>
   )
 }
 
 // Style CSS
 
-const CardItem = styled.div`
+const Container = styled.div`
 margin: 10px;
 border-radius: 10px;
 box-shadow: 0 2px 20px rgba(0, 0, 0, 0.2);
@@ -109,4 +123,4 @@ img {
 
 `;
 
-export default CardsMedia
+export default CardSuccess

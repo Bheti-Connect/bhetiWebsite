@@ -46,7 +46,7 @@ const NavBar = () => {
                             </NavLink>
                             <a href='https://bheticonnect.super.site/'>
                                 <NavLink
-                                    to=''
+                                    to='media'
                                     className={({ isActive }) => (isActive ? 'link active' : 'link')}
                                 >
                                     Média 
