@@ -69,7 +69,7 @@ const FormInvestisseur = () => {
     if (vide){
       Swal.fire({
         title: "Champ vide",
-        text: `Veuillez remplir tous les champs requis.`,
+        text: `Veuillez selectionner un projet.`,
         icon: 'info',
         showCloseButton: true,
         iconColor: '#700b0b',
@@ -96,7 +96,7 @@ const FormInvestisseur = () => {
           <div className='text-left'>
             <img src={LogoBheti} alt='Logo bheti connect' />
             <p>Accédez à des opportunités d'investissement exclusives</p>
-            { nom && email && opportunity && society ? (<button className='btn' type='submit'>Envoyer</button>) : (<button className='btn-hidden' type='submit'>Envoyer</button>)}
+            <button className='btn' type='submit'>Envoyer</button>
           </div>
         </Left>
 
@@ -244,6 +244,20 @@ box-shadow: -5px 0px 10px 1px rgba(128, 128, 128, 0.419);
           button {
             right: -50px;
           }
+          
+        }
+
+      }
+
+      @media only screen and (max-width: 590px) {
+        width: 80%;
+
+        .text-left{
+       
+          button{
+            right: -40px;
+          }
+          
         }
       }
 
@@ -321,6 +335,10 @@ p{
 
       @media only screen and (max-width: 680px) {
         
+      }
+
+      @media only screen and (max-width: 590px) {
+        width: 80%;
       }
 
 
