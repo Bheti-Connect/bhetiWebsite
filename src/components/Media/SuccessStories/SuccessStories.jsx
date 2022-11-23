@@ -265,7 +265,7 @@ const SuccessStories = () => {
             </AllSuccess>
 
             {
-              modal && <CardModalSuccess select={select} setModal={setModal} connect={connect}/>
+              modal && <CardModalSuccess select={select} setModal={setModal} />
             }
 
     </Container>
@@ -282,7 +282,7 @@ const Container = styled.div`
 
 const AllCards = styled.div`
 display: flex;
-width: 90%;
+width: 76%;
 justify-content: left;
 margin:auto;
 flex-wrap: wrap;
