@@ -81,7 +81,7 @@ const NavBarStyled = styled.nav`
     display: flex;
 	justify-content: space-between;
 	height: 80px;
-	padding: 0 2rem;
+	padding: 0rem 2rem;
     .logo{
             display: flex;
             align-items: center;
@@ -131,13 +131,12 @@ const NavBarStyled = styled.nav`
             width: 70vw;
             justify-content: end;
             margin-right: .2rem;
-            @media only screen and (min-width: 768px) {
+            @media only screen and (min-width: 960px) {
                 display: grid;
                 justify-content: space-around;
             }
         }
-        
-}
+    }
             .menu-icon {
                 align-items: center;
                 visibility: hidden;
@@ -178,8 +177,7 @@ const NavBarStyled = styled.nav`
     }
 }
 
-
-@media only screen and (max-width: 769px){
+@media only screen and (max-width: 960px){
     .hero{
         .logo{
             width: 40%;
@@ -192,7 +190,7 @@ const NavBarStyled = styled.nav`
         justify-content: flex-start;
         position: fixed;
         top: 0px;
-        right: -400px;
+        right: -900px;
         transition: all 0.6s ease;
         width: 100vw;
         height: 100vh;
@@ -230,7 +228,6 @@ const NavBarStyled = styled.nav`
             transition: all 0.6s ease;
             z-index: 3;
         }
-    
 
     .menu-icon {
             margin-top: 7%;
@@ -244,9 +241,7 @@ const NavBarStyled = styled.nav`
     .menu-icon i{
         visibility: visible;
     }
-        
 }
-
 
 `;
 

@@ -11,6 +11,8 @@ import Footer from './components/Footer';
 import NavBar from './components/NavBar';
 
 import Media from './components/Media/Media';
+import FormOne from './components/Forms/NewForms/FormOne/FormOne';
+import FormTwo from './components/Forms/NewForms/FormTwo/FormTwo';
 
 const App = () => {
   const theme = useTheme();
@@ -30,6 +32,8 @@ const App = () => {
             <Route path='connexion' element={<AccountBox />} />
             <Route path='evaluer-eligibilite' element={<EvaluerEligibilite />} />
             <Route path='formulaire' element={<ParentForm />} />
+            <Route path='form1' element={<FormOne />} />
+            <Route path='form2' element={<FormTwo />} />
           </Routes>
         </main>
           <div>
