@@ -20,22 +20,12 @@ const EconomicNews = () => {
                         Nous vous immergeons dans ce monde encore opaque pour vous apporter des informations transparentes, inédites et exclusives.
                     </p>
                     <a className='bouton'>
-<<<<<<< HEAD
-                        <Button 
-                            name={"Je m'informe"}
-                            icon={'fas fa-chevron-right'}
-                            arrow={'arrow'}
-                            blob={'blob'}
-                        />
-=======
                     <Button 
-
                         name={"Je m'informe"}
                         icon={'fas fa-chevron-right'}
                         arrow={'arrow'}
                         blob={'blob'}
                     />
->>>>>>> b2e94de0987cd49198a82ead2c951f448b1c299b
                     </a>
                 </div>
             </div>

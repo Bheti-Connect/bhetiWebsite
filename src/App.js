@@ -11,13 +11,10 @@ import Footer from './components/Footer';
 import NavBar from './components/NavBar';
 
 import Media from './components/Media/Media';
-<<<<<<< HEAD
 import FormOne from './components/Forms/NewForms/FormOne/FormOne';
 import FormTwo from './components/Forms/NewForms/FormTwo/FormTwo';
-=======
 import FormInvestisseur from './components/Investisseur/form/FormInvestisseur';
 import SuccessStories from './components/Media/SuccessStories/SuccessStories';
->>>>>>> b2e94de0987cd49198a82ead2c951f448b1c299b
 
 const App = () => {
   const theme = useTheme();
@@ -35,12 +32,10 @@ const App = () => {
             <Route path='investisseur' element={<Investisseur />} />
             <Route path='media' element={<Media />} />
             <Route path='connexion' element={<AccountBox />} />
-<<<<<<< HEAD
             {/* <Route path='evaluer-eligibilite' element={<EvaluerEligibilite />} /> */}
             <Route path='formulaire' element={<ParentForm />} />
             <Route path='pitch-deck' element={<FormOne />} />
             <Route path='evaluer-eligibilite' element={<FormTwo />} />
-=======
             <Route path='evaluer-eligibilite' element={<EvaluerEligibilite />} />
 
 
@@ -48,7 +43,6 @@ const App = () => {
             <Route path='forminvestisseur' element={<FormInvestisseur />}/>
             {/* Route : success stories media */}
             <Route path='success-stories' element={<SuccessStories />}/>
->>>>>>> b2e94de0987cd49198a82ead2c951f448b1c299b
           </Routes>
         </main>
           <div>
