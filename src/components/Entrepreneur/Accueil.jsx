@@ -3,7 +3,6 @@ import styled from 'styled-components'
 import Talking from '../../assets/images/pexels-picha-stock-3894383-1.png';
 import Blob1 from '../../assets/images/magicpattern-blob-1.png';
 import Blob2 from '../../assets/images/magicpattern-blob-2.png'
-import Tamtam from '../../assets/images/tamTam.png'
 
 import Button from '../Button';
 import { useTheme } from '../../context/themeContext';
@@ -16,7 +15,7 @@ const Accueil = () => {
         <AccueilStyled className='u-pad-lg-2'  theme={theme}>
             <div className='first-container'>
                 <div className='headache'>
-                    <h1 className='centered'>Résolvez le <span>casse</span> tête du financement de votre entreprise</h1>
+                    <h1 className='centered'>Rés<span className='resolvez'>olvez le </span><span className='casse'>casse</span> tête du financement de votre entreprise</h1>
                     <img className='girls-talk' src={Talking} alt='Image-Femmes'/>
                 </div>
                 <div className='text-highlighted'>
@@ -34,7 +33,6 @@ const Accueil = () => {
                 <div className='bheti-box'>
                     <img className='blobImg-1' src={Blob1} />
                     <img className='blobImg-2' src={Blob2} />
-                    <img className='tamtam-img' src={Tamtam} />
                 </div>
             </div>
         </AccueilStyled>
@@ -49,13 +47,47 @@ const AccueilStyled = styled.section`
             margin-top: 2%;
             align-items: center;
             border-radius: 7px;
-            span{
-                color: ${props => props.theme.colorWhite} ;
+            .casse{
+                color: ${props => props.theme.colorBlack} ;
+                @media only screen and (max-width: 768px){
+
+                }
+                @media only screen and (max-width: 500px){
+                    
+                }
+                @media only screen and (max-width: 425px){
+                    color: ${props => props.theme.colorBheti} ;
+                }
+            }
+            .resolvez{
+                color: ${props => props.theme.colorBlack} ;
+                @media only screen and (max-width: 768px){
+
+                }
+                @media only screen and (max-width: 500px){
+                    
+                }
+                @media only screen and (max-width: 425px){
+                    color: ${props => props.theme.colorBheti} ;
+                }
             }
             img{
                 width: 70%;
             }
             .girls-talk{
+                animation: contentHide 1s ease-in-out;
+                @keyframes contentHide {
+                    0%{
+                        opacity: 0;
+                        transform: translateX(-10%) scaleX(0);
+                        visibility: none;
+                    }
+                    100%{
+                        opacity: 1;
+                        transform: translateY(0) scale(1);
+                        visibility: visible;
+                    }
+                }
                 border-bottom-left-radius: 40px;
                 @media only screen and (max-width: 2560px) and (min-width: 1800px) {
                     margin-left: 380px;
@@ -66,7 +98,37 @@ const AccueilStyled = styled.section`
                     margin-left: 200px;
                     margin-top: 8%;
                 }
-                @media only screen and (max-width: 525px) and (min-width: 425px) {
+                @media only screen and (max-width: 960px){
+                    margin-left: -80px;
+                    margin-top: 10%;
+                    width: 180%;
+                    height: 320px;
+                }
+                @media only screen and (max-width: 768px){
+                    margin-left: -80px;
+                    margin-top: 10%;
+                    width: 125%;
+                    height: 250px;
+                }
+                @media only screen and (max-width: 500px){
+                    margin-left: -80px;
+                    margin-top: 10%;
+                    width: 125%;
+                    height: 250px;
+                }
+                @media only screen and (max-width: 425px){
+                    margin-left: -80px;
+                    margin-top: 5%;
+                    width: 115%;
+                    height: 260px;
+                }
+                @media only screen and (max-width: 375px){
+                    margin-left: -50px;
+                    margin-top: 12%;
+                    width: 120%;
+                    height: 220px;
+                }
+                @media only screen and (max-width: 320px){
                     margin-left: -80px;
                     margin-top: 10%;
                     width: 125%;
@@ -80,7 +142,7 @@ const AccueilStyled = styled.section`
                 left: 50%;
                 transform: translate(-50%, -50%);
                 font-weight: 900;
-                font-size: 50px; 
+                font-size: 40px; 
                 color: ${props => props.theme.colorBheti}; 
                 @media only screen and (max-width: 2560px) and (min-width: 1800px) {
                     transform: translate(-150%, -90%);
@@ -91,11 +153,35 @@ const AccueilStyled = styled.section`
                     width: 380px;
                     font-size: 59px; 
                 }
-                @media only screen and (max-width: 525px) and (min-width: 425px) {
-                    width: 420px;
+                @media only screen and (max-width: 960px){
+                    width: 710px;
+                    font-size: 46px;
+                    transform: translate(-51%, 160%);
+                    color: ${props => props.theme.colorBlack}; 
+                }
+                @media only screen and (max-width: 768px){
+                    width: 400px;
                     font-size: 40px;
-                    transform: translate(-50%, 100%);
+                    transform: translate(-55%, 100%);
                     color: ${props => props.theme.colorBheti}; 
+                }
+                @media only screen and (max-width: 500px){
+                    width: 350px;
+                    font-size: 33px;
+                    transform: translate(-55%, 100%);
+                    color: ${props => props.theme.colorBheti}; 
+                }
+                @media only screen and (max-width: 425px){
+                    width: 300px;
+                    font-size: 30px;
+                    transform: translate(-60%, 200%);
+                    color: ${props => props.theme.colorBlack}; 
+                }
+                @media only screen and (max-width: 375px){
+                    width: 300px;
+                    font-size: 35px;
+                    transform: translate(-60%, 100%);
+                    color: ${props => props.theme.colorBheti};
                 }
             }
         }
@@ -107,13 +193,37 @@ const AccueilStyled = styled.section`
                 font-size: 1.4rem;
                 text-align: justify;
             }
-            @media only screen and (max-width: 525px) and (min-width: 425px) {
+            @media only screen and (max-width: 960px) {
+                margin-top: 12%;
+                font-size: 1.25rem;
+                text-align: justify;
+                width: 600px;
+                margin-top: 200px;
+                margin-left: -20vw;
+            }
+            @media only screen and (max-width: 768px) {
                 margin-top: 10%;
                 font-size: 1.01rem;
                 text-align: justify;
-                width: 420px;
+                width: 320px;
                 margin-top: 200px;
                 margin-left: -80px;
+            }
+            @media only screen and (max-width: 425px) {
+                margin-top: 10%;
+                font-size: 1.01rem;
+                text-align: justify;
+                width: 320px;
+                margin-top: 200px;
+                margin-left: -80px;
+            }
+            @media only screen and (max-width: 375px) {
+                margin-top: 10%;
+                font-size: 1.01rem;
+                text-align: justify;
+                width: 300px;
+                margin-top: 200px;
+                margin-left: -70px;
             }
         }
         .button-demo{
@@ -122,14 +232,42 @@ const AccueilStyled = styled.section`
                 width: 80%;
                 margin: 40px 350px 0px;
             }
-            @media only screen and (max-width: 525px) and (min-width: 425px) {
+            @media only screen and (max-width: 960px){
                 width: 100%;
-                margin: 50px 0px 0px;
+                margin: 50px -30px 0px;
+            }
+            @media only screen and (max-width: 768px){
+                width: 100%;
+                margin: 50px -30px 0px;
+            }
+            @media only screen and (max-width: 525px){
+                width: 100%;
+                margin: 50px -30px 0px;
+            }
+            @media only screen and (max-width: 425px){
+                width: 100%;
+                margin: 50px -30px 0px;
+            }
+            @media only screen and (max-width: 375px){
+                width: 123%;
+                margin: 50px -80px 0px;
             }
         }
-        @media only screen and (max-width: 525px) and (min-width: 425px)  {
+        @media only screen and (max-width: 768px) {
             width: 220px;
-            margin-left: -150px;
+            margin-left: 130px;
+        }
+        @media only screen and (max-width: 500px) {
+            width: 220px;
+            margin-left: 130px;
+        }
+        @media only screen and (max-width: 425px) {
+            width: 270px;
+            margin-left: 120px;
+        }
+        @media only screen and (max-width: 375px) {
+            width: 220px;
+            margin-left: 100px;
         }
     }
     .bheti-box{
@@ -142,8 +280,8 @@ const AccueilStyled = styled.section`
         background-color: #641C1C;
         .blobImg-1{
             position: absolute;
-            right: -30px;
-            bottom: -100px;
+            right: 200px;
+            bottom: 60px;
             @media all and (max-width: 2500px) {
                 width: 35%;
             }
@@ -151,7 +289,7 @@ const AccueilStyled = styled.section`
                 width: 25%;
             }
             @media all and (max-width: 1500px) {
-                width: 23%;
+                width: 50%;
             }
             @media all and (max-width: 1300px)  {
 
@@ -159,46 +297,90 @@ const AccueilStyled = styled.section`
             @media all and (max-width: 1080px) {
                 width: 20%;
             }
-
-            @media only screen and (max-width: 525px) and (min-width: 425px) {
+            @media all and (max-width: 960px) {
+                width: 40%;
+                right: 1px;
+                bottom: -50px;
+            }
+            @media all and (max-width: 768px) {
                 width: 25%;
-                right: 0px;
+                right: 2px;
+                bottom: -20px;
+            }
+            @media only screen and (max-width: 525px) {
+                width: 25%;
+                right: 2px;
+                bottom: -20px;
+            }
+            @media only screen and (max-width: 425px){
+                width: 25%;
+                right: 2px;
                 bottom: -20px;
             }
         }
         .blobImg-2{
             position: absolute;
-            right: -10px;
-            top: -50px;
+            left: -125px;
+            top: 0px;
             @media only screen and (max-width: 1440px) and (min-width: 1350px) {
-                width: 20%;
+                width: 40%;
             }
-            @media only screen and (max-width: 525px) and (min-width: 425px) {
+            @media only screen and (max-width: 960px) {
                 width: 35%;
-                left: -45px;
+                left: -62px;
                 top: 0px;
             }
-        }
-        .tamtam-img{
-            display: block;
-            margin-top: 8%;
-            margin-left: auto;
-            margin-right: auto;
-            width: 40%;
-            @media only screen and (max-width: 1440px) and (min-width: 1350px){
-                width: 50%;
-                margin-top: 7%;
+            @media only screen and (max-width: 768px) {
+                width: 35%;
+                left: -38px;
+                top: 0px;
             }
-            @media only screen and (max-width: 525px) and (min-width: 425px) {
-                width: 90%;
-                margin-top: 80px;
-             }
+            @media only screen and (max-width: 525px){
+                width: 35%;
+                left: -38px;
+                top: 0px;
+            }
+            @media only screen and (max-width: 425px){
+                width: 35%;
+                left: -38px;
+                top: 0px;
+            }
+            @media only screen and (max-width: 375px){
+                width: 40%;
+                left: -38px;
+                top: 0px;
+            }
         }
         @media only screen and (max-width: 1440px) and (min-width: 1350px){
             width: 720px;
         }
-        @media only screen and (max-width: 525px) and (min-width: 425px) {
-                width: 250px;
+        @media only screen and (max-width: 960px) {
+                width: 50vw;
+                height: 55vh;
+                top: 0px;
+            }
+        @media only screen and (max-width: 768px) {
+                width: 50vw;
+                height: 417px;
+                top: 0px;
+            }
+        @media only screen and (max-width: 525px) {
+                width: 50vw;
+                height: 417px;
+                top: 0px;
+            }
+        @media only screen and (max-width: 425px){
+                width: 50vw;
+                height: 430px;
+                top: 0px;
+            }
+        @media only screen and (max-width: 375px){
+                width: 50vw;
+                height: 450px;
+                top: 0px;
+            }
+        @media only screen and (max-width: 320px){
+                width: 50vw;
                 height: 417px;
                 top: 0px;
             }

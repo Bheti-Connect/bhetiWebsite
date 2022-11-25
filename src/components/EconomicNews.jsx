@@ -20,6 +20,14 @@ const EconomicNews = () => {
                         Nous vous immergeons dans ce monde encore opaque pour vous apporter des informations transparentes, inédites et exclusives.
                     </p>
                     <a className='bouton'>
+<<<<<<< HEAD
+                        <Button 
+                            name={"Je m'informe"}
+                            icon={'fas fa-chevron-right'}
+                            arrow={'arrow'}
+                            blob={'blob'}
+                        />
+=======
                     <Button 
 
                         name={"Je m'informe"}
@@ -27,6 +35,7 @@ const EconomicNews = () => {
                         arrow={'arrow'}
                         blob={'blob'}
                     />
+>>>>>>> b2e94de0987cd49198a82ead2c951f448b1c299b
                     </a>
                 </div>
             </div>
@@ -107,6 +116,9 @@ const EconomicNewsStyled = styled.section`
                 margin-left: -30px;
                 @media only screen and (max-width: 768px) {
                     margin-left: 80px;
+                }
+                @media only screen and (max-width: 425px) {
+                    margin-left: 0px;
                 }
             }
             @media only screen and (max-width: 425px) {

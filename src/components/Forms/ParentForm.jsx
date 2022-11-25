@@ -1,40 +1,36 @@
-import React, { Component } from 'react';
-import Confirmation from './EligibilitySteps/Confirmation';
-import StepOne from './EligibilitySteps/StepOne';
-import StepTwo from './EligibilitySteps/StepTwo';
-import StepThree from './EligibilitySteps/StepThree';
-import StepFour from './EligibilitySteps/StepFour';
+import React, { Component } from "react";
 
-import FormPersonalDetails from './FormPersonalDetails';
-import Confirm from './Confirm';
-import Success from './Success';
+import FormCompanyInfo from "./FormCompanyInfo.jsx";
+import FormProjectInfo from "./FormProjectInfo";
+import FormFinancial from "./FormFinancial";
+import Success from "./Success";
 
 export class UserForm extends Component {
     state = {
         step: 1,
-        nomSociete: '',
-        siteweb: '',
-        nombreAnnee: '',
-        description: '',
-        secteurActivite: '',
-        paysActivite: '',
-        montantRechercher: '',
-        delaiObtention: '',
-        avoirLeverDesFonds: '',
-        tempsPlein: '',
-        nombrePersonnesSurProjet: '',
-        chiffreAffaire : '',
-        nom: '',
-        email: '',
-        documentPresentation: '',
-        presentationLien: ''
+        nomSociete: "",
+        siteweb: "",
+        nombreAnnee: "",
+        description: "",
+        secteurActivite: "",
+        paysActivite: "",
+        montantRechercher: "",
+        delaiObtention: "",
+        avoirLeverDesFonds: "",
+        tempsPlein: "",
+        nombrePersonnesSurProjet: "",
+        chiffreAffaire: "",
+        nom: "",
+        email: "",
+        documentPresentation: "",
+        presentationLien: "",
     };
 
     // Proceed to next step
     nextStep = () => {
         const { step } = this.state;
         this.setState({
-        step: step + 1
+        step: step + 1,
         });
     };
 
@@ -42,52 +38,84 @@ export class UserForm extends Component {
     prevStep = () => {
         const { step } = this.state;
         this.setState({
-        step: step - 1
+        step: step - 1,
         });
     };
 
-    // Handle fields change
-    handleChange = input => e => {
+    // Handle fields changes
+    handleChange = (input) => (e) => {
         this.setState({ [input]: e.target.value });
     };
 
     render() {
         const { step } = this.state;
-        const { nomSociete, siteweb, nombreAnnee, description, paysActivite, montantRechercher, delaiObtention, avoirLeverDesFonds, tempsPlein, nombrePersonnesSurProjet, chiffreAffaire, nom, email, documentPresentation, presentationLien } = this.state;
-        const values = { nomSociete, siteweb, nombreAnnee, description, paysActivite, montantRechercher, delaiObtention, avoirLeverDesFonds, tempsPlein, nombrePersonnesSurProjet, chiffreAffaire, nom, email, documentPresentation, presentationLien };
+        const {
+        nomSociete,
+        siteweb,
+        nombreAnnee,
+        description,
+        paysActivite,
+        montantRechercher,
+        delaiObtention,
+        avoirLeverDesFonds,
+        tempsPlein,
+        nombrePersonnesSurProjet,
+        chiffreAffaire,
+        nom,
+        email,
+        documentPresentation,
+        presentationLien,
+        } = this.state;
+        const values = {
+        nomSociete,
+        siteweb,
+        nombreAnnee,
+        description,
+        paysActivite,
+        montantRechercher,
+        delaiObtention,
+        avoirLeverDesFonds,
+        tempsPlein,
+        nombrePersonnesSurProjet,
+        chiffreAffaire,
+        nom,
+        email,
+        documentPresentation,
+        presentationLien,
+        };
 
         switch (step) {
         case 1:
             return (
-            <FormUserDetails
+            <FormCompanyInfo
                 nextStep={this.nextStep}
                 handleChange={this.handleChange}
                 values={values}
             />
             );
-        case 2:
-            return (
-            <FormPersonalDetails
-                nextStep={this.nextStep}
-                prevStep={this.prevStep}
-                handleChange={this.handleChange}
-                values={values}
-            />
-            );
-        case 3:
-            return (
-            <Confirm
-                nextStep={this.nextStep}
-                prevStep={this.prevStep}
-                values={values}
-            />
-            );
-        case 4:
+        // case 2:
+        //     return (
+        //     <FormProjectInfo
+        //         nextStep={this.nextStep}
+        //         prevStep={this.prevStep}
+        //         handleChange={this.handleChange}
+        //         values={values}
+        //     />
+        //     );
+        // case 3:
+        //     return (
+        //     <FormFinancial
+        //         nextStep={this.nextStep}
+        //         prevStep={this.prevStep}
+        //         values={values}
+        //     />
+        //     );
+            case 2:
             return <Success />;
         default:
-            (console.log('This is a multi-step form built with React.'))
+            console.log("This is a multi-step form built with React.");
         }
     }
-    }
+}
 
 export default UserForm;
