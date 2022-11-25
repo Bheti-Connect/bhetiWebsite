@@ -94,7 +94,7 @@ const FormTwo = () => {
                           id={steps[circle]}
                         />
                       ))}
-                      <span>
+                      <span className='stepsNumber'>
                         {activeStep + 1}/{steps.length}
                       </span>
                     </div>
@@ -151,6 +151,11 @@ const Flex = styled.div`
   @media only screen and (max-width:450px){
     flex-direction:column;
     align-items:center;
+  }
+
+  .stepsNumber{
+    font-size: 24px;
+    font-weight: 700;
   }
 `;
 

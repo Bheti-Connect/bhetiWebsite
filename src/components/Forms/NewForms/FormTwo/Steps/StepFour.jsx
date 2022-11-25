@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { Field, FileInput, StyledLabel } from "../../FormikFields/FormikFields";
+import { Field, FileInput, StyledLabel, StyledStar } from "../../FormikFields/FormikFields";
 import attach from "../../formAssets/Attach.svg";
 import drop from "../../formAssets/drop-file.svg";
 
@@ -12,9 +12,8 @@ const StepFour = (props) => {
   return (
     <>
       <StyledLabel htmlFor="files">
-        Quel secteur correspond le mieux à votre activité ? *
+        Quel secteur correspond le mieux à votre activité ? <StyledStar>*</StyledStar> 
       </StyledLabel>
-     
         <div>
           <FileInput name={sectorForActivity.name} type="file" id="files" />
         </div>
@@ -54,7 +53,6 @@ const StyledDropFile = styled.p`
   display: flex;
   align-items: center;
   margin-left: 3em;
-
   @media only screen and (max-width: 450px) {
     margin-left: 0em;
     margin-bottom: 2em;
@@ -64,7 +62,6 @@ const StyledDropFile = styled.p`
 const Flex = styled.div`
   display: flex;
   align-items: baseline;
-
   @media only screen and (max-width: 450px) {
     flex-direction: column;
   }

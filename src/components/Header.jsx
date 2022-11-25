@@ -3,6 +3,7 @@ import { useTheme } from '../context/themeContext';
 import premiereImg from '../assets/images/ent-img1.jpg';
 import deuxiemeImg from '../assets/images/ent-img4-2.jpg';
 import Button from './Button';
+import { Link } from 'react-router-dom';
 // import { devices } from '../data/Responsive';
 
 const Header = () => {
@@ -18,14 +19,18 @@ const Header = () => {
                     <p>
                         Bheti Connect est la platforme numéro une qui réunnis les entrepreneurs et investisseurs en Afrique francophone.
                     </p>
-                    <a href='./Forms/EvaluerEligibilite.jsx' className='button-demo'>
-                        <Button 
-                            name={'Je réserve une demo'}
-                            icon={'fas fa-chevron-right'}
-                            arrow={'arrow'}
-                            blob={'blob'}
-                        />
-                    </a>
+                    <div className='button-demo'>
+                        <Link
+                        to='/evaluer-eligibilite'
+                        >
+                            <Button 
+                                name={'Je réserve une demo'}
+                                icon={'fas fa-chevron-right'}
+                                arrow={'arrow'}
+                                blob={'blob'}
+                            />
+                        </Link>
+                    </div>
                 </div>
                 <div className='box right-h-content'>
                     <img className='h-img-1' src={premiereImg} alt='image-1' />
@@ -55,7 +60,7 @@ const HeaderStyled = styled.header`
         height: 60vh;
     }
     @media only screen and (max-width: 768px){
-        height: 55vh;
+        height: 60vh;
     }
     @media only screen and (max-width: 425px) {
         height: 90vh;
@@ -602,8 +607,6 @@ const HeaderStyled = styled.header`
                     margin-bottom: 0%;
             }
     }
-
-
 `;
 
 export default Header

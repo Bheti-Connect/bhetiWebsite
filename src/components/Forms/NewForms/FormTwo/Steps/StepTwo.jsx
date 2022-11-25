@@ -14,11 +14,12 @@ const StepTwo = (props) => {
 
   return (
     <>
-         <Field label={countryOfActivity.label} name={countryOfActivity.name} type="text" otherText={`Dans quels pays exercez-vous votre activité ?`}/>
-         <Field label={amountRequested.label} name={amountRequested.name} type="text" otherText={`Quel montant souhaitez-vous lever ?`}/>
-         <MySelect
+          <Field label={countryOfActivity.label} star={`*`} name={countryOfActivity.name} type="text" otherText={`Dans quels pays exercez-vous votre activité ?`}/>
+          <Field label={amountRequested.label} star={`*`} name={amountRequested.name} type="text" otherText={`Quel montant souhaitez-vous lever ?`}/>
+          <MySelect
               label={investmentTime.label}
               name={investmentTime.name}
+              star={`*`}
             >
               <option value="">Sélectionnez une option</option>
               <option value="0-3">0-3 mois</option>
@@ -27,7 +28,7 @@ const StepTwo = (props) => {
               <option value="9-12">9-12 mois</option>
               <option value="12+">+12 mois</option>
             </MySelect>
-            <Field label={fundRaised.label} name={fundRaised.name} otherText={`SI oui, veuillez mentionner le montant collecté`} type="text" />
+            <Field label={fundRaised.label} star={`*`} name={fundRaised.name} otherText={`SI oui, veuillez mentionner le montant collecté`} type="text" />
     </>
   )
 }

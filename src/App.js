@@ -28,12 +28,12 @@ const App = () => {
           <Route path='/bhetiConnectProj' element={<Home />} />
             <Route path='entrepreneur' element={<Entrepreneur />} />
             <Route path='investisseur' element={<Investisseur />} />
-            <Route path='/media' element={<Media />} />
+            <Route path='media' element={<Media />} />
             <Route path='connexion' element={<AccountBox />} />
-            <Route path='evaluer-eligibilite' element={<EvaluerEligibilite />} />
+            {/* <Route path='evaluer-eligibilite' element={<EvaluerEligibilite />} /> */}
             <Route path='formulaire' element={<ParentForm />} />
-            <Route path='form1' element={<FormOne />} />
-            <Route path='form2' element={<FormTwo />} />
+            <Route path='pitch-deck' element={<FormOne />} />
+            <Route path='evaluer-eligibilite' element={<FormTwo />} />
           </Routes>
         </main>
           <div>

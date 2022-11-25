@@ -114,8 +114,8 @@ const AboutSectionStyled = styled.section`
             }
             @media only screen and (max-width: 768px){
                 font-size: 1.9rem;
-                margin-bottom: 8%;
-                margin-top: -20%;
+                margin-bottom: 5%;
+                margin-top: -10%;
                 margin-left: 50px;
             }
             @media only screen and (max-width: 425px){

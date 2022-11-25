@@ -151,9 +151,12 @@ export const optionsActivity = [
     'Telecom'
 ]
 
-
 export const optionsYears =[
-
+    '0-2 ans',
+    '2-5 ans',
+    '5-10 ans',
+    '10-15 ans',
+    '+15 ans'
 ];
 
 export const optionsDuration = [

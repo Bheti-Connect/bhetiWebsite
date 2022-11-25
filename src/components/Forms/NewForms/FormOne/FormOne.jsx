@@ -85,17 +85,17 @@ const FormOne = () => {
 
 export const Wrap = styled.div`
   display: flex;
-  width: 80%;
+  width: 60%;
   margin: 0 auto;
   position: relative;
 
   @media only screen and (max-width: 850px) {
     flex-direction: column;
-    width: 85%;
+    width: 70%;
   }
 
   @media only screen and (max-width: 500px) {
-    width: 90%;
+    width: 85%;
   }
 `;
 

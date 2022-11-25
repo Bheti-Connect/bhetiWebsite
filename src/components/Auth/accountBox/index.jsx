@@ -14,7 +14,7 @@ const BoxContainer = styled.div`
   min-height: 600px;
   display: flex;
   flex-direction: column;
-  border-radius: 19px;
+  border-radius: 49px;
   background-color: #fff;
   box-shadow: 0 0 2px rgba(15, 15, 15, 0.28);
   overflow: hidden;
@@ -35,6 +35,21 @@ const BoxContainer = styled.div`
                     visibility: visible;
                 }
             }
+    @media only screen and (max-width: 2560px) and (min-width: 1800px){
+
+    }
+    @media only screen and (max-width: 1800px){
+        width: 600px;
+    }
+    @media only screen and (max-width: 1024px){
+        
+    }
+    @media only screen and (max-width: 960px){
+        
+    }
+    @media only screen and (max-width: 768px) and (min-width: 468px){
+        
+    }
 `;
 
 const TopContainer = styled.div`
@@ -61,7 +76,7 @@ const BackDrop = styled(motion.div)`
   background: linear-gradient(90deg, 
   rgba(36,0,0,1) 0%, 
   rgba(84,16,40,0.7259278711484594) 24%, 
-  rgba(84,16,16,1) 71%);
+  rgba(84,16,16,1) 40%);
 `;
 
 const HeaderContainer = styled.div`
@@ -97,15 +112,15 @@ const InnerContainer = styled.div`
 
 const backdropVariants = {
   expanded: {
-    width: "233%",
+    width: "150%",
     height: "1050px",
     borderRadius: "20%",
     transform: "rotate(60deg)",
   },
   collapsed: {
-    width: "160%",
-    height: "550px",
-    borderRadius: "50%",
+    width: "75%",
+    height: "500px",
+    borderRadius: "16%",
     transform: "rotate(60deg)",
   },
 };

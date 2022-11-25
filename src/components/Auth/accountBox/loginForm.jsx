@@ -1,5 +1,6 @@
 import React, { useContext, useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
+import Lines from "./Lines";
 
 import options from "../../../data/options";
 import {
@@ -65,6 +66,7 @@ export const LoginForm = (props) => {
             name= {'Connexion avec'}
           />
         </a>
+        <Lines />
         <FormContainer>
           <Input 
             type="email" 
