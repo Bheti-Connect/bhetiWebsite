@@ -5,9 +5,11 @@ import UneMedia from '../../assets/icons/a_la_une_media.svg';
 import VideoMedia from '../../assets/icons/Video_media.svg';
 import {useTheme} from '../../context/themeContext';
 import Search from './Search';
+import CardMediaModal from './CardMediaModal';
 import CardsMedia from './CardsMedia';
 import LoaderMedia from './LoaderMedia';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 
 const Media = () => {
   const [currentPage, setCurrentPage] = useState(0);
@@ -21,12 +23,11 @@ const Media = () => {
   // cards data
   const [data, setData] = useState([])
   // Modal
-  //const [modal, setModal] = useState(false)
+  const [modal, setModal] = useState(false)
   // Loading : React content loader
   const [loading, setLoading] = useState(true)
-  // Position change pagination : Tous, Startup, pme
-  const [paginationSelect, setPaginationSelect] = useState("tous")
-  const [positionTrie, setPositionTrie] = useState("")
+  // Position change pagination : Tout and success stories
+  const [paginationSelect, setPaginationSelect] = useState("tout")
 
   // theme
   const theme = useTheme();
@@ -50,38 +51,12 @@ const Media = () => {
   
 
   // Change Section of data : Tout et Success stories
-  const changeSectionMenu = (position) => {
-
-    let source = "https://bheti-connect.smirltech.com/api/entrevues";
-
-    if (position == "success")
-    {
-      //let pmeFilter = {filters: [{field: 'type', value: 'pme'}]}
-
-      axios.get(source).then(res => {
-        handleSetData(res.data)
-      }).catch((error) => console.log(error))
-
-      setPaginationSelect("success")
-
-    }else{
-      getData()
-      setPaginationSelect("tout")
-    }
+  const handleActualise = () => {
+    getData()
+    setPaginationSelect("tout")
   }
 
-  // handle menu : tous, startup and PME for CSS
-  const handleMenu = (e) => {
-    let activeBtn = document.querySelector(".menuSection .active");
-    let valid = e.target.tagName.toLowerCase()
 
-    if(!e.target.classList.contains("active") && valid == "li")
-    {
-      activeBtn.classList.remove("active")
-      e.target.classList.add("active")
-    }
-
-  }
 
   // Search data from API
   const searchData = () => {
@@ -113,12 +88,7 @@ const Media = () => {
     let source = ""
     let request = ""
 
-    if(paginationSelect == "success")
-    {
-      source = `https://bheti-connect.smirltech.com/api/entrevues?page=${pageNumber}`
-      //request = {filters: [{field: 'type', value: 'pme'}]}
-
-    }else if (paginationSelect == "query"){
+    if (paginationSelect == "query"){
       source = `https://bheti-connect.smirltech.com/api/entrevues?page=${pageNumber}`
       /*request = {
         "search": {
@@ -149,7 +119,7 @@ const Media = () => {
 
   // display items
   let displayItems = data.map((item, index) => {
-    return <CardsMedia key={index} item={item} setSelect={setSelect} />
+    return <CardsMedia key={index} item={item} setSelect={setSelect} setModal={setModal}/>
   })
 
   // First UseEffect
@@ -159,7 +129,7 @@ const Media = () => {
     }, 4000);
 
     getData()
-    changeSectionMenu()
+    handleActualise()
 
     return () => {
       clearTimeout(waiting)
@@ -274,11 +244,11 @@ const Media = () => {
                 <div className='Box'>
 
                     {/* Section menu */}
-                    <ul className='menuSection' onClick={handleMenu}>
+                    <ul className='menuSection'>
                         {/* tout */}
-                        <li className='active' onClick={() => changeSectionMenu("tout")}>Tout</li>
+                        <li className='active' onClick={() => handleActualise()}>Tout</li>
                         {/* success stories */}
-                        <li onClick={() => changeSectionMenu("success")}>Les success stories</li>
+                        <li><Link to={'/success-stories'}>Les success stories</Link></li>
                     </ul>
 
                     {/* Filter and search */}
@@ -290,9 +260,11 @@ const Media = () => {
 
             <AllCards>
 
-            {
-              loading ? (<LoaderMedia count={15}/>) : (displayItems)
-            }
+              <div className='container-all-cards'>
+                {
+                  loading ? (<LoaderMedia count={15}/>) : (displayItems)
+                }
+              </div>
 
             </AllCards>
 
@@ -316,9 +288,9 @@ const Media = () => {
 
           </AllMedia>
 
-          {/*
-              modal && <CardModal select={select} setModal={setModal}/>
-          */}
+          {
+              modal && <CardMediaModal select={select} setModal={setModal}/>
+          }
 
         </SectionEcouteVoir>
 
@@ -330,15 +302,18 @@ const Media = () => {
 // Style CSS
 
 const AllMedia = styled.div`
+margin: auto;
+
 
 .containerClassName {
   display: flex;
   flex-wrap: wrap;
   list-style: none;
-  justify-content: center;
+  justify-content: right;
   align-items:center;
   user-select: none;
-  font-size: 13px;
+  font-size: 10px;
+  margin-right: 50px;
 }
 
 .containerClassName li {
@@ -359,6 +334,11 @@ const AllMedia = styled.div`
 
   a{
     color:white;
+    margin:auto;
+
+    &:hover{
+      color:white;
+    }
   }
 }
 
@@ -393,6 +373,7 @@ const AllMedia = styled.div`
   background-color: ${props => props.theme.colorBheti};
   color: white;
   border-radius: 50px;
+  padding: 4px 7px;
 }
 
 .disabledClassName{
@@ -406,11 +387,15 @@ const AllMedia = styled.div`
 `;
 
 const AllCards = styled.div`
-
-display: flex;
 width: 100%;
-justify-content: space-evenly;
-flex-wrap: wrap;
+
+.container-all-cards{
+  justify-content: space-around;
+  flex-wrap: wrap;
+  display: flex;
+  width:80%;
+  margin:auto;
+}
 
 `;
 
@@ -568,14 +553,14 @@ const SectionEcouteVoir = styled.div`
     margin-bottom:-5px;
 }
 
-.menuSection li {
+.menuSection li, a {
   margin-right: 20px;
   padding-bottom: 5px;
   text-transform: uppercase;
   cursor: pointer;
   font-family: 'Inter', sans-serif;
   font-weight: 600;
-  font-size: 20px;
+  font-size: 15px;
   font-style: normal;
 
   &:hover{
@@ -585,7 +570,8 @@ const SectionEcouteVoir = styled.div`
 }
 
 .containerMenu{
-    margin-top: 30px;
+    width:900px;
+    margin: 30px auto;
 }
 
 .containerMenu .Box{

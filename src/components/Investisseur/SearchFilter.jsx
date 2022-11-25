@@ -1,11 +1,17 @@
-import React, {useRef} from 'react';
+import React, {useRef, useState} from 'react';
 import styled from 'styled-components';
 import {GoSearch} from 'react-icons/go';
 import { useTheme } from '../../context/themeContext';
+import Select from 'react-select';
+
 
 const SearchFilter = ({setQuery, setTrie}) => {
 
-  const trieValue = ["Trier par ...", "Recent", "Ancien"]
+  const options = [
+    { value: 'Recent', label: 'Recent' },
+    { value: 'Ancien', label: 'Ancien' },
+  ]
+
   const valueSearch = useRef(null);
   const theme = useTheme();
 
@@ -15,9 +21,12 @@ const SearchFilter = ({setQuery, setTrie}) => {
     setQuery(valueSearch.current.value)
   }
   // Handle trie
-  const handleTrie = (e) => {
-    setTrie(trieValue[e.target.value]);
+  const handleChange = (selectedOption) => {
+    
+    setTrie(selectedOption.value);
+
   }
+
 
   return (
     <SearchBox>
@@ -25,7 +34,7 @@ const SearchFilter = ({setQuery, setTrie}) => {
       <ContainerSearch theme={theme}>
         <form onSubmit={handleQuery}>
           <button type='submit' className="btn-search"><GoSearch /></button>
-          <input ref={valueSearch} type="text" className="input-search" placeholder="Votre recherche ..."></input>
+          <input ref={valueSearch} type="text" className="input-search" placeholder="Recherche..."></input>
         </form>
       </ContainerSearch>
 
@@ -33,14 +42,21 @@ const SearchFilter = ({setQuery, setTrie}) => {
       {/* Filter */}
       <ContainerFilter theme={theme}>
         <div className='filter'>
-        <label htmlFor="trie-select"></label>
-          <select name='trie' id='trie-select' onClick={handleTrie}>
-          {
-            trieValue.map((item, index) => {
-              return <option key={index} value={index}>{item}</option>
-            })
-          }
-          </select>
+
+        <Select
+          placeholder={"Trier par..."}
+          onChange={handleChange}
+          options={options}
+          className='select'
+          isSearchable={false}
+        />
+
+
+
+
+
+
+
         </div>
       </ContainerFilter>
     </SearchBox>
@@ -107,6 +123,47 @@ color: ${props => props.theme.colorBheti};
 background-color: transparent;
 }
 
+@media only screen and (max-width: 768px) {
+  margin-right:15px;
+
+  .btn-search{
+    font-size: 20px;
+  }
+
+  .input-search:focus{
+    width: 120px;
+  }
+
+  .btn-search:focus ~ .input-search{
+    width: 120px;
+  }
+
+  .input-search::placeholder{
+    font-size: 10px;
+  }
+
+}
+
+@media only screen and (max-width: 645px) {
+
+  .btn-search{
+    font-size: 18px;
+  }
+
+  .input-search:focus{
+    width: 120px;
+  }
+
+  .btn-search:focus ~ .input-search{
+    width: 120px;
+  }
+
+  .input-search::placeholder{
+    font-size: 8px;
+  }
+
+}
+
 `;
 
 const ContainerFilter = styled.div`
@@ -115,22 +172,23 @@ const ContainerFilter = styled.div`
       right: 34px;
 
       .filter{
-
-        #trie-select{
-          border: none;
-          border-radius: 2px;
-          padding: 5px 0;
-          background-color: ${(props) => props.theme.colorBg};
-          cursor: pointer;
-          font-weight: 600;
-          color: ${(props) => props.theme.colorBheti};
-          font-size: 14px;
-
-          &:focus {
-            outline: none;
-          }
+        width: 80%;
+        
+        .select{
+          top:-8px;
+          font-size: 13px;
+          color: ${props => props.theme.colorBheti};
         }
+        .select > div{
+          width: 150%;
+          font-weight: 600;
+          background: #F0F3F4;
+          border:none;
+          box-shadow: none;
+        }
+
       }
+
 `;
 
 

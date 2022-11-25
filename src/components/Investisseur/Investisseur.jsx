@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { useNavigate } from "react-router-dom";
 import styled from 'styled-components';
 //import NavBar from '../NavBar';
 import { useTheme } from '../../context/themeContext';
@@ -9,6 +10,9 @@ import Cards from './Cards';
 import axios from 'axios';
 import CardModal from './CardModal';
 import LoaderReact from './LoaderReact';
+//import iconBheti from "../../assets/icons/icon_bheti_design.png";
+
+import Swal from 'sweetalert2';
 
 const Investisseur = () => {
   // useState of pagination
@@ -33,6 +37,37 @@ const Investisseur = () => {
     // Position change pagination : Tous, Startup, pme
     const [paginationSelect, setPaginationSelect] = useState("tous")
     const [positionTrie, setPositionTrie] = useState("")
+
+    // redirection
+    const navigate = useNavigate()
+
+// *******************************************************************************************
+
+    // Test connexion Investisseur
+    const [connect, setConnect] = useState(false)
+
+// *******************************************************************************************
+
+    //Ask to connect
+    const handleConnect = () => {
+  
+      Swal.fire({
+        title: "Se connecter",
+        text: `Pour une meilleure experience sur la platforme, veuillez vous connecter ou procéder à la création de votre compte si ce n'est pas encore fait.`,
+        icon: 'info',
+        showCloseButton: true,
+        iconColor: '#700b0b',
+        confirmButtonText: 'Se connecter',
+        confirmButtonColor: "#4BB543",
+        confirmButtonAriaLabel: "sans-serif",
+      }).then((result) => {
+        if (result.isConfirmed)
+        {
+          navigate("/connexion")
+        }
+      })
+
+    }
 
     // handle for receive data and set in useState
     const handleSetData = (response) => {
@@ -91,7 +126,6 @@ const Investisseur = () => {
           activeBtn.classList.remove("active")
           e.target.classList.add("active")
         }
-
     }
 
     // Search data from API
@@ -232,12 +266,19 @@ const Investisseur = () => {
 
     // First UseEffect
     useEffect(() => {
-      const waiting = setTimeout(() => {
+      let waiting = setTimeout(() => {
         setLoading(false)
       }, 4000);
 
       getData()
       changeSectionMenu()
+
+      if (connect == false)
+      {
+        waiting = setTimeout(() => {
+          handleConnect()
+        }, 10000)
+      }
 
       return () => {
         clearTimeout(waiting)
@@ -328,7 +369,7 @@ const Investisseur = () => {
             </AllProject>
 
             {
-              modal && <CardModal select={select} setModal={setModal}/>
+              modal && <CardModal select={select} setModal={setModal} connect={connect}/>
             }
 
 
@@ -338,15 +379,19 @@ const Investisseur = () => {
 
 // Style CSS with styled component
 
+
 const InvestisseurStyled = styled.section`
+
+/*background : no-repeat center/80% url("../../assets/icons/icon_bheti_design.png") ;*/
 
 
 `;
 
 const AllCards = styled.div`
 display: flex;
-width: 100%;
-justify-content: space-evenly;
+width: 89%;
+justify-content: left;
+margin:auto;
 flex-wrap: wrap;
 `;
 
@@ -421,16 +466,51 @@ const AllProject = styled.div`
 }
 
 
+
+@media only screen and (max-width: 768px) {
+
+  .containerClassName {
+    font-size: 12px;
+  }
+
+  .previousLinkClassName{
+    font-size: 15px;
+  }
+
+  .nextLinkClassName{
+    font-size: 15px;
+  }
+
+
+}
+
+@media only screen and (max-width: 578px) {
+
+  .containerClassName {
+    font-size: 10px;
+  }
+
+  .previousLinkClassName{
+    font-size: 13px;
+  }
+
+  .nextLinkClassName{
+    font-size: 13px;
+  }
+
+}
+
+
 `;
 
 const HeaderText = styled.div`
+
+
 margin: 55px;
 
 h3 {
-  
   font-size: 25px;
   color: ${props => props.theme.colorPrimary};
-  
 }
 
 p {
@@ -484,6 +564,32 @@ p {
 
 .active {
     border-bottom: 2px solid ${props => props.theme.colorBheti};
+}
+
+@media only screen and (max-width: 768px) {
+  h3{
+    font-size: 20px;
+  }
+
+  p {
+  font-size: 10px;
+  }
+
+  .menuSection li {
+  padding-bottom: 10px;
+  font-size: 15px;
+  }
+
+}
+
+@media only screen and (max-width: 578px) {
+
+  margin: 40px;
+
+  .containerMenu .Box{
+    flex-direction: column;
+}
+
 }
 
 `;
