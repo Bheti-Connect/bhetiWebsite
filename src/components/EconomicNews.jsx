@@ -21,7 +21,6 @@ const EconomicNews = () => {
                     </p>
                     <a className='bouton'>
                     <Button 
-
                         name={"Je m'informe"}
                         icon={'fas fa-chevron-right'}
                         arrow={'arrow'}
@@ -107,6 +106,9 @@ const EconomicNewsStyled = styled.section`
                 margin-left: -30px;
                 @media only screen and (max-width: 768px) {
                     margin-left: 80px;
+                }
+                @media only screen and (max-width: 425px) {
+                    margin-left: 0px;
                 }
             }
             @media only screen and (max-width: 425px) {

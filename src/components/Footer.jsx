@@ -240,8 +240,15 @@ const FooterSectionStyled = styled.footer`
         @media only screen and (max-width: 1250px) and (min-width: 1024px){
             width: 900px;
         }
+        @media all and (max-width: 1024px) {
+            width: 680px;
+        }
         @media all and (max-width: 768px) {
             width: 600px;
+        }
+        @media all and (max-width: 500px) {
+            width: 350px;
+            margin-left: 50px;
         }
         @media all and (max-width: 425px) {
             width: 280px;

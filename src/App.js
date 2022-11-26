@@ -3,6 +3,7 @@ import { useTheme } from './context/themeContext';
 import { BrowserRouter as Router, Routes, Route} from 'react-router-dom'
 import Entrepreneur from './components/Entrepreneur/Entrepreneur';
 import Investisseur from './components/Investisseur/Investisseur';
+import ParentForm from './components/Forms/ParentForm';
 import {AccountBox} from './components/Auth/accountBox';
 import EvaluerEligibilite from './components/Forms/EvaluerEligibilite';
 import Home from './components/Home';
@@ -10,6 +11,8 @@ import Footer from './components/Footer';
 import NavBar from './components/NavBar';
 
 import Media from './components/Media/Media';
+import FormOne from './components/Forms/NewForms/FormOne/FormOne';
+import FormTwo from './components/Forms/NewForms/FormTwo/FormTwo';
 import FormInvestisseur from './components/Investisseur/form/FormInvestisseur';
 import SuccessStories from './components/Media/SuccessStories/SuccessStories';
 
@@ -29,6 +32,10 @@ const App = () => {
             <Route path='investisseur' element={<Investisseur />} />
             <Route path='media' element={<Media />} />
             <Route path='connexion' element={<AccountBox />} />
+            {/* <Route path='evaluer-eligibilite' element={<EvaluerEligibilite />} /> */}
+            <Route path='formulaire' element={<ParentForm />} />
+            <Route path='pitch-deck' element={<FormOne />} />
+            <Route path='evaluer-eligibilite' element={<FormTwo />} />
             <Route path='evaluer-eligibilite' element={<EvaluerEligibilite />} />
 
 
