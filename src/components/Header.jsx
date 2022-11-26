@@ -3,6 +3,7 @@ import { useTheme } from '../context/themeContext';
 import premiereImg from '../assets/images/ent-img1.jpg';
 import deuxiemeImg from '../assets/images/ent-img4-2.jpg';
 import Button from './Button';
+import { Link } from 'react-router-dom';
 // import { devices } from '../data/Responsive';
 
 const Header = () => {
@@ -18,14 +19,14 @@ const Header = () => {
                     <p>
                         Bheti Connect est la platforme numéro une qui réunnis les entrepreneurs et investisseurs en Afrique francophone.
                     </p>
-                    <a href='https://airtable.com/shrr2JCtuBUkjXoKz' className='button-demo'>
+                    <Link to='https://airtable.com/shrr2JCtuBUkjXoKz' className='button-demo'>
                         <Button 
                             name={'Je réserve une demo'}
                             icon={'fas fa-chevron-right'}
                             arrow={'arrow'}
                             blob={'blob'}
                         />
-                    </a>
+                    </Link>
                 </div>
                 <div className='box right-h-content'>
                     <img className='h-img-1' src={premiereImg} alt='image-1' />

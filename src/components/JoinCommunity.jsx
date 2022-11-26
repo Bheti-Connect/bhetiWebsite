@@ -3,6 +3,7 @@ import Button from './Button';
 import { useTheme } from '../context/themeContext';
 import Title from './Title';
 import mediaImg from '../assets/images/mediaImage.gif'
+import { Link } from 'react-router-dom';
 
 const JoinCommunity = () => {
     const theme = useTheme();
@@ -28,14 +29,14 @@ const JoinCommunity = () => {
                         </h4>
                         <h6>Prenez votre Tablette, Smartphone, Desktop ou Laptop</h6>
                         <p>Sur les applications LinkedIn, Instagram et Facebook. Réjoignez rapidement la communauté pour être au coeur de l'actualité économique en Afrique !</p>
-                        <a className='anchor-tag' href='https://www.linkedin.com/company/bheti-connect'>
+                        <Link className='anchor-tag' to='https://www.linkedin.com/company/bheti-connect'>
                             <Button 
                                 name={'JE REJOINS DÈS MAINTENANT'}
                                 icon={'fas fa-chevron-right'}
                                 arrow={'arrow'}
                                 blob={'blob'}
                             />
-                        </a>
+                        </Link>
                     </div>
                 </div>
             </div>
@@ -172,7 +173,7 @@ const JoinCommunityStyled = styled.section`
                     color: ${props => props.theme.colorGrey4};
                     padding-bottom: 1.5rem;
                 }
-                a{
+                .anchor-tag{
                     margin-left: 25%;
                     @media only screen and (max-width: 425px) and (min-width: 320px){
                         margin-left: -15%;

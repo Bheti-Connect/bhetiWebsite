@@ -44,14 +44,14 @@ const NavBar = () => {
                             >
                                 Investisseur
                             </NavLink>
-                            <a href='https://bheticonnect.super.site/'>
-                                <NavLink
-                                    to='media'
-                                    className={({ isActive }) => (isActive ? 'link active' : 'link')}
-                                >
-                                    Média 
-                                </NavLink>
-                            </a>
+
+                            <NavLink
+                                to='media'
+                                className={({ isActive }) => (isActive ? 'link active' : 'link')}
+                            >
+                                Média 
+                            </NavLink>
+                        
                             <NavLink
                                 to='/connexion'
                                 className={({ isActive }) => (isActive ? 'link active' : 'link')}
