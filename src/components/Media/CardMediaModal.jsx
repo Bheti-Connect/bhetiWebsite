@@ -18,12 +18,19 @@ const CardMediaModal = ({select, setModal}) => {
     setModal(false);
   }
 
+  const closeModal = (tag) => {
+    if (tag.classList.contains("close"))
+    {
+      handleModal();
+    }
+  }
+
 
   return (
-    <Container>
-        <div id="open-modal" className="modal-window">
+    <Container onClick={(e) => closeModal(e.target)}>
+        <div id="open-modal" className="modal-window close">
             <div>
-                <div onClick={handleModal} className="modal-close"><FontAwesomeIcon icon={faXmark} size="lg"/></div>
+                <div onClick={(e) => closeModal(e.target)} className="modal-close"><FontAwesomeIcon className="close" icon={faXmark} size="lg"/></div>
                 <Header>
                   <p>{select.poste}</p>
                 </Header>
