@@ -21,6 +21,13 @@ const CardModal = ({select, setModal, connect}) => {
     setModal(false);
   }
 
+  const closeModal = (tag) => {
+    if (tag.classList.contains("close"))
+    {
+      handleModal()
+    }
+  }
+
   const handleFlouter = () => {
     let  flouter = document.querySelectorAll(".cible-flouter")
 
@@ -52,10 +59,10 @@ const CardModal = ({select, setModal, connect}) => {
 
 
   return (
-    <Container >
-        <div id="open-modal" className="modal-window" >
+    <Container onClick={(e) => closeModal(e.target)}>
+        <div id="open-modal" className="modal-window close" >
             <div>
-                <div onClick={handleModal} className="modal-close"><FontAwesomeIcon icon={faXmark} size="lg"/></div>
+                <div onClick={(e) => closeModal(e.target)} className="modal-close"><FontAwesomeIcon className="close" icon={faXmark} size="lg"/></div>
                 <Header>
                   <p>Projet {select.nom}</p>
                   <ul>
