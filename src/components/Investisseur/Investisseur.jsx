@@ -393,6 +393,14 @@ width: 89%;
 justify-content: left;
 margin:auto;
 flex-wrap: wrap;
+@media only screen and (max-width: 900px) {
+  width: 86%;
+}
+
+@media only screen and (max-width: 415px) {
+  width: 68%;
+}
+
 `;
 
 const AllProject = styled.div`
@@ -464,6 +472,8 @@ const AllProject = styled.div`
 .disabledClassName{
 
 }
+
+
 
 
 

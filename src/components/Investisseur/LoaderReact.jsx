@@ -10,8 +10,9 @@ function LoaderReact({count}) {
 
          <ContentLoader
           speed={2}
-          width={250}
-          height={300}
+          width = {250}
+          className="loader"
+          height = {300}
           viewBox="0 150 539 800"
           backgroundColor="#d6d6d6"
           foregroundColor="#ffffff">
@@ -31,6 +32,7 @@ function LoaderReact({count}) {
 
 const Container = styled.div`
 margin: auto;
+
 `
 
 export default LoaderReact;

@@ -61,6 +61,11 @@ cursor: pointer;
   
 }
 
+@media only screen and (max-width: 900px) {
+  width: 215px;
+  height: 325px;
+}
+
 @media only screen and (max-width: 768px) {
   width: 215px;
   height: 310px;
@@ -70,6 +75,21 @@ cursor: pointer;
   width: 195px;
   height: 275px;
 
+}
+
+@media only screen and (max-width: 508px) {
+  width: 190px;
+
+}
+
+@media only screen and (max-width: 428px) {
+  width: 160px;
+  height: 275px;
+}
+
+@media only screen and (max-width: 415px) {
+  width: 250px;
+  height: 300px;
 }
 
 `
@@ -131,12 +151,12 @@ ul li {
 @media only screen and (max-width: 768px) {
   h3{
     font-size: 12px;
-    margin-bottom: 5px;
+    margin-bottom: 13px;
   }
 
   ul{
-    font-size: 10px;
-    margin-top: 5px;
+    font-size: 12px;
+    margin-top: 10px;
   }
 
   .country {
@@ -151,7 +171,7 @@ ul li {
 @media only screen and (max-width: 578px) {
 
 h3{
-  font-size: 10px;
+  font-size: 15px;
   margin-bottom: 5px;
 }
 
@@ -168,6 +188,35 @@ ul{
   font-size: 10px;
 }
 
+}
+
+@media only screen and (max-width: 415px) {
+  h3{
+  font-size: 15px;
+  margin-bottom: 13px;
+}
+
+ul{
+  font-size: 12px;
+  margin-top: 10px;
+}
+
+ul li {
+  margin-right:8px;
+}
+
+.boxPriceCountry{
+  margin-top: 8px;
+}
+
+.country {
+  margin-top: 8px;
+  font-size: 12px;
+}
+
+.price{
+  font-size: 12px;
+}
 }
 
 `;

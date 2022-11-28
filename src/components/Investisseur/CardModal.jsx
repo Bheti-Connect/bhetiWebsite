@@ -192,7 +192,36 @@ font-size: 16px;
     font-weight: 600;
     font-family: 'Inter', sans-serif;
   }
-`
+
+
+
+  @media only screen and (max-width: 712px){
+    .modal-window {
+    & > div {
+      width: 600px;
+      height: 650px;
+    }
+    }
+  }
+
+  @media only screen and (max-width: 600px){
+    .modal-window {
+    & > div {
+      width: 500px;
+      height: 650px;
+    }
+    }
+  }
+
+  @media only screen and (max-width: 500px){
+    .modal-window {
+    & > div {
+      width: 400px;
+      height: 650px;
+    }
+    }
+  }
+`;
 
 const Header = styled.div`
 
@@ -277,6 +306,17 @@ text-align: justify;
     transform: translate3d(0, 1px, 0);
   }
 }
+
+@media only screen and (max-width: 500px){
+  .project-detail {
+  display: flex;
+  flex-direction: column;
+  img{
+    width: 325px;
+    margin: 10px auto;
+  }
+  }
+  }
 
 `;
 
