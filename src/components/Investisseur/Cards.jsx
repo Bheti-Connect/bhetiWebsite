@@ -15,7 +15,7 @@ const Cards = ({item, setSelect, setModal}) => {
 
 
   return (
-    <CardItem onClick={handleSelect(setSelect, setModal, item)} theme={theme}>
+    <CardItem onClick={() => handleSelect(setSelect, setModal, item)} theme={theme}>
           <CardHeader>
             <img src={source} alt='project'/>
           </CardHeader>
