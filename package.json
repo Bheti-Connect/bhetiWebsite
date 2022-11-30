@@ -20,8 +20,8 @@
     "react-router-dom": "^6.3.0",
     "react-select": "^5.6.1",
     "styled-components": "^5.3.5",
-    "yup": "^0.32.11",
-    "sweetalert2": "^11.6.8"
+    "sweetalert2": "^11.6.8",
+    "yup": "^0.32.11"
   },
   "scripts": {
     "start": "react-scripts start",
