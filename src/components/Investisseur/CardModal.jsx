@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faXmark } from '@fortawesome/free-solid-svg-icons';
 import { useTheme } from '../../context/themeContext';
 import { Link } from 'react-router-dom';
+import { closeModal } from '../../utils/FunctionsComponent';
 
 const CardModal = ({select, setModal, connect}) => {
   const theme = useTheme();
@@ -14,19 +15,6 @@ const CardModal = ({select, setModal, connect}) => {
   // Generate image
   let source = "https://" + `picsum.photos/id/${Math.floor(Math.random() * 200)}/200/300`;
 
-  // handle disable modal
-  const handleModal = () => {
-    const body = document.querySelector("body");
-    body.style.overflow = "auto";
-    setModal(false);
-  }
-
-  const closeModal = (tag) => {
-    if (tag.classList.contains("close"))
-    {
-      handleModal()
-    }
-  }
 
   const handleFlouter = () => {
     let  flouter = document.querySelectorAll(".cible-flouter")
@@ -59,10 +47,10 @@ const CardModal = ({select, setModal, connect}) => {
 
 
   return (
-    <Container onClick={(e) => closeModal(e.target)}>
+    <Container onClick={(e) => closeModal(e.target, setModal)}>
         <div id="open-modal" className="modal-window close" >
             <div>
-                <div onClick={(e) => closeModal(e.target)} className="modal-close"><FontAwesomeIcon className="close" icon={faXmark} size="lg"/></div>
+                <div onClick={(e) => closeModal(e.target, setModal)} className="modal-close"><FontAwesomeIcon className="close" icon={faXmark} size="lg"/></div>
                 <Header>
                   <p>Projet {select.nom}</p>
                   <ul>

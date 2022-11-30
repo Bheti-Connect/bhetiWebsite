@@ -11,7 +11,6 @@ import axios from 'axios';
 import CardModal from './CardModal';
 import LoaderReact from './LoaderReact';
 //import iconBheti from "../../assets/icons/icon_bheti_design.png";
-
 import Swal from 'sweetalert2';
 
 const Investisseur = () => {
@@ -266,6 +265,7 @@ const Investisseur = () => {
 
     // First UseEffect
     useEffect(() => {
+
       let waiting = setTimeout(() => {
         setLoading(false)
       }, 4000);

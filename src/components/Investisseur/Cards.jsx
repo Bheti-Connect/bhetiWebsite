@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { useTheme } from '../../context/themeContext';
+import { handleSelect } from '../../utils/FunctionsComponent';
 
 const Cards = ({item, setSelect, setModal}) => {
 
@@ -13,17 +14,8 @@ const Cards = ({item, setSelect, setModal}) => {
   let source = "https://" + `picsum.photos/id/${Math.floor(Math.random() * 200)}/200/300`;
 
 
-  const handleSelect = () => {
-    const body = document.querySelector("body");
-    body.style.overflow = "hidden";
-    setSelect(item)
-    setModal(true)
-  }
-
-
-
   return (
-    <CardItem onClick={handleSelect} theme={theme}>
+    <CardItem onClick={handleSelect(setSelect, setModal, item)} theme={theme}>
           <CardHeader>
             <img src={source} alt='project'/>
           </CardHeader>

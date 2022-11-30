@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faXmark } from '@fortawesome/free-solid-svg-icons';
 import { useTheme } from '../../context/themeContext';
+import { closeModal } from '../../utils/FunctionsComponent';
 
 const CardMediaModal = ({select, setModal}) => {
 
@@ -11,26 +12,13 @@ const CardMediaModal = ({select, setModal}) => {
   // Generate image
   let source = "https://" + `picsum.photos/id/${select.id}/200/300`;
 
-  // handle disable modal
-  const handleModal = () => {
-    const body = document.querySelector("body");
-    body.style.overflow = "auto";
-    setModal(false);
-  }
-
-  const closeModal = (tag) => {
-    if (tag.classList.contains("close"))
-    {
-      handleModal();
-    }
-  }
 
 
   return (
-    <Container onClick={(e) => closeModal(e.target)}>
+    <Container onClick={(e) => closeModal(e.target, setModal)}>
         <div id="open-modal" className="modal-window close">
             <div>
-                <div onClick={(e) => closeModal(e.target)} className="modal-close"><FontAwesomeIcon className="close" icon={faXmark} size="lg"/></div>
+                <div onClick={(e) => closeModal(e.target, setModal)} className="modal-close"><FontAwesomeIcon className="close" icon={faXmark} size="lg"/></div>
                 <Header>
                   <p>{select.poste}</p>
                 </Header>
