@@ -15,7 +15,7 @@ const Media = () => {
   const [currentPage, setCurrentPage] = useState(0);
   const [itemsPerPage, setItemsPerPage] = useState(0);
   const [totalPage, setTotalPage] = useState(0)
-  const [initPage, setInitPage] = useState(0)
+  const [initPage, setInitPage] = useState(-1)
   // query useState for search
   const [query, setQuery] = useState("")
   // select card useState
@@ -165,7 +165,7 @@ const Media = () => {
           <div className='head-text'>
 
             <div className='icon-media'>
-              <img src={UneMedia} alt="a la une icon" />
+              <img src={UneMedia} alt="a la une icon"/>
             </div>
 
             <div>
@@ -177,12 +177,12 @@ const Media = () => {
 
             <div className='cards-une'>
 
-            <div className='card-1'>1</div>
+              <div className='card-1'>1</div>
 
-            <div className='sub-card'>
-              <div className='card-2'>2</div>
-              <div className='card-3'>3</div>
-            </div>
+              <div className='sub-card'>
+                <div className='card-2'>2</div>
+                <div className='card-3'>3</div>
+              </div>
 
             </div>
 

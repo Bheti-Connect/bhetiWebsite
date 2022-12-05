@@ -18,7 +18,7 @@ const Investisseur = () => {
     const [currentPage, setCurrentPage] = useState(0);
     const [itemsPerPage, setItemsPerPage] = useState(0);
     const [totalPage, setTotalPage] = useState(0)
-    const [initPage, setInitPage] = useState(0)
+    const [initPage, setInitPage] = useState(-1)
     // query useState for search
     const [query, setQuery] = useState("")
     // select card useState
