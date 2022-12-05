@@ -339,6 +339,12 @@ p{
 
       @media only screen and (max-width: 590px) {
         width: 80%;
+
+        .row{
+          .input-field{
+            
+          }
+        }
       }
 
 

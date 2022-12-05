@@ -1,4 +1,5 @@
-import React from 'react';
+import axios from 'axios';
+import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import { useTheme } from '../../context/themeContext';
 import { handleSelect } from '../../utils/FunctionsComponent';
@@ -6,18 +7,30 @@ import { handleSelect } from '../../utils/FunctionsComponent';
 const Cards = ({item, setSelect, setModal}) => {
 
   const theme = useTheme()
+  const [imgProject, setImgProject] = useState(null)
 
   // Format currency Euro
   let currencyEuro = new Intl.NumberFormat('de-DE', { style : 'currency', currency: 'EUR'})
 
   // Generate image
-  let source = "https://" + `picsum.photos/id/${Math.floor(Math.random() * 200)}/200/300`;
+  const handleImage = () => {
+    let source = "https://" + `picsum.photos/id/${Math.floor(Math.random() * 200)}/200/300`;
+    axios.get(source).then((res) => {
+      setImgProject(source)
+    }).catch((error) => {
+      setImgProject("https://picsum.photos/id/2/200/300")
+    })
+  }
+
+  useEffect(() => {
+    handleImage()
+  },[item])
 
 
   return (
     <CardItem onClick={() => handleSelect(setSelect, setModal, item)} theme={theme}>
           <CardHeader>
-            <img src={source} alt='project'/>
+            <img src={imgProject} alt='project'/>
           </CardHeader>
 
           <CardBody>

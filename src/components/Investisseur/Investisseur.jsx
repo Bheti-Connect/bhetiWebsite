@@ -92,7 +92,7 @@ const Investisseur = () => {
 
       if (position == "pme")
       {
-        let pmeFilter = {filters: [{field: 'type', value: 'pme'}]}
+        let pmeFilter = {filters: [{field: 'company_type', value: 'pme'}]}
 
         axios.post(source, pmeFilter).then(res => {
           handleSetData(res.data)
@@ -102,7 +102,7 @@ const Investisseur = () => {
 
       }else if(position == "startup")
       {
-        let startupFilter = {filters: [{field: 'type', value: 'startup'}]}
+        let startupFilter = {filters: [{field: 'company_type', value: 'startup'}]}
 
         axios.post(source, startupFilter).then(res => {
           handleSetData(res.data)
