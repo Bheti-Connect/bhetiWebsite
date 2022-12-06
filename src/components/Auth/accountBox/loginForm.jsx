@@ -1,5 +1,5 @@
 import React, { useContext, useState, useEffect } from "react";
-import { useHistory } from "react-router-dom";
+import { useHistory, useLocation } from "react-router-dom";
 import Lines from "./Lines";
 
 import options from "../../../data/options";
@@ -22,9 +22,11 @@ export const LoginForm = (props) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
+  const location = useLocation();
+
   useEffect(() => {
     if (localStorage.getItem('user-info')) {
-        history.push("/add")
+      window.location.replace('http://localhost:3002');
     }
   }, []);
 
@@ -47,15 +49,16 @@ export const LoginForm = (props) => {
   let item = { email, password}
 
   const HandleLogin = async () => {
-    const result = await fetch(url, {
+    let result = await fetch(url, {
         method: "POST",
         headers,
         body: JSON.stringify(item),
     }).then(response => response.json());
     console.warn(email, password)
-    result = await result.json();
-    localStorage.setItem("user-info",json.stringify(result))
-    history.push("/add")
+    if(result.success) {
+      localStorage.setItem("user-info",JSON.stringify(result))
+      window.location.replace(`http://localhost:3002?name=${result.data.name}&email=${result.data.email}`);
+    }
   }
 
   return (

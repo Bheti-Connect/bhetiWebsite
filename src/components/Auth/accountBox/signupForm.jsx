@@ -16,43 +16,50 @@ export function SignupForm(props) {
 
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
+  const [password, setPassword] = useState('');
+  const [confirmPass, setConfirmPassword] = useState('');
   // const [name, setName] = useState("");
 
   const handleRegister = () => {
-      const url = new URL(
-        "https://bheti-connect.smirltech.com/api/register"
+    const url = new URL(
+      "https://bheti-connect.smirltech.com/api/register"
     );
-    
+
     const headers = {
-        "Content-Type": "application/json",
-        "Accept": "application/json",
+      "Content-Type": "application/json",
+      "Accept": "application/json",
     };
-    
+
     let body = {
-        "name": "znvgfczvacdfiwj",
-        "email": "carlos.welch@example.com",
-        "role": "blanditiis",
-        "password": "6UmFM}c%<R]Iq]$OQVk"
+      "name": name,
+      "email": email,
+      "role": "investisseur",
+      "password": password,
     };
-    
-    fetch(url, {
-        method: "POST",
-        headers,
-        body: JSON.stringify(body),
-    }).then(response => response.json());
-    
+
+    let response = fetch(url, {
+      method: "POST",
+      headers,
+      body: JSON.stringify(body),
+    }).then(response => response.json())
+      .then((data) => {
+        if (data.success) {
+          window.location.reload();
+        }
+      })
+
   }
 
   return (
     <BoxContainer>
       <FormContainer>
-        <Input type="text" placeholder="Nom Complet" />
-        <Input type="email" placeholder="Email" />
-        <Input type="password" placeholder="Mot de passe" />
-        <Input type="password" placeholder="Confirmez le mot de passe" />
+        <Input type="text" placeholder="Nom Complet" value={name} onChange={(e) => setName(e.target.value)} />
+        <Input type="email" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)} />
+        <Input type="password" placeholder="Mot de passe" value={password} onChange={(e) => setPassword(e.target.value)} />
+        <Input type="password" placeholder="Confirmez le mot de passe" value={confirmPass} onChange={(e) => setConfirmPassword(e.target.value)} />
       </FormContainer>
       <Marginer direction="vertical" margin={10} />
-      <SubmitButton 
+      <SubmitButton
         type="submit"
         onClick={handleRegister}
       >

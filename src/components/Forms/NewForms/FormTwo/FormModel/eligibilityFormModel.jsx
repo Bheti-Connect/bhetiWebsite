@@ -29,12 +29,12 @@ export default {
       requiredErrorMsg: 'Champ obligatoire'
     },
     countryOfActivity: {
-      name: 'countryOfActivity',
+      name: 'pays',
       label: 'Pays d’activité',
       requiredErrorMsg: 'Champ obligatoire'
     },
     amountRequested: {
-      name: 'amountRequested',
+      name: 'montant_voulu',
       label: 'Montant recherché',
       requiredErrorMsg: 'Champ obligatoire'
     },
@@ -50,7 +50,7 @@ export default {
       requiredErrorMsg: 'Champ obligatoire',
     },
     workingTime: {
-      name: 'workingTime',
+      name: 'travail_plein_temps',
       label: 'Travaillez-vous à temps plein qur ce projet ?',
       requiredErrorMsg: 'Champ obligatoire',
     },
@@ -60,28 +60,28 @@ export default {
       requiredErrorMsg: 'Champ obligatoire',
     },
     turnOver: {
-      name: 'turnOver',
+      name: 'chiffre_precedent',
       label: `Avez-vous déjà réalisé du chiffre d'affaires ?`,
       requiredErrorMsg: 'Champ obligatoire',
     },
     yourName: {
-      name: 'yourName',
+      name: 'nom',
       label: `Quel est votre nom ?`,
       requiredErrorMsg: 'Champ obligatoire',
     },
     yourEmail: {
-      name: 'yourEmail',
+      name: 'email',
       label: `Quelle est votre adresse e-mail ?`,
       requiredErrorMsg: 'Champ obligatoire',
     },
     sectorForActivity: {
-      name: 'sectorForActivity',
+      name: 'secteur_activite',
       label: `Quel secteur correspond le mieux à 
       votre activité ?`,
       requiredErrorMsg: 'Champ obligatoire',
     },
     presentation: {
-      name: 'presentation',
+      name: 'lien_presentation',
       label: `Ou joignez votre présentation en tant que lien`,
     }
   }
