@@ -46,6 +46,11 @@ const FormTwo = () => {
     // alert(JSON.stringify(values, null, 2));
     // console.log(values);
 
+    values = {
+      ...values,
+      travail_plein_temps: values.travail_plein_temps === 'true'
+    }
+
     const headers = {
       "Content-Type": "application/json",
       "Accept": "application/json",
