@@ -39,13 +39,13 @@ export default {
       requiredErrorMsg: 'Champ obligatoire'
     },
     investmentTime: {
-      name: 'investmentTime',
+      name: 'delai_financement',
       label: `Dans quel délais souhaitez-vous obtenir 
       votre investissement ?`,
       requiredErrorMsg: 'Champ obligatoire',
     },
     fundRaised: {
-      name: 'fundRaised',
+      name: 'financement_precedent',
       label: 'Avez-vous déjà levé des fonds ?',
       requiredErrorMsg: 'Champ obligatoire',
     },
@@ -55,7 +55,7 @@ export default {
       requiredErrorMsg: 'Champ obligatoire',
     },
     totalPeople: {
-      name: 'totalPeople',
+      name: 'equipe',
       label: 'Combien de personnes travaillent sur ce projet ?',
       requiredErrorMsg: 'Champ obligatoire',
     },
