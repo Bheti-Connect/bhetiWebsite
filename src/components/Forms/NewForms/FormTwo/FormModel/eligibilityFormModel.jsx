@@ -23,7 +23,7 @@ export default {
       requiredErrorMsg: 'Champ obligatoire',
     },
     sector: {
-      name: 'sector',
+      name: 'secteur_activite',
       label: `Quel secteur correspond le mieux à 
       votre activité ?`,
       requiredErrorMsg: 'Champ obligatoire'
