@@ -18,7 +18,7 @@ const Cards = ({item, setSelect, setModal}) => {
     axios.get(source).then((res) => {
       setImgProject(source)
     }).catch((error) => {
-      setImgProject("https://picsum.photos/id/2/200/300")
+      setImgProject("https://picsum.photos/id/10/200/300")
     })
   }
 
