@@ -40,7 +40,7 @@ const SuccessStories = () => {
 
   // GET data from API
   const getData = () => {
-    let source = "https://bheti-connect.smirltech.com/api/entrevues";
+    let source = "https://bheti-connect.smirltech.com/api/stories";
     axios.get(source).then(res => {
       handleSetData(res.data)
     }).catch((error) => console.log(error))
@@ -49,7 +49,7 @@ const SuccessStories = () => {
   // Search data from API
   const searchData = () => {
     // API : Search
-    let source = "https://bheti-connect.smirltech.com/api/entrevues"
+    let source = "https://bheti-connect.smirltech.com/api/stories"
     // Body POST
     let toSend = {
       search: {
@@ -70,7 +70,7 @@ const SuccessStories = () => {
 
   // Get Trie data with id as field from API
   const handleTrieData = () => {
-    let source = "https://bheti-connect.smirltech.com/api/entrevues"
+    let source = "https://bheti-connect.smirltech.com/api/stories"
     let toSend = ""
 
     if (trie == "Recent")

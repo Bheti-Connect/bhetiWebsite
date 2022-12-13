@@ -49,6 +49,7 @@ const Cards = ({item, setSelect, setModal}) => {
   )
 }
 
+// Style CSS
 
 const CardItem = styled.div`
 
