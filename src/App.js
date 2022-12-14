@@ -4,7 +4,6 @@ import { useTheme } from './context/themeContext';
 import { BrowserRouter as Router, Routes, Route} from 'react-router-dom'
 import Entrepreneur from './components/Entrepreneur/Entrepreneur';
 import Investisseur from './components/Investisseur/Investisseur';
-import {AccountBox} from './components/Auth/accountBox';
 import Home from './components/Home';
 import Footer from './components/Footer';
 import NavBar from './components/NavBar';
@@ -33,7 +32,6 @@ const App = () => {
             <Route path='entrepreneur' exact element={<Entrepreneur />} />
             <Route path='investisseur' exact element={<Investisseur />} />
             <Route path='media' exact element={<Media />} />
-            <Route path='connexion' exact element={<AccountBox />} />
             {/* <Route path='evaluer-eligibilite' element={<EvaluerEligibilite />} /> */}
             <Route path='pitch-deck' exact element={<FormOne />} />
             <Route path='evaluer-eligibilite' exact element={<FormTwo />} />
