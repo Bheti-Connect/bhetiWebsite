@@ -14,7 +14,6 @@ import FormTwo from './components/Forms/NewForms/FormTwo/FormTwo';
 import FormInvestisseur from './components/Investisseur/form/FormInvestisseur';
 import SuccessStories from './components/Media/SuccessStories/SuccessStories';
 import ErrorPage from './components/Error/ErrorPage';
-import { AccountBox } from './components/Auth/accountBox';
 
 const App = () => {
   const theme = useTheme();
@@ -45,7 +44,7 @@ const App = () => {
             <Route path='entrepreneur' exact caseSensitive={false} element={<Entrepreneur />} />
             <Route path='investisseur' exact caseSensitive={false} element={<Investisseur />} />
             <Route path='media' exact caseSensitive={false} element={<Media />} />
-            <Route path='connexion' exact caseSensitive={false} element={<AccountBox />} />
+            {/* <Route path='connexion' exact caseSensitive={false} element={<AccountBox />} /> */}
             {/* <Route path='evaluer-eligibilite' element={<EvaluerEligibilite />} /> */}
             <Route path='pitch-deck' exact caseSensitive={false} element={<FormOne />} />
             <Route path='evaluer-eligibilite' exact caseSensitive={false} element={<FormTwo />} />
