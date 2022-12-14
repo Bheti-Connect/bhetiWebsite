@@ -4,6 +4,7 @@ import GlobalStyle from './GlobalStyle';
 import './index.css';
 import App from './App';
 import { ThemeProvider } from './context/themeContext';
+import { AuthProvider } from './context/AuthProvider';
 
 // ReactDOM.render(<App />, document.getElementById('root'));
 const root = ReactDOM.createRoot(document.getElementById('root'))
