@@ -14,6 +14,7 @@ import FormTwo from './components/Forms/NewForms/FormTwo/FormTwo';
 import FormInvestisseur from './components/Investisseur/form/FormInvestisseur';
 import SuccessStories from './components/Media/SuccessStories/SuccessStories';
 import ErrorPage from './components/Error/ErrorPage';
+import { AccountBox } from './components/Auth/accountBox';
 
 const App = () => {
   const theme = useTheme();
