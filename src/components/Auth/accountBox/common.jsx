@@ -13,9 +13,12 @@ export const FormContainer = styled.form`
   display: flex;
   flex-direction: column;
   box-shadow: 0px 0px 2.5px rgba(15, 15, 15, 0.19);
+  @media only screen and (max-width: 1800px){
+        width: 60% ;
+    }
 `;
 
-export const MutedLink = styled.a`
+export const MutedLink = styled.div`
   font-size: 11px;
   color: rgba(200, 200, 200, 0.8);
   font-weight: 500;
@@ -52,11 +55,15 @@ export const Input = styled.input`
     outline: none;
     border-bottom: 2px solid rgb(36, 0, 15);
   }
+  @media only screen and (max-width: 1800px){
+        width: 100%;
+        margin: auto;
+    }
 `;
 
 export const SubmitButton = styled.button`
   width: 100%;
-  padding: 11px;
+  padding: 12px;
   color: #fff;
   font-size: 15px;
   font-weight: 600;
@@ -65,9 +72,13 @@ export const SubmitButton = styled.button`
   cursor: pointer;
   transition: all, 240ms ease-in-out;
   background: rgb(36,0,0);
-background: linear-gradient(90deg, rgba(36,0,0,1) 0%, rgba(84,16,40,0.7259278711484594) 24%, rgba(84,16,16,1) 71%);
+  background: linear-gradient(90deg, rgba(36,0,0,1) 0%, rgba(84,16,40,0.7259278711484594) 24%, rgba(84,16,16,1) 71%);
 
   &:hover {
     filter: brightness(1.03);
   }
+
+  @media only screen and (max-width: 1800px){
+        width: 25%;
+    }
 `;

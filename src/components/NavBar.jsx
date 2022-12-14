@@ -41,7 +41,7 @@ const NavBar = () => {
                                 Entrepreneur
                             </NavLink>
                             <NavLink
-                            onClick={handleClick}
+                                onClick={handleClick}
                                 to='/investisseur'
                                 className={({ isActive }) => (isActive ? 'link active' : 'link')}
                             >

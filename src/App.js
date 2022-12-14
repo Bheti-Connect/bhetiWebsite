@@ -4,7 +4,6 @@ import { useTheme } from './context/themeContext';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import Entrepreneur from './components/Entrepreneur/Entrepreneur';
 import Investisseur from './components/Investisseur/Investisseur';
-import { AccountBox } from './components/Auth/accountBox';
 import Home from './components/Home';
 import Footer from './components/Footer';
 import NavBar from './components/NavBar';

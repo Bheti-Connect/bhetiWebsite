@@ -3,7 +3,7 @@ import { useEffect } from 'react';
 import styled from 'styled-components';
 import { useTheme } from '../../../context/themeContext';
 import LogoBheti from '../../../assets/images/bheti_white_logo.png';
-import Select from 'react-select';
+//import Select from 'react-select';
 import Swal from 'sweetalert2';
 
 
@@ -85,25 +85,10 @@ const FormInvestisseur = () => {
 
   }
 
-  useEffect(() => {
-    removeModal()
-  },[])
 
-  return (
-    <form method="post" onSubmit={handleSubmitForm}>
-    <Container>
-        <Left theme={theme}>
-          <div className='text-left'>
-            <img src={LogoBheti} alt='Logo bheti connect' />
-            <p>Accédez à des opportunités d'investissement exclusives</p>
-            <button className='btn' type='submit'>Envoyer</button>
-          </div>
-        </Left>
+  /*
 
-        <Right theme={theme}>
-        <div className='form'>
-
-          <div className="row">
+  <div className="row">
             <label htmlFor="nom" className="input-label">Votre nom <span className='asterisque'>*</span></label>
             <input type="text" name='nom' id='nom' className="input-field" onChange={(e) => setNom(e.target.value)} placeholder='...' required/>
           </div>
@@ -135,9 +120,30 @@ const FormInvestisseur = () => {
             <input type="text" name='societe' id='societe' className="input-field" onChange={(e) => setSociety(e.target.value)} placeholder='...' required/>
           </div>
 
+  */
+
+  useEffect(() => {
+    removeModal()
+  },[])
+
+  return (
+    <form method="post" onSubmit={handleSubmitForm}>
+    <Container>
+        <Left theme={theme}>
+          <div className='text-left'>
+            <img src={LogoBheti} alt='Logo bheti connect'/>
+            <p>Accédez à des opportunités d'investissement exclusives</p>
+            <button className='btn' type='submit'>Envoyer</button>
+          </div>
+        </Left>
+
+        <Right theme={theme}>
+        <div className='form'>
+
           <div className="row last-row">
               <label htmlFor="message" className="input-label">Autre</label>
               <p>Avez-vous quoi que ce soit à ajouter ?</p>
+              
               <textarea className="input-field" name="message" id="message" onChange={(e) => setAutre(e.target.value)} cols="30" rows="15"></textarea>
           </div>
 
@@ -172,7 +178,7 @@ align-items: center;
 justify-content: center;
 text-align: center;
 border-radius: 10px 0 0 10px;
-height: 950px;
+height: 450px;
 width: 35%;
 background-color: ${props => props.theme.colorBheti};
 box-shadow: -5px 0px 10px 1px rgba(128, 128, 128, 0.419);
@@ -267,7 +273,7 @@ const Right = styled.div`
 display: flex;
 flex-direction: column;
 border-radius: 0 10px 10px 0;
-height: 950px;
+height: 450px;
 width: 35%;
 box-shadow: 3px 0px 10px 1px rgba(128, 128, 128, 0.419);
 
@@ -339,6 +345,12 @@ p{
 
       @media only screen and (max-width: 590px) {
         width: 80%;
+
+        .row{
+          .input-field{
+            
+          }
+        }
       }
 
 

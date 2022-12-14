@@ -13,8 +13,8 @@ const SuccessStories = () => {
   // useState of pagination
   const [currentPage, setCurrentPage] = useState(0);
   const [itemsPerPage, setItemsPerPage] = useState(0);
-  const [totalPage, setTotalPage] = useState(0)
-  const [initPage, setInitPage] = useState(0)
+  const [totalPage, setTotalPage] = useState(0);
+  const [initPage, setInitPage] = useState(-1);
   // query useState for search
   const [query, setQuery] = useState("")
   // select card useState
@@ -40,7 +40,7 @@ const SuccessStories = () => {
 
   // GET data from API
   const getData = () => {
-    let source = "https://bheti-connect.smirltech.com/api/entrevues";
+    let source = "https://bheti-connect.smirltech.com/api/stories";
     axios.get(source).then(res => {
       handleSetData(res.data)
     }).catch((error) => console.log(error))
@@ -49,7 +49,7 @@ const SuccessStories = () => {
   // Search data from API
   const searchData = () => {
     // API : Search
-    let source = "https://bheti-connect.smirltech.com/api/entrevues"
+    let source = "https://bheti-connect.smirltech.com/api/stories"
     // Body POST
     let toSend = {
       search: {
@@ -70,7 +70,7 @@ const SuccessStories = () => {
 
   // Get Trie data with id as field from API
   const handleTrieData = () => {
-    let source = "https://bheti-connect.smirltech.com/api/entrevues"
+    let source = "https://bheti-connect.smirltech.com/api/stories"
     let toSend = ""
 
     if (trie == "Recent")

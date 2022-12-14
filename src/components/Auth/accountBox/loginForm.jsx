@@ -1,8 +1,8 @@
-import { useContext, useEffect, useRef, useState } from "react";
-import AuthContext from "../../../context/AuthProvider";
+import React, { useContext, useState, useEffect } from "react";
+import { useHistory } from "react-router-dom";
+import Lines from "./Lines";
 
-const LOGIN_URL = '/connexion'
-
+import options from "../../../data/options";
 import {
   BoldLink,
   BoxContainer,
@@ -14,17 +14,19 @@ import {
 import { Marginer } from "../../marginer";
 import { AccountContext } from "./accountContext";
 import styled from "styled-components";
+import LoginLinkedin from "./LoginLinkedin";
 
-export const LoginForm = () => {
-  const { setAuth } = useContext(AuthContext)
+export const LoginForm = (props) => {
+  const { switchToSignup } = useContext(AccountContext);
 
-  const userRef = useRef();
-  const errRef = useRef();
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [errMsg, setErrMsg] = useState('');
-  // const [success, setSuccess] = useState(false);
+  useEffect(() => {
+    if (localStorage.getItem('user-info')) {
+        history.push("/add")
+    }
+  }, []);
 
   const tackleEmailChange = (e) => {
     setEmail(e.target.value)
@@ -32,14 +34,6 @@ export const LoginForm = () => {
   const tacklePasswordChange = (e) => {
     setPassword(e.target.value)
   }
-
-  useEffect(() => {
-      userRef.current.focus();
-  }, [])
-
-  useEffect(() => {
-      setErrMsg('');
-  }, [email, password])
 
     const url = new URL(
       "https://bheti-connect.smirltech.com/api/login"
@@ -50,77 +44,56 @@ export const LoginForm = () => {
       "Accept": "application/json",
   };
 
-let item = { email, password }
+  let item = { email, password}
 
-  const handleSubmit = async (e) => {
-
-    // try{
-
-    // } catch{
-
-    // } finally{
-
-    // }
-    e.preventDefault();
-
-    fetch(url, {
-      method: "POST",
-      headers,
-      body: JSON.stringify(item),
-    }).then(response => response.json())
-    
+  const HandleLogin = async () => {
+    const result = await fetch(url, {
+        method: "POST",
+        headers,
+        body: JSON.stringify(item),
+    }).then(response => response.json());
+    console.warn(email, password)
+    result = await result.json();
+    localStorage.setItem("user-info",json.stringify(result))
+    history.push("/add")
   }
 
-  const { switchToSignup } = useContext(AccountContext);
-
   return (
-    <loginFormStyled>      
+    <LoginFormStyled>
       <BoxContainer>
-        <FormContainer >
-            <p 
-                ref={errRef}
-                className={errMsg ? 'errmsg' : 'offscreen'} 
-                aria-live='assertive'
-            >
-                {errMsg}
-            </p>
-          <Input 
-            type='email'
-            name='email'
-            placeholder="Email"
-            ref={userRef}
-            autoComplete='off'
-            onChange={tackleEmailChange}
-            value={email}
-            required
+        <a href='https://bheti-connect.smirltech.com/login/linkedin'>
+          <LoginLinkedin 
+            name= {'Connexion avec'}
           />
-          <Input
-            type='password'
-            name='password'
-            onChange={tacklePasswordChange}
-            value={password}
-            required
+        </a>
+        <Lines />
+        <FormContainer>
+          <Input 
+            type="email" 
+            placeholder="Email"
+            onChange={tackleEmailChange}
+          />
+          <Input 
+            type="password" 
             placeholder="Mot de passe" 
-          
+            onChange={tacklePasswordChange}
           />
         </FormContainer>
         <Marginer direction="vertical" margin={10} />
         <MutedLink href="#">Vous avez oublié votre mot de passe?</MutedLink>
         <Marginer direction="vertical" margin="1.6em" />
-        <SubmitButton type="submit" onClick={handleSubmit}>Connexion</SubmitButton>
+        <SubmitButton type="submit" onClick={HandleLogin}>Connexion</SubmitButton>
         <Marginer direction="vertical" margin="1em" />
-        <MutedLink href="#">
+        <MutedLink>
             Vous n'avez pas de compte?{" "}
           <BoldLink href="#" onClick={switchToSignup}>
             S'inscrire
           </BoldLink>
         </MutedLink>
       </BoxContainer>
-    </loginFormStyled>
+    </LoginFormStyled>
   );
 }
 
-
 const loginFormStyled = styled.section`
-
 `
