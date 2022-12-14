@@ -10,6 +10,10 @@ const NavBar = () => {
     // const navRef = useRef();
     const [etat, setEtat] = useState({clicked: false});
 
+    const removeNavMenu = () => {
+        setShow((show) => !show);
+        };
+
     const handleClick = () => {
         setEtat({clicked: !etat.clicked})
     }
@@ -30,17 +34,30 @@ const NavBar = () => {
                 <nav  className={etat.clicked ? 'navigation active' : 'navigation'}>
                         <div className={etat.clicked ? 'nav-menu active' : 'nav-menu'}>
                             <NavLink
+                                onClick={handleClick}
                                 to='/entrepreneur'
                                 className={({ isActive }) => (isActive ? 'link active' : 'link')}
                             >
                                 Entrepreneur
                             </NavLink>
                             <NavLink
+                            onClick={handleClick}
                                 to='/investisseur'
                                 className={({ isActive }) => (isActive ? 'link active' : 'link')}
                             >
                                 Investisseur
                             </NavLink>
+<<<<<<< HEAD
+                            <a href='https://bheticonnect.super.site/'>
+                                <NavLink
+                                    onClick={handleClick}
+                                    to='media'
+                                    className={({ isActive }) => (isActive ? 'link active' : 'link')}
+                                >
+                                    Média 
+                                </NavLink>
+                            </a>
+=======
 
                             <NavLink
                                 to='media'
@@ -49,21 +66,25 @@ const NavBar = () => {
                                 Média 
                             </NavLink>
                         
+>>>>>>> 214a6ffc55fa62cff7b022f42ce94e6df356a963
                             <NavLink
+                                onClick={handleClick}
                                 to='/connexion'
                                 className={({ isActive }) => (isActive ? 'link active' : 'link')}
                             >
                                 Connexion
                             </NavLink>
-                            <div className=' nav-btn-container'>
-                                <a href='https://airtable.com/shrxZL75lICeCINRm'>
+                            <div className='nav-btn-container'>
+                                <NavLink to='/evaluer-eligibilite'>
                                     <Button 
                                         name={'Parler à un expert'}
                                         icon={'fas fa-chevron-right'}
                                         arrow={'arrow'}
                                         blob={'blob'}
+                                        onClick={handleClick}
                                     />
-                                </a>
+                                </NavLink>
+                                
                             </div>
                         </div>
                     </nav>
@@ -102,12 +123,10 @@ const NavBarStyled = styled.nav`
 .navigation {
         display: flex;
         grid-template-columns: 100px 1fr auto;
-        padding: 1rem  2rem;
+        padding: 1rem  1rem;
         align-items: center;
         flex-wrap: wrap;
-        
         justify-content: space-between;
-        border-bottom: 1px solid ${props => props.theme.colorGrey9};
         @media only screen and (max-width: 1024px) {
             border-bottom: 0px solid ${props => props.theme.colorBg};
         }
@@ -150,15 +169,17 @@ const NavBarStyled = styled.nav`
             
             }
             .nav-btn-container{
-                right: auto;
+                margin-left: 12px ;
             }
-    .navbar {
+    .nav-menu {
     width: 100vw;
     max-width: 1480px;
     margin: 0 auto;
     .link {
     display: inline-block;
-    margin: .9px 0px;
+    @media only screen and (min-width: 960px){
+        margin-top: 15px;
+    }
     color: ${props => props.theme.colorGrey} ;
     }
     .link:hover{
@@ -198,16 +219,19 @@ const NavBarStyled = styled.nav`
         box-shadow: 0 40px 60px rgba(0, 0, 0, 0.1);
         padding: 40px 0 0 10px;
         z-index: 100;
-
         
         .nav-menu{
+            position: absolute;
+            margin: auto;
+            
             .link{
+                position: relative;
                 text-align: center;
-                margin-top: 70px;
+                margin: auto;
+                margin-top: 12vh;
                 font-size: 2.3rem;
                 margin-bottom: 70px;
-                margin-left: 9vw;
-                width: 80%;
+                width: 60%;
                 display: table;
                 color: ${props => props.theme.colorWhite};
             }
@@ -218,7 +242,7 @@ const NavBarStyled = styled.nav`
         }
         
         .nav-btn-container{
-            margin-left: 5vw;
+            margin: auto;
         }
         
     }
