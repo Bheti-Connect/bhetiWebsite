@@ -1,13 +1,7 @@
-<<<<<<< HEAD
-import React, { useContext, useState, useEffect } from "react";
-import { useHistory, useLocation } from "react-router-dom";
-import Lines from "./Lines";
-=======
 import { useContext, useEffect, useRef, useState } from "react";
 import AuthContext from "../../../context/AuthProvider";
 
 const LOGIN_URL = '/connexion'
->>>>>>> 32acb7badc5e1c9fbb775c593f166461e9f1abf2
 
 import {
   BoldLink,
