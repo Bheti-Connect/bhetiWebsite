@@ -208,7 +208,6 @@ const NavBarStyled = styled.nav`
         box-shadow: 0 40px 60px rgba(0, 0, 0, 0.1);
         padding: 40px 0 0 10px;
         z-index: 100;
-
         
         .nav-menu{
             position: absolute;

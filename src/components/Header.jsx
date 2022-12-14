@@ -63,8 +63,9 @@ const HeaderStyled = styled.header`
         height: 60vh;
     }
     @media only screen and (max-width: 425px) {
-        height: 100vh;
+        height: 98vh;
     }
+    
     @media only screen and (max-width: 375px) {
         height: 115vh;
     }
@@ -219,6 +220,7 @@ const HeaderStyled = styled.header`
                     }
                     p{
                         font-size: 15px;
+                        margin-top: -20px;
                     }
             }
             @media only screen and (max-width: 320px){
@@ -259,7 +261,7 @@ const HeaderStyled = styled.header`
                 margin-left: -45px;
                 .button-demo {
                     position: absolute;
-                    top: 190%;
+                    top: 180%;
                     margin-left: 12%;
                     width: 280px;
                 }
@@ -269,7 +271,7 @@ const HeaderStyled = styled.header`
                 margin-left: -45px;
                 .button-demo {
                     position: absolute;
-                    top: 185%;
+                    top: 180%;
                     margin-left: 12%;
                     width: 280px;
                 }
@@ -472,11 +474,12 @@ const HeaderStyled = styled.header`
             }
             @media only screen and (max-width: 425px){
                 margin-left: -16%;
-                margin-top: 40%;
+                margin-top:  35%;
                 width: 370px;
             }
             @media only screen and (max-width: 400px){
                 margin-left: -14%;
+                margin-top: 34%;
                 
             }
             @media only screen and (max-width: 375px){
@@ -601,7 +604,10 @@ const HeaderStyled = styled.header`
                     margin-bottom: -2%;
             }
         @media only screen and (max-width: 425px){
-                    margin-bottom: 0%;
+                    margin-bottom: -4%;
+            }
+        @media only screen and (max-width: 400px){
+                    margin-bottom: -4%;
             }
             @media only screen and (max-width: 375px){
                     margin-bottom: 0%;

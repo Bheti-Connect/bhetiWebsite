@@ -56,7 +56,7 @@ const AccueilStyled = styled.section`
                     
                 }
                 @media only screen and (max-width: 425px){
-                    color: ${props => props.theme.colorBheti} ;
+                    color: ${props => props.theme.colorBlack} ;
                 }
             }
             .resolvez{
@@ -68,7 +68,7 @@ const AccueilStyled = styled.section`
                     
                 }
                 @media only screen and (max-width: 425px){
-                    color: ${props => props.theme.colorBheti} ;
+                    color: ${props => props.theme.colorBlack} ;
                 }
             }
             img{
@@ -172,16 +172,16 @@ const AccueilStyled = styled.section`
                     color: ${props => props.theme.colorBheti}; 
                 }
                 @media only screen and (max-width: 425px){
-                    width: 300px;
-                    font-size: 30px;
-                    transform: translate(-60%, 200%);
+                    font-size: 35px;
+                    transform: translate(-60%, 175%);
                     color: ${props => props.theme.colorBlack}; 
                 }
                 @media only screen and (max-width: 375px){
                     width: 300px;
-                    font-size: 35px;
-                    transform: translate(-60%, 100%);
-                    color: ${props => props.theme.colorBheti};
+                    text-align: center;
+                    font-size: 31.3px;
+                    transform: translate(-60%, 190%);
+                    color: ${props => props.theme.colorBlack};
                 }
             }
         }
@@ -376,7 +376,7 @@ const AccueilStyled = styled.section`
             }
         @media only screen and (max-width: 375px){
                 width: 50vw;
-                height: 450px;
+                height: 400px;
                 top: 0px;
             }
         @media only screen and (max-width: 320px){
@@ -388,4 +388,4 @@ const AccueilStyled = styled.section`
 `;
 
 
-export default Accueil
+export default Accueil;
