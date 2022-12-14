@@ -34,14 +34,14 @@ const NavBar = () => {
                 <nav  className={etat.clicked ? 'navigation active' : 'navigation'}>
                         <div className={etat.clicked ? 'nav-menu active' : 'nav-menu'}>
                             <NavLink
-                                onClick={removeNavMenu}
+                                onClick={handleClick}
                                 to='/entrepreneur'
                                 className={({ isActive }) => (isActive ? 'link active' : 'link')}
                             >
                                 Entrepreneur
                             </NavLink>
                             <NavLink
-                            onClick={removeNavMenu}
+                            onClick={handleClick}
                                 to='/investisseur'
                                 className={({ isActive }) => (isActive ? 'link active' : 'link')}
                             >
@@ -49,7 +49,7 @@ const NavBar = () => {
                             </NavLink>
                             <a href='https://bheticonnect.super.site/'>
                                 <NavLink
-                                    onClick={removeNavMenu}
+                                    onClick={handleClick}
                                     to='media'
                                     className={({ isActive }) => (isActive ? 'link active' : 'link')}
                                 >
@@ -57,7 +57,7 @@ const NavBar = () => {
                                 </NavLink>
                             </a>
                             <NavLink
-                                onClick={removeNavMenu}
+                                onClick={handleClick}
                                 to='/connexion'
                                 className={({ isActive }) => (isActive ? 'link active' : 'link')}
                             >
@@ -70,6 +70,7 @@ const NavBar = () => {
                                         icon={'fas fa-chevron-right'}
                                         arrow={'arrow'}
                                         blob={'blob'}
+                                        onClick={handleClick}
                                     />
                                 </NavLink>
                                 
@@ -210,13 +211,17 @@ const NavBarStyled = styled.nav`
 
         
         .nav-menu{
+            position: absolute;
+            margin: auto;
+            
             .link{
+                position: relative;
                 text-align: center;
-                margin-top: 70px;
+                margin: auto;
+                margin-top: 12vh;
                 font-size: 2.3rem;
                 margin-bottom: 70px;
-                margin-left: 9vw;
-                width: 80%;
+                width: 60%;
                 display: table;
                 color: ${props => props.theme.colorWhite};
             }
@@ -227,7 +232,7 @@ const NavBarStyled = styled.nav`
         }
         
         .nav-btn-container{
-            margin-left: 5vw;
+            margin: auto;
         }
         
     }
