@@ -18,7 +18,7 @@ const Investisseur = () => {
     const [currentPage, setCurrentPage] = useState(0);
     const [itemsPerPage, setItemsPerPage] = useState(0);
     const [totalPage, setTotalPage] = useState(0)
-    const [initPage, setInitPage] = useState(0)
+    const [initPage, setInitPage] = useState(-1)
     // query useState for search
     const [query, setQuery] = useState("")
     // select card useState
@@ -43,7 +43,7 @@ const Investisseur = () => {
 // *******************************************************************************************
 
     // Test connexion Investisseur
-    const [connect, setConnect] = useState(false)
+    const [connect, setConnect] = useState(true)
 
 // *******************************************************************************************
 
@@ -92,7 +92,7 @@ const Investisseur = () => {
 
       if (position == "pme")
       {
-        let pmeFilter = {filters: [{field: 'type', value: 'pme'}]}
+        let pmeFilter = {filters: [{field: 'company_type', value: 'pme'}]}
 
         axios.post(source, pmeFilter).then(res => {
           handleSetData(res.data)
@@ -102,7 +102,7 @@ const Investisseur = () => {
 
       }else if(position == "startup")
       {
-        let startupFilter = {filters: [{field: 'type', value: 'startup'}]}
+        let startupFilter = {filters: [{field: 'company_type', value: 'startup'}]}
 
         axios.post(source, startupFilter).then(res => {
           handleSetData(res.data)

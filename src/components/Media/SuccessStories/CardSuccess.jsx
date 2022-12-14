@@ -30,21 +30,13 @@ const CardSuccess = ({item, setSelect, setModal}) => {
 
           <CardBody>
 
-          <h3>{item.nom}</h3>
+          <h3>{item.titre}</h3>
           <ul>
-            <li>{item.pays}</li>
+            <li>{item.titre}</li>
             <li>{item.pays}</li>
           </ul>
 
-          <ul>
-            <li>{item.pays}</li>
-            <li>{item.pays}</li>
-          </ul>
-
-          <ul>
-            <li>{item.pays}</li>
-            <li>{item.pays}</li>
-          </ul>
+         
 
         </CardBody>
 
@@ -85,6 +77,9 @@ h3{
   color:white;
   line-height: 18px;
   margin-bottom: 13px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 
 ul{
