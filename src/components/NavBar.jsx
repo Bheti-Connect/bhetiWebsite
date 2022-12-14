@@ -10,6 +10,10 @@ const NavBar = () => {
     // const navRef = useRef();
     const [etat, setEtat] = useState({clicked: false});
 
+    const removeNavMenu = () => {
+        setShow((show) => !show);
+        };
+
     const handleClick = () => {
         setEtat({clicked: !etat.clicked})
     }
@@ -30,12 +34,14 @@ const NavBar = () => {
                 <nav  className={etat.clicked ? 'navigation active' : 'navigation'}>
                         <div className={etat.clicked ? 'nav-menu active' : 'nav-menu'}>
                             <NavLink
+                                onClick={removeNavMenu}
                                 to='/entrepreneur'
                                 className={({ isActive }) => (isActive ? 'link active' : 'link')}
                             >
                                 Entrepreneur
                             </NavLink>
                             <NavLink
+                            onClick={removeNavMenu}
                                 to='/investisseur'
                                 className={({ isActive }) => (isActive ? 'link active' : 'link')}
                             >
@@ -43,6 +49,7 @@ const NavBar = () => {
                             </NavLink>
                             <a href='https://bheticonnect.super.site/'>
                                 <NavLink
+                                    onClick={removeNavMenu}
                                     to='media'
                                     className={({ isActive }) => (isActive ? 'link active' : 'link')}
                                 >
@@ -50,20 +57,22 @@ const NavBar = () => {
                                 </NavLink>
                             </a>
                             <NavLink
+                                onClick={removeNavMenu}
                                 to='/connexion'
                                 className={({ isActive }) => (isActive ? 'link active' : 'link')}
                             >
                                 Connexion
                             </NavLink>
-                            <div className=' nav-btn-container'>
-                                <a href='https://airtable.com/shrxZL75lICeCINRm'>
+                            <div className='nav-btn-container'>
+                                <NavLink to='/evaluer-eligibilite'>
                                     <Button 
                                         name={'Parler à un expert'}
                                         icon={'fas fa-chevron-right'}
                                         arrow={'arrow'}
                                         blob={'blob'}
                                     />
-                                </a>
+                                </NavLink>
+                                
                             </div>
                         </div>
                     </nav>
@@ -102,12 +111,10 @@ const NavBarStyled = styled.nav`
 .navigation {
         display: flex;
         grid-template-columns: 100px 1fr auto;
-        padding: 1rem  2rem;
+        padding: 1rem  1rem;
         align-items: center;
         flex-wrap: wrap;
-        
         justify-content: space-between;
-        border-bottom: 1px solid ${props => props.theme.colorGrey9};
         @media only screen and (max-width: 1024px) {
             border-bottom: 0px solid ${props => props.theme.colorBg};
         }
@@ -150,15 +157,17 @@ const NavBarStyled = styled.nav`
             
             }
             .nav-btn-container{
-                right: auto;
+                margin-left: 12px ;
             }
-    .navbar {
+    .nav-menu {
     width: 100vw;
     max-width: 1480px;
     margin: 0 auto;
     .link {
     display: inline-block;
-    margin: .9px 0px;
+    @media only screen and (min-width: 960px){
+        margin-top: 15px;
+    }
     color: ${props => props.theme.colorGrey} ;
     }
     .link:hover{
