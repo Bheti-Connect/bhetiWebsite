@@ -1,7 +1,7 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import { useTheme } from './context/themeContext';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import { BrowserRouter as Router, Routes, Route, useLocation, useNavigate } from 'react-router-dom'
 import Entrepreneur from './components/Entrepreneur/Entrepreneur';
 import Investisseur from './components/Investisseur/Investisseur';
 import Home from './components/Home';
@@ -18,29 +18,29 @@ import ErrorPage from './components/Error/ErrorPage';
 const App = () => {
   const theme = useTheme();
 
+  const navigate = useNavigate();
+
+  const location = useLocation();
+
+  const { pathname } = location;
+
+  useEffect(() => {
+    if(pathname !== pathname.toLowerCase()) {
+      navigate(pathname.toLowerCase())
+    }
+  },[pathname])
+
   const [isAuthenticated, setIsAuthenticated] = useState();
 
   return (
-    <Router>
+    
       <AppStyled theme={theme}>
         <div>
           <NavBar />
         </div>
         <main>
           <Routes>
-            {/* <Route
-              exact
-              strict
-              caseSensitive={false}
-              path='/:url([a-z/]*[A-Z]+[a-z/]*)/'
-              element={props => {
-                const path = props.location.pathname
-                alert('ok');
-                // return <Redirect to={`${path.toLowerCase()}`} />
-              }}
-            /> */}
-            <Route path='/bheti-connect-proj' caseSensitive={false} render={() => {
-            }} exact element={<Home />} />
+            <Route path='/bheti-connect-proj' caseSensitive={false} exact element={<Home />} />
             <Route path='entrepreneur' exact caseSensitive={false} element={<Entrepreneur />} />
             <Route path='investisseur' exact caseSensitive={false} element={<Investisseur />} />
             <Route path='media' exact caseSensitive={false} element={<Media />} />
@@ -60,7 +60,6 @@ const App = () => {
           <Footer />
         </div>
       </AppStyled>
-    </Router>
   )
 }
 
