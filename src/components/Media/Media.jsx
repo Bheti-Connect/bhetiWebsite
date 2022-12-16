@@ -10,6 +10,7 @@ import CardsMedia from './CardsMedia';
 import LoaderMedia from './LoaderMedia';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
+import SliderMedia from './SliderMedia';
 
 const Media = () => {
   const [currentPage, setCurrentPage] = useState(0);
@@ -28,9 +29,43 @@ const Media = () => {
   const [loading, setLoading] = useState(true)
   // Position change pagination : Tout and success stories
   const [paginationSelect, setPaginationSelect] = useState("tout")
-
   // theme
   const theme = useTheme();
+
+
+  const [aLaUne, setALaUne] = useState([
+    {
+      "id": 1,
+      "name": "peter",
+      "description": "Lorem Ipsum dolor set amet 1",
+      "photo": [
+        "https://images.pexels.com/photos/1054218/pexels-photo-1054218.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+        "https://images.pexels.com/photos/772803/pexels-photo-772803.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+        "https://images.pexels.com/photos/354939/pexels-photo-354939.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+      ]
+    },
+    {
+      "id": 2,
+      "name": "jack",
+      "description": "Lorem Ipsum dolor set amet 2",
+      "photo": [
+        "https://images.pexels.com/photos/1261728/pexels-photo-1261728.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+        "https://images.pexels.com/photos/35857/amazing-beautiful-breathtaking-clouds.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+        "https://images.pexels.com/photos/1198817/pexels-photo-1198817.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+      ]
+    },
+    {
+      "id": 3,
+      "name": "omari",
+      "description": "Lorem Ipsum dolor set amet 3",
+      "photo": [
+        "https://images.pexels.com/photos/531321/pexels-photo-531321.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1","https://images.pexels.com/photos/1292241/pexels-photo-1292241.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+        "https://images.pexels.com/photos/325185/pexels-photo-325185.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+      ]
+    }
+  ]);
+
+
 
   // handle for receive data and set in useState
   const handleSetData = (response) => {
@@ -48,7 +83,6 @@ const Media = () => {
     }).catch((error) => console.log(error))
   }
 
-  
 
   // Change Section of data : Tout et Success stories
   const handleActualise = () => {
@@ -96,9 +130,7 @@ const Media = () => {
       }
       }*/
     }else{
-
       source = `https://bheti-connect.smirltech.com/api/entrevues?page=${pageNumber}`
-
     }
 
     // get Add for another page
@@ -177,12 +209,9 @@ const Media = () => {
 
             <div className='cards-une'>
 
-              <div className='card-1'>1</div>
-
-              <div className='sub-card'>
-                <div className='card-2'>2</div>
-                <div className='card-3'>3</div>
-              </div>
+              {aLaUne.map((u, i) => (
+                <SliderMedia items={u} item_key={i}/>
+              ))}
 
             </div>
 
@@ -476,38 +505,20 @@ margin-bottom: 80px;
   }
 
   .cards-une{
-    display:flex;
-    flex-direction: column;
+    display: flex;
+    flex-wrap: wrap;
     
+    width: 45%;
 
-
-    .card-1 {
-      background-color: #700b0b;
-      width: 600px;
-      height: 238px;
-      border-radius: 20px;
+    .item_0{
+      flex: 2;
     }
 
-    .sub-card {
-      display: flex;
-      justify-content: space-between;
-      margin-top: 15px;
-
-      .card-2{
-        background-color: #700b0b;
-        width: 48%;
-        height: 250px;
-        border-radius: 20px;
-      }
-
-      .card-3{
-        background-color: #700b0b;
-        width: 48%;
-        height: 250px;
-        border-radius: 20px;
-      }
+    .item_1, .item_2{
+      flex: 0;
+      width: 50%;
     }
-
+    
   }
 
 
