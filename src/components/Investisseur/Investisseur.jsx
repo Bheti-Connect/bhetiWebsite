@@ -43,7 +43,7 @@ const Investisseur = () => {
 // *******************************************************************************************
 
     // Test connexion Investisseur
-    const [connect, setConnect] = useState(true)
+    const [connect, setConnect] = useState(false)
 
 // *******************************************************************************************
 
