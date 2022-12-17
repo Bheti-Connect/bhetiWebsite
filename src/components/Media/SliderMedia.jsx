@@ -1,6 +1,5 @@
 import React from 'react'
-import { FaAngleLeft } from "react-icons/fa";
-import { FaAngleRight } from "react-icons/fa";
+import { FaAngleLeft, FaAngleRight } from "react-icons/fa";
 import styled from 'styled-components';
 
 const SliderMedia = ({ items, item_key }) => {
@@ -11,6 +10,7 @@ const SliderMedia = ({ items, item_key }) => {
     
       let value = 0;
       let compteur = 0;
+      
       const handleRightSlide = (i) => {
         const slide = document.querySelector(`#slide${i}`);
         const ItemSlide = slide.querySelectorAll(".slide_img .images");
@@ -58,14 +58,15 @@ const SliderMedia = ({ items, item_key }) => {
                 <FaAngleRight />
                 </span>
             </div>
-            <div className="slide_img">
+            <div className='container_slide'>
+              <div className="slide_img">
 
-                {items.photo.map((p) => (
-                <img src={p} alt="" className="images" />
-                ))}
+              {items.photo.map((p) => (
+                  <img src={p} alt="" className="images" />
+              ))}
 
+              </div>
             </div>
-            <div className="slide_text">{items.description}</div>
         </div>
     </Container>
   )
@@ -74,37 +75,51 @@ const SliderMedia = ({ items, item_key }) => {
 const Container = styled.div`
 
 div.slide{
-    background-color: #700b0b;
+    background-color: rgb(25, 25, 25);
     position: relative;
     color: white;
+    margin: 10px;
+    width: 650px;
+    padding-top:10px;
+    padding-bottom:10px;
+}
+
+.container_slide{
+  background: #700b0b;
+  width: 80%;
+  margin: auto;
+  border-radius: 10px;
 }
 
 
 div.slide .slide_img{
 
-    width: 345px;
-    height: 300px;
+    width: 390px;
+    height: 290px;
     display: flex;
     overflow: hidden;
     margin:auto;
+    
 }
 div.slide .slide_img .images{
     position: relative;
     width: 100%;
-    height: 100%;
+    height: 90%;
     transition: .5s ease;
-    background-color: red;
+    margin: auto;
+    object-fit: cover;
 }
 
 div.slide .bar_left{
     position: absolute;
     top: 0;
     display: inline;
-    background-color: gray;
+    cursor: pointer;
     height: 100%;
     z-index: 99;
-    width: 30px;
+    width: 40px;
     opacity: .6;
+    
 
     &:hover{
         opacity: 1;
@@ -115,10 +130,10 @@ div.slide .bar_right{
     top: 0;
     right: 0;
     display: inline;
-    background-color: gray;
+    cursor: pointer;
     height: 100%;
     z-index: 99;
-    width: 30px;
+    width: 40px;
     opacity: .6;
 
     &:hover{

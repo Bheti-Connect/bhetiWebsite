@@ -7,10 +7,11 @@ import {useTheme} from '../../context/themeContext';
 import Search from './Search';
 import CardMediaModal from './CardMediaModal';
 import CardsMedia from './CardsMedia';
+import CardSuccess from './SuccessStories/CardSuccess';
 import LoaderMedia from './LoaderMedia';
-import axios from 'axios';
-import { Link } from 'react-router-dom';
+import { axios_get, axios_post } from '../../utils/FunctionsComponent';
 import SliderMedia from './SliderMedia';
+import CardModalSuccess from './SuccessStories/CardModalSuccess';
 
 const Media = () => {
   const [currentPage, setCurrentPage] = useState(0);
@@ -62,6 +63,34 @@ const Media = () => {
         "https://images.pexels.com/photos/531321/pexels-photo-531321.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1","https://images.pexels.com/photos/1292241/pexels-photo-1292241.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
         "https://images.pexels.com/photos/325185/pexels-photo-325185.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
       ]
+    },
+    {
+      "id": 4,
+      "name": "jack",
+      "description": "Lorem Ipsum dolor set amet 2",
+      "photo": [
+        "https://images.pexels.com/photos/1261728/pexels-photo-1261728.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+        "https://images.pexels.com/photos/35857/amazing-beautiful-breathtaking-clouds.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+        "https://images.pexels.com/photos/1198817/pexels-photo-1198817.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+      ]
+    },
+    {
+      "id": 5,
+      "name": "omari",
+      "description": "Lorem Ipsum dolor set amet 3",
+      "photo": [
+        "https://images.pexels.com/photos/531321/pexels-photo-531321.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1","https://images.pexels.com/photos/1292241/pexels-photo-1292241.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+        "https://images.pexels.com/photos/325185/pexels-photo-325185.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+      ]
+    },
+    {
+      "id": 6,
+      "name": "omari",
+      "description": "Lorem Ipsum dolor set amet 3",
+      "photo": [
+        "https://images.pexels.com/photos/531321/pexels-photo-531321.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1","https://images.pexels.com/photos/1292241/pexels-photo-1292241.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+        "https://images.pexels.com/photos/325185/pexels-photo-325185.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+      ]
     }
   ]);
 
@@ -78,16 +107,31 @@ const Media = () => {
   // GET data from API
   const getData = () => {
     let source = "https://bheti-connect.smirltech.com/api/entrevues";
-    axios.get(source).then(res => {
-      handleSetData(res.data)
-    }).catch((error) => console.log(error))
+    axios_get(source, handleSetData)
   }
 
 
-  // Change Section of data : Tout et Success stories
-  const handleActualise = () => {
-    getData()
-    setPaginationSelect("tout")
+  // Change Section of data : Tout, Succes stories
+  const changeSectionMenu = (position) => {
+    let source = "";
+
+    if (position == "tout")
+    {
+      source = "https://bheti-connect.smirltech.com/api/entrevues"
+      axios_get(source, handleSetData)
+
+      setPaginationSelect("tout")
+
+    }else if(position == "success")
+    {
+      source = "https://bheti-connect.smirltech.com/api/stories"
+      axios_get(source, handleSetData)
+
+      setPaginationSelect("success")
+    }else{
+      getData()
+      setPaginationSelect("tout")
+    }
   }
 
 
@@ -105,11 +149,7 @@ const Media = () => {
     // Get research
     if (query)
     {
-      axios.post(source, toSend).then((resp) =>{
-        handleSetData(resp.data)
-      }).catch((error) => {
-        console.log(error);
-      })
+      axios_post(source, toSend, handleSetData)
       setPaginationSelect("query")
     }
   }
@@ -129,6 +169,9 @@ const Media = () => {
           "value": `${query}`
       }
       }*/
+    }else if(paginationSelect == "success"){
+      source = `https://bheti-connect.smirltech.com/api/stories?page=${pageNumber}`
+
     }else{
       source = `https://bheti-connect.smirltech.com/api/entrevues?page=${pageNumber}`
     }
@@ -136,23 +179,29 @@ const Media = () => {
     // get Add for another page
    if (request)
     {
-      axios.post(source, request).then((resp) =>{
-        handleSetData(resp.data)
-      }).catch((error) => {
-        console.log(error);
-      })
+      axios_post(source, request, handleSetData)
     }
     else{
-      axios.get(source).then(res => {
-        handleSetData(res.data)
-      }).catch(error => console.log(error))
+      axios_get(source, handleSetData)
     }
   }
 
   // display items
   let displayItems = data.map((item, index) => {
-    return <CardsMedia key={index} item={item} setSelect={setSelect} setModal={setModal}/>
+    return paginationSelect == "tout" ? (<CardsMedia key={index} item={item} setSelect={setSelect} setModal={setModal}/>) : (<CardSuccess key={index} item={item} setSelect={setSelect} setModal={setModal}/>)
   })
+
+  // handle menu : tous, startup and PME for CSS
+  const handleMenu = (e) => {
+    let activeBtn = document.querySelector(".menuSection .active");
+    let valid = e.target.tagName.toLowerCase()
+
+    if(!e.target.classList.contains("active") && valid == "li")
+    {
+      activeBtn.classList.remove("active")
+      e.target.classList.add("active")
+    }
+}
 
   // First UseEffect
   useEffect(() => {
@@ -161,7 +210,7 @@ const Media = () => {
     }, 4000);
 
     getData()
-    handleActualise()
+    changeSectionMenu()
 
     return () => {
       clearTimeout(waiting)
@@ -205,6 +254,7 @@ const Media = () => {
               <p>Chaque semaine, découvrez les figures comme les startups qui font bouger les lignes sur les  marchés africains</p>
             </div>
           </div>
+
           <div className='body-une'>
 
             <div className='cards-une'>
@@ -212,41 +262,6 @@ const Media = () => {
               {aLaUne.map((u, i) => (
                 <SliderMedia items={u} item_key={i}/>
               ))}
-
-            </div>
-
-            <div className='plus-consulter'>
-            <h2>Les plus consultés</h2>
-
-            <div className='item-consult'>
-              <a href='#'>P.de Gaétan, PDG Fonds Pierre Castel</a>
-              <p>Nelly Chatue-Diop, CEO Ejara, nous partage son parcours entre l'Afrique et l'Europe et revient sur les enjeux de la cryptomonaie.</p>
-              <p className='item-date'>15 decembre 2022</p>
-            </div>
-
-            <div className='item-consult'>
-              <a href='#'>P.de Gaétan, PDG Fonds Pierre Castel</a>
-              <p>Nelly Chatue-Diop, CEO Ejara, nous partage son parcours entre l'Afrique et l'Europe et revient sur les enjeux de la cryptomonaie.</p>
-              <p className='item-date'>15 decembre 2022</p>
-            </div>
-
-            <div className='item-consult'>
-              <a href='#'>P.de Gaétan, PDG Fonds Pierre Castel</a>
-              <p>Nelly Chatue-Diop, CEO Ejara, nous partage son parcours entre l'Afrique et l'Europe et revient sur les enjeux de la cryptomonaie.</p>
-              <p className='item-date'>15 decembre 2022</p>
-            </div>
-
-            <div className='item-consult'>
-              <a href='#'>P.de Gaétan, PDG Fonds Pierre Castel</a>
-              <p>Nelly Chatue-Diop, CEO Ejara, nous partage son parcours entre l'Afrique et l'Europe et revient sur les enjeux de la cryptomonaie.</p>
-              <p className='item-date'>15 decembre 2022</p>
-            </div>
-
-            <div className='item-consult'>
-              <a href='#'>P.de Gaétan, PDG Fonds Pierre Castel</a>
-              <p>Nelly Chatue-Diop, CEO Ejara, nous partage son parcours entre l'Afrique et l'Europe et revient sur les enjeux de la cryptomonaie.</p>
-              <p className='item-date'>15 decembre 2022</p>
-            </div>
 
             </div>
 
@@ -273,11 +288,11 @@ const Media = () => {
                 <div className='Box'>
 
                     {/* Section menu */}
-                    <ul className='menuSection'>
+                    <ul className='menuSection' onClick={handleMenu}>
                         {/* tout */}
-                        <li className='active' onClick={() => handleActualise()}>Tout</li>
+                        <li className='active' onClick={() => changeSectionMenu("tout")}>Tout</li>
                         {/* success stories */}
-                        <li><Link to={'/success-stories'}>Les success stories</Link></li>
+                        <li onClick={() => changeSectionMenu("success")}>Les success stories</li>
                     </ul>
 
                     {/* Filter and search */}
@@ -318,7 +333,7 @@ const Media = () => {
           </AllMedia>
 
           {
-              modal && <CardMediaModal select={select} setModal={setModal}/>
+              modal && (paginationSelect == "tout" ? (<CardMediaModal select={select} setModal={setModal}/>) : (<CardModalSuccess select={select} setModal={setModal}/>))
           }
 
         </SectionEcouteVoir>
@@ -470,7 +485,7 @@ margin-bottom: 80px;
   display: flex;
   justify-content: center;
   
-
+/*
   .plus-consulter h2 {
     color: ${props => props.theme.colorBheti};
     margin-bottom: 10px;
@@ -503,22 +518,20 @@ margin-bottom: 80px;
       }
     }
   }
-
+*/
   .cards-une{
     display: flex;
+    flex-direction: row;
     flex-wrap: wrap;
-    
-    width: 45%;
+    justify-content:center;
 
-    .item_0{
-      flex: 2;
-    }
 
-    .item_1, .item_2{
-      flex: 0;
-      width: 50%;
+    /*
+
+    .item_1, .item_2, .item_0{
+      
     }
-    
+    */
   }
 
 
