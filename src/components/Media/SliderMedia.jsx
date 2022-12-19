@@ -154,6 +154,54 @@ div.slide .bar_left span svg,div.slide .bar_right span svg{
 .slide_text{
     text-align: center;
 }
+
+
+
+@media only screen and (max-width: 900px) {
+  div.slide{
+    width: 550px;
+    }
+
+    div.slide .slide_img{
+    width: 290px;
+    height: 220px;
+    }
+
+}
+
+
+@media only screen and (max-width: 768px) {
+  div.slide{
+    width: 450px;
+  }
+
+  div.slide .slide_img{
+    width: 250px;
+    height: 200px;
+  }
+}
+
+
+@media only screen and (max-width: 578px) {
+
+}
+
+/*
+@media only screen and (max-width: 508px) {
+
+
+}
+
+
+@media only screen and (max-width: 428px) {
+
+}
+
+@media only screen and (max-width: 415px) {
+
+}
+
+*/
 `;
 
 export default SliderMedia

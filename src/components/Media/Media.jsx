@@ -290,7 +290,7 @@ const Media = () => {
                     {/* Section menu */}
                     <ul className='menuSection' onClick={handleMenu}>
                         {/* tout */}
-                        <li className='active' onClick={() => changeSectionMenu("tout")}>Tout</li>
+                        <li className='active' onClick={() => changeSectionMenu("tout")}>Interview</li>
                         {/* success stories */}
                         <li onClick={() => changeSectionMenu("success")}>Les success stories</li>
                     </ul>
@@ -534,6 +534,65 @@ margin-bottom: 80px;
     */
   }
 
+
+}
+
+@media only screen and (max-width: 1100px) {
+  .head-text {
+
+    margin-left: 20px;
+    margin-right: 20px;
+/*
+    h2 {
+      margin-bottom: 5px;
+      font-size: 18px;
+    }
+
+    p{
+      font-weight: 600;
+      font-size: 15px;
+    }
+
+    .icon-media {
+      img{
+        height: 60px;
+        width: 50px;
+      }
+    }
+*/
+
+  }
+}
+
+
+@media only screen and (max-width: 768px) {
+
+  .head-text {
+
+    margin-left: 20px;
+    margin-right: 20px;
+
+    h2 {
+      margin-bottom: 5px;
+      font-size: 18px;
+    }
+
+    p{
+      font-weight: 600;
+      font-size: 15px;
+    }
+
+    .icon-media {
+      img{
+        height: 60px;
+        width: 50px;
+      }
+    }
+  }
+
+}
+
+@media only screen and (max-width: 578px) {
 
 }
 
