@@ -114,7 +114,7 @@ const CardModal = ({select, setModal, connect}) => {
                 <div className='deck'>
 
                 {
-                  connect ? (<Link to={'/forminvestisseur'} className='Btn-deck'>Récevoir le deck</Link>) : (<Link to={'/connexion'} className='Btn-deck'>Récevoir le deck</Link>)
+                  connect ? (<Link to={'/form-investisseur'} className='Btn-deck'>Récevoir le deck</Link>) : (<Link to={'/connexion'} className='Btn-deck'>Récevoir le deck</Link>)
                 }
                 
                 </div>
