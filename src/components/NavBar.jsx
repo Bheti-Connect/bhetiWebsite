@@ -64,13 +64,13 @@ const NavBar = () => {
                                 Connexion
                             </NavLink>
                             <div className='nav-btn-container'>
-                                <NavLink to='/evaluer-eligibilite'>
+                                <NavLink to='/evaluer-eligibilite' onClick={handleClick}>
                                     <Button 
                                         name={'Parler à un expert'}
                                         icon={'fas fa-chevron-right'}
                                         arrow={'arrow'}
                                         blob={'blob'}
-                                        onClick={handleClick}
+                                        
                                     />
                                 </NavLink>
                                 
@@ -200,7 +200,7 @@ const NavBarStyled = styled.nav`
         justify-content: flex-start;
         position: fixed;
         top: 0px;
-        right: -900px;
+        right: -1800px;
         transition: all 0.6s ease;
         width: 100vw;
         height: 100vh;
