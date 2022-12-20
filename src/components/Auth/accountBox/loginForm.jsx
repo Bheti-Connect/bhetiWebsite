@@ -59,7 +59,7 @@ export const LoginForm = (props) => {
   }
 
   return (
-    <loginFormStyled>
+    <LoginFormStyled>
       <BoxContainer>
         <a href='https://bheti-connect.smirltech.com/login/linkedin'>
           <LoginLinkedin 
@@ -84,14 +84,14 @@ export const LoginForm = (props) => {
         <Marginer direction="vertical" margin="1.6em" />
         <SubmitButton type="submit" onClick={HandleLogin}>Connexion</SubmitButton>
         <Marginer direction="vertical" margin="1em" />
-        <MutedLink href="#">
+        <MutedLink>
             Vous n'avez pas de compte?{" "}
           <BoldLink href="#" onClick={switchToSignup}>
             S'inscrire
           </BoldLink>
         </MutedLink>
       </BoxContainer>
-    </loginFormStyled>
+    </LoginFormStyled>
   );
 }
 

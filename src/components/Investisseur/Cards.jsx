@@ -1,31 +1,36 @@
-import React from 'react';
+import axios from 'axios';
+import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import { useTheme } from '../../context/themeContext';
+import { handleSelect } from '../../utils/FunctionsComponent';
 
 const Cards = ({item, setSelect, setModal}) => {
 
   const theme = useTheme()
+  const [imgProject, setImgProject] = useState(null)
 
   // Format currency Euro
   let currencyEuro = new Intl.NumberFormat('de-DE', { style : 'currency', currency: 'EUR'})
 
   // Generate image
-  let source = "https://" + `picsum.photos/id/${Math.floor(Math.random() * 200)}/200/300`;
-
-
-  const handleSelect = () => {
-    const body = document.querySelector("body");
-    body.style.overflow = "hidden";
-    setSelect(item)
-    setModal(true)
+  const handleImage = () => {
+    let source = "https://" + `picsum.photos/id/${Math.floor(Math.random() * 200)}/200/300`;
+    axios.get(source).then((res) => {
+      setImgProject(source)
+    }).catch((error) => {
+      setImgProject("https://picsum.photos/id/10/200/300")
+    })
   }
 
+  useEffect(() => {
+    handleImage()
+  },[item])
 
 
   return (
-    <CardItem onClick={handleSelect} theme={theme}>
+    <CardItem onClick={() => handleSelect(setSelect, setModal, item)} theme={theme}>
           <CardHeader>
-            <img src={source} alt='project'/>
+            <img src={imgProject} alt='project'/>
           </CardHeader>
 
           <CardBody>
@@ -44,6 +49,7 @@ const Cards = ({item, setSelect, setModal}) => {
   )
 }
 
+// Style CSS
 
 const CardItem = styled.div`
 
@@ -61,6 +67,11 @@ cursor: pointer;
   
 }
 
+@media only screen and (max-width: 900px) {
+  width: 215px;
+  height: 325px;
+}
+
 @media only screen and (max-width: 768px) {
   width: 215px;
   height: 310px;
@@ -70,6 +81,21 @@ cursor: pointer;
   width: 195px;
   height: 275px;
 
+}
+
+@media only screen and (max-width: 508px) {
+  width: 190px;
+
+}
+
+@media only screen and (max-width: 428px) {
+  width: 160px;
+  height: 275px;
+}
+
+@media only screen and (max-width: 415px) {
+  width: 250px;
+  height: 300px;
 }
 
 `
@@ -131,12 +157,12 @@ ul li {
 @media only screen and (max-width: 768px) {
   h3{
     font-size: 12px;
-    margin-bottom: 5px;
+    margin-bottom: 13px;
   }
 
   ul{
-    font-size: 10px;
-    margin-top: 5px;
+    font-size: 12px;
+    margin-top: 10px;
   }
 
   .country {
@@ -151,7 +177,7 @@ ul li {
 @media only screen and (max-width: 578px) {
 
 h3{
-  font-size: 10px;
+  font-size: 15px;
   margin-bottom: 5px;
 }
 
@@ -168,6 +194,35 @@ ul{
   font-size: 10px;
 }
 
+}
+
+@media only screen and (max-width: 415px) {
+  h3{
+  font-size: 15px;
+  margin-bottom: 13px;
+}
+
+ul{
+  font-size: 12px;
+  margin-top: 10px;
+}
+
+ul li {
+  margin-right:8px;
+}
+
+.boxPriceCountry{
+  margin-top: 8px;
+}
+
+.country {
+  margin-top: 8px;
+  font-size: 12px;
+}
+
+.price{
+  font-size: 12px;
+}
 }
 
 `;

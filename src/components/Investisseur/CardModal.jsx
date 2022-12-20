@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faXmark } from '@fortawesome/free-solid-svg-icons';
 import { useTheme } from '../../context/themeContext';
 import { Link } from 'react-router-dom';
+import { closeModal } from '../../utils/FunctionsComponent';
 
 const CardModal = ({select, setModal, connect}) => {
   const theme = useTheme();
@@ -14,12 +15,6 @@ const CardModal = ({select, setModal, connect}) => {
   // Generate image
   let source = "https://" + `picsum.photos/id/${Math.floor(Math.random() * 200)}/200/300`;
 
-  // handle disable modal
-  const handleModal = () => {
-    const body = document.querySelector("body");
-    body.style.overflow = "auto";
-    setModal(false);
-  }
 
   const handleFlouter = () => {
     let  flouter = document.querySelectorAll(".cible-flouter")
@@ -52,10 +47,10 @@ const CardModal = ({select, setModal, connect}) => {
 
 
   return (
-    <Container >
-        <div id="open-modal" className="modal-window" >
+    <Container onClick={(e) => closeModal(e.target, setModal)}>
+        <div id="open-modal" className="modal-window close" >
             <div>
-                <div onClick={handleModal} className="modal-close"><FontAwesomeIcon icon={faXmark} size="lg"/></div>
+                <div onClick={(e) => closeModal(e.target, setModal)} className="modal-close"><FontAwesomeIcon className="close" icon={faXmark} size="lg"/></div>
                 <Header>
                   <p>Projet {select.nom}</p>
                   <ul>
@@ -118,7 +113,9 @@ const CardModal = ({select, setModal, connect}) => {
 
                 <div className='deck'>
 
-                <Link to={'/forminvestisseur'} className='Btn-deck'>Récevoir le deck</Link>
+                {
+                  connect ? (<Link to={'/form-investisseur'} className='Btn-deck'>Récevoir le deck</Link>) : (<Link to={'/connexion'} className='Btn-deck'>Récevoir le deck</Link>)
+                }
                 
                 </div>
 
@@ -185,7 +182,36 @@ font-size: 16px;
     font-weight: 600;
     font-family: 'Inter', sans-serif;
   }
-`
+
+
+
+  @media only screen and (max-width: 712px){
+    .modal-window {
+    & > div {
+      width: 600px;
+      height: 650px;
+    }
+    }
+  }
+
+  @media only screen and (max-width: 600px){
+    .modal-window {
+    & > div {
+      width: 500px;
+      height: 650px;
+    }
+    }
+  }
+
+  @media only screen and (max-width: 500px){
+    .modal-window {
+    & > div {
+      width: 400px;
+      height: 650px;
+    }
+    }
+  }
+`;
 
 const Header = styled.div`
 
@@ -270,6 +296,17 @@ text-align: justify;
     transform: translate3d(0, 1px, 0);
   }
 }
+
+@media only screen and (max-width: 500px){
+  .project-detail {
+  display: flex;
+  flex-direction: column;
+  img{
+    width: 325px;
+    margin: 10px auto;
+  }
+  }
+  }
 
 `;
 

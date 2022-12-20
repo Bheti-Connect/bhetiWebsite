@@ -1,11 +1,9 @@
+import { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import { useTheme } from './context/themeContext';
-import { BrowserRouter as Router, Routes, Route} from 'react-router-dom'
+import { BrowserRouter as Router, Routes, Route, useLocation, useNavigate } from 'react-router-dom'
 import Entrepreneur from './components/Entrepreneur/Entrepreneur';
 import Investisseur from './components/Investisseur/Investisseur';
-import ParentForm from './components/Forms/ParentForm';
-import {AccountBox} from './components/Auth/accountBox';
-import EvaluerEligibilite from './components/Forms/EvaluerEligibilite';
 import Home from './components/Home';
 import Footer from './components/Footer';
 import NavBar from './components/NavBar';
@@ -15,41 +13,53 @@ import FormOne from './components/Forms/NewForms/FormOne/FormOne';
 import FormTwo from './components/Forms/NewForms/FormTwo/FormTwo';
 import FormInvestisseur from './components/Investisseur/form/FormInvestisseur';
 import SuccessStories from './components/Media/SuccessStories/SuccessStories';
+import ErrorPage from './components/Error/ErrorPage';
 
 const App = () => {
   const theme = useTheme();
-  
+
+  const navigate = useNavigate();
+
+  const location = useLocation();
+
+  const { pathname } = location;
+
+  useEffect(() => {
+    if(pathname !== pathname.toLowerCase()) {
+      navigate(pathname.toLowerCase())
+    }
+  },[pathname])
+
+  const [isAuthenticated, setIsAuthenticated] = useState();
+
   return (
-    <Router>
+    
       <AppStyled theme={theme}>
-          <div>
-            <NavBar />
-          </div>
+        <div>
+          <NavBar />
+        </div>
         <main>
           <Routes>
-            <Route path='/bhetiConnectProj' element={<Home />} />
-            <Route path='entrepreneur' element={<Entrepreneur />} />
-            <Route path='investisseur' element={<Investisseur />} />
-            <Route path='media' element={<Media />} />
-            <Route path='connexion' element={<AccountBox />} />
+            <Route path='/bhetiConnectProj' caseSensitive={false} exact element={<Home />} />
+            <Route path='entrepreneur' exact caseSensitive={false} element={<Entrepreneur />} />
+            <Route path='investisseur' exact caseSensitive={false} element={<Investisseur />} />
+            <Route path='media' exact caseSensitive={false} element={<Media />} />
+            {/* <Route path='connexion' exact caseSensitive={false} element={<AccountBox />} /> */}
             {/* <Route path='evaluer-eligibilite' element={<EvaluerEligibilite />} /> */}
-            <Route path='formulaire' element={<ParentForm />} />
-            <Route path='pitch-deck' element={<FormOne />} />
-            <Route path='evaluer-eligibilite' element={<FormTwo />} />
-            <Route path='evaluer-eligibilite' element={<EvaluerEligibilite />} />
-
+            <Route path='pitch-deck' exact caseSensitive={false} element={<FormOne />} />
+            <Route path='evaluer-eligibilite' exact caseSensitive={false} element={<FormTwo />} />
 
             {/* Route : form investisseur */}
-            <Route path='forminvestisseur' element={<FormInvestisseur />}/>
+            <Route path='form-investisseur' exact caseSensitive={false} element={<FormInvestisseur />} />
             {/* Route : success stories media */}
-            <Route path='success-stories' element={<SuccessStories />}/>
+            <Route path='success-stories' exact caseSensitive={false} element={<SuccessStories />} />
+            <Route path='*' element={<ErrorPage />} />
           </Routes>
         </main>
-          <div>
-            <Footer />
-          </div>
+        <div>
+          <Footer />
+        </div>
       </AppStyled>
-    </Router>
   )
 }
 
