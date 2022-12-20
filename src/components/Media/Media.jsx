@@ -28,8 +28,8 @@ const Media = () => {
   const [modal, setModal] = useState(false)
   // Loading : React content loader
   const [loading, setLoading] = useState(true)
-  // Position change pagination : Tout and success stories
-  const [paginationSelect, setPaginationSelect] = useState("tout")
+  // Position change pagination : interview and success stories
+  const [paginationSelect, setPaginationSelect] = useState("interview")
   // theme
   const theme = useTheme();
 
@@ -111,16 +111,16 @@ const Media = () => {
   }
 
 
-  // Change Section of data : Tout, Succes stories
+  // Change Section of data : interview, Succes stories
   const changeSectionMenu = (position) => {
     let source = "";
 
-    if (position == "tout")
+    if (position == "interview")
     {
       source = "https://bheti-connect.smirltech.com/api/entrevues"
       axios_get(source, handleSetData)
 
-      setPaginationSelect("tout")
+      setPaginationSelect("interview")
 
     }else if(position == "success")
     {
@@ -130,7 +130,7 @@ const Media = () => {
       setPaginationSelect("success")
     }else{
       getData()
-      setPaginationSelect("tout")
+      setPaginationSelect("interview")
     }
   }
 
@@ -188,7 +188,7 @@ const Media = () => {
 
   // display items
   let displayItems = data.map((item, index) => {
-    return paginationSelect == "tout" ? (<CardsMedia key={index} item={item} setSelect={setSelect} setModal={setModal}/>) : (<CardSuccess key={index} item={item} setSelect={setSelect} setModal={setModal}/>)
+    return paginationSelect == "interview" ? (<CardsMedia key={index} item={item} setSelect={setSelect} setModal={setModal}/>) : (<CardSuccess key={index} item={item} setSelect={setSelect} setModal={setModal}/>)
   })
 
   // handle menu : tous, startup and PME for CSS
@@ -289,8 +289,8 @@ const Media = () => {
 
                     {/* Section menu */}
                     <ul className='menuSection' onClick={handleMenu}>
-                        {/* tout */}
-                        <li className='active' onClick={() => changeSectionMenu("tout")}>Interview</li>
+                        {/* interview */}
+                        <li className='active' onClick={() => changeSectionMenu("interview")}>Interview</li>
                         {/* success stories */}
                         <li onClick={() => changeSectionMenu("success")}>Les success stories</li>
                     </ul>
@@ -333,7 +333,7 @@ const Media = () => {
           </AllMedia>
 
           {
-              modal && (paginationSelect == "tout" ? (<CardMediaModal select={select} setModal={setModal}/>) : (<CardModalSuccess select={select} setModal={setModal}/>))
+              modal && (paginationSelect == "interview" ? (<CardMediaModal select={select} setModal={setModal}/>) : (<CardModalSuccess select={select} setModal={setModal}/>))
           }
 
         </SectionEcouteVoir>
@@ -667,6 +667,71 @@ const SectionEcouteVoir = styled.div`
     border-bottom: 2px solid ${props => props.theme.colorBheti};
 }
 
+
+@media only screen and (max-width: 1100px) {
+  .head-text {
+
+    margin-left: 20px;
+    margin-right: 20px;
+
+  }
+}
+
+@media only screen and (max-width: 930px) {
+  .containerMenu .Box{
+    justify-content: space-around;
+  }
+}
+
+
+@media only screen and (max-width: 768px) {
+  .head-text {
+
+  margin-left: 20px;
+  margin-right: 20px;
+
+  h2 {
+    margin-bottom: 5px;
+    font-size: 18px;
+  }
+
+  p{
+    font-weight: 600;
+    font-size: 15px;
+  }
+
+  .icon-media {
+    img{
+      height: 60px;
+      width: 50px;
+    }
+  }
+  }
+}
+
+
+
+/*
+@media only screen and (max-width: 768px) {
+
+}
+
+@media only screen and (max-width: 578px) {
+
+}
+
+@media only screen and (max-width: 508px) {
+
+}
+
+@media only screen and (max-width: 428px) {
+
+}
+
+@media only screen and (max-width: 415px) {
+
+}
+*/
 `;
 
 export default Media
