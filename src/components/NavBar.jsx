@@ -23,7 +23,7 @@ const NavBar = () => {
         <NavBarStyled theme={theme}>
             <div className='hero'>
                 <div className='logo'>
-                        <NavLink to='/bheti-connect-proj'>
+                        <NavLink to='/bheticonnectproj'>
                             <img
                                 src={theLogo}
                                 className='theLogo'

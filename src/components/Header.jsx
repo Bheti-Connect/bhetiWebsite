@@ -63,7 +63,7 @@ const HeaderStyled = styled.header`
         height: 80vh;
     }
     @media only screen and (max-width: 768px){
-        height: 60vh;
+        height: 70vh;
     }
     @media only screen and (max-width: 425px) {
         height: 98vh;

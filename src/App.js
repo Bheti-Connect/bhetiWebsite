@@ -40,7 +40,7 @@ const App = () => {
         </div>
         <main>
           <Routes>
-            <Route path='/bheti-connect-proj' caseSensitive={false} exact element={<Home />} />
+            <Route path='/bhetiConnectProj' caseSensitive={false} exact element={<Home />} />
             <Route path='entrepreneur' exact caseSensitive={false} element={<Entrepreneur />} />
             <Route path='investisseur' exact caseSensitive={false} element={<Investisseur />} />
             <Route path='media' exact caseSensitive={false} element={<Media />} />
