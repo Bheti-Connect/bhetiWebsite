@@ -40,7 +40,7 @@ const App = () => {
         </div>
         <main>
           <Routes>
-            <Route path='/bhetiConnectProj' caseSensitive={false} exact element={<Home />} />
+            <Route path='/' caseSensitive={false} exact element={<Home />} />
             <Route path='entrepreneur' exact caseSensitive={false} element={<Entrepreneur />} />
             <Route path='investisseur' exact caseSensitive={false} element={<Investisseur />} />
             <Route path='media' exact caseSensitive={false} element={<Media />} />
@@ -53,7 +53,7 @@ const App = () => {
             <Route path='form-investisseur' exact caseSensitive={false} element={<FormInvestisseur />} />
             {/* Route : success stories media */}
             <Route path='success-stories' exact caseSensitive={false} element={<SuccessStories />} />
-            <Route path='*' element={<ErrorPage />} />
+            <Route path='*'  element={<ErrorPage />} />
           </Routes>
         </main>
         <div>
