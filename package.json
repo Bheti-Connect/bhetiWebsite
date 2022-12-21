@@ -1,5 +1,5 @@
 {
-  "homepage": "https://Bheti-Connect.github.io/bhetiConnectProj",
+  "homepage": "http://localhost:3000/",
   "name": "bheti-website",
   "version": "0.1.0",
   "private": true,
@@ -34,6 +34,7 @@
   },
   "devDependencies": {
     "@babel/preset-env": "^7.20.2",
+    "@babel/preset-react": "^7.18.6",
     "@types/styled-components": "^5.1.26",
     "autoprefixer": "^10.4.12",
     "gh-pages": "^4.0.0",
