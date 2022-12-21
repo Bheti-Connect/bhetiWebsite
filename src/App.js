@@ -12,8 +12,11 @@ import Media from './components/Media/Media';
 import FormOne from './components/Forms/NewForms/FormOne/FormOne';
 import FormTwo from './components/Forms/NewForms/FormTwo/FormTwo';
 import FormInvestisseur from './components/Investisseur/form/FormInvestisseur';
+<<<<<<< HEAD
 import SuccessStories from './components/Media/SuccessStories/SuccessStories';
 import ErrorPage from './components/Error/ErrorPage';
+=======
+>>>>>>> d429521327fa3922dce843370bc11edf0b8e801c
 
 const App = () => {
   const theme = useTheme();
@@ -50,10 +53,14 @@ const App = () => {
             <Route path='evaluer-eligibilite' exact caseSensitive={false} element={<FormTwo />} />
 
             {/* Route : form investisseur */}
+<<<<<<< HEAD
             <Route path='form-investisseur' exact caseSensitive={false} element={<FormInvestisseur />} />
             {/* Route : success stories media */}
             <Route path='success-stories' exact caseSensitive={false} element={<SuccessStories />} />
             <Route path='*'  element={<ErrorPage />} />
+=======
+            <Route path='form-investisseur' element={<FormInvestisseur />}/>
+>>>>>>> d429521327fa3922dce843370bc11edf0b8e801c
           </Routes>
         </main>
         <div>

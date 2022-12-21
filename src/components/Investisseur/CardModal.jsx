@@ -71,7 +71,7 @@ const CardModal = ({select, setModal, connect}) => {
 
                   <div className='detail'>
                     <h3>Projet {select.nom}</h3>
-                    <p className='cible-flouter flouter'>{select.description}</p>
+                    <p>{select.description}</p>
                   </div>
                 </div>
 
