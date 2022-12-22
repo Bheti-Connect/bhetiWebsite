@@ -87,6 +87,61 @@ color: ${props => props.theme.colorBheti};
 background-color: transparent;
 }
 
+@media only screen and (max-width: 1380px) {
+
+  .input-search:focus{
+    width: 150px;
+  }
+
+  .btn-search:focus ~ .input-search{
+    width: 150px;
+  }
+}
+
+
+
+@media only screen and (max-width: 1100px) {
+
+  .btn-search{
+    font-size: 20px;
+  }
+
+  .input-search:focus{
+    width: 120px;
+  }
+
+  .btn-search:focus ~ .input-search{
+    width: 120px;
+  }
+
+  .input-search::placeholder{
+    font-size: 10px;
+  }
+
+}
+
+
+
+@media only screen and (max-width: 765px) {
+
+  .btn-search{
+    font-size: 18px;
+  }
+
+  .input-search:focus{
+    width: 150px;
+  }
+
+  .btn-search:focus ~ .input-search{
+    width: 150px;
+  }
+
+  .input-search::placeholder{
+    font-size: 10px;
+  }
+
+}
+
 `;
 
 export default Search

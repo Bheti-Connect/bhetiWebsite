@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { FaAngleLeft, FaAngleRight } from "react-icons/fa";
 import styled from 'styled-components';
 
@@ -8,41 +8,50 @@ const SliderMedia = ({ items, item_key }) => {
         return table.length * 100 - 100;
     }
     
-      let value = 0;
-      let compteur = 0;
-      
-      const handleRightSlide = (i) => {
-        const slide = document.querySelector(`#slide${i}`);
-        const ItemSlide = slide.querySelectorAll(".slide_img .images");
-        value = value - 100;
-        compteur++;
-        ItemSlide.forEach((item, i) => {
-          if (compteur < ItemSlide.length) {
-            item.style.transform = `translateX(${value}%)`;
-          } else {
-            compteur = 0;
-            value = 0;
-            item.style.transform = `translateX(${0}%)`;
-          }
-        });
-      };
-      const handleLeftSlide = (i) => {
-        const slide = document.querySelector(`#slide${i}`);
-        const ItemSlide = slide.querySelectorAll(".slide_img .images");
-        if (compteur !== 0) {
-          compteur--;
-          value = value + 100;
-          ItemSlide.forEach((item, i) => {
-            item.style.transform = `translateX(${value}%)`;
-          });
+    let value = 0;
+    let compteur = 0;
+    
+    const handleRightSlide = (i) => {
+      const slide = document.querySelector(`#slide${i}`);
+      const ItemSlide = slide.querySelectorAll(".slide_img .images");
+      value = value - 100;
+      compteur++;
+      ItemSlide.forEach((item, i) => {
+        if (compteur < ItemSlide.length) {
+          item.style.transform = `translateX(${value}%)`;
         } else {
-          compteur = ItemSlide.length-1;
-          value = convertInHundred(ItemSlide) * -1;
-          ItemSlide.forEach((item, i) => {
-            item.style.transform = `translateX(${value}%)`;
-          });
+          compteur = 0;
+          value = 0;
+          item.style.transform = `translateX(${0}%)`;
         }
-      };
+      });
+    };
+    const handleLeftSlide = (i) => {
+      const slide = document.querySelector(`#slide${i}`);
+      const ItemSlide = slide.querySelectorAll(".slide_img .images");
+      if (compteur !== 0) {
+        compteur--;
+        value = value + 100;
+        ItemSlide.forEach((item, i) => {
+          item.style.transform = `translateX(${value}%)`;
+        });
+      } else {
+        compteur = ItemSlide.length-1;
+        value = convertInHundred(ItemSlide) * -1;
+        ItemSlide.forEach((item, i) => {
+          item.style.transform = `translateX(${value}%)`;
+        });
+      }
+    };
+
+
+    useEffect(() => {
+      const time = Math.floor(Math.random() * (10 - 5) + 5) * 1000
+      const interval = setInterval(() => {
+        handleRightSlide(item_key)
+      }, time);
+      return () => clearInterval(interval);
+    }, []);
 
 
   return (
@@ -61,8 +70,8 @@ const SliderMedia = ({ items, item_key }) => {
             <div className='container_slide'>
               <div className="slide_img">
 
-              {items.photo.map((p) => (
-                  <img src={p} alt="" className="images" />
+              {items.photo.map((item, index) => (
+                  <img key={index} src={item} alt="" className="images" />
               ))}
 
               </div>

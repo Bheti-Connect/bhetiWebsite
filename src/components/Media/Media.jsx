@@ -138,17 +138,26 @@ const Media = () => {
 
   // Search data from API
   const searchData = () => {
-    // API : Search
-    let source = "https://bheti-connect.smirltech.com/api/entrevues/search"
-    // Body POST
-    let toSend = {
-      search: {
-        value: `${query}`
+    let source = ""
+    if(setPaginationSelect == "interview"){
+       // API : Search entrevues
+      source = "https://bheti-connect.smirltech.com/api/entrevues/search"
     }
-    }
+
+    if(setPaginationSelect == "success"){
+      // API : Search entrevues
+     source = "https://bheti-connect.smirltech.com/api/entrevues/search"
+   }
+
     // Get research
     if (query)
     {
+      // Body POST
+      let toSend = {
+        search: {
+          value: `${query}`
+      }
+      }
       axios_post(source, toSend, handleSetData)
       setPaginationSelect("query")
     }
@@ -259,8 +268,8 @@ const Media = () => {
 
             <div className='cards-une'>
 
-              {aLaUne.map((u, i) => (
-                <SliderMedia items={u} item_key={i}/>
+              {aLaUne.map((item, index) => (
+                <SliderMedia key={index} items={item} item_key={index}/>
               ))}
 
             </div>
@@ -524,14 +533,6 @@ margin-bottom: 80px;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content:center;
-
-
-    /*
-
-    .item_1, .item_2, .item_0{
-      
-    }
-    */
   }
 
 
@@ -653,7 +654,7 @@ const SectionEcouteVoir = styled.div`
 }
 
 .containerMenu{
-    width:900px;
+    width:50%;
     margin: 30px auto;
 }
 
@@ -670,21 +671,49 @@ const SectionEcouteVoir = styled.div`
 
 @media only screen and (max-width: 1100px) {
   .head-text {
-
     margin-left: 20px;
     margin-right: 20px;
 
+    h2 {
+      margin-bottom: 5px;
+      font-size: 18px;
+    }
+
+    p{
+      font-weight: 600;
+      font-size: 15px;
+    }
+
+    .icon-media {
+      img{
+        height: 60px;
+        width: 50px;
+      }
+    }
   }
+
+  .containerMenu .Box ul li{
+      font-size: 13px;
+}
+
+
 }
 
 @media only screen and (max-width: 930px) {
   .containerMenu .Box{
-    justify-content: space-around;
+    justify-content: space-between;
   }
 }
 
 
 @media only screen and (max-width: 768px) {
+  .containerMenu{
+    width:100%;
+}
+  .containerMenu .Box{
+    flex-direction: column;
+    justify-content: center;
+
   .head-text {
 
   margin-left: 20px;
@@ -710,6 +739,26 @@ const SectionEcouteVoir = styled.div`
 }
 
 
+@media only screen and (max-width: 428px) {
+
+  .head-text {
+
+    margin-left: 20px;
+    margin-right: 20px;
+
+    h2 {
+      margin-bottom: 5px;
+      font-size: 17px;
+    }
+
+    p{
+      font-weight: 600;
+      font-size: 14px;
+    }
+  }
+}
+
+
 
 /*
 @media only screen and (max-width: 768px) {
@@ -724,9 +773,7 @@ const SectionEcouteVoir = styled.div`
 
 }
 
-@media only screen and (max-width: 428px) {
 
-}
 
 @media only screen and (max-width: 415px) {
 
