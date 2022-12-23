@@ -139,12 +139,13 @@ const Media = () => {
   // Search data from API
   const searchData = () => {
     let source = ""
-    if(setPaginationSelect == "interview"){
+
+    if(paginationSelect == "interview"){
        // API : Search entrevues
       source = "https://bheti-connect.smirltech.com/api/entrevues/search"
     }
 
-    if(setPaginationSelect == "success"){
+    if(paginationSelect == "success"){
       // API : Search entrevues
      source = "https://bheti-connect.smirltech.com/api/entrevues/search"
    }
@@ -172,12 +173,12 @@ const Media = () => {
     let request = ""
 
     if (paginationSelect == "query"){
-      source = `https://bheti-connect.smirltech.com/api/entrevues?page=${pageNumber}`
-      /*request = {
+      source = `https://bheti-connect.smirltech.com/api/entrevues/search?page=${pageNumber}`
+      request = {
         "search": {
           "value": `${query}`
       }
-      }*/
+      }
     }else if(paginationSelect == "success"){
       source = `https://bheti-connect.smirltech.com/api/stories?page=${pageNumber}`
 
