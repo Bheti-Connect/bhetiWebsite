@@ -20,6 +20,8 @@ const Media = () => {
   const [initPage, setInitPage] = useState(-1)
   // query useState for search
   const [query, setQuery] = useState("")
+  // Position Query
+  const [positionQuery, setPositionQuery] = useState()
   // select card useState
   const [select, setSelect] = useState(null)
   // cards data
@@ -595,6 +597,19 @@ margin-bottom: 80px;
 }
 
 @media only screen and (max-width: 578px) {
+
+}
+
+
+@media only screen and (max-width: 425px) {
+
+}
+
+@media only screen and (max-width: 375px) {
+
+}
+
+@media only screen and (max-width: 320px) {
 
 }
 
