@@ -10,4 +10,4 @@ const LinksAPI = {
     
 }
 
-export default LinksAPI
+export default LinksAPI;

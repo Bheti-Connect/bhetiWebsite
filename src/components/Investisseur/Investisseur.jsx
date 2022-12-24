@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import styled from 'styled-components';
 //import NavBar from '../NavBar';
 import { useTheme } from '../../context/themeContext';
@@ -12,6 +12,7 @@ import CardModal from './CardModal';
 import LoaderReact from './LoaderReact';
 //import iconBheti from "../../assets/icons/icon_bheti_design.png";
 import Swal from 'sweetalert2';
+import LinksAPI from './../../utils/LinksAPI';
 
 const Investisseur = () => {
   // useState of pagination
@@ -79,8 +80,7 @@ const Investisseur = () => {
 
     // GET data from API
     const getData = () => {
-      let source = "https://bheti-connect.smirltech.com/api/projets";
-      axios.get(source).then(res => {
+      axios.get(LinksAPI.projets).then(res => {
         handleSetData(res.data)
       }).catch((error) => console.log(error))
     }
@@ -88,13 +88,12 @@ const Investisseur = () => {
 
     // Change Section of data : Tous, PME ou STARTUP
     const changeSectionMenu = (position) => {
-      let source = "https://bheti-connect.smirltech.com/api/projets/search";
 
       if (position == "pme")
       {
         let pmeFilter = {filters: [{field: 'company_type', value: 'pme'}]}
 
-        axios.post(source, pmeFilter).then(res => {
+        axios.post(LinksAPI.projetsSearch, pmeFilter).then(res => {
           handleSetData(res.data)
         }).catch((error) => console.log(error))
 
@@ -104,7 +103,7 @@ const Investisseur = () => {
       {
         let startupFilter = {filters: [{field: 'company_type', value: 'startup'}]}
 
-        axios.post(source, startupFilter).then(res => {
+        axios.post(LinksAPI.projetsSearch, startupFilter).then(res => {
           handleSetData(res.data)
         }).catch((error) => console.log(error))
         setPaginationSelect("startup")
@@ -129,8 +128,6 @@ const Investisseur = () => {
 
     // Search data from API
     const searchData = () => {
-      // API : Search
-      let source = "https://bheti-connect.smirltech.com/api/projets/search"
       // Body POST
       let toSend = {
         search: {
@@ -140,7 +137,7 @@ const Investisseur = () => {
       // Get research
       if (query)
       {
-        axios.post(source, toSend).then((resp) =>{
+        axios.post(LinksAPI.projetsSearch, toSend).then((resp) =>{
           handleSetData(resp.data)
         }).catch((error) => {
           console.log(error);
@@ -151,9 +148,7 @@ const Investisseur = () => {
 
     // Get Trie data with id as field from API
     const handleTrieData = () => {
-      let source = "https://bheti-connect.smirltech.com/api/projets/search"
       let toSend = ""
-
       if (trie == "Recent")
       {
         toSend = {
@@ -178,7 +173,7 @@ const Investisseur = () => {
 
       if (toSend)
       {
-        axios.post(source, toSend).then(res => {
+        axios.post(LinksAPI.projetsSearch, toSend).then(res => {
           handleSetData(res.data)
         }).catch(error => console.log(error))
         setPaginationSelect("trieData")
@@ -189,77 +184,65 @@ const Investisseur = () => {
     // handle change page
     let changePage = ({selected}) => {
       var pageNumber = selected + 1
-      let source = ""
       let request = ""
 
-      if(paginationSelect == "pme")
-      {
-        source = `https://bheti-connect.smirltech.com/api/projets/search?page=${pageNumber}`
-        request = {filters: [{field: 'type', value: 'pme'}]}
+      switch (paginationSelect) {
+        case "pme": 
+          request = {filters: [{field: 'type', value: 'pme'}]}
+          break;
+        case "query":
+          request = {"search": {"value": `${query}`}}
+          break;
+        case "startup":
+          request = {filters: [{field: 'type', value: 'startup'}]}
+          break;
+        case "trieData":
+            if(positionTrie == "Recent")
+            {
+              request = {
+                "sort":[ {
+                  "field": "id",
+                  "direction": "desc"
+                }]
+              }
+            }
+            if (positionTrie == "Ancien")
+            {
+              request = {
+                "sort":[ {
+                  "field": "id",
+                  "direction": "asc"
+                }]
+              }
+            }
+          break;
 
-      }else if (paginationSelect == "query"){
-        source = `https://bheti-connect.smirltech.com/api/projets/search?page=${pageNumber}`
-        request = {
-          "search": {
-            "value": `${query}`
-        }
-        }
-      }
-      else if(paginationSelect == "startup")
-      {
-
-        source = `https://bheti-connect.smirltech.com/api/projets/search?page=${pageNumber}`
-        request = {filters: [{field: 'type', value: 'startup'}]}
-
-      }else if (paginationSelect == "trieData")
-      {
-        source = `https://bheti-connect.smirltech.com/api/projets/search?page=${pageNumber}`
-        if(positionTrie == "Recent")
-        {
-          request = {
-            "sort":[ {
-              "field": "id",
-              "direction": "desc"
-            }]
-          }
-        }
-        if (positionTrie == "Ancien")
-        {
-          request = {
-            "sort":[ {
-              "field": "id",
-              "direction": "asc"
-            }]
-          }
-        }
-      }
-      else{
-
-        source = `https://bheti-connect.smirltech.com/api/projets?page=${pageNumber}`
-
+        default:
+          break;
       }
 
-      // get Add for another page
+     // get Add for another page
      if (request)
       {
-        axios.post(source, request).then((resp) =>{
+        axios.post(LinksAPI.projetsSearchPage(pageNumber), request).then((resp) =>{
           handleSetData(resp.data)
         }).catch((error) => {
           console.log(error);
         })
       }
       else{
-        axios.get(source).then(res => {
+        axios.get(LinksAPI.projetsPage(pageNumber)).then(res => {
           handleSetData(res.data)
         }).catch(error => console.log(error))
       }
+
+
     }
 
      // display items
      let displayItems = data.map((item, index) => {
       return <Cards key={index} item={item} setModal={setModal} setSelect={setSelect} />
     })
-
 
 
 
