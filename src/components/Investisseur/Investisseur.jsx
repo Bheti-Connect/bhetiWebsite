@@ -187,14 +187,14 @@ const Investisseur = () => {
       let request = ""
 
       switch (paginationSelect) {
-        case "pme": 
-          request = {filters: [{field: 'type', value: 'pme'}]}
+        case "pme":
+          request = {filters: [{field: 'type', company_type: 'pme'}]}
           break;
         case "query":
           request = {"search": {"value": `${query}`}}
           break;
         case "startup":
-          request = {filters: [{field: 'type', value: 'startup'}]}
+          request = {filters: [{field: 'type', company_type: 'startup'}]}
           break;
         case "trieData":
             if(positionTrie == "Recent")
@@ -224,6 +224,8 @@ const Investisseur = () => {
      // get Add for another page
      if (request)
       {
+
+        console.log(request);
         axios.post(LinksAPI.projetsSearchPage(pageNumber), request).then((resp) =>{
           handleSetData(resp.data)
         }).catch((error) => {
