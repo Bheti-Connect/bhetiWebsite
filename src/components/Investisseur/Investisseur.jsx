@@ -188,13 +188,13 @@ const Investisseur = () => {
 
       switch (paginationSelect) {
         case "pme":
-          request = {filters: [{field: 'type', company_type: 'pme'}]}
+          request = {filters: [{field: 'company_type', value: 'pme'}]}
           break;
         case "query":
           request = {"search": {"value": `${query}`}}
           break;
         case "startup":
-          request = {filters: [{field: 'type', company_type: 'startup'}]}
+          request = {filters: [{field: 'company_type', value: 'startup'}]}
           break;
         case "trieData":
             if(positionTrie == "Recent")

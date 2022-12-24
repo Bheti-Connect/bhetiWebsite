@@ -12,6 +12,7 @@ import LoaderMedia from './LoaderMedia';
 import { axios_get, axios_post } from '../../utils/FunctionsComponent';
 import SliderMedia from './SliderMedia';
 import CardModalSuccess from './SuccessStories/CardModalSuccess';
+import LinksAPI from '../../utils/LinksAPI';
 
 const Media = () => {
   const [currentPage, setCurrentPage] = useState(0);
@@ -108,27 +109,19 @@ const Media = () => {
 
   // GET data from API
   const getData = () => {
-    let source = "https://bheti-connect.smirltech.com/api/entrevues";
-    axios_get(source, handleSetData)
+    axios_get(LinksAPI.entrevues, handleSetData)
   }
 
 
   // Change Section of data : interview, Succes stories
   const changeSectionMenu = (position) => {
-    let source = "";
-
     if (position == "interview")
     {
-      source = "https://bheti-connect.smirltech.com/api/entrevues"
-      axios_get(source, handleSetData)
-
+      axios_get(LinksAPI.entrevues, handleSetData)
       setPaginationSelect("interview")
-
     }else if(position == "success")
     {
-      source = "https://bheti-connect.smirltech.com/api/stories"
-      axios_get(source, handleSetData)
-
+      axios_get(LinksAPI.stories, handleSetData)
       setPaginationSelect("success")
     }else{
       getData()
@@ -140,30 +133,24 @@ const Media = () => {
 
   // Search data from API
   const searchData = () => {
-    let source = ""
-
-    if(paginationSelect == "interview"){
-       // API : Search entrevues
-      source = "https://bheti-connect.smirltech.com/api/entrevues/search"
+   // Body POST
+   let toSend = {
+      search: {
+        value: `${query}`
     }
-
-    if(paginationSelect == "success"){
-      // API : Search entrevues
-     source = "https://bheti-connect.smirltech.com/api/entrevues/search"
-   }
-
+    }
     // Get research
-    if (query)
+    if (query && paginationSelect == "interview")
     {
-      // Body POST
-      let toSend = {
-        search: {
-          value: `${query}`
-      }
-      }
-      axios_post(source, toSend, handleSetData)
+      axios_post(LinksAPI.entrevuesSearch, toSend, handleSetData)
       setPaginationSelect("query")
     }
+
+    if(query && paginationSelect == "success"){
+      axios_post(LinksAPI.stories, toSend, handleSetData)
+      setPaginationSelect("query")
+    }
+
   }
 
 
