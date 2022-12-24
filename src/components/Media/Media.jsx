@@ -147,10 +147,9 @@ const Media = () => {
     }
 
     if(query && paginationSelect == "success"){
-      axios_post(LinksAPI.stories, toSend, handleSetData)
+      axios_post(LinksAPI.storiesSearch, toSend, handleSetData)
       setPaginationSelect("query")
     }
-
   }
 
 
@@ -161,28 +160,29 @@ const Media = () => {
     let source = ""
     let request = ""
 
-    if (paginationSelect == "query"){
-      source = `https://bheti-connect.smirltech.com/api/entrevues/search?page=${pageNumber}`
-      request = {
-        "search": {
-          "value": `${query}`
-      }
-      }
-    }else if(paginationSelect == "success"){
-      source = `https://bheti-connect.smirltech.com/api/stories?page=${pageNumber}`
+    switch (paginationSelect) {
+      case "query":
+        source = LinksAPI.entrevuesSearchPage(pageNumber)
+        request = {"search": {"value": `${query}`}}
+        break;
 
-    }else{
-      source = `https://bheti-connect.smirltech.com/api/entrevues?page=${pageNumber}`
+      case "success":
+        source = LinksAPI.storiesPage(pageNumber)
+        break;
+    
+      default:
+        source = LinksAPI.entrevuesPage(pageNumber)
+        break;
     }
 
     // get Add for another page
    if (request)
     {
       axios_post(source, request, handleSetData)
-    }
-    else{
+    }else{
       axios_get(source, handleSetData)
     }
+
   }
 
   // display items
