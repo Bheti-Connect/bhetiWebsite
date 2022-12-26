@@ -195,22 +195,31 @@ div.slide .bar_left span svg,div.slide .bar_right span svg{
 
 }
 
-/*
-@media only screen and (max-width: 508px) {
 
+@media only screen and (max-width: 425px) {
+  div.slide{
+    width: 350px;
+  }
+
+  div.slide .slide_img{
+    width: 198px;
+    height: 150px;
+  }
+}
+
+@media only screen and (max-width: 375px) {
+  
+  div.slide{
+    width: 295px;
+  }
+
+}
+
+@media only screen and (max-width: 320px) {
 
 }
 
 
-@media only screen and (max-width: 428px) {
-
-}
-
-@media only screen and (max-width: 415px) {
-
-}
-
-*/
 `;
 
 export default SliderMedia
