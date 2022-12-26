@@ -4,7 +4,6 @@ import GlobalStyle from './GlobalStyle';
 import './index.css';
 import App from './App';
 import { ThemeProvider } from './context/themeContext';
-import { AuthProvider } from './context/AuthProvider';
 import { BrowserRouter as Router } from 'react-router-dom';
 
 // ReactDOM.render(<App />, document.getElementById('root'));

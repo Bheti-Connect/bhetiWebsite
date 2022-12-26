@@ -63,14 +63,14 @@ const HeaderStyled = styled.header`
         height: 80vh;
     }
     @media only screen and (max-width: 768px){
-        height: 70vh;
+        height: 75vh;
     }
     @media only screen and (max-width: 425px) {
         height: 98vh;
     }
     
     @media only screen and (max-width: 375px) {
-        height: 115vh;
+        height: 114vh;
     }
     .header-content{
         display: grid;

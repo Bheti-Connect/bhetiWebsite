@@ -12,7 +12,6 @@ import Media from './components/Media/Media';
 import FormOne from './components/Forms/NewForms/FormOne/FormOne';
 import FormTwo from './components/Forms/NewForms/FormTwo/FormTwo';
 import FormInvestisseur from './components/Investisseur/form/FormInvestisseur';
-import SuccessStories from './components/Media/SuccessStories/SuccessStories';
 import ErrorPage from './components/Error/ErrorPage';
 
 const App = () => {
@@ -52,7 +51,6 @@ const App = () => {
             {/* Route : form investisseur */}
             <Route path='form-investisseur' exact caseSensitive={false} element={<FormInvestisseur />} />
             {/* Route : success stories media */}
-            <Route path='success-stories' exact caseSensitive={false} element={<SuccessStories />} />
             <Route path='*'  element={<ErrorPage />} />
 
           </Routes>
