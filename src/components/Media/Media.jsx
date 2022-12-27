@@ -33,6 +33,7 @@ const Media = () => {
   const [loading, setLoading] = useState(true)
   // Position change pagination : interview and success stories
   const [paginationSelect, setPaginationSelect] = useState("interview")
+  const [displayDataOf, setDisplayDataOf] = useState("interview")
   // theme
   const theme = useTheme();
 
@@ -119,13 +120,16 @@ const Media = () => {
     {
       axios_get(LinksAPI.entrevues, handleSetData)
       setPaginationSelect("interview")
+      setDisplayDataOf("interview")
     }else if(position == "success")
     {
       axios_get(LinksAPI.stories, handleSetData)
       setPaginationSelect("success")
+      setDisplayDataOf("success")
     }else{
       getData()
       setPaginationSelect("interview")
+      setDisplayDataOf("interview")
     }
   }
 
@@ -143,13 +147,13 @@ const Media = () => {
     if (query && paginationSelect == "interview")
     {
       axios_post(LinksAPI.entrevuesSearch, toSend, handleSetData)
-      setPaginationSelect("query")
     }
 
     if(query && paginationSelect == "success"){
       axios_post(LinksAPI.storiesSearch, toSend, handleSetData)
-      setPaginationSelect("query")
     }
+
+    setPaginationSelect("query")
   }
 
 
@@ -187,7 +191,7 @@ const Media = () => {
 
   // display items
   let displayItems = data.map((item, index) => {
-    return paginationSelect == "interview" ? (<CardsMedia key={index} item={item} setSelect={setSelect} setModal={setModal}/>) : (<CardSuccess key={index} item={item} setSelect={setSelect} setModal={setModal}/>)
+    return displayDataOf == "interview" ? (<CardsMedia key={index} item={item} setSelect={setSelect} setModal={setModal}/>) : (<CardSuccess key={index} item={item} setSelect={setSelect} setModal={setModal}/>)
   })
 
   // handle menu : tous, startup and PME for CSS

@@ -51,6 +51,7 @@ const CardModalSuccess = ({select, setModal}) => {
                     maxLine={2}
                     minLine={1}
                     url="https://www.linkedin.com/feed/update/urn:li:activity:6956518384989519872"
+                    proxyUrl="https://test.com"
                   />
                 </div>
 

@@ -8,23 +8,7 @@ const SliderMedia = ({ items, item_key }) => {
     let value = 0;
     let compteur = 0;
     
-    /*
-    const handleRightSlide = (i) => {
-      const slide = document.querySelector(`#slide${i}`);
-      const ItemSlide = slide.querySelectorAll(".slide_img .images");
-      value = value - 100;
-      compteur++;
-      ItemSlide.forEach((item, i) => {
-        if (compteur < ItemSlide.length) {
-          item.style.transform = `translateX(${value}%)`;
-        } else {
-          compteur = 0;
-          value = 0;
-          item.style.transform = `translateX(${0}%)`;
-        }
-      });
-    };
-*/
+    // Right function of Slider
     const handleRightSlide = (i) => {
       const slide = document.querySelector(`#slide${i}`);
       const ItemSlide = slide.querySelectorAll(".slide_img .images");
@@ -39,14 +23,14 @@ const SliderMedia = ({ items, item_key }) => {
       });
     };
 
-
+    // Left function of Slider
     const handleLeftSlide = (i) => {
       const slide = document.querySelector(`#slide${i}`);
       const ItemSlide = slide.querySelectorAll(".slide_img .images");
       if (compteur !== 0) {
         compteur--;
         value += 100;
-        ItemSlide.forEach((item, i) => {
+        ItemSlide.forEach((item) => {
           item.style.transform = `translateX(${value}%)`;
         });
       } else {
@@ -60,7 +44,7 @@ const SliderMedia = ({ items, item_key }) => {
 
 
     useEffect(() => {
-      const time = Math.floor(Math.random() * (10 - 5) + 5) * 1000
+      const time = Math.floor(Math.random() * (15 - 10) + 5) * 1000
       const interval = setInterval(() => {
         handleRightSlide(item_key)
       }, time);
@@ -117,7 +101,7 @@ div.slide{
 
 div.slide .slide_img{
 
-    width: 380px;
+    width: 400px;
     height: 290px;
     display: flex;
     overflow: hidden;
@@ -128,11 +112,10 @@ div.slide .slide_img .images{
 
     position: relative;
     width: 100%;
-    height: 90%;
     transition: .5s ease;
     margin: auto;
     object-fit: cover;
-
+    cursor: pointer;
 }
 
 div.slide .bar_left{
