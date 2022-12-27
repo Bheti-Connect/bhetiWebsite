@@ -3,7 +3,7 @@ import ReactPaginate from 'react-paginate';
 import styled from 'styled-components';
 import UneMedia from '../../assets/icons/a_la_une_media.svg';
 import VideoMedia from '../../assets/icons/Video_media.svg';
-import {useTheme} from '../../context/themeContext';
+import { useTheme } from '../../context/themeContext';
 import Search from './Search';
 import CardMediaModal from './CardMediaModal';
 import CardsMedia from './CardsMedia';
@@ -64,7 +64,7 @@ const Media = () => {
       "name": "omari",
       "description": "Lorem Ipsum dolor set amet 3",
       "photo": [
-        "https://images.pexels.com/photos/531321/pexels-photo-531321.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1","https://images.pexels.com/photos/1292241/pexels-photo-1292241.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+        "https://images.pexels.com/photos/531321/pexels-photo-531321.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1", "https://images.pexels.com/photos/1292241/pexels-photo-1292241.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
         "https://images.pexels.com/photos/325185/pexels-photo-325185.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
       ]
     },
@@ -83,7 +83,7 @@ const Media = () => {
       "name": "omari",
       "description": "Lorem Ipsum dolor set amet 3",
       "photo": [
-        "https://images.pexels.com/photos/531321/pexels-photo-531321.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1","https://images.pexels.com/photos/1292241/pexels-photo-1292241.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+        "https://images.pexels.com/photos/531321/pexels-photo-531321.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1", "https://images.pexels.com/photos/1292241/pexels-photo-1292241.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
         "https://images.pexels.com/photos/325185/pexels-photo-325185.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
       ]
     },
@@ -92,7 +92,7 @@ const Media = () => {
       "name": "omari",
       "description": "Lorem Ipsum dolor set amet 3",
       "photo": [
-        "https://images.pexels.com/photos/531321/pexels-photo-531321.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1","https://images.pexels.com/photos/1292241/pexels-photo-1292241.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+        "https://images.pexels.com/photos/531321/pexels-photo-531321.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1", "https://images.pexels.com/photos/1292241/pexels-photo-1292241.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
         "https://images.pexels.com/photos/325185/pexels-photo-325185.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
       ]
     }
@@ -116,17 +116,15 @@ const Media = () => {
 
   // Change Section of data : interview, Succes stories
   const changeSectionMenu = (position) => {
-    if (position == "interview")
-    {
+    if (position == "interview") {
       axios_get(LinksAPI.entrevues, handleSetData)
       setPaginationSelect("interview")
       setDisplayDataOf("interview")
-    }else if(position == "success")
-    {
+    } else if (position == "success") {
       axios_get(LinksAPI.stories, handleSetData)
       setPaginationSelect("success")
       setDisplayDataOf("success")
-    }else{
+    } else {
       getData()
       setPaginationSelect("interview")
       setDisplayDataOf("interview")
@@ -137,19 +135,18 @@ const Media = () => {
 
   // Search data from API
   const searchData = () => {
-   // Body POST
-   let toSend = {
+    // Body POST
+    let toSend = {
       search: {
         value: `${query}`
-    }
+      }
     }
     // Get research
-    if (query && paginationSelect == "interview")
-    {
+    if (query && paginationSelect == "interview") {
       axios_post(LinksAPI.entrevuesSearch, toSend, handleSetData)
     }
 
-    if(query && paginationSelect == "success"){
+    if (query && paginationSelect == "success") {
       axios_post(LinksAPI.storiesSearch, toSend, handleSetData)
     }
 
@@ -159,7 +156,7 @@ const Media = () => {
 
 
   // handle change page
-  let changePage = ({selected}) => {
+  let changePage = ({ selected }) => {
     var pageNumber = selected + 1
     let source = ""
     let request = ""
@@ -167,23 +164,22 @@ const Media = () => {
     switch (paginationSelect) {
       case "query":
         source = LinksAPI.entrevuesSearchPage(pageNumber)
-        request = {"search": {"value": `${query}`}}
+        request = { "search": { "value": `${query}` } }
         break;
 
       case "success":
         source = LinksAPI.storiesPage(pageNumber)
         break;
-    
+
       default:
         source = LinksAPI.entrevuesPage(pageNumber)
         break;
     }
 
     // get Add for another page
-   if (request)
-    {
+    if (request) {
       axios_post(source, request, handleSetData)
-    }else{
+    } else {
       axios_get(source, handleSetData)
     }
 
@@ -191,7 +187,7 @@ const Media = () => {
 
   // display items
   let displayItems = data.map((item, index) => {
-    return displayDataOf == "interview" ? (<CardsMedia key={index} item={item} setSelect={setSelect} setModal={setModal}/>) : (<CardSuccess key={index} item={item} setSelect={setSelect} setModal={setModal}/>)
+    return displayDataOf == "interview" ? (<CardsMedia key={index} item={item} setSelect={setSelect} setModal={setModal} />) : (<CardSuccess key={index} item={item} setSelect={setSelect} setModal={setModal} />)
   })
 
   // handle menu : tous, startup and PME for CSS
@@ -199,12 +195,11 @@ const Media = () => {
     let activeBtn = document.querySelector(".menuSection .active");
     let valid = e.target.tagName.toLowerCase()
 
-    if(!e.target.classList.contains("active") && valid == "li")
-    {
+    if (!e.target.classList.contains("active") && valid == "li") {
       activeBtn.classList.remove("active")
       e.target.classList.add("active")
     }
-}
+  }
 
   // First UseEffect
   useEffect(() => {
@@ -245,101 +240,101 @@ const Media = () => {
   return (
     <Container>
 
-        <SectionUne theme={theme}>
-          <div className='head-text'>
+      <SectionUne theme={theme}>
+        <div className='head-text'>
 
-            <div className='icon-media'>
-              <img src={UneMedia} alt="a la une icon"/>
-            </div>
-
-            <div>
-              <h2>A LA UNE...</h2>
-              <p>Chaque semaine, découvrez les figures comme les startups qui font bouger les lignes sur les  marchés africains</p>
-            </div>
+          <div className='icon-media'>
+            <img src={UneMedia} alt="a la une icon" />
           </div>
 
-          <div className='body-une'>
+          <div>
+            <h2>A LA UNE...</h2>
+            <p>Chaque semaine, découvrez les figures comme les startups qui font bouger les lignes sur les  marchés africains</p>
+          </div>
+        </div>
 
-            <div className='cards-une'>
+        <div className='body-une'>
 
-              {aLaUne.map((item, index) => (
-                <SliderMedia key={index} items={item} item_key={index}/>
-              ))}
+          <div className='cards-une'>
 
-            </div>
+            {aLaUne.map((item, index) => (
+              <SliderMedia key={index} items={item} item_key={index} />
+            ))}
 
           </div>
 
+        </div>
 
-        </SectionUne>
 
-        <SectionEcouteVoir theme={theme}>
+      </SectionUne>
 
-          <div className='head-text'>
+      <SectionEcouteVoir theme={theme}>
 
-            <div className='icon-media'>
-              <img src={VideoMedia} alt="video icon" />
-            </div>
+        <div className='head-text'>
 
-            <div>
-              <h2>Ecouter et voir</h2>
-              <p>Apprenez de ceux qui analysent le climat des affaires pour piloter et prendre des décisions au quotidien</p>
-            </div>
+          <div className='icon-media'>
+            <img src={VideoMedia} alt="video icon" />
           </div>
 
-          <div className="containerMenu">
-                <div className='Box'>
+          <div>
+            <h2>Ecouter et voir</h2>
+            <p>Apprenez de ceux qui analysent le climat des affaires pour piloter et prendre des décisions au quotidien</p>
+          </div>
+        </div>
 
-                    {/* Section menu */}
-                    <ul className='menuSection' onClick={handleMenu}>
-                        {/* interview */}
-                        <li className='active' onClick={() => changeSectionMenu("interview")}>Interview</li>
-                        {/* success stories */}
-                        <li onClick={() => changeSectionMenu("success")}>Les success stories</li>
-                    </ul>
+        <div className="containerMenu">
+          <div className='Box'>
 
-                    {/* Filter and search */}
-                    <Search setQuery={setQuery} />
-                </div>
+            {/* Section menu */}
+            <ul className='menuSection' onClick={handleMenu}>
+              {/* interview */}
+              <li className='active' onClick={() => changeSectionMenu("interview")}>Interview</li>
+              {/* success stories */}
+              <li onClick={() => changeSectionMenu("success")}>Les success stories</li>
+            </ul>
+
+            {/* Filter and search */}
+            <Search setQuery={setQuery} />
+          </div>
+        </div>
+
+        <AllMedia theme={theme}>
+
+          <AllCards>
+
+            <div className='container-all-cards'>
+              {
+                loading ? (<LoaderMedia count={15} />) : (displayItems)
+              }
             </div>
 
-          <AllMedia theme={theme}>
+          </AllCards>
 
-            <AllCards>
+          {/* Pagination */}
+          <ReactPaginate
+            previousLabel={"Précédent"}
+            nextLabel={"Suivant"}
+            pageCount={totalPage}
+            onPageChange={changePage}
+            forcePage={initPage}
+            breakLabel="..."
+            pageRangeDisplayed={7}
+            marginPagesDisplayed={1}
+            containerClassName={"containerClassName"}
+            pageClassName={"pageClassName"}
+            previousLinkClassName={"previousLinkClassName"}
+            nextLinkClassName={"nextLinkClassName"}
+            disabledClassName={"disabledClassName"}
+            activeClassName={"activeClassName"}
+          />
 
-              <div className='container-all-cards'>
-                {
-                  loading ? (<LoaderMedia count={15}/>) : (displayItems)
-                }
-              </div>
+        </AllMedia>
 
-            </AllCards>
+        {
+          modal && (paginationSelect == "interview" ? (<CardMediaModal select={select} setModal={setModal} />) : (<CardModalSuccess select={select} setModal={setModal} />))
+        }
 
-            {/* Pagination */}
-            <ReactPaginate
-              previousLabel={"Précédent"}
-              nextLabel={"Suivant"}
-              pageCount={totalPage}
-              onPageChange={changePage}
-              forcePage={initPage}
-              breakLabel="..."
-              pageRangeDisplayed={7}
-              marginPagesDisplayed={1}
-              containerClassName={"containerClassName"}
-              pageClassName={"pageClassName"}
-              previousLinkClassName={"previousLinkClassName"}
-              nextLinkClassName={"nextLinkClassName"}
-              disabledClassName={"disabledClassName"}
-              activeClassName={"activeClassName"}
-              />
-
-          </AllMedia>
-
-          {
-              modal && (paginationSelect == "interview" ? (<CardMediaModal select={select} setModal={setModal}/>) : (<CardModalSuccess select={select} setModal={setModal}/>))
-          }
-
-        </SectionEcouteVoir>
+      </SectionEcouteVoir>
 
     </Container>
   )
@@ -533,11 +528,11 @@ margin-bottom: 80px;
 }
 
 @media only screen and (max-width: 1100px) {
-  .head-text {
 
+  .head-text {
     margin-left: 20px;
     margin-right: 20px;
-/*
+
     h2 {
       margin-bottom: 5px;
       font-size: 18px;
@@ -554,9 +549,10 @@ margin-bottom: 80px;
         width: 50px;
       }
     }
-*/
-
   }
+
+
+  
 }
 
 
