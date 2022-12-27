@@ -11,6 +11,7 @@ import Footer from './components/Footer';
 import NavBar from './components/NavBar';
 import Media from './components/Media/Media';
 import FormInvestisseur from './components/Investisseur/form/FormInvestisseur';
+import Admin from './components/Administrateur/Admin';
 
 const App = () => {
   const theme = useTheme();
@@ -37,6 +38,7 @@ const App = () => {
             <Footer />
           </div>
       </AppStyled>
+
     </Router>
   )
 }
