@@ -4,13 +4,11 @@ import styled from 'styled-components';
 
 const SliderMedia = ({ items, item_key }) => {
 
-    const convertInHundred = (table) => {
-        return table.length * 100 - 100;
-    }
     
     let value = 0;
     let compteur = 0;
     
+    /*
     const handleRightSlide = (i) => {
       const slide = document.querySelector(`#slide${i}`);
       const ItemSlide = slide.querySelectorAll(".slide_img .images");
@@ -26,19 +24,35 @@ const SliderMedia = ({ items, item_key }) => {
         }
       });
     };
+*/
+    const handleRightSlide = (i) => {
+      const slide = document.querySelector(`#slide${i}`);
+      const ItemSlide = slide.querySelectorAll(".slide_img .images");
+      value -= 100;
+      compteur++;
+      if (compteur >= ItemSlide.length) {
+        compteur = 0;
+        value = 0;
+      }
+      ItemSlide.forEach((item) => {
+        item.style.transform = `translateX(${value}%)`;
+      });
+    };
+
+
     const handleLeftSlide = (i) => {
       const slide = document.querySelector(`#slide${i}`);
       const ItemSlide = slide.querySelectorAll(".slide_img .images");
       if (compteur !== 0) {
         compteur--;
-        value = value + 100;
+        value += 100;
         ItemSlide.forEach((item, i) => {
           item.style.transform = `translateX(${value}%)`;
         });
       } else {
         compteur = ItemSlide.length-1;
-        value = convertInHundred(ItemSlide) * -1;
-        ItemSlide.forEach((item, i) => {
+        value = (ItemSlide.length * 100 - 100) * -1;
+        ItemSlide.forEach((item) => {
           item.style.transform = `translateX(${value}%)`;
         });
       }
@@ -103,7 +117,7 @@ div.slide{
 
 div.slide .slide_img{
 
-    width: 390px;
+    width: 380px;
     height: 290px;
     display: flex;
     overflow: hidden;
@@ -111,12 +125,14 @@ div.slide .slide_img{
     
 }
 div.slide .slide_img .images{
+
     position: relative;
     width: 100%;
     height: 90%;
     transition: .5s ease;
     margin: auto;
     object-fit: cover;
+
 }
 
 div.slide .bar_left{
@@ -208,7 +224,7 @@ div.slide .bar_left span svg,div.slide .bar_right span svg{
 }
 
 @media only screen and (max-width: 375px) {
-  
+
   div.slide{
     width: 295px;
   }
