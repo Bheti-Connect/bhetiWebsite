@@ -56,6 +56,7 @@ const App = () => {
           <Footer />
         </div>
       </AppStyled>
+    </Router>
   )
 }
 
