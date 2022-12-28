@@ -11,7 +11,6 @@ import axios from 'axios';
 import CardModal from './CardModal';
 import LoaderReact from './LoaderReact';
 //import iconBheti from "../../assets/icons/icon_bheti_design.png";
-
 import Swal from 'sweetalert2';
 
 const Investisseur = () => {
@@ -19,7 +18,7 @@ const Investisseur = () => {
     const [currentPage, setCurrentPage] = useState(0);
     const [itemsPerPage, setItemsPerPage] = useState(0);
     const [totalPage, setTotalPage] = useState(0)
-    const [initPage, setInitPage] = useState(0)
+    const [initPage, setInitPage] = useState(-1)
     // query useState for search
     const [query, setQuery] = useState("")
     // select card useState
@@ -93,7 +92,7 @@ const Investisseur = () => {
 
       if (position == "pme")
       {
-        let pmeFilter = {filters: [{field: 'type', value: 'pme'}]}
+        let pmeFilter = {filters: [{field: 'company_type', value: 'pme'}]}
 
         axios.post(source, pmeFilter).then(res => {
           handleSetData(res.data)
@@ -103,7 +102,7 @@ const Investisseur = () => {
 
       }else if(position == "startup")
       {
-        let startupFilter = {filters: [{field: 'type', value: 'startup'}]}
+        let startupFilter = {filters: [{field: 'company_type', value: 'startup'}]}
 
         axios.post(source, startupFilter).then(res => {
           handleSetData(res.data)
@@ -266,6 +265,7 @@ const Investisseur = () => {
 
     // First UseEffect
     useEffect(() => {
+
       let waiting = setTimeout(() => {
         setLoading(false)
       }, 4000);
@@ -393,6 +393,14 @@ width: 89%;
 justify-content: left;
 margin:auto;
 flex-wrap: wrap;
+@media only screen and (max-width: 900px) {
+  width: 86%;
+}
+
+@media only screen and (max-width: 415px) {
+  width: 68%;
+}
+
 `;
 
 const AllProject = styled.div`
@@ -464,6 +472,8 @@ const AllProject = styled.div`
 .disabledClassName{
 
 }
+
+
 
 
 

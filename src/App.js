@@ -1,7 +1,7 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import { useTheme } from './context/themeContext';
-import { BrowserRouter as Router, Routes, Route} from 'react-router-dom'
+import { BrowserRouter as Router, Routes, Route, useLocation, useNavigate } from 'react-router-dom'
 import Entrepreneur from './components/Entrepreneur/Entrepreneur';
 import Investisseur from './components/Investisseur/Investisseur';
 import Home from './components/Home';
@@ -12,42 +12,52 @@ import Media from './components/Media/Media';
 import FormOne from './components/Forms/NewForms/FormOne/FormOne';
 import FormTwo from './components/Forms/NewForms/FormTwo/FormTwo';
 import FormInvestisseur from './components/Investisseur/form/FormInvestisseur';
-import SuccessStories from './components/Media/SuccessStories/SuccessStories';
 import ErrorPage from './components/Error/ErrorPage';
 
 const App = () => {
   const theme = useTheme();
 
+  const navigate = useNavigate();
+
+  const location = useLocation();
+
+  const { pathname } = location;
+
+  useEffect(() => {
+    if(pathname !== pathname.toLowerCase()) {
+      navigate(pathname.toLowerCase())
+    }
+  },[pathname])
+
   const [isAuthenticated, setIsAuthenticated] = useState();
-  
+
   return (
-    <Router>
+    
       <AppStyled theme={theme}>
-          <div>
-            <NavBar />
-          </div>
+        <div>
+          <NavBar />
+        </div>
         <main>
           <Routes>
-            <Route path='/' exact element={<Home />} />
+            <Route path='/bhetiConnectProj' exact element={<Home />} />
             <Route path='entrepreneur' exact element={<Entrepreneur />} />
             <Route path='investisseur' exact element={<Investisseur />} />
             <Route path='media' exact element={<Media />} />
             {/* <Route path='evaluer-eligibilite' element={<EvaluerEligibilite />} /> */}
-            <Route path='pitch-deck' exact element={<FormOne />} />
-            <Route path='evaluer-eligibilite' exact element={<FormTwo />} />
+            <Route path='pitch-deck' exact caseSensitive={false} element={<FormOne />} />
+            <Route path='evaluer-eligibilite' exact caseSensitive={false} element={<FormTwo />} />
 
             {/* Route : form investisseur */}
-            <Route path='forminvestisseur' exact element={<FormInvestisseur />}/>
+            <Route path='form-investisseur' exact caseSensitive={false} element={<FormInvestisseur />} />
             {/* Route : success stories media */}
-            <Route path='success-stories' exact element={<SuccessStories />}/>
-            <Route path='' element={<ErrorPage />} />
+            <Route path='*'  element={<ErrorPage />} />
+
           </Routes>
         </main>
-          <div>
-            <Footer />
-          </div>
+        <div>
+          <Footer />
+        </div>
       </AppStyled>
-    </Router>
   )
 }
 

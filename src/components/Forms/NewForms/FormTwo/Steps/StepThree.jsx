@@ -16,8 +16,8 @@ const StepThree = (props) => {
     <>
       <MySelect label={workingTime.label} name={workingTime.name} star={`*`}>
         <option value="">Sélectionnez une option</option>
-        <option value="oui">Oui</option>
-        <option value="non">Non</option>
+        <option value="true">Oui</option>
+        <option value="false">Non</option>
       </MySelect>
       <Field label={totalPeople.label} name={totalPeople.name} type="text" star={`*`} />
       <MySelect label={turnOver.label} name={turnOver.name} star={`*`}>

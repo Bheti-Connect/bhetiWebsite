@@ -3,6 +3,8 @@ import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faXmark } from '@fortawesome/free-solid-svg-icons';
 import { useTheme } from '../../../context/themeContext';
+import { closeModal } from '../../../utils/FunctionsComponent';
+import { ReactTinyLink } from 'react-tiny-link'
 
 const CardModalSuccess = ({select, setModal}) => {
 
@@ -10,55 +12,46 @@ const CardModalSuccess = ({select, setModal}) => {
 
     // Generate image
     let source = "https://" + `picsum.photos/id/${select.id}/200/300`;
-  
-    // handle disable modal
-    const handleModal = () => {
-      const body = document.querySelector("body");
-      body.style.overflow = "auto";
-      setModal(false);
-    }
-
 
 
   return (
-    <Container>
-        <div id="open-modal" className="modal-window">
+    <Container onClick={(e) => closeModal(e.target, setModal)}>
+        <div id="open-modal" className="modal-window close">
             <div>
-                <div onClick={handleModal} className="modal-close"><FontAwesomeIcon icon={faXmark} size="lg"/></div>
+                <div onClick={(e) => closeModal(e.target, setModal)} className="modal-close"><FontAwesomeIcon className='close' icon={faXmark} size="lg"/></div>
                 <Header>
                   <p>{select.pays}</p>
                 </Header>
-
-                <Body theme={theme}>
-
-                <div className='media-detail'>
-
-                  <div>
-                    <img src={source} alt='media'/>
-                  </div>
-
-                  <div className='detail'>
-                    <p>{select.pays}</p>
-                  </div>
-
-                </div>
-
-                 {/* Info  */}
-                 <div className='item-detail'>
+                
+                {/* Info  */}
+                <div className='item-detail'>
                     <ul>
                       <li><span>Entreprise  : </span>{select.pays}</li>
                       <li><span>Représentant : </span>{select.pays}</li>
                       <li><span>Secteur : </span>{select.pays}</li>
                       <li><span>Pays : </span>{select.pays}</li>
                     </ul>
+                </div>
+
+                <Body theme={theme}>
+
+                <div className='media-detail'>
+
+                  <div className='image-modal'>
+                    <img src={source} alt='media'/>
                   </div>
 
+                </div>
+
                 {/* Video */}
-                <div className='item-detail'>
-                  <h3>Lien du site</h3>
-                  
-                  <iframe width="620" height="315" src="https://www.youtube.com/embed/2TlN_8oB6D4" title="Carrying You - Castle In The Sky - Tank Drum/ Steel Tongue Drum君をのせて 天空の城" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-          
+                <div className='preview-link'>
+                  <ReactTinyLink
+                    cardSize="small"
+                    showGraphic={true}
+                    maxLine={2}
+                    minLine={1}
+                    url="https://www.linkedin.com/feed/update/urn:li:activity:6956518384989519872"
+                  />
                 </div>
 
                 </Body>
@@ -125,20 +118,20 @@ font-size: 16px;
 
 const Body = styled.div`
 
-text-align: justify;
 
 .media-detail {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
 
-
-  img {
-    height: 200px;
-    width: 280px;
-    margin-right: 20px;
+  .image-modal{
+    margin-top: 30px;
+    img {
+    width: 600px;
+    height: 300px;
     object-fit: cover;
-    border-radius: 10px;
+    }
   }
+
 }
 
 .item-detail h3 {
@@ -153,6 +146,11 @@ text-align: justify;
   border: 1px solid transparent;
   border-radius: 1px;
   margin: 15px 0;
+}
+
+.preview-link{
+  margin: 20px;
+  width: 96%;
 }
 
 `;

@@ -51,17 +51,13 @@ const SearchFilter = ({setQuery, setTrie}) => {
           isSearchable={false}
         />
 
-
-
-
-
-
-
         </div>
       </ContainerFilter>
     </SearchBox>
   )
 }
+
+// style CSS
 
 const SearchBox = styled.div`
 

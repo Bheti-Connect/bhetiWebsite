@@ -8,7 +8,6 @@ import Button from '../Button';
 import { useTheme } from '../../context/themeContext';
 
 
-
 const Accueil = () => {
     const theme = useTheme();
     return (
@@ -98,6 +97,11 @@ const AccueilStyled = styled.section`
                     margin-left: 200px;
                     margin-top: 8%;
                 }
+                @media only screen and (max-width: 1350px) and (min-width: 1024px) {
+                    margin-left: 200px;
+                    width: 90%;
+                    margin-top: 8%;
+                }
                 @media only screen and (max-width: 960px){
                     margin-left: -80px;
                     margin-top: 10%;
@@ -135,7 +139,6 @@ const AccueilStyled = styled.section`
                     height: 250px;
                 }
             }
-            
             .centered{    
                 position: absolute;
                 top: 50%;
@@ -143,15 +146,20 @@ const AccueilStyled = styled.section`
                 transform: translate(-50%, -50%);
                 font-weight: 900;
                 font-size: 40px; 
-                color: ${props => props.theme.colorBheti}; 
+                color: ${props => props.theme.colorBlack}; 
                 @media only screen and (max-width: 2560px) and (min-width: 1800px) {
                     transform: translate(-150%, -90%);
                     width: 500px;
                 }
                 @media only screen and (max-width: 1440px) and (min-width: 1350px) {
-                    transform: translate(-170%, -50%);
-                    width: 380px;
-                    font-size: 59px; 
+                    transform: translate(-180%, -50%);
+                    width: 350px;
+                    font-size: 55px; 
+                }
+                @media only screen and (max-width: 1350px) and (min-width: 1024px) {
+                    transform: translate(-130%, -50%);
+                    width: 400px;
+                    font-size: 45px; 
                 }
                 @media only screen and (max-width: 960px){
                     width: 710px;
@@ -160,10 +168,10 @@ const AccueilStyled = styled.section`
                     color: ${props => props.theme.colorBlack}; 
                 }
                 @media only screen and (max-width: 768px){
-                    width: 400px;
+                    width: 350px;
                     font-size: 40px;
-                    transform: translate(-55%, 100%);
-                    color: ${props => props.theme.colorBheti}; 
+                    transform: translate(-120%, 40%);
+                    color: ${props => props.theme.colorBlack}; 
                 }
                 @media only screen and (max-width: 500px){
                     width: 350px;
@@ -188,10 +196,18 @@ const AccueilStyled = styled.section`
         .text-highlighted{
             align-items: center;
             margin-top: 2%;
-            @media only screen and (max-width: 1440px) and (min-width: 1350px) {
-                margin-top: 10%;
+            @media only screen and (max-width: 1440px) {
+                margin-top: 15%;
+                font-size: 1.3rem;
+                text-align: justify;
+                width: 860px;
+            }
+            @media only screen and (max-width: 1350px) and (min-width: 1024px) {
+                margin-top: 20%;
                 font-size: 1.4rem;
                 text-align: justify;
+                width: 860px;
+                margin-left: -100px;
             }
             @media only screen and (max-width: 960px) {
                 margin-top: 12%;
@@ -227,30 +243,10 @@ const AccueilStyled = styled.section`
             }
         }
         .button-demo{
-            margin: 40px 500px 0px;
-            @media only screen and (max-width: 1440px) and (min-width: 1350px){
-                width: 80%;
-                margin: 40px 350px 0px;
-            }
-            @media only screen and (max-width: 960px){
-                width: 100%;
-                margin: 50px -30px 0px;
-            }
-            @media only screen and (max-width: 768px){
-                width: 100%;
-                margin: 50px -30px 0px;
-            }
-            @media only screen and (max-width: 525px){
-                width: 100%;
-                margin: 50px -30px 0px;
-            }
-            @media only screen and (max-width: 425px){
-                width: 100%;
-                margin: 50px -30px 0px;
-            }
-            @media only screen and (max-width: 375px){
-                width: 123%;
-                margin: 50px -80px 0px;
+            position: relative;
+            margin-left: 35%;
+            @media only screen and (max-width: 1440px){
+                margin-top: 30px ;
             }
         }
         @media only screen and (max-width: 768px) {
@@ -292,7 +288,8 @@ const AccueilStyled = styled.section`
                 width: 50%;
             }
             @media all and (max-width: 1300px)  {
-
+                width: 30%;
+                
             }
             @media all and (max-width: 1080px) {
                 width: 20%;
@@ -325,6 +322,11 @@ const AccueilStyled = styled.section`
             @media only screen and (max-width: 1440px) and (min-width: 1350px) {
                 width: 40%;
             }
+            @media only screen and (max-width: 1350px) {
+                width: 30%;
+                left: -80px;
+                top: 0px;
+            }
             @media only screen and (max-width: 960px) {
                 width: 35%;
                 left: -62px;
@@ -353,6 +355,10 @@ const AccueilStyled = styled.section`
         }
         @media only screen and (max-width: 1440px) and (min-width: 1350px){
             width: 720px;
+        }
+        @media only screen and (max-width: 1350px){
+            width: 600px;
+            height: 650px;
         }
         @media only screen and (max-width: 960px) {
                 width: 50vw;
