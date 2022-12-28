@@ -3,7 +3,7 @@ import ReactPaginate from 'react-paginate';
 import styled from 'styled-components';
 import UneMedia from '../../assets/icons/a_la_une_media.svg';
 import VideoMedia from '../../assets/icons/Video_media.svg';
-import {useTheme} from '../../context/themeContext';
+import { useTheme } from '../../context/themeContext';
 import Search from './Search';
 import CardMediaModal from './CardMediaModal';
 import CardsMedia from './CardsMedia';
@@ -12,6 +12,7 @@ import LoaderMedia from './LoaderMedia';
 import { axios_get, axios_post } from '../../utils/FunctionsComponent';
 import SliderMedia from './SliderMedia';
 import CardModalSuccess from './SuccessStories/CardModalSuccess';
+import LinksAPI from '../../utils/LinksAPI';
 
 const Media = () => {
   const [currentPage, setCurrentPage] = useState(0);
@@ -20,6 +21,8 @@ const Media = () => {
   const [initPage, setInitPage] = useState(-1)
   // query useState for search
   const [query, setQuery] = useState("")
+  // Position Query
+  const [positionQuery, setPositionQuery] = useState()
   // select card useState
   const [select, setSelect] = useState(null)
   // cards data
@@ -28,8 +31,9 @@ const Media = () => {
   const [modal, setModal] = useState(false)
   // Loading : React content loader
   const [loading, setLoading] = useState(true)
-  // Position change pagination : Tout and success stories
-  const [paginationSelect, setPaginationSelect] = useState("tout")
+  // Position change pagination : interview and success stories
+  const [paginationSelect, setPaginationSelect] = useState("interview")
+  const [displayDataOf, setDisplayDataOf] = useState("interview")
   // theme
   const theme = useTheme();
 
@@ -60,7 +64,7 @@ const Media = () => {
       "name": "omari",
       "description": "Lorem Ipsum dolor set amet 3",
       "photo": [
-        "https://images.pexels.com/photos/531321/pexels-photo-531321.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1","https://images.pexels.com/photos/1292241/pexels-photo-1292241.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+        "https://images.pexels.com/photos/531321/pexels-photo-531321.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1", "https://images.pexels.com/photos/1292241/pexels-photo-1292241.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
         "https://images.pexels.com/photos/325185/pexels-photo-325185.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
       ]
     },
@@ -79,7 +83,7 @@ const Media = () => {
       "name": "omari",
       "description": "Lorem Ipsum dolor set amet 3",
       "photo": [
-        "https://images.pexels.com/photos/531321/pexels-photo-531321.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1","https://images.pexels.com/photos/1292241/pexels-photo-1292241.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+        "https://images.pexels.com/photos/531321/pexels-photo-531321.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1", "https://images.pexels.com/photos/1292241/pexels-photo-1292241.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
         "https://images.pexels.com/photos/325185/pexels-photo-325185.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
       ]
     },
@@ -88,7 +92,7 @@ const Media = () => {
       "name": "omari",
       "description": "Lorem Ipsum dolor set amet 3",
       "photo": [
-        "https://images.pexels.com/photos/531321/pexels-photo-531321.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1","https://images.pexels.com/photos/1292241/pexels-photo-1292241.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+        "https://images.pexels.com/photos/531321/pexels-photo-531321.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1", "https://images.pexels.com/photos/1292241/pexels-photo-1292241.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
         "https://images.pexels.com/photos/325185/pexels-photo-325185.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
       ]
     }
@@ -106,31 +110,24 @@ const Media = () => {
 
   // GET data from API
   const getData = () => {
-    let source = "https://bheti-connect.smirltech.com/api/entrevues";
-    axios_get(source, handleSetData)
+    axios_get(LinksAPI.entrevues, handleSetData)
   }
 
 
-  // Change Section of data : Tout, Succes stories
+  // Change Section of data : interview, Succes stories
   const changeSectionMenu = (position) => {
-    let source = "";
-
-    if (position == "tout")
-    {
-      source = "https://bheti-connect.smirltech.com/api/entrevues"
-      axios_get(source, handleSetData)
-
-      setPaginationSelect("tout")
-
-    }else if(position == "success")
-    {
-      source = "https://bheti-connect.smirltech.com/api/stories"
-      axios_get(source, handleSetData)
-
+    if (position == "interview") {
+      axios_get(LinksAPI.entrevues, handleSetData)
+      setPaginationSelect("interview")
+      setDisplayDataOf("interview")
+    } else if (position == "success") {
+      axios_get(LinksAPI.stories, handleSetData)
       setPaginationSelect("success")
-    }else{
+      setDisplayDataOf("success")
+    } else {
       getData()
-      setPaginationSelect("tout")
+      setPaginationSelect("interview")
+      setDisplayDataOf("interview")
     }
   }
 
@@ -138,57 +135,59 @@ const Media = () => {
 
   // Search data from API
   const searchData = () => {
-    // API : Search
-    let source = "https://bheti-connect.smirltech.com/api/entrevues/search"
     // Body POST
     let toSend = {
       search: {
         value: `${query}`
-    }
+      }
     }
     // Get research
-    if (query)
-    {
-      axios_post(source, toSend, handleSetData)
-      setPaginationSelect("query")
+    if (query && paginationSelect == "interview") {
+      axios_post(LinksAPI.entrevuesSearch, toSend, handleSetData)
     }
+
+    if (query && paginationSelect == "success") {
+      axios_post(LinksAPI.storiesSearch, toSend, handleSetData)
+    }
+
+    setPaginationSelect("query")
   }
 
 
 
   // handle change page
-  let changePage = ({selected}) => {
+  let changePage = ({ selected }) => {
     var pageNumber = selected + 1
     let source = ""
     let request = ""
 
-    if (paginationSelect == "query"){
-      source = `https://bheti-connect.smirltech.com/api/entrevues?page=${pageNumber}`
-      /*request = {
-        "search": {
-          "value": `${query}`
-      }
-      }*/
-    }else if(paginationSelect == "success"){
-      source = `https://bheti-connect.smirltech.com/api/stories?page=${pageNumber}`
+    switch (paginationSelect) {
+      case "query":
+        source = LinksAPI.entrevuesSearchPage(pageNumber)
+        request = { "search": { "value": `${query}` } }
+        break;
 
-    }else{
-      source = `https://bheti-connect.smirltech.com/api/entrevues?page=${pageNumber}`
+      case "success":
+        source = LinksAPI.storiesPage(pageNumber)
+        break;
+
+      default:
+        source = LinksAPI.entrevuesPage(pageNumber)
+        break;
     }
 
     // get Add for another page
-   if (request)
-    {
+    if (request) {
       axios_post(source, request, handleSetData)
-    }
-    else{
+    } else {
       axios_get(source, handleSetData)
     }
+
   }
 
   // display items
   let displayItems = data.map((item, index) => {
-    return paginationSelect == "tout" ? (<CardsMedia key={index} item={item} setSelect={setSelect} setModal={setModal}/>) : (<CardSuccess key={index} item={item} setSelect={setSelect} setModal={setModal}/>)
+    return displayDataOf == "interview" ? (<CardsMedia key={index} item={item} setSelect={setSelect} setModal={setModal} />) : (<CardSuccess key={index} item={item} setSelect={setSelect} setModal={setModal} />)
   })
 
   // handle menu : tous, startup and PME for CSS
@@ -196,12 +195,11 @@ const Media = () => {
     let activeBtn = document.querySelector(".menuSection .active");
     let valid = e.target.tagName.toLowerCase()
 
-    if(!e.target.classList.contains("active") && valid == "li")
-    {
+    if (!e.target.classList.contains("active") && valid == "li") {
       activeBtn.classList.remove("active")
       e.target.classList.add("active")
     }
-}
+  }
 
   // First UseEffect
   useEffect(() => {
@@ -242,101 +240,101 @@ const Media = () => {
   return (
     <Container>
 
-        <SectionUne theme={theme}>
-          <div className='head-text'>
+      <SectionUne theme={theme}>
+        <div className='head-text'>
 
-            <div className='icon-media'>
-              <img src={UneMedia} alt="a la une icon"/>
-            </div>
-
-            <div>
-              <h2>A LA UNE...</h2>
-              <p>Chaque semaine, découvrez les figures comme les startups qui font bouger les lignes sur les  marchés africains</p>
-            </div>
+          <div className='icon-media'>
+            <img src={UneMedia} alt="a la une icon" />
           </div>
 
-          <div className='body-une'>
+          <div>
+            <h2>A LA UNE...</h2>
+            <p>Chaque semaine, découvrez les figures comme les startups qui font bouger les lignes sur les  marchés africains</p>
+          </div>
+        </div>
 
-            <div className='cards-une'>
+        <div className='body-une'>
 
-              {aLaUne.map((u, i) => (
-                <SliderMedia items={u} item_key={i}/>
-              ))}
+          <div className='cards-une'>
 
-            </div>
+            {aLaUne.map((item, index) => (
+              <SliderMedia key={index} items={item} item_key={index} />
+            ))}
 
           </div>
 
+        </div>
 
-        </SectionUne>
 
-        <SectionEcouteVoir theme={theme}>
+      </SectionUne>
 
-          <div className='head-text'>
+      <SectionEcouteVoir theme={theme}>
 
-            <div className='icon-media'>
-              <img src={VideoMedia} alt="video icon" />
-            </div>
+        <div className='head-text'>
 
-            <div>
-              <h2>Ecouter et voir</h2>
-              <p>Apprenez de ceux qui analysent le climat des affaires pour piloter et prendre des décisions au quotidien</p>
-            </div>
+          <div className='icon-media'>
+            <img src={VideoMedia} alt="video icon" />
           </div>
 
-          <div className="containerMenu">
-                <div className='Box'>
+          <div>
+            <h2>Ecouter et voir</h2>
+            <p>Apprenez de ceux qui analysent le climat des affaires pour piloter et prendre des décisions au quotidien</p>
+          </div>
+        </div>
 
-                    {/* Section menu */}
-                    <ul className='menuSection' onClick={handleMenu}>
-                        {/* tout */}
-                        <li className='active' onClick={() => changeSectionMenu("tout")}>Tout</li>
-                        {/* success stories */}
-                        <li onClick={() => changeSectionMenu("success")}>Les success stories</li>
-                    </ul>
+        <div className="containerMenu">
+          <div className='Box'>
 
-                    {/* Filter and search */}
-                    <Search setQuery={setQuery} />
-                </div>
+            {/* Section menu */}
+            <ul className='menuSection' onClick={handleMenu}>
+              {/* interview */}
+              <li className='active' onClick={() => changeSectionMenu("interview")}>Interview</li>
+              {/* success stories */}
+              <li onClick={() => changeSectionMenu("success")}>Les success stories</li>
+            </ul>
+
+            {/* Filter and search */}
+            <Search setQuery={setQuery} />
+          </div>
+        </div>
+
+        <AllMedia theme={theme}>
+
+          <AllCards>
+
+            <div className='container-all-cards'>
+              {
+                loading ? (<LoaderMedia count={15} />) : (displayItems)
+              }
             </div>
 
-          <AllMedia theme={theme}>
+          </AllCards>
 
-            <AllCards>
+          {/* Pagination */}
+          <ReactPaginate
+            previousLabel={"Précédent"}
+            nextLabel={"Suivant"}
+            pageCount={totalPage}
+            onPageChange={changePage}
+            forcePage={initPage}
+            breakLabel="..."
+            pageRangeDisplayed={7}
+            marginPagesDisplayed={1}
+            containerClassName={"containerClassName"}
+            pageClassName={"pageClassName"}
+            previousLinkClassName={"previousLinkClassName"}
+            nextLinkClassName={"nextLinkClassName"}
+            disabledClassName={"disabledClassName"}
+            activeClassName={"activeClassName"}
+          />
 
-              <div className='container-all-cards'>
-                {
-                  loading ? (<LoaderMedia count={15}/>) : (displayItems)
-                }
-              </div>
+        </AllMedia>
 
-            </AllCards>
+        {
+          modal && (paginationSelect == "interview" ? (<CardMediaModal select={select} setModal={setModal} />) : (<CardModalSuccess select={select} setModal={setModal} />))
+        }
 
-            {/* Pagination */}
-            <ReactPaginate
-              previousLabel={"Précédent"}
-              nextLabel={"Suivant"}
-              pageCount={totalPage}
-              onPageChange={changePage}
-              forcePage={initPage}
-              breakLabel="..."
-              pageRangeDisplayed={7}
-              marginPagesDisplayed={1}
-              containerClassName={"containerClassName"}
-              pageClassName={"pageClassName"}
-              previousLinkClassName={"previousLinkClassName"}
-              nextLinkClassName={"nextLinkClassName"}
-              disabledClassName={"disabledClassName"}
-              activeClassName={"activeClassName"}
-              />
-
-          </AllMedia>
-
-          {
-              modal && (paginationSelect == "tout" ? (<CardMediaModal select={select} setModal={setModal}/>) : (<CardModalSuccess select={select} setModal={setModal}/>))
-          }
-
-        </SectionEcouteVoir>
+      </SectionEcouteVoir>
 
     </Container>
   )
@@ -524,16 +522,81 @@ margin-bottom: 80px;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content:center;
-
-
-    /*
-
-    .item_1, .item_2, .item_0{
-      
-    }
-    */
   }
 
+
+}
+
+@media only screen and (max-width: 1100px) {
+
+  .head-text {
+    margin-left: 20px;
+    margin-right: 20px;
+
+    h2 {
+      margin-bottom: 5px;
+      font-size: 18px;
+    }
+
+    p{
+      font-weight: 600;
+      font-size: 15px;
+    }
+
+    .icon-media {
+      img{
+        height: 60px;
+        width: 50px;
+      }
+    }
+  }
+
+
+  
+}
+
+
+@media only screen and (max-width: 768px) {
+
+  .head-text {
+
+    margin-left: 20px;
+    margin-right: 20px;
+
+    h2 {
+      margin-bottom: 5px;
+      font-size: 18px;
+    }
+
+    p{
+      font-weight: 600;
+      font-size: 15px;
+    }
+
+    .icon-media {
+      img{
+        height: 60px;
+        width: 50px;
+      }
+    }
+  }
+
+}
+
+@media only screen and (max-width: 578px) {
+
+}
+
+
+@media only screen and (max-width: 425px) {
+
+}
+
+@media only screen and (max-width: 375px) {
+
+}
+
+@media only screen and (max-width: 320px) {
 
 }
 
@@ -594,7 +657,7 @@ const SectionEcouteVoir = styled.div`
 }
 
 .containerMenu{
-    width:900px;
+    width:50%;
     margin: 30px auto;
 }
 
@@ -608,6 +671,117 @@ const SectionEcouteVoir = styled.div`
     border-bottom: 2px solid ${props => props.theme.colorBheti};
 }
 
+
+@media only screen and (max-width: 1100px) {
+  .head-text {
+    margin-left: 20px;
+    margin-right: 20px;
+
+    h2 {
+      margin-bottom: 5px;
+      font-size: 18px;
+    }
+
+    p{
+      font-weight: 600;
+      font-size: 15px;
+    }
+
+    .icon-media {
+      img{
+        height: 60px;
+        width: 50px;
+      }
+    }
+  }
+
+  .containerMenu .Box ul li{
+      font-size: 13px;
+}
+
+
+}
+
+@media only screen and (max-width: 930px) {
+  .containerMenu .Box{
+    justify-content: space-between;
+  }
+}
+
+
+@media only screen and (max-width: 768px) {
+  .containerMenu{
+    width:100%;
+}
+  .containerMenu .Box{
+    flex-direction: column;
+    justify-content: center;
+
+  .head-text {
+
+  margin-left: 20px;
+  margin-right: 20px;
+
+  h2 {
+    margin-bottom: 5px;
+    font-size: 18px;
+  }
+
+  p{
+    font-weight: 600;
+    font-size: 15px;
+  }
+
+  .icon-media {
+    img{
+      height: 60px;
+      width: 50px;
+    }
+  }
+  }
+}
+
+
+@media only screen and (max-width: 428px) {
+
+  .head-text {
+
+    margin-left: 20px;
+    margin-right: 20px;
+
+    h2 {
+      margin-bottom: 5px;
+      font-size: 17px;
+    }
+
+    p{
+      font-weight: 600;
+      font-size: 14px;
+    }
+  }
+}
+
+
+
+/*
+@media only screen and (max-width: 768px) {
+
+}
+
+@media only screen and (max-width: 578px) {
+
+}
+
+@media only screen and (max-width: 508px) {
+
+}
+
+
+
+@media only screen and (max-width: 415px) {
+
+}
+*/
 `;
 
 export default Media

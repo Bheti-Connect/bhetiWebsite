@@ -1,48 +1,55 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { FaAngleLeft, FaAngleRight } from "react-icons/fa";
 import styled from 'styled-components';
 
 const SliderMedia = ({ items, item_key }) => {
 
-    const convertInHundred = (table) => {
-        return table.length * 100 - 100;
-    }
     
-      let value = 0;
-      let compteur = 0;
-      
-      const handleRightSlide = (i) => {
-        const slide = document.querySelector(`#slide${i}`);
-        const ItemSlide = slide.querySelectorAll(".slide_img .images");
-        value = value - 100;
-        compteur++;
-        ItemSlide.forEach((item, i) => {
-          if (compteur < ItemSlide.length) {
-            item.style.transform = `translateX(${value}%)`;
-          } else {
-            compteur = 0;
-            value = 0;
-            item.style.transform = `translateX(${0}%)`;
-          }
+    let value = 0;
+    let compteur = 0;
+    
+    // Right function of Slider
+    const handleRightSlide = (i) => {
+      const slide = document.querySelector(`#slide${i}`);
+      const ItemSlide = slide.querySelectorAll(".slide_img .images");
+      value -= 100;
+      compteur++;
+      if (compteur >= ItemSlide.length) {
+        compteur = 0;
+        value = 0;
+      }
+      ItemSlide.forEach((item) => {
+        item.style.transform = `translateX(${value}%)`;
+      });
+    };
+
+    // Left function of Slider
+    const handleLeftSlide = (i) => {
+      const slide = document.querySelector(`#slide${i}`);
+      const ItemSlide = slide.querySelectorAll(".slide_img .images");
+      if (compteur !== 0) {
+        compteur--;
+        value += 100;
+        ItemSlide.forEach((item) => {
+          item.style.transform = `translateX(${value}%)`;
         });
-      };
-      const handleLeftSlide = (i) => {
-        const slide = document.querySelector(`#slide${i}`);
-        const ItemSlide = slide.querySelectorAll(".slide_img .images");
-        if (compteur !== 0) {
-          compteur--;
-          value = value + 100;
-          ItemSlide.forEach((item, i) => {
-            item.style.transform = `translateX(${value}%)`;
-          });
-        } else {
-          compteur = ItemSlide.length-1;
-          value = convertInHundred(ItemSlide) * -1;
-          ItemSlide.forEach((item, i) => {
-            item.style.transform = `translateX(${value}%)`;
-          });
-        }
-      };
+      } else {
+        compteur = ItemSlide.length-1;
+        value = (ItemSlide.length * 100 - 100) * -1;
+        ItemSlide.forEach((item) => {
+          item.style.transform = `translateX(${value}%)`;
+        });
+      }
+    };
+
+
+    useEffect(() => {
+      const time = Math.floor(Math.random() * (15 - 10) + 5) * 1000
+      const interval = setInterval(() => {
+        handleRightSlide(item_key)
+      }, time);
+      return () => clearInterval(interval);
+    }, []);
 
 
   return (
@@ -61,8 +68,8 @@ const SliderMedia = ({ items, item_key }) => {
             <div className='container_slide'>
               <div className="slide_img">
 
-              {items.photo.map((p) => (
-                  <img src={p} alt="" className="images" />
+              {items.photo.map((item, index) => (
+                  <img key={index} src={item} alt="" className="images" />
               ))}
 
               </div>
@@ -94,7 +101,7 @@ div.slide{
 
 div.slide .slide_img{
 
-    width: 390px;
+    width: 400px;
     height: 290px;
     display: flex;
     overflow: hidden;
@@ -102,12 +109,13 @@ div.slide .slide_img{
     
 }
 div.slide .slide_img .images{
+
     position: relative;
     width: 100%;
-    height: 90%;
     transition: .5s ease;
     margin: auto;
     object-fit: cover;
+    cursor: pointer;
 }
 
 div.slide .bar_left{
@@ -154,6 +162,63 @@ div.slide .bar_left span svg,div.slide .bar_right span svg{
 .slide_text{
     text-align: center;
 }
+
+
+
+@media only screen and (max-width: 900px) {
+  div.slide{
+    width: 550px;
+    }
+
+    div.slide .slide_img{
+    width: 290px;
+    height: 220px;
+    }
+
+}
+
+
+@media only screen and (max-width: 768px) {
+  div.slide{
+    width: 450px;
+  }
+
+  div.slide .slide_img{
+    width: 250px;
+    height: 200px;
+  }
+}
+
+
+@media only screen and (max-width: 578px) {
+
+}
+
+
+@media only screen and (max-width: 425px) {
+  div.slide{
+    width: 350px;
+  }
+
+  div.slide .slide_img{
+    width: 198px;
+    height: 150px;
+  }
+}
+
+@media only screen and (max-width: 375px) {
+
+  div.slide{
+    width: 295px;
+  }
+
+}
+
+@media only screen and (max-width: 320px) {
+
+}
+
+
 `;
 
 export default SliderMedia

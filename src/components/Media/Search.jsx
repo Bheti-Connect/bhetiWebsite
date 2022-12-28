@@ -19,7 +19,7 @@ const Search = ({setQuery}) => {
     <SearchBox>
     {/* Search Bar */}
       <ContainerSearch theme={theme}>
-        <form onSubmit={handleQuery}>
+        <form onSubmit={handleQuery} className="form">
           <button type='submit' className="btn-search"><GoSearch /></button>
           <input ref={valueSearch} type="text" className="input-search" placeholder="Recherche ..."></input>
         </form>
@@ -31,6 +31,10 @@ const Search = ({setQuery}) => {
 // Style CSS
 const SearchBox = styled.div`
 margin-right:-50px;
+
+@media only screen and (max-width: 765px) {
+  margin-right:0;
+}
 
 `;
 
@@ -85,6 +89,81 @@ outline: none;
 cursor: pointer;
 color: ${props => props.theme.colorBheti};
 background-color: transparent;
+}
+
+@media only screen and (max-width: 1380px) {
+
+  .input-search:focus{
+    width: 150px;
+  }
+
+  .btn-search:focus ~ .input-search{
+    width: 150px;
+  }
+}
+
+
+
+@media only screen and (max-width: 1100px) {
+
+  .btn-search{
+    font-size: 20px;
+  }
+
+  .input-search:focus{
+    width: 120px;
+  }
+
+  .btn-search:focus ~ .input-search{
+    width: 120px;
+  }
+
+  .input-search::placeholder{
+    font-size: 10px;
+  }
+
+}
+
+
+
+@media only screen and (max-width: 765px) {
+
+  .btn-search{
+    font-size: 18px;
+    color: white;
+  }
+
+  .input-search{
+    width: 50%;
+    color: white;
+    transition: none;
+    padding: 0;
+    margin-left: 20px;
+    margin-right: 20px;
+
+    &:focus{
+    width: 50%;
+    color: white;
+    }
+
+    &::placeholder{
+      font-size: 10px;
+      color: white;
+    }
+  }
+
+  .btn-search:focus ~ .input-search{
+    width: 100%;
+    }
+
+  .form{
+    background-color:  #700b0b;
+    border-radius: 25px;
+    height: 50px;
+    margin-top: 50px;
+  }
+
+
 }
 
 `;

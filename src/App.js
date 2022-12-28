@@ -32,7 +32,7 @@ const App = () => {
   const [isAuthenticated, setIsAuthenticated] = useState();
 
   return (
-    
+    <Router>
       <AppStyled theme={theme}>
         <div>
           <NavBar />
@@ -46,12 +46,10 @@ const App = () => {
             {/* <Route path='evaluer-eligibilite' element={<EvaluerEligibilite />} /> */}
             <Route path='pitch-deck' exact caseSensitive={false} element={<FormOne />} />
             <Route path='evaluer-eligibilite' exact caseSensitive={false} element={<FormTwo />} />
-
             {/* Route : form investisseur */}
             <Route path='form-investisseur' exact caseSensitive={false} element={<FormInvestisseur />} />
             {/* Route : success stories media */}
             <Route path='*'  element={<ErrorPage />} />
-
           </Routes>
         </main>
         <div>
