@@ -32,14 +32,14 @@ const App = () => {
   const [isAuthenticated, setIsAuthenticated] = useState();
 
   return (
-    <Router>
+    
       <AppStyled theme={theme}>
         <div>
           <NavBar />
         </div>
         <main>
           <Routes>
-            <Route path='/bhetiConnectProj' exact element={<Home />} />
+            <Route path='/' exact element={<Home />} />
             <Route path='entrepreneur' exact element={<Entrepreneur />} />
             <Route path='investisseur' exact element={<Investisseur />} />
             <Route path='media' exact element={<Media />} />
@@ -56,7 +56,7 @@ const App = () => {
           <Footer />
         </div>
       </AppStyled>
-    </Router>
+    
   )
 }
 

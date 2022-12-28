@@ -5,7 +5,6 @@ import theLogo from '../assets/images/logo.png';
 import { useTheme } from '../context/themeContext';
 import { NavLink } from 'react-router-dom';
 
-
 const NavBar = () => {
     // const navRef = useRef();
     const [etat, setEtat] = useState({clicked: false});
