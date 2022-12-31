@@ -4,7 +4,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faXmark } from '@fortawesome/free-solid-svg-icons';
 import { useTheme } from '../../../context/themeContext';
 import { closeModal } from '../../../utils/FunctionsComponent';
-import { ReactTinyLink } from 'react-tiny-link'
+//import { ReactTinyLink } from 'react-tiny-link'
+import LinkPreview from './LinkPreview';
 
 const CardModalSuccess = ({select, setModal}) => {
 
@@ -45,15 +46,7 @@ const CardModalSuccess = ({select, setModal}) => {
 
                 {/* Video */}
                 <div className='preview-link'>
-                  <ReactTinyLink
-                    cardSize="small"
-                    showGraphic={true}
-                    maxLine={2}
-                    minLine={1}
-                    url="https://www.linkedin.com/feed/update/urn:li:activity:6956518384989519872"
-                    proxyUrl="https://test.com" 
-
-                  />
+                  <LinkPreview url="https://www.linkedin.com/feed/update/urn:li:activity:6956518384989519872"/>
                 </div>
 
                 </Body>
