@@ -40,6 +40,13 @@ const EconomicNewsStyled = styled.section`
     background-color: ${props => props.theme.colorBlack};
     margin-bottom: 6rem;
     box-shadow: 0 5px 18px #212529b7;
+    @media only  screen and (max-width: 425px) {
+        position: relative;
+        width: 100%;
+        height: 100vh;
+        
+    }
+    
     .left-rec{
         overflow: hidden;
         border-top-left-radius: 5px;
@@ -57,6 +64,13 @@ const EconomicNewsStyled = styled.section`
             @media only  screen and (max-width: 320px) {
                 width: 100%;
             }
+        }
+        @media only screen and (max-width: 425px) {
+            width: 100%;
+            height: 45%;
+            position: absolute;
+            top: 0;
+            left: 0;
         }
     }
     .right-rec{
@@ -109,25 +123,25 @@ const EconomicNewsStyled = styled.section`
                     margin-left: 30%;
                 }
                 @media only screen and (max-width: 425px) {
-                    margin-left: 0px;
+                    margin-left: 23px ;
                 }
-            }
-            @media only screen and (max-width: 425px) {
-                width: 300px ;
-            }
-            @media only screen and (max-width: 400px) {
-                width: 390px;
-            }
-            @media only screen and (max-width: 375px) {
-                
+                @media only screen and (max-width: 375px) {
+                    margin-left: -20px ;
+                }
             }
         }
         @media only screen and (max-width: 425px) {
-                    width: 250px;
-                }
-        @media only screen and (max-width: 425px) {
-                    width: 240px;
-                }
+                position: relative;
+                top: 20vh;
+                width: 185%;
+                z-index: 10;
+                margin-left: 18px;
+            }
+        @media only screen and (max-width: 375px) {
+            top: 23vh;
+            width: 160%;
+            margi-left: 15px;
+        }
     }
 `;
 
