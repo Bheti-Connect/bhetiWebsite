@@ -104,7 +104,7 @@ const AboutSectionStyled = styled.section`
                 width: 600px;
                 margin-bottom: 6%;
                 margin-top: -20%;
-                margin-left: 250px;
+                margin-left: 16vw;
             }
             @media only screen and (max-width: 960px){
                 font-size: 1.9rem;
@@ -203,7 +203,7 @@ const AboutSectionStyled = styled.section`
                 }
                 @media only screen and (max-width: 1024px) {
                     width: 650px;
-                    margin-left: 30%;
+                    margin-left: 15%;
                     .icon {
                         width: 70px;
                         height: 65px;
@@ -315,7 +315,7 @@ const AboutSectionStyled = styled.section`
             @media only screen and (max-width: 1440px) and (min-width: 1350px){
                     margin-right: 15%;
                     width: 490px;
-                    height: 400px;
+                    height: 450px;
             }
             @media only screen and (max-width: 1350px) and (min-width: 1250px){
                     margin-right: 12%;

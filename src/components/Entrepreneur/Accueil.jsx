@@ -14,7 +14,7 @@ const Accueil = () => {
         <AccueilStyled className='u-pad-lg-2'  theme={theme}>
             <div className='first-container'>
                 <div className='headache'>
-                    <h1 className='centered'>Rés<span className='resolvez'>olvez le </span><span className='casse'>casse</span> tête du financement de votre entreprise</h1>
+                    <h1 className='centered'>Résolvez le casse tête du financement de votre entreprise</h1>
                     <img className='girls-talk' src={Talking} alt='Image-Femmes'/>
                 </div>
                 <div className='text-highlighted'>
@@ -94,7 +94,7 @@ const AccueilStyled = styled.section`
                     margin-top: 7%;
                 }
                 @media only screen and (max-width: 1440px) and (min-width: 1350px) {
-                    margin-left: 200px;
+                    margin-left: 250px;
                     margin-top: 8%;
                 }
                 @media only screen and (max-width: 1350px) and (min-width: 1024px) {
@@ -146,15 +146,16 @@ const AccueilStyled = styled.section`
                 transform: translate(-50%, -50%);
                 font-weight: 900;
                 font-size: 40px; 
+                font-family: 'cinzel' ;
                 color: ${props => props.theme.colorBlack}; 
                 @media only screen and (max-width: 2560px) and (min-width: 1800px) {
                     transform: translate(-150%, -90%);
                     width: 500px;
                 }
                 @media only screen and (max-width: 1440px) and (min-width: 1350px) {
-                    transform: translate(-180%, -50%);
-                    width: 350px;
-                    font-size: 55px; 
+                    transform: translate(-145%, -40%);
+                    width: 440px;
+                    font-size: 38px; 
                 }
                 @media only screen and (max-width: 1350px) and (min-width: 1024px) {
                     transform: translate(-130%, -50%);
@@ -247,6 +248,10 @@ const AccueilStyled = styled.section`
             margin-left: 35%;
             @media only screen and (max-width: 1440px){
                 margin-top: 30px ;
+            }
+            @media only screen and (max-width: 425px){
+                width:100%;
+                margin: auto;
             }
         }
         @media only screen and (max-width: 768px) {

@@ -172,6 +172,10 @@ const Flex = styled.div`
     align-items:center;
   }
 
+  .active {
+    background-color: #641C1C ;
+  }
+
   .stepsNumber{
     font-size: 24px;
     font-weight: 700;

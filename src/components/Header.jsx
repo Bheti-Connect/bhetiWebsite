@@ -45,8 +45,8 @@ const Header = () => {
 }
 
 const HeaderStyled = styled.header`
-    height: 85vh;
     position: relative;
+    height: 85vh;
     @media only screen and (max-width: 2560px){
         height: 84vh;
     }
@@ -57,13 +57,13 @@ const HeaderStyled = styled.header`
         height: 100vh;
     }
     @media only screen and (max-width: 1024px){
-        height: 90vh;
+        height: 105vh;
     }
     @media only screen and (max-width: 960px){
         height: 80vh;
     }
     @media only screen and (max-width: 768px){
-        height: 75vh;
+        height: 70vh;
     }
     @media only screen and (max-width: 425px) {
         height: 98vh;
@@ -194,7 +194,7 @@ const HeaderStyled = styled.header`
                     }
             }
             @media only screen and (max-width: 768px){
-                margin-top: 4%;
+                margin-top: 8%;
                     width: 350px;
                     h2{
                         font-size: 32px;
@@ -516,8 +516,8 @@ const HeaderStyled = styled.header`
                 margin-left: -70px;
             }
             @media only screen and (max-width: 1024px) {
-                margin-left: -200px;
-                margin-top: -8%;
+                margin-left: -150px;
+                margin-top: -7%;
             }
             @media only screen and (max-width: 960px) {
                 margin-left: -210px;

@@ -20,12 +20,12 @@ const EconomicNews = () => {
                         Nous vous immergeons dans ce monde encore opaque pour vous apporter des informations transparentes, inédites et exclusives.
                     </p>
                     <a className='bouton'>
-                    <Button 
-                        name={"Je m'informe"}
-                        icon={'fas fa-chevron-right'}
-                        arrow={'arrow'}
-                        blob={'blob'}
-                    />
+                        <Button 
+                            name={"Je m'informe"}
+                            icon={'fas fa-chevron-right'}
+                            arrow={'arrow'}
+                            blob={'blob'}
+                        />
                     </a>
                 </div>
             </div>
@@ -103,9 +103,10 @@ const EconomicNewsStyled = styled.section`
                 width: 320px;
             }
             .bouton {
+                position: relative;
                 margin-left: -30px;
-                @media only screen and (max-width: 768px) {
-                    margin-left: 80px;
+                @media only screen and (max-width: 2500px) {
+                    margin-left: 30%;
                 }
                 @media only screen and (max-width: 425px) {
                     margin-left: 0px;
