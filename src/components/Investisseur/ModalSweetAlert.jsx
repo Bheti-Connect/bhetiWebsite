@@ -1,7 +1,7 @@
 import Swal from 'sweetalert2'
 
 
-export const ModalTalkToExpert = () => {
+export const ModalTalkToExpert = (hookNavigate) => {
 
     Swal.fire({
         title: "Parler à un Expert",
@@ -9,7 +9,7 @@ export const ModalTalkToExpert = () => {
         icon: 'info',
         showCloseButton: true,
         iconColor: '#700b0b',
-        confirmButtonText: 'Se connecter',
+        confirmButtonText: 'Prendre rendez-vous',
         confirmButtonColor: "#4BB543",
         confirmButtonAriaLabel: "sans-serif",
       }).then((result) => {
@@ -18,7 +18,6 @@ export const ModalTalkToExpert = () => {
           console.log("Salut !")
         }
       })
-
 
 }
 
@@ -31,10 +30,14 @@ export const ModalConnect = (hookNavigate) => {
           text: `Pour une meilleure experience sur la platforme, veuillez vous connecter ou procéder à la création de votre compte si ce n'est pas encore fait.`,
           icon: 'info',
           showCloseButton: true,
-          iconColor: '#700b0b',
           confirmButtonText: 'Se connecter',
-          confirmButtonColor: "#4BB543",
-          confirmButtonAriaLabel: "sans-serif",
+          customClass: {
+            title: 'title-sweet-connect',
+            icon: 'icon-sweet-connect',
+            htmlContainer: '',
+            validationMessage: '',
+            confirmButton: 'confirm-sweet-connect',
+          }
         }).then((result) => {
           if (result.isConfirmed)
           {
