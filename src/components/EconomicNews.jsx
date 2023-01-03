@@ -135,7 +135,7 @@ const EconomicNewsStyled = styled.section`
                 top: 20vh;
                 width: 185%;
                 z-index: 10;
-                margin-left: 18px;
+                margin-left: 19px;
             }
         @media only screen and (max-width: 375px) {
             top: 23vh;

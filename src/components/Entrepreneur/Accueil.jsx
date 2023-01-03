@@ -14,7 +14,8 @@ const Accueil = () => {
         <AccueilStyled className='u-pad-lg-2'  theme={theme}>
             <div className='first-container'>
                 <div className='headache'>
-                    <h1 className='centered'>Résolvez le casse tête du financement de votre entreprise</h1>
+                    <h1 className='centered mobile-view'>Résolvez le casse tête du financement de votre entreprise</h1>
+                    
                     <img className='girls-talk' src={Talking} alt='Image-Femmes'/>
                 </div>
                 <div className='text-highlighted'>
@@ -146,7 +147,7 @@ const AccueilStyled = styled.section`
                 transform: translate(-50%, -50%);
                 font-weight: 900;
                 font-size: 40px; 
-                font-family: 'cinzel' ;
+                font-family: 'cinzel'   ;
                 color: ${props => props.theme.colorBlack}; 
                 @media only screen and (max-width: 2560px) and (min-width: 1800px) {
                     transform: translate(-150%, -90%);
@@ -181,9 +182,7 @@ const AccueilStyled = styled.section`
                     color: ${props => props.theme.colorBheti}; 
                 }
                 @media only screen and (max-width: 425px){
-                    font-size: 35px;
-                    transform: translate(-60%, 175%);
-                    color: ${props => props.theme.colorBlack}; 
+                    display: none;
                 }
                 @media only screen and (max-width: 375px){
                     width: 300px;
@@ -192,6 +191,17 @@ const AccueilStyled = styled.section`
                     transform: translate(-60%, 190%);
                     color: ${props => props.theme.colorBlack};
                 }
+            }
+            .mobile-view {
+                @media only screen and (max-width: 425px){
+                    display: block;
+                    width: 360px;
+                    font-size: 31px;
+                    transform: translate(-61%, 135%);
+                    color: ${props => props.theme.colorBlack};
+
+                }
+
             }
         }
         .text-highlighted{
