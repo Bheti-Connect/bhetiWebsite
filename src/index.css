@@ -2,22 +2,36 @@
 
 
 
+/* ---------- Style CSS of SweetAlert2 ---------- */
+
+h2.title-sweet-connect{
+    color:rgb(72, 65, 65) !important;
+}
 
 
 
-
-.confirm-sweet-connect{
-color: "#4BB543" !important;
+button.confirm-sweet-connect{
+background-color: #4BB543 !important;
 font-family: sans-serif !important;
 }
 
-.icon-sweet-connect{
-    color: '#700b0b' !important;
+div.icon-sweet-connect{
+    color: #700b0b !important;
+    border-color: #700b0b !important;
 }
 
 
+#rdv-btn{
+    color: white;
+    text-decoration:none;
+}
+
+div.text-sweet-connect{
+    
+}
 
 
+/* ------------------------------------------------ */
 
 
 

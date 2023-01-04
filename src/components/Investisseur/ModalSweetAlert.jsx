@@ -1,21 +1,21 @@
 import Swal from 'sweetalert2'
 
 
-export const ModalTalkToExpert = (hookNavigate) => {
+export const ModalTalkToExpert = () => {
 
     Swal.fire({
         title: "Parler à un Expert",
-        text: "Merci de parler à un expert",
+        text: "Vous êtes nouveau(lle) sur notre espace ! Pour prendre rendez-vous avec l'un de nos experts, cliquez simplement sur le bouton 'Prendre rendez-vous' ci-dessous. Nous serons heureux de vous aider à répondre à toutes vos questions.",
         icon: 'info',
         showCloseButton: true,
-        iconColor: '#700b0b',
-        confirmButtonText: 'Prendre rendez-vous',
-        confirmButtonColor: "#4BB543",
+        confirmButtonText: '<a id="rdv-btn" href="https://calendly.com/akouame/45min" target="_blank">Prendre rendez-vous</a>',
         confirmButtonAriaLabel: "sans-serif",
-      }).then((result) => {
-        if (result.isConfirmed)
-        {
-          console.log("Salut !")
+        customClass: {
+          title: 'title-sweet-connect',
+          icon: 'icon-sweet-connect',
+          htmlContainer: 'text-sweet-connect',
+          validationMessage: '',
+          confirmButton: 'confirm-sweet-connect',
         }
       })
 
@@ -34,7 +34,7 @@ export const ModalConnect = (hookNavigate) => {
           customClass: {
             title: 'title-sweet-connect',
             icon: 'icon-sweet-connect',
-            htmlContainer: '',
+            htmlContainer: 'text-sweet-connect',
             validationMessage: '',
             confirmButton: 'confirm-sweet-connect',
           }

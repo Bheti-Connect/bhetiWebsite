@@ -242,7 +242,7 @@ const Investisseur = () => {
       if (connect == false)
       {
         waiting = setTimeout(() => {
-          ModalConnect(navigate)
+          ModalTalkToExpert()
         }, 10000)
       }
 
