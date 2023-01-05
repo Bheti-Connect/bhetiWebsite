@@ -11,9 +11,8 @@ import axios from 'axios';
 import CardModal from './CardModal';
 import LoaderReact from './LoaderReact';
 //import iconBheti from "../../assets/icons/icon_bheti_design.png";
-import Swal from 'sweetalert2';
 import LinksAPI from './../../utils/LinksAPI';
-import { ModalTalkToExpert, ModalConnect } from './ModalSweetAlert';
+import { ModalConnect } from './ModalSweetAlert';
 
 const Investisseur = () => {
   // useState of pagination
@@ -46,7 +45,6 @@ const Investisseur = () => {
 
     // Test connexion Investisseur
     const [connect, setConnect] = useState(false)
-    const [hello, setHello] = useState(true)
 
 // *******************************************************************************************
 
@@ -242,7 +240,7 @@ const Investisseur = () => {
       if (connect == false)
       {
         waiting = setTimeout(() => {
-          ModalTalkToExpert()
+          ModalConnect(navigate)
         }, 10000)
       }
 

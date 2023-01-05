@@ -27,7 +27,9 @@ div.icon-sweet-connect{
 }
 
 div.text-sweet-connect{
-    
+    font-family: 'Inter', serif !important;
+    font-size: 18px !important; 
+    text-align: center !important;
 }
 
 
