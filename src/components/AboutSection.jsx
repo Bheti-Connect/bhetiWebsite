@@ -315,7 +315,7 @@ const AboutSectionStyled = styled.section`
             @media only screen and (max-width: 1440px) and (min-width: 1350px){
                     margin-right: 15%;
                     width: 490px;
-                    height: 450px;
+                    height: 480px;
             }
             @media only screen and (max-width: 1350px) and (min-width: 1250px){
                     margin-right: 12%;

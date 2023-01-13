@@ -15,7 +15,6 @@ const Accueil = () => {
             <div className='first-container'>
                 <div className='headache'>
                     <h1 className='centered mobile-view'>Résolvez le casse tête du financement de votre entreprise</h1>
-                    
                     <img className='girls-talk' src={Talking} alt='Image-Femmes'/>
                 </div>
                 <div className='text-highlighted'>
@@ -91,7 +90,8 @@ const AccueilStyled = styled.section`
                 border-bottom-left-radius: 40px;
                 @media only screen and (max-width: 2560px) and (min-width: 1800px) {
                     margin-left: 380px;
-                    width: 55%;
+                    width: 70%;
+                    height: 650px;
                     margin-top: 7%;
                 }
                 @media only screen and (max-width: 1440px) and (min-width: 1350px) {
@@ -150,8 +150,9 @@ const AccueilStyled = styled.section`
                 font-family: 'cinzel'   ;
                 color: ${props => props.theme.colorBlack}; 
                 @media only screen and (max-width: 2560px) and (min-width: 1800px) {
-                    transform: translate(-150%, -90%);
-                    width: 500px;
+                    transform: translate(-137%, -50%);
+                    font-size: 55px ;
+                    width: 650px;
                 }
                 @media only screen and (max-width: 1440px) and (min-width: 1350px) {
                     transform: translate(-145%, -40%);
@@ -207,6 +208,9 @@ const AccueilStyled = styled.section`
         .text-highlighted{
             align-items: center;
             margin-top: 2%;
+            @media only screen and (max-width: 2500px){
+                margin-left: 5vw;
+            }
             @media only screen and (max-width: 1440px) {
                 margin-top: 15%;
                 font-size: 1.3rem;
@@ -256,6 +260,10 @@ const AccueilStyled = styled.section`
         .button-demo{
             position: relative;
             margin-left: 35%;
+            @media only screen and (max-width: 2500px){
+                margin-left: 40%;
+                margin-top: 50px ;
+            }
             @media only screen and (max-width: 1440px){
                 margin-top: 30px ;
             }
@@ -294,7 +302,7 @@ const AccueilStyled = styled.section`
             right: 200px;
             bottom: 60px;
             @media all and (max-width: 2500px) {
-                width: 35%;
+                width: 45%;
             }
             @media all and (max-width: 1800px) {
                 width: 25%;
@@ -334,6 +342,11 @@ const AccueilStyled = styled.section`
             position: absolute;
             left: -125px;
             top: 0px;
+            @media only screen and (max-width: 2500px) {
+                left: -130px;
+                width: 30%;
+
+            }
             @media only screen and (max-width: 1440px) and (min-width: 1350px) {
                 width: 40%;
             }
@@ -375,6 +388,10 @@ const AccueilStyled = styled.section`
             width: 600px;
             height: 650px;
         }
+        @media only screen and (max-width: 1024px) {
+                width: 50vw;
+                height: 70vh;
+            }
         @media only screen and (max-width: 960px) {
                 width: 50vw;
                 height: 55vh;

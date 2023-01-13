@@ -62,18 +62,6 @@ const NavBar = () => {
                             >
                                 Connexion
                             </NavLink>
-                            <div className='nav-btn-container'>
-                                <NavLink to='/evaluer-eligibilite' onClick={handleClick}>
-                                    <Button 
-                                        name={'Parler à un expert'}
-                                        icon={'fas fa-chevron-right'}
-                                        arrow={'arrow'}
-                                        blob={'blob'}
-                                        
-                                    />
-                                </NavLink>
-                                
-                            </div>
                         </div>
                     </nav>
                         <div className='menu-icon' onClick={handleClick}> 
@@ -90,7 +78,7 @@ const NavBarStyled = styled.nav`
     display: flex;
 	justify-content: space-between;
 	height: 80px;
-	padding: 0rem 2rem;
+	padding: 0rem 1rem 0rem 3rem;
     .logo{
             display: flex;
             align-items: center;
@@ -132,7 +120,7 @@ const NavBarStyled = styled.nav`
         }
         .nav-menu {
             display: inline-block;
-            grid-template-columns: repeat(5, auto);
+            grid-template-columns: repeat(4, auto);
             grid-gap: 10px;
             text-align: center;
             width: 70vw;
@@ -168,7 +156,8 @@ const NavBarStyled = styled.nav`
     @media only screen and (min-width: 960px){
         margin-top: 15px;
     }
-    color: ${props => props.theme.colorGrey} ;
+    color: ${props => props.theme.colorGrey};
+
     }
     .link:hover{
         color: ${props => props.theme.colorBheti};
