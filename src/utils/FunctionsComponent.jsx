@@ -2,7 +2,7 @@ import axios from "axios";
 
 // handle disable modal
 export const closeModal = (tag, setModal) => {
-    if (tag.classList.contains("close"))
+    if (tag.children[0].classList.contains("close"))
     {
         const body = document.querySelector("body");
         body.style.overflow = "auto";

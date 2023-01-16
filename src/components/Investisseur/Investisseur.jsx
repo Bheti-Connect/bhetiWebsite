@@ -131,23 +131,13 @@ const Investisseur = () => {
       let toSend = ""
       if (trie == "Recent")
       {
-        toSend = {
-          "sort":[ {
-            "field": "id",
-            "direction": "desc"
-          }]
-        }
+        toSend = {"sort":[ {"field": "id","direction": "desc"}]}
         setPositionTrie("Recent")
       }
 
       if (trie == "Ancien")
       {
-        toSend = {
-          "sort":[ {
-            "field": "id",
-            "direction": "asc"
-          }]
-        }
+        toSend = {"sort":[ {"field": "id","direction": "asc"}]}
         setPositionTrie("Ancien")
       }
 
