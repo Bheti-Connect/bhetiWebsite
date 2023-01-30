@@ -24,7 +24,7 @@ const FormOne = () => {
               .max(15, "Doit contenir 15 caractères ou moins")
               .required("Champ obligatoire"),
             email: Yup.string()
-              .email("Adresses e-mail invalides")
+              .email("Adresse e-mail invalides")
               .required("Champ obligatoire"),
             ageYear: Yup.string()
               .oneOf(["0-3", "3-6", "6-12", "12+"], "Année invalide")
@@ -71,7 +71,7 @@ const FormOne = () => {
               label="Autre"
               name="other"
               rows="6"
-              otherText={`Avez-vous quoi que ce soit à ajouter ?`}
+              otherText={`Avez-vous quelque chose à ajouter ?`}
             />
             <div className="btn-div">
               <input className="submit-btn" type="submit" value={`Envoyer`} />
@@ -89,6 +89,23 @@ export const Wrap = styled.div`
   margin: 0 auto;
   position: relative;
 
+  @media only screen and (max-width: 2500px) {
+    margin-top: 30px;
+    width: 60%;
+
+}
+
+  @media only screen and (max-width: 1800px) {
+
+}
+
+  @media only screen and (max-width: 1350px) {
+
+  }
+
+  @media only screen and (max-width: 1024px) {
+
+  }
   @media only screen and (max-width: 850px) {
     flex-direction: column;
     width: 70%;

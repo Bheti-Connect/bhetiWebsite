@@ -16,4 +16,4 @@ display:inline-block;
 margin-right:1rem;
 `
 
-export default StepIndicator
+export default StepIndicator;

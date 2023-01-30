@@ -71,7 +71,7 @@ const CardModal = ({select, setModal, connect}) => {
 
                   <div className='detail'>
                     <h3>Projet {select.nom}</h3>
-                    <p className='cible-flouter flouter'>{select.description}</p>
+                    <p>{select.description}</p>
                   </div>
                 </div>
 
@@ -114,7 +114,7 @@ const CardModal = ({select, setModal, connect}) => {
                 <div className='deck'>
 
                 {
-                  connect ? (<Link to={'/forminvestisseur'} className='Btn-deck'>Récevoir le deck</Link>) : (<Link to={'/connexion'} className='Btn-deck'>Récevoir le deck</Link>)
+                  connect ? (<Link to={'/form-investisseur'} className='Btn-deck'>Récevoir le deck</Link>) : (<Link to={'/connexion'} className='Btn-deck'>Récevoir le deck</Link>)
                 }
                 
                 </div>

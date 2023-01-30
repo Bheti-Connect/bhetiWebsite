@@ -8,14 +8,13 @@ import Button from '../Button';
 import { useTheme } from '../../context/themeContext';
 
 
-
 const Accueil = () => {
     const theme = useTheme();
     return (
         <AccueilStyled className='u-pad-lg-2'  theme={theme}>
             <div className='first-container'>
                 <div className='headache'>
-                    <h1 className='centered'>Rés<span className='resolvez'>olvez le </span><span className='casse'>casse</span> tête du financement de votre entreprise</h1>
+                    <h1 className='centered mobile-view'>Résolvez le casse tête du financement de votre entreprise</h1>
                     <img className='girls-talk' src={Talking} alt='Image-Femmes'/>
                 </div>
                 <div className='text-highlighted'>
@@ -91,11 +90,17 @@ const AccueilStyled = styled.section`
                 border-bottom-left-radius: 40px;
                 @media only screen and (max-width: 2560px) and (min-width: 1800px) {
                     margin-left: 380px;
-                    width: 55%;
+                    width: 70%;
+                    height: 650px;
                     margin-top: 7%;
                 }
                 @media only screen and (max-width: 1440px) and (min-width: 1350px) {
+                    margin-left: 250px;
+                    margin-top: 8%;
+                }
+                @media only screen and (max-width: 1350px) and (min-width: 1024px) {
                     margin-left: 200px;
+                    width: 90%;
                     margin-top: 8%;
                 }
                 @media only screen and (max-width: 960px){
@@ -135,7 +140,6 @@ const AccueilStyled = styled.section`
                     height: 250px;
                 }
             }
-            
             .centered{    
                 position: absolute;
                 top: 50%;
@@ -143,15 +147,22 @@ const AccueilStyled = styled.section`
                 transform: translate(-50%, -50%);
                 font-weight: 900;
                 font-size: 40px; 
-                color: ${props => props.theme.colorBheti}; 
+                font-family: 'cinzel'   ;
+                color: ${props => props.theme.colorBlack}; 
                 @media only screen and (max-width: 2560px) and (min-width: 1800px) {
-                    transform: translate(-150%, -90%);
-                    width: 500px;
+                    transform: translate(-137%, -50%);
+                    font-size: 55px ;
+                    width: 650px;
                 }
                 @media only screen and (max-width: 1440px) and (min-width: 1350px) {
-                    transform: translate(-170%, -50%);
-                    width: 380px;
-                    font-size: 59px; 
+                    transform: translate(-145%, -40%);
+                    width: 440px;
+                    font-size: 38px; 
+                }
+                @media only screen and (max-width: 1350px) and (min-width: 1024px) {
+                    transform: translate(-130%, -50%);
+                    width: 400px;
+                    font-size: 45px; 
                 }
                 @media only screen and (max-width: 960px){
                     width: 710px;
@@ -160,10 +171,10 @@ const AccueilStyled = styled.section`
                     color: ${props => props.theme.colorBlack}; 
                 }
                 @media only screen and (max-width: 768px){
-                    width: 400px;
+                    width: 350px;
                     font-size: 40px;
-                    transform: translate(-55%, 100%);
-                    color: ${props => props.theme.colorBheti}; 
+                    transform: translate(-120%, 40%);
+                    color: ${props => props.theme.colorBlack}; 
                 }
                 @media only screen and (max-width: 500px){
                     width: 350px;
@@ -172,9 +183,7 @@ const AccueilStyled = styled.section`
                     color: ${props => props.theme.colorBheti}; 
                 }
                 @media only screen and (max-width: 425px){
-                    font-size: 35px;
-                    transform: translate(-60%, 175%);
-                    color: ${props => props.theme.colorBlack}; 
+                    display: none;
                 }
                 @media only screen and (max-width: 375px){
                     width: 300px;
@@ -184,14 +193,36 @@ const AccueilStyled = styled.section`
                     color: ${props => props.theme.colorBlack};
                 }
             }
+            .mobile-view {
+                @media only screen and (max-width: 425px){
+                    display: block;
+                    width: 360px;
+                    font-size: 31px;
+                    transform: translate(-61%, 135%);
+                    color: ${props => props.theme.colorBlack};
+
+                }
+
+            }
         }
         .text-highlighted{
             align-items: center;
             margin-top: 2%;
-            @media only screen and (max-width: 1440px) and (min-width: 1350px) {
-                margin-top: 10%;
+            @media only screen and (max-width: 2500px){
+                margin-left: 5vw;
+            }
+            @media only screen and (max-width: 1440px) {
+                margin-top: 15%;
+                font-size: 1.3rem;
+                text-align: justify;
+                width: 860px;
+            }
+            @media only screen and (max-width: 1350px) and (min-width: 1024px) {
+                margin-top: 20%;
                 font-size: 1.4rem;
                 text-align: justify;
+                width: 860px;
+                margin-left: -100px;
             }
             @media only screen and (max-width: 960px) {
                 margin-top: 12%;
@@ -227,30 +258,18 @@ const AccueilStyled = styled.section`
             }
         }
         .button-demo{
-            margin: 40px 500px 0px;
-            @media only screen and (max-width: 1440px) and (min-width: 1350px){
-                width: 80%;
-                margin: 40px 350px 0px;
+            position: relative;
+            margin-left: 35%;
+            @media only screen and (max-width: 2500px){
+                margin-left: 40%;
+                margin-top: 50px ;
             }
-            @media only screen and (max-width: 960px){
-                width: 100%;
-                margin: 50px -30px 0px;
-            }
-            @media only screen and (max-width: 768px){
-                width: 100%;
-                margin: 50px -30px 0px;
-            }
-            @media only screen and (max-width: 525px){
-                width: 100%;
-                margin: 50px -30px 0px;
+            @media only screen and (max-width: 1440px){
+                margin-top: 30px ;
             }
             @media only screen and (max-width: 425px){
-                width: 100%;
-                margin: 50px -30px 0px;
-            }
-            @media only screen and (max-width: 375px){
-                width: 123%;
-                margin: 50px -80px 0px;
+                width:100%;
+                margin: auto;
             }
         }
         @media only screen and (max-width: 768px) {
@@ -283,7 +302,7 @@ const AccueilStyled = styled.section`
             right: 200px;
             bottom: 60px;
             @media all and (max-width: 2500px) {
-                width: 35%;
+                width: 45%;
             }
             @media all and (max-width: 1800px) {
                 width: 25%;
@@ -292,7 +311,8 @@ const AccueilStyled = styled.section`
                 width: 50%;
             }
             @media all and (max-width: 1300px)  {
-
+                width: 30%;
+                
             }
             @media all and (max-width: 1080px) {
                 width: 20%;
@@ -322,8 +342,18 @@ const AccueilStyled = styled.section`
             position: absolute;
             left: -125px;
             top: 0px;
+            @media only screen and (max-width: 2500px) {
+                left: -130px;
+                width: 30%;
+
+            }
             @media only screen and (max-width: 1440px) and (min-width: 1350px) {
                 width: 40%;
+            }
+            @media only screen and (max-width: 1350px) {
+                width: 30%;
+                left: -80px;
+                top: 0px;
             }
             @media only screen and (max-width: 960px) {
                 width: 35%;
@@ -354,6 +384,14 @@ const AccueilStyled = styled.section`
         @media only screen and (max-width: 1440px) and (min-width: 1350px){
             width: 720px;
         }
+        @media only screen and (max-width: 1350px){
+            width: 600px;
+            height: 650px;
+        }
+        @media only screen and (max-width: 1024px) {
+                width: 50vw;
+                height: 70vh;
+            }
         @media only screen and (max-width: 960px) {
                 width: 50vw;
                 height: 55vh;

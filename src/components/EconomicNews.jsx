@@ -20,12 +20,12 @@ const EconomicNews = () => {
                         Nous vous immergeons dans ce monde encore opaque pour vous apporter des informations transparentes, inédites et exclusives.
                     </p>
                     <a className='bouton'>
-                    <Button 
-                        name={"Je m'informe"}
-                        icon={'fas fa-chevron-right'}
-                        arrow={'arrow'}
-                        blob={'blob'}
-                    />
+                        <Button 
+                            name={"Je m'informe"}
+                            icon={'fas fa-chevron-right'}
+                            arrow={'arrow'}
+                            blob={'blob'}
+                        />
                     </a>
                 </div>
             </div>
@@ -40,6 +40,13 @@ const EconomicNewsStyled = styled.section`
     background-color: ${props => props.theme.colorBlack};
     margin-bottom: 6rem;
     box-shadow: 0 5px 18px #212529b7;
+    @media only  screen and (max-width: 425px) {
+        position: relative;
+        width: 100%;
+        height: 100vh;
+        
+    }
+    
     .left-rec{
         overflow: hidden;
         border-top-left-radius: 5px;
@@ -57,6 +64,13 @@ const EconomicNewsStyled = styled.section`
             @media only  screen and (max-width: 320px) {
                 width: 100%;
             }
+        }
+        @media only screen and (max-width: 425px) {
+            width: 100%;
+            height: 45%;
+            position: absolute;
+            top: 0;
+            left: 0;
         }
     }
     .right-rec{
@@ -103,30 +117,31 @@ const EconomicNewsStyled = styled.section`
                 width: 320px;
             }
             .bouton {
+                position: relative;
                 margin-left: -30px;
-                @media only screen and (max-width: 768px) {
-                    margin-left: 80px;
+                @media only screen and (max-width: 2500px) {
+                    margin-left: 30%;
                 }
                 @media only screen and (max-width: 425px) {
-                    margin-left: 0px;
+                    margin-left: 23px ;
                 }
-            }
-            @media only screen and (max-width: 425px) {
-                width: 300px ;
-            }
-            @media only screen and (max-width: 400px) {
-                width: 390px;
-            }
-            @media only screen and (max-width: 375px) {
-                
+                @media only screen and (max-width: 375px) {
+                    margin-left: -20px ;
+                }
             }
         }
         @media only screen and (max-width: 425px) {
-                    width: 250px;
-                }
-        @media only screen and (max-width: 425px) {
-                    width: 240px;
-                }
+                position: relative;
+                top: 20vh;
+                width: 185%;
+                z-index: 10;
+                margin-left: 19px;
+            }
+        @media only screen and (max-width: 375px) {
+            top: 23vh;
+            width: 160%;
+            margi-left: 15px;
+        }
     }
 `;
 

@@ -9,7 +9,6 @@ import BhetiWhite from '../../assets/images/bheti-white.png';
 
 const EvaluerEligibilite = () => {
     const theme = useTheme();
-
     const listOptions = optionsActivity.map((option) => 
         <option>{option}</option>
     )
@@ -54,7 +53,6 @@ const EvaluerEligibilite = () => {
                                 type='text'
                                 name=''
                                 placeholder='Lien de votre site web ou LinkedIn'
-
                             />
                         </div>
                         <div className='input-div'>

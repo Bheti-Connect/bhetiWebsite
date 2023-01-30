@@ -43,7 +43,26 @@ const FormTwo = () => {
 
   async function _submitForm(values, actions) {
     await _sleep(1000);
-    alert(JSON.stringify(values, null, 2));
+    // alert(JSON.stringify(values, null, 2));
+    // console.log(values);
+
+    values = {
+      ...values,
+      travail_plein_temps: values.travail_plein_temps === 'true'
+    }
+
+    const headers = {
+      "Content-Type": "application/json",
+      "Accept": "application/json",
+  };
+
+    let data = await fetch('https://bheti-connect.smirltech.com/api/evaluations', {
+      method: 'POST', 
+      headers,
+      body: JSON.stringify(values),
+    });
+    let response = await data.json();
+    console.log(response);
     actions.setSubmitting(false);
     setActiveStep(activeStep + 1);
   }
@@ -151,6 +170,10 @@ const Flex = styled.div`
   @media only screen and (max-width:450px){
     flex-direction:column;
     align-items:center;
+  }
+
+  .active {
+    background-color: #641C1C ;
   }
 
   .stepsNumber{

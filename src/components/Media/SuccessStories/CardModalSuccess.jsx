@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faXmark } from '@fortawesome/free-solid-svg-icons';
 import { useTheme } from '../../../context/themeContext';
 import { closeModal } from '../../../utils/FunctionsComponent';
+import { ReactTinyLink } from 'react-tiny-link'
 
 const CardModalSuccess = ({select, setModal}) => {
 
@@ -21,37 +22,38 @@ const CardModalSuccess = ({select, setModal}) => {
                 <Header>
                   <p>{select.pays}</p>
                 </Header>
-
-                <Body theme={theme}>
-
-                <div className='media-detail'>
-
-                  <div>
-                    <img src={source} alt='media'/>
-                  </div>
-
-                  <div className='detail'>
-                    <p>{select.pays}</p>
-                  </div>
-
-                </div>
-
-                 {/* Info  */}
-                 <div className='item-detail'>
+                
+                {/* Info  */}
+                <div className='item-detail'>
                     <ul>
                       <li><span>Entreprise  : </span>{select.pays}</li>
                       <li><span>Représentant : </span>{select.pays}</li>
                       <li><span>Secteur : </span>{select.pays}</li>
                       <li><span>Pays : </span>{select.pays}</li>
                     </ul>
+                </div>
+
+                <Body theme={theme}>
+
+                <div className='media-detail'>
+
+                  <div className='image-modal'>
+                    <img src={source} alt='media'/>
                   </div>
 
+                </div>
+
                 {/* Video */}
-                <div className='item-detail'>
-                  <h3>Lien du site</h3>
-                  
-                  <iframe width="620" height="315" src="https://www.youtube.com/embed/2TlN_8oB6D4" title="Carrying You - Castle In The Sky - Tank Drum/ Steel Tongue Drum君をのせて 天空の城" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-          
+                <div className='preview-link'>
+                  <ReactTinyLink
+                    cardSize="small"
+                    showGraphic={true}
+                    maxLine={2}
+                    minLine={1}
+                    url="https://www.linkedin.com/feed/update/urn:li:activity:6956518384989519872"
+                    proxyUrl="https://test.com" 
+
+                  />
                 </div>
 
                 </Body>
@@ -118,20 +120,20 @@ font-size: 16px;
 
 const Body = styled.div`
 
-text-align: justify;
 
 .media-detail {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
 
-
-  img {
-    height: 200px;
-    width: 280px;
-    margin-right: 20px;
+  .image-modal{
+    margin-top: 30px;
+    img {
+    width: 600px;
+    height: 300px;
     object-fit: cover;
-    border-radius: 10px;
+    }
   }
+
 }
 
 .item-detail h3 {
@@ -146,6 +148,11 @@ text-align: justify;
   border: 1px solid transparent;
   border-radius: 1px;
   margin: 15px 0;
+}
+
+.preview-link{
+  margin: 20px;
+  width: 96%;
 }
 
 `;
