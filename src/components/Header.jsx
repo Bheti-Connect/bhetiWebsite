@@ -510,7 +510,7 @@ const HeaderStyled = styled.header`
                 margin-left: -40px;
             }
         @media only screen and (max-width: 1350px) and (min-width: 1250px) {
-                margin-left: -30px;
+                margin-left: -80px;
             }
         @media only screen and (max-width: 1250px) {
                 margin-left: -70px;
