@@ -58,7 +58,7 @@ const GlobalStyle = createGlobalStyle`
         padding-left: 18rem;
         padding-right: 18rem;
         padding-bottom: 6rem;
-        @media only screen and (max-width: 425px) {
+        @media only screen and (max-width: 500px) {
             padding-top: 0rem;
             padding-left: 0rem;
             padding-right: 0rem;

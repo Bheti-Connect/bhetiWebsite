@@ -198,11 +198,16 @@ const AccueilStyled = styled.section`
                     display: block;
                     width: 360px;
                     font-size: 31px;
-                    transform: translate(-61%, 135%);
+                    transform: translate(-64%, 135%);
                     color: ${props => props.theme.colorBlack};
-
                 }
-
+                @media only screen and (max-width: 375px){
+                    display: block;
+                    width: 300px;
+                    font-size: 30px;
+                    transform: translate(-60%, 90%);
+                    color: ${props => props.theme.colorBlack};
+                }
             }
         }
         .text-highlighted{
@@ -240,14 +245,6 @@ const AccueilStyled = styled.section`
                 margin-top: 200px;
                 margin-left: -80px;
             }
-            @media only screen and (max-width: 425px) {
-                margin-top: 10%;
-                font-size: 1.01rem;
-                text-align: justify;
-                width: 320px;
-                margin-top: 200px;
-                margin-left: -80px;
-            }
             @media only screen and (max-width: 375px) {
                 margin-top: 10%;
                 font-size: 1.01rem;
@@ -267,9 +264,20 @@ const AccueilStyled = styled.section`
             @media only screen and (max-width: 1440px){
                 margin-top: 30px ;
             }
+            @media only screen and (max-width: 500px){
+                width:100%;
+                margin: 0px -20px;
+                padding-top: 15px ;
+            }
             @media only screen and (max-width: 425px){
                 width:100%;
-                margin: auto;
+                margin: 0px -20px;
+                padding-top: 15px ;
+            }
+            @media only screen and (max-width: 375px){
+                width:125%;
+                margin: 0px -80px;
+                padding-top: 15px ;
             }
         }
         @media only screen and (max-width: 768px) {
@@ -277,8 +285,7 @@ const AccueilStyled = styled.section`
             margin-left: 130px;
         }
         @media only screen and (max-width: 500px) {
-            width: 220px;
-            margin-left: 130px;
+            width: 240px;
         }
         @media only screen and (max-width: 425px) {
             width: 270px;
@@ -404,22 +411,19 @@ const AccueilStyled = styled.section`
             }
         @media only screen and (max-width: 525px) {
                 width: 50vw;
-                height: 417px;
+                height: 300px;
                 top: 0px;
             }
         @media only screen and (max-width: 425px){
                 width: 50vw;
-                height: 430px;
                 top: 0px;
             }
         @media only screen and (max-width: 375px){
                 width: 50vw;
-                height: 400px;
                 top: 0px;
             }
         @media only screen and (max-width: 320px){
                 width: 50vw;
-                height: 417px;
                 top: 0px;
             }
     }
