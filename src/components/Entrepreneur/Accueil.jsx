@@ -194,6 +194,13 @@ const AccueilStyled = styled.section`
                 }
             }
             .mobile-view {
+                @media only screen and (max-width: 440px){
+                    display: block;
+                    width: 360px;
+                    font-size: 31px;
+                    transform: translate(-58%, 125%);
+                    color: ${props => props.theme.colorBlack};
+                }
                 @media only screen and (max-width: 425px){
                     display: block;
                     width: 360px;
@@ -275,7 +282,7 @@ const AccueilStyled = styled.section`
             @media only screen and (max-width: 500px){
                 width:100%;
                 margin: 0px -20px;
-                padding-top: 15px ;
+                padding-top: 20px ;
             }
             @media only screen and (max-width: 425px){
                 width:100%;
