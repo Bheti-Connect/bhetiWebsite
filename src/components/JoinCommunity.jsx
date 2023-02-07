@@ -79,9 +79,9 @@ const JoinCommunityStyled = styled.section`
         }
     }
     .latest-container{
-        margin-top: 1.5rem;
+        margin-top: 2.5rem;
         background-color: ${props => props.theme.colorBlack};
-        border-radius: 7px;
+        border-radius: 3px;
         @media only screen and (max-width: 2560px) and (min-width: 1800px) {
             width: 1500px;
             margin-left: -70px;
@@ -92,6 +92,7 @@ const JoinCommunityStyled = styled.section`
         }
         @media only screen and (max-width: 1440px) and (min-width: 1350px) {
             width: 1000px;
+            height: 400px;
             margin-left: -60px;
         }
         @media only screen and (max-width: 1350px) and (min-width: 1250px) {
@@ -145,6 +146,7 @@ const JoinCommunityStyled = styled.section`
                     width: 380px;
                     height: 250px;
                     margin-left: -100px;
+                    margin-top: -80px;
                 }
                 @media only screen and (max-width: 1350px) and (min-width: 1250px) {
                     width: 350px;
@@ -221,7 +223,7 @@ const JoinCommunityStyled = styled.section`
                     width: 500px;
                     height: 200px;
                     margin-left: 20px;
-                    margin-top: -2%;
+                    margin-top: -15%;
                 }
                 @media only screen and (max-width: 1350px) and (min-width: 1250px) {
                     width: 500px;
@@ -267,7 +269,6 @@ const JoinCommunityStyled = styled.section`
                     margin: 1;
                     @media only screen and (max-width: 425px) {
                         margin-left: 17px;
-
                     }
                     @media only screen and (max-width: 400px) {
                         margin-left: 17px;

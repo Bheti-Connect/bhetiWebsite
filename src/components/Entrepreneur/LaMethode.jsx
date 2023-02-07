@@ -66,7 +66,7 @@ const LaMethodeStyled = styled.section`
             color: ${props => props.theme.colorWhite};
         }
         p{
-            padding: 1.5rem 0;
+            padding: 1.2rem 0;
         }
         .title{
             font-size: 3rem;
@@ -93,7 +93,10 @@ const LaMethodeStyled = styled.section`
             width: 250px;
             font-size: 16px;
                 h5{
-                    font-size: 20px;
+                    font-size: 10px;
+                }
+                p {
+                    font-size: 17px;
                 }
                 .title{
                     font-size: 2rem;
@@ -132,11 +135,10 @@ const LaMethodeStyled = styled.section`
             margin-top: -100px;
         }
         @media all and (max-width: 375px){
-            width: 300px;
-            margin-left: 40px;
+            width: 310px;
+            margin-left: 30px;
             
         }
-        
     }
     .right-container{
         display: grid; 
