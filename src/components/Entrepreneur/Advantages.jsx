@@ -10,7 +10,7 @@ import Image1 from '../../assets/images/pexels-edmond-dantès-8553867.jpg';
 const Advantages = () => {
     return (
         <AdvantagesDiv>
-            <main>
+            <main id='main'>
             <ul id="cards">
 		<li className="card" id="card_1">
 			<div className="card__content">
@@ -29,7 +29,7 @@ const Advantages = () => {
 		<li className="card" id="card_2">
 			<div className="card__content">
 				<div>
-					<h3>Obtenir des financements</h3>
+					<h3 className='card_title'>Obtenir des financements</h3>
 					<p className='paragraph'>
                         Lorem ipsum dolor sit amet consectetur adipisicing elit.
                         Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris 
@@ -44,7 +44,7 @@ const Advantages = () => {
 		<li className="card" id="card_3">
 			<div className="card__content">
 				<div>
-					<h3>Faire une levée de fonds</h3>
+					<h3 className='card_title'>Faire une levée de fonds</h3>
 					<p className='paragraph'>
                         Lorem ipsum dolor sit amet consectetur adipisicing elit.
                         Excepteur sint occaecat cupidatat non proident, 
@@ -59,7 +59,7 @@ const Advantages = () => {
 		<li className="card" id="card_4">
 			<div className="card__content">
 				<div>
-					<h3>Autant de choses qui vous paraissent insolubles?</h3>
+					<h3 className='card_title'>Autant de choses qui vous paraissent insolubles?</h3>
 					<p className='paragraph'>Avec nos outils prisés par les experts du monde des startups, vous allez bénéficiez de l’accompagnement de nos meilleurs conseillers.</p>
 					<p className='paragraph'><a href="#top" class="btn btn--accent">Retour</a></p>
 				</div>

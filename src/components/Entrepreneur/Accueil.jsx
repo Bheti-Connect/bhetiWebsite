@@ -147,7 +147,7 @@ const AccueilStyled = styled.section`
                 }
                 @media only screen and (max-width: 1440px){
                     width: 500px;
-                    font-size: 32px; 
+                    font-size: 45px; 
                 }
                 @media only screen and (max-width: 1350px) and (min-width: 1024px) {
                     width: 400px;

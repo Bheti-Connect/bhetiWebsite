@@ -84,7 +84,7 @@
   white-space: nowrap;
 }
 
-#debug:checked ~ main {
+#debug:checked ~ #main {
   --outline-width: 1px;
 }
 
@@ -96,15 +96,10 @@
 	margin: 0;
 	padding: 0;
 }
-
 body {
-	color: rgb(255, 255, 255);
-	text-align: center;
-
-	font-size: calc(1em + 0.5vw);
+    text-align: center;
 }
-
-main {
+#main {
 	width: 80vw;
 	margin: 0 auto;
 }
@@ -162,7 +157,7 @@ main {
 }
 
 
-h3 {
+.card_title{
 	font-size: 1.31em;
 }
 
