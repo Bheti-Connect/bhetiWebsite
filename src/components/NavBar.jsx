@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import styled from 'styled-components'
-import Button from './Button';
 import theLogo from '../assets/images/logo.png';
 import { useTheme } from '../context/themeContext';
 import { NavLink } from 'react-router-dom';
@@ -8,6 +7,14 @@ import { NavLink } from 'react-router-dom';
 const NavBar = () => {
     // const navRef = useRef();
     const [etat, setEtat] = useState({clicked: false});
+
+    // const [rotate, setRotate] = useState(false);
+    // console.log("rotate status: ", rotate);
+    // rotate?document.body.style.overflow = "hidden": document.body.style.overflow = "auto";
+
+    // const stopScroll = () => {
+    //     setRotate(!rotate)
+    // }
 
     const removeNavMenu = () => {
         setShow((show) => !show);
@@ -30,8 +37,10 @@ const NavBar = () => {
                             />
                         </NavLink>
                 </div>
-                <nav  className={etat.clicked ? 'navigation active' : 'navigation'}>
-                        <div className={etat.clicked ? 'nav-menu active' : 'nav-menu'}>
+                <nav    className={etat.clicked ? 'navigation active' : 'navigation'}  >
+                        <div 
+                            className={etat.clicked ? 'nav-menu active' : 'nav-menu'} 
+                        >
                             <NavLink
                                 onClick={handleClick}
                                 to='/entrepreneur'
@@ -64,7 +73,7 @@ const NavBar = () => {
                             </NavLink>
                         </div>
                     </nav>
-                        <div className='menu-icon' onClick={handleClick}> 
+                        <div id='menu-icon' onClick={handleClick}> 
                             <i className={etat.clicked ? 'fa-solid fa-xmark' : 'fa-solid fa-bars-staggered'}></i>
                         </div>
             </div>
@@ -88,10 +97,10 @@ const NavBarStyled = styled.nav`
             animation-fill-mode: forwards;
             .theLogo{
                 margin-top: 10%;
-                width: 70%;
-                @media only screen and (max-width: 425px) and (min-width: 320px) {
+                width: 55%;
+                @media only screen and (max-width: 440px) and (min-width: 320px) {
                     width: 100%;
-                    margin-left: -20px;
+                    margin-left: -30px;
                 }
             }
 }
@@ -132,14 +141,14 @@ const NavBarStyled = styled.nav`
             }
         }
     }
-            .menu-icon {
+            #menu-icon {
                 align-items: center;
                 visibility: hidden;
                 .fa-bars-staggered {
                     color: ${props => props.theme.colorBlack};
                 }
             }
-            .menu-icon i{
+            #menu-icon i{
                 font-size: 2.4rem;
             }
             
@@ -188,7 +197,7 @@ const NavBarStyled = styled.nav`
         justify-content: flex-start;
         position: fixed;
         top: 0px;
-        right: -1800px;
+        right: -1500px;
         transition: all 0.6s ease;
         width: 100vw;
         height: 100vh;
@@ -230,7 +239,7 @@ const NavBarStyled = styled.nav`
             z-index: 3;
         }
 
-    .menu-icon {
+    #menu-icon {
             margin-top: 7%;
             right: 4%;
             z-index: 50;
@@ -239,7 +248,7 @@ const NavBarStyled = styled.nav`
                     color: ${props => props.theme.colorWhite};
                 }
         }
-    .menu-icon i{
+    #menu-icon i{
         visibility: visible;
     }
 }

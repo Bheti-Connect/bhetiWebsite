@@ -52,12 +52,11 @@ const Footer = () => {
                         <div className="f-text">
                             <h6>Adresse</h6>
                             <span>
-                                22 Rue Bheti, Paris, France
+                            78 Avenue des Champs-Elysée 75008 Paris, France
                             </span>
                         </div>
                     </li>
                 </ul>
-
                 <ul className="nav-b company">
                     <h4>Compagnie</h4>
                     <li className="nav-item">

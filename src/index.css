@@ -1,28 +1,7 @@
-
-@media only screen and (max-width: 2560px) {
-    
-}
-
-@media only screen and (max-width: 1440px) {
-    
-}
-
-@media only screen and (max-width: 1024px) {
-    
-}
-
-@media only screen and (max-width: 768px) {
-    
-}
-
-@media only screen and (max-width: 425px) {
-    
-}
-
-@media only screen and (max-width: 375px) {
-    
-}
-
-@media only screen and (max-width: 320px) {
-    
+:root {
+	--card-height: 40vw;
+	--card-margin: 4vw;
+	--card-top-offset: 1em;
+	--numcards: 4;
+	--outline-width: 0px;
 }

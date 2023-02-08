@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import styled from 'styled-components';
 import AboutSection from './AboutSection';
 import MethodSection from './MethodSection';

@@ -8,10 +8,12 @@ const Title = ({ name, subtext}) => {
             <h3>
                 {name}
             </h3>
+            
             <p>{subtext}</p>
         </TitleStyled>
     )
 }
+
 
 const TitleStyled = styled.div`
     h3{
