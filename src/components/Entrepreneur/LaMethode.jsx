@@ -117,8 +117,8 @@ const LaMethodeStyled = styled.section`
             margin-left: -140px;
         }
         @media all and (max-width: 1300px){
-            width: 380px;
-            margin-left: -160px;
+            width: 400px;
+            margin-left: -5vw;
         }
         @media all and (max-width: 1080px){
             width: 400px;
@@ -158,7 +158,7 @@ const LaMethodeStyled = styled.section`
         }
         .neighbor-div{
             img{
-                width: 103%;
+                width: 100%;
             }
         }
         @media screen and (min-width: 1150px) {
@@ -205,7 +205,7 @@ const LaMethodeStyled = styled.section`
             display: inline-block;
             width: 100%;
             margin-top: 20vh;
-            margin-left: 0px;
+            margin-left: 10vw;
         }
     }
     @media all and (max-width: 1080px) {
