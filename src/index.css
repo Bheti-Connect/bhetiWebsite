@@ -1,3 +1,74 @@
+/* ---------- Style CSS of SweetAlert2 ---------- */
+
+h2.title-sweet-connect{
+    color:rgb(72, 65, 65) !important;
+}
+
+
+
+button.confirm-sweet-connect{
+background-color: #4BB543 !important;
+font-family: sans-serif !important;
+}
+
+div.icon-sweet-connect{
+    color: #700b0b !important;
+    border-color: #700b0b !important;
+}
+
+
+#rdv-btn{
+    color: white;
+    text-decoration:none;
+}
+
+div.text-sweet-connect{
+    font-family: 'Inter', serif !important;
+    font-size: 18px !important; 
+    text-align: center !important;
+}
+
+
+/* ------------------------------------------------ */
+
+
+
+
+
+
+
+
+/*
+
+@media only screen and (max-width: 2560px) {
+    
+}
+
+@media only screen and (max-width: 1440px) {
+    
+}
+
+@media only screen and (max-width: 1024px) {
+    
+}
+
+@media only screen and (max-width: 768px) {
+    
+}
+
+@media only screen and (max-width: 425px) {
+    
+}
+
+@media only screen and (max-width: 375px) {
+    
+}
+
+@media only screen and (max-width: 320px) {
+    
+}*/
+
+
 :root {
 	--card-height: 40vw;
 	--card-margin: 4vw;

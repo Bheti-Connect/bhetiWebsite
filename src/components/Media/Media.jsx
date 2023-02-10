@@ -207,7 +207,6 @@ const Media = () => {
       setLoading(false)
     }, 4000);
 
-    getData()
     changeSectionMenu()
 
     return () => {
@@ -331,7 +330,7 @@ const Media = () => {
         </AllMedia>
 
         {
-          modal && (paginationSelect == "interview" ? (<CardMediaModal select={select} setModal={setModal} />) : (<CardModalSuccess select={select} setModal={setModal} />))
+          modal && (displayDataOf == "interview" ? (<CardMediaModal select={select} setModal={setModal} />) : (<CardModalSuccess select={select} setModal={setModal} />))
         }
 
       </SectionEcouteVoir>

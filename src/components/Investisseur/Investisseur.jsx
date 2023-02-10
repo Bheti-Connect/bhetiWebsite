@@ -11,8 +11,8 @@ import axios from 'axios';
 import CardModal from './CardModal';
 import LoaderReact from './LoaderReact';
 //import iconBheti from "../../assets/icons/icon_bheti_design.png";
-import Swal from 'sweetalert2';
 import LinksAPI from './../../utils/LinksAPI';
+import { ModalConnect } from './ModalSweetAlert';
 
 const Investisseur = () => {
   // useState of pagination
@@ -48,26 +48,6 @@ const Investisseur = () => {
 
 // *******************************************************************************************
 
-    //Ask to connect
-    const handleConnect = () => {
-  
-      Swal.fire({
-        title: "Se connecter",
-        text: `Pour une meilleure experience sur la platforme, veuillez vous connecter ou procéder à la création de votre compte si ce n'est pas encore fait.`,
-        icon: 'info',
-        showCloseButton: true,
-        iconColor: '#700b0b',
-        confirmButtonText: 'Se connecter',
-        confirmButtonColor: "#4BB543",
-        confirmButtonAriaLabel: "sans-serif",
-      }).then((result) => {
-        if (result.isConfirmed)
-        {
-          navigate("/connexion")
-        }
-      })
-
-    }
 
     // handle for receive data and set in useState
     const handleSetData = (response) => {
@@ -151,23 +131,13 @@ const Investisseur = () => {
       let toSend = ""
       if (trie == "Recent")
       {
-        toSend = {
-          "sort":[ {
-            "field": "id",
-            "direction": "desc"
-          }]
-        }
+        toSend = {"sort":[ {"field": "id","direction": "desc"}]}
         setPositionTrie("Recent")
       }
 
       if (trie == "Ancien")
       {
-        toSend = {
-          "sort":[ {
-            "field": "id",
-            "direction": "asc"
-          }]
-        }
+        toSend = {"sort":[ {"field": "id","direction": "asc"}]}
         setPositionTrie("Ancien")
       }
 
@@ -255,13 +225,12 @@ const Investisseur = () => {
         setLoading(false)
       }, 4000);
 
-      getData()
       changeSectionMenu()
 
       if (connect == false)
       {
         waiting = setTimeout(() => {
-          handleConnect()
+          ModalConnect(navigate)
         }, 10000)
       }
 
