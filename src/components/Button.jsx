@@ -45,11 +45,13 @@ const ButtonStyled = styled.button`
             font-size: 3000px;
         }
     }
+    @media only screen and (max-width: 425px) {
+        width: 80%;
+    }
     @media only screen and (max-width: 375px){
                     top: 1%;
                     margin-left: 20%;
                     margin-bottom: 5%;
-
                 }
     
 `;

@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import styled from 'styled-components';
 import AboutSection from './AboutSection';
 import MethodSection from './MethodSection';
@@ -29,7 +30,6 @@ const Home = () => {
 
 const HomeStyled = styled.section`
 position: relative;
-
 `;
 
 export default Home;

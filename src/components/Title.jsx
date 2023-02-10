@@ -8,10 +8,12 @@ const Title = ({ name, subtext}) => {
             <h3>
                 {name}
             </h3>
+            
             <p>{subtext}</p>
         </TitleStyled>
     )
 }
+
 
 const TitleStyled = styled.div`
     h3{
@@ -20,9 +22,13 @@ const TitleStyled = styled.div`
             font-size: 28px;
             margin-top: -10%;
         }
-        @media only screen and (max-width: 425px) and (min-width: 320px){
+        @media only screen and (max-width: 425px){
             font-size: 33px;
             margin-top: -10%;
+        }
+        @media only screen and (max-width: 320px){
+            font-size: 31px;
+            margin-top: -20%;
         }
     }
     p{
@@ -31,8 +37,13 @@ const TitleStyled = styled.div`
         @media only screen and (max-width: 525px) and (min-width: 425px){
             font-size: 15px;
     }
-    @media only screen and (max-width: 425px) and (min-width: 320px){
-            font-size: 16px;
+    @media only screen and (max-width: 425px){
+            font-size: 14.3px;
+    }
+    @media only screen and (max-width: 320px){
+            font-size: 14.8px;
+            margin-left: 10px;
+            margin-right: 10px;
     }
 }
 `;

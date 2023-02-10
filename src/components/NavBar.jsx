@@ -1,18 +1,25 @@
 import { useState } from 'react';
 import styled from 'styled-components'
-import Button from './Button';
 import theLogo from '../assets/images/logo.png';
 import { useTheme } from '../context/themeContext';
 import { NavLink } from 'react-router-dom';
-
 
 const NavBar = () => {
     // const navRef = useRef();
     const [etat, setEtat] = useState({clicked: false});
 
-    // const showNavbar = () => {
-    //     navRef.current.classList.toggle("responsive_nav");
+    // const [rotate, setRotate] = useState(false);
+    // console.log("rotate status: ", rotate);
+    // rotate?document.body.style.overflow = "hidden": document.body.style.overflow = "auto";
+
+    // const stopScroll = () => {
+    //     setRotate(!rotate)
     // }
+
+    const removeNavMenu = () => {
+        setShow((show) => !show);
+        };
+
     const handleClick = () => {
         setEtat({clicked: !etat.clicked})
     }
@@ -22,7 +29,7 @@ const NavBar = () => {
         <NavBarStyled theme={theme}>
             <div className='hero'>
                 <div className='logo'>
-                        <NavLink to='/bhetiConnectProj'>
+                        <NavLink to='/'>
                             <img
                                 src={theLogo}
                                 className='theLogo'
@@ -30,51 +37,45 @@ const NavBar = () => {
                             />
                         </NavLink>
                 </div>
-                <nav  className='navigation navbar'>
-                        <div className={etat.clicked ? 'nav-menu active' : 'nav-menu'}>
+                <nav    className={etat.clicked ? 'navigation active' : 'navigation'}  >
+                        <div 
+                            className={etat.clicked ? 'nav-menu active' : 'nav-menu'} 
+                        >
                             <NavLink
+                                onClick={handleClick}
                                 to='/entrepreneur'
                                 className={({ isActive }) => (isActive ? 'link active' : 'link')}
                             >
                                 Entrepreneur
                             </NavLink>
                             <NavLink
+                                onClick={handleClick}
                                 to='/investisseur'
                                 className={({ isActive }) => (isActive ? 'link active' : 'link')}
                             >
                                 Investisseur
                             </NavLink>
-
+                            <a href='https://bheticonnect.super.site/'>
+                                <NavLink
+                                    onClick={handleClick}
+                                    to='media'
+                                    className={({ isActive }) => (isActive ? 'link active' : 'link')}
+                                >
+                                    Média 
+                                </NavLink>
+                            </a>
                             <NavLink
-                                to='media'
-                                className={({ isActive }) => (isActive ? 'link active' : 'link')}
-                            >
-                                Média 
-                            </NavLink>
-                        
-                            <NavLink
+                                onClick={handleClick}
                                 to='/connexion'
                                 className={({ isActive }) => (isActive ? 'link active' : 'link')}
                             >
                                 Connexion
                             </NavLink>
-                            <div className=' nav-btn-container'>
-                                <a href='https://airtable.com/shrxZL75lICeCINRm'>
-                                    <Button 
-                                        name={'Parler à un expert'}
-                                        icon={'fas fa-chevron-right'}
-                                        arrow={'arrow'}
-                                        blob={'blob'}
-                                    />
-                                </a>
-                        </div>
-
-                        </div>
-
-                        <div className='menu-icon' onClick={handleClick}> 
-                            <i className={etat.clicked ? 'fa-solid fa-xmark' : 'fa-solid fa-bars-staggered'}></i>
                         </div>
                     </nav>
+                        <div id='menu-icon' onClick={handleClick}> 
+                            <i className={etat.clicked ? 'fa-solid fa-xmark' : 'fa-solid fa-bars-staggered'}></i>
+                        </div>
             </div>
         </NavBarStyled>
     )
@@ -86,10 +87,7 @@ const NavBarStyled = styled.nav`
     display: flex;
 	justify-content: space-between;
 	height: 80px;
-	padding: 0 2rem;
-	background-color: var(--mainColor);
-	color: var(--textColor);
-    
+	padding: 0rem 1rem 0rem 3rem;
     .logo{
             display: flex;
             align-items: center;
@@ -99,10 +97,10 @@ const NavBarStyled = styled.nav`
             animation-fill-mode: forwards;
             .theLogo{
                 margin-top: 10%;
-                width: 70%;
-                @media only screen and (max-width: 425px) and (min-width: 320px) {
+                width: 55%;
+                @media only screen and (max-width: 440px) and (min-width: 320px) {
                     width: 100%;
-                    margin-left: -20px;
+                    margin-left: -30px;
                 }
             }
 }
@@ -110,12 +108,11 @@ const NavBarStyled = styled.nav`
 .navigation {
         display: flex;
         grid-template-columns: 100px 1fr auto;
-        padding: 1rem  2rem;
+        padding: 1rem  1rem;
         align-items: center;
         flex-wrap: wrap;
         justify-content: space-between;
-        border-bottom: 1px solid ${props => props.theme.colorGrey9};
-        @media only screen and (max-width: 425px) and (min-width: 320px) {
+        @media only screen and (max-width: 1024px) {
             border-bottom: 0px solid ${props => props.theme.colorBg};
         }
         animation: navHide 1s ease-in-out;
@@ -131,43 +128,45 @@ const NavBarStyled = styled.nav`
             }
         }
         .nav-menu {
-            display: block;
-            grid-template-columns: repeat(5, auto);
+            display: inline-block;
+            grid-template-columns: repeat(4, auto);
             grid-gap: 10px;
             text-align: center;
             width: 70vw;
             justify-content: end;
-            margin-right: 2rem;
-            @media only screen and (min-width: 768px) {
+            margin-right: .2rem;
+            @media only screen and (min-width: 960px) {
                 display: grid;
                 justify-content: space-around;
             }
         }
-        .menu-icon {
-            display: flex;
-            .fa-bars-staggered {
-                color: ${props => props.theme.colorBlack};
-                margin-left: -29px;
-                margin-top: 7%;
-                @media only screen and (min-width: 900px) {
-                    visibility: hidden;
+    }
+            #menu-icon {
+                align-items: center;
+                visibility: hidden;
+                .fa-bars-staggered {
+                    color: ${props => props.theme.colorBlack};
                 }
             }
-        }
-        }
-        .nav-btn-container{
-            right: auto;
-        }
-}
-
-    .navbar {
+            #menu-icon i{
+                font-size: 2.4rem;
+            }
+            
+            }
+            .nav-btn-container{
+                margin-left: 12px ;
+            }
+    .nav-menu {
     width: 100vw;
     max-width: 1480px;
     margin: 0 auto;
     .link {
     display: inline-block;
-    margin: .9px 0px;
-    color: ${props => props.theme.colorGrey} ;
+    @media only screen and (min-width: 960px){
+        margin-top: 15px;
+    }
+    color: ${props => props.theme.colorGrey};
+
     }
     .link:hover{
         color: ${props => props.theme.colorBheti};
@@ -185,25 +184,40 @@ const NavBarStyled = styled.nav`
     }
 }
 
-
 @media only screen and (max-width: 960px){
+    .hero{
+        .logo{
+            width: 40%;
+        }
+    }
     .navigation {
-        position: relative;
-        border-bottom: none;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        position: fixed;
+        top: 0px;
+        right: -1500px;
+        transition: all 0.6s ease;
+        width: 100vw;
+        height: 100vh;
+        background: ${props => props.theme.colorBlack};
+        box-shadow: 0 40px 60px rgba(0, 0, 0, 0.1);
+        padding: 40px 0 0 10px;
+        z-index: 100;
+        
         .nav-menu{
-            display: flex;
-            flex-direction: column;
-            height: 400px;
             position: absolute;
-            top:  80px;
-            left: -200%;
-            opacity: 1;
-            transition: all 0.7s ease;
-
+            margin: auto;
+            
             .link{
+                position: relative;
                 text-align: center;
-                padding: 2rem;
-                width: 100%;
+                margin: auto;
+                margin-top: 12vh;
+                font-size: 2.3rem;
+                margin-bottom: 70px;
+                width: 60%;
                 display: table;
                 color: ${props => props.theme.colorWhite};
             }
@@ -212,87 +226,31 @@ const NavBarStyled = styled.nav`
                 border-radius: 0;
             }
         }
-
-        .nav-menu.active {
-            background: #641E16;
-            width: 190%;
-            left: -300px;
-            opacity: 1;
-            transition: all 0.5s ease;
-            z-index: 3;
-        }
+        
         .nav-btn-container{
-            margin-left: 90px;
+            margin: auto;
         }
         
     }
-    .menu-icon {
-            position: absolute;
-            display: none;
-            top: 2px;
-            right: 0;
-            transform: translate(-100%, 100%);
-            font-size: 1.8rem;
-            cursor: pointer;
-            .fa-xmark{
-                color: ${props => props.theme.colorBlack};
-                font-size: 1.9rem;
-
-            }
-        }
-}
-
-@media only screen and (max-width: 425px) and (min-width: 320px) {
-    .logo{
-        width: 300px;
-    }
-    .navigation{
-        .nav-menu{
-            display: flex;
-            flex-direction: column;
-            height: 400px;
-            position: absolute;
-            top:  80px;
-            left: -500%;
+    .navigation.active{
+            right: 0px;
             opacity: 1;
-            transition: all 0.7s ease;
-
-            .link{
-                text-align: center;
-                padding: 2rem;
-                width: 100%;
-                display: table;
-                color: ${props => props.theme.colorWhite};
-            }
-            .link:hover{
-                background-color: ${props => props.theme.colorBheti} ;
-                border-radius: 0;
-            }
-        }
-        .nav-menu.active {
-            background: #641E16;
-            width: 200%;
-            left: -162px;
-            opacity: 1;
-            transition: all 0.5s ease;
+            transition: all 0.6s ease;
             z-index: 3;
         }
-    }
-    .menu-icon {
-            position: absolute;
-            display: none;
-            top: 2px;
-            right: 0;
-            transform: translate(-100%, 100%);
-            font-size: 1.8rem;
+
+    #menu-icon {
+            margin-top: 7%;
+            right: 4%;
+            z-index: 50;
             cursor: pointer;
-            .fa-xmark{
-                color: ${props => props.theme.colorBlack};
-                font-size: 2.1rem;
-                margin-left: -19px;
-                margin-top: -3px;
-            }
+            .fa-xmark {
+                    color: ${props => props.theme.colorWhite};
+                }
         }
+    #menu-icon i{
+        visibility: visible;
+    }
 }
 
 `;

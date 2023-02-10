@@ -9,7 +9,7 @@ import footerLogo from '../assets/images/footer-logo.png'
 const Footer = () => {
     const theme = useTheme();
     return (
-        <FooterSectionStyled className='' theme={theme}>
+        <FooterSectionStyled theme={theme}>
             <nav className="bottom-navigation">
                 <ul className="logo-con">
                     <div className="logo">
@@ -52,12 +52,11 @@ const Footer = () => {
                         <div className="f-text">
                             <h6>Adresse</h6>
                             <span>
-                                22 Rue Bheti, Paris, France
+                            78 Avenue des Champs-Elysée 75008 Paris, France
                             </span>
                         </div>
                     </li>
                 </ul>
-
                 <ul className="nav-b company">
                     <h4>Compagnie</h4>
                     <li className="nav-item">
@@ -102,20 +101,16 @@ const Footer = () => {
 }
 
 const FooterSectionStyled = styled.footer`
-        @media only screen and (max-width: 525px) and (min-width: 425px){
-            width: 500px;
-    } 
     background-color: ${props => props.theme.colorBg3};
     padding-top: 6rem !important;
     color: ${props => props.theme.colorFont};
     padding-bottom: 3rem !important;
-    
+    font-size: 14px;
     h6{
-        font-size: 1.2rem;
-        
+        font-size: 1.1rem;
     }
     h4{
-        font-size: 1.5rem;
+        font-size: 1.3rem;
         color: ${props => props.theme.colorGrey4};
     }
     a{  
@@ -153,10 +148,19 @@ const FooterSectionStyled = styled.footer`
             .nav-item{
                 margin-bottom: 1rem;
             }
+            @media only screen and (max-width: 525px) and (min-width: 320px){
+                margin-top: 25px;
+            }
         }
         .company {
             .nav-item a{
-                color: ${props => props.theme.colorGrey6} ;
+                color: ${props => props.theme.colorGrey6};
+                @media all and (max-width: 425px) {
+                    margin-left: -5px;
+                }
+                @media all and (max-width: 320px) {
+                    margin-left: -1px;
+                }
             }
         }
         .nav-contact{
@@ -164,12 +168,18 @@ const FooterSectionStyled = styled.footer`
                 display: grid;
                 grid-template-columns: 30px auto;
                 color: ${props => props.theme.colorGrey6};
+                @media all and (max-width: 420px) {
+                margin-left: -5px;
+                }
             }
         }
         .logo-con{
             flex: 5;
             .logo img{
                 width: 12%;
+                @media all and (max-width: 425px) {
+                    width: 25%;
+                }
             }
     }
         .logo-con p{
@@ -198,6 +208,7 @@ const FooterSectionStyled = styled.footer`
                     color: #a9388b ;
                 }
             }
+            
         }
         /* .b-nav-icons a{
             color: ${props => props.theme.colorGre6};
@@ -216,18 +227,40 @@ const FooterSectionStyled = styled.footer`
                 }
             }
         }
-        @media only screen and (max-width: 2550px) and (min-width: 1800px){
-            width: 1400px;
+        @media all and (max-width: 2500px){
+            width: 1200px;
         }
-        @media only screen and (max-width: 1440px) and (min-width: 1350px){
-            width: 1200px ;
+        @media all and (max-width: 1500px){
+            width: 1000px ;
         }
-        @media only screen and (max-width: 1350px) and (min-width: 1250px){
-            width: 950px;
+        @media all and (max-width: 1080px){
+            width: 850px;
         }
         @media only screen and (max-width: 1250px) and (min-width: 1024px){
             width: 900px;
         }
+        @media all and (max-width: 1024px) {
+            width: 680px;
+        }
+        @media all and (max-width: 768px) {
+            width: 600px;
+        }
+        @media all and (max-width: 500px) {
+            width: 350px;
+            margin-left: 50px;
+        }
+        @media all and (max-width: 425px) {
+            width: 280px;
+            margin-left: 80px;
+        }
+        @media all and (max-width: 375px) {
+            width: 250px;
+        }
+        @media all and (max-width: 320px) {
+            width: 230px;
+            margin-left: 55px;
+        }
+        
     }
     .footer-copyright{
         padding-top: 3rem;
@@ -245,7 +278,12 @@ const FooterSectionStyled = styled.footer`
     .footer-copyright p{
         color: ${props => props.theme.colorGrey6} ;
     }
-
+    @media all and (max-width: 768px) {
+        margin-left: 0px;
+    }
+    @media all and (max-width: 420px) {
+        margin-left: -10px;
+    }
 `;
 
 export default Footer
