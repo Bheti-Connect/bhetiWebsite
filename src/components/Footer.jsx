@@ -236,9 +236,6 @@ const FooterSectionStyled = styled.footer`
         @media all and (max-width: 1080px){
             width: 850px;
         }
-        @media only screen and (max-width: 1250px) and (min-width: 1024px){
-            width: 900px;
-        }
         @media all and (max-width: 1024px) {
             width: 680px;
         }
@@ -260,7 +257,6 @@ const FooterSectionStyled = styled.footer`
             width: 230px;
             margin-left: 55px;
         }
-        
     }
     .footer-copyright{
         padding-top: 3rem;

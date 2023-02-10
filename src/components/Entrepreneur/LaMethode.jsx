@@ -117,17 +117,12 @@ const LaMethodeStyled = styled.section`
             margin-left: -140px;
         }
         @media all and (max-width: 1300px){
-            width: 380px;
-            margin-left: -160px;
+            width: 400px;
+            margin-left: -5vw;
         }
         @media all and (max-width: 1080px){
             width: 400px;
             margin-left: -180px;
-        }
-        @media all and (max-width: 770px){
-            width: 350px;
-            margin-left: 10px;
-
         }
         @media all and (max-width: 525px){
             width: 320px;
@@ -163,7 +158,7 @@ const LaMethodeStyled = styled.section`
         }
         .neighbor-div{
             img{
-                width: 103%;
+                width: 100%;
             }
         }
         @media screen and (min-width: 1150px) {
@@ -207,14 +202,14 @@ const LaMethodeStyled = styled.section`
     }
     @media all and (max-width: 1300px) {
         .right-container{
-            width: 170%;
-            margin-top: 260px;
-            margin-left: -10%;
+            display: inline-block;
+            width: 100%;
+            margin-top: 20vh;
+            margin-left: 10vw;
         }
     }
     @media all and (max-width: 1080px) {
         .right-container{
-            display: inline-block;
             width: 180%;
             margin-top: 150px;
             margin-left: 20%;
@@ -225,17 +220,41 @@ const LaMethodeStyled = styled.section`
             }
         }
     }
-    @media all and (max-width: 770px) {
+    @media all and (max-width: 960px) {
+        display: inline-block;
         .right-container{
-            display: inline-block;
-            width: 200%;
-            margin-top: 200px;
-            margin-left: 20%;
+            width: 110%;
             .neighbor-div{
                 img{
-                    width: 100%;
+                    width:100%;
                 }
             }
+        }
+
+        .left-container{
+            width: 120%;
+            margin: auto;
+            .text-container{
+                width: 400px;
+            }
+        }
+
+    }
+    @media all and (max-width: 770px) {
+        .right-container{
+            position: relative;
+            width: 150%;
+            .neighbor-div{
+                img{
+                    width:100%;
+                }
+            }
+        }
+
+        .left-container{
+            width: 120%;
+            margin: auto;
+           
         }
     }
     @media all and (max-width: 420px) {

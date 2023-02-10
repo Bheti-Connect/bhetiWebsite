@@ -1,6 +1,5 @@
 import React from 'react'
 import styled from 'styled-components'
-import Team from '../../assets/images/pexels-edmond-dantès-8553867.jpg';
 import Button from '../Button';
 import { useTheme } from '../../context/themeContext';
 
@@ -42,96 +41,17 @@ const AccueilStyled = styled.section`
             margin-top: 2%;
             align-items: center;
             border-radius: 7px;
-            .casse{
-                color: ${props => props.theme.colorBlack} ;
-                @media only screen and (max-width: 768px){
-
-                }
-                @media only screen and (max-width: 500px){
-                    
-                }
-                @media only screen and (max-width: 425px){
-                    color: ${props => props.theme.colorBlack} ;
-                }
+            @media only screen and (max-width: 1440px){
+                width: 1000px;
+                margin-left: -12vw ;
             }
-            .resolvez{
-                color: ${props => props.theme.colorBlack} ;
-                @media only screen and (max-width: 768px){
-
-                }
-                @media only screen and (max-width: 500px){
-                    
-                }
-                @media only screen and (max-width: 425px){
-                    color: ${props => props.theme.colorBlack} ;
-                }
+            @media only screen and (max-width: 440px) {
+                display: block;
+                position: relative;
+                width: 300px;
             }
             img{
                 width: 70%;
-            }
-            .happy-team{
-                animation: contentHide 1s ease-in-out;
-                @keyframes contentHide {
-                    0%{
-                        opacity: 0;
-                        transform: translateX(-120%) scaleX(0);
-                    }
-                    100%{
-                        opacity: 1;
-                        transform: translateX(1) scaleX(0);
-                    }
-                }
-                @media only screen and (max-width: 2560px){
-                    position: relative;
-                    float: right;
-                    width: 50%;
-                    height: 600px;
-                }
-                @media only screen and (max-width: 1440px){
-                    width: 90%;
-                    height: 500px;
-                }
-                @media only screen and (max-width: 1350px){
-                    margin-left: 200px;
-                    width: 90%;
-                    margin-top: 8%;
-                }
-                @media only screen and (max-width: 960px){
-                    margin-left: -80px;
-                    margin-top: 10%;
-                    width: 180%;
-                    height: 320px;
-                }
-                @media only screen and (max-width: 768px){
-                    margin-left: -80px;
-                    margin-top: 10%;
-                    width: 125%;
-                    height: 250px;
-                }
-                @media only screen and (max-width: 500px){
-                    margin-left: -80px;
-                    margin-top: 10%;
-                    width: 125%;
-                    height: 300px;
-                }
-                @media only screen and (max-width: 425px){
-                    margin-left: -80px;
-                    margin-top: 5%;
-                    width: 115%;
-                    height: 300px;
-                }
-                @media only screen and (max-width: 375px){
-                    margin-left: -50px;
-                    margin-top: 12%;
-                    width: 120%;
-                    height: 270px;
-                }
-                @media only screen and (max-width: 320px){
-                    margin-left: -80px;
-                    margin-top: 10%;
-                    width: 125%;
-                    height: 250px;
-                }
             }
             .centered{    
                 position: relative;
@@ -141,7 +61,7 @@ const AccueilStyled = styled.section`
                 font-family: 'cinzel'   ;
                 color: ${props => props.theme.colorBlack}; 
                 @media only screen and (max-width: 2560px) {
-                    top: 8vh;
+                    top: 10vh;
                     font-size: 50px;
                     width: 30vw;
                 }
@@ -150,8 +70,8 @@ const AccueilStyled = styled.section`
                     font-size: 45px; 
                 }
                 @media only screen and (max-width: 1350px) and (min-width: 1024px) {
-                    width: 400px;
-                    font-size: 45px; 
+                    width: 600px;
+                    font-size: 40px; 
                 }
                 @media only screen and (max-width: 960px){
                     width: 710px;
@@ -166,8 +86,11 @@ const AccueilStyled = styled.section`
                     color: ${props => props.theme.colorBlack}; 
                 }
                 
-                @media only screen and (max-width: 425px){
-                    display: none;
+                @media only screen and (max-width: 440px){
+                    width: 350px;
+                    font-size: 40px;
+                    transform: translate(-10%, 30%);
+                    color: ${props => props.theme.colorBlack}; 
                 }
                 @media only screen and (max-width: 375px){
                     width: 300px;
@@ -182,7 +105,6 @@ const AccueilStyled = styled.section`
                     display: block;
                     width: 360px;
                     font-size: 31px;
-                    transform: translate(-58%, 140%);
                     color: ${props => props.theme.colorBlack};
                 }
                 @media only screen and (max-width: 425px){
@@ -215,10 +137,10 @@ const AccueilStyled = styled.section`
                 font-size: 20px;
             }
             @media only screen and (max-width: 1350px) {
-                margin-top: 20%;
-                font-size: 1.4rem;
-                width: 860px;
-                margin-left: -100px;
+                margin-top: 8%;
+                font-size: 1.3rem;
+                width: 300px;
+                margin-left: 30px;
             }
             @media only screen and (max-width: 960px) {
                 margin-top: 12%;
@@ -234,18 +156,14 @@ const AccueilStyled = styled.section`
                 margin-top: 200px;
                 margin-left: -80px;
             }
-            @media only screen and (max-width: 525px) {
+            @media only screen and (max-width: 440px) {
                 margin-top: 10%;
                 font-size: 1.01rem;
                 text-align: justify;
-                width: 350px;
+                width: 320px;
+                padding-top: 50% ;
                 margin-top: 160px;
-                margin-left: -90px;
-            }
-            @media only screen and (max-width: 375px) {
-                width: 300px;
-                margin-top: 200px;
-                margin-left: -70px;
+                margin: auto;
             }
         }
         .button-demo{
@@ -266,11 +184,6 @@ const AccueilStyled = styled.section`
             @media only screen and (max-width: 425px){
                 width:110%;
                 margin: 0px -25px;
-                padding-top: 15px ;
-            }
-            @media only screen and (max-width: 375px){
-                width:125%;
-                margin: 0px -80px;
                 padding-top: 15px ;
             }
         }
