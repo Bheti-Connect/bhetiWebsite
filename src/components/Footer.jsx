@@ -257,7 +257,6 @@ const FooterSectionStyled = styled.footer`
             width: 230px;
             margin-left: 55px;
         }
-        
     }
     .footer-copyright{
         padding-top: 3rem;
