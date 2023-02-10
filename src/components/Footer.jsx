@@ -243,7 +243,8 @@ const FooterSectionStyled = styled.footer`
             width: 680px;
         }
         @media all and (max-width: 768px) {
-            width: 600px;
+            width: 700px;
+            margin-left: 50px ;
         }
         @media all and (max-width: 500px) {
             width: 350px;

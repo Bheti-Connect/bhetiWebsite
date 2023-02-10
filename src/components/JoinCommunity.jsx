@@ -105,7 +105,7 @@ const JoinCommunityStyled = styled.section`
         }
         @media only screen and (max-width: 1024px) {
             width: 650px;
-            height: 500px;
+            height: 540px;
             margin-left: -18%;
         }
         @media only screen and (max-width: 960px) {
@@ -267,6 +267,9 @@ const JoinCommunityStyled = styled.section`
                 .anchor-tag {
                     margin-top: 40px;
                     margin: 1;
+                    @media only screen and (max-width: 768px) {
+                        margin-left: 0px;
+                    }
                     @media only screen and (max-width: 425px) {
                         margin-left: 17px;
                     }

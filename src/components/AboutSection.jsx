@@ -79,7 +79,6 @@ const AboutSectionStyled = styled.section`
                 margin-left: 35px;
             }
         }
-        
         .title{
             margin-left: 10%;
             margin-bottom: 3%;
@@ -141,6 +140,7 @@ const AboutSectionStyled = styled.section`
             }
         }
         .about-info{
+            
             .about-info-item{
                 display: grid;
                 grid-template-columns: 120px auto;
@@ -219,7 +219,7 @@ const AboutSectionStyled = styled.section`
                     margin-left: 70px;
                 }
                 @media only screen and (max-width: 768px) {
-                    width: 400px;
+                    width: 100px;
                     margin-left: 10px;
                 }
                 @media only screen and (max-width: 425px) {
@@ -228,7 +228,6 @@ const AboutSectionStyled = styled.section`
                 @media only screen and (max-width: 320px) {
                     width: 280px;
                 }
-
                 @media only screen and (max-width: 525px) and (min-width: 425px) {
                     .icon {
                         width: 50px;
@@ -273,7 +272,7 @@ const AboutSectionStyled = styled.section`
                 margin-left: 5%;
 	            }
         @media only screen and (max-width: 768px){
-            width: 160%;
+            width: 100%;
             bottom: 5rem;
         }
         @media only screen and (max-width: 425px){
@@ -374,6 +373,9 @@ const AboutSectionStyled = styled.section`
         @media only screen and (max-width: 1250px) and (min-width: 1024px){
                     margin-left: 6.5%;
             }
+        @media only screen and (max-width: 768px){
+            width: 50px;
+        }
     }
     
 `;

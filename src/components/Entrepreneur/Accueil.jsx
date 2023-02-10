@@ -42,97 +42,6 @@ const AccueilStyled = styled.section`
             margin-top: 2%;
             align-items: center;
             border-radius: 7px;
-            .casse{
-                color: ${props => props.theme.colorBlack} ;
-                @media only screen and (max-width: 768px){
-
-                }
-                @media only screen and (max-width: 500px){
-                    
-                }
-                @media only screen and (max-width: 425px){
-                    color: ${props => props.theme.colorBlack} ;
-                }
-            }
-            .resolvez{
-                color: ${props => props.theme.colorBlack} ;
-                @media only screen and (max-width: 768px){
-
-                }
-                @media only screen and (max-width: 500px){
-                    
-                }
-                @media only screen and (max-width: 425px){
-                    color: ${props => props.theme.colorBlack} ;
-                }
-            }
-            img{
-                width: 70%;
-            }
-            .happy-team{
-                animation: contentHide 1s ease-in-out;
-                @keyframes contentHide {
-                    0%{
-                        opacity: 0;
-                        transform: translateX(-120%) scaleX(0);
-                    }
-                    100%{
-                        opacity: 1;
-                        transform: translateX(1) scaleX(0);
-                    }
-                }
-                @media only screen and (max-width: 2560px){
-                    position: relative;
-                    float: right;
-                    width: 50%;
-                    height: 600px;
-                }
-                @media only screen and (max-width: 1440px){
-                    width: 90%;
-                    height: 500px;
-                }
-                @media only screen and (max-width: 1350px){
-                    margin-left: 200px;
-                    width: 90%;
-                    margin-top: 8%;
-                }
-                @media only screen and (max-width: 960px){
-                    margin-left: -80px;
-                    margin-top: 10%;
-                    width: 180%;
-                    height: 320px;
-                }
-                @media only screen and (max-width: 768px){
-                    margin-left: -80px;
-                    margin-top: 10%;
-                    width: 125%;
-                    height: 250px;
-                }
-                @media only screen and (max-width: 500px){
-                    margin-left: -80px;
-                    margin-top: 10%;
-                    width: 125%;
-                    height: 300px;
-                }
-                @media only screen and (max-width: 425px){
-                    margin-left: -80px;
-                    margin-top: 5%;
-                    width: 115%;
-                    height: 300px;
-                }
-                @media only screen and (max-width: 375px){
-                    margin-left: -50px;
-                    margin-top: 12%;
-                    width: 120%;
-                    height: 270px;
-                }
-                @media only screen and (max-width: 320px){
-                    margin-left: -80px;
-                    margin-top: 10%;
-                    width: 125%;
-                    height: 250px;
-                }
-            }
             .centered{    
                 position: relative;
                 margin: auto;
@@ -160,9 +69,8 @@ const AccueilStyled = styled.section`
                     color: ${props => props.theme.colorBlack}; 
                 }
                 @media only screen and (max-width: 768px){
-                    width: 350px;
-                    font-size: 40px;
-                    transform: translate(-120%, 40%);
+                    font-size: 32px;
+                    transform: translate(-100%, 10%);
                     color: ${props => props.theme.colorBlack}; 
                 }
                 
@@ -203,8 +111,7 @@ const AccueilStyled = styled.section`
                     color: ${props => props.theme.colorBlack};
                 }
             }
-        }
-        .text-highlighted{
+            .text-highlighted{
             @media only screen and (max-width: 2500px){
                 text-align: center;
                 padding-top: 13vh;
@@ -230,8 +137,7 @@ const AccueilStyled = styled.section`
             @media only screen and (max-width: 768px) {
                 margin-top: 10%;
                 font-size: 1.01rem;
-                width: 320px;
-                margin-top: 200px;
+                width: 1360px;
                 margin-left: -80px;
             }
             @media only screen and (max-width: 525px) {
@@ -248,6 +154,8 @@ const AccueilStyled = styled.section`
                 margin-left: -70px;
             }
         }
+        }
+      
         .button-demo{
             position: relative;
             @media only screen and (max-width: 2500px){
