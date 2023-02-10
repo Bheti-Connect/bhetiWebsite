@@ -45,6 +45,11 @@ const AccueilStyled = styled.section`
                 width: 1000px;
                 margin-left: -12vw ;
             }
+            @media only screen and (max-width: 440px) {
+                display: block;
+                position: relative;
+                width: 300px;
+            }
             img{
                 width: 70%;
             }
@@ -81,8 +86,11 @@ const AccueilStyled = styled.section`
                     color: ${props => props.theme.colorBlack}; 
                 }
                 
-                @media only screen and (max-width: 425px){
-                    display: none;
+                @media only screen and (max-width: 440px){
+                    width: 350px;
+                    font-size: 40px;
+                    transform: translate(-10%, 30%);
+                    color: ${props => props.theme.colorBlack}; 
                 }
                 @media only screen and (max-width: 375px){
                     width: 300px;
@@ -97,7 +105,6 @@ const AccueilStyled = styled.section`
                     display: block;
                     width: 360px;
                     font-size: 31px;
-                    transform: translate(-58%, 140%);
                     color: ${props => props.theme.colorBlack};
                 }
                 @media only screen and (max-width: 425px){
@@ -149,18 +156,14 @@ const AccueilStyled = styled.section`
                 margin-top: 200px;
                 margin-left: -80px;
             }
-            @media only screen and (max-width: 525px) {
+            @media only screen and (max-width: 440px) {
                 margin-top: 10%;
                 font-size: 1.01rem;
                 text-align: justify;
-                width: 350px;
+                width: 320px;
+                padding-top: 50% ;
                 margin-top: 160px;
-                margin-left: -90px;
-            }
-            @media only screen and (max-width: 375px) {
-                width: 300px;
-                margin-top: 200px;
-                margin-left: -70px;
+                margin: auto;
             }
         }
         .button-demo{
@@ -181,11 +184,6 @@ const AccueilStyled = styled.section`
             @media only screen and (max-width: 425px){
                 width:110%;
                 margin: 0px -25px;
-                padding-top: 15px ;
-            }
-            @media only screen and (max-width: 375px){
-                width:125%;
-                margin: 0px -80px;
                 padding-top: 15px ;
             }
         }
