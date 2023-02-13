@@ -178,7 +178,7 @@ const FooterSectionStyled = styled.footer`
             .logo img{
                 width: 12%;
                 @media all and (max-width: 425px) {
-                    width: 25%;
+                    width: 22%;
                 }
             }
     }
