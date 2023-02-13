@@ -43,7 +43,7 @@ const EconomicNewsStyled = styled.section`
     @media only  screen and (max-width: 425px) {
         position: relative;
         width: 100%;
-        height: 100vh;
+        height: 120vh;
         
     }
     
@@ -100,7 +100,8 @@ const EconomicNewsStyled = styled.section`
                     font-size: 1.5rem;
                 }
                 @media only screen and (max-width: 320px) {
-                    font-size: 1.18rem;
+                    margin-top: 20% ;
+                    font-size: 1.15rem;
                 }
             }
             p{
