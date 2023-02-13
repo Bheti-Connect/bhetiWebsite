@@ -73,19 +73,19 @@
 /** DEBUG **/
 
 #debug {
-  position: fixed;
-  top: 1em;
-  left: 1em;
-}
-#debug::after {
-  content: " Show Debug";
-  margin-left: 1.5em;
-  color: white;
-  white-space: nowrap;
-}
+	position: fixed;
+	top: 1em;
+	left: 1em;
+	}
+	#debug::after {
+	content: " Show Debug";
+	margin-left: 1.5em;
+	color: white;
+	white-space: nowrap;
+	}
 
-#debug:checked ~ #main {
-  --outline-width: 1px;
+	#debug:checked ~ #main {
+	--outline-width: 1px;
 }
 
 
@@ -96,9 +96,15 @@
 	margin: 0;
 	padding: 0;
 }
-body {
-    text-align: center;
+
+
+@media only screen and (min-width: 440px){
+	body {
+		text-align: center;
+	}
 }
+
+
 #main {
 	width: 80vw;
 	margin: 0 auto;

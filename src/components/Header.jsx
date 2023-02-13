@@ -284,15 +284,16 @@ const HeaderStyled = styled.header`
                 width: 290px;
                 margin-left: -45px;
                 .button-demo {
-                    position: absolute;
-                    top: 175%;
-                    margin-left: -6%;
-                    width: 280px;
+                    position: relative;
+                    margin-top: 85%;
+                    margin-left: -8%;
+                    width: 290px;
                 }
             }
-            @media only screen and (max-width: 375px){
-                width: 290px;
-                
+            @media only screen and (max-width: 320px){
+                .button-demo {
+                    margin-top: 70%;
+                }
             }
         }
         .right-h-content{

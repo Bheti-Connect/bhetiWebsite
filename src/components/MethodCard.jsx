@@ -88,7 +88,7 @@ const MethodCardStyled = styled.section`
                 font-size: 15px;
             }
             @media only screen and (max-width: 425px){
-                font-size: 16px;
+                font-size: 15px;
             }
         }
     }
