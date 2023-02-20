@@ -4,7 +4,6 @@ import premiereImg from '../assets/images/ent-img1.jpg';
 import deuxiemeImg from '../assets/images/ent-img4-2.jpg';
 import Button from './Button';
 import { Link } from 'react-router-dom';
-// import { devices } from '../data/Responsive';
 
 const Header = () => {
     const theme = useTheme()
@@ -101,7 +100,6 @@ const HeaderStyled = styled.header`
                     -webkit-background-clip: text;
                     color: transparent;
                 }
-                
             }
             p{
                 font-size: 1.1rem;
@@ -159,8 +157,7 @@ const HeaderStyled = styled.header`
                     }
                     p{
                         font-size: 19px;
-                    }
-                    
+                    } 
             }
             @media only screen and (max-width: 1250px) and (min-width: 1024px) {
                     margin-top: 4%;
@@ -194,7 +191,7 @@ const HeaderStyled = styled.header`
                     }
             }
             @media only screen and (max-width: 768px){
-                margin-top: 8%;
+                    margin-top: 8%;
                     width: 350px;
                     h2{
                         font-size: 32px;
@@ -238,9 +235,6 @@ const HeaderStyled = styled.header`
                     }
             }
             
-            .button-demo{
-                margin-left: 20%;
-            }
             @media only screen and (max-width: 1800px) and (min-width: 1440px){
                 margin-left: -80px;
             }

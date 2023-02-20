@@ -98,13 +98,6 @@
 }
 
 
-@media only screen and (min-width: 440px){
-	body {
-		text-align: center;
-	}
-}
-
-
 #main {
 	width: 80vw;
 	margin: 0 auto;
@@ -188,4 +181,15 @@ aside {
 
 aside p {
 	margin-bottom: 1em;
+}
+
+@media only screen and (min-width: 440px){
+	body {
+		text-align: center;
+	}
+	
+	#cards {
+
+	}
+	
 }

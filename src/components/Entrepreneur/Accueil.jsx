@@ -33,6 +33,10 @@ const Accueil = () => {
 }
 
 const AccueilStyled = styled.section`
+    @media only screen and (max-width: 440px) {
+        height: 120vh ;
+    }
+
         .first-container{
         .headache {
             display: flex;
@@ -48,7 +52,7 @@ const AccueilStyled = styled.section`
             @media only screen and (max-width: 440px) {
                 display: block;
                 position: relative;
-                width: 300px;
+                width: 220px;
             }
             img{
                 width: 70%;
@@ -103,25 +107,21 @@ const AccueilStyled = styled.section`
             .mobile-view {
                 @media only screen and (max-width: 440px){
                     display: block;
-                    width: 360px;
-                    font-size: 31px;
+                    position: absolute;
+                    width: 80vw;
+                    top: 20px;
+                    left: -3vw;
+                    font-size: 30px;
                     color: ${props => props.theme.colorBlack};
                 }
-                @media only screen and (max-width: 425px){
-                    display: block;
-                    width: 360px;
-                    font-size: 31px;
-                    transform: translate(-64%, 135%);
-                    color: ${props => props.theme.colorBlack};
-                }
-                @media only screen and (max-width: 415px){
-                    transform: translate(-60%, 135%);
-                }
+                
                 @media only screen and (max-width: 375px){
                     display: block;
-                    width: 350px;
-                    font-size: 30px;
-                    transform: translate(-57%, 145%);
+                    position: absolute;
+                    width: 80vw;
+                    top: -12vw;
+                    left: 40vw;
+                    font-size: 20px;
                     color: ${props => props.theme.colorBlack};
                 }
             }
@@ -160,6 +160,15 @@ const AccueilStyled = styled.section`
                 margin-top: 10%;
                 font-size: 1.01rem;
                 text-align: justify;
+                width: 330px;
+                padding-top: 100% ;
+                margin-right: 0px;
+                margin-left: -45px ;
+            }
+            @media only screen and (max-width: 375px) {
+                margin-top: 10%;
+                font-size: 1.01rem;
+                text-align: justify;
                 width: 320px;
                 padding-top: 50% ;
                 margin-top: 160px;
@@ -182,9 +191,9 @@ const AccueilStyled = styled.section`
                 padding-top: 20px ;
             }
             @media only screen and (max-width: 425px){
-                width:110%;
-                margin: 0px -25px;
-                padding-top: 15px ;
+                width:105%;
+                margin: 0px -50px;
+                padding-top: -0px ;
             }
         }
         @media only screen and (max-width: 1440px) {
@@ -198,6 +207,7 @@ const AccueilStyled = styled.section`
         @media only screen and (max-width: 500px) {
             width: 250px;
             margin-left: 130px;
+            
         }
         @media only screen and (max-width: 425px) {
             width: 270px;

@@ -45,7 +45,6 @@ const JoinCommunity = () => {
 }
 
 const JoinCommunityStyled = styled.section`
-
     .title-con{
         width: 1000px;
         @media only screen and (max-width: 1440px) and (min-width: 1350px) {
@@ -79,7 +78,7 @@ const JoinCommunityStyled = styled.section`
         }
     }
     .latest-container{
-        margin-top: 2.5rem;
+        margin-top: 1.5rem;
         background-color: ${props => props.theme.colorBlack};
         border-radius: 3px;
         @media only screen and (max-width: 2560px) and (min-width: 1800px) {

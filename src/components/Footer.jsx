@@ -78,18 +78,6 @@ const Footer = () => {
                         <a href="#">Licence & Droits d'auteur</a>
                     </li>
                 </ul>
-
-                {/* <ul className="nav-b ig">
-                    <h4>LinkedIn</h4>
-                    <div className="ig-images">
-                        {/* <img src={team1} alt="" />
-                        <img src={team2} alt="" />
-                        <img src={css3} alt="" />
-                        <img src={agency4} alt="" />
-                        <img src={figma} alt="" />
-                        <img src={fitness} alt="" /> 
-                    </div>
-                </ul> */}
             </nav>
             <div className="footer-copyright">
                 <p>
