@@ -46,19 +46,19 @@ const LaMethode = () => {
 
 const LaMethodeStyled = styled.section`
     display: grid;
-    width: 100%;
+    width: 100vw;
     background: ${props => props.theme.colorBlack};
     grid-template-columns: 1fr 1fr;
     grid-gap: 2rem;
-    padding-top: 10rem !important;
+    padding-top: 5rem !important;
     padding-top: 1rem;
     padding-left: 18rem;
     padding-right: 18rem;
     padding-bottom: 6rem;
     @media only screen and (max-width: 768px){
         padding-top: 0rem;
-        padding-left: 0rem;
-        padding-right: 0rem;
+        padding-left: 1rem;
+        padding-right: 15rem;
         padding-bottom: 0rem;
         }
     .left-container{
@@ -100,6 +100,9 @@ const LaMethodeStyled = styled.section`
                 }
                 .title{
                     font-size: 2rem;
+                    width: 70vw;
+                    margin-left: 10vw;
+
                 }
                 margin-left: -250px;
         }
@@ -125,7 +128,7 @@ const LaMethodeStyled = styled.section`
             margin-left: -180px;
         }
         @media all and (max-width: 525px){
-            width: 320px;
+            width: 300px;
             margin-left: 50px;
             margin-top: -100px;
         }
@@ -254,10 +257,15 @@ const LaMethodeStyled = styled.section`
         .left-container{
             width: 120%;
             margin: auto;
-           
         }
     }
-    @media all and (max-width: 420px) {
+    @media all and (max-width: 440px) {
+        .left-container{
+            width: 80%;
+            .text-container {
+                width: 320px;
+            }
+        }
         .right-container{
             width: 130%;
             height: 200px;
@@ -266,6 +274,7 @@ const LaMethodeStyled = styled.section`
         }
     }
     @media all and (max-width: 380px) {
+       
         .right-container{
             width: 130%;
             height: 200px;
