@@ -60,7 +60,7 @@ const Advantages = () => {
 							<div>
 								<h3 className='card_title'>Autant de choses qui vous paraissent insolubles?</h3>
 								<p className='paragraph'>Avec nos outils prisés par les experts du monde des startups, vous allez bénéficiez de l’accompagnement de nos meilleurs conseillers.</p>
-								<p className='paragraph'><a href="#top" class="btn btn--accent">Retour</a></p>
+								<p className='paragraph'><a href="#top" class="btn btn--accent">👆🏼 Haut de page</a></p>
 							</div>
 							<figure>
 								<img src="https://codyhouse.co/demo-tutorials/stacking-cards/assets/img/img-2.jpg" alt="Image description"/>
