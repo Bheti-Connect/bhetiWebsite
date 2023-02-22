@@ -65,8 +65,9 @@ const HeaderStyled = styled.header`
         height: 70vh;
     }
     @media only screen and (max-width: 425px) {
-        height: 98vh;
+        height: 700px;
     }
+
     
     @media only screen and (max-width: 375px) {
         height: 114vh;
@@ -259,9 +260,9 @@ const HeaderStyled = styled.header`
                 margin-left: -45px;
                 .button-demo {
                     position: absolute;
-                    top: 180%;
+                    top: 185%;
                     margin-left: 12%;
-                    width: 280px;
+                    width: 285px;
                 }
             }
             @media only screen and (max-width: 400px){
@@ -269,9 +270,8 @@ const HeaderStyled = styled.header`
                 margin-left: -45px;
                 .button-demo {
                     position: absolute;
-                    top: 180%;
                     margin-left: 12%;
-                    width: 280px;
+                    width: 285px;
                 }
             }
             @media only screen and (max-width: 375px){
@@ -529,6 +529,7 @@ const HeaderStyled = styled.header`
                     position: absolute;
                     .right-h-content{
                         z-index: 9;
+                        visibility: hidden;
                     }
                 }
             }
