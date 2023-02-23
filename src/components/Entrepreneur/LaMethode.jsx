@@ -46,7 +46,7 @@ const LaMethode = () => {
 
 const LaMethodeStyled = styled.section`
     display: grid;
-    width: 100vw;
+    width: 100%;
     background: ${props => props.theme.colorBlack};
     grid-template-columns: 1fr 1fr;
     grid-gap: 2rem;
@@ -280,6 +280,14 @@ const LaMethodeStyled = styled.section`
             height: 200px;
             margin-top: 200px;
             margin-left: -100px;
+        }
+    }
+    @media all and (max-width: 320px) {
+        .left-container{
+            width: 80%;
+            .text-container {
+                width: 270px;
+            }
         }
     }
 `;

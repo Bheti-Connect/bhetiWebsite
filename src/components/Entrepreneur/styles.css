@@ -183,7 +183,7 @@
 @media only screen and (max-width: 440px) {
 	#cards {
 		display: block;
-		margin-top: -58vh;
+		margin-top: -65vh;
 	}
 	.btn{
 		margin-bottom: 10px;
@@ -194,5 +194,13 @@
 		margin-left: 5px;
 		margin-top: 8px;
 	}
+	.paragraph{
+		margin: 0px 0px 12px 3px;
+	}
 }
 
+@media only screen and (max-width: 320px){
+	#cards {
+		margin-top: -60vh;
+	}
+}
