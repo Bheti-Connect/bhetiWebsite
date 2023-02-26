@@ -82,7 +82,8 @@ const AccueilStyled = styled.section`
                     width: 30vw;
                 }
                 @media only screen and (max-width: 1440px){
-                    width: 500px;
+                    position
+                    width: 600px;
                     font-size: 45px; 
                 }
                 @media only screen and (max-width: 1350px) and (min-width: 1024px) {
