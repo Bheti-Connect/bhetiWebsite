@@ -1,13 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
-import Talking from '../../assets/images/pexels-picha-stock-3894383-1.png';
-import Blob1 from '../../assets/images/magicpattern-blob-1.png';
-import Blob2 from '../../assets/images/magicpattern-blob-2.png'
-import Tamtam from '../../assets/images/tamTam.png'
-
+import Team from '../../assets/images/pexels-edmond-dantès-8553867.jpg';
 import Button from '../Button';
 import { useTheme } from '../../context/themeContext';
-
 
 
 const Accueil = () => {
@@ -16,14 +11,14 @@ const Accueil = () => {
         <AccueilStyled className='u-pad-lg-2'  theme={theme}>
             <div className='first-container'>
                 <div className='headache'>
-                    <h1 className='centered'>Résolvez le casse tête du financement de votre entreprise</h1>
-                    <img className='girls-talk' src={Talking} alt='Image-Femmes'/>
-                    
+                    <h1 className='centered mobile-view'><b>Résolvez le casse tête du financement de votre entreprise</b></h1>
+                    <div className='text-highlighted'>
+                        <p> Ut enim ad minim veniam, quis nostrud  commodo consequat. 
+                        Duis aute irure dolor in reprehenderit velit esse cillum dolore eu fugiat nulla pariatur.
+                        </p>
+                    </div>
                 </div>
-                <div className='text-highlighted'>
-                    <p>Convaincre un investisseur, obtenir des financements, faire une levée de fonds … Autant de choses qui vous paraissent insolubles?</p>
-                    <p>En plus de nos outils prisés par les experts du monde des startups, bénéficiez de l’accompagnement de nos meilleurs conseillers.</p>
-                </div>
+                
                 <div className='button-demo'>
                         <Button 
                             name={'Je réserve une demo'}
@@ -32,114 +27,276 @@ const Accueil = () => {
                             blob={'blob'}
                         />
                     </div>
-                <div className='bheti-box'>
-                    <img className='blobImg-1' src={Blob1} />
-                    <img className='blobImg-2' src={Blob2} />
-                    <img className='tamtam-img' src={Tamtam} />
-                </div>
+                
             </div>
         </AccueilStyled>
     )
 }
 
-
 const AccueilStyled = styled.section`
         .first-container{
         .headache {
+            display: flex;
             position: relative;
             margin: auto;
             margin-top: 2%;
             align-items: center;
             border-radius: 7px;
-            span{
-                color: ${props => props.theme.colorBheti} ;
+            .casse{
+                color: ${props => props.theme.colorBlack} ;
+                @media only screen and (max-width: 768px){
+
+                }
+                @media only screen and (max-width: 500px){
+                    
+                }
+                @media only screen and (max-width: 425px){
+                    color: ${props => props.theme.colorBlack} ;
+                }
+            }
+            .resolvez{
+                color: ${props => props.theme.colorBlack} ;
+                @media only screen and (max-width: 768px){
+
+                }
+                @media only screen and (max-width: 500px){
+                    
+                }
+                @media only screen and (max-width: 425px){
+                    color: ${props => props.theme.colorBlack} ;
+                }
             }
             img{
                 width: 70%;
             }
-            .girls-talk{
-                border-bottom-left-radius: 40px;
-                @media only screen and (max-width: 2560px) and (min-width: 1800px) {
-                    margin-left: 380px;
-                    width: 55%;
-                    margin-top: 7%;
+            .happy-team{
+                animation: contentHide 1s ease-in-out;
+                @keyframes contentHide {
+                    0%{
+                        opacity: 0;
+                        transform: translateX(-120%) scaleX(0);
+                    }
+                    100%{
+                        opacity: 1;
+                        transform: translateX(1) scaleX(0);
+                    }
                 }
-                @media only screen and (max-width: 1440px) and (min-width: 1350px) {
+                @media only screen and (max-width: 2560px){
+                    position: relative;
+                    float: right;
+                    width: 50%;
+                    height: 600px;
+                }
+                @media only screen and (max-width: 1440px){
+                    width: 90%;
+                    height: 500px;
+                }
+                @media only screen and (max-width: 1350px){
                     margin-left: 200px;
+                    width: 90%;
                     margin-top: 8%;
                 }
-            }
-            
-            .centered{    
-                position: absolute;
-                top: 50%;
-                left: 50%;
-                transform: translate(-50%, -50%);
-                font-weight: 900;
-                font-size: 50px; 
-                color: ${props => props.theme.colorBheti}; 
-                @media only screen and (max-width: 2560px) and (min-width: 1800px) {
-                    transform: translate(-150%, -90%);
-                    width: 500px;
+                @media only screen and (max-width: 960px){
+                    margin-left: -80px;
+                    margin-top: 10%;
+                    width: 180%;
+                    height: 320px;
                 }
-                @media only screen and (max-width: 1440px) and (min-width: 1350px) {
-                    transform: translate(-150%, -90%);
-                    width: 500px;
+                @media only screen and (max-width: 768px){
+                    margin-left: -80px;
+                    margin-top: 10%;
+                    width: 125%;
+                    height: 250px;
+                }
+                @media only screen and (max-width: 500px){
+                    margin-left: -80px;
+                    margin-top: 10%;
+                    width: 125%;
+                    height: 300px;
+                }
+                @media only screen and (max-width: 425px){
+                    margin-left: -80px;
+                    margin-top: 5%;
+                    width: 115%;
+                    height: 300px;
+                }
+                @media only screen and (max-width: 375px){
+                    margin-left: -50px;
+                    margin-top: 12%;
+                    width: 120%;
+                    height: 270px;
+                }
+                @media only screen and (max-width: 320px){
+                    margin-left: -80px;
+                    margin-top: 10%;
+                    width: 125%;
+                    height: 250px;
+                }
             }
+            .centered{    
+                position: relative;
+                margin: auto;
+                font-weight: 900;
+                font-size: 40px; 
+                font-family: 'cinzel'   ;
+                color: ${props => props.theme.colorBlack}; 
+                @media only screen and (max-width: 2560px) {
+                    top: 8vh;
+                    font-size: 50px;
+                    width: 30vw;
+                }
+                @media only screen and (max-width: 1440px){
+                    width: 500px;
+                    font-size: 45px; 
+                }
+                @media only screen and (max-width: 1350px) and (min-width: 1024px) {
+                    width: 400px;
+                    font-size: 45px; 
+                }
+                @media only screen and (max-width: 960px){
+                    width: 710px;
+                    font-size: 46px;
+                    transform: translate(-51%, 160%);
+                    color: ${props => props.theme.colorBlack}; 
+                }
+                @media only screen and (max-width: 768px){
+                    width: 350px;
+                    font-size: 40px;
+                    transform: translate(-120%, 40%);
+                    color: ${props => props.theme.colorBlack}; 
+                }
+                
+                @media only screen and (max-width: 425px){
+                    display: none;
+                }
+                @media only screen and (max-width: 375px){
+                    width: 300px;
+                    text-align: center;
+                    font-size: 31.3px;
+                    transform: translate(-60%, 190%);
+                    color: ${props => props.theme.colorBlack};
+                }
+            }
+            .mobile-view {
+                @media only screen and (max-width: 440px){
+                    display: block;
+                    width: 360px;
+                    font-size: 31px;
+                    transform: translate(-58%, 140%);
+                    color: ${props => props.theme.colorBlack};
+                }
+                @media only screen and (max-width: 425px){
+                    display: block;
+                    width: 360px;
+                    font-size: 31px;
+                    transform: translate(-64%, 135%);
+                    color: ${props => props.theme.colorBlack};
+                }
+                @media only screen and (max-width: 415px){
+                    transform: translate(-60%, 135%);
+                }
+                @media only screen and (max-width: 375px){
+                    display: block;
+                    width: 350px;
+                    font-size: 30px;
+                    transform: translate(-57%, 145%);
+                    color: ${props => props.theme.colorBlack};
+                }
             }
         }
         .text-highlighted{
-            align-items: center;
-            margin-top: 2%;
+            @media only screen and (max-width: 2500px){
+                text-align: center;
+                padding-top: 13vh;
+                width: 500px;
+                margin: auto;
+            }
+            @media only screen and (max-width: 1440px) {
+                font-size: 20px;
+            }
+            @media only screen and (max-width: 1350px) {
+                margin-top: 20%;
+                font-size: 1.4rem;
+                width: 860px;
+                margin-left: -100px;
+            }
+            @media only screen and (max-width: 960px) {
+                margin-top: 12%;
+                font-size: 1.25rem;
+                width: 600px;
+                margin-top: 200px;
+                margin-left: -20vw;
+            }
+            @media only screen and (max-width: 768px) {
+                margin-top: 10%;
+                font-size: 1.01rem;
+                width: 320px;
+                margin-top: 200px;
+                margin-left: -80px;
+            }
+            @media only screen and (max-width: 525px) {
+                margin-top: 10%;
+                font-size: 1.01rem;
+                text-align: justify;
+                width: 350px;
+                margin-top: 160px;
+                margin-left: -90px;
+            }
+            @media only screen and (max-width: 375px) {
+                width: 300px;
+                margin-top: 200px;
+                margin-left: -70px;
+            }
         }
         .button-demo{
-            margin: 40px 500px 0px;
-            @media only screen and (max-width: 1440px) and (min-width: 1350px){
-                width: 80%;
-                margin: 40px 350px 0px;
+            position: relative;
+            @media only screen and (max-width: 2500px){
+                top: 15vh;
+                margin: auto;
+                padding-bottom: 10% ;
             }
+            @media only screen and (max-width: 1440px){
+                margin-top: 30px ;
+            }
+            @media only screen and (max-width: 500px){
+                width:100%;
+                margin: 0px -20px;
+                padding-top: 20px ;
+            }
+            @media only screen and (max-width: 425px){
+                width:110%;
+                margin: 0px -25px;
+                padding-top: 15px ;
+            }
+            @media only screen and (max-width: 375px){
+                width:125%;
+                margin: 0px -80px;
+                padding-top: 15px ;
+            }
+        }
+        @media only screen and (max-width: 1440px) {
+            position: relative;
+
+        }
+        @media only screen and (max-width: 768px) {
+            width: 220px;
+            margin-left: 130px;
+        }
+        @media only screen and (max-width: 500px) {
+            width: 250px;
+            margin-left: 130px;
+        }
+        @media only screen and (max-width: 425px) {
+            width: 270px;
+            margin-left: 120px;
+        }
+        @media only screen and (max-width: 375px) {
+            width: 220px;
+            margin-left: 100px;
         }
     }
-    .bheti-box{
-        position: absolute;
-        width: 980px;
-        height: 700px;
-        right: 0px;
-        top: 78px;
-        z-index: -100;
-        background-color: #641C1C;
-        .blobImg-1{
-            position: absolute;
-            right: -30px;
-            bottom: -160px;
-            @media only screen and (max-width: 1440px) and (min-width: 1350px) {
-                width: 35%;
-            }
-        }
-        .blobImg-2{
-            position: absolute;
-            right: -10px;
-            top: -50px;
-            @media only screen and (max-width: 1440px) and (min-width: 1350px) {
-                width: 20%;
-            }
-        }
-        .tamtam-img{
-            display: block;
-            margin-top: 8%;
-            margin-left: auto;
-            margin-right: auto;
-            width: 40%;
-            @media only screen and (max-width: 1440px) and (min-width: 1350px){
-                width: 50%;
-                margin-top: 7%;
-            }
-        }
-        @media only screen and (max-width: 1440px) and (min-width: 1350px){
-            width: 720px;
-        }
-    }
+    
 `;
 
 
-export default Accueil
+export default Accueil;

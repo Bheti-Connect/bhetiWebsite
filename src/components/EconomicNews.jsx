@@ -19,12 +19,14 @@ const EconomicNews = () => {
                         Découvrez les codes de la sphère business en Afrique. 
                         Nous vous immergeons dans ce monde encore opaque pour vous apporter des informations transparentes, inédites et exclusives.
                     </p>
-                    <Button
-                        name={"Je m'informe"}
-                        icon={'fas fa-chevron-right'}
-                        arrow={'arrow'}
-                        blob={'blob'}
-                    />
+                    <a className='bouton'>
+                        <Button 
+                            name={"Je m'informe"}
+                            icon={'fas fa-chevron-right'}
+                            arrow={'arrow'}
+                            blob={'blob'}
+                        />
+                    </a>
                 </div>
             </div>
         </EconomicNewsStyled>
@@ -38,12 +40,19 @@ const EconomicNewsStyled = styled.section`
     background-color: ${props => props.theme.colorBlack};
     margin-bottom: 6rem;
     box-shadow: 0 5px 18px #212529b7;
+    @media only  screen and (max-width: 425px) {
+        position: relative;
+        width: 100%;
+        height: 100vh;
+        
+    }
+    
     .left-rec{
         overflow: hidden;
         border-top-left-radius: 5px;
         img{
             border-top-left-radius: 5px;
-            width: 85%;
+            width: 100%;
             object-fit: cover;
             filter: grayscale(100%);
             height: 100%;
@@ -52,6 +61,16 @@ const EconomicNewsStyled = styled.section`
                 filter: grayscale(0);
                 transform: scale(1.2) rotate(4deg);
             }
+            @media only  screen and (max-width: 320px) {
+                width: 100%;
+            }
+        }
+        @media only screen and (max-width: 425px) {
+            width: 100%;
+            height: 45%;
+            position: absolute;
+            top: 0;
+            left: 0;
         }
     }
     .right-rec{
@@ -74,11 +93,14 @@ const EconomicNewsStyled = styled.section`
                     height: 2px;
                     background-color: ${props => props.theme.colorAccent};
                 }
-                @media only screen and (max-width: 525px) and (min-width: 425px) {
+                @media only screen and (max-width: 768px) {
+                    font-size: 1.82rem;
+                }
+                @media only screen and (max-width: 425px) {
                     font-size: 1.5rem;
                 }
-                @media only screen and (max-width: 425px) and (min-width: 320px) {
-                    font-size: 1.5rem;
+                @media only screen and (max-width: 320px) {
+                    font-size: 1.18rem;
                 }
             }
             p{
@@ -94,10 +116,32 @@ const EconomicNewsStyled = styled.section`
             @media only screen and (max-width: 525px) and (min-width: 425px) {
                 width: 320px;
             }
-        }
-        @media only screen and (max-width: 425px) and (min-width: 320px) {
-                    width: 250px;
+            .bouton {
+                position: relative;
+                margin-left: -30px;
+                @media only screen and (max-width: 2500px) {
+                    margin-left: 30%;
                 }
+                @media only screen and (max-width: 425px) {
+                    margin-left: 23px ;
+                }
+                @media only screen and (max-width: 375px) {
+                    margin-left: -20px ;
+                }
+            }
+        }
+        @media only screen and (max-width: 425px) {
+                position: relative;
+                top: 20vh;
+                width: 185%;
+                z-index: 10;
+                margin-left: 19px;
+            }
+        @media only screen and (max-width: 375px) {
+            top: 23vh;
+            width: 160%;
+            margi-left: 15px;
+        }
     }
 `;
 

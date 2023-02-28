@@ -3,12 +3,16 @@ import styled from 'styled-components'
 import { useTheme } from '../../context/themeContext';
 import LaMethode from './LaMethode';
 import Accueil from './Accueil';
+import Advantages from './Advantages';
 
 const Entrepreneur = () => {
     const theme = useTheme();
     return (
         <EntrepreneurStyled  theme={theme}>
             <Accueil />
+            <div className=''>
+                <Advantages />
+            </div>
             <div className='method-container'>
                 <LaMethode />
             </div>

@@ -1,7 +1,3 @@
-
-
-
-
 /* ---------- Style CSS of SweetAlert2 ---------- */
 
 h2.title-sweet-connect{
@@ -71,3 +67,12 @@ div.text-sweet-connect{
 @media only screen and (max-width: 320px) {
     
 }*/
+
+
+:root {
+	--card-height: 40vw;
+	--card-margin: 4vw;
+	--card-top-offset: 1em;
+	--numcards: 4;
+	--outline-width: 0px;
+}

@@ -49,18 +49,30 @@ const MethodSection = () => {
 
 const MethodSectionStyled = styled.section`
     margin: 50px 80px;
-
+    
     .methods-con{
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
         grid-gap: 2rem;
         padding-top: 3rem;
-        @media only screen and (max-width: 425px) and (min-width: 320px){
-            width: 15px;
+        @media only screen and (max-width: 425px) {
+            margin-left: -4vw ;
+        }
+        @media only screen and (max-width: 376px) {
+            margin-left: -0.2vw ;
+        }
     }
-    }
+
     .title-con {
-        @media only screen and (max-width: 425px) and (min-width: 320px) {
+        @media only screen and (max-width: 425px) {
+            width: 120%;
+            margin-left: -28px;
+        }
+        @media only screen and (max-width: 400px) {
+            width: 130%;
+            margin-left: -30px;
+        }
+        @media only screen and (max-width: 375px) {
             width: 120%;
             margin-left: -20px;
         }

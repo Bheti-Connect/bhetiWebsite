@@ -1,0 +1,43 @@
+.logo-img {
+  width: 250px;
+}
+
+.investment-form,
+#eligibilityForm {
+  padding: 1em 1.2em;
+  font-family: "Roboto Slab", serif;
+  width: 100%;
+  background-color: #fff;
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+  border-bottom-right-radius: 0.425rem;
+  border-top-right-radius: 0.425rem;
+}
+.submit-btn {
+  background-color: #641c1c;
+  color: #fff;
+  border-radius: 0.4em;
+  cursor: pointer;
+  font-weight: 500;
+  border: none;
+  font-family: "Roboto Slab", serif;
+  padding: 0.5em 1em;
+  margin-top: 1em;
+}
+
+.btn-div {
+  text-align: end;
+}
+
+@media only screen and (max-width: 850px) {
+  .investment-form,
+  #eligibilityForm {
+    border-bottom-left-radius: 0.425em;
+    border-bottom-right-radius: 0.425em;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .logo-img {
+    width: 200px;
+  }
+}

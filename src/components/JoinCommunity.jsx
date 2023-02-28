@@ -9,7 +9,7 @@ const JoinCommunity = () => {
     const theme = useTheme();
     return (
 
-        <JoinCommunityStyled className='u-pad-lg-2 community' theme={theme}>
+        <JoinCommunityStyled className='u-pad-lg-2' theme={theme}>
             <div className='title-con'>
                 <Title 
                     name={'Rejoignez notre communauté'}
@@ -40,21 +40,11 @@ const JoinCommunity = () => {
                     </div>
                 </div>
             </div>
-            {/* <div className='latest-controlls'>
-                <div className='control control-1'></div>
-                <div className='control control-2'></div>
-                <div className='control control-3'></div>
-            </div> */}
         </JoinCommunityStyled>
     )
 }
 
 const JoinCommunityStyled = styled.section`
-    
-    .community {
-        width: 10px;
-    }
-
 
     .title-con{
         width: 1000px;
@@ -69,19 +59,29 @@ const JoinCommunityStyled = styled.section`
             margin-left: -210px;
             width: 1000px;
         }
+        @media only screen and (max-width: 1024px){
+            margin-left: -15%;
+            width: 600px;
+        }
+        @media only screen and (max-width: 960px) {
+            margin-left: -150px;
+        }
+        @media only screen and (max-width: 768px) {
+            margin-left: -205px;
+        }
         @media only screen and (max-width: 525px) and (min-width: 425px) {
             margin-left: -200px;
             width: 350px;
         }
-        @media only screen and (max-width: 425px) and (min-width: 320px) {
-            margin-left: -255px;
-            width: 320px;
+        @media only screen and (max-width: 425px) {
+            width: 300px;
+            margin: auto;
         }
     }
     .latest-container{
-        margin-top: 1.5rem;
+        margin-top: 2.5rem;
         background-color: ${props => props.theme.colorBlack};
-        border-radius: 7px;
+        border-radius: 3px;
         @media only screen and (max-width: 2560px) and (min-width: 1800px) {
             width: 1500px;
             margin-left: -70px;
@@ -92,6 +92,7 @@ const JoinCommunityStyled = styled.section`
         }
         @media only screen and (max-width: 1440px) and (min-width: 1350px) {
             width: 1000px;
+            height: 400px;
             margin-left: -60px;
         }
         @media only screen and (max-width: 1350px) and (min-width: 1250px) {
@@ -102,24 +103,37 @@ const JoinCommunityStyled = styled.section`
             width: 900px;
             margin-left: -160px;
         }
-        @media only screen and (max-width: 525px) and (min-width: 425px) {
+        @media only screen and (max-width: 1024px) {
+            width: 650px;
+            height: 500px;
+            margin-left: -18%;
+        }
+        @media only screen and (max-width: 960px) {
+            margin-left: -180px;
+        }
+        @media only screen and (max-width: 768px) {
+            margin-left: -225px;
+        }
+        @media only screen and (max-width: 525px){
             width: 505px;
+            height: 600px;
             margin-left: -300px;
         }
-        @media only screen and (max-width: 425px) and (min-width: 320px) {
-            width: 300px;
-            margin-left: -255px;
+        @media only screen and (max-width: 425px) {
+            width: 100%;
+            margin: auto;
+            border-radius: 0px;
         }
         .latest-content{
             display: grid;
             grid-template-columns: 40% auto;
-            padding: 5rem 10rem;
+            padding: 10rem 10rem;
             grid-gap: 2rem;
+            height: -300px;
             img{
                 width: 100%;
-                border-radius: 7px;
+                border-radius: 10px;
                 object-fit: cover;
-                
                 @media only screen and (max-width: 2560px) and (min-width: 1800px) {
                     width: 600px;
                     margin-left: -60px;
@@ -132,6 +146,7 @@ const JoinCommunityStyled = styled.section`
                     width: 380px;
                     height: 250px;
                     margin-left: -100px;
+                    margin-top: -80px;
                 }
                 @media only screen and (max-width: 1350px) and (min-width: 1250px) {
                     width: 350px;
@@ -143,17 +158,29 @@ const JoinCommunityStyled = styled.section`
                     height: 200px;
                     margin-left: -120px;
                 }
-                @media only screen and (max-width: 525px) and (min-width: 425px) {
-                    width: 380px;
-                    height: 120px;
-                    margin-left: -100px;
-                    margin-top: -57px;
+                @media only screen and (max-width: 1024px) {
+                    width: 500px;
+                    height: 180px;
+                    margin-left: -90px;
+                    margin-top: -130px;
                 }
-                @media only screen and (max-width: 425px) and (min-width: 320px) {
-                    width: 220px;
+                
+                @media only screen and (max-width: 425px){
+                    width: 300px;
+                    height: 110px;
+                    margin-left: -95px;
+                    margin-top: -120px;
+                }
+                @media only screen and (max-width: 400px){
+                    margin-left: -110px;
+                }
+                @media only screen and (max-width: 375px){
+                    width: 260px;
                     height: 100px;
-                    margin-left: -120px;
-                    margin-top: -57px;
+                    margin-left: -100px;
+                }
+                @media only screen and (max-width: 320px){
+                    margin-left: -130px;
                 }
             }
             .latest-text{
@@ -196,7 +223,7 @@ const JoinCommunityStyled = styled.section`
                     width: 500px;
                     height: 200px;
                     margin-left: 20px;
-                    margin-top: -2%;
+                    margin-top: -15%;
                 }
                 @media only screen and (max-width: 1350px) and (min-width: 1250px) {
                     width: 500px;
@@ -210,17 +237,45 @@ const JoinCommunityStyled = styled.section`
                     margin-left: -23px;
                     margin-top: -10%;
                 }
-                @media only screen and (max-width: 525px) and (min-width: 425px) {
-                    width: 400px;
-                    height: 280px;
-                    margin-left: -200px;
+                @media only screen and (max-width: 1024px) {
+                    width: 550px;
+                    height: 300px;
+                    margin-left: -260px;
+                    margin-top: 25%;
+                }
+                @media only screen and (max-width: 425px){
+                    width: 320px;
+                    height: 400px;
+                    margin-left: -160px;
                     margin-top: 40%;
                 }
-                @media only screen and (max-width: 425px) and (min-width: 320px) {
-                    width: 280px;
+                @media only screen and (max-width: 320px){
+                    width: 250px;
                     height: 350px;
-                    margin-left: -160px;
+                    margin-left: -140px;
                     margin-top: 60%;
+                    p{
+                        font-size: .9rem;
+                    }
+                    h4 {
+                        font-size: 1.2rem;
+                    }
+                    h6 {
+                        font-size: 1rem;
+                    }
+                }
+                .anchor-tag {
+                    margin-top: 40px;
+                    margin: 1;
+                    @media only screen and (max-width: 425px) {
+                        margin-left: 17px;
+                    }
+                    @media only screen and (max-width: 400px) {
+                        margin-left: 17px;
+                    }
+                    @media only screen and (max-width: 375px) {
+                        margin-left: -50px;
+                    }
                 }
             }
         }
