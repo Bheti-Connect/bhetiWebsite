@@ -240,30 +240,66 @@ const Media = () => {
     <Container>
 
       <SectionUne theme={theme}>
-        <div className='head-text'>
+      <div className='head-text'>
 
-          <div className='icon-media'>
-            <img src={UneMedia} alt="a la une icon" />
-          </div>
+      <div className='icon-media'>
+        <img src={UneMedia} alt="a la une icon" />
+      </div>
 
-          <div>
-            <h2>A LA UNE...</h2>
-            <p>Chaque semaine, découvrez les figures comme les startups qui font bouger les lignes sur les  marchés africains</p>
-          </div>
-        </div>
+      <div>
+        <h2>A LA UNE...</h2>
+        <p>Chaque semaine, découvrez les figures comme les startups qui font bouger les lignes sur les  marchés africains</p>
+      </div>
+      </div>
+      <div className='body-une'>
 
-        <div className='body-une'>
+      <div className='cards-une'>
 
-          <div className='cards-une'>
+      <div className='card-1'>1</div>
 
-            {aLaUne.map((item, index) => (
-              <SliderMedia key={index} items={item} item_key={index} />
-            ))}
+      <div className='sub-card'>
+        <div className='card-2'>2</div>
+        <div className='card-3'>3</div>
+      </div>
 
-          </div>
+      </div>
 
-        </div>
+      <div className='plus-consulter'>
+      <h2>Les plus consultés</h2>
 
+      <div className='item-consult'>
+        <a href='#'>P.de Gaétan, PDG Fonds Pierre Castel</a>
+        <p>Nelly Chatue-Diop, CEO Ejara, nous partage son parcours entre l'Afrique et l'Europe et revient sur les enjeux de la cryptomonaie.</p>
+        <p className='item-date'>15 decembre 2022</p>
+      </div>
+
+      <div className='item-consult'>
+        <a href='#'>P.de Gaétan, PDG Fonds Pierre Castel</a>
+        <p>Nelly Chatue-Diop, CEO Ejara, nous partage son parcours entre l'Afrique et l'Europe et revient sur les enjeux de la cryptomonaie.</p>
+        <p className='item-date'>15 decembre 2022</p>
+      </div>
+
+      <div className='item-consult'>
+        <a href='#'>P.de Gaétan, PDG Fonds Pierre Castel</a>
+        <p>Nelly Chatue-Diop, CEO Ejara, nous partage son parcours entre l'Afrique et l'Europe et revient sur les enjeux de la cryptomonaie.</p>
+        <p className='item-date'>15 decembre 2022</p>
+      </div>
+
+      <div className='item-consult'>
+        <a href='#'>P.de Gaétan, PDG Fonds Pierre Castel</a>
+        <p>Nelly Chatue-Diop, CEO Ejara, nous partage son parcours entre l'Afrique et l'Europe et revient sur les enjeux de la cryptomonaie.</p>
+        <p className='item-date'>15 decembre 2022</p>
+      </div>
+
+      <div className='item-consult'>
+        <a href='#'>P.de Gaétan, PDG Fonds Pierre Castel</a>
+        <p>Nelly Chatue-Diop, CEO Ejara, nous partage son parcours entre l'Afrique et l'Europe et revient sur les enjeux de la cryptomonaie.</p>
+        <p className='item-date'>15 decembre 2022</p>
+      </div>
+
+      </div>
+
+      </div>
 
       </SectionUne>
 
@@ -482,7 +518,7 @@ margin-bottom: 80px;
   display: flex;
   justify-content: center;
   
-/*
+
   .plus-consulter h2 {
     color: ${props => props.theme.colorBheti};
     margin-bottom: 10px;
@@ -515,45 +551,44 @@ margin-bottom: 80px;
       }
     }
   }
-*/
+
   .cards-une{
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content:center;
-  }
+    display:flex;
+    flex-direction: column;
+    
 
 
-}
-
-@media only screen and (max-width: 1100px) {
-
-  .head-text {
-    margin-left: 20px;
-    margin-right: 20px;
-
-    h2 {
-      margin-bottom: 5px;
-      font-size: 18px;
+    .card-1 {
+      background-color: #700b0b;
+      width: 600px;
+      height: 238px;
+      border-radius: 20px;
     }
 
-    p{
-      font-weight: 600;
-      font-size: 15px;
-    }
+    .sub-card {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 15px;
 
-    .icon-media {
-      img{
-        height: 60px;
-        width: 50px;
+      .card-2{
+        background-color: #700b0b;
+        width: 48%;
+        height: 250px;
+        border-radius: 20px;
+      }
+
+      .card-3{
+        background-color: #700b0b;
+        width: 48%;
+        height: 250px;
+        border-radius: 20px;
       }
     }
+
   }
 
 
-  
 }
-
 
 @media only screen and (max-width: 768px) {
 
