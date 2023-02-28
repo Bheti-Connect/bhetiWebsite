@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import Team from '../../assets/images/pexels-edmond-dantès-8553867.jpg';
+//import Team from '../../assets/images/pexels-edmond-dantès-8553867.jpg';
 import Button from '../Button';
 import { useTheme } from '../../context/themeContext';
 

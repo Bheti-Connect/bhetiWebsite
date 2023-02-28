@@ -1,10 +1,10 @@
 import React from 'react';
 import styled from 'styled-components'
 import './styles.css';
-import Team from '../../assets/images/pexels-rebrand-cities-1367272.jpg';
-import Conviction from '../../assets/images/pexels-tima-miroshnichenko-5439407.jpg';
-import GetMoney from '../../assets/images/pexels-edmond-dantès-8553867.jpg';
-import Image1 from '../../assets/images/pexels-edmond-dantès-8553867.jpg';
+import Team from './../../assets/images/pexels-rebrand-cities-1367272.jpg';
+import Conviction from './../../assets/images/pexels-tima-miroshnichenko-5439407.jpg';
+import GetMoney from './../../assets/images/pexels-edmond-dantès-8553867.jpg';
+//import Image1 from '../../assets/images/pexels-edmond-dantès-8553867.jpg';
 
 
 const Advantages = () => {

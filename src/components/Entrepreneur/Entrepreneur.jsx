@@ -21,6 +21,7 @@ const Entrepreneur = () => {
 }
 
 const EntrepreneurStyled = styled.section`
+    text-align: center;
     .method-container{
         margin-top: 2%;
         width: 100%;
