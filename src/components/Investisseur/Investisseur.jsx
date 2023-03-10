@@ -221,10 +221,12 @@ const Investisseur = () => {
     // First UseEffect
     useEffect(() => {
 
+      //This code sets a timeout of 4 seconds (4000 milliseconds) and then sets the loading state to false.
       let waiting = setTimeout(() => {
         setLoading(false)
       }, 4000);
 
+      
       changeSectionMenu()
 
       if (connect == false)
