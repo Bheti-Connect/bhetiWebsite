@@ -50,15 +50,15 @@ const LaMethodeStyled = styled.section`
     background: ${props => props.theme.colorBlack};
     grid-template-columns: 1fr 1fr;
     grid-gap: 2rem;
-    padding-top: 10rem !important;
+    padding-top: 5rem !important;
     padding-top: 1rem;
     padding-left: 18rem;
     padding-right: 18rem;
     padding-bottom: 6rem;
     @media only screen and (max-width: 768px){
         padding-top: 0rem;
-        padding-left: 0rem;
-        padding-right: 0rem;
+        padding-left: 1rem;
+        padding-right: 15rem;
         padding-bottom: 0rem;
         }
     .left-container{
@@ -100,6 +100,9 @@ const LaMethodeStyled = styled.section`
                 }
                 .title{
                     font-size: 2rem;
+                    width: 70vw;
+                    margin-left: 10vw;
+
                 }
                 margin-left: -250px;
         }
@@ -117,20 +120,15 @@ const LaMethodeStyled = styled.section`
             margin-left: -140px;
         }
         @media all and (max-width: 1300px){
-            width: 380px;
-            margin-left: -160px;
+            width: 400px;
+            margin-left: -5vw;
         }
         @media all and (max-width: 1080px){
             width: 400px;
             margin-left: -180px;
         }
-        @media all and (max-width: 770px){
-            width: 350px;
-            margin-left: 10px;
-
-        }
         @media all and (max-width: 525px){
-            width: 320px;
+            width: 300px;
             margin-left: 50px;
             margin-top: -100px;
         }
@@ -163,7 +161,7 @@ const LaMethodeStyled = styled.section`
         }
         .neighbor-div{
             img{
-                width: 103%;
+                width: 100%;
             }
         }
         @media screen and (min-width: 1150px) {
@@ -207,14 +205,14 @@ const LaMethodeStyled = styled.section`
     }
     @media all and (max-width: 1300px) {
         .right-container{
-            width: 170%;
-            margin-top: 260px;
-            margin-left: -10%;
+            display: inline-block;
+            width: 100%;
+            margin-top: 20vh;
+            margin-left: 10vw;
         }
     }
     @media all and (max-width: 1080px) {
         .right-container{
-            display: inline-block;
             width: 180%;
             margin-top: 150px;
             margin-left: 20%;
@@ -225,20 +223,49 @@ const LaMethodeStyled = styled.section`
             }
         }
     }
-    @media all and (max-width: 770px) {
+    @media all and (max-width: 960px) {
+        display: inline-block;
         .right-container{
-            display: inline-block;
-            width: 200%;
-            margin-top: 200px;
-            margin-left: 20%;
+            width: 110%;
             .neighbor-div{
                 img{
-                    width: 100%;
+                    width:100%;
                 }
             }
         }
+
+        .left-container{
+            width: 120%;
+            margin: auto;
+            .text-container{
+                width: 400px;
+            }
+        }
+
     }
-    @media all and (max-width: 420px) {
+    @media all and (max-width: 770px) {
+        .right-container{
+            position: relative;
+            width: 150%;
+            .neighbor-div{
+                img{
+                    width:100%;
+                }
+            }
+        }
+
+        .left-container{
+            width: 120%;
+            margin: auto;
+        }
+    }
+    @media all and (max-width: 440px) {
+        .left-container{
+            width: 80%;
+            .text-container {
+                width: 320px;
+            }
+        }
         .right-container{
             width: 130%;
             height: 200px;
@@ -247,11 +274,20 @@ const LaMethodeStyled = styled.section`
         }
     }
     @media all and (max-width: 380px) {
+       
         .right-container{
             width: 130%;
             height: 200px;
             margin-top: 200px;
             margin-left: -100px;
+        }
+    }
+    @media all and (max-width: 320px) {
+        .left-container{
+            width: 80%;
+            .text-container {
+                width: 270px;
+            }
         }
     }
 `;

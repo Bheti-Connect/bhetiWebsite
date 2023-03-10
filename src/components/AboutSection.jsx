@@ -133,11 +133,9 @@ const AboutSectionStyled = styled.section`
                 margin-left: -2px;
             }
             @media only screen and (max-width: 320px){
-                font-size: 1rem;
-                margin-bottom: 5%;
-                margin-top: -2900%;
-                width: 300px;
-                margin-left: -2px;
+                font-size: 1.3rem;
+                width: 220px;
+                margin-left: 50px;
             }
         }
         .about-info{

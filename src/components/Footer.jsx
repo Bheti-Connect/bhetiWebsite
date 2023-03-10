@@ -78,18 +78,6 @@ const Footer = () => {
                         <a href="#">Licence & Droits d'auteur</a>
                     </li>
                 </ul>
-
-                {/* <ul className="nav-b ig">
-                    <h4>LinkedIn</h4>
-                    <div className="ig-images">
-                        {/* <img src={team1} alt="" />
-                        <img src={team2} alt="" />
-                        <img src={css3} alt="" />
-                        <img src={agency4} alt="" />
-                        <img src={figma} alt="" />
-                        <img src={fitness} alt="" /> 
-                    </div>
-                </ul> */}
             </nav>
             <div className="footer-copyright">
                 <p>
@@ -178,7 +166,7 @@ const FooterSectionStyled = styled.footer`
             .logo img{
                 width: 12%;
                 @media all and (max-width: 425px) {
-                    width: 25%;
+                    width: 22%;
                 }
             }
     }
@@ -236,9 +224,6 @@ const FooterSectionStyled = styled.footer`
         @media all and (max-width: 1080px){
             width: 850px;
         }
-        @media only screen and (max-width: 1250px) and (min-width: 1024px){
-            width: 900px;
-        }
         @media all and (max-width: 1024px) {
             width: 680px;
         }
@@ -260,7 +245,6 @@ const FooterSectionStyled = styled.footer`
             width: 230px;
             margin-left: 55px;
         }
-        
     }
     .footer-copyright{
         padding-top: 3rem;

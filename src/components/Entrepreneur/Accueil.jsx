@@ -11,7 +11,9 @@ const Accueil = () => {
         <AccueilStyled className='u-pad-lg-2'  theme={theme}>
             <div className='first-container'>
                 <div className='headache'>
-                    <h1 className='centered mobile-view'><b>Résolvez le casse tête du financement de votre entreprise</b></h1>
+                    <div className='centered mobile-view'>
+                        <h1><b>Résolvez le casse tête du financement de votre entreprise</b></h1>
+                    </div>
                     <div className='text-highlighted'>
                         <p> Ut enim ad minim veniam, quis nostrud  commodo consequat. 
                         Duis aute irure dolor in reprehenderit velit esse cillum dolore eu fugiat nulla pariatur.
@@ -34,6 +36,10 @@ const Accueil = () => {
 }
 
 const AccueilStyled = styled.section`
+    @media only screen and (max-width: 440px) {
+        height: 120vh ;
+    }
+
         .first-container{
         .headache {
             display: flex;
@@ -42,96 +48,27 @@ const AccueilStyled = styled.section`
             margin-top: 2%;
             align-items: center;
             border-radius: 7px;
-            .casse{
-                color: ${props => props.theme.colorBlack} ;
-                @media only screen and (max-width: 768px){
-
-                }
-                @media only screen and (max-width: 500px){
-                    
-                }
-                @media only screen and (max-width: 425px){
-                    color: ${props => props.theme.colorBlack} ;
-                }
+            @media only screen and (max-width: 1440px){
+                width: 1000px;
+                margin-left: -12vw ;
             }
-            .resolvez{
-                color: ${props => props.theme.colorBlack} ;
-                @media only screen and (max-width: 768px){
-
-                }
-                @media only screen and (max-width: 500px){
-                    
-                }
-                @media only screen and (max-width: 425px){
-                    color: ${props => props.theme.colorBlack} ;
-                }
+            @media only screen and (max-width: 430px) {
+                display: block;
+                position: relative;
+                width: 220px;
+                height: 30vh;
+            }
+            @media only screen and (max-width: 425px) {
+                display: block;
+                position: relative;
+                width: 220px;
+                height: 28vh;
+            }
+            @media only screen and (max-width: 320px) {
+                height: 32vh;
             }
             img{
                 width: 70%;
-            }
-            .happy-team{
-                animation: contentHide 1s ease-in-out;
-                @keyframes contentHide {
-                    0%{
-                        opacity: 0;
-                        transform: translateX(-120%) scaleX(0);
-                    }
-                    100%{
-                        opacity: 1;
-                        transform: translateX(1) scaleX(0);
-                    }
-                }
-                @media only screen and (max-width: 2560px){
-                    position: relative;
-                    float: right;
-                    width: 50%;
-                    height: 600px;
-                }
-                @media only screen and (max-width: 1440px){
-                    width: 90%;
-                    height: 500px;
-                }
-                @media only screen and (max-width: 1350px){
-                    margin-left: 200px;
-                    width: 90%;
-                    margin-top: 8%;
-                }
-                @media only screen and (max-width: 960px){
-                    margin-left: -80px;
-                    margin-top: 10%;
-                    width: 180%;
-                    height: 320px;
-                }
-                @media only screen and (max-width: 768px){
-                    margin-left: -80px;
-                    margin-top: 10%;
-                    width: 125%;
-                    height: 250px;
-                }
-                @media only screen and (max-width: 500px){
-                    margin-left: -80px;
-                    margin-top: 10%;
-                    width: 125%;
-                    height: 300px;
-                }
-                @media only screen and (max-width: 425px){
-                    margin-left: -80px;
-                    margin-top: 5%;
-                    width: 115%;
-                    height: 300px;
-                }
-                @media only screen and (max-width: 375px){
-                    margin-left: -50px;
-                    margin-top: 12%;
-                    width: 120%;
-                    height: 270px;
-                }
-                @media only screen and (max-width: 320px){
-                    margin-left: -80px;
-                    margin-top: 10%;
-                    width: 125%;
-                    height: 250px;
-                }
             }
             .centered{    
                 position: relative;
@@ -141,7 +78,7 @@ const AccueilStyled = styled.section`
                 font-family: 'cinzel'   ;
                 color: ${props => props.theme.colorBlack}; 
                 @media only screen and (max-width: 2560px) {
-                    top: 8vh;
+                    top: 10vh;
                     font-size: 50px;
                     width: 30vw;
                 }
@@ -150,8 +87,8 @@ const AccueilStyled = styled.section`
                     font-size: 45px; 
                 }
                 @media only screen and (max-width: 1350px) and (min-width: 1024px) {
-                    width: 400px;
-                    font-size: 45px; 
+                    width: 600px;
+                    font-size: 40px; 
                 }
                 @media only screen and (max-width: 960px){
                     width: 710px;
@@ -166,41 +103,39 @@ const AccueilStyled = styled.section`
                     color: ${props => props.theme.colorBlack}; 
                 }
                 
-                @media only screen and (max-width: 425px){
-                    display: none;
+                @media only screen and (max-width: 440px){
+                    font-size: 35px;
+                    transform: translate(5%, 10%);
+                    color: ${props => props.theme.colorBlack}; 
                 }
-                @media only screen and (max-width: 375px){
-                    width: 300px;
-                    text-align: center;
-                    font-size: 31.3px;
-                    transform: translate(-60%, 190%);
-                    color: ${props => props.theme.colorBlack};
-                }
+               
             }
             .mobile-view {
-                @media only screen and (max-width: 440px){
+                @media only screen and (max-width: 430px){
                     display: block;
-                    width: 360px;
-                    font-size: 31px;
-                    transform: translate(-58%, 140%);
+                    width: 88vw;
+                    top: 50px;
+                    left: -15vw;
+                    font-size: 33px;
                     color: ${props => props.theme.colorBlack};
                 }
                 @media only screen and (max-width: 425px){
                     display: block;
-                    width: 360px;
-                    font-size: 31px;
-                    transform: translate(-64%, 135%);
+                    width: 80vw;
+                    top: 25px;
+                    left: -1vw;
+                    font-size: 25px;
                     color: ${props => props.theme.colorBlack};
-                }
-                @media only screen and (max-width: 415px){
-                    transform: translate(-60%, 135%);
                 }
                 @media only screen and (max-width: 375px){
                     display: block;
-                    width: 350px;
-                    font-size: 30px;
-                    transform: translate(-57%, 145%);
+                    left: 4vw;
+                    font-size: 22px;
                     color: ${props => props.theme.colorBlack};
+                }
+                @media only screen and (max-width: 320px){
+                    left: 8vw;
+                    font-size: 20px;
                 }
             }
         }
@@ -215,10 +150,10 @@ const AccueilStyled = styled.section`
                 font-size: 20px;
             }
             @media only screen and (max-width: 1350px) {
-                margin-top: 20%;
-                font-size: 1.4rem;
-                width: 860px;
-                margin-left: -100px;
+                margin-top: 8%;
+                font-size: 1.3rem;
+                width: 300px;
+                margin-left: 30px;
             }
             @media only screen and (max-width: 960px) {
                 margin-top: 12%;
@@ -227,25 +162,35 @@ const AccueilStyled = styled.section`
                 margin-top: 200px;
                 margin-left: -20vw;
             }
-            @media only screen and (max-width: 768px) {
+            @media only screen and (max-width: 768px) and (min-width: 430px) {
                 margin-top: 10%;
                 font-size: 1.01rem;
                 width: 320px;
                 margin-top: 200px;
-                margin-left: -80px;
             }
-            @media only screen and (max-width: 525px) {
-                margin-top: 10%;
-                font-size: 1.01rem;
+            @media only screen and (max-width: 430px) {
+                font-size: 1.05rem;
+                position: relative;
+                text-align: justify;
+                width: 300px;
+                margin-top: -10px ;
+                margin-left: -20px;
+            }
+            @media only screen and (max-width: 425px) {
+                font-size: 1.02rem;
                 text-align: justify;
                 width: 350px;
-                margin-top: 160px;
-                margin-left: -90px;
+                margin: auto;
             }
             @media only screen and (max-width: 375px) {
-                width: 300px;
-                margin-top: 200px;
-                margin-left: -70px;
+                position: relative;
+                width: 290px;
+                margin-left: 30px;
+            }
+            @media only screen and (max-width: 320px) {
+                position: relative;
+                width: 260px;
+                margin-left: 40px;
             }
         }
         .button-demo{
@@ -263,15 +208,20 @@ const AccueilStyled = styled.section`
                 margin: 0px -20px;
                 padding-top: 20px ;
             }
+            @media only screen and (max-width: 430px){
+                position: relative;
+                width: 100%;
+                margin-left: -40px;
+            }
             @media only screen and (max-width: 425px){
-                width:110%;
-                margin: 0px -25px;
-                padding-top: 15px ;
+                position: relative;
+                width: 109%;
+                margin: auto;
             }
             @media only screen and (max-width: 375px){
-                width:125%;
-                margin: 0px -80px;
-                padding-top: 15px ;
+                position: relative;
+                width: 107%;
+                margin-left: -40px;
             }
         }
         @media only screen and (max-width: 1440px) {
@@ -285,14 +235,12 @@ const AccueilStyled = styled.section`
         @media only screen and (max-width: 500px) {
             width: 250px;
             margin-left: 130px;
+            
         }
         @media only screen and (max-width: 425px) {
-            width: 270px;
-            margin-left: 120px;
-        }
-        @media only screen and (max-width: 375px) {
-            width: 220px;
-            margin-left: 100px;
+            width: 265px;
+            display: block;
+            margin: auto;
         }
     }
     

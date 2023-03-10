@@ -97,10 +97,12 @@ const EconomicNewsStyled = styled.section`
                     font-size: 1.82rem;
                 }
                 @media only screen and (max-width: 425px) {
-                    font-size: 1.5rem;
+                    font-size: 1.3rem;
+                    width: 90%;
                 }
                 @media only screen and (max-width: 320px) {
-                    font-size: 1.18rem;
+                    margin-top: 20% ;
+                    font-size: 1.15rem;
                 }
             }
             p{
@@ -111,6 +113,7 @@ const EconomicNewsStyled = styled.section`
                 }
                 @media only screen and (max-width: 425px) and (min-width: 320px) {
                     font-size: 1rem;
+                    width: 90%;
                 }
             }
             @media only screen and (max-width: 525px) and (min-width: 425px) {
@@ -128,6 +131,9 @@ const EconomicNewsStyled = styled.section`
                 @media only screen and (max-width: 375px) {
                     margin-left: -20px ;
                 }
+            }
+            @media only screen and (max-width: 425px) {
+                padding: .65rem;
             }
         }
         @media only screen and (max-width: 425px) {
