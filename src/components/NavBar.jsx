@@ -66,7 +66,7 @@ const NavBar = () => {
                             </a>
                             <NavLink
                                 onClick={handleClick}
-                                to='/connexion'
+                                to='https://app.bheticonnect.com/'
                                 className={({ isActive }) => (isActive ? 'link active' : 'link')}
                             >
                                 Connexion
