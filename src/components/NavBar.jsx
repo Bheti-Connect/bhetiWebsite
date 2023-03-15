@@ -64,13 +64,10 @@ const NavBar = () => {
                                     Média 
                                 </NavLink>
                             </a>
-                            <NavLink
-                                onClick={handleClick}
-                                to='https://app.bheticonnect.com/'
-                                className={({ isActive }) => (isActive ? 'link active' : 'link')}
-                            >
+                            <a href='https://app.bheticonnect.com/' className='link'>
                                 Connexion
-                            </NavLink>
+                            </a>
+                                    
                         </div>
                     </nav>
                         <div id='menu-icon' onClick={handleClick}> 
