@@ -16,7 +16,7 @@ const themes = [
         colorGreyLight: '#191919',
         colorGreyLight2: '#1D1D1D',
         colorWhite: '#FFFFFF',
-        colorWhiteIsh: '#E5E7E9',
+        colorWhiteIsh: '#B3B6B7',
         colorBlack: '#161B1C',
         colorNeutral: '#F2F6FF',
         colorGradientPrimary: 'linear-gradient(143.82deg, #554DDE 4.75%, rgba(85, 77, 222, 0) 61.12%)',
@@ -36,6 +36,8 @@ const themes = [
         colorGrey8: '#343a40',
         colorBorder: '#f8f9fa14',
         colorGrey9: '#212529b7',
+        colorSlack: '#e91e62',
+        colorLinkedIn: '#2266C2'
     },
     {
         name: 'light',

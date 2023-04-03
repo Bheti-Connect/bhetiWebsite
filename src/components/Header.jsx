@@ -13,13 +13,13 @@ const Header = () => {
             <div className='header-content u-pad-lg'>
                 <div className='box left-h-content'>
                     <h2>
-                        Chez nous<span> LES BONS PROJETS</span> se voient être réalisé à 100%
+                        Trouvez du <span>financement</span> avec nous
                     </h2>
                     <p>
-                        Bheti Connect est la platforme numéro une qui réunnis les entrepreneurs et investisseurs en Afrique francophone.
+                    Réseaux, outils, stratégie. Un accompagnement pour réussir chaque étape de votre levée de fonds
                     </p>
                     <div className='button-demo'>
-                        <Link
+                        {/* <Link
                         to='/evaluer-eligibilite'
                         >
                             <Button 
@@ -28,7 +28,7 @@ const Header = () => {
                                 arrow={'arrow'}
                                 blob={'blob'}
                             />
-                        </Link>
+                        </Link> */}
                     </div>
                 </div>
                 <div className='box right-h-content'>
@@ -50,11 +50,9 @@ const HeaderStyled = styled.header`
         height: 84vh;
     }
     @media only screen and (max-width: 1800px) {
-        height: 85vh;
+        height: 80vh;
     }
-    @media only screen and (max-width: 1440px) {
-        height: 100vh;
-    }
+    
     @media only screen and (max-width: 1024px){
         height: 105vh;
     }
@@ -106,6 +104,8 @@ const HeaderStyled = styled.header`
                 font-size: 1.1rem;
                 line-height: 1.6rem;
                 padding: 2rem 0;
+                font-weight: bold;
+                font-family: 'Roboto', sans-serif;
                 @media only screen and (max-width: 376px){
                     margin-left: 6%;
                     margin-right: 6%;
@@ -128,26 +128,26 @@ const HeaderStyled = styled.header`
                 }
             @media only screen and (max-width: 1800px) and (min-width: 1440px) {
                     margin-top: 1%;
-                    width: 600px;
+                    width: 650px;
                     height: 500px;
                     h2{
-                        font-size: 50px;
+                        font-size: 65px;
                     }
                     p{
-                        font-size: 19px;
+                        font-size: 25px;
                     }
                     .button-demo{
                         width: 100%;
                     }
             }
             @media only screen and (max-width: 1440px) and (min-width: 1350px) {
-                    margin-top: 4%;
-                    width: 600px;
+                    margin-top: 6%;
+                    width: 620px;
                     h2{
-                        font-size: 49px;
+                        font-size: 58px;
                     }
                     p{
-                        font-size: 19px;
+                        font-size: 22px;
                     }
             }
             @media only screen and (max-width: 1350px) and (min-width: 1250px) {
@@ -334,8 +334,9 @@ const HeaderStyled = styled.header`
                     height: 460px;
                 }
                 @media only screen and (max-width: 1800px) and (min-width: 1440px) {
-                    width: 330px;
-                    height: 410px;
+                    width: 350px;
+                    height: 420px;
+                    margin-left: -100px;
                 }
                 @media only screen and (max-width: 1440px) and (min-width: 1350px) {
                     margin-left: 20px ;
@@ -401,7 +402,7 @@ const HeaderStyled = styled.header`
                 }
                 @media only screen and (max-width: 1800px) and (min-width: 1440px) {
                     top: -10%;
-                    width: 340px;
+                    width: 350px;
                     height: 520px;
                 }
                 @media only screen and (max-width: 1440px) and (min-width: 1350px) {

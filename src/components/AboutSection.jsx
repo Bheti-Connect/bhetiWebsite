@@ -3,7 +3,7 @@ import { useTheme } from '../context/themeContext';
 import projectManagement from '../assets/images/analytics.png';
 import bhetiImage from '../assets/images/bheti-img.jpg';
 import giveMoney from '../assets/images/give-money.png'
-import boxImg from '../assets/images/dots.png';
+// import boxImg from '../assets/images/dots.png'; Ceci est à retirer, Mahoua Veut que ceci ne soit plus là
 
 const AboutSection = () => {
     const theme = useTheme();
@@ -11,42 +11,22 @@ const AboutSection = () => {
         <AboutSectionStyled  theme={theme}>
             <div className='left-about'>
                 <h3 className='title'>
-                    Nos solutions pour les entrepreneurs
+                    Développez et financez vos projets
                 </h3>
-                <div className='about-info'>
-                    <div className='about-info-item'>
-                        <div className='icon'>
-                            <img src={projectManagement} className='project-img' alt='Project-Management' />
-                        </div>
-                        <div className='text-container'>
-                            <h5>
-                                Accompagnement pour la recherche de financement
-                            </h5>
-                            <p>
-                                Nous vous proposons un accompagnement, sur mesure, qui permet de maitriser et optimiser votre recherche de financement. 
-                                Grâce à un mix entre Intelligence Artificiel et expertise en financement de projet, nous offrons Bheti Connect Base, un outil clé en main, pour préparer votre levée de fonds et trouver des investisseurs.
-                            </p>
-                        </div>
-                        <div className='icon'>
-                            <img src={giveMoney} className='project-img' alt='Project-Management' />
-                        </div>
-                        <div className='text-container'>
-                            <h5>
-                                Trouvez le financement qui vous correspond
-                            </h5>
-                            <p>
-                                Notre équipe d’expert en financement de projet analyse votre dossier et vérifie votre capacité à obtenir du financement. 
-                                Nous identifions les investisseurs dont les critères de financement correspondent à votre projet pour vous fournir une liste exhaustive de solutions de financement adaptées à vos besoins.
-                            </p>
-                        </div>
-                    </div>
+                <h4>Grâce à la plateforme BHC, accédez à un écosystème composé d’experts, d’outils et d’informations… Bref, tout ce qu’il vous faut pour trouver du financement.</h4>
+                <div className='sub_div'>
+                    <ol className='subTittle_elements'>
+                        <li className='sub'>1. Publiez votre projet </li>
+                        <li className='sub'>2. Précisez votre besoin</li>
+                        <li className='sub'>3. Augmentez la visibilité de votre projet auprès d’investisseurs</li>
+                    </ol>
                 </div>
             </div>
             <div className='right-about'>
-                <img src={boxImg} className='box-img' alt='box-image' />
+                {/* L'image en dessous est a retirer */}
+                {/* <img src={boxImg} className='box-img' alt='box-image' /> */}
                 <img src={bhetiImage} className='about-img' alt='bheti-image' />
             </div>
-        
         </AboutSectionStyled>
         )
 }
@@ -68,6 +48,9 @@ const AboutSectionStyled = styled.section`
         margin-left: 10%;
         h3{
             color: ${props => props.theme.colorWhite};
+        }
+        h4{
+            color: ${props => props.theme.colorWhiteIsh};
         }
         p{
             padding: 1.5rem 0;
@@ -92,11 +75,11 @@ const AboutSectionStyled = styled.section`
                 margin-bottom: 5%;
             }
             @media only screen and (max-width: 1440px){
-                font-size: 1.7rem;
+                font-size: 2.1rem;
                 margin-bottom: 9%;
             }
             @media only screen and (max-width: 1350px){
-                font-size: 1.8rem;
+                font-size: 2rem;
                 margin-bottom: 9%;
             }
             @media only screen and (max-width: 1024px){
@@ -136,6 +119,17 @@ const AboutSectionStyled = styled.section`
                 font-size: 1.3rem;
                 width: 220px;
                 margin-left: 50px;
+            }
+        }
+        .sub_div{
+            margin: 100px 0;
+            text-align: left;
+            width: 90%;
+            .subTittle_elements{
+                .sub{
+                    font-size: 30px;
+                    color: ${props => props.theme.colorWhite};
+                }
             }
         }
         .about-info{
