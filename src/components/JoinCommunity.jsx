@@ -36,7 +36,10 @@ const JoinCommunity = () => {
                                     </p>
                                 </div>
                                 <div className='right-side'>
-                                    <FaSlack className='social-icon slack' />
+                                    <a href='https://slack.com/'>
+                                        <FaSlack className='social-icon slack' />
+                                    </a>
+                                    Slack
                                 </div>
                             </div>
                             <div className='inner linkedin-div'>
@@ -49,6 +52,7 @@ const JoinCommunity = () => {
                                     <a href='https://www.linkedin.com/company/bheti-connect'>
                                         <FaLinkedinIn className='social-icon linkedin' />
                                     </a>
+                                    Linkedin
                                 </div>
                             </div>
                         </div>
@@ -224,8 +228,9 @@ const JoinCommunityStyled = styled.section`
                                 font-size: 18px;
                             }
                         }
-                        .right-side {
+                        .right-side{
                             margin: 0 30px;
+                            color: ${props => props.theme.colorGrey2};
                             .social-icon{
                                 width: 50px;
                                 height: 50px;
