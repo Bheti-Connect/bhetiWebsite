@@ -15,40 +15,34 @@ const MethodSection = () => {
         <MethodSectionStyled className='u-pad methode-itself' theme={theme}>
             <div className='title-con'>
                 <Title
-                    name={'Notre méthode'}
-                    subtext="Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-                    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-                    "
+                    name={'Notre accompagnement'}
+                    subtext="Lever des fonds pour développer sa boîte peut être un véritable casse tête. Grâce à notre expertise, nous simplifions la façon de trouver du financement et augmentons vos chances de succès. "
                 />
             </div>
             <div className='methods-con' >
                 <MethodCard
-                    title={"D'abord"}
-                    desc={'Evaluez votre capacité à bénéficier d’un investissement et élaborer un plan d’action pour réussir votre levée de fonds'}
+                    title={"Nous préparons votre documentation"}
+                    desc={'BP, Pitch deck, Etats financiers.'}
                     icon={checking}
                 />
                 <MethodCard
-                    title={"Ensuite"}
-                    desc={'Trouvez les investisseurs, qui vous correspondent, établissez des relations et développez votre réseau d’investisseur'}
+                    title={"Nous contactons et partageons"}
+                    desc={'votre besoin de financement à nos partenaires - investisseurs.'}
                     icon={investors}
                 />
                 <MethodCard
-                    title={"Par après"}
-                    desc={'Inspirez-vous de différents modèles pour vous guider et structurer votre collecte de fonds'}
+                    title={"Nous vous accompagnons"}
+                    desc={'dans les négociations autour du montant de l’investissement, la valorisation de l’entreprise et les conditions de financement.'}
                     icon={layout}
                 />
-                <MethodCard
-                    title={"Finalement"}
-                    desc={'Remplissez toutes les conditions nécessaires pour prouver le potentiel de votre entreprise et convaincre des investisseurs de vous suivre.'}
-                    icon={conditions}
-                />
+            
             </div>
         </MethodSectionStyled>
     )
 }
 
 const MethodSectionStyled = styled.section`
-    margin: 50px 80px;
+    margin: 60px 80px 100px;
     
     .methods-con{
         display: grid;

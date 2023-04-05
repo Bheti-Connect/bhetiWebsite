@@ -1,10 +1,11 @@
 import styled from 'styled-components';
-import Button from './Button';
+// import Button from './Button';
 import { useTheme } from '../context/themeContext';
 import Title from './Title';
 import mediaImg from '../assets/images/mediaImage.gif'
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 
+import {FaSlack, FaLinkedinIn} from 'react-icons/fa'
 const JoinCommunity = () => {
     const theme = useTheme();
     return (
@@ -27,16 +28,34 @@ const JoinCommunity = () => {
                         <h4 className='title'>
                             Qu'est-ce qui se passe dans la communauté?
                         </h4>
-                        <h6>Prenez votre Tablette, Smartphone, Desktop ou Laptop</h6>
-                        <p>Sur les applications LinkedIn, Instagram et Facebook. Réjoignez rapidement la communauté pour être au coeur de l'actualité économique en Afrique !</p>
-                        <Link className='anchor-tag' to='https://www.linkedin.com/company/bheti-connect'>
-                            <Button 
-                                name={'JE REJOINS DÈS MAINTENANT'}
-                                icon={'fas fa-chevron-right'}
-                                arrow={'arrow'}
-                                blob={'blob'}
-                            />
-                        </Link>
+                        <div className='community'>
+                            <div className='inner slack-div'>
+                                <div className='left-side'>
+                                    <p className='paragraphs slack'>
+                                    Rencontrez d’autres porteurs de projets en Afrique francophone ou dans la diaspora, et resté informé en exclusivité des prochaines rencontres entrepreneurs-investisseurs ! 
+                                    </p>
+                                </div>
+                                <div className='right-side'>
+                                    <a href='https://slack.com/'>
+                                        <FaSlack className='social-icon slack' />
+                                    </a>
+                                    Slack
+                                </div>
+                            </div>
+                            <div className='inner linkedin-div'>
+                                <div className='left-side'>
+                                    <p className='paragraphs linkedin'>
+                                    Accédez à un contenu d’information hebdomadaire pour positionner votre projet en fonction de l’actualité du marché économique et financier africain
+                                    </p>
+                                </div>
+                                <div className='right-side'>
+                                    <a href='https://www.linkedin.com/company/bheti-connect'>
+                                        <FaLinkedinIn className='social-icon linkedin' />
+                                    </a>
+                                    Linkedin
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -198,6 +217,38 @@ const JoinCommunityStyled = styled.section`
                 p{  
                     color: ${props => props.theme.colorGrey4};
                     padding-bottom: 1.5rem;
+                }
+                .community{
+                    display: inline-block;
+                    .inner{
+                        display: flex;
+                        .left-side{
+                            width: 90%;
+                            .paragraphs{
+                                font-size: 18px;
+                            }
+                        }
+                        .right-side{
+                            margin: 0 30px;
+                            color: ${props => props.theme.colorGrey2};
+                            .social-icon{
+                                width: 50px;
+                                height: 50px;
+                                color: ${props => props.theme.colorGrey2};
+                                cursor: pointer;
+                            }
+                            .slack:hover{
+                                    color: ${props => props.theme.colorSlack};
+                                    transform: scale(.8);
+                            }
+                            .linkedin{
+                                &:hover{
+                                    color: ${props => props.theme.colorLinkedIn};                      
+                                    transform: scale(.8);
+                                }
+                            }
+                        }
+                    }
                 }
                 .anchor-tag{
                     margin-left: 25%;
