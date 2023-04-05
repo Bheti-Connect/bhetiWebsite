@@ -7,22 +7,23 @@ import { useTheme } from '../../context/themeContext';
 const Accueil = () => {
     const theme = useTheme();
     return (
-        <AccueilStyled className='u-pad-lg-2'  theme={theme}>
+        <AccueilStyled  theme={theme}>
             <div className='first-container'>
                 <div className='headache'>
                     <div className='centered mobile-view'>
-                        <h1><b>Résolvez le casse tête du financement de votre entreprise</b></h1>
+                        <h1><b>Financer votre entreprise avec succès !</b></h1>
                     </div>
                     <div className='text-highlighted'>
-                        <p> Ut enim ad minim veniam, quis nostrud  commodo consequat. 
-                        Duis aute irure dolor in reprehenderit velit esse cillum dolore eu fugiat nulla pariatur.
+                        <p>
+                        Avec des données, des outils et des conseils, libérez le potentiel de votre entreprise en toute autonomie ou avec un accompagnement dédié de nos experts ! 
+                        Obtenez les financements dont vous avez besoin pour faire décoller votre projet.
                         </p>
                     </div>
                 </div>
                 
                 <div className='button-demo'>
                         <Button 
-                            name={'Je réserve une demo'}
+                            name={'🚀 Découvrir la plateforme'}
                             icon={'fas fa-chevron-right'}
                             arrow={'arrow'}
                             blob={'blob'}
@@ -41,15 +42,14 @@ const AccueilStyled = styled.section`
 
         .first-container{
         .headache {
-            display: flex;
+            display: block;
             position: relative;
             margin: auto;
-            margin-top: 2%;
+            margin-top: 1%;
             align-items: center;
             border-radius: 7px;
             @media only screen and (max-width: 1440px){
                 width: 1000px;
-                margin-left: -12vw ;
             }
             @media only screen and (max-width: 430px) {
                 display: block;
@@ -73,18 +73,19 @@ const AccueilStyled = styled.section`
                 position: relative;
                 margin: auto;
                 font-weight: 900;
-                font-size: 40px; 
-                font-family: 'cinzel'   ;
-                color: ${props => props.theme.colorBlack}; 
+                font-size: 40px;
+                color: ${props => props.theme.colorBlack};
+                h1{
+                    font-family: 'cinzel';
+                }
                 @media only screen and (max-width: 2560px) {
                     top: 10vh;
                     font-size: 50px;
                     width: 30vw;
                 }
                 @media only screen and (max-width: 1440px){
-                    position
-                    width: 600px;
-                    font-size: 45px; 
+                    width: 100%;
+                    font-size: 45px;
                 }
                 @media only screen and (max-width: 1350px) and (min-width: 1024px) {
                     width: 600px;
@@ -108,7 +109,6 @@ const AccueilStyled = styled.section`
                     transform: translate(5%, 10%);
                     color: ${props => props.theme.colorBlack}; 
                 }
-               
             }
             .mobile-view {
                 @media only screen and (max-width: 430px){
@@ -143,7 +143,7 @@ const AccueilStyled = styled.section`
             @media only screen and (max-width: 2500px){
                 text-align: center;
                 padding-top: 13vh;
-                width: 500px;
+                width: 800px;
                 margin: auto;
             }
             @media only screen and (max-width: 1440px) {
@@ -196,7 +196,6 @@ const AccueilStyled = styled.section`
         .button-demo{
             position: relative;
             @media only screen and (max-width: 2500px){
-                top: 15vh;
                 margin: auto;
                 padding-bottom: 10% ;
             }

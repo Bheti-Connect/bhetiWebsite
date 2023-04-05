@@ -133,12 +133,36 @@
 
 .card__content > div {
 	grid-area: text;
-	width: 95%;
+	width: 85%;
 	place-self: center;
 	text-align: left;
 	display: grid;
 	gap: 1em;
 	place-items: start;
+}
+
+.need-container{
+	position: relative;
+	width: 400px;
+	margin: auto;
+}
+
+.need-pitch{
+	position: relative;
+	margin-left: 15%;
+	margin-bottom: 5%;
+}
+
+.need-previsionnel{
+	position: relative;
+	margin-bottom: 7%;
+	margin-left: 8%;
+
+
+}
+
+p{
+	text-align: justify;
 }
 
 .card__content > figure {
@@ -152,14 +176,44 @@
 	object-fit: cover;
 }
 
+.advantage {
+	width: 100%;
+	display: flex;
+	flex-wrap: wrap;
+	align-items: flex-start; 
+}
+
+.offer{
+	width: 280px;
+	margin: 15px 0px;
+	
+}
+
+.offer-icon{
+	width: 65px;
+	height: 63px;
+	/* color: #541010; */
+}
+
+.offer-detail{
+	width: 250px;
+	text-align: center;
+}
+
+.help{
+	margin-left: 15%;
+	margin-bottom: 6.5em;
+}
+
 .card_title{
-	font-size: 1.31em;
+	margin-top: 40px;
+	font-size: 1.43em;
 }
 
 .paragraph {
 	font-family: sans-serif;
 	font-weight: 300;
-	line-height: 1.42;
+	line-height: 1.40;
 }
 
 .btn {
@@ -190,7 +244,7 @@
 		margin-left: 10px;
 	}
 	.card_title{
-		font-size: 1em;
+		font-size: .9em;
 		margin-left: 5px;
 		margin-top: 8px;
 	}

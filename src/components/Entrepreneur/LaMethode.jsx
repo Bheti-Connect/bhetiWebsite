@@ -9,7 +9,7 @@ const LaMethode = () => {
     return (
         <LaMethodeStyled  theme={theme}>
             <div className='left-container'>
-                <h3 className='title'>Notre méthode</h3>
+                <h3 className='title'>Avec la plateforme Bheti Connect, Nous simplifions la manière de lever des fonds en Afrique</h3>
                 <div className='text-container'>
                     <h5>Evaluation d’éligibilité</h5>
                     <p>Un outil clé en main pour évaluer votre projet vis-à-vis des exigences des investisseurs et challenger votre business model</p>

@@ -2,8 +2,13 @@ import React from 'react';
 import styled from 'styled-components'
 import './styles.css';
 import Team from '../../assets/images/pexels-rebrand-cities-1367272.jpg';
-import Conviction from '../../assets/images/pexels-tima-miroshnichenko-5439407.jpg';
 import GetMoney from '../../assets/images/pexels-edmond-8553867.jpg';
+import {FaHandsHelping, FaShareSquare, FaRoad} from 'react-icons/fa'
+import {GiHumanTarget} from 'react-icons/gi'
+import Help from '../../assets/images/pexels-brett-sayles-5368598.jpg'
+import { SiSymantec } from 'react-icons/si'
+import {MdAddBusiness} from 'react-icons/md'
+import Button from '../Button';
 
 
 const Advantages = () => {
@@ -14,26 +19,66 @@ const Advantages = () => {
 					<li className="card" id="card_1">
 						<div className="card__content">
 							<div>
-								<h3 className='card_title'>Convaincre un investisseur</h3>
+								<h3 className='card_title offre'>
+								Offre impact à 29,99€/mois HT ou 329,99 € annuel (économisez 29,99€ avec l’offre annuelle)
+								</h3>
 								<p className='paragraph'>
-									Lorem ipsum dolor sit amet consectetur adipisicing elit.
-									Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+									Économisez du temps et de l'argent tout en maximisant vos chances de succès !
 								</p>
 							</div>
 							<figure>
-								<img className='image-team' src={Conviction} alt='Image-Femmes'/>
+								{/* <img className='image-team' src={Conviction} alt='Image-Femmes'/> */}
+								<div className='advantage'>
+									<div className='offer'>
+										<FaHandsHelping className='offer-icon' />
+										<p className='paragraph offer-detail'>Identifiez les aides publiques et privées</p> 
+									</div>
+									<div className='offer'>
+										<GiHumanTarget className='offer-icon' />
+										<p className='paragraph offer-detail'>Identifiez les investisseurs pertinents </p>
+									</div>
+									<div className='offer'>
+										<SiSymantec className='offer-icon' />
+										<p className='paragraph offer-detail'>Visibilité de votre projet après certification</p>
+									</div>
+									<div className='offer'>
+										<FaShareSquare className='offer-icon' />
+										<p className='paragraph offer-detail'>Partagez simplement votre projet aux investisseurs </p>
+									</div>
+									<div className='offer'>
+										<MdAddBusiness className='offer-icon'/>
+										<p className='paragraph offer-detail'>Annoncez vos besoins et trouvez des partenaires business pertinents</p>
+									</div>
+									<div className='offer'>
+										<FaRoad className='offer-icon' />
+										<p className='paragraph offer-detail'>Accédez à des guides et recommandations exclusifs </p>
+									</div>
+								</div>
+								
 							</figure>
 						</div>
 					</li>
 					<li className="card" id="card_2">
 						<div className="card__content">
 							<div>
-								<h3 className='card_title'>Obtenir des financements</h3>
+								<h3 className='card_title'>Votre Pitch deck</h3>
 								<p className='paragraph'>
-									Lorem ipsum dolor sit amet consectetur adipisicing elit.
-									Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris 
-									nisi ut aliquip ex ea commodo consequat
+								Votre pitch deck est un élément essentiel de votre processus de levée de fonds. 
+								C'est souvent le premier point de contact entre un entrepreneur et un investisseur. 
+								Il doit donc être efficace et concis.
 								</p>
+								<p className='paragraph'>
+								Chez Bhet Connect, Nous examinons des centaines de présentations d'investissement chaque année et mettons à profit notre expertise pour vous aider à élaborer ou à réviser votre présentation d'investissement. 
+								Avec notre aide, votre pitch deck sera clair, concis et convaincant pour les investisseurs.
+								</p>
+								<div className='need-container'>
+									<div className='need-pitch'>
+										<Button 
+												name={'J’ai besoin d’un pitch'}
+												
+										/>
+									</div>
+								</div>
 							</div>
 							<figure>
 								<img className='image-team' src={GetMoney} alt='Image-Femmes'/>
@@ -43,12 +88,23 @@ const Advantages = () => {
 					<li className="card" id="card_3">
 						<div className="card__content">
 							<div>
-								<h3 className='card_title'>Faire une levée de fonds</h3>
+								<h3 className='card_title'>Votre Prévisionnel financier</h3>
 								<p className='paragraph'>
-									Lorem ipsum dolor sit amet consectetur adipisicing elit.
-									Excepteur sint occaecat cupidatat non proident, 
-									sunt in culpa qui officia deserunt mollit anim id est laborum.
+								Le prévisionnel financier (ou Business Plan) est utilisé comme outil essentiel pour la gestion efficace d'une entreprise mais aussi comme support pour convaincre les investisseurs et guider leur prise de décision. 
 								</p>
+								<p className='paragraph'>
+									Votre BP doit décrire de manière détaillée et soignée vos objectifs commerciaux, stratégies, et doit répondre aux questions de vos investisseurs. 
+								</p>
+								<p className='paragraph'>
+									Notre expertise nous permet de répondre aux exigences des financeurs et de vous accompagner efficacement dans la construction de votre prévisionnel financier
+								</p>
+								<div className='need-container'>
+									<div className='need-previsionnel'>
+										<Button 
+												name={'J’ai besoin d’un prévisionnel Financier'}
+										/>
+									</div>
+								</div>
 							</div>
 							<figure>
 								<img className='image-team' src={Team} alt='Image-Femmes'/>
@@ -58,12 +114,24 @@ const Advantages = () => {
 					<li className="card" id="card_4">
 						<div className="card__content">
 							<div>
-								<h3 className='card_title'>Autant de choses qui vous paraissent insolubles?</h3>
-								<p className='paragraph'>Avec nos outils prisés par les experts du monde des startups, vous allez bénéficiez de l’accompagnement de nos meilleurs conseillers.</p>
-								<p className='paragraph'><a href="#top" class="btn btn--accent">👆🏼 Haut de page</a></p>
+								<h3 className='card_title'>Appui et Conseil </h3>
+								<p className='paragraph'>Besoin de conseils pour approcher des investisseurs, défendre votre projet ou négocier avec les investisseurs ? 
+									Besoin  d’un accompagnement sur mesure pour la construction ou la révision de votre dossier de financement ?
+								</p>
+								<p className='paragraph'>
+									Nous proposons de vous accompagner dans toutes les étapes de votre levée de fonds. 
+								</p>
+								<div className='need-container'>
+									<div className='help'>
+										<Button 
+												name={'Contactez-nous'}
+										/>
+									</div>
+								</div>
+								{/* <p className='paragraph'><a href="#top" class="btn btn--accent">👆🏼 Haut de page</a></p> */}
 							</div>
 							<figure>
-								<img src="https://codyhouse.co/demo-tutorials/stacking-cards/assets/img/img-2.jpg" alt="Image description"/>
+								<img className='image-team' src={Help} alt='Image-Aide'/>
 							</figure>
 						</div>
 					</li>

@@ -50,6 +50,7 @@ const AboutSectionStyled = styled.section`
             color: ${props => props.theme.colorWhite};
         }
         h4{
+            width: 50%;
             color: ${props => props.theme.colorWhiteIsh};
         }
         p{
