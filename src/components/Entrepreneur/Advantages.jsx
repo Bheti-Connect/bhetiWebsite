@@ -68,7 +68,7 @@ const Advantages = () => {
 								Il doit donc être efficace et concis.
 								</p>
 								<p className='paragraph'>
-								Chez Bhet Connect, Nous examinons des centaines de présentations d'investissement chaque année et mettons à profit notre expertise pour vous aider à élaborer ou à réviser votre présentation d'investissement. 
+								Chez Bheti Connect, Nous examinons des centaines de présentations d'investissement chaque année et mettons à profit notre expertise pour vous aider à élaborer ou à réviser votre présentation d'investissement. 
 								Avec notre aide, votre pitch deck sera clair, concis et convaincant pour les investisseurs.
 								</p>
 								<div className='need-container'>

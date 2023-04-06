@@ -8,36 +8,20 @@ const LaMethode = () => {
     const theme = useTheme();
     return (
         <LaMethodeStyled  theme={theme}>
-            <div className='left-container'>
+            <div className='top-container'>
                 <h3 className='title'>Avec la plateforme Bheti Connect, Nous simplifions la manière de lever des fonds en Afrique</h3>
-                <div className='text-container'>
-                    <h5>Evaluation d’éligibilité</h5>
-                    <p>Un outil clé en main pour évaluer votre projet vis-à-vis des exigences des investisseurs et challenger votre business model</p>
-                </div>
-                <div className='text-container'>
-                    <h5>Préparation</h5>
-                    <p>Des ressources exclusives pour préparer les documents indispensables à la levée de fonds</p>
-                </div>
-                <div className='text-container'>
-                    <h5>Accompagnement</h5>
-                    <p>Un expert vous accompagne pour parfaire votre pitch et gérer votre relation avec les investisseurs (négociation, due dilligence, valorisation du projet, closing)</p>
-                </div>
-                <div className='text-container'>
-                    <h5>Mise en relation avec les investisseurs</h5>
-                    <p>Nous vous connectons à des investisseurs pertinents et identifions les sources de financements disponibles (subventions, AMI, AAP) pour votre projet.</p>
-                </div>
             </div>
-            <div className='right-container'>
+            <div className='bottom-container'>
                 <div className='child two-premier'>
                     <div className='div-one'>
-                        <img src={vidOne} alt='Bheti-connect-base-illustration' />
+                        <img src={vidOne} alt='Bheti-connect-base-illustration1' />
                     </div>
                     <div className='div-two'>
-                        <img src={vidTwo}  alt='Bheti-connect-base-illustration'/>
+                        <img src={vidTwo}  alt='Bheti-connect-base-illustration2'/>
                     </div>
                 </div>
                 <div className='child neighbor-div'>
-                    <img src={vidThree} alt='Bheti-connect-base-illustration' />
+                    <img src={vidThree} alt='Bheti-connect-base-illustration3' />
                 </div>
             </div>
         </LaMethodeStyled>
@@ -45,7 +29,8 @@ const LaMethode = () => {
 }
 
 const LaMethodeStyled = styled.section`
-    display: grid;
+    display: block;
+    position: relative;
     width: 100%;
     background: ${props => props.theme.colorBlack};
     grid-template-columns: 1fr 1fr;
@@ -61,7 +46,9 @@ const LaMethodeStyled = styled.section`
         padding-right: 15rem;
         padding-bottom: 0rem;
         }
-    .left-container{
+    .top-container{
+        position: relative;
+        margin: auto;
         h3{
             color: ${props => props.theme.colorWhite};
         }
@@ -69,7 +56,7 @@ const LaMethodeStyled = styled.section`
             padding: 1.2rem 0;
         }
         .title{
-            font-size: 3rem;
+            font-size: 2.6rem;
             margin-bottom: 40px;
         } 
         .text-container{
@@ -102,22 +89,18 @@ const LaMethodeStyled = styled.section`
                     font-size: 2rem;
                     width: 70vw;
                     margin-left: 10vw;
-
                 }
                 margin-left: -250px;
         }
         //Left-Container Responsive Design
         @media all and (max-width: 2500px){
-            width: 500px;
-            margin-left: -100px;
+            position: relative;
+            width: 60vw;
+            margin: 0 auto;
         }
         @media all and (max-width: 1800px){
-            width: 600px;
-            margin-left: -120px;
         }
         @media all and (max-width: 1500px){
-            width: 470px;
-            margin-left: -140px;
         }
         @media all and (max-width: 1300px){
             width: 400px;
@@ -135,11 +118,10 @@ const LaMethodeStyled = styled.section`
         @media all and (max-width: 375px){
             width: 310px;
             margin-left: 30px;
-            
         }
     }
-    .right-container{
-        display: grid; 
+    .bottom-container{
+        display: flex; 
         grid-template-columns: 1fr 1fr; 
         grid-gap: 4px; 
         width: 120%;
@@ -169,7 +151,7 @@ const LaMethodeStyled = styled.section`
                     height: 300px;
                     margin-left: 5px;
                     margin-top: 25%;
-	            }
+	        }
         @media only screen and (max-width: 1440px) and (min-width: 1350px) {
             margin-top: 250px;
         }
@@ -181,12 +163,11 @@ const LaMethodeStyled = styled.section`
             visibility: hidden;
         }
     }
-
     @media all and (max-width: 2500px) {
-        .right-container{
-            width: 130%;
-            margin-top: 200px;
-            margin-left: -100px;
+        .bottom-container{
+            width: 100%;
+            margin-top: 20px;
+            margin: auto;
         }
     }
     @media all and (max-width: 1800px) {
@@ -233,7 +214,6 @@ const LaMethodeStyled = styled.section`
                 }
             }
         }
-
         .left-container{
             width: 120%;
             margin: auto;
@@ -241,7 +221,6 @@ const LaMethodeStyled = styled.section`
                 width: 400px;
             }
         }
-
     }
     @media all and (max-width: 770px) {
         .right-container{
@@ -274,7 +253,6 @@ const LaMethodeStyled = styled.section`
         }
     }
     @media all and (max-width: 380px) {
-       
         .right-container{
             width: 130%;
             height: 200px;
