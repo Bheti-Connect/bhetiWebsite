@@ -16,8 +16,8 @@ const EconomicNews = () => {
                         Actualité économique & écosystèmes d’affaires
                     </h3>
                     <p>
-                        Découvrez les codes de la sphère business en Afrique. 
-                        Nous vous immergeons dans ce monde encore opaque pour vous apporter des informations transparentes, inédites et exclusives.
+                    L’information est l’une des clés stratégiques pour trouver du financement. Avec la plateforme BHC, vous retrouvez les informations essentielles qui permettront d’accélérer votre recherche de financement. 
+                    Mais aussi de tenir compte de l'environnement économique et des tendances du marché pour promouvoir votre projet.
                     </p>
                     <a className='bouton'>
                         <Button 
