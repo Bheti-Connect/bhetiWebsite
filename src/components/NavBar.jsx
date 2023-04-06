@@ -64,10 +64,10 @@ const NavBar = () => {
                                     Média 
                                 </NavLink>
                             </a>
-                            <a href='https://app.bheticonnect.com/' className='link'>
+                            <a href='https://app.bheticonnect.com/' className='connexion-hover link'>
                                 Connexion
                             </a>
-                                    
+
                         </div>
                     </nav>
                         <div id='menu-icon' onClick={handleClick}> 
@@ -178,6 +178,20 @@ const NavBarStyled = styled.nav`
     
     .link:hover {
         color: ${props => props.theme.colorBheti};
+    }
+
+    .connexion-hover{
+        border: 2px solid ${props => props.theme.colorBheti};
+        padding: 5px;
+        border-radius: 50px;
+        margin-top: 10px;
+        transition: .3s;
+
+        &:hover{
+            background-color: ${props => props.theme.colorBheti};
+            color: ${props => props.theme.colorWhite};
+            transition: .3s;
+        }
     }
 }
 
