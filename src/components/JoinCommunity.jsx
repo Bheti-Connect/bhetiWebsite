@@ -101,8 +101,8 @@ const JoinCommunityStyled = styled.section`
         background-color: ${props => props.theme.colorBlack};
         border-radius: 3px;
         @media only screen and (max-width: 2560px) and (min-width: 1800px) {
-            width: 1500px;
-            margin-left: -70px;
+            width: 100%;
+            /*margin-left: -70px;*/
         }
         @media only screen and (max-width: 1800px) and (min-width: 1440px) {
             width: 1200px;
@@ -154,7 +154,7 @@ const JoinCommunityStyled = styled.section`
                 object-fit: cover;
                 @media only screen and (max-width: 2560px) and (min-width: 1800px) {
                     width: 600px;
-                    margin-left: -60px;
+                    margin-left: 40px;
                 }
                 @media only screen and (max-width: 1800px) and (min-width: 1440px) {
                     width: 450px;

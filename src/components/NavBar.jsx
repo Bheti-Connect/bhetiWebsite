@@ -37,7 +37,7 @@ const NavBar = () => {
                             />
                         </NavLink>
                 </div>
-                <nav    className={etat.clicked ? 'navigation active' : 'navigation'}  >
+                <nav className={etat.clicked ? 'navigation active' : 'navigation'}  >
                         <div 
                             className={etat.clicked ? 'nav-menu active' : 'nav-menu'} 
                         >
@@ -109,6 +109,11 @@ const NavBarStyled = styled.nav`
         align-items: center;
         flex-wrap: wrap;
         justify-content: space-between;
+
+        @media only screen and (max-width: 2560px) {
+            
+        }
+
         @media only screen and (max-width: 1024px) {
             border-bottom: 0px solid ${props => props.theme.colorBg};
         }
@@ -132,6 +137,11 @@ const NavBarStyled = styled.nav`
             width: 70vw;
             justify-content: end;
             margin-right: .2rem;
+
+            @media only screen and (max-width: 2560px) {
+                
+            }
+
             @media only screen and (min-width: 960px) {
                 display: grid;
                 justify-content: space-around;

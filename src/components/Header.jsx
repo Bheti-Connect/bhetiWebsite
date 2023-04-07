@@ -46,6 +46,7 @@ const Header = () => {
 const HeaderStyled = styled.header`
     position: relative;
     height: 85vh;
+    text-align: center;
     @media only screen and (max-width: 2560px){
         height: 84vh;
     }
@@ -114,13 +115,14 @@ const HeaderStyled = styled.header`
             }
             @media only screen and (max-width: 2560px) and (min-width: 1800px) {
                     margin-top: 1%;
-                    width: 750px;
+                    width: 850px;
                     height: 550px;
+                    font-size: 3.1rem;
                     h2{
-                        font-size: 54px;
+                        font-size: 5.1rem;
                     }
                     p{
-                        font-size: 21px;
+                        font-size: 1.8rem;
                     }
                     .button-demo{
                         width: 200%;
@@ -330,8 +332,9 @@ const HeaderStyled = styled.header`
                 border-top-left-radius: 5px;
                 transition: all .4s ease-in-out;
                 @media only screen and (max-width: 2560px) and (min-width: 1800px) {
-                    width: 360px;
-                    height: 460px;
+                    width: 560px;
+                    height: 660px;
+                    left: -8%;
                 }
                 @media only screen and (max-width: 1800px) and (min-width: 1440px) {
                     width: 350px;
@@ -397,8 +400,8 @@ const HeaderStyled = styled.header`
                 transition: all .4s ease-in-out;
 
                 @media only screen and (max-width: 2560px) and (min-width: 1800px) {
-                    width: 400px;
-                    height: 600px;
+                    width: 600px;
+                    height: 800px;
                 }
                 @media only screen and (max-width: 1800px) and (min-width: 1440px) {
                     top: -10%;

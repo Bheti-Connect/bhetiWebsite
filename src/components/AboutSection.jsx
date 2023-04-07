@@ -36,6 +36,7 @@ const AboutSectionStyled = styled.section`
     background: ${props => props.theme.colorBlack};
     grid-template-columns: 1fr 1fr;
     grid-gap: 2rem;
+    text-align: center;
     padding-top: 10rem !important;
     @media only screen and (max-width: 2560px) and (min-width: 1800px) {
             height: 800px;
@@ -46,6 +47,7 @@ const AboutSectionStyled = styled.section`
     .left-about{
         width: 90%;
         margin-left: 10%;
+       
         h3{
             color: ${props => props.theme.colorWhite};
         }
@@ -65,7 +67,7 @@ const AboutSectionStyled = styled.section`
         }
         
         .title{
-            margin-left: 10%;
+            /*margin-left: 10%;*/
             margin-bottom: 3%;
             font-size: 1.6rem;
             @media only screen and (max-width: 2560px){
@@ -129,6 +131,7 @@ const AboutSectionStyled = styled.section`
             .subTittle_elements{
                 .sub{
                     font-size: 30px;
+                    font-family: sans-serif;
                     color: ${props => props.theme.colorWhite};
                 }
             }
@@ -256,6 +259,12 @@ const AboutSectionStyled = styled.section`
         @media only screen and (max-width: 2560px) and (min-width: 1800px) {
             width: 100%;
             bottom: 5rem;
+
+            h4{
+                margin:auto;
+                width: 90%;
+            }
+
         }
         @media only screen and (max-width: 1800px) and (min-width: 1440px) {
             width: 100%;
