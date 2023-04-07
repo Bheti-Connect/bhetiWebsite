@@ -223,7 +223,7 @@ p{
 	border-radius: 0.25em;
 }
 
-@media only screen and (max-width: 1440px){
+@media only screen and (max-width: 1250px){
 	.card__content{
 			display: block;
 			width: 50vw;

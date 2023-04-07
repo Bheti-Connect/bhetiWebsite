@@ -4,6 +4,7 @@ import { useTheme } from '../../context/themeContext';
 import LaMethode from './LaMethode';
 import Accueil from './Accueil';
 import Advantages from './Advantages';
+import Satisfaction from './Satisfaction/Satisfaction';
 
 const Entrepreneur = () => {
     const theme = useTheme();
@@ -15,6 +16,9 @@ const Entrepreneur = () => {
             </div>
             <div className='method-container'>
                 <LaMethode />
+            </div>
+            <div>
+                <Satisfaction />
             </div>
         </EntrepreneurStyled>
     )

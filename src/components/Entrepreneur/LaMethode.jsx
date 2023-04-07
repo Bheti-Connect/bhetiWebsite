@@ -32,9 +32,11 @@ const LaMethodeStyled = styled.section`
     display: block;
     position: relative;
     width: 100%;
+    height: 100vh;
     background: ${props => props.theme.colorBlack};
     grid-template-columns: 1fr 1fr;
     grid-gap: 2rem;
+    margin-top: 18rem;
     padding-top: 5rem !important;
     padding-top: 1rem;
     padding-left: 18rem;
