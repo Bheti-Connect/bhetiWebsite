@@ -208,7 +208,6 @@ const Investisseur = () => {
         }).catch(error => console.log(error))
       }
 
-
     }
 
      // display items
@@ -338,7 +337,6 @@ const Investisseur = () => {
 
 const InvestisseurStyled = styled.section`
 
-/*background : no-repeat center/80% url("../../assets/icons/icon_bheti_design.png") ;*/
 
 
 `;
@@ -346,7 +344,7 @@ const InvestisseurStyled = styled.section`
 const AllCards = styled.div`
 display: flex;
 width: 89%;
-justify-content: left;
+justify-content: center;
 margin:auto;
 flex-wrap: wrap;
 @media only screen and (max-width: 900px) {
