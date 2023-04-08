@@ -54,6 +54,11 @@ const MethodSectionStyled = styled.section`
             width: 90%;
             margin:auto;
         }
+
+        @media only screen and (max-width: 768px) {
+            grid-template-columns: none;
+        }
+
         @media only screen and (max-width: 425px) {
             margin-left: -4vw ;
         }

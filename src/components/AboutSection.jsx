@@ -270,12 +270,33 @@ const AboutSectionStyled = styled.section`
             width: 100%;
             bottom: 5rem;
         }
+
+        @media only screen and (max-width: 1440px){
+            grid-template-columns: none;
+            padding-top: 2rem !important;
+
+            h4{
+                width: 100%;
+                margin: auto;
+                text-align: center;
+                margin-right: -60px;
+            }
+
+            .sub_div{
+                .subTittle_elements{
+                    .sub{
+                        font-size: 20px;
+                    }
+            }
+        }
+        }
+
         @media screen and (max-width: 376px) {
                 width: 330px;
                 margin-left: 5%;
 	            }
         @media only screen and (max-width: 768px){
-            width: 160%;
+            width: 100%;
             bottom: 5rem;
         }
         @media only screen and (max-width: 425px){
