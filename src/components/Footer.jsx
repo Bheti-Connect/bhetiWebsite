@@ -247,6 +247,8 @@ const FooterSectionStyled = styled.footer`
         }
     }
     .footer-copyright{
+        position: relative;
+        
         padding-top: 3rem;
         border-top: 1px solid ${props => props.theme.colorGrey9};
         text-align: center;

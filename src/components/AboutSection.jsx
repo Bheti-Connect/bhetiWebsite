@@ -3,17 +3,18 @@ import { useTheme } from '../context/themeContext';
 import projectManagement from '../assets/images/analytics.png';
 import bhetiImage from '../assets/images/bheti-img.jpg';
 import giveMoney from '../assets/images/give-money.png'
-// import boxImg from '../assets/images/dots.png'; Ceci est à retirer, Mahoua Veut que ceci ne soit plus là
 
 const AboutSection = () => {
     const theme = useTheme();
     return (
         <AboutSectionStyled  theme={theme}>
-            <div className='left-about'>
+            <div>
                 <h3 className='title'>
                     Développez et financez vos projets
                 </h3>
                 <h4>Grâce à la plateforme BHC, accédez à un écosystème composé d’experts, d’outils et d’informations… Bref, tout ce qu’il vous faut pour trouver du financement.</h4>
+            </div>
+            <div className='left-about'>
                 <div className='sub_div'>
                     <ol className='subTittle_elements'>
                         <li className='sub'>1. Publiez votre projet </li>
