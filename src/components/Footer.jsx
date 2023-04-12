@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLinkedin, faFacebook, faInstagram } from '@fortawesome/free-brands-svg-icons';
-
 import { useTheme } from '../context/themeContext';
 import footerLogo from '../assets/images/footer-logo.png'
 
@@ -80,9 +79,9 @@ const Footer = () => {
                 </ul>
             </nav>
             <div className="footer-copyright">
-                <p>
-                    Copyright © 2022 <span>Bheti Connect</span> All rights reserved.
-                </p>
+                <div className='copyright-text'>
+                    Copyright © 2022 <span>Bheti Connect.</span> Tous droits réservés.
+                </div>
             </div>
         </FooterSectionStyled>
         )
@@ -121,18 +120,19 @@ const FooterSectionStyled = styled.footer`
     h1{
         color: ${props => props.theme.colorWhite};
         margin-bottom: 1rem;
+        font-size: 1.1rem;
     }
-
     .bottom-navigation{
         display: flex;
         flex-wrap: wrap;
         padding-bottom: 3rem;
         margin: auto;
         h4{
-            padding-bottom: 1.5rem;
+            padding-bottom: 1.2rem;
+            font-size: 1.07rem ;
         }
         .nav-b{
-            margin: 0 1.5rem;
+            margin: 0 1rem;
             .nav-item{
                 margin-bottom: 1rem;
             }
@@ -141,10 +141,15 @@ const FooterSectionStyled = styled.footer`
             }
         }
         .company {
+            @media all and (max-width: 768px) {
+                    width: 70%;
+                    margin: auto;
+                }
             .nav-item a{
+                font-size: 12.5px;
                 color: ${props => props.theme.colorGrey6};
-                @media all and (max-width: 425px) {
-                    margin-left: -5px;
+                @media all and (max-width: 768px) {
+                    margin: auto;
                 }
                 @media all and (max-width: 320px) {
                     margin-left: -1px;
@@ -159,6 +164,26 @@ const FooterSectionStyled = styled.footer`
                 @media all and (max-width: 420px) {
                 margin-left: -5px;
                 }
+                @media all and (max-width: 768px) {
+                margin: auto;
+                width: 90%;
+            }
+            }
+            .nav-item div{
+                @media all and (max-width: 768px){
+                    margin-top: 15px;
+                }
+            }
+            .f-text{
+                text-align: left;
+                margin-left: .5vw;
+            }
+            .f-text h6{
+                font-size: 14px ;
+            }
+            @media all and (max-width: 768px) {
+                margin: 10px auto;
+                width: 70%;
             }
         }
         .logo-con{
@@ -169,16 +194,27 @@ const FooterSectionStyled = styled.footer`
                     width: 22%;
                 }
             }
+            @media all and (max-width: 768px) {
+                width: 70%;
+                margin: 0 auto;
+            }
     }
         .logo-con p{
+            width: 80%;
+            @media all and (min-width: 768px) {
+                margin-left: 50px;
+            }
+            @media all and (max-width: 768px) {
+                width: 100%;
+            }
             color: ${props => props.theme.colorGrey6};
         }
         .b-nav-icons{
             display: flex;
-            margin-top: 2rem;
+            margin: 2rem auto;
+            width: 50%;
             .icon {
                 color: aliceblue;
-                margin-left: .5rem;
                 width: 1rem;
             }
             .icon-linkedin{
@@ -196,11 +232,13 @@ const FooterSectionStyled = styled.footer`
                     color: #a9388b ;
                 }
             }
-            
+            @media only screen and (max-width: 768px) {
+                width: 55%;
+            }
+            @media only screen and (max-width: 425px) {
+                width: 90%;
+            }
         }
-        /* .b-nav-icons a{
-            color: ${props => props.theme.colorGre6};
-        } */
         .ig{
             .ig-images{
                 display: grid;
@@ -216,30 +254,20 @@ const FooterSectionStyled = styled.footer`
             }
         }
         @media all and (max-width: 2500px){
-            width: 1200px;
-        }
-        @media all and (max-width: 1500px){
-            width: 1000px ;
+            width: 1080px;
         }
         @media all and (max-width: 1080px){
             width: 850px;
         }
         @media all and (max-width: 1024px) {
-            width: 680px;
+            width: 750px;
         }
-        @media all and (max-width: 768px) {
-            width: 600px;
-        }
-        @media all and (max-width: 500px) {
-            width: 350px;
-            margin-left: 50px;
+        @media all and (max-width: 768px){
+            display: block !important;
+            width: 90vw;
         }
         @media all and (max-width: 425px) {
-            width: 280px;
-            margin-left: 80px;
-        }
-        @media all and (max-width: 375px) {
-            width: 250px;
+            width: 90%;
         }
         @media all and (max-width: 320px) {
             width: 230px;
@@ -248,27 +276,30 @@ const FooterSectionStyled = styled.footer`
     }
     .footer-copyright{
         position: relative;
-        
         padding-top: 3rem;
+        margin: 0 auto;
+        width: 60%;
         border-top: 1px solid ${props => props.theme.colorGrey9};
-        text-align: center;
+        align-items: center;
         span{
             color: ${props => props.theme.colorWhite};
             cursor: pointer;
             transition: all .4s ease-in-out;
+            margin: 0 .3rem;
             &:hover{
                 color: ${props => props.theme.colorBheti};
             }
         }
+        @media all and (max-width: 425px) {
+            width: 90%;
+        }
     }
-    .footer-copyright p{
-        color: ${props => props.theme.colorGrey6} ;
-    }
-    @media all and (max-width: 768px) {
-        margin-left: 0px;
-    }
-    @media all and (max-width: 420px) {
-        margin-left: -10px;
+    .copyright-text{
+        color: ${props => props.theme.colorGrey6};
+        @media all and (max-width: 425px) {
+            width: 100%;
+            font-size: 11px;
+        }
     }
 `;
 

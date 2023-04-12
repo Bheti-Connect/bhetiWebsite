@@ -1,11 +1,30 @@
+import React, { useState, useEffect } from "react"
 import styled from 'styled-components';
 import { useTheme } from '../context/themeContext';
 import projectManagement from '../assets/images/analytics.png';
 import bhetiImage from '../assets/images/bheti-img.jpg';
 import giveMoney from '../assets/images/give-money.png'
 
+
+
 const AboutSection = () => {
     const theme = useTheme();
+
+    const [text, setText] = useState("")
+    const [fullText, setFullText] = useState(
+        "Publiez votre projet, précisez votre besoin et augmentez la visibilité de votre projet auprès d’investisseurs."
+        )
+
+    const [index, setIndex] = useState(0)
+
+    useEffect(() => {
+        if (index < fullText.length) {
+            setTimeout(() => {
+                setText(text + fullText[index])
+                setIndex(index + 1)
+            }, 40)
+            }
+        }, [index])
     return (
         <AboutSectionStyled  theme={theme}>
             <div className='upper-container'>
@@ -16,14 +35,14 @@ const AboutSection = () => {
             </div>
             <div className='lower-container'>
                 <div className='leftSide'>
-                    <ol className='subTittle_elements'>
-                        <li className='sub'>1. Publiez votre projet </li>
-                        <li className='sub'>2. Précisez votre besoin</li>
-                        <li className='sub'>3. Augmentez la visibilité de votre projet auprès d’investisseurs</li>
-                    </ol>
+                    <div className='inner-container'>
+                        <h2>{text}</h2>
+                    </div>
                 </div>
                 <div className='rightSide'>
-                    <img src={bhetiImage} className='about-img' alt='bheti-image' />
+                    <div className='image-div'>
+                        <img src={bhetiImage} className='about-img' alt='bheti-image' />
+                    </div>
                 </div>
             </div>
         </AboutSectionStyled>
@@ -54,17 +73,25 @@ const AboutSectionStyled = styled.section`
         margin: auto;
         .leftSide{
             position: relative;
-            background-color: ${props =>props.theme.colorWhite};
             width: 50%;
-            height: 60vh;
+            .inner-container{
+                background-color: ${props =>props.theme.colorBg};
+                align-items: flex-start;
+                position: relative;
+                width: 80%;
+                margin: 30% auto;
+                padding: 100px 50px;
+            }
         }
         .rightSide{
             position: relative;
-            margin-left: 20vw;
-            margin-bottom: 5vh;
-            .about-img{
-                width: 25vw;
-                height: 35vw;
+            .image-div{
+                width: 20%;
+                margin: 120px auto;
+                .about-img{
+                    width: 25vw;
+                    height: 35vw;
+                }
             }
         }
 }
