@@ -1,3 +1,4 @@
+import React, { useState, useEffect } from "react"
 import styled from 'styled-components';
 import { useTheme } from '../../context/themeContext';
 import vidOne from '../../assets/images/1st-action.gif';
@@ -6,10 +7,24 @@ import vidThree from '../../assets/images/3rd-action.gif';
 
 const LaMethode = () => {
     const theme = useTheme();
+    const [text, setText] = useState("")
+    const [fullText, setFullText] = useState(
+        "Avec la plateforme Bheti Connect, Nous simplifions la manière de lever des fonds en Afrique"
+        )
+    const [index, setIndex] = useState(0)
+
+    useEffect(() => {
+        if (index < fullText.length) {
+            setTimeout(() => {
+                setText(text + fullText[index])
+                setIndex(index + 1)
+            }, 40)
+            }
+        }, [index])
     return (
         <LaMethodeStyled  theme={theme}>
             <div className='top-container'>
-                <h3 className='title'>Avec la plateforme Bheti Connect, Nous simplifions la manière de lever des fonds en Afrique</h3>
+                <h3 className='title'>{text}</h3>
             </div>
             <div className='bottom-container'>
                 <div className='child two-premier'>
@@ -58,7 +73,7 @@ const LaMethodeStyled = styled.section`
             padding: 1.2rem 0;
         }
         .title{
-            font-size: 2.6rem;
+            font-size: 2.3rem;
             margin-bottom: 40px;
         } 
         .text-container{

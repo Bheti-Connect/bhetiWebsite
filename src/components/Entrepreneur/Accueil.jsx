@@ -1,4 +1,4 @@
-import React from 'react'
+import {useState, useEffect} from 'react'
 import styled from 'styled-components'
 //import Team from '../../assets/images/pexels-edmond-dantès-8553867.jpg';
 import Button from '../Button';
@@ -7,12 +7,26 @@ import { useTheme } from '../../context/themeContext';
 
 const Accueil = () => {
     const theme = useTheme();
+    const [text, setText] = useState("")
+    const [fullText, setFullText] = useState(
+        "Financer votre entreprise avec succès !"
+        )
+    const [index, setIndex] = useState(0)
+
+    useEffect(() => {
+        if (index < fullText.length) {
+            setTimeout(() => {
+                setText(text + fullText[index])
+                setIndex(index + 1)
+            }, 70)
+            }
+        }, [index])
     return (
         <AccueilStyled  theme={theme}>
             <div className='first-container'>
                 <div className='headache'>
                     <div className='centered mobile-view'>
-                        <h1><b>Financer votre entreprise avec succès !</b></h1>
+                        <h1><b>{text}</b></h1>
                     </div>
                     <div className='text-highlighted paragraph'>
                         <p>
@@ -118,9 +132,9 @@ const AccueilStyled = styled.section`
             @media only screen and (max-width: 2500px){
                 text-align: center;
                 padding-top: 13vh;
-                width:47vw;
+                width:70vw;
                 margin: auto;
-                font-size: 20px;
+                font-size: 19px;
                 p{
                     color: ${props => props.theme.colorGrey6}
                 }

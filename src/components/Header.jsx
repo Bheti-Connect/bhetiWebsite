@@ -15,8 +15,8 @@ const Header = () => {
                     <h2>
                         Trouvez du <span>financement</span> avec nous
                     </h2>
-                    <p>
-                    Réseaux, outils, stratégie. Un accompagnement pour réussir chaque étape de votre levée de fonds
+                    <p className='sub-title'>
+                        Réseaux, outils, stratégie. Un accompagnement pour réussir chaque étape de votre levée de fonds
                     </p>
                     <div className='button-demo'>
                         {/* <Link
@@ -65,7 +65,6 @@ const HeaderStyled = styled.header`
     @media only screen and (max-width: 425px) {
         height: 700px;
     }
-
     
     @media only screen and (max-width: 375px) {
         height: 114vh;
@@ -100,8 +99,8 @@ const HeaderStyled = styled.header`
                     color: transparent;
                 }
             }
-            p{
-                font-size: 1.1rem;
+            .sub-title{
+                font-size: 1.2rem;
                 line-height: 1.6rem;
                 padding: 2rem 0;
                 font-weight: bold;
