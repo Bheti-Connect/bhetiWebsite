@@ -63,7 +63,7 @@ const JoinCommunity = () => {
     )
 }
 
-const JoinCommunityStyled = styled.section`
+const JoinCommunityStyled = styled.div`
     .title-con{
         width: 1000px;
         @media only screen and (max-width: 1440px) and (min-width: 1350px) {
@@ -102,16 +102,12 @@ const JoinCommunityStyled = styled.section`
         border-radius: 3px;
         @media only screen and (max-width: 2560px) and (min-width: 1800px) {
             width: 100%;
-            /*margin-left: -70px;*/
         }
         @media only screen and (max-width: 1800px) and (min-width: 1440px) {
-            width: 1200px;
-            margin-left:-1%;
+            width: 100%;
         }
         @media only screen and (max-width: 1440px) and (min-width: 1350px) {
-            width: 1000px;
-            height: 400px;
-            margin-left: -60px;
+            width: 100%;
         }
         @media only screen and (max-width: 1350px) and (min-width: 1250px) {
             width: 1000px;
@@ -161,10 +157,12 @@ const JoinCommunityStyled = styled.section`
                     margin-left: -80px;
                 }
                 @media only screen and (max-width: 1440px) and (min-width: 1350px) {
-                    width: 380px;
+                    width: 450px;
+                    margin-left: -80px;
+                    /*width: 380px;
                     height: 250px;
                     margin-left: -100px;
-                    margin-top: -80px;
+                    margin-top: -80px;*/
                 }
                 @media only screen and (max-width: 1350px) and (min-width: 1250px) {
                     width: 350px;
