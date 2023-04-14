@@ -10,8 +10,9 @@ const JoinCommunity = () => {
     const theme = useTheme();
     return (
 
-        <JoinCommunityStyled className='u-pad-lg-2' theme={theme}>
+        <JoinCommunityStyled theme={theme}>
             <div className='title-con'>
+              
                 <Title 
                     name={'Rejoignez notre communauté'}
                     subtext="Si vous souhaitez identifier d’autre porteurs de projets en Afrique francophone ou dans la diaspora, 
@@ -26,7 +27,7 @@ const JoinCommunity = () => {
                     </div>
                     <div className='latest-text'>
                         <h4 className='title'>
-                            Qu'est-ce qui se passe dans la communauté?
+                            Qu'est-ce qui se passe dans la communauté ?
                         </h4>
                         <div className='community'>
                             <div className='inner slack-div'>
@@ -64,6 +65,147 @@ const JoinCommunity = () => {
 }
 
 const JoinCommunityStyled = styled.section`
+    
+    height: 100%;
+    min-
+    .title-con{
+        font-size : clamp(1rem, 3vw, 2rem);
+    }
+    .latest-container{
+        margin-top: 1.5rem;
+        display: flex;
+        height: 80%;
+        background-color: white;
+        border-radius: 3px;
+        flex-wrap: wrap;
+        justify-content	: center;
+        align-items: center;
+        flex-direction: row;
+
+        @media screen and (max-width: 268px) {
+            flex-direction: column;
+          }
+
+        .latest-content{
+            background-color: black;
+            width: 70%;
+            display : flex;
+            flex-direction: row;
+            align-content: center;
+
+            .img-com-div {
+                width: 100%;
+                border-radius: 10px;
+                object-fit: cover;
+                display: flex;
+                justify-content : center;
+
+             
+
+                img{
+                    width: 70%;
+                    border-radius: 10px;
+                    object-fit: cover;
+                    
+                }
+                
+            }
+
+            .latest-text{
+                flex-direction: column;
+            
+                h4{
+                    color: ${props => props.theme.colorWhite};
+                    font-size: 1.5rem;
+                    padding-bottom: 1.5rem;
+                }
+                h6{
+                    padding-bottom: .2rem;
+                    color: ${props => props.theme.colorClothes};
+                    font-size: 1.2rem;
+                }
+                p{  
+                    color: ${props => props.theme.colorGrey4};
+                    padding-bottom: 1.5rem;
+                }
+                .community{
+                    .inner{
+                       display: flex;
+                        .left-side{
+                            width: 90%;
+                            .paragraphs{
+                                font-size: 18px;
+                            }
+                        }
+                        .right-side{
+                            margin: 0 30px;
+                            color: ${props => props.theme.colorGrey2};
+                            .social-icon{
+                                width: 50px;
+                                height: 50px;
+                                color: ${props => props.theme.colorGrey2};
+                                cursor: pointer;
+                            }
+                            .slack:hover{
+                                    color: ${props => props.theme.colorSlack};
+                                    transform: scale(.8);
+                            }
+                            .linkedin{
+                                &:hover{
+                                    color: ${props => props.theme.colorLinkedIn};                      
+                                    transform: scale(.8);
+                                }
+                            }
+                        }
+                    }
+                }
+                .anchor-tag{
+                    margin-left: 25%;
+                    @media only screen and (max-width: 425px) and (min-width: 320px){
+                        margin-left: -15%;
+                        width: 200px;
+                    }
+                }
+               
+                .anchor-tag {
+                    margin-top: 40px;
+                    margin: 1;
+                }
+            }
+        }
+    }
+    .latest-controlls{
+        display: flex;
+        justify-content: center;
+        margin-top: 2.5rem;
+        .control{
+            width: 1rem;
+            height: 1rem;
+            border-radius: 50%;
+            margin: 0 0.2rem;
+            cursor: pointer;
+        }
+        .control-1{
+            background-color: ${props => props.theme.colorAccent};
+        }
+        .control-2{
+            background-color: ${props => props.theme.colorGrey9};
+            transform: scale(0.85);
+        }
+        .control-3{
+            background-color: ${props => props.theme.colorGrey9};
+            transform: scale(0.6);
+        }
+    }
+`;
+
+export default JoinCommunity;
+
+
+/*
+
+
+
     .title-con{
         width: 1000px;
         @media only screen and (max-width: 1440px) and (min-width: 1350px) {
@@ -353,6 +495,12 @@ const JoinCommunityStyled = styled.section`
             transform: scale(0.6);
         }
     }
-`;
 
-export default JoinCommunity;
+
+
+
+
+
+
+
+*/
