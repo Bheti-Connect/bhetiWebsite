@@ -9,6 +9,7 @@ import Help from '../../assets/images/pexels-brett-sayles-5368598.jpg'
 import { SiSymantec } from 'react-icons/si'
 import {MdAddBusiness} from 'react-icons/md'
 import Button from '../Button';
+import { Link } from 'react-router-dom';
 
 
 const Advantages = () => {
@@ -25,6 +26,15 @@ const Advantages = () => {
 								<p className='paragraph'>
 									Économisez du temps et de l'argent tout en maximisant vos chances de succès !
 								</p>
+								<div className='need-pitch'>
+										<Link 
+										to={'/decouvrir-bheti-connect'}
+										>
+											<Button 
+													name={'Découvrir Bheti Connect'}
+											/>
+										</Link>
+									</div>
 							</div>
 							
 							<figure>

@@ -3,7 +3,6 @@ import styled from 'styled-components'
 import Button from '../Button';
 import { useTheme } from '../../context/themeContext';
 
-
 const Accueil = () => {
     const theme = useTheme();
     const [text, setText] = useState("")
@@ -29,8 +28,8 @@ const Accueil = () => {
                     </div>
                     <div className='text-highlighted paragraph'>
                         <p>
-                        Avec des données, des outils et des conseils, libérez le potentiel de votre entreprise en toute autonomie ou avec un accompagnement dédié de nos experts et 
-                        obtenez les financements dont vous avez besoin pour faire décoller votre projet.
+                            Avec des données, des outils et des conseils, libérez le potentiel de votre entreprise en toute autonomie ou avec un accompagnement dédié de nos experts et 
+                            obtenez les financements dont vous avez besoin pour faire décoller votre projet.
                         </p>
                     </div>
                 </div>
@@ -117,8 +116,7 @@ const AccueilStyled = styled.section`
                 }
                 @media only screen and (max-width: 375px){
                     display: block;
-                    left: 4vw;
-                    font-size: 22px;
+                    font-size: 1.58em;
                     color: ${props => props.theme.colorBlack};
                 }
                 @media only screen and (max-width: 320px){
@@ -160,8 +158,7 @@ const AccueilStyled = styled.section`
             }
             @media only screen and (max-width: 375px) {
                 position: relative;
-                width: 290px;
-                margin-left: 30px;
+                width: 270px;
             }
             @media only screen and (max-width: 320px) {
                 position: relative;
@@ -183,7 +180,6 @@ const AccueilStyled = styled.section`
                 width: 80%;
                 margin: 20px  auto;
             }
-
             @media only screen and (max-width: 425px){
                 position: relative;
                 width: 100%;
@@ -191,8 +187,8 @@ const AccueilStyled = styled.section`
             }
             @media only screen and (max-width: 375px){
                 position: relative;
-                width: 80%;
-                margin: 20px  auto;
+                width: 100%;
+                margin: 10px  auto;
             }
         }
 
