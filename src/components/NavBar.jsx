@@ -93,11 +93,11 @@ const NavBarStyled = styled.nav`
             visibility: hidden;
             animation-fill-mode: forwards;
             .theLogo{
-                margin-top: 10%;
-                width: 55%;
-                @media only screen and (max-width: 440px) and (min-width: 320px) {
-                    width: 100%;
-                    margin-left: -30px;
+                margin-top: 12%;
+                width: 60%;
+                margin-right: 10rem;
+                @media only screen and (max-width: 440px) {
+                    width: 70%;
                 }
             }
 }
@@ -196,7 +196,7 @@ const NavBarStyled = styled.nav`
 @media only screen and (max-width: 960px){
     .hero{
         .logo{
-            width: 40%;
+            width: 50%;
         }
     }
     .navigation {

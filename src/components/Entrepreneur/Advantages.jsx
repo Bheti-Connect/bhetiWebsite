@@ -42,33 +42,30 @@ const Advantages = () => {
 								<div className='advantage'>
 									<div className='offer'>
 										<FaHandsHelping className='offer-icon' />
-										<p className='paragraph offer-detail'>Identifiez les aides publiques et privées</p> 
+										<div className='paragraph offer-detail'>Identifiez les aides publiques et privées</div> 
 									</div>
 									<div className='offer'>
 										<GiHumanTarget className='offer-icon' />
-										<p className='paragraph offer-detail'>Identifiez les investisseurs pertinents </p>
+										<div className='paragraph offer-detail'>Identifiez les investisseurs pertinents </div>
 									</div>
 									<div className='offer'>
 										<SiSymantec className='offer-icon' />
-										<p className='paragraph offer-detail'>Visibilité de votre projet après certification</p>
+										<div className='paragraph offer-detail'>Visibilité de votre projet après certification</div>
 									</div>
 									<div className='offer'>
 										<FaShareSquare className='offer-icon' />
-										<p className='paragraph offer-detail'>Partagez simplement votre projet aux investisseurs </p>
+										<div className='paragraph offer-detail'>Partagez simplement votre projet aux investisseurs </div>
 									</div>
-									<div className='offer'>
+									<div className='offer '>
 										<MdAddBusiness className='offer-icon'/>
-										<p className='paragraph offer-detail'>Annoncez vos besoins et trouvez des partenaires business pertinents</p>
+										<div className='paragraph offer-detail '>Annoncez vos besoins et trouvez des partenaires business pertinents</div>
 									</div>
 									<div className='offer'>
 										<FaRoad className='offer-icon' />
-										<p className='paragraph offer-detail'>Accédez à des guides et recommandations exclusifs </p>
+										<div className='paragraph offer-detail '>Accédez à des guides et recommandations exclusifs </div>
 									</div>
 								</div>
-								
 							</figure>
-						
-							
 						</div>
 					</li>
 					<li className="card" id="card_2">
@@ -86,9 +83,13 @@ const Advantages = () => {
 								</p>
 								<div className='need-container'>
 									<div className='need-pitch'>
-										<Button 
-												name={'J’ai besoin d’un pitch'}
-										/>
+										<Link
+											to={'/decouvrir-bheti-connect'}
+										>
+											<Button 
+													name={'J’ai besoin d’un pitch'}
+											/>
+										</Link>
 									</div>
 								</div>
 							</div>
@@ -125,19 +126,25 @@ const Advantages = () => {
 					</li>
 					<li className="card" id="card_4">
 						<div className="card__content">
-							<div>
-								<h3 className='card_title'>Appui et Conseil </h3>
-								<p className='paragraph'>Besoin de conseils pour approcher des investisseurs, défendre votre projet ou négocier avec les investisseurs ? 
-									Besoin  d’un accompagnement sur mesure pour la construction ou la révision de votre dossier de financement ?
-								</p>
-								<p className='paragraph'>
-									Nous proposons de vous accompagner dans toutes les étapes de votre levée de fonds. 
-								</p>
+							<div className='content-div'>
+								<div className='text-container'>
+									<h3 className='card_title'>Appui et Conseil </h3>
+									<p className='paragraph'>Besoin de conseils pour approcher des investisseurs, défendre votre projet ou négocier avec les investisseurs ? 
+										Besoin  d’un accompagnement sur mesure pour la construction ou la révision de votre dossier de financement ?
+									</p>
+									<p className='paragraph'>
+										Nous proposons de vous accompagner dans toutes les étapes de votre levée de fonds. 
+									</p>
+								</div>
 								<div className='need-container'>
 									<div className='help'>
-										<Button 
-												name={'Contactez-nous'}
-										/>
+										<Link
+											to={'/decouvrir-bheti-connect'}
+										>
+											<Button 
+													name={'Contactez-nous'}
+											/>
+										</Link>
 									</div>
 								</div>
 								{/* <p className='paragraph'><a href="#top" class="btn btn--accent">👆🏼 Haut de page</a></p> */}

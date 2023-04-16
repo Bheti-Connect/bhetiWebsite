@@ -81,11 +81,9 @@
 	color: white;
 	white-space: nowrap;
 	}
-
 	#debug:checked ~ #main {
 	--outline-width: 1px;
 }
-
 
 /** PAGE STYLING **/
 * { /* Poor Man's Reset */
@@ -130,7 +128,6 @@
 }
 
 .card__content > div {
-	
 	grid-area: text;
 	width: 85%;
 	place-self: center;
@@ -207,7 +204,7 @@ p{
 	font-size: 1.43em;
 }
 
-.paragraph {
+.paragraphs {
 	font-family: sans-serif;
 	font-weight: 300;
 	line-height: 1.40;
@@ -222,6 +219,29 @@ p{
 	padding: 0.5em;
 	border-radius: 0.25em;
 }
+@media only screen and (max-width: 1400px){
+	.paragraph{
+		font-size: .6rem;
+	}
+	.advantage{
+		width: 100%;
+		margin: auto;
+	}
+	.offer{
+		width: 14vw;
+		margin: 10px 35px;
+	}
+	.offer-icon{
+		width: 50px;
+	}
+	.offer-detail{
+		font-size: .8em !important;;
+		width: 14vw;
+	}
+	.more{
+		width: 14vw ;
+	}
+}
 
 @media only screen and (max-width: 1250px){
 	.card__content{
@@ -231,7 +251,7 @@ p{
 			margin: auto;
 	}
 	.card__content p{
-		font-size: 40px;
+		font-size: 30px;
 	}
 	.card__content > div {
 		width: 40vw;
@@ -249,7 +269,6 @@ p{
 	.offer{
 		width: 15vw;
 	}
-	
 	.offer-detail{
 		width: 14.8vw;
 	}
@@ -259,37 +278,96 @@ p{
 	.card__content > figure > img{
 		width: 100%;
 	}
-
 }
 
-@media only screen and (min-width: 440px){
+@media only screen and (min-width: 768px){
 	body {
 		text-align: center;
 	}
 	
 }
 
-@media only screen and (max-width: 440px) {
-	#cards {
+@media only screen and (max-width: 1024px) {
+	#main{
+		height: 140vh;
+	}
+	.card__content{
 		display: block;
-		margin-top: -65vh;
+		width: 82vw;
+		height: 40rem;
+		margin: auto;
 	}
-	.btn{
-		margin-bottom: 10px;
-		margin-left: 10px;
+	.card__content p{
+		font-size: 1.2rem;
 	}
-	.card_title{
-		font-size: .9em;
-		margin-left: 5px;
-		margin-top: 8px;
+	.card__content > div {
+		width: 78vw;
+		margin: auto;
+	}
+	.card__content > figure{
+		margin: auto;
+		width: 100vw;
+	}
+	.advantage{
+		width: 45vw;
+		position: relative;
+		margin: 50px auto;
+	}
+	.offer{
+		width: 15vw;
+	}
+
+	.offer-detail{
+		width: 14.8vw;
+	}
+	.offer-icon{
+		width: 55px;
+	}
+	.card__content > figure > img{
+		width: 92%;
+		height: 100%;
+	}
+	p{
+		text-align: left;
+		text-justify: inherit;
+	}
+	#cards{
+		
+		
+	}
+	.need-container{
+		width: 300px;
+		height: 80px;
+	}
+	.help{
+		margin-left: 10%;
+		width: 60%;
 	}
 	.paragraph{
-		margin: 0px 0px 12px 3px;
+		width: 70vw;
+		font-size: 15px;
+		color: #909497;
+	}
+	.content-div{
+		display: block;
+	}
+	.text-container{
+		height: 50%;
 	}
 }
+@media only screen and (max-width: 768px) {
+	#main{
+		height: 140vh;
+	}
 
-@media only screen and (max-width: 375px){
-	#cards {
-		margin-top: -60vh;
+}
+@media only screen and (max-width: 425px) {
+	#main{
+		height: 140vh;
+	}
+}
+@media only screen and (max-width: 375px) {
+	#main{
+		height: 110vh;
 	}
 }
