@@ -110,8 +110,7 @@ const JoinCommunityStyled = styled.div`
             width: 100%;
         }
         @media only screen and (max-width: 1350px) and (min-width: 1250px) {
-            width: 1000px;
-            margin-left: -130px;
+            width: 100%;
         }
         @media only screen and (max-width: 1250px) and (min-width: 1024px) {
             width: 900px;
@@ -120,13 +119,14 @@ const JoinCommunityStyled = styled.div`
         @media only screen and (max-width: 1024px) {
             width: 650px;
             height: auto;
-            margin-left: -18%;
+            /*margin-left: -18%;*/
         }
         @media only screen and (max-width: 960px) {
-            margin-left: -180px;
+            width: 100%;
+            /*margin-left: -180px;*/
         }
         @media only screen and (max-width: 768px) {
-            margin-left: -225px;
+            /*margin-left: -225px;*/
         }
         @media only screen and (max-width: 525px){
             width: 505px;
@@ -177,8 +177,15 @@ const JoinCommunityStyled = styled.div`
                 @media only screen and (max-width: 1024px) {
                     width: 500px;
                     height: 280px;
-                    margin-left: -90px;
-                    margin-top: -130px;
+                    /*margin-left: -90px;*/
+                    margin-top: -100px;
+                }
+
+                @media only screen and (max-width: 820px) {
+                    width: 500px;
+                    height: 280px;
+                    margin-left: -50px;
+                    margin-top: -100px;
                 }
                 
                 @media only screen and (max-width: 425px){
