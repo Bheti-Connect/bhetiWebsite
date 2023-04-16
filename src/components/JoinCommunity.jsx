@@ -67,15 +67,16 @@ const JoinCommunityStyled = styled.div`
     .title-con{
         width: 1000px;
         @media only screen and (max-width: 1440px) and (min-width: 1350px) {
-            margin-left: -60px;
+            margin: auto ;
+            width: 60%;
         }
         @media only screen and (max-width: 1350px) and (min-width: 1250px) {
-            margin-left: -130px;
-            width: 1000px;
+            margin: auto ;
+            width: 60%;
         }
         @media only screen and (max-width: 1250px) and (min-width: 1024px) {
-            margin-left: -210px;
-            width: 1000px;
+            margin: auto ;
+            width: 60%;
         }
         @media only screen and (max-width: 1024px){
             /*margin-left: -15%;*/
@@ -87,11 +88,12 @@ const JoinCommunityStyled = styled.div`
             /*margin-left: -150px;*/
         }
         @media only screen and (max-width: 768px) {
-            margin-left: -205px;
+            width:70%;
+            margin:auto;
         }
         @media only screen and (max-width: 525px) and (min-width: 425px) {
-            margin-left: -200px;
-            width: 350px;
+            width:70%;
+            margin:auto;
         }
         @media only screen and (max-width: 425px) {
             width: 300px;
@@ -131,9 +133,9 @@ const JoinCommunityStyled = styled.div`
             /*margin-left: -225px;*/
         }
         @media only screen and (max-width: 525px){
-            width: 505px;
-            height: 650px;
-            margin-left: -300px;
+            width: 100%;
+            /*height: 650px;
+            margin-left: -300px;*/
         }
         @media only screen and (max-width: 425px) {
             width: 100%;
@@ -167,7 +169,7 @@ const JoinCommunityStyled = styled.div`
                     margin-top: -80px;*/
                 }
                 @media only screen and (max-width: 1350px) and (min-width: 1250px) {
-                    width: 350px;
+                    width: 450px;
                     height: 250px;
                     margin-left: -100px;
                 }
@@ -188,6 +190,13 @@ const JoinCommunityStyled = styled.div`
                     height: 280px;
                     margin-left: -50px;
                     margin-top: -100px;
+                }
+                @media only screen and (max-width: 600px) {
+                    width: 200px;
+                    height: 280px;
+                    margin:auto;
+                    /*margin-left: 0;
+                    /*margin-top: -100px;
                 }
                 
                 @media only screen and (max-width: 425px){
