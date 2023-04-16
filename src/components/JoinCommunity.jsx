@@ -78,11 +78,13 @@ const JoinCommunityStyled = styled.div`
             width: 1000px;
         }
         @media only screen and (max-width: 1024px){
-            margin-left: -15%;
-            width: 600px;
+            /*margin-left: -15%;*/
+            /*width: 600px;*/
+            width:70%;
+            margin:auto;
         }
         @media only screen and (max-width: 960px) {
-            margin-left: -150px;
+            /*margin-left: -150px;*/
         }
         @media only screen and (max-width: 768px) {
             margin-left: -205px;
