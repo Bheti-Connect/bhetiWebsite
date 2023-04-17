@@ -104,44 +104,17 @@ const JoinCommunityStyled = styled.div`
         margin-top: 1.5rem;
         background-color: ${props => props.theme.colorBlack};
         border-radius: 3px;
-        @media only screen and (max-width: 2560px) and (min-width: 1800px) {
+
+        @media only screen and (max-width: 2560px) {
             width: 100%;
         }
-        @media only screen and (max-width: 1800px) and (min-width: 1440px) {
-            width: 100%;
-        }
-        @media only screen and (max-width: 1440px) and (min-width: 1350px) {
-            width: 100%;
-        }
-        @media only screen and (max-width: 1350px) and (min-width: 1250px) {
-            width: 100%;
-        }
-        @media only screen and (max-width: 1250px) and (min-width: 1024px) {
-            width: 900px;
-            margin-left: -160px;
-        }
-        @media only screen and (max-width: 1024px) {
-            width: 650px;
-            height: auto;
-            /*margin-left: -18%;*/
-        }
-        @media only screen and (max-width: 960px) {
-            width: 100%;
-            /*margin-left: -180px;*/
-        }
-        @media only screen and (max-width: 768px) {
-            /*margin-left: -225px;*/
-        }
-        @media only screen and (max-width: 525px){
-            width: 100%;
-            /*height: 650px;
-            margin-left: -300px;*/
-        }
+        
         @media only screen and (max-width: 425px) {
             width: 100%;
             margin: auto;
             border-radius: 0px;
         }
+
         .latest-content{
             display: grid;
             grid-template-columns: 40% auto;
@@ -230,7 +203,7 @@ const JoinCommunityStyled = styled.div`
                     color: ${props => props.theme.colorClothes};
                     font-size: 1.2rem;
                 }
-                p{  
+                p{
                     color: ${props => props.theme.colorGrey4};
                     padding-bottom: 1.5rem;
                 }
@@ -309,11 +282,22 @@ const JoinCommunityStyled = styled.div`
                     margin-left: -260px;
                     margin-top: 70%;
                 }
-                @media only screen and (max-width: 425px){
+                @media only screen and (max-width: 600px){
                     width: 320px;
                     height: 400px;
                     margin-left: -160px;
                     margin-top: 40%;
+
+                    h4{
+                        font-size: 1.0rem;
+                    }
+
+                    .slack-div {
+                        .left-side {
+                            font-size: 15px;
+                        }
+                    }
+
                 }
                 @media only screen and (max-width: 320px){
                     width: 250px;
