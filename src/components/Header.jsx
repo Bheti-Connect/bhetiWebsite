@@ -18,18 +18,6 @@ const Header = () => {
                     <p className='sub-title'>
                         Réseaux, outils, stratégie. Un accompagnement pour réussir chaque étape de votre levée de fonds
                     </p>
-                    <div className='button-demo'>
-                        {/* <Link
-                        to='/evaluer-eligibilite'
-                        >
-                            <Button 
-                                name={'Je réserve une demo'}
-                                icon={'fas fa-chevron-right'}
-                                arrow={'arrow'}
-                                blob={'blob'}
-                            />
-                        </Link> */}
-                    </div>
                 </div>
                 <div className='box right-h-content'>
                     <img className='h-img-1' src={premiereImg} alt='image-1' />
