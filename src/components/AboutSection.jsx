@@ -1,31 +1,49 @@
+import React, { useState, useEffect } from "react"
 import styled from 'styled-components';
 import { useTheme } from '../context/themeContext';
 import projectManagement from '../assets/images/analytics.png';
 import bhetiImage from '../assets/images/bheti-img.jpg';
 import giveMoney from '../assets/images/give-money.png'
-// import boxImg from '../assets/images/dots.png'; Ceci est à retirer, Mahoua Veut que ceci ne soit plus là
+
+
 
 const AboutSection = () => {
     const theme = useTheme();
+
+    const [text, setText] = useState("")
+    const [fullText, setFullText] = useState(
+        "Publiez votre projet, précisez votre besoin et augmentez la visibilité de votre projet auprès d’investisseurs."
+        )
+
+    const [index, setIndex] = useState(0)
+
+    useEffect(() => {
+        if (index < fullText.length) {
+            setTimeout(() => {
+                setText(text + fullText[index])
+                setIndex(index + 1)
+            }, 40)
+            }
+        }, [index])
     return (
         <AboutSectionStyled  theme={theme}>
-            <div className='left-about'>
+            <div className='upper-container'>
                 <h3 className='title'>
                     Développez et financez vos projets
                 </h3>
                 <h4>Grâce à la plateforme BHC, accédez à un écosystème composé d’experts, d’outils et d’informations… Bref, tout ce qu’il vous faut pour trouver du financement.</h4>
-                <div className='sub_div'>
-                    <ol className='subTittle_elements'>
-                        <li className='sub'>1. Publiez votre projet </li>
-                        <li className='sub'>2. Précisez votre besoin</li>
-                        <li className='sub'>3. Augmentez la visibilité de votre projet auprès d’investisseurs</li>
-                    </ol>
-                </div>
             </div>
-            <div className='right-about'>
-                {/* L'image en dessous est a retirer */}
-                {/* <img src={boxImg} className='box-img' alt='box-image' /> */}
-                <img src={bhetiImage} className='about-img' alt='bheti-image' />
+            <div className='lower-container'>
+                <div className='leftSide'>
+                    <div className='inner-container'>
+                        <h2>{text}</h2>
+                    </div>
+                </div>
+                <div className='rightSide'>
+                    <div className='image-div'>
+                        <img src={bhetiImage} className='about-img' alt='bheti-image' />
+                    </div>
+                </div>
             </div>
         </AboutSectionStyled>
         )
@@ -307,106 +325,39 @@ const AboutSectionStyled = styled.section`
             width: 100%;
             bottom: 5rem;
         }
-        @media only screen and (max-width: 425px){
-            width: 1%;
-            bottom: 5rem;
+        h4{
+            color: ${props =>props.theme.colorGrey5};
         }
-        
     }
-
-    .right-about{
-        position: relative;
+    .lower-container{
         display: flex;
-        justify-content: flex-end;
-        @media only screen and (max-width: 2560px) and (min-width: 1800px) {
-            bottom: 5%;
-        }
-        .about-img{
-            width: 90%;
-            object-fit: cover;
-            height: 500px;
-            border-top-left-radius: 70px;
-            border-bottom-right-radius: 70px;
-            border-top-right-radius: 3px;
-            border-bottom-left-radius: 3px;
-            transition: all .3s ease-in-out;
-            &:hover{
-                transform: scale(1.05);
-            }
-            @media only screen and (max-width: 2560px) and (min-width: 1800px){
-                    margin-right: 10%;
-                    width: 700px;
-                    height: 550px;
-            }
-            @media only screen and (max-width: 1800px) and (min-width: 1440px){
-                    margin-right: 10%;
-                    width: 550px;
-                    height: 460px;
-            }
-            @media only screen and (max-width: 1440px) and (min-width: 1350px){
-                    margin-right: 15%;
-                    width: 490px;
-                    height: 480px;
-            }
-            @media only screen and (max-width: 1350px) and (min-width: 1250px){
-                    margin-right: 12%;
-                    width: 500px;
-                    height: 430px;
-            }
-            @media only screen and (max-width: 1250px) and (min-width: 1024px){
-                    margin-right: 12%;
-                    width: 430px;
-                    height: 550px;
-            }
-            @media only screen and (max-width: 1024px) {
-                display: none;
+        position: relative;
+        width: 90%;
+        margin: auto;
+        .leftSide{
+            position: relative;
+            width: 50%;
+            .inner-container{
+                background-color: ${props =>props.theme.colorBg};
+                align-items: flex-start;
+                position: relative;
+                width: 80%;
+                margin: 30% auto;
+                padding: 100px 50px;
             }
         }
-        .box-img{
-            position: absolute;
-            width: 80px;
-            left: 3%;
-            top: -8%;
-            animation: scaleUp 8s infinite;
-            @keyframes scaleUp {
-                0%{
-                    transform: scale(1);
+        .rightSide{
+            position: relative;
+            .image-div{
+                width: 20%;
+                margin: 120px auto;
+                .about-img{
+                    width: 25vw;
+                    height: 35vw;
                 }
-                50%{
-                    transform: scale(1.2);
-                }
-                100%{
-                    transform: scale(1);
-                }
-            }
-            @media only screen and (max-width: 2560px) and (min-width: 1800px){
-                    margin-left: 10%;
-                    
-            }
-            @media only screen and (max-width: 1800px) and (min-width: 1440px){
-                    margin-left: 20%;
-                    
-            }
-            @media only screen and (max-width: 1440px) and (min-width: 1350px){
-                    margin-left: 8%;
-                    
-            }
-            @media only screen and (max-width: 1350px) and (min-width: 1250px){
-                    margin-left: 7%;
-                    
-            }
-            @media only screen and (max-width: 1250px) and (min-width: 1024px){
-                    margin-left: 6.5%;
-            }
-            @media only screen and (max-width: 1024px){
-                    display: none;
             }
         }
-        @media only screen and (max-width: 1250px) and (min-width: 1024px){
-                    margin-left: 6.5%;
-            }
-    }
-    
+}
 `;
 
 export default AboutSection
