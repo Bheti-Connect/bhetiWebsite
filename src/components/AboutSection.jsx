@@ -122,14 +122,14 @@ const AboutSectionStyled = styled.section`
                 margin-top: -10%;
                 margin-left: 50px;
             }
-/* ---------------------------------------------------------------------- */
+/* 
             @media only screen and (max-width: 600px){
                 font-size: 1.9rem;
                 margin-bottom: 5%;
                 margin-top: -10%;
                 width: 150px;
             }
-/* ---------------------------------------------------------------------- */
+*/
             @media only screen and (max-width: 425px){
                 font-size: 1.2rem;
                 margin-bottom: 5%;
