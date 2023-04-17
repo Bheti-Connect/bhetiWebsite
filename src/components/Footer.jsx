@@ -280,6 +280,7 @@ const FooterSectionStyled = styled.footer`
         margin: 0 auto;
         width: 60%;
         border-top: 1px solid ${props => props.theme.colorGrey9};
+
         align-items: center;
         span{
             color: ${props => props.theme.colorWhite};
@@ -294,6 +295,7 @@ const FooterSectionStyled = styled.footer`
             width: 90%;
         }
     }
+
     .copyright-text{
         color: ${props => props.theme.colorGrey6};
         @media all and (max-width: 425px) {

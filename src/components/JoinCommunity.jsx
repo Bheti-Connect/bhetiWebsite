@@ -63,33 +63,37 @@ const JoinCommunity = () => {
     )
 }
 
-const JoinCommunityStyled = styled.section`
+const JoinCommunityStyled = styled.div`
     .title-con{
         width: 1000px;
         @media only screen and (max-width: 1440px) and (min-width: 1350px) {
-            margin-left: -60px;
+            margin: auto ;
+            width: 60%;
         }
         @media only screen and (max-width: 1350px) and (min-width: 1250px) {
-            margin-left: -130px;
-            width: 1000px;
+            margin: auto ;
+            width: 60%;
         }
         @media only screen and (max-width: 1250px) and (min-width: 1024px) {
-            margin-left: -210px;
-            width: 1000px;
+            margin: auto ;
+            width: 60%;
         }
         @media only screen and (max-width: 1024px){
-            margin-left: -15%;
-            width: 600px;
+            /*margin-left: -15%;*/
+            /*width: 600px;*/
+            width:70%;
+            margin:auto;
         }
         @media only screen and (max-width: 960px) {
-            margin-left: -150px;
+            /*margin-left: -150px;*/
         }
         @media only screen and (max-width: 768px) {
-            margin-left: -205px;
+            width:70%;
+            margin:auto;
         }
         @media only screen and (max-width: 525px) and (min-width: 425px) {
-            margin-left: -200px;
-            width: 350px;
+            width:70%;
+            margin:auto;
         }
         @media only screen and (max-width: 425px) {
             width: 300px;
@@ -101,21 +105,16 @@ const JoinCommunityStyled = styled.section`
         background-color: ${props => props.theme.colorBlack};
         border-radius: 3px;
         @media only screen and (max-width: 2560px) and (min-width: 1800px) {
-            width: 1500px;
-            margin-left: -70px;
+            width: 100%;
         }
         @media only screen and (max-width: 1800px) and (min-width: 1440px) {
-            width: 1200px;
-            margin-left:-1%;
+            width: 100%;
         }
         @media only screen and (max-width: 1440px) and (min-width: 1350px) {
-            width: 1000px;
-            height: 400px;
-            margin-left: -60px;
+            width: 100%;
         }
         @media only screen and (max-width: 1350px) and (min-width: 1250px) {
-            width: 1000px;
-            margin-left: -130px;
+            width: 100%;
         }
         @media only screen and (max-width: 1250px) and (min-width: 1024px) {
             width: 900px;
@@ -123,19 +122,20 @@ const JoinCommunityStyled = styled.section`
         }
         @media only screen and (max-width: 1024px) {
             width: 650px;
-            height: 500px;
-            margin-left: -18%;
+            height: auto;
+            /*margin-left: -18%;*/
         }
         @media only screen and (max-width: 960px) {
-            margin-left: -180px;
+            width: 100%;
+            /*margin-left: -180px;*/
         }
         @media only screen and (max-width: 768px) {
-            margin-left: -225px;
+            /*margin-left: -225px;*/
         }
         @media only screen and (max-width: 525px){
-            width: 505px;
-            height: 650px;
-            margin-left: -300px;
+            width: 100%;
+            /*height: 650px;
+            margin-left: -300px;*/
         }
         @media only screen and (max-width: 425px) {
             width: 100%;
@@ -154,20 +154,22 @@ const JoinCommunityStyled = styled.section`
                 object-fit: cover;
                 @media only screen and (max-width: 2560px) and (min-width: 1800px) {
                     width: 600px;
-                    margin-left: -60px;
+                    margin-left: 40px;
                 }
                 @media only screen and (max-width: 1800px) and (min-width: 1440px) {
                     width: 450px;
                     margin-left: -80px;
                 }
                 @media only screen and (max-width: 1440px) and (min-width: 1350px) {
-                    width: 380px;
+                    width: 450px;
+                    margin-left: -80px;
+                    /*width: 380px;
                     height: 250px;
                     margin-left: -100px;
-                    margin-top: -80px;
+                    margin-top: -80px;*/
                 }
                 @media only screen and (max-width: 1350px) and (min-width: 1250px) {
-                    width: 350px;
+                    width: 450px;
                     height: 250px;
                     margin-left: -100px;
                 }
@@ -178,9 +180,23 @@ const JoinCommunityStyled = styled.section`
                 }
                 @media only screen and (max-width: 1024px) {
                     width: 500px;
-                    height: 180px;
-                    margin-left: -90px;
-                    margin-top: -130px;
+                    height: 280px;
+                    /*margin-left: -90px;*/
+                    margin-top: -100px;
+                }
+
+                @media only screen and (max-width: 820px) {
+                    width: 500px;
+                    height: 280px;
+                    margin-left: -50px;
+                    margin-top: -100px;
+                }
+                @media only screen and (max-width: 600px) {
+                    width: 200px;
+                    height: 280px;
+                    margin:auto;
+                    /*margin-left: 0;
+                    /*margin-top: -100px;
                 }
                 
                 @media only screen and (max-width: 425px){
@@ -289,9 +305,9 @@ const JoinCommunityStyled = styled.section`
                 }
                 @media only screen and (max-width: 1024px) {
                     width: 550px;
-                    height: 300px;
+                    height: 190px;
                     margin-left: -260px;
-                    margin-top: 25%;
+                    margin-top: 70%;
                 }
                 @media only screen and (max-width: 425px){
                     width: 320px;

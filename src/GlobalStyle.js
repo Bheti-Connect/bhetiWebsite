@@ -64,6 +64,12 @@ const GlobalStyle = createGlobalStyle`
             padding-right: 0rem;
             padding-bottom: 0rem;
         }
+        @media only screen and (max-width: 1460px){
+            padding-top: 0rem;
+            padding-left: 0rem;
+            padding-right: 0rem;
+            padding-bottom: 0rem;
+        }
         @media only screen and (max-width: 500px) {
             padding-top: 0rem;
             padding-left: 0rem;

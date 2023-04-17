@@ -46,24 +46,25 @@ const Header = () => {
 const HeaderStyled = styled.header`
     position: relative;
     height: 85vh;
+    text-align: center;
     @media only screen and (max-width: 2560px){
-        height: 84vh;
+        height: 94vh;
     }
     @media only screen and (max-width: 1800px) {
-        height: 80vh;
+        height: 98vh;
     }
     
     @media only screen and (max-width: 1024px){
-        height: 105vh;
+        height: 94vh;
     }
     @media only screen and (max-width: 960px){
-        height: 80vh;
+        height: 74vh;
     }
     @media only screen and (max-width: 768px){
-        height: 70vh;
+        height: 74vh;
     }
     @media only screen and (max-width: 425px) {
-        height: 700px;
+        height: 90vh;
     }
     
     @media only screen and (max-width: 375px) {
@@ -113,13 +114,14 @@ const HeaderStyled = styled.header`
             }
             @media only screen and (max-width: 2560px) and (min-width: 1800px) {
                     margin-top: 1%;
-                    width: 750px;
+                    width: 850px;
                     height: 550px;
+                    font-size: 3.1rem;
                     h2{
-                        font-size: 54px;
+                        font-size: 5.1rem;
                     }
                     p{
-                        font-size: 21px;
+                        font-size: 1.8rem;
                     }
                     .button-demo{
                         width: 200%;
@@ -172,12 +174,12 @@ const HeaderStyled = styled.header`
             }
             @media only screen and (max-width: 1024px) {
                     margin-top: 4%;
-                    width: 500px;
+                    width: 400px;
                     h2{
                         font-size: 35px;
                     }
                     p{
-                        font-size: 19px;
+                        font-size: 16px;
                     }
             }
             @media only screen and (max-width: 960px) {
@@ -329,8 +331,9 @@ const HeaderStyled = styled.header`
                 border-top-left-radius: 5px;
                 transition: all .4s ease-in-out;
                 @media only screen and (max-width: 2560px) and (min-width: 1800px) {
-                    width: 360px;
-                    height: 460px;
+                    width: 560px;
+                    height: 660px;
+                    left: -8%;
                 }
                 @media only screen and (max-width: 1800px) and (min-width: 1440px) {
                     width: 350px;
@@ -359,11 +362,11 @@ const HeaderStyled = styled.header`
                     border-top-right-radius: 5px;
                     border-top-left-radius: 5px;
                 }
-                @media only screen and (max-width: 768px){
-                    width: 180px;
-                    height: 260px;
+                @media only screen and (max-width: 960px){
+                    width: 190px;
+                    height: 280px;
                     margin-top: 30px;
-                    margin-left: 20px;
+                    margin-left: -15px;
                 }
                 @media only screen and (max-width: 525px) and (min-width: 425px){
                     width: 150px;
@@ -396,8 +399,8 @@ const HeaderStyled = styled.header`
                 transition: all .4s ease-in-out;
 
                 @media only screen and (max-width: 2560px) and (min-width: 1800px) {
-                    width: 400px;
-                    height: 600px;
+                    width: 600px;
+                    height: 800px;
                 }
                 @media only screen and (max-width: 1800px) and (min-width: 1440px) {
                     top: -10%;
@@ -430,12 +433,19 @@ const HeaderStyled = styled.header`
                     border-top-left-radius: 5px;
                     border-top-right-radius: 5px;
                 }
-                @media only screen and (max-width: 768px) {
+                @media only screen and (max-width: 960px) {
                     top: -1%;
-                    width: 200px;
+                    width: 220px;
                     height: 350px;
                     margin-left: 2px;
                 }
+
+                @media only screen and (max-width: 730px){
+                    width: 200px;
+                    height: 330px;
+                    margin-left: -2px;
+                }
+
                 @media only screen and (max-width: 525px) and (min-width: 425px){
                     top: 0cm;
                     width: 160px;
@@ -467,8 +477,8 @@ const HeaderStyled = styled.header`
             @media only screen and (max-width: 1250px) and (min-width: 1024px) {
                 margin-left: 40px;
             }
-            @media only screen and (max-width: 768px){
-                width: 380px;
+            @media only screen and (max-width: 1024px){
+                width: 280px;
             }
             @media only screen and (max-width: 525px) and (min-width: 425px){
                 margin-left: -3%;
