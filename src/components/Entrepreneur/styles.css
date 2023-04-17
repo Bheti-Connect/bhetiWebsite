@@ -1,5 +1,4 @@
-
-#cards {
+	#cards {
 	padding-bottom: calc(var(--numcards) * var(--card-top-offset)); /* Make place at bottom, as items will slide to that position*/
 	margin-bottom: var(--card-margin); /* Don't include the --card-margin in padding, as that will affect the scroll-timeline*/
 }
@@ -89,7 +88,6 @@
 
 
 /** PAGE STYLING **/
-
 * { /* Poor Man's Reset */
 	box-sizing: border-box;
 	margin: 0;
@@ -98,6 +96,7 @@
 
 #main {
 	width: 80vw;
+	height: 300vh;
 	margin: 0 auto;
 }
 
@@ -131,6 +130,7 @@
 }
 
 .card__content > div {
+	
 	grid-area: text;
 	width: 85%;
 	place-self: center;
@@ -156,8 +156,6 @@
 	position: relative;
 	margin-bottom: 7%;
 	margin-left: 8%;
-
-
 }
 
 p{
@@ -225,7 +223,46 @@ p{
 	border-radius: 0.25em;
 }
 
-/*
+
+@media only screen and (max-width: 1250px){
+	.card__content{
+			display: block;
+			width: 50vw;
+			height: 190%;
+			margin: auto;
+	}
+	.card__content p{
+		font-size: 40px;
+	}
+	.card__content > div {
+		width: 40vw;
+		margin: auto;
+	}
+	.card__content > figure{
+		margin: auto;
+		width: 60vw;
+	}
+	.advantage{
+		width: 45vw;
+		position: relative;
+		margin: 50px auto;
+	}
+	.offer{
+		width: 15vw;
+	}
+	
+	.offer-detail{
+		width: 14.8vw;
+	}
+	.offer-icon{
+		width: 55px;
+	}
+	.card__content > figure > img{
+		width: 100%;
+	}
+
+}
+
 @media only screen and (min-width: 440px){
 	body {
 		text-align: center;
@@ -252,7 +289,7 @@ p{
 	}
 }
 
-@media only screen and (max-width: 320px){
+@media only screen and (max-width: 375px){
 	#cards {
 		margin-top: -60vh;
 	}

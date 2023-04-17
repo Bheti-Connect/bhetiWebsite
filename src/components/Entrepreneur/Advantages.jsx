@@ -21,12 +21,13 @@ const Advantages = () => {
 						<div className="card__content">
 							<div>
 								<h3 className='card_title offre'>
-								Offre impact à 29,99€/mois HT ou 329,99 € annuel (économisez 29,99€ avec l’offre annuelle)
+									Offre impact à 29,99€/mois HT ou 329,99 € annuel (économisez 29,99€ avec l’offre annuelle)
 								</h3>
 								<p className='paragraph'>
 									Économisez du temps et de l'argent tout en maximisant vos chances de succès !
 								</p>
 							</div>
+							
 							<figure>
 								{/* <img className='image-team' src={Conviction} alt='Image-Femmes'/> */}
 								<div className='advantage'>
@@ -57,6 +58,8 @@ const Advantages = () => {
 								</div>
 								
 							</figure>
+						
+							
 						</div>
 					</li>
 					<li className="card" id="card_2">
@@ -69,14 +72,13 @@ const Advantages = () => {
 								Il doit donc être efficace et concis.
 								</p>
 								<p className='paragraph'>
-								Chez Bhet Connect, Nous examinons des centaines de présentations d'investissement chaque année et mettons à profit notre expertise pour vous aider à élaborer ou à réviser votre présentation d'investissement. 
+								Chez Bheti Connect, Nous examinons des centaines de présentations d'investissement chaque année et mettons à profit notre expertise pour vous aider à élaborer ou à réviser votre présentation d'investissement. 
 								Avec notre aide, votre pitch deck sera clair, concis et convaincant pour les investisseurs.
 								</p>
 								<div className='need-container'>
 									<div className='need-pitch'>
 										<Button 
 												name={'J’ai besoin d’un pitch'}
-												
 										/>
 									</div>
 								</div>
