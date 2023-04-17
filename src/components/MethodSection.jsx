@@ -49,6 +49,16 @@ const MethodSectionStyled = styled.section`
         grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
         grid-gap: 2rem;
         padding-top: 3rem;
+        @media only screen and (max-width: 2560px) {
+            grid-template-columns: auto auto auto;
+            width: 90%;
+            margin:auto;
+        }
+
+        @media only screen and (max-width: 768px) {
+            grid-template-columns: none;
+        }
+
         @media only screen and (max-width: 425px) {
             margin-left: -4vw ;
         }
