@@ -195,8 +195,8 @@ const JoinCommunityStyled = styled.div`
                     width: 200px;
                     height: 280px;
                     margin:auto;
-                    /*margin-left: 0;
-                    /*margin-top: -100px;
+                    /*margin-left: 0;*/
+                    /*margin-top: -100px;*/
                 }
                 
                 @media only screen and (max-width: 425px){
