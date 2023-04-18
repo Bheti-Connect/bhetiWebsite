@@ -165,12 +165,11 @@ const JoinCommunityStyled = styled.div`
                     margin-top: -100px;
                 }
                 @media only screen and (max-width: 600px) {
-                    width: 200px;
+                    width: 400px;
                     height: 280px;
-                    margin:auto;
-                    /*margin-left: 0;*/
-                    /*margin-top: -100px;*/
+                    justify-content: center;
                 }
+
                 
                 @media only screen and (max-width: 425px){
                     width: 300px;
@@ -190,6 +189,10 @@ const JoinCommunityStyled = styled.div`
                     margin-left: -130px;
                 }
             }
+
+
+
+
             .latest-text{
                 width: 500px;
                 margin-left: 4rem;
@@ -238,6 +241,7 @@ const JoinCommunityStyled = styled.div`
                             }
                         }
                     }
+                    
                 }
                 .anchor-tag{
                     margin-left: 25%;
@@ -283,6 +287,7 @@ const JoinCommunityStyled = styled.div`
                     margin-top: 70%;
                 }
                 @media only screen and (max-width: 600px){
+
                     width: 320px;
                     height: 400px;
                     margin-left: -160px;
@@ -292,10 +297,21 @@ const JoinCommunityStyled = styled.div`
                         font-size: 1.0rem;
                     }
 
-                    .slack-div {
-                        .left-side {
-                            font-size: 15px;
+                    .community{
+                        .inner{
+                        .left-side{
+                            .paragraphs{
+                                font-size: 15px;
+                            }
                         }
+                        .right-side{
+                            margin: 0 30px;
+                            .social-icon{
+                                width: 20px;
+                                height: 20px;
+                            }
+                        }
+                    }
                     }
 
                 }
@@ -326,6 +342,14 @@ const JoinCommunityStyled = styled.div`
                     @media only screen and (max-width: 375px) {
                         margin-left: -60px;
                     }
+                }
+            }
+
+            @media only screen and (max-width: 600px) {
+                grid-template-columns: 40% 40rem;
+                padding-bottom: 2rem;
+                .latest-text{
+                    width: 55%;
                 }
             }
         }
