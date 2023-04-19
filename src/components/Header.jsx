@@ -228,9 +228,10 @@ const HeaderStyled = styled.header`
             }
             @media only screen and (max-width: 320px){
                     margin-top: -10%;
-                    text-align: justify;
+                    text-align: left;
                     h2{
                         font-size: 27px;
+                        margin-left:5%;
                     }
                     p{
                         font-size: 15.5px;
@@ -502,7 +503,7 @@ const HeaderStyled = styled.header`
             @media only screen and (max-width: 320px) {
                 width: 325px;
                 margin-top: 38%;
-                margin-left: -12%;
+                margin-left: -34%;
             }
         }
         @media only screen and (max-width: 2560px) and (min-width: 1800px) {
