@@ -95,9 +95,7 @@ const AboutSectionStyled = styled.section`
             }
             @media only screen and (max-width: 960px){
                 font-size: 1.9rem;
-                margin-bottom: 8%;
-                margin-top: -25%;
-                margin-left: 60px;
+                margin: -1% 0 8% -6%;
             }
             @media only screen and (max-width: 768px){
                 font-size: 1.9rem;
