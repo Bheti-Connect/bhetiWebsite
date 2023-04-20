@@ -27,12 +27,12 @@ const AboutSection = () => {
         }, [index])
     return (
         <AboutSectionStyled  theme={theme}>
-            <div className='upper-container'>
+            {/* <div className='upper-container'>
                 <h3 className='title'>
                     Développez et financez vos projets
                 </h3>
                 <h4>Grâce à la plateforme BHC, accédez à un écosystème composé d’experts, d’outils et d’informations… Bref, tout ce qu’il vous faut pour trouver du financement.</h4>
-            </div>
+            </div> */}
             <div className='lower-container'>
                 <div className='leftSide'>
                     <div className='inner-container'>
@@ -332,7 +332,7 @@ const AboutSectionStyled = styled.section`
     .lower-container{
         display: flex;
         position: relative;
-        width: 90%;
+        width: 100%;
         margin: auto;
         .leftSide{
             position: relative;
