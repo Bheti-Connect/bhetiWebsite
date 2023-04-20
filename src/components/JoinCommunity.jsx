@@ -12,7 +12,6 @@ const JoinCommunity = () => {
 
         <JoinCommunityStyled theme={theme}>
             <div className='title-con'>
-              
                 <Title 
                     name={'Rejoignez notre communauté'}
                     subtext="Si vous souhaitez identifier d’autre porteurs de projets en Afrique francophone ou dans la diaspora, 
@@ -65,86 +64,236 @@ const JoinCommunity = () => {
 }
 
 const JoinCommunityStyled = styled.section`
+    display: flex; 
+    position: relative;
+    flex-direction: column;
+    margin-bottom: 1em;
     
-    height: 100%;
-    min-
     .title-con{
-        font-size : clamp(1rem, 3vw, 2rem);
+        font-size : clamp(1rem, 1vw, 2rem);
+        @media screen and (max-width: 380px) {
+            font-size : 10px;
+            width: 100%;
+            text-align: center; 
+            padding: 3px;
+            
+          }
+        
+        h3 {
+            font-size : clamp(1rem, 2vw, 2rem);
+            @media screen and (max-width: 380px) {
+                font-size : 20px;
+                width: 100%;
+                text-align: center; 
+                padding: 3px;
+                
+              }
+
+          }
+
+
     }
     .latest-container{
         margin-top: 1.5rem;
         display: flex;
-        height: 80%;
-        background-color: white;
+        height: 50vh;
         border-radius: 3px;
-        flex-wrap: wrap;
         justify-content	: center;
         align-items: center;
         flex-direction: row;
 
-        @media screen and (max-width: 268px) {
-            flex-direction: column;
-          }
-
         .latest-content{
             background-color: black;
-            width: 70%;
-            display : flex;
-            flex-direction: row;
-            align-content: center;
+            display: flex;
+            width: 60%;
+            height: 100%;
+            gap: 2rem;
+
+            @media screen and (max-width: 1780px) {
+                flex-direction: column;
+                margin: 0 auto;
+                height: 100%;
+                
+              }
+           
+            @media screen and (max-width: 912px) {
+                flex-direction: column;
+                box-sizing: border-box;
+              }
+
+            @media screen and (max-width: 280px) {
+                flex-direction: column;
+                width: 100%;
+                
+              }
 
             .img-com-div {
                 width: 100%;
-                border-radius: 10px;
-                object-fit: cover;
+                border-radius: 30px;
                 display: flex;
-                justify-content : center;
-
-             
+                justify-content : center; 
+                align-items center;  
+                
+                @media screen and (max-width: 1780px) {
+                    height: 50%;
+                    
+                  }
+               
+                @media screen and (max-width: 912px) {
+                    width: 100%;
+                    height: 50%;
+                  }
 
                 img{
-                    width: 70%;
+                    width: 90%;
+                    padding: 10px;
+                    height: 70%;
                     border-radius: 10px;
                     object-fit: cover;
-                    
+
+                    @media screen and (max-width: 1780px) {
+                        width: 100%;
+                        height: 70%;
+                        
+                      }
+                   
+                    @media screen and (max-width: 912px) {
+                        width: 100%;
+                        height: 100%;
+                      }
+
                 }
                 
             }
 
             .latest-text{
+                display: flex;
                 flex-direction: column;
+                height: auto;
+                box-sizing: content-box;
+                justify-content: center;
+
+
+                @media screen and (max-width: 1780px) {
+                    
+                  }
+               
+                @media screen and (max-width: 912px) {
+                    
+                  }
             
+                @media screen and (max-width: 1780px) {
+                    
+                  }
+               
+                @media screen and (max-width: 375px) {
+                    
+                  }
+
                 h4{
                     color: ${props => props.theme.colorWhite};
-                    font-size: 1.5rem;
-                    padding-bottom: 1.5rem;
-                }
-                h6{
-                    padding-bottom: .2rem;
-                    color: ${props => props.theme.colorClothes};
-                    font-size: 1.2rem;
+                
+                    padding-bottom: 1.5vh;
+
+
+                    @media screen and (max-width: 1780px) {
+                    
+                    }
+                 
+                  @media screen and (max-width: 912px) {
+                      
+                    }
+              
+                  @media screen and (max-width: 1780px) {
+                      
+                    }
+                 
+                  @media screen and (max-width: 375px) {
+                      
+                    }
                 }
                 p{  
                     color: ${props => props.theme.colorGrey4};
-                    padding-bottom: 1.5rem;
+                    padding-bottom: 1.5vh;
+
+                                    @media screen and (max-width: 1780px) {
+                    
+                  }
+               
+                @media screen and (max-width: 912px) {
+                    
+                  }
+            
+                @media screen and (max-width: 1780px) {
+                    
+                  }
+               
+                @media screen and (max-width: 375px) {
+                    
+                  }
                 }
                 .community{
+                    display: flex;
+                    flex-direction: column;
+                    box-sizing: content-box;
+                    padding: 5px;
+                    
                     .inner{
                        display: flex;
                         .left-side{
                             width: 90%;
                             .paragraphs{
                                 font-size: 18px;
+                                
+                                @media screen and (max-width: 1024px) {
+                                    font-size: 2vh;
+                                    
+                                  }
+
+                                @media screen and (min-width: 912px) {
+                                    font-size: 1.5vh;
+                                    
+                                  }
+
+                                @media screen and (max-width: 912px) {
+                                    font-size: 1vh;
+                                    
+                                  }
                             }
                         }
                         .right-side{
                             margin: 0 30px;
                             color: ${props => props.theme.colorGrey2};
+                            text-align: center;
+
+                            @media screen and (max-width: 280px) {
+                                font-size: 2vh;
+                                
+                              }
+                            
                             .social-icon{
                                 width: 50px;
                                 height: 50px;
                                 color: ${props => props.theme.colorGrey2};
                                 cursor: pointer;
+                                align-items:center;
+
+                                @media screen and (max-width: 1024px) {
+                                    width: 15px;
+                                    height: 15px;
+                                  }
+
+                                @media screen and (max-width: 912px) {
+                                    width: 30px;
+                                    height: 30px;
+                                    
+                                  }
+
+                                  @media screen and (max-width: 280px) {
+                                    width: 15px;
+                                    height: 15px;
+                                    
+                                  }
                             }
                             .slack:hover{
                                     color: ${props => props.theme.colorSlack};
@@ -159,44 +308,11 @@ const JoinCommunityStyled = styled.section`
                         }
                     }
                 }
-                .anchor-tag{
-                    margin-left: 25%;
-                    @media only screen and (max-width: 425px) and (min-width: 320px){
-                        margin-left: -15%;
-                        width: 200px;
-                    }
-                }
                
-                .anchor-tag {
-                    margin-top: 40px;
-                    margin: 1;
-                }
             }
         }
     }
-    .latest-controlls{
-        display: flex;
-        justify-content: center;
-        margin-top: 2.5rem;
-        .control{
-            width: 1rem;
-            height: 1rem;
-            border-radius: 50%;
-            margin: 0 0.2rem;
-            cursor: pointer;
-        }
-        .control-1{
-            background-color: ${props => props.theme.colorAccent};
-        }
-        .control-2{
-            background-color: ${props => props.theme.colorGrey9};
-            transform: scale(0.85);
-        }
-        .control-3{
-            background-color: ${props => props.theme.colorGrey9};
-            transform: scale(0.6);
-        }
-    }
+    
 `;
 
 export default JoinCommunity;
