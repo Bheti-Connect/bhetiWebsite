@@ -19,10 +19,10 @@ const AboutSection = () => {
 
     useEffect(() => {
         if (index < fullText.length) {
-            setTimeout(() => {
-                setText(text + fullText[index])
-                setIndex(index + 1)
-            }, 40)
+                setTimeout(() => {
+                    setText(text + fullText[index])
+                    setIndex(index + 1)
+                }, 40)
             }
         }, [index])
     return (
@@ -52,40 +52,23 @@ const AboutSection = () => {
 const AboutSectionStyled = styled.section`
     display: grid;
     background: ${props => props.theme.colorBlack};
-    grid-template-columns: 1fr 1fr;
-    grid-gap: 2rem;
+    grid-template-columns: auto;
+    grid-gap: 1rem;
     text-align: center;
-    padding-top: 10rem !important;
-    @media only screen and (max-width: 2560px) and (min-width: 1800px) {
-            height: 800px;
-        }
-    @media only screen and (max-width: 1800px) and (min-width: 1440px) {
-            height: 800px;
-        }
-    .left-about{
-        width: 90%;
-        margin-left: 10%;
-       
-        h3{
+    /*padding-top: 10rem !important;*/
+
+    .upper-container{
+        width: 60%;
+        margin: auto;
+        margin-top:50px;
+
+        h4{
             color: ${props => props.theme.colorWhite};
         }
-        h4{
-            width: 50%;
-            color: ${props => props.theme.colorWhiteIsh};
-        }
-        p{
-            padding: 1.5rem 0;
-            font-size: 17.7px;
-            color: ${props => props.theme.colorGrey5};
-            @media only screen and (max-width: 525px) and (min-width: 425px){
-                padding: 1rem 0;
-                font-size: 14px;
-                margin-left: 35px;
-            }
-        }
-        
+
         .title{
             /*margin-left: 10%;*/
+            color: ${props => props.theme.colorWhite};
             margin-bottom: 3%;
             font-size: 1.6rem;
             @media only screen and (max-width: 2560px){
@@ -112,9 +95,7 @@ const AboutSectionStyled = styled.section`
             }
             @media only screen and (max-width: 960px){
                 font-size: 1.9rem;
-                margin-bottom: 8%;
-                margin-top: -25%;
-                margin-left: 60px;
+                margin: -1% 0 8% -6%;
             }
             @media only screen and (max-width: 768px){
                 font-size: 1.9rem;
@@ -122,14 +103,14 @@ const AboutSectionStyled = styled.section`
                 margin-top: -10%;
                 margin-left: 50px;
             }
-/* ---------------------------------------------------------------------- */
+
             @media only screen and (max-width: 600px){
                 font-size: 1.9rem;
                 margin-bottom: 5%;
                 margin-top: -10%;
                 width: 150px;
             }
-/* ---------------------------------------------------------------------- */
+
             @media only screen and (max-width: 425px){
                 font-size: 1.2rem;
                 margin-bottom: 5%;
@@ -150,6 +131,36 @@ const AboutSectionStyled = styled.section`
                 margin-left: 50px;
             }
         }
+    }
+
+    @media only screen and (max-width: 2560px) and (min-width: 1800px) {
+        height: 800px;
+    }
+    @media only screen and (max-width: 1800px) and (min-width: 1440px) {
+            height: 800px;
+        }
+    .left-about{
+        width: 90%;
+        margin-left: 10%;
+       
+        h3{
+            color: ${props => props.theme.colorWhite};
+        }
+        h4{
+            width: 50%;
+            color: ${props => props.theme.colorWhiteIsh};
+        }
+        p{
+            padding: 1.5rem 0;
+            font-size: 17.7px;
+            color: ${props => props.theme.colorGrey5};
+            @media only screen and (max-width: 525px) and (min-width: 425px){
+                padding: 1rem 0;
+                font-size: 14px;
+                margin-left: 35px;
+            }
+        }
+    
         .sub_div{
             margin: 100px 0;
             text-align: left;
@@ -341,19 +352,21 @@ const AboutSectionStyled = styled.section`
                 background-color: ${props =>props.theme.colorBg};
                 align-items: flex-start;
                 position: relative;
-                width: 80%;
-                margin: 30% auto;
+                width: 100%;
+                margin: 25% auto;
                 padding: 100px 50px;
+                text-align: center;
             }
         }
         .rightSide{
             position: relative;
             .image-div{
                 width: 20%;
-                margin: 120px auto;
+                margin: 20px auto;
                 .about-img{
                     width: 25vw;
                     height: 35vw;
+                    border-radius: 2% 0 2% 20%;
                 }
             }
         }
