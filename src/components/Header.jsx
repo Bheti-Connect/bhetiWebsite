@@ -10,8 +10,8 @@ const Header = () => {
     const theme = useTheme()
     return (
         <HeaderStyled theme={theme}>
-            
             <div className='header-content'>
+                
                 <div className='text'>
                     <h2>
                         Trouvez du <span>financement</span> avec nous
@@ -46,11 +46,26 @@ justify-content: center;
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
+    gap: 2em;
+
+    @media screen and (max-width: 912px) {
+        flex-direction: column;
+        }
+
+    @media screen and (max-width: 820px) {
+        flex-direction: column;
+        }
 
 
     .text {
         flex: 1;
         padding-right: 20px;
+
+
+        @media screen and (max-width: 540px) {
+            font-size: 10px;
+
+            }
 
         animation: contentHide 1.5s ease-in-out;
             @keyframes contentHide {
@@ -68,7 +83,11 @@ justify-content: center;
             font-size: 4rem;
             margin-bottom: 20px;
             font-family: 'Cinzel', serif;
-            text-align: center;
+            text-align : center;
+
+            @media screen and (max-width: 540px) {
+                font-size: 2rem;
+                }
 
             span{
                 background:${props => props.theme.colorGradientPrimary3};;
@@ -77,9 +96,11 @@ justify-content: center;
                 -webkit-background-clip: text;
                 color: transparent;
             }
-
         }
- 
+
+        p {
+            text-align: center;
+        }
     }
 
     .images {
@@ -106,12 +127,21 @@ justify-content: center;
         &:hover{
             .h-img-2{
                 transform: scale(0.9);
+                @media screen and (max-width: 540px) {
+                    transform: none;
+                    }
             }
             .h-img-1{
                 transform: scale(1.1);
+                @media screen and (max-width: 540px) {
+                    transform: none;
+                    }
             }
         }
 
+        @media screen and (max-width: 540px) {
+            width: 80%;
+            }
 
         .h-img-1 {
             width: 48%;
@@ -125,6 +155,21 @@ justify-content: center;
             border-top-left-radius: 5px;
             transition: all .4s ease-in-out;
 
+            @media screen and (max-width: 912px) {
+                border-bottom-right-radius: 0px;
+                border-bottom-left-radius: 0px;
+                border-top-right-radius: 0px;
+                border-top-left-radius: 0px;
+                }
+            
+            @media screen and (max-width: 540px) {
+                
+                border-bottom-right-radius: 0px;
+                border-bottom-left-radius: 0px;
+                border-top-right-radius: 0px;
+                border-top-left-radius: 0px;
+                
+                }
 
         }
 
@@ -139,6 +184,24 @@ justify-content: center;
             border-top-left-radius: 5px;
             border-top-right-radius: 5px;
             transition: all .4s ease-in-out;
+
+            @media screen and (max-width: 912px) {
+                margin: 2%;
+                border-bottom-right-radius: 0px;
+                border-bottom-left-radius: 0px;
+                border-top-left-radius: 0px;
+                border-top-right-radius: 0px;
+                }
+
+            @media screen and (max-width: 540px) {
+                margin: 2%;
+                border-bottom-right-radius: 0px;
+                border-bottom-left-radius: 0px;
+                border-top-left-radius: 0px;
+                border-top-right-radius: 0px;
+                
+                }
+
 
         }
 
