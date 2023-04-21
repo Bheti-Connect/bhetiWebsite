@@ -46,11 +46,10 @@ const ButtonStyled = styled.button`
         }
     }
     @media only screen and (max-width: 425px) {
-        width: 80%;
+        width: 100%;
     }
     @media only screen and (max-width: 375px){
                     top: 1%;
-                    margin-left: 20%;
                     margin-bottom: 5%;
                 }
     

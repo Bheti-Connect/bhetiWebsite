@@ -2,7 +2,7 @@ import {useState, useEffect} from 'react'
 import styled from 'styled-components'
 import Button from '../Button';
 import { useTheme } from '../../context/themeContext';
-
+import { Link } from 'react-router-dom';
 
 const Accueil = () => {
     const theme = useTheme();
@@ -23,26 +23,29 @@ const Accueil = () => {
     return (
         <AccueilStyled  theme={theme}>
             <div className='first-container'>
-                <div className='headache'>
+                <div className='head'>
                     <div className='centered mobile-view'>
                         <h1><b>{text}</b></h1>
                     </div>
                     <div className='text-highlighted paragraph'>
                         <p>
-                        Avec des données, des outils et des conseils, libérez le potentiel de votre entreprise en toute autonomie ou avec un accompagnement dédié de nos experts et 
-                        obtenez les financements dont vous avez besoin pour faire décoller votre projet.
+                            Avec des données, des outils et des conseils, libérez le potentiel de votre entreprise en toute autonomie ou avec un accompagnement dédié de nos experts et 
+                            obtenez les financements dont vous avez besoin pour faire décoller votre projet.
                         </p>
                     </div>
                 </div>
                 
                 <div className='button-demo'>
+                    <Link
+                        to={'/decouvrir-bheti-connect'}
+                    >
                         <Button 
                             name={'🚀 Découvrir la plateforme'}
                             icon={'fas fa-chevron-right'}
                             arrow={'arrow'}
-                            blob={'blob'}
                         />
-                    </div>
+                    </Link>
+                </div>
             </div>
         </AccueilStyled>
     )
@@ -54,7 +57,7 @@ const AccueilStyled = styled.section`
     }
 
         .first-container{
-        .headache {
+        .head {
             display: block;
             position: relative;
             margin: auto;
@@ -95,30 +98,19 @@ const AccueilStyled = styled.section`
                 }
                 @media only screen and (max-width: 1024px) {
                     width: 74vw;
-                    font-size: 38px; 
+                    font-size: 37px; 
                 }
-                
                 @media only screen and (max-width: 768px){
                     width: 70vw;
                     font-size: 30px;
                     color: ${props => props.theme.colorBlack}; 
                 }
-                
-                @media only screen and (max-width: 440px){
-                    font-size: 30px;
-                }
             }
             .mobile-view {
                 @media only screen and (max-width: 425px){
-                    width: 80vw;
-                    font-size: 1.8em;
+                    width: 90vw;
+                    font-size: 1.6em;
                     margin: 0 auto;
-                    color: ${props => props.theme.colorBlack};
-                }
-                @media only screen and (max-width: 375px){
-                    display: block;
-                    left: 4vw;
-                    font-size: 22px;
                     color: ${props => props.theme.colorBlack};
                 }
                 @media only screen and (max-width: 320px){
@@ -149,19 +141,14 @@ const AccueilStyled = styled.section`
             }
             @media only screen and (max-width: 768px){
                 font-size: 1.01rem;
-                width: 70vw;
+                width: 75vw;
                 margin-top: 20px;
             }
             @media only screen and (max-width: 430px) {
-                font-size: 1.02rem;
+                font-size: 1rem;
                 position: relative;
                 text-align: justify;
-                width: 290px;
-            }
-            @media only screen and (max-width: 375px) {
-                position: relative;
-                width: 290px;
-                margin-left: 30px;
+                width: 80vw;
             }
             @media only screen and (max-width: 320px) {
                 position: relative;
@@ -180,34 +167,26 @@ const AccueilStyled = styled.section`
             }
             @media only screen and (max-width: 500px){
                 position: relative;
-                width: 80%;
-                margin: 20px  auto;
-            }
-
-            @media only screen and (max-width: 425px){
-                position: relative;
                 width: 100%;
                 margin: 20px  auto;
             }
-            @media only screen and (max-width: 375px){
+            @media only screen and (max-width: 425px){
                 position: relative;
-                width: 80%;
+                width: 90%;
                 margin: 20px  auto;
             }
         }
-
         @media only screen and (max-width: 1440px){
             position: relative;
         }
         @media only screen and (max-width: 768px) {
             width: 80vw;
-            margin-left: 50px;
+            margin: 4px auto;
         }
         @media only screen and (max-width: 425px) {
             width: 80%;
         }
     }
-    
 `;
 
 export default Accueil;

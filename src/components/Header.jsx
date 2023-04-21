@@ -18,18 +18,6 @@ const Header = () => {
                     <p className='sub-title'>
                         Réseaux, outils, stratégie. Un accompagnement pour réussir chaque étape de votre levée de fonds
                     </p>
-                    <div className='button-demo'>
-                        {/* <Link
-                        to='/evaluer-eligibilite'
-                        >
-                            <Button 
-                                name={'Je réserve une demo'}
-                                icon={'fas fa-chevron-right'}
-                                arrow={'arrow'}
-                                blob={'blob'}
-                            />
-                        </Link> */}
-                    </div>
                 </div>
                 <div className='box right-h-content'>
                     <img className='h-img-1' src={premiereImg} alt='image-1' />
@@ -63,6 +51,11 @@ const HeaderStyled = styled.header`
     @media only screen and (max-width: 768px){
         height: 74vh;
     }
+
+    @media only screen and (max-width: 600px) {
+        height: 90vh;
+    }
+
     @media only screen and (max-width: 425px) {
         height: 90vh;
     }
@@ -107,9 +100,12 @@ const HeaderStyled = styled.header`
                 font-weight: bold;
                 font-family: 'Roboto', sans-serif;
                 @media only screen and (max-width: 376px){
-                    margin-left: 6%;
+                    margin-left: 0;
                     margin-right: 6%;
                     text-align: justify;
+                }
+                @media only screen and (max-width: 320px) {
+                    margin-left: 6%;
                 }
             }
             @media only screen and (max-width: 2560px) and (min-width: 1800px) {
@@ -205,9 +201,10 @@ const HeaderStyled = styled.header`
             @media only screen and (max-width: 525px) and (min-width: 425px) {
                     margin-top: -10%;
                     margin-left: -9.6%;
-                    text-align: justify;
+                    text-align: left;
+                    width: 310px;
                     h2{
-                        font-size: 37px;
+                        font-size: 28px;
                     }
                     p{
                         font-size: 16px;
@@ -216,21 +213,25 @@ const HeaderStyled = styled.header`
             }
             @media only screen and (max-width: 425px){
                     margin-top: -10%;
-                    margin-left: -12.5%;
-                    text-align: justify;
+                    margin-left: -10.5%;
+                    text-align: left;
+                    
                     h2{
                         font-size: 28px;
                     }
                     p{
-                        font-size: 15px;
+                        font-size: 16px;
                         margin-top: -20px;
                     }
+
+
             }
             @media only screen and (max-width: 320px){
                     margin-top: -10%;
-                    text-align: justify;
+                    text-align: left;
                     h2{
                         font-size: 27px;
+                        margin-left:5%;
                     }
                     p{
                         font-size: 15.5px;
@@ -481,28 +482,29 @@ const HeaderStyled = styled.header`
                 width: 280px;
             }
             @media only screen and (max-width: 525px) and (min-width: 425px){
-                margin-left: -3%;
-                margin-top: 30%;
+                margin-left: -8%;
+                margin-top:  60%;
+                width: 100%;
             }
             @media only screen and (max-width: 425px){
-                margin-left: -16%;
+                margin-left: -52%;
                 margin-top:  35%;
-                width: 370px;
+                width: 100%;
             }
             @media only screen and (max-width: 400px){
-                margin-left: -14%;
+                margin-left: -52%;
                 margin-top: 34%;
-                
+            
             }
             @media only screen and (max-width: 375px){
-                margin-left: -16.5%;
+                margin-left: -34%;
                 margin-top: 45%;
                 width: 370px;
             }
             @media only screen and (max-width: 320px) {
                 width: 325px;
                 margin-top: 38%;
-                margin-left: -12%;
+                margin-left: -34%;
             }
         }
         @media only screen and (max-width: 2560px) and (min-width: 1800px) {
@@ -534,7 +536,7 @@ const HeaderStyled = styled.header`
             @media only screen and (max-width: 525px) and (min-width: 425px) {
                 display: flex ;
                 position: relative;
-                margin-left: -200px;
+                margin-left: 56px;
                 .box {
                     position: absolute;
                     .right-h-content{

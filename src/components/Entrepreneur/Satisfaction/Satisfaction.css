@@ -110,7 +110,7 @@ a:link,a:active,a:visited,a:hover{
 }
 .review h4
 {
-	font-size: 1.4rem;
+	font-size: 1.15rem;
 	color: #ECF0F1;
     font-weight: 600;
     line-height: 1.5;
@@ -120,25 +120,27 @@ a:link,a:active,a:visited,a:hover{
 	color:#4B5258;
 }
 .impression
-{
-	font-size: 0.95rem;
-    color: #ECF0F1;
-    font-weight: 500;
-    opacity: 50%;
-    line-height: 1.5;
+	{
+		font-size: 0.95rem;
+		font-weight: 500;
+		opacity: 50%;
+		line-height: 1.48;
+	}
+.light-color{
+	color: white !important;
 }
 .review.dark p{
 	color: #0e0e0e;
 }
 .attribution
-{
-	font-size: 1rem;
-    line-height: 1.5;
-    position: fixed;
-    bottom: 1rem;
-    right: 1rem;
-    text-align: right;
-}
+	{
+		font-size: 1rem;
+		line-height: 1.5;
+		position: fixed;
+		bottom: 1rem;
+		right: 1rem;
+		text-align: right;
+	}
 .attribution a
 {
 	text-decoration: none;
@@ -146,35 +148,49 @@ a:link,a:active,a:visited,a:hover{
 .section-title {
 	margin-top: 3%;
 }
+@media only screen and (min-width: 1800px)
+	{
+		.innerdiv
+		{
+			transform: scale(1.1);
+		}
+	}
+@media only screen and (max-width: 1250px)
+	{
+		.innerdiv
+		{
+			transform: scale(0.85);
+		}
+	}
 @media only screen and (max-width: 1000px)
-{
-	.innerdiv
 	{
-		transform: scale(0.7);
+		.innerdiv
+		{
+			transform: scale(0.75);
+		}
 	}
-}
 @media only screen and (max-width: 800px)
-{
-	.innerdiv
 	{
-		transform: scale(0.6);
+		.innerdiv
+		{
+			transform: scale(0.6);
+		}
 	}
-}
-@media only screen and (max-width: 600px)
-{
-	.div1 {
-		background-position-x: 10rem;
-	}
-	.innerdiv
+@media only screen and (max-width: 900px)
 	{
-		display: flex; 
-		flex-direction: column;
-		transform: scale(1);
-		margin: 2rem;
-		margin-bottom: 5rem;
+		.div1 {
+			background-position-x: 10rem;
+		}
+		.innerdiv 
+		{
+			display: flex; 
+			flex-direction: column;
+			transform: scale(1);
+			margin: 2rem;
+			margin-bottom: 5rem;
+		}
+		.attribution
+		{
+			position: relative;
+		}
 	}
-	.attribution
-	{
-		position: relative;
-	}
-}

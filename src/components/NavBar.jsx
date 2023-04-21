@@ -93,11 +93,11 @@ const NavBarStyled = styled.nav`
             visibility: hidden;
             animation-fill-mode: forwards;
             .theLogo{
-                margin-top: 10%;
-                width: 55%;
-                @media only screen and (max-width: 440px) and (min-width: 320px) {
-                    width: 100%;
-                    margin-left: -30px;
+                margin-top: 12%;
+                width: 60%;
+                margin-right: 10rem;
+                @media only screen and (max-width: 440px) {
+                    width: 70%;
                 }
             }
 }
@@ -189,14 +189,12 @@ const NavBarStyled = styled.nav`
     .link:hover {
         color: ${props => props.theme.colorBheti};
     }
-
     .connexion-hover{
         border: 2px solid ${props => props.theme.colorBheti};
-        padding: 5px;
+        padding: 5px 15px;
         border-radius: 50px;
         margin-top: 10px;
         transition: .3s;
-
         &:hover{
             background-color: ${props => props.theme.colorBheti};
             color: ${props => props.theme.colorWhite};
@@ -274,6 +272,19 @@ const NavBarStyled = styled.nav`
     }
 }
 
+@media only screen and (max-width: 768px){
+    .hero{
+        .logo{
+            width: 47%;
+        }
+        margin-left: -7vw;
+    }
+}
+@media only screen and (max-width: 425px){
+    .hero{
+        margin-left: -8vw;
+    }
+}
 `;
 
 export default NavBar
