@@ -62,28 +62,8 @@ const AboutSectionStyled = styled.section`
         h4{
             color: ${props => props.theme.colorWhite};
             width: 100%;
-            @media only screen and (max-width: 2560px){
-            
-            }
-            @media only screen and (max-width: 1800px){
-          
-            }
-            @media only screen and (max-width: 1440px){
-             
-            }
-            @media only screen and (max-width: 1350px){
-           
-            }
-            @media only screen and (max-width: 1024px){
-            
-      
-            }
-            @media only screen and (max-width: 960px){
-        
-            }
             @media only screen and (max-width: 768px){
                 font-size: 18px;
-                
             }
             @media only screen and (max-width: 600px){
                 font-size: 15px;
