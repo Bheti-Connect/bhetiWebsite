@@ -63,7 +63,7 @@ const MethodSectionStyled = styled.section`
             margin-left: -4vw ;
         }
         @media only screen and (max-width: 376px) {
-            margin-left: 12vw ;
+            margin-left: -3vw ;
         }
     }
 

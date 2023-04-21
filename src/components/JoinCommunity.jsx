@@ -197,8 +197,6 @@ const JoinCommunityStyled = styled.div`
             }
 
 
-
-
             .latest-text{
                 width: 500px;
                 margin-left: 4rem;
