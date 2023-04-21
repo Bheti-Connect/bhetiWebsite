@@ -24,7 +24,7 @@ const Advantages = () => {
 								<h3 className='card_title offre'>
 									Offre impact à 29,99€/mois HT ou 329,99 € annuel (économisez 29,99€ avec l’offre annuelle)
 								</h3>
-								<p className='paragraph '>
+								<p className='paragraph'>
 									Économisez du temps et de l'argent tout en maximisant vos chances de succès !
 								</p>
 								<div className='need-pitch'>

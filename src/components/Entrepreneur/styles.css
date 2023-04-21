@@ -214,7 +214,7 @@ p{
 .paragraph {
 	font-family: sans-serif;
 	font-weight: 300;
-	line-height: 1.40;
+	line-height: 1.20;
 }
 
 .btn {
@@ -254,6 +254,10 @@ p{
 	.upper_container{
 		width: 80vw;
 		margin: auto;
+	}
+	.offer-detail{
+		width: 80%;
+		font-size: 15.4px !important;
 	}
 	.need-pitch{
 		margin: auto;
@@ -297,7 +301,7 @@ p{
 	}
 	.offre{
 		width: 98%;
-		font-size: 2.6vw;
+		font-size: 2.4vw;
 		margin: 3% auto;
 	}
 	.need-pitch{
@@ -328,6 +332,44 @@ p{
 	}
 }
 
+@media only screen and (max-width: 768px) {
+	.card__content{
+		width: 100%;
+	}
+	.card__content > div {
+		width: 100%;
+	}
+	.card__content > figure{ 
+		width: 100%;
+	}
+	.card__content1{
+		padding: 5px;
+	}
+	.card_title{
+		font-size: 1.3em;
+		margin-left: 16px;
+		margin-top: 15px;
+	}
+	.offre {
+		width: 90%;
+		font-size: 4.7vw;
+		margin: 3% auto;
+	}
+	.offer{
+		width: 50%;
+	}
+	.offer-icon{
+		width: 50px;
+	}
+	.offer-detail{
+		width: 80%;
+		font-size: 14px !important;
+	}
+	.paragraph{
+		margin: auto;
+		width: 90%;
+	}
+}
 
 @media only screen and (max-width: 440px) {
 	body {
@@ -335,24 +377,33 @@ p{
 	}
 	#cards {
 		display: block;
-		margin-top: -65vh;
+		margin-top: -55vh;
 	}
+	
 	.btn{
 		margin-bottom: 10px;
 		margin-left: 10px;
 	}
-	.card_title{
-		font-size: .9em;
-		margin-left: 5px;
-		margin-top: 8px;
+	.need-container{
+		width: 100%;
+	}
+	.help{
+		width: 55%;
 	}
 	.paragraph{
-		margin: 0px 0px 12px 3px;
+		font-size: .75em !important;
+		width: 60vw;
 	}
-}
-
-@media only screen and (max-width: 375px){
-	#cards {
-		margin-top: -60vh;
+	.offer-detail{
+		width: 90%;
+		font-size: 12px !important;
+	}
+	.paragraph__other__style{
+		position: relative;
+		width: 70vw;
+		margin: 0 15px;
+	}
+	.need-previsionnel{
+		width: 60vw;
 	}
 }

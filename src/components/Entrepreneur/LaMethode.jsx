@@ -53,12 +53,6 @@ const LaMethodeStyled = styled.section`
     grid-template-columns: 1fr 1fr;
     grid-gap: 2rem;
     margin-top: 18rem;
-    @media only screen and (max-width: 768px){
-        padding-top: 0rem;
-        padding-left: 1rem;
-        padding-right: 15rem;
-        padding-bottom: 0rem;
-        }
     .top-container{
         position: relative;
         margin: auto;
@@ -90,13 +84,17 @@ const LaMethodeStyled = styled.section`
                     font-size: 17px;
                 }
                 .title{
-                    font-size: 1.1rem;
-                    width: 89vw;
+                    font-size: 3.9vw;
+                    width: 70vw;
+                    margin: 5% auto;
                 }
         }
-        @media all and (max-width: 525px){
-            width: 300px;
-            margin: auto;
+        @media only screen and (max-width: 500px) {
+            .title{
+                    font-size: 4.3vw;
+                    width: 80vw;
+                    margin: 10% auto;
+                }
         }
     }
     .bottom-container{
@@ -125,11 +123,6 @@ const LaMethodeStyled = styled.section`
             @media screen and (min-width: 768px) {
                 width: 100vw;
             }
-            @media screen and (max-width: 525px) {
-                position: relative;
-                width: 85vw !important;
-                margin: 0px 10px;
-            }
         }
         .neighbor-div{
             img{
@@ -153,14 +146,17 @@ const LaMethodeStyled = styled.section`
         @media only screen and (max-width: 768px) {
             position: relative;
             display: inline-block;
-            width: auto;
-            margin-left: 20%;
+            width: 70%;
+            margin: 0 auto;
         }
-        @media only screen and (max-width: 525px) {
-            position: relative;
+        @media only screen and (max-width: 500px) {
+            margin: 10% auto;
         }
     }
 
+    @media only screen and (max-width: 768px) {
+        height: 100vh;
+    }
 
 `;
 
