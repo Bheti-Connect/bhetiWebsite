@@ -63,21 +63,22 @@ const MethodSectionStyled = styled.section`
             margin-left: -4vw ;
         }
         @media only screen and (max-width: 376px) {
-            margin-left: -0.2vw ;
+            margin-left: 12vw ;
         }
     }
 
     .title-con {
+        width: 60%;
+        @media only screen and (max-width: 768px) {
+            width: 100% !important;
+        }
         @media only screen and (max-width: 425px) {
-            width: 120%;
             margin-left: -28px;
         }
         @media only screen and (max-width: 400px) {
-            width: 130%;
-            margin-left: -30px;
+            margin-left: 0 !important;
         }
         @media only screen and (max-width: 375px) {
-            width: 120%;
             margin-left: -20px;
         }
     }

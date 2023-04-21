@@ -121,6 +121,7 @@ const JoinCommunityStyled = styled.div`
             padding: 10rem 10rem;
             grid-gap: 2rem;
             height: -300px;
+            
             img{
                 width: 100%;
                 border-radius: 10px;
@@ -165,6 +166,7 @@ const JoinCommunityStyled = styled.div`
                     margin-top: -100px;
                 }
                 @media only screen and (max-width: 600px) {
+                    
                     width: 400px;
                     height: 280px;
                     justify-content: center;
@@ -351,6 +353,10 @@ const JoinCommunityStyled = styled.div`
                 .latest-text{
                     width: 55%;
                 }
+            }
+
+            @media only screen and (max-width: 425px) {
+                grid-template-columns: 40% 22rem;
             }
         }
     }
