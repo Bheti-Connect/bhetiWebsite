@@ -43,27 +43,25 @@ const MethodSection = () => {
 
 const MethodSectionStyled = styled.section`
     margin: 60px 80px 100px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
     
     .methods-con{
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
         grid-gap: 2rem;
         padding-top: 3rem;
-        @media only screen and (max-width: 2560px) {
-            grid-template-columns: auto auto auto;
-            width: 90%;
-            margin:auto;
-        }
-
-        @media only screen and (max-width: 768px) {
-            grid-template-columns: none;
-        }
-
+        margin: 0 auto;
         @media only screen and (max-width: 425px) {
             margin-left: -4vw ;
         }
         @media only screen and (max-width: 376px) {
             margin-left: -0.2vw ;
+        }
+
+        @media only screen and (max-width: 280px) {
+            margin: 0 -20px;
         }
     }
 
@@ -73,12 +71,22 @@ const MethodSectionStyled = styled.section`
             margin-left: -28px;
         }
         @media only screen and (max-width: 400px) {
-            width: 130%;
+            width: 100%;
             margin-left: -30px;
         }
         @media only screen and (max-width: 375px) {
-            width: 120%;
+            width: 100%;
             margin-left: -20px;
+        }
+        @media only screen and (max-width: 280px) {
+            text-align: center;
+
+            h3 {
+                font-size: 1.5rem;
+                text-align: center;
+                margin-left: -20px;
+
+            }
         }
     }
 `;
