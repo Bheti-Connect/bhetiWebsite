@@ -20,3 +20,40 @@
 
 
 // Probably not gonna use it but let's see.
+
+// All sizes
+
+/*
+@media only screen and (max-width: 2560px){
+}
+
+@media only screen and (max-width: 1800px){
+}
+
+@media only screen and (max-width: 1440px){
+}
+
+@media only screen and (max-width: 1350px){
+}
+
+@media only screen and (max-width: 1024px){
+}
+
+@media only screen and (max-width: 960px){
+}
+
+@media only screen and (max-width: 768px){   
+}
+
+@media only screen and (max-width: 600px){
+}
+
+@media only screen and (max-width: 425px){ 
+}
+
+@media only screen and (max-width: 375px){
+}
+
+@media only screen and (max-width: 320px){
+}
+*/
