@@ -45,7 +45,7 @@ const JoinCommunity = () => {
                             <div className='inner linkedin-div'>
                                 <div className='left-side'>
                                     <p className='paragraphs linkedin'>
-                                    Accédez à un contenu d’information hebdomadaire pour positionner votre projet en fonction de l’actualité du marché économique et financier africain
+                                        Accédez à un contenu d’information hebdomadaire pour positionner votre projet en fonction de l’actualité du marché économique et financier africain
                                     </p>
                                 </div>
                                 <div className='right-side'>
@@ -90,8 +90,6 @@ const JoinCommunityStyled = styled.section`
               }
 
           }
-
-
     }
     .latest-container{
         margin-top: 1.5rem;
@@ -317,37 +315,38 @@ const JoinCommunityStyled = styled.section`
 
 export default JoinCommunity;
 
-
 /*
-
-
 
     .title-con{
         width: 1000px;
         @media only screen and (max-width: 1440px) and (min-width: 1350px) {
-            margin-left: -60px;
+            margin: auto ;
+            width: 60%;
         }
         @media only screen and (max-width: 1350px) and (min-width: 1250px) {
-            margin-left: -130px;
-            width: 1000px;
+            margin: auto ;
+            width: 60%;
         }
         @media only screen and (max-width: 1250px) and (min-width: 1024px) {
-            margin-left: -210px;
-            width: 1000px;
+            margin: auto ;
+            width: 60%;
         }
         @media only screen and (max-width: 1024px){
-            margin-left: -15%;
-            width: 600px;
+            /*margin-left: -15%;*/
+            /*width: 600px;*/
+            width:70%;
+            margin:auto;
         }
         @media only screen and (max-width: 960px) {
-            margin-left: -150px;
+            /*margin-left: -150px;*/
         }
         @media only screen and (max-width: 768px) {
-            margin-left: -205px;
+            width:70%;
+            margin:auto;
         }
         @media only screen and (max-width: 525px) and (min-width: 425px) {
-            margin-left: -200px;
-            width: 350px;
+            width:70%;
+            margin:auto;
         }
         @media only screen and (max-width: 425px) {
             width: 300px;
@@ -358,48 +357,17 @@ export default JoinCommunity;
         margin-top: 1.5rem;
         background-color: ${props => props.theme.colorBlack};
         border-radius: 3px;
-        @media only screen and (max-width: 2560px) and (min-width: 1800px) {
-            width: 1500px;
-            margin-left: -70px;
+
+        @media only screen and (max-width: 2560px) {
+            width: 100%;
         }
-        @media only screen and (max-width: 1800px) and (min-width: 1440px) {
-            width: 1200px;
-            margin-left:-1%;
-        }
-        @media only screen and (max-width: 1440px) and (min-width: 1350px) {
-            width: 1000px;
-            height: 400px;
-            margin-left: -60px;
-        }
-        @media only screen and (max-width: 1350px) and (min-width: 1250px) {
-            width: 1000px;
-            margin-left: -130px;
-        }
-        @media only screen and (max-width: 1250px) and (min-width: 1024px) {
-            width: 900px;
-            margin-left: -160px;
-        }
-        @media only screen and (max-width: 1024px) {
-            width: 650px;
-            height: 500px;
-            margin-left: -18%;
-        }
-        @media only screen and (max-width: 960px) {
-            margin-left: -180px;
-        }
-        @media only screen and (max-width: 768px) {
-            margin-left: -225px;
-        }
-        @media only screen and (max-width: 525px){
-            width: 505px;
-            height: 650px;
-            margin-left: -300px;
-        }
+        
         @media only screen and (max-width: 425px) {
             width: 100%;
             margin: auto;
             border-radius: 0px;
         }
+
         .latest-content{
             display: grid;
             grid-template-columns: 40% auto;
@@ -412,20 +380,22 @@ export default JoinCommunity;
                 object-fit: cover;
                 @media only screen and (max-width: 2560px) and (min-width: 1800px) {
                     width: 600px;
-                    margin-left: -60px;
+                    margin-left: 40px;
                 }
                 @media only screen and (max-width: 1800px) and (min-width: 1440px) {
                     width: 450px;
                     margin-left: -80px;
                 }
                 @media only screen and (max-width: 1440px) and (min-width: 1350px) {
-                    width: 380px;
+                    width: 450px;
+                    margin-left: -80px;
+                    /*width: 380px;
                     height: 250px;
                     margin-left: -100px;
-                    margin-top: -80px;
+                    margin-top: -80px;*/
                 }
                 @media only screen and (max-width: 1350px) and (min-width: 1250px) {
-                    width: 350px;
+                    width: 450px;
                     height: 250px;
                     margin-left: -100px;
                 }
@@ -436,10 +406,23 @@ export default JoinCommunity;
                 }
                 @media only screen and (max-width: 1024px) {
                     width: 500px;
-                    height: 180px;
-                    margin-left: -90px;
-                    margin-top: -130px;
+                    height: 280px;
+                    /*margin-left: -90px;*/
+                    margin-top: -100px;
                 }
+
+                @media only screen and (max-width: 820px) {
+                    width: 500px;
+                    height: 280px;
+                    margin-left: -50px;
+                    margin-top: -100px;
+                }
+                @media only screen and (max-width: 600px) {
+                    width: 400px;
+                    height: 280px;
+                    justify-content: center;
+                }
+
                 
                 @media only screen and (max-width: 425px){
                     width: 300px;
@@ -472,7 +455,7 @@ export default JoinCommunity;
                     color: ${props => props.theme.colorClothes};
                     font-size: 1.2rem;
                 }
-                p{  
+                p{
                     color: ${props => props.theme.colorGrey4};
                     padding-bottom: 1.5rem;
                 }
@@ -507,6 +490,7 @@ export default JoinCommunity;
                             }
                         }
                     }
+                    
                 }
                 .anchor-tag{
                     margin-left: 25%;
@@ -547,15 +531,38 @@ export default JoinCommunity;
                 }
                 @media only screen and (max-width: 1024px) {
                     width: 550px;
-                    height: 300px;
+                    height: 190px;
                     margin-left: -260px;
-                    margin-top: 25%;
+                    margin-top: 70%;
                 }
-                @media only screen and (max-width: 425px){
+                @media only screen and (max-width: 600px){
+
                     width: 320px;
                     height: 400px;
                     margin-left: -160px;
                     margin-top: 40%;
+
+                    h4{
+                        font-size: 1.0rem;
+                    }
+
+                    .community{
+                        .inner{
+                        .left-side{
+                            .paragraphs{
+                                font-size: 15px;
+                            }
+                        }
+                        .right-side{
+                            margin: 0 30px;
+                            .social-icon{
+                                width: 20px;
+                                height: 20px;
+                            }
+                        }
+                    }
+                    }
+
                 }
                 @media only screen and (max-width: 320px){
                     width: 250px;
@@ -586,6 +593,14 @@ export default JoinCommunity;
                     }
                 }
             }
+
+            @media only screen and (max-width: 600px) {
+                grid-template-columns: 40% 40rem;
+                padding-bottom: 2rem;
+                .latest-text{
+                    width: 55%;
+                }
+            }
         }
     }
     .latest-controlls{
@@ -611,12 +626,5 @@ export default JoinCommunity;
             transform: scale(0.6);
         }
     }
-
-
-
-
-
-
-
 
 */

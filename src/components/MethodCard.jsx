@@ -11,14 +11,6 @@ const MethodCard = ({title, desc, icon}) => {
                 <p>
                     {desc}
                 </p>
-                {/* <a href='#' className='learn-more'>
-                    <span>
-                        En savoir plus
-                    </span>
-                    <span className='arrow'>
-                        <i className='fas fa-chevron-right'></i>
-                    </span>
-                </a> */}
             </div>
         </MethodCardStyled>
     )

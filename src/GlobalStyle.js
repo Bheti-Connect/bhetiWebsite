@@ -42,8 +42,6 @@ const GlobalStyle = createGlobalStyle`
         font-weight: 500;
         font-size-adjust: 1.6rem;
     }
-
-    //utility classes
     .u-pad-lg{
         padding: 8rem 18rem;
         @media only screen and (max-width: 768px){
@@ -59,6 +57,12 @@ const GlobalStyle = createGlobalStyle`
         padding-right: 18rem;
         padding-bottom: 6rem;
         @media only screen and (max-width: 2560px) and (min-width: 1460px){
+            padding-top: 0rem;
+            padding-left: 0rem;
+            padding-right: 0rem;
+            padding-bottom: 0rem;
+        }
+        @media only screen and (max-width: 1460px){
             padding-top: 0rem;
             padding-left: 0rem;
             padding-right: 0rem;

@@ -16,8 +16,8 @@ const Header = () => {
                     <h2>
                         Trouvez du <span>financement</span> avec nous
                     </h2>
-                    <p>
-                    Réseaux, outils, stratégie. Un accompagnement pour réussir chaque étape de votre levée de fonds
+                    <p className='sub-title'>
+                        Réseaux, outils, stratégie. Un accompagnement pour réussir chaque étape de votre levée de fonds
                     </p>
                 </div>
                 <div className='images'>
@@ -33,7 +33,6 @@ const Header = () => {
 }
 
 const HeaderStyled = styled.header`
-
 height : 80vh;
 display: flex;
 flex-direction: column;
@@ -68,6 +67,7 @@ justify-content: center;
             }
 
         animation: contentHide 1.5s ease-in-out;
+
             @keyframes contentHide {
                 0%{
                     opacity: 0;
@@ -78,7 +78,6 @@ justify-content: center;
                     transform: translateX(0) scaleX(1);
                 }
             }
-
         h2 {
             font-size: 4rem;
             margin-bottom: 20px;
@@ -129,7 +128,10 @@ justify-content: center;
                 transform: scale(0.9);
                 @media screen and (max-width: 540px) {
                     transform: none;
+            
                     }
+
+
             }
             .h-img-1{
                 transform: scale(1.1);
@@ -177,8 +179,6 @@ justify-content: center;
             width: 48%;
             max-width: 300px;
             height: auto;
-        
-
             border-bottom-right-radius: 70px;
             border-bottom-left-radius: 5px;
             border-top-left-radius: 5px;
@@ -199,10 +199,8 @@ justify-content: center;
                 border-bottom-left-radius: 0px;
                 border-top-left-radius: 0px;
                 border-top-right-radius: 0px;
-                
+                          
                 }
-
-
         }
 
     }

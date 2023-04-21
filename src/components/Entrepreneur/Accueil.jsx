@@ -1,36 +1,51 @@
-import React from 'react'
+import {useState, useEffect} from 'react'
 import styled from 'styled-components'
-//import Team from '../../assets/images/pexels-edmond-dantès-8553867.jpg';
 import Button from '../Button';
 import { useTheme } from '../../context/themeContext';
-
+import { Link } from 'react-router-dom';
 
 const Accueil = () => {
     const theme = useTheme();
+    const [text, setText] = useState("")
+    const [fullText, setFullText] = useState(
+        "Financer votre entreprise avec succès !"
+        )
+    const [index, setIndex] = useState(0)
+
+    useEffect(() => {
+        if (index < fullText.length) {
+            setTimeout(() => {
+                setText(text + fullText[index])
+                setIndex(index + 1)
+            }, 70)
+            }
+        }, [index])
     return (
         <AccueilStyled  theme={theme}>
             <div className='first-container'>
-                <div className='headache'>
+                <div className='head'>
                     <div className='centered mobile-view'>
-                        <h1><b>Financer votre entreprise avec succès !</b></h1>
+                        <h1><b>{text}</b></h1>
                     </div>
-                    <div className='text-highlighted'>
+                    <div className='text-highlighted paragraph'>
                         <p>
-                        Avec des données, des outils et des conseils, libérez le potentiel de votre entreprise en toute autonomie ou avec un accompagnement dédié de nos experts ! 
-                        Obtenez les financements dont vous avez besoin pour faire décoller votre projet.
+                            Avec des données, des outils et des conseils, libérez le potentiel de votre entreprise en toute autonomie ou avec un accompagnement dédié de nos experts et 
+                            obtenez les financements dont vous avez besoin pour faire décoller votre projet.
                         </p>
                     </div>
                 </div>
                 
                 <div className='button-demo'>
+                    <Link
+                        to={'/decouvrir-bheti-connect'}
+                    >
                         <Button 
                             name={'🚀 Découvrir la plateforme'}
                             icon={'fas fa-chevron-right'}
                             arrow={'arrow'}
-                            blob={'blob'}
                         />
-                    </div>
-                
+                    </Link>
+                </div>
             </div>
         </AccueilStyled>
     )
@@ -38,11 +53,11 @@ const Accueil = () => {
 
 const AccueilStyled = styled.section`
     @media only screen and (max-width: 440px) {
-        height: 120vh ;
+        height: 123vh ;
     }
 
         .first-container{
-        .headache {
+        .head {
             display: block;
             position: relative;
             margin: auto;
@@ -50,19 +65,7 @@ const AccueilStyled = styled.section`
             align-items: center;
             border-radius: 7px;
             @media only screen and (max-width: 1440px){
-                width: 1000px;
-            }
-            @media only screen and (max-width: 430px) {
-                display: block;
-                position: relative;
-                width: 220px;
-                height: 30vh;
-            }
-            @media only screen and (max-width: 425px) {
-                display: block;
-                position: relative;
-                width: 220px;
-                height: 28vh;
+                width: 100%;
             }
             @media only screen and (max-width: 320px) {
                 height: 32vh;
@@ -81,57 +84,33 @@ const AccueilStyled = styled.section`
                 }
                 @media only screen and (max-width: 2560px) {
                     top: 10vh;
-                    font-size: 50px;
-                    width: 30vw;
+                    width: 60vw;
+                    font-size: 60px;
+                }
+                @media only screen and (max-width: 1800px){
+                    font-size: 55px;
                 }
                 @media only screen and (max-width: 1440px){
-                    width: 100%;
                     font-size: 45px;
                 }
-                @media only screen and (max-width: 1350px) and (min-width: 1024px) {
-                    width: 600px;
+                @media only screen and (max-width: 1350px){
                     font-size: 40px; 
                 }
-                @media only screen and (max-width: 960px){
-                    width: 710px;
-                    font-size: 46px;
-                    transform: translate(-51%, 160%);
-                    color: ${props => props.theme.colorBlack}; 
+                @media only screen and (max-width: 1024px) {
+                    width: 74vw;
+                    font-size: 37px; 
                 }
                 @media only screen and (max-width: 768px){
-                    width: 350px;
-                    font-size: 40px;
-                    transform: translate(-120%, 40%);
-                    color: ${props => props.theme.colorBlack}; 
-                }
-                
-                @media only screen and (max-width: 440px){
-                    font-size: 35px;
-                    transform: translate(5%, 10%);
+                    width: 70vw;
+                    font-size: 30px;
                     color: ${props => props.theme.colorBlack}; 
                 }
             }
             .mobile-view {
-                @media only screen and (max-width: 430px){
-                    display: block;
-                    width: 88vw;
-                    top: 50px;
-                    left: -15vw;
-                    font-size: 33px;
-                    color: ${props => props.theme.colorBlack};
-                }
                 @media only screen and (max-width: 425px){
-                    display: block;
-                    width: 80vw;
-                    top: 25px;
-                    left: -1vw;
-                    font-size: 25px;
-                    color: ${props => props.theme.colorBlack};
-                }
-                @media only screen and (max-width: 375px){
-                    display: block;
-                    left: 4vw;
-                    font-size: 22px;
+                    width: 90vw;
+                    font-size: 1.6em;
+                    margin: 0 auto;
                     color: ${props => props.theme.colorBlack};
                 }
                 @media only screen and (max-width: 320px){
@@ -144,49 +123,32 @@ const AccueilStyled = styled.section`
             @media only screen and (max-width: 2500px){
                 text-align: center;
                 padding-top: 13vh;
-                width: 800px;
+                width:70vw;
                 margin: auto;
+                font-size: 19px;
+                p{
+                    color: ${props => props.theme.colorGrey6}
+                }
             }
             @media only screen and (max-width: 1440px) {
                 font-size: 20px;
             }
             @media only screen and (max-width: 1350px) {
-                margin-top: 8%;
-                font-size: 1.3rem;
-                width: 300px;
-                margin-left: 30px;
-            }
-            @media only screen and (max-width: 960px) {
-                margin-top: 12%;
                 font-size: 1.25rem;
-                width: 600px;
-                margin-top: 200px;
-                margin-left: -20vw;
             }
-            @media only screen and (max-width: 768px) and (min-width: 430px) {
-                margin-top: 10%;
+            @media only screen and (max-width: 1024px) {
+                font-size: 1.1rem;
+            }
+            @media only screen and (max-width: 768px){
                 font-size: 1.01rem;
-                width: 320px;
-                margin-top: 200px;
+                width: 75vw;
+                margin-top: 20px;
             }
             @media only screen and (max-width: 430px) {
-                font-size: 1.05rem;
+                font-size: 1rem;
                 position: relative;
                 text-align: justify;
-                width: 300px;
-                margin-top: -10px ;
-                margin-left: -20px;
-            }
-            @media only screen and (max-width: 425px) {
-                font-size: 1.02rem;
-                text-align: justify;
-                width: 350px;
-                margin: auto;
-            }
-            @media only screen and (max-width: 375px) {
-                position: relative;
-                width: 290px;
-                margin-left: 30px;
+                width: 80vw;
             }
             @media only screen and (max-width: 320px) {
                 position: relative;
@@ -197,54 +159,34 @@ const AccueilStyled = styled.section`
         .button-demo{
             position: relative;
             @media only screen and (max-width: 2500px){
-                margin: auto;
-                padding-bottom: 10% ;
+                margin-top: 40px ;
+                padding-bottom: 5% ;
             }
-            @media only screen and (max-width: 1440px){
-                margin-top: 30px ;
+            @media only screen and (max-width: 768px){
+                width:100%;
             }
             @media only screen and (max-width: 500px){
-                width:100%;
-                margin: 0px -20px;
-                padding-top: 20px ;
-            }
-            @media only screen and (max-width: 430px){
                 position: relative;
                 width: 100%;
-                margin-left: -40px;
+                margin: 20px  auto;
             }
             @media only screen and (max-width: 425px){
                 position: relative;
-                width: 109%;
-                margin: auto;
-            }
-            @media only screen and (max-width: 375px){
-                position: relative;
-                width: 107%;
-                margin-left: -40px;
+                width: 90%;
+                margin: 20px  auto;
             }
         }
-        @media only screen and (max-width: 1440px) {
+        @media only screen and (max-width: 1440px){
             position: relative;
-
         }
         @media only screen and (max-width: 768px) {
-            width: 220px;
-            margin-left: 130px;
-        }
-        @media only screen and (max-width: 500px) {
-            width: 250px;
-            margin-left: 130px;
-            
+            width: 80vw;
+            margin: 4px auto;
         }
         @media only screen and (max-width: 425px) {
-            width: 265px;
-            display: block;
-            margin: auto;
+            width: 80%;
         }
     }
-    
 `;
-
 
 export default Accueil;
