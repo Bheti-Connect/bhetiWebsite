@@ -51,7 +51,7 @@ const MethodSectionStyled = styled.section`
         padding-top: 3rem;
         @media only screen and (max-width: 2560px) {
             grid-template-columns: auto auto auto;
-            width: 90%;
+            width: 100%;
             margin:auto;
         }
 
