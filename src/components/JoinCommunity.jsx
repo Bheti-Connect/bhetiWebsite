@@ -365,7 +365,7 @@ const JoinCommunityStyled = styled.div`
             }
 
             @media only screen and (max-width: 425px) {
-                grid-template-columns: 40% 22rem;
+                /*grid-template-columns: 40% 40rem;*/
             }
         }
     }
