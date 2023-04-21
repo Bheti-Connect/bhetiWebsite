@@ -146,6 +146,7 @@ const AboutSectionStyled = styled.section`
                 @media only screen and (min-width: 1350px){
                     width: 80%;
                     height: 100%;
+                    text-align: left;
                     h2{
                         margin: 20% auto;
                         width: 95%;
@@ -154,10 +155,18 @@ const AboutSectionStyled = styled.section`
                 @media only screen and (max-width: 1350px){
                     width: 80%;
                     height: 100%;
+                    text-align: left;   
                     h2{
                         margin: 20% auto;
                         width: 95%;
                     }
+                }
+                @media only screen and (max-width: 600px){
+                    font-size: 15px;
+                }
+                @media only screen and (max-width: 400px){
+                    text-align: left;
+                    font-size: 10px;
                 }
             }
         } 
