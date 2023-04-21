@@ -46,22 +46,6 @@ const AboutSection = () => {
                     </div>
                 </div>
             </div>
-                <div className='about'>
-                    <div className='left-about'>
-                    <p>Grâce à la plateforme BHC, accédez à un écosystème composé d’experts, d’outils et d’informations… Bref, tout ce qu’il vous faut pour trouver du financement. </p>
-                       
-                        <ol>
-                            <li>1. Publiez votre projet </li>
-                            <li>2. Précisez votre besoin</li>
-                            <li>3. Augmentez la visibilité de votre projet auprès d’investisseurs</li>
-                        </ol>
-                        
-                    </div>
-                    <div className='right-about'>
-                       
-                        <img src={bhetiImage} alt='bheti-image' />
-                    </div>
-                </div>
         </AboutSectionStyled>
         )
 }
