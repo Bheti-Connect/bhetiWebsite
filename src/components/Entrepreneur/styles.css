@@ -1,4 +1,4 @@
-	#cards {
+#cards {
 	padding-bottom: calc(var(--numcards) * var(--card-top-offset)); /* Make place at bottom, as items will slide to that position*/
 	margin-bottom: var(--card-margin); /* Don't include the --card-margin in padding, as that will affect the scroll-timeline*/
 }
@@ -81,9 +81,11 @@
 	color: white;
 	white-space: nowrap;
 	}
+
 	#debug:checked ~ #main {
 	--outline-width: 1px;
 }
+
 
 /** PAGE STYLING **/
 * { /* Poor Man's Reset */
@@ -94,7 +96,7 @@
 
 #main {
 	width: 80vw;
-	height: 300vh;
+	height: 100%;
 	margin: 0 auto;
 }
 
@@ -103,7 +105,6 @@
 	outline: calc(var(--outline-width) * 10) solid blue;
 	display: grid;
 	grid-template-columns: 1fr;
-	grid-template-rows: repeat(var(--numcards), var(--card-height));
 	gap: var(--card-margin);
 }
 
@@ -127,7 +128,11 @@
 	outline: var(--outline-width) solid lime;
 }
 
+.card__content1{
+	padding: 60px;
+}
 .card__content > div {
+	
 	grid-area: text;
 	width: 85%;
 	place-self: center;
@@ -174,13 +179,15 @@ p{
 	width: 100%;
 	display: flex;
 	flex-wrap: wrap;
-	align-items: flex-start; 
+	align-items: flex-start;
+	
 }
 
 .offer{
 	width: 280px;
 	margin: 15px 0px;
-	
+	margin: auto;
+	position: relative;
 }
 
 .offer-icon{
@@ -204,7 +211,7 @@ p{
 	font-size: 1.43em;
 }
 
-.paragraphs {
+.paragraph {
 	font-family: sans-serif;
 	font-weight: 300;
 	line-height: 1.40;
@@ -219,59 +226,93 @@ p{
 	padding: 0.5em;
 	border-radius: 0.25em;
 }
-@media only screen and (max-width: 1400px){
-	.paragraph{
-		font-size: .6rem;
-	}
-	.advantage{
-		width: 100%;
+
+@media only screen and (max-width: 1550px) and (min-width: 1400px) {
+	.offer{
+		position: relative;
+		width: 16vw;
 		margin: auto;
 	}
-	.offer{
-		width: 14vw;
-		margin: 10px 35px;
-	}
-	.offer-icon{
-		width: 50px;
+	.paragraph{
+		font-size: 12px;
 	}
 	.offer-detail{
-		font-size: .8em !important;;
-		width: 14vw;
-	}
-	.more{
-		width: 14vw ;
+		width: 16vw;
 	}
 }
 
-
-@media only screen and (max-width: 1250px){
+@media only screen and (max-width: 1400px){
 	.card__content{
 			display: block;
-			width: 50vw;
-			height: 190%;
+			width: 70vw;
+			height: 100%;
 			margin: auto;
 	}
 	.card__content p{
-		font-size: 30px;
+		font-size: 40px;
+	}
+	.upper_container{
+		width: 80vw;
+		margin: auto;
+	}
+	.need-pitch{
+		margin: auto;
 	}
 	.card__content > div {
-		width: 40vw;
+		width: 60vw;
 		margin: auto;
+	}
+	.help{
+		width: 35%;
+		margin: auto;
+	}
+	.paragraph__container{
+		margin: 5% 0%;
 	}
 	.card__content > figure{
 		margin: auto;
+	}
+	.first__figure{
 		width: 60vw;
 	}
+	.image__figure{
+		width: 100%;
+		height: 64%;
+	}
 	.advantage{
-		width: 45vw;
+		width: 60vw;
 		position: relative;
-		margin: 50px auto;
+		margin: 30px auto;
+		background-color: #ECF0F1;
+		border-radius: 3%;
+		padding: 3%;
 	}
 	.offer{
+		margin: auto;
 		width: 15vw;
 	}
-	.offer-detail{
-		width: 14.8vw;
+	.need-container{
+		position: relative;
+		margin: auto;
+	}
+	.offre{
+		width: 98%;
+		font-size: 2.6vw;
+		margin: 3% auto;
+	}
+	.need-pitch{
+		position: relative;
+		margin: auto;
+		width: 250px;
+	}
+	.need-previsionnel{
+		position: relative;
+		margin: auto;
+		max-width: 340px;
+	}
+	.need-container{
+		width: 40vw;
+		margin-bottom: 40px;
 	}
 	.offer-icon{
 		width: 55px;
@@ -279,95 +320,39 @@ p{
 	.card__content > figure > img{
 		width: 100%;
 	}
+	.paragraph{
+		margin: auto;
+	}
+	.paragraph__other__style{
+		width: 90%;
+	}
 }
 
-@media only screen and (min-width: 768px){
+
+@media only screen and (max-width: 440px) {
 	body {
 		text-align: center;
 	}
-}
-
-@media only screen and (max-width: 1250px) {
-	#main{
-		height: 140vh;
-	}
-	.card__content{
+	#cards {
 		display: block;
-		width: 82vw;
-		height: 40rem;
-		margin: auto;
+		margin-top: -65vh;
 	}
-	.card__content p{
-		font-size: 1.2rem;
+	.btn{
+		margin-bottom: 10px;
+		margin-left: 10px;
 	}
-	.card__content > div {
-		width: 78vw;
-		margin: auto;
-	}
-	.card__content > figure{
-		margin: auto;
-		width: 100vw;
-	}
-	.advantage{
-		width: 45vw;
-		position: relative;
-		margin: 50px auto;
-	}
-	.offer{
-		width: 15vw;
-	}
-
-	.offer-detail{
-		width: 14.8vw;
-	}
-	.offer-icon{
-		width: 55px;
-	}
-	.card__content > figure > img{
-		width: 92%;
-		height: 100%;
-	}
-	p{
-		text-align: left;
-		text-justify: inherit;
-	}
-	#cards{
-		
-		
-	}
-	.need-container{
-		width: 300px;
-		height: 80px;
-	}
-	.help{
-		margin-left: 10%;
-		width: 60%;
+	.card_title{
+		font-size: .9em;
+		margin-left: 5px;
+		margin-top: 8px;
 	}
 	.paragraph{
-		width: 70vw;
-		font-size: 15px;
-		color: #909497;
-	}
-	.content-div{
-		display: block;
-	}
-	.text-container{
-		height: 50%;
+		margin: 0px 0px 12px 3px;
 	}
 }
-@media only screen and (max-width: 768px) {
-	#main{
-		height: 140vh;
-	}
 
-}
-@media only screen and (max-width: 425px) {
-	#main{
-		height: 140vh;
-	}
-}
-@media only screen and (max-width: 375px) {
-	#main{
-		height: 110vh;
+@media only screen and (max-width: 375px){
+	#cards {
+		margin-top: -60vh;
 	}
 }

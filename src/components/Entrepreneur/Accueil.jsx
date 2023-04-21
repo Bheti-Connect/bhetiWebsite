@@ -98,7 +98,7 @@ const AccueilStyled = styled.section`
                 }
                 @media only screen and (max-width: 1024px) {
                     width: 74vw;
-                    font-size: 38px; 
+                    font-size: 37px; 
                 }
                 @media only screen and (max-width: 768px){
                     width: 70vw;

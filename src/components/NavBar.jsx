@@ -206,7 +206,7 @@ const NavBarStyled = styled.nav`
 @media only screen and (max-width: 960px){
     .hero{
         .logo{
-            width: 50%;
+            width: 40%;
         }
     }
     .navigation {
@@ -272,6 +272,19 @@ const NavBarStyled = styled.nav`
     }
 }
 
+@media only screen and (max-width: 768px){
+    .hero{
+        .logo{
+            width: 47%;
+        }
+        margin-left: -7vw;
+    }
+}
+@media only screen and (max-width: 425px){
+    .hero{
+        margin-left: -8vw;
+    }
+}
 `;
 
 export default NavBar
