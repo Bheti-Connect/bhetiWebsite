@@ -61,6 +61,33 @@ const AboutSectionStyled = styled.section`
         margin-top:50px;
         h4{
             color: ${props => props.theme.colorWhite};
+            width: 100%;
+            @media only screen and (max-width: 2560px){
+            
+            }
+            @media only screen and (max-width: 1800px){
+          
+            }
+            @media only screen and (max-width: 1440px){
+             
+            }
+            @media only screen and (max-width: 1350px){
+           
+            }
+            @media only screen and (max-width: 1024px){
+            
+      
+            }
+            @media only screen and (max-width: 960px){
+        
+            }
+            @media only screen and (max-width: 768px){
+                font-size: 18px;
+                
+            }
+            @media only screen and (max-width: 600px){
+                font-size: 15px;
+            }
         }
         .title{
             color: ${props => props.theme.colorWhite};
@@ -83,48 +110,58 @@ const AboutSectionStyled = styled.section`
             }
             @media only screen and (max-width: 1024px){
                 font-size: 1.9rem;
-                width: 600px;
+                width: 100%;
                 margin-bottom: 6%;
-                margin-top: -20%;
-                margin-left: 16vw;
+                /*margin-top: -20%;*/
+                margin-left: 0;
             }
             @media only screen and (max-width: 960px){
                 font-size: 1.9rem;
-                margin: -1% 0 8% -6%;
+                margin: 0 0 8% 0;
             }
             @media only screen and (max-width: 768px){
-                font-size: 1.9rem;
-                margin-bottom: 5%;
-                margin-top: -10%;
-                margin-left: 50px;
+                font-size: 1.8rem;
+                margin-bottom: 8%;
+                width: 100% !important;
+                margin-left: 0;
             }
 
             @media only screen and (max-width: 600px){
                 font-size: 1.9rem;
                 margin-bottom: 5%;
-                margin-top: -10%;
-                width: 150px;
+                margin-top: 10% !important;
+                width: 100% !important;
+                margin-left: 0;
             }
 
             @media only screen and (max-width: 425px){
                 font-size: 1.2rem;
                 margin-bottom: 5%;
                 margin-top: -2900%;
-                width: 350px;
-                margin-left: -2px;
+                width: 100% !important;
+                /*margin-left: -2px;*/
             }
             @media only screen and (max-width: 375px){
                 font-size: 1.2rem;
-                margin-bottom: 5%;
-                margin-top: -2900%;
-                width: 350px;
-                margin-left: -2px;
+                margin-bottom: 10% !important;
+                /*margin-top: -2900%;*/
+                width: 100% !important;
+                margin:auto;
+                /*margin-left: -2px;*/
             }
             @media only screen and (max-width: 320px){
                 font-size: 1.3rem;
-                width: 220px;
-                margin-left: 50px;
+                width: 100% !important;
+                margin-bottom: 10% !important;
+                margin:auto;
+                /*margin-left: 50px;*/
             }
+
+        }
+
+        @media only screen and (max-width: 600px){
+            margin-top:20px;
+            width: 85%;
         }
     }
     .lower-container{
