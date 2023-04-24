@@ -43,8 +43,19 @@ const EconomicNewsStyled = styled.section`
     @media only  screen and (max-width: 425px) {
         position: relative;
         width: 100%;
+        height: 140vh;
+    }
+
+    @media only  screen and (max-width: 415px) {
         height: 100vh;
-        
+    }
+
+    @media only  screen and (max-width: 376px) {
+        height: 110vh;
+    }
+
+    @media only  screen and (max-width: 321px) {
+        height: 140vh;
     }
     
     .left-rec{
@@ -126,13 +137,14 @@ const EconomicNewsStyled = styled.section`
                     margin-left: 30%;
                 }
                 @media only screen and (max-width: 425px) {
-                    margin-left: 23px ;
+                    margin-left: 3px;
                 }
                 @media only screen and (max-width: 375px) {
-                    margin-left: -20px ;
+                    margin-left: 0 ;
                 }
             }
             @media only screen and (max-width: 425px) {
+                margin-top:16%;
                 padding: .65rem;
             }
         }

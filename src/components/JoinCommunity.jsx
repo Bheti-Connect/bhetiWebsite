@@ -121,6 +121,7 @@ const JoinCommunityStyled = styled.div`
             padding: 10rem 10rem;
             grid-gap: 2rem;
             height: -300px;
+            
             img{
                 width: 100%;
                 border-radius: 10px;
@@ -165,9 +166,14 @@ const JoinCommunityStyled = styled.div`
                     margin-top: -100px;
                 }
                 @media only screen and (max-width: 600px) {
+                    
                     width: 400px;
                     height: 280px;
                     justify-content: center;
+                }
+
+                @media only screen and (max-width: 501px){
+                    width: 350px;
                 }
 
                 
@@ -191,11 +197,10 @@ const JoinCommunityStyled = styled.div`
             }
 
 
-
-
             .latest-text{
                 width: 500px;
                 margin-left: 4rem;
+                
                 h4{
                     color: ${props => props.theme.colorWhite};
                     font-size: 1.5rem;
@@ -250,6 +255,7 @@ const JoinCommunityStyled = styled.div`
                         width: 200px;
                     }
                 }
+                
                 @media only screen and (max-width: 2560px) and (min-width: 1800px) {
                     width: 600px;
                     height: 200px;
@@ -260,7 +266,7 @@ const JoinCommunityStyled = styled.div`
                     width: 550px;
                     height: 200px;
                     margin-left: 70px;
-                    margin-top: 2%;
+                    margin-top: -8%;
                 }
                 @media only screen and (max-width: 1440px) and (min-width: 1350px) {
                     width: 500px;
@@ -345,12 +351,21 @@ const JoinCommunityStyled = styled.div`
                 }
             }
 
+            @media only screen and (max-width: 2560px) and (min-width: 1025px) {
+                align-items: center;
+            }
+
             @media only screen and (max-width: 600px) {
+                margin-left: -50px;
                 grid-template-columns: 40% 40rem;
                 padding-bottom: 2rem;
                 .latest-text{
                     width: 55%;
                 }
+            }
+
+            @media only screen and (max-width: 425px) {
+                /*grid-template-columns: 40% 40rem;*/
             }
         }
     }

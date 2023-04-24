@@ -52,12 +52,21 @@ const MethodSectionStyled = styled.section`
         grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
         grid-gap: 2rem;
         padding-top: 3rem;
-        margin: 0 auto;
+        @media only screen and (max-width: 2560px) {
+            grid-template-columns: auto auto auto;
+            width: 90%;
+            margin:auto;
+        }
+
+        @media only screen and (max-width: 768px) {
+            grid-template-columns: none;
+        }
+
         @media only screen and (max-width: 425px) {
             margin-left: -4vw ;
         }
         @media only screen and (max-width: 376px) {
-            margin-left: -0.2vw ;
+            margin-left: -3vw ;
         }
 
         @media only screen and (max-width: 280px) {
@@ -66,16 +75,19 @@ const MethodSectionStyled = styled.section`
     }
 
     .title-con {
+        width: 60%;
+        @media only screen and (max-width: 768px) {
+            width: 100% !important;
+        }
         @media only screen and (max-width: 425px) {
-            width: 120%;
             margin-left: -28px;
         }
         @media only screen and (max-width: 400px) {
-            width: 100%;
+            width: 130%;
             margin-left: -30px;
         }
         @media only screen and (max-width: 375px) {
-            width: 100%;
+            width: 120%;
             margin-left: -20px;
         }
         @media only screen and (max-width: 280px) {

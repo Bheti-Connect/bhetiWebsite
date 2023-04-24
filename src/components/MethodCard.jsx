@@ -18,7 +18,7 @@ const MethodCard = ({title, desc, icon}) => {
 
 const MethodCardStyled = styled.section`
     position: relative;
-    width: 200;
+    width: 100%;
     background-color: ${props => props.theme.colorWhite};
     text-align: center;
     padding: 2.5rem 1rem;
@@ -26,23 +26,37 @@ const MethodCardStyled = styled.section`
     transition: all .4s ease-in-out;
     
     @media only screen and (max-width: 425px){
-        width: 90%;
-        height: 100%;
+        width: 100%;
+        height: 90%;
+        margin:auto;
+        left:20px;
     }
     @media only screen and (max-width: 400px){
         width: 100%;
-        height: 100%;
-        margin-left: -45px;
+        height: 90%;
+        margin:auto;
+        left:-50px;
+       
+    }
+
+    @media only screen and (max-width: 391px){
+        width: 100%;
+        height: 90%;
+        margin:auto;
+        left:10px;
+       
     }
     @media only screen and (max-width: 375px){
-        width: 80%;
-        height: 100%;
-        margin-left: -20px;
+        width: 100%;
+        height: 90%;
+        margin:auto;
+        left:-70px;
     }
     @media only screen and (max-width: 320px){
-        width: 75%;
+        width: 100%;
         height: 90%;
-        margin-left: -40px;
+        margin:auto;
+        left:-70px;
     }
 
     &::before{
@@ -66,6 +80,7 @@ const MethodCardStyled = styled.section`
         }
     }
     .m-item-con{
+        width: 100%;
         img{
             padding-bottom: 2rem;
             height: 100px;
