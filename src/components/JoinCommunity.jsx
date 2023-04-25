@@ -35,12 +35,14 @@ const JoinCommunity = () => {
                                     Rencontrez d’autres porteurs de projets en Afrique francophone ou dans la diaspora, et resté informé en exclusivité des prochaines rencontres entrepreneurs-investisseurs ! 
                                     </p>
                                 </div>
-                                <p className='right-side'>
-                                    <a href='https://slack.com/'>
-                                        <FaSlack className='social-icon slack' />
-                                    </a>
-                                    Slack
-                                </p>
+                                <div>
+                                    <p className='right-side'>
+                                        Slack
+                                        <a href='https://slack.com/'>
+                                            <FaSlack className='social-icon slack' />
+                                        </a>
+                                    </p>
+                                </div>
                             </div>
                             <div className='inner linkedin-div'>
                                 <div className='left-side'>
@@ -48,12 +50,14 @@ const JoinCommunity = () => {
                                     Accédez à un contenu d’information hebdomadaire pour positionner votre projet en fonction de l’actualité du marché économique et financier africain
                                     </p>
                                 </div>
-                                <p className='right-side'>
+                                <div>
+                                    <p className='right-side'>
+                                        Linkedin
                                     <a href='https://www.linkedin.com/company/bheti-connect'>
                                         <FaLinkedinIn className='social-icon linkedin' />
                                     </a>
-                                    Linkedin
-                                </p>
+                                    </p>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -66,26 +70,13 @@ const JoinCommunity = () => {
 const JoinCommunityStyled = styled.div`
     .title-con{
         width: 1000px;
-        @media only screen and (max-width: 1440px) and (min-width: 1350px) {
-            margin: auto ;
-            width: 60%;
-        }
-        @media only screen and (max-width: 1350px) and (min-width: 1250px) {
-            margin: auto ;
-            width: 60%;
-        }
-        @media only screen and (max-width: 1250px) and (min-width: 1024px) {
+        @media only screen and (max-width: 1440px) {
             margin: auto ;
             width: 60%;
         }
         @media only screen and (max-width: 1024px){
-            /*margin-left: -15%;*/
-            /*width: 600px;*/
             width:70%;
             margin:auto;
-        }
-        @media only screen and (max-width: 960px) {
-            /*margin-left: -150px;*/
         }
         @media only screen and (max-width: 768px) {
             width:70%;
@@ -103,104 +94,27 @@ const JoinCommunityStyled = styled.div`
     .latest-container{
         margin-top: 1.5rem;
         background-color: ${props => props.theme.colorBlack};
-        border-radius: 3px;
-
-        @media only screen and (max-width: 2560px) {
-            width: 100%;
-        }
-        
-        @media only screen and (max-width: 425px) {
-            width: 100%;
-            margin: auto;
-            border-radius: 0px;
-        }
-
+        border-radius: 3px; 
         .latest-content{
             display: grid;
             grid-template-columns: 40% auto;
             padding: 10rem 10rem;
-            grid-gap: 2rem;
-            height: -300px;
-            
-            img{
+            grid-gap: 1rem;
+            width: 90%;
+            height: 50%;
+            margin: 0 auto;
+            .img-com-div{
+                position: relative;
                 width: 100%;
-                border-radius: 10px;
-                object-fit: cover;
-                @media only screen and (max-width: 2560px) and (min-width: 1800px) {
-                    width: 600px;
-                    margin-left: 40px;
-                }
-                @media only screen and (max-width: 1800px) and (min-width: 1440px) {
-                    width: 450px;
-                    margin-left: -80px;
-                }
-                @media only screen and (max-width: 1440px) and (min-width: 1350px) {
-                    width: 450px;
-                    margin-left: -80px;
-                    /*width: 380px;
-                    height: 250px;
-                    margin-left: -100px;
-                    margin-top: -80px;*/
-                }
-                @media only screen and (max-width: 1350px) and (min-width: 1250px) {
-                    width: 450px;
-                    height: 250px;
-                    margin-left: -100px;
-                }
-                @media only screen and (max-width: 1250px) and (min-width: 1024px) {
-                    width: 290px;
-                    height: 200px;
-                    margin-left: -120px;
-                }
-                @media only screen and (max-width: 1024px) {
-                    width: 500px;
-                    height: 280px;
-                    /*margin-left: -90px;*/
-                    margin-top: -100px;
-                }
-
-                @media only screen and (max-width: 820px) {
-                    width: 500px;
-                    height: 280px;
-                    margin-left: -50px;
-                    margin-top: -100px;
-                }
-                @media only screen and (max-width: 600px) {
-                    
-                    width: 400px;
-                    height: 280px;
-                    justify-content: center;
-                }
-
-                @media only screen and (max-width: 501px){
-                    width: 350px;
-                }
-
-                
-                @media only screen and (max-width: 425px){
-                    width: 300px;
-                    height: 110px;
-                    margin-left: -95px;
-                    margin-top: -120px;
-                }
-                @media only screen and (max-width: 400px){
-                    margin-left: -110px;
-                }
-                @media only screen and (max-width: 375px){
-                    width: 260px;
-                    height: 100px;
-                    margin-left: -100px;
-                }
-                @media only screen and (max-width: 320px){
-                    margin-left: -130px;
+                img {
+                    width: 100%;
+                    height: 100%;
+                    border-radius: 10px;
                 }
             }
-
-
             .latest-text{
-                width: 500px;
+                width: 100%;
                 margin-left: 4rem;
-                
                 h4{
                     color: ${props => props.theme.colorWhite};
                     font-size: 1.5rem;
@@ -246,152 +160,10 @@ const JoinCommunityStyled = styled.div`
                             }
                         }
                     }
-                    
                 }
-                .anchor-tag{
-                    margin-left: 25%;
-                    @media only screen and (max-width: 425px) and (min-width: 320px){
-                        margin-left: -15%;
-                        width: 200px;
-                    }
-                }
-                
-                @media only screen and (max-width: 2560px) and (min-width: 1800px) {
-                    width: 600px;
-                    height: 200px;
-                    margin-left: 150px;
-                    margin-top: 7%;
-                }
-                @media only screen and (max-width: 1800px) and (min-width: 1440px) {
-                    width: 550px;
-                    height: 200px;
-                    margin-left: 70px;
-                    margin-top: -8%;
-                }
-                @media only screen and (max-width: 1440px) and (min-width: 1350px) {
-                    width: 500px;
-                    height: 200px;
-                    margin-left: 20px;
-                    margin-top: -15%;
-                }
-                @media only screen and (max-width: 1350px) and (min-width: 1250px) {
-                    width: 500px;
-                    height: 200px;
-                    margin-left: 10px;
-                    margin-top: -2%;
-                }
-                @media only screen and (max-width: 1250px) and (min-width: 1024px) {
-                    width: 450px;
-                    height: 200px;
-                    margin-left: -23px;
-                    margin-top: -10%;
-                }
-                @media only screen and (max-width: 1024px) {
-                    width: 550px;
-                    height: 190px;
-                    margin-left: -260px;
-                    margin-top: 70%;
-                }
-                @media only screen and (max-width: 600px){
-
-                    width: 320px;
-                    height: 400px;
-                    margin-left: -160px;
-                    margin-top: 40%;
-
-                    h4{
-                        font-size: 1.0rem;
-                    }
-
-                    .community{
-                        .inner{
-                        .left-side{
-                            .paragraphs{
-                                font-size: 15px;
-                            }
-                        }
-                        .right-side{
-                            margin: 0 30px;
-                            .social-icon{
-                                width: 20px;
-                                height: 20px;
-                            }
-                        }
-                    }
-                    }
-
-                }
-                @media only screen and (max-width: 320px){
-                    width: 250px;
-                    height: 350px;
-                    margin-left: -140px;
-                    margin-top: 60%;
-                    p{
-                        font-size: .9rem;
-                    }
-                    h4 {
-                        font-size: 1.2rem;
-                    }
-                    h6 {
-                        font-size: 1rem;
-                    }
-                }
-                .anchor-tag {
-                    margin-top: 40px;
-                    margin: 1;
-                    @media only screen and (max-width: 425px) {
-                        margin-left: 5px;
-                    }
-                    @media only screen and (max-width: 400px) {
-                        margin-left: 17px;
-                    }
-                    @media only screen and (max-width: 375px) {
-                        margin-left: -60px;
-                    }
-                }
-            }
-
-            @media only screen and (max-width: 2560px) and (min-width: 1025px) {
-                align-items: center;
-            }
-
-            @media only screen and (max-width: 600px) {
-                margin-left: -50px;
-                grid-template-columns: 40% 40rem;
-                padding-bottom: 2rem;
-                .latest-text{
-                    width: 55%;
-                }
-            }
-
-            @media only screen and (max-width: 425px) {
-                /*grid-template-columns: 40% 40rem;*/
-            }
         }
-    }
-    .latest-controlls{
-        display: flex;
-        justify-content: center;
-        margin-top: 2.5rem;
-        .control{
-            width: 1rem;
-            height: 1rem;
-            border-radius: 50%;
-            margin: 0 0.2rem;
-            cursor: pointer;
-        }
-        .control-1{
-            background-color: ${props => props.theme.colorAccent};
-        }
-        .control-2{
-            background-color: ${props => props.theme.colorGrey9};
-            transform: scale(0.85);
-        }
-        .control-3{
-            background-color: ${props => props.theme.colorGrey9};
-            transform: scale(0.6);
-        }
-    }
+    } 
+}
 `;
 
 export default JoinCommunity;
