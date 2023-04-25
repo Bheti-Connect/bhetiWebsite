@@ -20,7 +20,7 @@ const MethodSection = () => {
                 />
             </div>
             <div className='methods-con' >
-                <MethodCard
+                <MethodCard 
                     title={"Nous préparons votre documentation"}
                     desc={'BP, Pitch deck, Etats financiers.'}
                     icon={checking}
