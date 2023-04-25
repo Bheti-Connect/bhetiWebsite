@@ -27,6 +27,7 @@ const AboutSection = () => {
         }, [index])
     return (
         <AboutSectionStyled  theme={theme}>
+
             <div className='upper-container'>
                 <h3 className='title'>
                     Développez et financez vos projets
@@ -136,7 +137,6 @@ const AboutSectionStyled = styled.section`
                 margin:auto;
                 /*margin-left: 50px;*/
             }
-
         }
 
         @media only screen and (max-width: 600px){
@@ -157,7 +157,6 @@ const AboutSectionStyled = styled.section`
                 align-items: flex-start;
                 position: relative;
                 width: 100%;
-                margin: auto;
                 padding: 20px 50px;
                 text-align: center;
                 @media only screen and (min-width: 1350px){
@@ -166,7 +165,7 @@ const AboutSectionStyled = styled.section`
                     text-align: left;
                     h2{
                         margin: 20% auto;
-                        width: 95%;
+                        width: 100%;
                     }
                 }
                 @media only screen and (max-width: 1350px){
@@ -192,7 +191,9 @@ const AboutSectionStyled = styled.section`
             .image-div{
                 margin: auto;
                 .about-img{
-                    width: 35vw;
+                    position: relative; 
+                    width: 36vw;
+                    height: 100%;
             }
         }
     } 

@@ -20,7 +20,7 @@ const MethodSection = () => {
                 />
             </div>
             <div className='methods-con' >
-                <MethodCard
+                <MethodCard 
                     title={"Nous préparons votre documentation"}
                     desc={'BP, Pitch deck, Etats financiers.'}
                     icon={checking}
@@ -43,6 +43,9 @@ const MethodSection = () => {
 
 const MethodSectionStyled = styled.section`
     margin: 60px 80px 100px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
     
     .methods-con{
         display: grid;
@@ -51,7 +54,7 @@ const MethodSectionStyled = styled.section`
         padding-top: 3rem;
         @media only screen and (max-width: 2560px) {
             grid-template-columns: auto auto auto;
-            width: 100%;
+            width: 90%;
             margin:auto;
         }
 
@@ -65,6 +68,10 @@ const MethodSectionStyled = styled.section`
         @media only screen and (max-width: 376px) {
             margin-left: -3vw ;
         }
+
+        @media only screen and (max-width: 280px) {
+            margin: 0 -20px;
+        }
     }
 
     .title-con {
@@ -76,10 +83,22 @@ const MethodSectionStyled = styled.section`
             margin-left: -28px;
         }
         @media only screen and (max-width: 400px) {
-            margin-left: 0 !important;
+            width: 130%;
+            margin-left: -30px;
         }
         @media only screen and (max-width: 375px) {
+            width: 120%;
             margin-left: -20px;
+        }
+        @media only screen and (max-width: 280px) {
+            text-align: center;
+
+            h3 {
+                font-size: 1.5rem;
+                text-align: center;
+                margin-left: -20px;
+
+            }
         }
     }
 `;

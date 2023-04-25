@@ -45,7 +45,7 @@ const JoinCommunity = () => {
                             <div className='inner linkedin-div'>
                                 <div className='left-side'>
                                     <p className='paragraphs linkedin'>
-                                        Accédez à un contenu d’information hebdomadaire pour positionner votre projet en fonction de l’actualité du marché économique et financier africain
+                                    Accédez à un contenu d’information hebdomadaire pour positionner votre projet en fonction de l’actualité du marché économique et financier africain
                                     </p>
                                 </div>
                                 <div className='right-side'>
