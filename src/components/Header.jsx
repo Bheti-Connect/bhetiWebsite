@@ -214,7 +214,8 @@ justify-content: center;
         border-radius: 30px;
         border: 2px solid ${props => props.theme.colorBlack};
         pointer-events: none;
-        background-color: red;
+        background-color: white;
+        margin:auto;
         span {
             position: absolute;
             left: 50%;
