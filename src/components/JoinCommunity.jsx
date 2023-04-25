@@ -35,12 +35,12 @@ const JoinCommunity = () => {
                                     Rencontrez d’autres porteurs de projets en Afrique francophone ou dans la diaspora, et resté informé en exclusivité des prochaines rencontres entrepreneurs-investisseurs ! 
                                     </p>
                                 </div>
-                                <div className='right-side'>
+                                <p className='right-side'>
                                     <a href='https://slack.com/'>
                                         <FaSlack className='social-icon slack' />
                                     </a>
                                     Slack
-                                </div>
+                                </p>
                             </div>
                             <div className='inner linkedin-div'>
                                 <div className='left-side'>
@@ -48,12 +48,12 @@ const JoinCommunity = () => {
                                     Accédez à un contenu d’information hebdomadaire pour positionner votre projet en fonction de l’actualité du marché économique et financier africain
                                     </p>
                                 </div>
-                                <div className='right-side'>
+                                <p className='right-side'>
                                     <a href='https://www.linkedin.com/company/bheti-connect'>
                                         <FaLinkedinIn className='social-icon linkedin' />
                                     </a>
                                     Linkedin
-                                </div>
+                                </p>
                             </div>
                         </div>
                     </div>
