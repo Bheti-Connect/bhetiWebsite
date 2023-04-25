@@ -280,7 +280,7 @@ const FooterSectionStyled = styled.footer`
         margin: 0 auto;
         width: 55%;
         border-top: 1px solid ${props => props.theme.colorGrey9};
-
+        text-align: center;
         align-items: center;
         span{
             color: ${props => props.theme.colorWhite};

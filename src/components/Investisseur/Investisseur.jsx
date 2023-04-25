@@ -13,6 +13,7 @@ import LoaderReact from './LoaderReact';
 //import iconBheti from "../../assets/icons/icon_bheti_design.png";
 import LinksAPI from './../../utils/LinksAPI';
 import { ModalConnect } from './ModalSweetAlert';
+import { faker } from '@faker-js/faker';
 
 const Investisseur = () => {
   // useState of pagination
@@ -60,9 +61,20 @@ const Investisseur = () => {
 
     // GET data from API
     const getData = () => {
+      for (let i = 0; i < 10; i++) {
+        setData(prevData => [...prevData, {
+          nom: faker.name.firstName(),
+          stade: faker.finance.accountName(),
+          siege: faker.animal.type(),
+          financement: faker.commerce.price(),
+        }])
+      }
+ 
+      /*
       axios.get(LinksAPI.projets).then(res => {
         handleSetData(res.data)
       }).catch((error) => console.log(error))
+      */
     }
 
 
@@ -207,7 +219,6 @@ const Investisseur = () => {
           handleSetData(res.data)
         }).catch(error => console.log(error))
       }
-
     }
 
      // display items
@@ -524,7 +535,8 @@ p {
 }
 
 .active {
-    border-bottom: 2px solid ${props => props.theme.colorBheti};
+  border-bottom: 2px solid ${props => props.theme.colorBheti};
+  color: ${props => props.theme.colorBheti};
 }
 
 @media only screen and (max-width: 768px) {
