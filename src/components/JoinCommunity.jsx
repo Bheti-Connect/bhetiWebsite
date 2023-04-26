@@ -159,7 +159,7 @@ const JoinCommunityStyled = styled.div`
                                     }
                                 }
                                 span{
-                                    padding: 17px 2px;
+                                    padding: 17px .3px;
                                     border-radius: 50%;
                                 }
                                 #slack-span{
@@ -192,12 +192,12 @@ const JoinCommunityStyled = styled.div`
                 grid-column-start: 1;
                 grid-column-end: 3;
                 width: 60vw;
-                margin: -30% auto;
+                margin: -10% auto;
             }
             .latest-text{
                 position: relative;
                 width: 80vw;
-                margin: 100% -10% !important;
+                margin: 40% -10% !important;
             }
         }
         @media only screen and (max-width: 600px){
@@ -218,9 +218,11 @@ const JoinCommunityStyled = styled.div`
             }
         }
     }
+    @media only screen and (max-width: 1100px){
+        height: 850px;
+    }
     @media only screen and (max-width: 768px){
         height: 750px;
-
     }
 }
 `;
