@@ -9,7 +9,7 @@ const Title = ({ name, subtext}) => {
                 {name}
             </h3>
             
-            <p>{subtext}</p>
+            <p className='subtext'>{subtext}</p>
         </TitleStyled>
     )
 }
@@ -17,8 +17,9 @@ const Title = ({ name, subtext}) => {
 
 const TitleStyled = styled.div`
     h3{
-        font-size: 2.5rem;
+        font-size: 2.3rem;
         @media only screen and (max-width: 2560px){
+            width:100%;
         }
 
         @media only screen and (max-width: 1800px){
@@ -57,9 +58,10 @@ const TitleStyled = styled.div`
         }
     }
 
-    p{
+    .subtext{
         text-align: justify;
         text-justify: inter-word;
+       
         @media only screen and (max-width: 525px) and (min-width: 425px){
             font-size: 15px;
         }

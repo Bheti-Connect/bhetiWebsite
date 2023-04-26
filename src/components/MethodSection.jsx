@@ -61,21 +61,13 @@ const MethodSectionStyled = styled.section`
         @media only screen and (max-width: 768px) {
             grid-template-columns: none;
         }
-
-        @media only screen and (max-width: 425px) {
-            margin-left: -4vw ;
-        }
-        @media only screen and (max-width: 376px) {
-            margin-left: -3vw ;
-        }
-
-        @media only screen and (max-width: 280px) {
-            margin: 0 -20px;
-        }
     }
 
     .title-con {
-        width: 60%;
+        width: 60vw;
+        @media only screen and (max-width: 2500px) {
+            width: 70% !important;
+        }
         @media only screen and (max-width: 768px) {
             width: 100% !important;
         }
@@ -84,11 +76,16 @@ const MethodSectionStyled = styled.section`
         }
         @media only screen and (max-width: 400px) {
             width: 130%;
-            margin-left: -30px;
+            
+            h3 {
+                width: 100%;
+                font-size: 1.5rem;
+                text-align: center;
+            }
         }
         @media only screen and (max-width: 375px) {
-            width: 120%;
-            margin-left: -20px;
+            width: 100%;
+            margin: auto;
         }
         @media only screen and (max-width: 280px) {
             text-align: center;
@@ -97,7 +94,6 @@ const MethodSectionStyled = styled.section`
                 font-size: 1.5rem;
                 text-align: center;
                 margin-left: -20px;
-
             }
         }
     }
