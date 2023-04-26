@@ -35,13 +35,14 @@ const JoinCommunity = () => {
                                     Rencontrez d’autres porteurs de projets en Afrique francophone ou dans la diaspora, et resté informé en exclusivité des prochaines rencontres entrepreneurs-investisseurs ! 
                                     </p>
                                 </div>
-                                <div>
-                                    <p className='right-side'>
-                                        Slack
-                                        <a href='https://slack.com/'>
-                                            <FaSlack className='social-icon slack' />
-                                        </a>
+                                <div className='button__div'>
+                                    <p className='icon__name'>
                                     </p>
+                                        <a href='https://slack.com/'>
+                                            <span id='slack-span'>
+                                                <FaSlack className='social-icon slack' />
+                                            </span>
+                                        </a>
                                 </div>
                             </div>
                             <div className='inner linkedin-div'>
@@ -50,13 +51,14 @@ const JoinCommunity = () => {
                                     Accédez à un contenu d’information hebdomadaire pour positionner votre projet en fonction de l’actualité du marché économique et financier africain
                                     </p>
                                 </div>
-                                <div>
-                                    <p className='right-side'>
-                                        Linkedin
-                                    <a href='https://www.linkedin.com/company/bheti-connect'>
-                                        <FaLinkedinIn className='social-icon linkedin' />
-                                    </a>
+                                <div className='button__div'>
+                                    <p className='icon__name'>
                                     </p>
+                                        <a href='https://www.linkedin.com/company/bheti-connect'>
+                                            <span id='linkedin-span'>
+                                                <FaLinkedinIn className='social-icon linkedin' />
+                                            </span>
+                                        </a>
                                 </div>
                             </div>
                         </div>
@@ -72,15 +74,7 @@ const JoinCommunityStyled = styled.div`
         width: 1000px;
         @media only screen and (max-width: 1440px) {
             margin: auto ;
-            width: 60%;
-        }
-        @media only screen and (max-width: 1024px){
-            width:70%;
-            margin:auto;
-        }
-        @media only screen and (max-width: 768px) {
-            width:70%;
-            margin:auto;
+            width: 80%;
         }
         @media only screen and (max-width: 525px) and (min-width: 425px) {
             width:70%;
@@ -94,12 +88,11 @@ const JoinCommunityStyled = styled.div`
     .latest-container{
         margin-top: 1.5rem;
         background-color: ${props => props.theme.colorBlack};
-        border-radius: 3px; 
         .latest-content{
             display: grid;
             grid-template-columns: 40% auto;
             padding: 10rem 10rem;
-            grid-gap: 1rem;
+            grid-gap: .8rem;
             width: 90%;
             height: 50%;
             margin: 0 auto;
@@ -134,35 +127,101 @@ const JoinCommunityStyled = styled.div`
                     .inner{
                         display: flex;
                         .left-side{
-                            width: 90%;
+                            width: 85%;
                             .paragraphs{
-                                font-size: 18px;
+                                font-size: 17px;
+                                width: 95%;
                             }
                         }
-                        .right-side{
-                            margin: 0 30px;
-                            color: ${props => props.theme.colorGrey2};
-                            .social-icon{
-                                width: 50px;
-                                height: 50px;
+                        .button__div{
+                            display: block;
+                            width: 20%;
+                            .icon__name{
+                                margin: 0px  2px;
                                 color: ${props => props.theme.colorGrey2};
-                                cursor: pointer;
                             }
-                            .slack:hover{
-                                    color: ${props => props.theme.colorSlack};
-                                    transform: scale(.8);
-                            }
-                            .linkedin{
-                                &:hover{
-                                    color: ${props => props.theme.colorLinkedIn};                      
-                                    transform: scale(.8);
+                            .social-icon{
+                                    position: relative;
+                                    width: 40px;
+                                    height: 40px;
+                                    color: ${props => props.theme.colorGrey2};
+                                    cursor: pointer;
+                                    margin: -15px 10px;
                                 }
-                            }
+                                .slack:hover{
+                                        color: ${props => props.theme.colorSlack};
+                                        transform: scale(.8);
+                                }
+                                .linkedin{
+                                    &:hover{
+                                        color: ${props => props.theme.colorLinkedIn};                      
+                                        transform: scale(.8);
+                                    }
+                                }
+                                span{
+                                    padding: 17px 2px;
+                                    border-radius: 50%;
+                                }
+                                #slack-span{
+                                    background-color: ${props => props.theme.colorSlack};
+                                    &:hover{
+                                        background-color: ${props => props.theme.colorGrey2};
+                                    }
+                                }
+                                #linkedin-span{
+                                    background-color: ${props => props.theme.colorLinkedIn};
+                                    &:hover{
+                                        background-color: ${props => props.theme.colorGrey2};
+                                    }
+                                }
                         }
                     }
                 }
         }
-    } 
+        @media only screen and (max-width: 1440px){
+            padding: 10rem 7rem;
+        }
+        @media only screen and (max-width: 1350px){
+            padding: 10rem 5rem;
+        }
+        @media only screen and (max-width: 1250px){
+            padding: 10rem 3rem;
+        }
+        @media only screen and (max-width: 1100px){
+            .img-com-div{
+                grid-column-start: 1;
+                grid-column-end: 3;
+                width: 60vw;
+                margin: -30% auto;
+            }
+            .latest-text{
+                position: relative;
+                width: 80vw;
+                margin: 100% -10% !important;
+            }
+        }
+        @media only screen and (max-width: 600px){
+            .latest-text{
+                position: relative;
+                width: 70vw;
+                margin: 20% -30%;
+                .community{
+                    .inner{
+                        .left-side{
+                            p{
+                                text-align: left;
+                                font-size: 16.5px !important;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    @media only screen and (max-width: 768px){
+        height: 750px;
+
+    }
 }
 `;
 

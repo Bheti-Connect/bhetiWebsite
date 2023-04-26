@@ -49,7 +49,6 @@ const Investisseur = () => {
 
 // *******************************************************************************************
 
-
     // handle for receive data and set in useState
     const handleSetData = (response) => {
       setCurrentPage(response.meta.current_page);
