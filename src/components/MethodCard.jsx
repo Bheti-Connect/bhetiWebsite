@@ -6,9 +6,9 @@ const MethodCard = ({title, desc, icon}) => {
     return (
         <MethodCardStyled  theme={theme}>
             <div className='m-item-con'>
-                <img src={icon} alt='' />
+                <img src={icon} alt='icon' />
                 <h4>{title}</h4>
-                <p>
+                <p className='description'>
                     {desc}
                 </p>
             </div>
@@ -18,7 +18,7 @@ const MethodCard = ({title, desc, icon}) => {
 
 const MethodCardStyled = styled.section`
     position: relative;
-    width: 200;
+    width: 100%;
     background-color: ${props => props.theme.colorWhite};
     text-align: center;
     padding: 2.5rem 1rem;
@@ -27,22 +27,28 @@ const MethodCardStyled = styled.section`
     
     @media only screen and (max-width: 425px){
         width: 90%;
-        height: 100%;
+        height: 90%;
+        margin:auto;
     }
     @media only screen and (max-width: 400px){
-        width: 100%;
-        height: 100%;
-        margin-left: -45px;
-    }
-    @media only screen and (max-width: 375px){
         width: 80%;
         height: 100%;
-        margin-left: -20px;
+        margin:auto;
+    }
+
+    @media only screen and (max-width: 391px){
+        width: 80%;
+        height: 100% ;
+        margin-left: -10%;
+    }
+    @media only screen and (max-width: 375px){
+        width: 75vw;
+        margin-left: -15%;
     }
     @media only screen and (max-width: 320px){
-        width: 75%;
+        width: 100%;
         height: 90%;
-        margin-left: -40px;
+        margin:auto;
     }
 
     &::before{
@@ -66,21 +72,32 @@ const MethodCardStyled = styled.section`
         }
     }
     .m-item-con{
+        width: 100%;
         img{
             padding-bottom: 2rem;
             height: 100px;
+            @media only screen and (max-width: 425px){
+                width: 50px;
+                height: 70px;
+            }
         }
         h4{
             font-size: 1.5rem;
             padding-bottom: 1rem;
+            @media only screen and (max-width: 1200px){
+                font-size: 1.3rem;
+            }
+            @media only screen and (max-width: 1200px){
+                font-size: 1.1rem;
+            }
         }
-        p{
+        .description{
             padding-bottom: 1.5rem;
             @media only screen and (max-width: 525px) and (min-width: 425px){
-                font-size: 15px;
+                font-size: 14px;
             }
             @media only screen and (max-width: 425px){
-                font-size: 15px;
+                font-size: 14px;
             }
         }
     }

@@ -94,10 +94,13 @@ const NavBarStyled = styled.nav`
             animation-fill-mode: forwards;
             .theLogo{
                 margin-top: 12%;
-                width: 60%;
+                width: 180px;
                 margin-right: 10rem;
+                @media only screen and (max-width: 768px) {
+                    width: 150px;
+                }
                 @media only screen and (max-width: 440px) {
-                    width: 70%;
+                    width: 125px;
                 }
             }
 }
@@ -109,10 +112,6 @@ const NavBarStyled = styled.nav`
         align-items: center;
         flex-wrap: wrap;
         justify-content: space-between;
-
-        @media only screen and (max-width: 2560px) {
-            
-        }
 
         @media only screen and (max-width: 1024px) {
             border-bottom: 0px solid ${props => props.theme.colorBg};
@@ -138,10 +137,6 @@ const NavBarStyled = styled.nav`
             justify-content: end;
             margin-right: .2rem;
 
-            @media only screen and (max-width: 2560px) {
-                
-            }
-
             @media only screen and (min-width: 960px) {
                 display: grid;
                 justify-content: space-around;
@@ -156,7 +151,7 @@ const NavBarStyled = styled.nav`
                 }
             }
             #menu-icon i{
-                font-size: 2.4rem;
+                font-size: 2.1rem;
             }
             
             }
@@ -199,6 +194,14 @@ const NavBarStyled = styled.nav`
             background-color: ${props => props.theme.colorBheti};
             color: ${props => props.theme.colorWhite};
             transition: .3s;
+        }
+    }
+}
+
+@media only screen and (min-width: 960px){
+    .hero{
+        .logo{
+            width: 40%;
         }
     }
 }
@@ -259,8 +262,8 @@ const NavBarStyled = styled.nav`
         }
 
     #menu-icon {
-            margin-top: 7%;
-            right: 4%;
+            margin-top: 11%;
+            right: 5%;
             z-index: 50;
             cursor: pointer;
             .fa-xmark {
@@ -277,7 +280,7 @@ const NavBarStyled = styled.nav`
         .logo{
             width: 47%;
         }
-        margin-left: -7vw;
+        margin-left: -3vw;
     }
 }
 @media only screen and (max-width: 425px){

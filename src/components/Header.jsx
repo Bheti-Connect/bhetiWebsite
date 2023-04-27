@@ -33,7 +33,6 @@ const Header = () => {
 }
 
 const HeaderStyled = styled.header`
-height : 80vh;
 display: flex;
 flex-direction: column;
 justify-content: center;
@@ -46,7 +45,6 @@ justify-content: center;
     align-items: center;
     justify-content: space-between;
     gap: 2em;
-
     @media screen and (max-width: 912px) {
         flex-direction: column;
         }
@@ -58,9 +56,8 @@ justify-content: center;
 
     .text {
         flex: 1;
+        position: relative;
         padding-right: 20px;
-
-
         @media screen and (max-width: 540px) {
             font-size: 10px;
 
@@ -105,6 +102,7 @@ justify-content: center;
     .images {
         flex: 1;
         display: flex;
+        position: relative;
         justify-content: center;
         transition: all .4s ease-in-out;
         animation: contentHide2 1s ease-in-out;
@@ -134,6 +132,7 @@ justify-content: center;
 
             }
             .h-img-1{
+                position: relative;
                 transform: scale(1.1);
                 @media screen and (max-width: 540px) {
                     transform: none;
@@ -176,6 +175,7 @@ justify-content: center;
         }
 
         .h-img-2 {
+            position: relative;
             width: 48%;
             max-width: 300px;
             height: auto;
@@ -204,6 +204,7 @@ justify-content: center;
         }
 
     }
+}
 
     .mouse{
 
@@ -213,7 +214,8 @@ justify-content: center;
         border-radius: 30px;
         border: 2px solid ${props => props.theme.colorBlack};
         pointer-events: none;
-        background-color: red;
+        background-color: white;
+        margin:auto;
         span {
             position: absolute;
             left: 50%;

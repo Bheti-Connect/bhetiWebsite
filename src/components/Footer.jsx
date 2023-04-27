@@ -276,11 +276,11 @@ const FooterSectionStyled = styled.footer`
     }
     .footer-copyright{
         position: relative;
-        padding-top: 3rem;
+        padding-top: 2.5rem;
         margin: 0 auto;
-        width: 60%;
+        width: 55%;
         border-top: 1px solid ${props => props.theme.colorGrey9};
-
+        text-align: center;
         align-items: center;
         span{
             color: ${props => props.theme.colorWhite};
@@ -298,6 +298,8 @@ const FooterSectionStyled = styled.footer`
 
     .copyright-text{
         color: ${props => props.theme.colorGrey6};
+        margin: auto;
+        text-align: center;
         @media all and (max-width: 425px) {
             width: 100%;
             font-size: 11px;

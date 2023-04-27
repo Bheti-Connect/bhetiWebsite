@@ -20,7 +20,7 @@ const MethodSection = () => {
                 />
             </div>
             <div className='methods-con' >
-                <MethodCard
+                <MethodCard 
                     title={"Nous préparons votre documentation"}
                     desc={'BP, Pitch deck, Etats financiers.'}
                     icon={checking}
@@ -52,31 +52,40 @@ const MethodSectionStyled = styled.section`
         grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
         grid-gap: 2rem;
         padding-top: 3rem;
-        margin: 0 auto;
-        @media only screen and (max-width: 425px) {
-            margin-left: -4vw ;
-        }
-        @media only screen and (max-width: 376px) {
-            margin-left: -0.2vw ;
+        @media only screen and (max-width: 2560px) {
+            grid-template-columns: auto auto auto;
+            width: 90%;
+            margin:auto;
         }
 
-        @media only screen and (max-width: 280px) {
-            margin: 0 -20px;
+        @media only screen and (max-width: 768px) {
+            grid-template-columns: none;
         }
     }
 
     .title-con {
+        width: 60vw;
+        @media only screen and (max-width: 2500px) {
+            width: 70% !important;
+        }
+        @media only screen and (max-width: 768px) {
+            width: 100% !important;
+        }
         @media only screen and (max-width: 425px) {
-            width: 120%;
             margin-left: -28px;
         }
         @media only screen and (max-width: 400px) {
-            width: 100%;
-            margin-left: -30px;
+            width: 130%;
+            
+            h3 {
+                width: 100%;
+                font-size: 1.5rem;
+                text-align: center;
+            }
         }
         @media only screen and (max-width: 375px) {
             width: 100%;
-            margin-left: -20px;
+            margin: auto;
         }
         @media only screen and (max-width: 280px) {
             text-align: center;
@@ -85,7 +94,6 @@ const MethodSectionStyled = styled.section`
                 font-size: 1.5rem;
                 text-align: center;
                 margin-left: -20px;
-
             }
         }
     }
