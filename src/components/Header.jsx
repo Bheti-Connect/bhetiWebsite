@@ -1,7 +1,6 @@
 import styled from 'styled-components'
 import { useTheme } from '../context/themeContext';
-import premiereImg from '../assets/images/ent-img1.jpg';
-import deuxiemeImg from '../assets/images/ent-img4-2.jpg';
+import premiereImg from '../assets/images/pexels-mikhail-nilov-9304680-removebg-preview.png';
 import Button from './Button';
 import { Link } from 'react-router-dom';
 
@@ -22,7 +21,6 @@ const Header = () => {
                 </div>
                 <div className='images'>
                     <img  className='h-img-1' src={premiereImg} alt='image-1' />
-                    <img className='h-img-2' src={deuxiemeImg} alt='image-2' />
                 </div>
             </div>
             <div className='mouse'>
@@ -78,7 +76,6 @@ justify-content: center;
         h2 {
             font-size: 4rem;
             margin-bottom: 20px;
-            font-family: 'Cinzel', serif;
             text-align : center;
 
             @media screen and (max-width: 540px) {
@@ -88,7 +85,6 @@ justify-content: center;
             span{
                 background:${props => props.theme.colorGradientPrimary3};;
                 background-clip: text;
-                font-family: 'Cinzel', serif;
                 -webkit-background-clip: text;
                 color: transparent;
             }
@@ -149,11 +145,6 @@ justify-content: center;
             margin: 2%;
             max-width: 300px;
             height: auto;
-
-            border-bottom-right-radius: 5px;
-            border-bottom-left-radius: 70px;
-            border-top-right-radius: 5px;
-            border-top-left-radius: 5px;
             transition: all .4s ease-in-out;
 
             @media screen and (max-width: 912px) {

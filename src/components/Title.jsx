@@ -61,7 +61,6 @@ const TitleStyled = styled.div`
     .subtext{
         text-align: justify;
         text-justify: inter-word;
-       
         @media only screen and (max-width: 525px) and (min-width: 425px){
             font-size: 15px;
         }

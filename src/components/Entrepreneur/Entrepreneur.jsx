@@ -11,7 +11,7 @@ const Entrepreneur = () => {
     return (
         <EntrepreneurStyled  theme={theme}>
             <Accueil />
-            <div className=''>
+            <div className='advantages__div'>
                 <Advantages />
             </div>
             <div className='method-container'>
@@ -29,6 +29,10 @@ const EntrepreneurStyled = styled.section`
     .method-container{
         margin-top: 2%;
         width: 100%;
+    }
+    .advantages__div{
+        position: relative;;
+        height: 100%;
     }
 `;
 

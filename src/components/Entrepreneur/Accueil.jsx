@@ -109,13 +109,14 @@ const AccueilStyled = styled.section`
             .mobile-view {
                 @media only screen and (max-width: 425px){
                     width: 90vw;
-                    font-size: 1.6em;
-                    margin: 0 auto;
+                    font-size: 1.3em;
+                    margin: 0 -25px;
                     color: ${props => props.theme.colorBlack};
                 }
                 @media only screen and (max-width: 320px){
-                    left: 8vw;
-                    font-size: 20px;
+                    width: 90vw;
+                    font-size: 1.4em;
+                    margin: 0 -20px;
                 }
             }
         }
@@ -153,7 +154,7 @@ const AccueilStyled = styled.section`
             @media only screen and (max-width: 320px) {
                 position: relative;
                 width: 260px;
-                margin-left: 40px;
+                margin-left: 10px;
             }
         }
         .button-demo{
@@ -172,8 +173,12 @@ const AccueilStyled = styled.section`
             }
             @media only screen and (max-width: 425px){
                 position: relative;
-                width: 90%;
+                width: 75%;
                 margin: 20px  auto;
+            }
+            @media only screen and (max-width: 320px){
+                width: 78%;
+                margin: 160px  auto;
             }
         }
         @media only screen and (max-width: 1440px){

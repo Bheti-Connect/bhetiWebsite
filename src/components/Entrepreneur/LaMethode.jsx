@@ -46,8 +46,6 @@ const LaMethode = () => {
 const LaMethodeStyled = styled.section`
     display: block;
     position: relative;
-    /* margin: auto;
-    width: 80%; */
     height: 108vh;
     background: ${props => props.theme.colorBlack};
     grid-template-columns: 1fr 1fr;
@@ -58,14 +56,12 @@ const LaMethodeStyled = styled.section`
         margin: auto;
         width: 80vw;
         margin-top: 90px;
-        h3{ 
-            color: ${props => props.theme.colorWhite};
-        }
         .title{
                     position: relative;
                     font-size: 2.3em;
                     width: 70vw;
                     margin: 10% auto 0px;
+                    color: ${props => props.theme.colorWhite};
         } 
         @media all and (max-width: 2500px){
             position: relative;
@@ -89,9 +85,16 @@ const LaMethodeStyled = styled.section`
                     margin: 5% auto;
                 }
         }
-        @media only screen and (max-width: 500px) {
+        @media only screen and (max-width: 768px) {
             .title{
-                    font-size: 4.3vw;
+                    font-size: 1.3em;
+                    width: 80vw;
+                    margin: 10% auto;
+                }
+        }
+        @media only screen and (max-width: 425px) {
+            .title{
+                    font-size: 1.2em;
                     width: 80vw;
                     margin: 10% auto;
                 }
@@ -153,9 +156,12 @@ const LaMethodeStyled = styled.section`
             margin: 10% auto;
         }
     }
-
     @media only screen and (max-width: 768px) {
         height: 100vh;
+    }
+    @media only screen and (max-width: 500px) {
+        height: 110vh;
+        margin-top: -1rem;;
     }
 
 `;
