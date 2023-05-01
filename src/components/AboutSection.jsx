@@ -28,9 +28,9 @@ const AboutSection = () => {
                     Développez et financez vos projets
                 </h3>
                 <h4>Grâce à la plateforme BHC, accédez à un écosystème composé d’experts, d’outils et d’informations… Bref, tout ce qu’il vous faut pour trouver du financement.</h4>
-                <div className='cta-button'>
+                <div className='test-button'>
                         <Button
-                            name='Intégrer le réseau'
+                            name='Tester Bheti App'
                             arrow={'arrow'}
                             icon={'fas fa-arrow-right'}
                         />
@@ -73,6 +73,10 @@ const AboutSectionStyled = styled.section`
                 font-size: 15px;
             }
             text-align: left;
+        }
+        .test-button{
+            margin: 20px 0px;
+            width: 26%;
         }
         .title{
             color: ${props => props.theme.colorWhite};
