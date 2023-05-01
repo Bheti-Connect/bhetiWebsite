@@ -4,8 +4,6 @@ import { useTheme } from '../context/themeContext';
 import bhetiImage from '../assets/images/bheti-img.jpg';
 import Button from "./Button";
 
-
-
 const AboutSection = () => {
     const theme = useTheme();
 
@@ -15,7 +13,6 @@ const AboutSection = () => {
         )
 
     const [index, setIndex] = useState(0)
-
     useEffect(() => {
         if (index < fullText.length) {
                 setTimeout(() => {
@@ -26,7 +23,6 @@ const AboutSection = () => {
         }, [index])
     return (
         <AboutSectionStyled  theme={theme}>
-
             <div className='upper-container'>
                 <h3 className='title'>
                     Développez et financez vos projets
@@ -129,22 +125,18 @@ const AboutSectionStyled = styled.section`
                 margin-bottom: 5%;
                 margin-top: -2900%;
                 width: 100% !important;
-                /*margin-left: -2px;*/
             }
             @media only screen and (max-width: 375px){
                 font-size: 1.2rem;
                 margin-bottom: 10% !important;
-                /*margin-top: -2900%;*/
                 width: 100% !important;
                 margin:auto;
-                /*margin-left: -2px;*/
             }
             @media only screen and (max-width: 320px){
                 font-size: 1.3rem;
                 width: 100% !important;
                 margin-bottom: 10% !important;
                 margin:auto;
-                /*margin-left: 50px;*/
             }
         }
         @media only screen and (max-width: 600px){
