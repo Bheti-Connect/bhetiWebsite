@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from "react"
 import styled from 'styled-components';
 import { useTheme } from '../context/themeContext';
-import projectManagement from '../assets/images/analytics.png';
 import bhetiImage from '../assets/images/bheti-img.jpg';
-import giveMoney from '../assets/images/give-money.png'
+import Button from "./Button";
 
 
 
@@ -33,6 +32,13 @@ const AboutSection = () => {
                     Développez et financez vos projets
                 </h3>
                 <h4>Grâce à la plateforme BHC, accédez à un écosystème composé d’experts, d’outils et d’informations… Bref, tout ce qu’il vous faut pour trouver du financement.</h4>
+                <div className='cta-button'>
+                        <Button
+                            name='Intégrer le réseau'
+                            arrow={'arrow'}
+                            icon={'fas fa-arrow-right'}
+                        />
+                </div>
             </div>
             <div className='lower-container'>
                 <div className='leftSide'>
@@ -57,9 +63,10 @@ const AboutSectionStyled = styled.section`
     grid-gap: 1rem;
     text-align: center;
     .upper-container{
-        width: 60%;
-        margin: auto;
+        width: 45%;
         margin-top:50px;
+        margin-left: 10%;
+        align-items: left;
         h4{
             color: ${props => props.theme.colorWhite};
             width: 100%;
@@ -69,16 +76,18 @@ const AboutSectionStyled = styled.section`
             @media only screen and (max-width: 600px){
                 font-size: 15px;
             }
+            text-align: left;
         }
         .title{
             color: ${props => props.theme.colorWhite};
             margin-bottom: 3%;
-            font-size: 1.6rem;
+            font-size: 1.9rem;
             @media only screen and (max-width: 2560px){
-                font-size: 2.7rem;
+                text-align: left;
+                font-size: 2.9rem;
             }
             @media only screen and (max-width: 1800px){
-                font-size: 2.4rem;
+                font-size: 2.8rem;
                 margin-bottom: 5%;
             }
             @media only screen and (max-width: 1440px){
@@ -138,7 +147,6 @@ const AboutSectionStyled = styled.section`
                 /*margin-left: 50px;*/
             }
         }
-
         @media only screen and (max-width: 600px){
             margin-top:20px;
             width: 85%;

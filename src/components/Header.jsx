@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 import { useTheme } from '../context/themeContext';
-import premiereImg from '../assets/images/pexels-mikhail-nilov-9304680-removebg-preview.png';
+import premiereImg from '../assets/images/pexels-jep-gambardella-7690161-removebg-preview.png';
 import Button from './Button';
 import { Link } from 'react-router-dom';
 
@@ -10,14 +10,20 @@ const Header = () => {
     return (
         <HeaderStyled theme={theme}>
             <div className='header-content'>
-                
                 <div className='text'>
                     <h2>
                         Trouvez du <span>financement</span> avec nous
                     </h2>
                     <p className='sub-title'>
-                        Réseaux, outils, stratégie. Un accompagnement pour réussir chaque étape de votre levée de fonds
+                        Réseaux, outils, stratégie. Un accompagnement pour réussir chaque étape de votre levée de fonds.
                     </p>
+                    <div className='cta-button'>
+                        <Button
+                            name='Intégrer le réseau'
+                            arrow={'arrow'}
+                            icon={'fas fa-arrow-right'}
+                        />
+                    </div>
                 </div>
                 <div className='images'>
                     <img  className='h-img-1' src={premiereImg} alt='image-1' />
@@ -43,26 +49,15 @@ justify-content: center;
     align-items: center;
     justify-content: space-between;
     gap: 2em;
-    @media screen and (max-width: 912px) {
+    @media screen and (max-width: 800px) {
         flex-direction: column;
         }
-
-    @media screen and (max-width: 820px) {
-        flex-direction: column;
-        }
-
 
     .text {
         flex: 1;
         position: relative;
-        padding-right: 20px;
-        @media screen and (max-width: 540px) {
-            font-size: 10px;
-
-            }
-
+        width:70%;
         animation: contentHide 1.5s ease-in-out;
-
             @keyframes contentHide {
                 0%{
                     opacity: 0;
@@ -74,31 +69,63 @@ justify-content: center;
                 }
             }
         h2 {
-            font-size: 4rem;
+            font-size: 4vw;
             margin-bottom: 20px;
-            text-align : center;
-
-            @media screen and (max-width: 540px) {
-                font-size: 2rem;
-                }
-
+            text-align : left;
+            width: 80%;
+            margin: auto;
             span{
                 background:${props => props.theme.colorGradientPrimary3};;
                 background-clip: text;
                 -webkit-background-clip: text;
                 color: transparent;
             }
+            @media screen and (max-width: 800px){
+                font-size: 2.2em;
+                width: 75% ;
+            }
+            @media screen and (max-width: 500px){
+                font-size: 2.2em;
+            }
         }
+        .sub-title{
+            text-align: left;
+            font-family: 'Montserrat', sans-serif;
+            width: 80%;
+            margin-left: 10%;
+            @media screen and (max-width: 800px){
+                width: 75%;
+                margin-top: 2%;
+                margin-left: 12.5%;
+            }
+            @media screen and (max-width: 500px){
+                font-size: .9em;
 
-        p {
-            text-align: center;
+            }
+        }
+        .cta-button{
+            position: relative;
+            margin-left: 10%;
+            margin-top: 2%;
+            @media screen and (max-width: 800px){
+                position: relative;
+                margin: auto;
+            }
+            @media screen and (max-width: 500px){
+                margin-top: 5%;
+                margin-left: 12%;
+            }
+        }
+        @media screen and (max-width: 800px){
+            margin-top: 5%;
+            width: 100%;
         }
     }
 
     .images {
-        flex: 1;
         display: flex;
         position: relative;
+        width: 30%;
         justify-content: center;
         transition: all .4s ease-in-out;
         animation: contentHide2 1s ease-in-out;
@@ -118,15 +145,6 @@ justify-content: center;
             }
         }
         &:hover{
-            .h-img-2{
-                transform: scale(0.9);
-                @media screen and (max-width: 540px) {
-                    transform: none;
-            
-                    }
-
-
-            }
             .h-img-1{
                 position: relative;
                 transform: scale(1.1);
@@ -135,65 +153,21 @@ justify-content: center;
                     }
             }
         }
-
         @media screen and (max-width: 540px) {
             width: 80%;
             }
-
         .h-img-1 {
-            width: 48%;
+            width: 100%;
             margin: 2%;
-            max-width: 300px;
             height: auto;
             transition: all .4s ease-in-out;
-
-            @media screen and (max-width: 912px) {
-                border-bottom-right-radius: 0px;
-                border-bottom-left-radius: 0px;
-                border-top-right-radius: 0px;
-                border-top-left-radius: 0px;
-                }
-            
-            @media screen and (max-width: 540px) {
-                
-                border-bottom-right-radius: 0px;
-                border-bottom-left-radius: 0px;
-                border-top-right-radius: 0px;
-                border-top-left-radius: 0px;
-                
-                }
-
         }
-
-        .h-img-2 {
-            position: relative;
-            width: 48%;
-            max-width: 300px;
-            height: auto;
-            border-bottom-right-radius: 70px;
-            border-bottom-left-radius: 5px;
-            border-top-left-radius: 5px;
-            border-top-right-radius: 5px;
-            transition: all .4s ease-in-out;
-
-            @media screen and (max-width: 912px) {
-                margin: 2%;
-                border-bottom-right-radius: 0px;
-                border-bottom-left-radius: 0px;
-                border-top-left-radius: 0px;
-                border-top-right-radius: 0px;
-                }
-
-            @media screen and (max-width: 540px) {
-                margin: 2%;
-                border-bottom-right-radius: 0px;
-                border-bottom-left-radius: 0px;
-                border-top-left-radius: 0px;
-                border-top-right-radius: 0px;
-                          
-                }
+        @media screen and (max-width: 800px){
+            width: 70%;
         }
-
+        @media screen and (max-width: 500px){
+            width: 80%;
+        }
     }
 }
 
@@ -202,6 +176,7 @@ justify-content: center;
         transform: translateX(-50%);
         width: 30px;
         height: 45px;
+        margin-bottom: 50px !important;
         border-radius: 30px;
         border: 2px solid ${props => props.theme.colorBlack};
         pointer-events: none;
@@ -232,7 +207,6 @@ justify-content: center;
                 }
             }
         }
-     
     }
 
 
