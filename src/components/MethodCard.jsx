@@ -6,7 +6,7 @@ const MethodCard = ({title, desc, icon}) => {
     return (
         <MethodCardStyled  theme={theme}>
             <div className='m-item-con'>
-                <img src={icon} alt='icon' />
+                <img className='image' src={icon} alt='icon' />
                 <h4>{title}</h4>
                 <p className='description'>
                     {desc}
@@ -73,7 +73,8 @@ const MethodCardStyled = styled.section`
     }
     .m-item-con{
         width: 100%;
-        img{
+        .image{
+            color: ${props => props.theme.colorBheti};
             padding-bottom: 2rem;
             height: 100px;
             @media only screen and (max-width: 425px){
@@ -101,7 +102,6 @@ const MethodCardStyled = styled.section`
             }
         }
     }
-
     
 `;
 

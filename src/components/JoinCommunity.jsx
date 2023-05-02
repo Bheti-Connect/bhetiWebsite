@@ -39,9 +39,12 @@ const JoinCommunity = () => {
                                     <p className='icon__name'>
                                     </p>
                                         <a href='https://slack.com/'>
-                                            <span id='slack-span'>
-                                                <FaSlack className='social-icon slack' />
-                                            </span>
+                                            <div className='our-community'>
+                                                <span id='slack-span'>
+                                                    <FaSlack className='social-icon slack' />
+                                                    <h5> je rejoins la communauté</h5>
+                                                </span>                                            
+                                            </div>
                                         </a>
                                 </div>
                             </div>
@@ -55,9 +58,12 @@ const JoinCommunity = () => {
                                     <p className='icon__name'>
                                     </p>
                                         <a href='https://www.linkedin.com/company/bheti-connect'>
-                                            <span id='linkedin-span'>
-                                                <FaLinkedinIn className='social-icon linkedin' />
-                                            </span>
+                                            <div className='our-community'>
+                                                <span id='linkedin-span'>
+                                                    <FaLinkedinIn className='social-icon linkedin' />
+                                                    <h5> je rejoins la communauté</h5>
+                                                </span>
+                                            </div>
                                         </a>
                                 </div>
                             </div>
@@ -135,7 +141,7 @@ const JoinCommunityStyled = styled.div`
                         }
                         .button__div{
                             display: block;
-                            width: 20%;
+                            width: 80%;
                             .icon__name{
                                 margin: 0px  2px;
                                 color: ${props => props.theme.colorGrey2};
@@ -159,20 +165,27 @@ const JoinCommunityStyled = styled.div`
                                     }
                                 }
                                 span{
-                                    padding: 17px .3px;
-                                    border-radius: 50%;
+                                    padding: 20px .8px;
+                                    width: 95%
                                 }
                                 #slack-span{
+                                    display: flex;
+                                    color: ${props => props.theme.colorWhite};
                                     background-color: ${props => props.theme.colorSlack};
                                     &:hover{
                                         background-color: ${props => props.theme.colorGrey2};
                                     }
                                 }
                                 #linkedin-span{
+                                    display: flex;
+                                    color: ${props => props.theme.colorWhite};
                                     background-color: ${props => props.theme.colorLinkedIn};
                                     &:hover{
                                         background-color: ${props => props.theme.colorGrey2};
                                     }
+                                }
+                                .our-community{
+                                    display: flex;
                                 }
                         }
                     }

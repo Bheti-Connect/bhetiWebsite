@@ -2,11 +2,10 @@ import styled from 'styled-components';
 import { useTheme } from 'styled-components';
 import MethodCard from './MethodCard';
 import Title from './Title';
+import {FaClipboardList} from 'react-icons/fa'
 import checking from '../assets/images/list.png';
 import investors from '../assets/images/investor.png';
 import layout from '../assets/images/layout.png';
-import conditions from '../assets/images/contract.png';
-
 
 
 const MethodSection = () => {
@@ -35,7 +34,6 @@ const MethodSection = () => {
                     desc={'dans les négociations autour du montant de l’investissement, la valorisation de l’entreprise et les conditions de financement.'}
                     icon={layout}
                 />
-            
             </div>
         </MethodSectionStyled>
     )

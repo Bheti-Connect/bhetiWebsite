@@ -72,6 +72,7 @@ justify-content: center;
             font-size: 4vw;
             margin-bottom: 20px;
             text-align : left;
+            line-height: .9;
             width: 80%;
             margin: auto;
             span{
@@ -93,13 +94,14 @@ justify-content: center;
             font-family: 'Montserrat', sans-serif;
             width: 80%;
             margin-left: 10%;
+            margin-top: 3%;
             @media screen and (max-width: 800px){
                 width: 75%;
                 margin-top: 2%;
                 margin-left: 12.5%;
             }
             @media screen and (max-width: 500px){
-                font-size: .9em;
+                font-size: .8em;
 
             }
         }
@@ -109,10 +111,7 @@ justify-content: center;
             margin-top: 2%;
             @media screen and (max-width: 800px){
                 position: relative;
-                margin: auto;
-            }
-            @media screen and (max-width: 500px){
-                margin-top: 5%;
+                margin-top: 4%;
                 margin-left: 12%;
             }
         }
@@ -172,7 +171,6 @@ justify-content: center;
 }
 
     .mouse{
-
         transform: translateX(-50%);
         width: 30px;
         height: 45px;
@@ -212,11 +210,9 @@ justify-content: center;
 
     @media screen and (max-width: 768px) {
             flex-direction: column;
-
             .text {
                 flex: none;
                 width: 100%;
-               
             }
 
             .images {
@@ -227,9 +223,7 @@ justify-content: center;
                     max-width: none;
                     height: 50%;
                 }
-
             }
-
         }
 
 
@@ -242,20 +236,17 @@ justify-content: center;
                 h2 {
                     font-size: 2rem;   
                 }
-
             }
-
             .images {
                 justify-content: center;
-                display: flex
+                display: flex;
                 img {
                     width: 100%;
                     max-width: none;
                     height: 50%;
                 }
-
             }
-     
-}`;
+        }
+`;
 
 export default Header
