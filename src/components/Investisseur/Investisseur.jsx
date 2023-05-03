@@ -233,7 +233,7 @@ const Investisseur = () => {
       //This code sets a timeout of 4 seconds (4000 milliseconds) and then sets the loading state to false.
       let waiting = setTimeout(() => {
         setLoading(false)
-      }, 4000);
+      }, 500);
 
       
       changeSectionMenu()
@@ -471,7 +471,6 @@ const AllProject = styled.div`
 
 }
 
-
 `;
 
 const HeaderText = styled.div`
@@ -480,6 +479,7 @@ const HeaderText = styled.div`
 margin: 55px;
 
 h3 {
+  font-family: 'Montserrat', sans-serif;
   font-size: 25px;
   color: ${props => props.theme.colorPrimary};
 }
@@ -487,6 +487,8 @@ h3 {
 p {
   margin: 10px 0;
   font-size: 14px;
+  font-family: 'Montserrat', sans-serif;
+
 }
 
 .menuSection{
@@ -514,7 +516,6 @@ p {
   &:hover{
     color: ${props => props.theme.colorBheti};
   }
-
 }
 
 .containerMenu{

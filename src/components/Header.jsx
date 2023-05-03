@@ -114,6 +114,11 @@ justify-content: center;
                 margin-top: 4%;
                 margin-left: 12%;
             }
+            @media screen and (max-width: 440px){
+                position: relative;
+                margin-top: 4%;
+                margin-left: 0%;
+            }
         }
         @media screen and (max-width: 800px){
             margin-top: 5%;

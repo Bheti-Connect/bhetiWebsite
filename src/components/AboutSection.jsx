@@ -147,7 +147,7 @@ const AboutSectionStyled = styled.section`
         }
         @media only screen and (max-width: 600px){
             margin-top:20px;
-            width: 85%;
+            width: 70%;
         }
     }
     .lower-container{
@@ -170,6 +170,11 @@ const AboutSectionStyled = styled.section`
                         color: ${props => props.theme.colorWhite};
                         font-size: 1.8vw;
                         line-height: 1.5;
+                        @media only screen and (max-width: 440px){
+                            font-size: 1.1rem;
+                            margin-left: -45%;
+                            width: 300px;
+                        }
                     }
                 @media only screen and (min-width: 1350px){
                     width: 100%;
