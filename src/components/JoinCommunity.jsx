@@ -25,9 +25,6 @@ const JoinCommunity = () => {
                         <img className='img-community' src={mediaImg} alt='' />
                     </div>
                     <div className='latest-text'>
-                        <h4 className='title'>
-                            Qu'est-ce qui se passe dans la communauté?
-                        </h4>
                         <div className='community'>
                             <div className='inner slack-div'>
                                 <div className='left-side'>
@@ -131,7 +128,7 @@ const JoinCommunityStyled = styled.div`
                 .community{
                     display: inline-block;
                     .inner{
-                        display: flex;
+                        display: block;
                         .left-side{
                             width: 85%;
                             .paragraphs{
@@ -155,33 +152,35 @@ const JoinCommunityStyled = styled.div`
                                     margin: -15px 10px;
                                 }
                                 .slack:hover{
-                                        color: ${props => props.theme.colorSlack};
                                         transform: scale(.8);
                                 }
                                 .linkedin{
                                     &:hover{
-                                        color: ${props => props.theme.colorLinkedIn};                      
                                         transform: scale(.8);
                                     }
                                 }
                                 span{
                                     padding: 20px .8px;
-                                    width: 95%
+                                    width: 95%;
                                 }
                                 #slack-span{
                                     display: flex;
+                                    width: 300px;
+                                    border-radius: 15px;
                                     color: ${props => props.theme.colorWhite};
                                     background-color: ${props => props.theme.colorSlack};
                                     &:hover{
-                                        background-color: ${props => props.theme.colorGrey2};
+                                        background-color: ${props => props.theme.colorSlackDeep};
                                     }
                                 }
                                 #linkedin-span{
                                     display: flex;
+                                    width: 300px;
+                                    border-radius: 15px;
                                     color: ${props => props.theme.colorWhite};
                                     background-color: ${props => props.theme.colorLinkedIn};
                                     &:hover{
-                                        background-color: ${props => props.theme.colorGrey2};
+                                        background-color: ${props => props.theme.colorLinkedInDeep};
                                     }
                                 }
                                 .our-community{

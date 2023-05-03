@@ -13,15 +13,14 @@ const Footer = () => {
                 <ul className="logo-con">
                     <div className="logo">
                         <img src={footerLogo} alt="Footer Logo"/>
-                        <h1>BHETI CONNECT</h1>
                     </div>
                     <p>
                         Préparez votre levée de fonds avec des contenus adaptés et présentez votre projet à des investisseurs pertinents
                     </p>
                     <div className="b-nav-icons">
-                        <a href='https://www.linkedin.com/company/bheti-connect'><FontAwesomeIcon icon={faLinkedin} className='icon icon-linkedin' /></a>
-                        <a href='https://web.facebook.com/bheticonnect'><FontAwesomeIcon icon={faFacebook} className='icon icon-facebook' /></a>
-                        <a href='https://www.instagram.com/bheticonnect/'><FontAwesomeIcon icon={faInstagram} className='icon icon-instagram'/></a>
+                        <a href='https://www.linkedin.com/company/bheti-connect'><FontAwesomeIcon icon={faLinkedin} className='icon icon-linkedin social' /></a>
+                        <a href='https://web.facebook.com/bheticonnect'><FontAwesomeIcon icon={faFacebook} className='icon icon-facebook social' /></a>
+                        <a href='https://www.instagram.com/bheticonnect/'><FontAwesomeIcon icon={faInstagram} className='icon icon-instagram social'/></a>
                     </div>
                 </ul>
                 <ul className="nav-b nav-contact">
@@ -117,11 +116,6 @@ const FooterSectionStyled = styled.footer`
             color: ${props => props.theme.colorBheti};
         }
     }
-    h1{
-        color: ${props => props.theme.colorWhite};
-        margin-bottom: 1rem;
-        font-size: 1.1rem;
-    }
     .bottom-navigation{
         display: flex;
         flex-wrap: wrap;
@@ -176,7 +170,7 @@ const FooterSectionStyled = styled.footer`
             }
             .f-text{
                 text-align: left;
-                margin-left: .5vw;
+                margin-left: .1vw;
             }
             .f-text h6{
                 font-size: 14px ;
@@ -188,6 +182,7 @@ const FooterSectionStyled = styled.footer`
         }
         .logo-con{
             flex: 5;
+            align-items: left;
             .logo img{
                 width: 12%;
                 @media all and (max-width: 425px) {
@@ -201,9 +196,6 @@ const FooterSectionStyled = styled.footer`
     }
         .logo-con p{
             width: 80%;
-            @media all and (min-width: 768px) {
-                margin-left: 50px;
-            }
             @media all and (max-width: 768px) {
                 width: 100%;
             }
@@ -211,11 +203,13 @@ const FooterSectionStyled = styled.footer`
         }
         .b-nav-icons{
             display: flex;
-            margin: 2rem auto;
-            width: 50%;
+            margin: 1.5rem 0px;
+            width: 40%;
+            justify-content: flex-start;
             .icon {
                 color: aliceblue;
-                width: 1rem;
+                width: 1.5rem;
+                height: 1.5rem;
             }
             .icon-linkedin{
                 :hover{
