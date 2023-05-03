@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import { useTheme } from '../context/themeContext';
 import bhetiImage from '../assets/images/bheti-img.jpg';
+import aboutImage from '../assets/images/about.png';
 import Button from "./Button";
 
 const AboutSection = () => {
@@ -24,11 +25,7 @@ const AboutSection = () => {
             <div className='lower-container'>
                 <div className='leftSide'>
                     <div className='inner-container'>
-                        <ol>
-                            <li>1. Publiez votre projet </li>
-                            <li>2. Précisez votre besoin</li>
-                            <li>3. Augmentez la visibilité de votre projet auprès d’investisseurs</li>
-                        </ol>
+                        <img src={aboutImage} className='about-text' alt='about-text-image' />
                     </div>
                 </div>
                 <div className='rightSide'>
@@ -45,13 +42,16 @@ const AboutSectionStyled = styled.section`
     display: grid;
     background: ${props => props.theme.colorBlack};
     grid-template-columns: auto;
-    grid-gap: 1rem;
+    grid-gap: 0.5rem;
     text-align: center;
     .upper-container{
+        display : flex;
         width: 45%;
         margin-top:50px;
         margin-left: 10%;
         align-items: left;
+        flex-direction : column;
+        position : relative;
         p{
             color: ${props => props.theme.colorGrey5};
             width: 100%;
@@ -66,10 +66,10 @@ const AboutSectionStyled = styled.section`
         .test-button{
             margin: 20px 0px;
             width: 30%;
+            position : relative;
             @media only screen and (max-width: 1490px){
-                position: absolute;
                 width: 35%;
-                left: 0px;
+
             }
             @media only screen and (max-width: 600px){
                 margin:20px  auto;
@@ -155,6 +155,7 @@ const AboutSectionStyled = styled.section`
         position: relative;
         width: 80%;
         margin: 5% auto;
+        gap : 20px;
         .leftSide{
             position: relative;
             width: 80%;
@@ -162,15 +163,14 @@ const AboutSectionStyled = styled.section`
                 align-items: flex-start;
                 position: relative;
                 width: 100%;
-                padding: 20px 50px;
                 text-align: center;
-                ol{
-                        margin: 15% auto;
-                        width: 100%;
-                        color: ${props => props.theme.colorWhite};
-                        font-size: 1.8vw;
-                        line-height: 1.5;
-                    }
+                .about-text{
+                    position: relative; 
+                    width: 36vw;
+                    height: 100%;
+                    box-shadow: 12px 12px 2px 1px #540000;
+                    border-radius : 15px;
+            }
                 @media only screen and (min-width: 1350px){
                     width: 100%;
                     height: 100%;
@@ -197,11 +197,12 @@ const AboutSectionStyled = styled.section`
         .rightSide{
             position: relative;
             .image-div{
-                margin: auto;
+                
                 .about-img{
                     position: relative; 
                     width: 36vw;
                     height: 100%;
+                    border-radius : 15px;
             }
         }
     } 
@@ -216,15 +217,22 @@ const AboutSectionStyled = styled.section`
                 position: relative;
                 width: 100%;
                 margin: auto;
+
+                .about-text{
+                    position: relative; 
+                    width: 70vw;
+                    height: 100%;
+                    box-shadow: 12px 12px 2px 1px rgba(0, 0, 255, .2);
+            }
             }
         }
 
         .rightSide{
             position: relative;
             .image-div{
-                margin: 5% auto;
                 .about-img{
                     width: 70vw;
+                    border-radius : 15px;
             }
         }
 
