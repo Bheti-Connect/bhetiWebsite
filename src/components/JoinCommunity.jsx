@@ -33,13 +33,11 @@ const JoinCommunity = () => {
                                     </p>
                                 </div>
                                 <div className='button__div'>
-                                    <p className='icon__name'>
-                                    </p>
                                         <a href='https://slack.com/'>
                                             <div className='our-community'>
                                                 <span id='slack-span'>
                                                     <FaSlack className='social-icon slack' />
-                                                    <h5> je rejoins la communauté</h5>
+                                                    <h5> Je rejoins la communauté</h5>
                                                 </span>                                            
                                             </div>
                                         </a>
@@ -48,17 +46,15 @@ const JoinCommunity = () => {
                             <div className='inner linkedin-div'>
                                 <div className='left-side'>
                                     <p className='paragraphs linkedin'>
-                                    Accédez à un contenu d’information hebdomadaire pour positionner votre projet en fonction de l’actualité du marché économique et financier africain
+                                        Accédez à un contenu d’information hebdomadaire pour positionner votre projet en fonction de l’actualité du marché économique et financier africain
                                     </p>
                                 </div>
                                 <div className='button__div'>
-                                    <p className='icon__name'>
-                                    </p>
                                         <a href='https://www.linkedin.com/company/bheti-connect'>
                                             <div className='our-community'>
                                                 <span id='linkedin-span'>
                                                     <FaLinkedinIn className='social-icon linkedin' />
-                                                    <h5> je rejoins la communauté</h5>
+                                                    <h5> Je rejoins la communauté</h5>
                                                 </span>
                                             </div>
                                         </a>
@@ -130,10 +126,13 @@ const JoinCommunityStyled = styled.div`
                     .inner{
                         display: block;
                         .left-side{
-                            width: 85%;
+                            width: 100%;
                             .paragraphs{
                                 font-size: 17px;
                                 width: 95%;
+                            }
+                            .linkedin{
+                                margin-top: 1rem;
                             }
                         }
                         .button__div{
@@ -215,17 +214,69 @@ const JoinCommunityStyled = styled.div`
         @media only screen and (max-width: 600px){
             .latest-text{
                 position: relative;
-                width: 70vw;
-                margin: 20% -30%;
+                
                 .community{
                     .inner{
+                        width: 100%;
                         .left-side{
+                            margin: 0 auto;
+                            width: 100%;
                             p{
                                 text-align: left;
-                                font-size: 16.5px !important;
+                                font-size: 15.5px !important;
                             }
                         }
+                        .button__div{
+                            margin: 0 auto;
+                            width: 100%;
+                        }
                     }
+                }
+            }
+        }
+        @media only screen and (max-width: 440px){
+            .latest-text{
+                .community{
+                    width: 100%;
+                    margin-left: -5px;
+                    .inner{
+                        width: 100%;
+                        .left-side{
+                            margin: 0 auto;
+                            width: 100%;
+                            p{
+                                text-align: left;
+                                font-size: 15.5px !important;
+                            }
+                        }
+                        .button__div{
+                            width: 100%;
+                            .social-icon{
+                                    position: relative;
+                                    width: 25px;
+                                    height: 25px;
+                                    color: ${props => props.theme.colorGrey2};
+                                    cursor: pointer;
+                                    margin: -4px 10px;
+                            }
+                                #slack-span{
+                                    width: 295px;                                   
+                                }
+                                #linkedin-span{
+                                    width: 295px;
+                                }
+                                .our-community{
+                                    display: flex;
+                                }
+                        }
+                    }
+                }
+            }
+        }
+        @media only screen and (max-width: 375px){
+            .latest-text{
+                .community {
+                    margin-left: -25px;
                 }
             }
         }
