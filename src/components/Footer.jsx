@@ -195,9 +195,15 @@ const FooterSectionStyled = styled.footer`
             flex: 5;
             align-items: left;
             .logo img{
-                width: 42%;
+                width: 32%;
+                @media all and (max-width: 1150px) {
+                    width: 38%;
+                }
+                @media all and (max-width: 768px) {
+                    width: 38%;
+                }
                 @media all and (max-width: 425px) {
-                    width: 22%;
+                    width: 34%;
                 }
             }
             @media all and (max-width: 768px) {
