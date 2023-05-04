@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLinkedin, faFacebook, faInstagram } from '@fortawesome/free-brands-svg-icons';
 import { useTheme } from '../context/themeContext';
-import footerLogo from '../assets/images/footer-logo.png'
+import footerLogo from '../assets/images/bheti-white.png'
 
 
 const Footer = () => {
@@ -195,7 +195,7 @@ const FooterSectionStyled = styled.footer`
             flex: 5;
             align-items: left;
             .logo img{
-                width: 12%;
+                width: 42%;
                 @media all and (max-width: 425px) {
                     width: 22%;
                 }
