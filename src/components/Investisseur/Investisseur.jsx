@@ -60,7 +60,7 @@ const Investisseur = () => {
 
     // GET data from API
     const getData = () => {
-      for (let i = 0; i < 10; i++) {
+      for (let i = 0; i < 9; i++) {
         setData(prevData => [...prevData, {
           nom: faker.name.firstName(),
           stade: faker.finance.accountName(),
@@ -68,7 +68,7 @@ const Investisseur = () => {
           financement: faker.commerce.price(),
         }])
       }
- 
+
       /*
       axios.get(LinksAPI.projets).then(res => {
         handleSetData(res.data)
@@ -203,9 +203,8 @@ const Investisseur = () => {
       }
 
      // get Add for another page
-     if (request)
+      if (request)
       {
-
         console.log(request);
         axios.post(LinksAPI.projetsSearchPage(pageNumber), request).then((resp) =>{
           handleSetData(resp.data)
@@ -221,7 +220,7 @@ const Investisseur = () => {
     }
 
      // display items
-     let displayItems = data.map((item, index) => {
+      let displayItems = data.map((item, index) => {
       return <Cards key={index} item={item} setModal={setModal} setSelect={setSelect} />
     })
 
@@ -233,7 +232,7 @@ const Investisseur = () => {
       //This code sets a timeout of 4 seconds (4000 milliseconds) and then sets the loading state to false.
       let waiting = setTimeout(() => {
         setLoading(false)
-      }, 4000);
+      }, 500);
 
       
       changeSectionMenu()
@@ -346,8 +345,6 @@ const Investisseur = () => {
 
 
 const InvestisseurStyled = styled.section`
-
-
 
 `;
 
@@ -471,7 +468,6 @@ const AllProject = styled.div`
 
 }
 
-
 `;
 
 const HeaderText = styled.div`
@@ -480,13 +476,28 @@ const HeaderText = styled.div`
 margin: 55px;
 
 h3 {
-  font-size: 25px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 40px;
   color: ${props => props.theme.colorPrimary};
+  @media only screen and (max-width: 1400px) {
+    font-size: 35px;
+  }
+  @media only screen and (max-width: 768px) {
+    font-size: 30px;
+  }
+  @media only screen and (max-width: 415px) {
+    font-size: 25px;
+  }
 }
 
 p {
   margin: 10px 0;
-  font-size: 14px;
+  font-size: 17px;
+  line-height: 1.4;
+  font-family: 'Montserrat', sans-serif;
+  color: ${props => props.theme.colorGrey};
+
+
 }
 
 .menuSection{
@@ -514,7 +525,6 @@ p {
   &:hover{
     color: ${props => props.theme.colorBheti};
   }
-
 }
 
 .containerMenu{

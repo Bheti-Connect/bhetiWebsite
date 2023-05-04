@@ -2,11 +2,10 @@ import styled from 'styled-components';
 import { useTheme } from 'styled-components';
 import MethodCard from './MethodCard';
 import Title from './Title';
+import {FaClipboardList} from 'react-icons/fa'
 import checking from '../assets/images/list.png';
 import investors from '../assets/images/investor.png';
 import layout from '../assets/images/layout.png';
-import conditions from '../assets/images/contract.png';
-
 
 
 const MethodSection = () => {
@@ -35,7 +34,6 @@ const MethodSection = () => {
                     desc={'dans les négociations autour du montant de l’investissement, la valorisation de l’entreprise et les conditions de financement.'}
                     icon={layout}
                 />
-            
             </div>
         </MethodSectionStyled>
     )
@@ -54,7 +52,7 @@ const MethodSectionStyled = styled.section`
         padding-top: 3rem;
         @media only screen and (max-width: 2560px) {
             grid-template-columns: auto auto auto;
-            width: 90%;
+            width: 100%;
             margin:auto;
         }
 
@@ -71,16 +69,18 @@ const MethodSectionStyled = styled.section`
         @media only screen and (max-width: 768px) {
             width: 100% !important;
         }
-        @media only screen and (max-width: 425px) {
-            margin-left: -28px;
+        @media only screen and (max-width: 440px) {
+            margin: auto;
+            width: 65vw !important;
+            h3{
+                text-align: left;
+            }
         }
-        @media only screen and (max-width: 400px) {
-            width: 130%;
-            
+        @media only screen and (max-width: 400px) {            
             h3 {
                 width: 100%;
-                font-size: 1.5rem;
-                text-align: center;
+                font-size: 1.2rem;
+                text-align: left;
             }
         }
         @media only screen and (max-width: 375px) {

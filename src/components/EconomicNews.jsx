@@ -19,16 +19,16 @@ const EconomicNews = () => {
                     L’information est l’une des clés stratégiques pour trouver du financement. Avec la plateforme BHC, vous retrouvez les informations essentielles qui permettront d’accélérer votre recherche de financement. 
                     Mais aussi de tenir compte de l'environnement économique et des tendances du marché pour promouvoir votre projet.
                     </p>
-                    <a className='bouton'>
-                        <div className='bouton'>
+                    <div className='bouton'>
+                        <a href='/media' className=''>
                             <Button 
                                 name={"Je m'informe"}
                                 icon={'fas fa-chevron-right'}
                                 arrow={'arrow'}
                                 blob={'blob'}
                             />
-                        </div>
-                    </a>
+                        </a>
+                    </div>
                 </div>
             </div>
         </EconomicNewsStyled>
@@ -128,19 +128,17 @@ const EconomicNewsStyled = styled.section`
                 color: ${props => props.theme.colorGrey4};
                 padding-bottom: 2rem;
                 text-align: justify;
+                width: 95%;
+                font-size: 1.1rem;
                 @media only screen and (max-width: 525px) and (min-width: 425px){
-                    font-size: 15px ;
+                    font-size: 16px ;
                 }
                 
             }
             .bouton {
                 position: relative;
-                margin-left: -30px;
-                @media only screen and (max-width: 2500px) {
-                    margin-left: 30%;
-                }
-                @media only screen and (max-width: 425px) {
-                    margin: 3px auto;
+                @media only screen and (max-width: 525px) {
+                    margin: 5px auto;
                     width: 60%;
                 }
                 @media only screen and (max-width: 320px) {

@@ -22,35 +22,16 @@ const TitleStyled = styled.div`
             width:100%;
         }
 
-        @media only screen and (max-width: 1800px){
-        }
-
-        @media only screen and (max-width: 1440px){
-        }
-
-        @media only screen and (max-width: 1350px){
-        }
-
-        @media only screen and (max-width: 1024px){
-        }
-
-        @media only screen and (max-width: 960px){
-        }
-
-        @media only screen and (max-width: 768px){
-        }
-
-        @media only screen and (max-width: 600px){
-        }
-
         @media only screen and (max-width: 525px){
-            font-size: 28px;
+            font-size: 30px;
             margin-top: -10%;
             margin:auto;
+            width: 100% !important;
         }
         @media only screen and (max-width: 425px){
-            font-size: 25px;
-            margin-top: -10%;
+            font-size: 29px;
+            width: 100% !important;
+
         }
         @media only screen and (max-width: 320px){
             font-size: 20px;
@@ -61,7 +42,6 @@ const TitleStyled = styled.div`
     .subtext{
         text-align: justify;
         text-justify: inter-word;
-       
         @media only screen and (max-width: 525px) and (min-width: 425px){
             font-size: 15px;
         }

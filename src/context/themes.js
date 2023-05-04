@@ -37,7 +37,9 @@ const themes = [
         colorBorder: '#f8f9fa14',
         colorGrey9: '#212529b7',
         colorSlack: '#e91e62',
-        colorLinkedIn: '#2266C2'
+        colorSlackDeep: '#b8184d',
+        colorLinkedIn: '#2266C2',
+        colorLinkedInDeep: '#1b4c8f',
     },
     {
         name: 'light',

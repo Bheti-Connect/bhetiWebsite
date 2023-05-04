@@ -9,7 +9,6 @@ import {FaSlack, FaLinkedinIn} from 'react-icons/fa'
 const JoinCommunity = () => {
     const theme = useTheme();
     return (
-
         <JoinCommunityStyled className='u-pad-lg-2' theme={theme}>
             <div className='title-con'>
                 <Title 
@@ -25,39 +24,38 @@ const JoinCommunity = () => {
                         <img className='img-community' src={mediaImg} alt='' />
                     </div>
                     <div className='latest-text'>
-                        <h4 className='title'>
-                            Qu'est-ce qui se passe dans la communauté?
-                        </h4>
                         <div className='community'>
                             <div className='inner slack-div'>
                                 <div className='left-side'>
                                     <p className='paragraphs slack'>
-                                    Rencontrez d’autres porteurs de projets en Afrique francophone ou dans la diaspora, et resté informé en exclusivité des prochaines rencontres entrepreneurs-investisseurs ! 
+                                        Rencontrez d’autres porteurs de projets en Afrique francophone ou dans la diaspora, et resté informé en exclusivité des prochaines rencontres entrepreneurs-investisseurs ! 
                                     </p>
                                 </div>
                                 <div className='button__div'>
-                                    <p className='icon__name'>
-                                    </p>
                                         <a href='https://slack.com/'>
-                                            <span id='slack-span'>
-                                                <FaSlack className='social-icon slack' />
-                                            </span>
+                                            <div className='our-community'>
+                                                <span id='slack-span'>
+                                                    <FaSlack className='social-icon slack' />
+                                                    <h5> Je rejoins la communauté</h5>
+                                                </span>                                            
+                                            </div>
                                         </a>
                                 </div>
                             </div>
                             <div className='inner linkedin-div'>
                                 <div className='left-side'>
                                     <p className='paragraphs linkedin'>
-                                    Accédez à un contenu d’information hebdomadaire pour positionner votre projet en fonction de l’actualité du marché économique et financier africain
+                                        Accédez à un contenu d’information hebdomadaire pour positionner votre projet en fonction de l’actualité du marché économique et financier africain
                                     </p>
                                 </div>
                                 <div className='button__div'>
-                                    <p className='icon__name'>
-                                    </p>
                                         <a href='https://www.linkedin.com/company/bheti-connect'>
-                                            <span id='linkedin-span'>
-                                                <FaLinkedinIn className='social-icon linkedin' />
-                                            </span>
+                                            <div className='our-community'>
+                                                <span id='linkedin-span'>
+                                                    <FaLinkedinIn className='social-icon linkedin' />
+                                                    <h5> Je rejoins la communauté</h5>
+                                                </span>
+                                            </div>
                                         </a>
                                 </div>
                             </div>
@@ -125,17 +123,20 @@ const JoinCommunityStyled = styled.div`
                 .community{
                     display: inline-block;
                     .inner{
-                        display: flex;
+                        display: block;
                         .left-side{
-                            width: 85%;
+                            width: 100%;
                             .paragraphs{
                                 font-size: 17px;
                                 width: 95%;
                             }
+                            .linkedin{
+                                margin-top: 1rem;
+                            }
                         }
                         .button__div{
                             display: block;
-                            width: 20%;
+                            width: 80%;
                             .icon__name{
                                 margin: 0px  2px;
                                 color: ${props => props.theme.colorGrey2};
@@ -149,30 +150,39 @@ const JoinCommunityStyled = styled.div`
                                     margin: -15px 10px;
                                 }
                                 .slack:hover{
-                                        color: ${props => props.theme.colorSlack};
                                         transform: scale(.8);
                                 }
                                 .linkedin{
                                     &:hover{
-                                        color: ${props => props.theme.colorLinkedIn};                      
                                         transform: scale(.8);
                                     }
                                 }
                                 span{
-                                    padding: 17px .3px;
-                                    border-radius: 50%;
+                                    padding: 20px .8px;
+                                    width: 95%;
                                 }
                                 #slack-span{
+                                    display: flex;
+                                    width: 300px;
+                                    border-radius: 15px;
+                                    color: ${props => props.theme.colorWhite};
                                     background-color: ${props => props.theme.colorSlack};
                                     &:hover{
-                                        background-color: ${props => props.theme.colorGrey2};
+                                        background-color: ${props => props.theme.colorSlackDeep};
                                     }
                                 }
                                 #linkedin-span{
+                                    display: flex;
+                                    width: 300px;
+                                    border-radius: 15px;
+                                    color: ${props => props.theme.colorWhite};
                                     background-color: ${props => props.theme.colorLinkedIn};
                                     &:hover{
-                                        background-color: ${props => props.theme.colorGrey2};
+                                        background-color: ${props => props.theme.colorLinkedInDeep};
                                     }
+                                }
+                                .our-community{
+                                    display: flex;
                                 }
                         }
                     }
@@ -203,17 +213,69 @@ const JoinCommunityStyled = styled.div`
         @media only screen and (max-width: 600px){
             .latest-text{
                 position: relative;
-                width: 70vw;
-                margin: 20% -30%;
+                
                 .community{
                     .inner{
+                        width: 100%;
                         .left-side{
+                            margin: 0 auto;
+                            width: 100%;
                             p{
                                 text-align: left;
-                                font-size: 16.5px !important;
+                                font-size: 15.5px !important;
                             }
                         }
+                        .button__div{
+                            margin: 0 auto;
+                            width: 100%;
+                        }
                     }
+                }
+            }
+        }
+        @media only screen and (max-width: 440px){
+            .latest-text{
+                .community{
+                    width: 100%;
+                    margin-left: -5px;
+                    .inner{
+                        width: 100%;
+                        .left-side{
+                            margin: 0 auto;
+                            width: 100%;
+                            p{
+                                text-align: left;
+                                font-size: 15.5px !important;
+                            }
+                        }
+                        .button__div{
+                            width: 100%;
+                            .social-icon{
+                                    position: relative;
+                                    width: 25px;
+                                    height: 25px;
+                                    color: ${props => props.theme.colorGrey2};
+                                    cursor: pointer;
+                                    margin: -4px 10px;
+                            }
+                                #slack-span{
+                                    width: 295px;                                   
+                                }
+                                #linkedin-span{
+                                    width: 295px;
+                                }
+                                .our-community{
+                                    display: flex;
+                                }
+                        }
+                    }
+                }
+            }
+        }
+        @media only screen and (max-width: 375px){
+            .latest-text{
+                .community {
+                    margin-left: -25px;
                 }
             }
         }

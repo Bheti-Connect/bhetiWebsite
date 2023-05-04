@@ -148,6 +148,8 @@ a:link,a:active,a:visited,a:hover{
 .section-title {
 	margin-top: 3%;
 }
+
+
 @media only screen and (min-width: 1800px)
 	{
 		.innerdiv
@@ -174,6 +176,11 @@ a:link,a:active,a:visited,a:hover{
 		.innerdiv
 		{
 			transform: scale(0.6);
+		}
+	}
+	@media only screen and (max-width: 500px) {
+		.section-title {
+			font-size: 19px;
 		}
 	}
 @media only screen and (max-width: 900px)

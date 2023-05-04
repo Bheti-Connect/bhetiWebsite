@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import styled from 'styled-components'
-import theLogo from '../assets/images/logo.png';
+import theLogo from '../assets/images/Logo.svg';
 import { useTheme } from '../context/themeContext';
 import { NavLink } from 'react-router-dom';
 
@@ -79,7 +79,6 @@ const NavBar = () => {
 }
 
 const NavBarStyled = styled.nav`
-
 .hero{
     display: flex;
 	justify-content: space-between;
@@ -92,19 +91,28 @@ const NavBarStyled = styled.nav`
             animation-delay: 0.2s;
             visibility: hidden;
             animation-fill-mode: forwards;
+            width: 20%;
             .theLogo{
-                margin-top: 12%;
-                width: 180px;
+                margin-top: 10%;
+                width: 10vw;
                 margin-right: 10rem;
-                @media only screen and (max-width: 768px) {
-                    width: 150px;
+                @media only screen and (max-width: 1280px) {
+                    width: 11vw;
                 }
-                @media only screen and (max-width: 440px) {
-                    width: 125px;
+                @media only screen and (max-width: 1024px) {
+                    width: 13vw;
+                }
+                @media only screen and (max-width: 860px) {
+                    width: 14vw;
+                }
+                @media only screen and (max-width: 768px) {
+                    width: 18vw;
+                }
+                @media only screen and (max-width: 600px) {
+                    width: 24vw;
                 }
             }
 }
-
 .navigation {
         display: flex;
         grid-template-columns: 100px 1fr auto;
@@ -112,7 +120,9 @@ const NavBarStyled = styled.nav`
         align-items: center;
         flex-wrap: wrap;
         justify-content: space-between;
-
+        @media only screen and (max-width: 2560px) {
+            
+        }
         @media only screen and (max-width: 1024px) {
             border-bottom: 0px solid ${props => props.theme.colorBg};
         }
@@ -136,7 +146,9 @@ const NavBarStyled = styled.nav`
             width: 70vw;
             justify-content: end;
             margin-right: .2rem;
-
+            @media only screen and (max-width: 2560px) {
+                
+            }
             @media only screen and (min-width: 960px) {
                 display: grid;
                 justify-content: space-around;
@@ -151,7 +163,7 @@ const NavBarStyled = styled.nav`
                 }
             }
             #menu-icon i{
-                font-size: 2.1rem;
+                font-size: 2.4rem;
             }
             
             }
@@ -168,7 +180,6 @@ const NavBarStyled = styled.nav`
         margin-top: 15px;
     }
     color: ${props => props.theme.colorGrey};
-
     }
     .link:hover{
         color: ${props => props.theme.colorBheti};
@@ -197,19 +208,10 @@ const NavBarStyled = styled.nav`
         }
     }
 }
-
-@media only screen and (min-width: 960px){
-    .hero{
-        .logo{
-            width: 40%;
-        }
-    }
-}
-
 @media only screen and (max-width: 960px){
     .hero{
         .logo{
-            width: 40%;
+            width: 50%;
         }
     }
     .navigation {
@@ -219,7 +221,7 @@ const NavBarStyled = styled.nav`
         justify-content: flex-start;
         position: fixed;
         top: 0px;
-        right: -1500px;
+        right: -2000px;
         transition: all 0.6s ease;
         width: 100vw;
         height: 100vh;
@@ -260,32 +262,20 @@ const NavBarStyled = styled.nav`
             transition: all 0.6s ease;
             z-index: 3;
         }
-
     #menu-icon {
-            margin-top: 11%;
-            right: 5%;
+            margin-top: 4%;
+            right: 4%;
             z-index: 50;
             cursor: pointer;
             .fa-xmark {
                     color: ${props => props.theme.colorWhite};
-                }
+                } 
+            @media only screen and (max-width: 600px){
+                margin-top: 7%;
+            } 
         }
     #menu-icon i{
         visibility: visible;
-    }
-}
-
-@media only screen and (max-width: 768px){
-    .hero{
-        .logo{
-            width: 47%;
-        }
-        margin-left: -3vw;
-    }
-}
-@media only screen and (max-width: 425px){
-    .hero{
-        margin-left: -8vw;
     }
 }
 `;

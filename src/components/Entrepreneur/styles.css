@@ -375,10 +375,14 @@
 	body {
 		text-align: center;
 	}
+	#main {
+		margin-top: -470px !important;
+	}
 	#cards {
 		display: block;
-		margin-top: -55vh;
+		margin-top: -42vh;
 	}
+	
 	
 	.btn{
 		margin-bottom: 10px;
@@ -405,5 +409,14 @@
 	}
 	.need-previsionnel{
 		width: 60vw;
+	}
+	.need-pitch{
+		width: 200px;
+	}
+}
+
+@media only screen and (max-width: 320px) {
+	#main {
+		margin-top: -350px !important;
 	}
 }
