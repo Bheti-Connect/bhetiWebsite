@@ -487,9 +487,11 @@ margin-bottom: 80px;
 
 .head-text {
   display:flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   margin: 50px 0;
+  
 
   h2 {
     color: ${props => props.theme.colorBheti};
@@ -517,18 +519,38 @@ margin-bottom: 80px;
 .body-une {
   display: flex;
   justify-content: center;
-  
+  flex-wrap: wrap;  
 
-  .plus-consulter h2 {
-    color: ${props => props.theme.colorBheti};
-    margin-bottom: 10px;
-    font-weight: 600;
-    font-family: 'Inter', sans-serif;
+  @media only screen and (max-width: 1280px) {
+    width: 100%;
+    margin-left: 0px;
 
   }
+
+
   .plus-consulter {
+    display: flex;
+    flex-direction: column;
     width: 30%;
     margin-left: 40px;
+    justify-content: center;
+    gap: 30px;
+
+    @media only screen and (max-width: 1280px) {
+      width: 100%;
+      margin-left: 0px;
+  
+    }
+
+    h2 {
+      color: ${props => props.theme.colorBheti};
+      margin-bottom: 10px;
+      font-weight: 600;
+      font-family: 'Inter', sans-serif;
+      
+  
+    }
+
 
     .item-consult {
       a{
@@ -541,7 +563,7 @@ margin-bottom: 80px;
       }
       p{
         font-size: 14px;
-        text-align: justify;
+        text-align: center;
       }
 
       .item-date {
@@ -555,12 +577,17 @@ margin-bottom: 80px;
   .cards-une{
     display:flex;
     flex-direction: column;
+    width: 600px;
     
-
+    @media only screen and (max-width: 1280px) {
+      flex-direction: column;
+      width: 1000px;
+  
+    }
 
     .card-1 {
       background-color: #700b0b;
-      width: 600px;
+      width: 100%;
       height: 238px;
       border-radius: 20px;
     }
@@ -568,6 +595,7 @@ margin-bottom: 80px;
     .sub-card {
       display: flex;
       justify-content: space-between;
+      align-items: flex-end;
       margin-top: 15px;
 
       .card-2{

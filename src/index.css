@@ -1,4 +1,10 @@
 /* ---------- Style CSS of SweetAlert2 ---------- */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,300;0,400;1,300&family=Nunito:wght@300;400;500&family=Tilt+Warp&display=swap');
+
+
+body{
+    font-family: 'Montserrat';
+}
 
 h2.title-sweet-connect{
     color:rgb(72, 65, 65) !important;
@@ -23,7 +29,6 @@ div.icon-sweet-connect{
 }
 
 div.text-sweet-connect{
-    font-family: 'Inter', serif !important;
     font-size: 18px !important; 
     text-align: center !important;
 }

@@ -15,18 +15,20 @@ const EconomicNews = () => {
                     <h3 className='title'>
                         Actualité économique & écosystèmes d’affaires
                     </h3>
-                    <p>
+                    <p className='subtitle-text'>
                     L’information est l’une des clés stratégiques pour trouver du financement. Avec la plateforme BHC, vous retrouvez les informations essentielles qui permettront d’accélérer votre recherche de financement. 
                     Mais aussi de tenir compte de l'environnement économique et des tendances du marché pour promouvoir votre projet.
                     </p>
-                    <a className='bouton'>
-                        <Button 
-                            name={"Je m'informe"}
-                            icon={'fas fa-chevron-right'}
-                            arrow={'arrow'}
-                            blob={'blob'}
-                        />
-                    </a>
+                    <div className='bouton'>
+                        <a href='/media' className=''>
+                            <Button 
+                                name={"Je m'informe"}
+                                icon={'fas fa-chevron-right'}
+                                arrow={'arrow'}
+                                blob={'blob'}
+                            />
+                        </a>
+                    </div>
                 </div>
             </div>
         </EconomicNewsStyled>
@@ -43,8 +45,19 @@ const EconomicNewsStyled = styled.section`
     @media only  screen and (max-width: 425px) {
         position: relative;
         width: 100%;
+        height: 140vh;
+    }
+
+    @media only  screen and (max-width: 415px) {
         height: 100vh;
-        
+    }
+
+    @media only  screen and (max-width: 376px) {
+        height: 780px;
+    }
+
+    @media only  screen and (max-width: 321px) {
+        height: 770px;
     }
     
     .left-rec{
@@ -65,13 +78,6 @@ const EconomicNewsStyled = styled.section`
                 width: 100%;
             }
         }
-        @media only screen and (max-width: 425px) {
-            width: 100%;
-            height: 45%;
-            position: absolute;
-            top: 0;
-            left: 0;
-        }
     }
     .right-rec{
         display: flex;
@@ -80,7 +86,7 @@ const EconomicNewsStyled = styled.section`
             padding: 1rem;
             h3{
                 color: ${props => props.theme.colorWhite};
-                font-size: 2.5rem;
+                font-size: 2.3rem;
                 padding-bottom: 1rem;
                 position: relative;
                 margin-bottom: 2rem;
@@ -93,8 +99,21 @@ const EconomicNewsStyled = styled.section`
                     height: 2px;
                     background-color: ${props => props.theme.colorAccent};
                 }
-                @media only screen and (max-width: 768px) {
+                @media only screen and (max-width: 1600px) {
+                    font-size: 2.1rem;
+                }
+                @media only screen and (max-width: 1430px) {
+                    font-size: 1.95rem;
+                }
+                @media only screen and (max-width: 1350px) {
                     font-size: 1.82rem;
+                }
+                @media only screen and (max-width: 1250px) {
+                    font-size: 1.7rem;
+                }
+                @media only screen and (max-width: 768px) {
+                    font-size: 1.52rem;
+                    width: 100%;
                 }
                 @media only screen and (max-width: 425px) {
                     font-size: 1.3rem;
@@ -105,48 +124,44 @@ const EconomicNewsStyled = styled.section`
                     font-size: 1.15rem;
                 }
             }
-            p{
+            .subtitle-text{
                 color: ${props => props.theme.colorGrey4};
                 padding-bottom: 2rem;
+                text-align: justify;
+                width: 95%;
+                font-size: 1.1rem;
                 @media only screen and (max-width: 525px) and (min-width: 425px){
-                    font-size: 15px ;
+                    font-size: 16px ;
                 }
-                @media only screen and (max-width: 425px) and (min-width: 320px) {
-                    font-size: 1rem;
-                    width: 90%;
-                }
-            }
-            @media only screen and (max-width: 525px) and (min-width: 425px) {
-                width: 320px;
+                
             }
             .bouton {
                 position: relative;
-                margin-left: -30px;
-                @media only screen and (max-width: 2500px) {
-                    margin-left: 30%;
+                @media only screen and (max-width: 525px) {
+                    margin: 5px auto;
+                    width: 60%;
                 }
-                @media only screen and (max-width: 425px) {
-                    margin-left: 23px ;
-                }
-                @media only screen and (max-width: 375px) {
-                    margin-left: -20px ;
+                @media only screen and (max-width: 320px) {
+                    width: 70%;
                 }
             }
-            @media only screen and (max-width: 425px) {
-                padding: .65rem;
-            }
+            
         }
-        @media only screen and (max-width: 425px) {
-                position: relative;
-                top: 20vh;
-                width: 185%;
-                z-index: 10;
-                margin-left: 19px;
+    }
+    @media only screen and (max-width: 500px){
+        display: block;
+        .left-rec{
+            height: 45vh;
+        }
+        .right-rec{
+            .rec-content{
+                width: 90%;
+                margin: 0 auto;
+                .subtitle-text{
+                    font-size: 15px;
+                    text-align: center;
+                }
             }
-        @media only screen and (max-width: 375px) {
-            top: 23vh;
-            width: 160%;
-            margi-left: 15px;
         }
     }
 `;

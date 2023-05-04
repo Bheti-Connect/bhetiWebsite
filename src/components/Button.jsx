@@ -45,14 +45,6 @@ const ButtonStyled = styled.button`
             font-size: 3000px;
         }
     }
-    @media only screen and (max-width: 425px) {
-        width: 100%;
-    }
-    @media only screen and (max-width: 375px){
-                    top: 1%;
-                    margin-bottom: 5%;
-                }
-    
 `;
 
 export default Button
