@@ -29,8 +29,7 @@ const Accueil = () => {
                     </div>
                     <div className='text-highlighted paragraph'>
                         <p>
-                            Avec des données, des outils et des conseils, libérez le potentiel de votre entreprise en toute autonomie ou avec un accompagnement dédié de nos experts et 
-                            obtenez les financements dont vous avez besoin pour faire décoller votre projet.
+                        Optimisez votre entreprise avec des données, outils et conseils, accompagné ou non par nos experts, et obtenez les financements pour réussir votre projet.
                         </p>
                     </div>
                 </div>
@@ -40,7 +39,7 @@ const Accueil = () => {
                         to={'/decouvrir-bheti-connect'}
                     >
                         <Button 
-                            name={'🚀 Découvrir la plateforme'}
+                            name={'Essayer Bheti App'}
                             icon={'fas fa-chevron-right'}
                             arrow={'arrow'}
                         />

@@ -255,12 +255,12 @@ const Media = () => {
 
       <div className='cards-une'>
 
-      <div className='card-1'>1</div>
+         <div className='card-1'>1</div>
 
-      <div className='sub-card'>
-        <div className='card-2'>2</div>
-        <div className='card-3'>3</div>
-      </div>
+        <div className='sub-card'>
+          <div className='card-2'>2</div>
+          <div className='card-3'>3</div>
+        </div>
 
       </div>
 
@@ -457,10 +457,6 @@ margin: auto;
 
 }
 
-
-
-
-
 `;
 
 const AllCards = styled.div`
@@ -477,8 +473,6 @@ width: 100%;
 `;
 
 const Container = styled.div`
-
-
 
 `;
 
@@ -519,26 +513,27 @@ margin-bottom: 80px;
 .body-une {
   display: flex;
   justify-content: center;
-  flex-wrap: wrap;  
+  flex-wrap: wrap; 
+  gap : 15px; 
 
   @media only screen and (max-width: 1280px) {
     width: 100%;
-    margin-left: 0px;
-
   }
-
 
   .plus-consulter {
     display: flex;
     flex-direction: column;
     width: 30%;
-    margin-left: 40px;
     justify-content: center;
     gap: 30px;
 
-    @media only screen and (max-width: 1280px) {
+    @media only screen and (max-width: 414px) {
       width: 100%;
-      margin-left: 0px;
+      background-color: white;
+    }
+
+    @media only screen and (max-width: 1280px) {
+      width: 80%;
   
     }
 
@@ -582,6 +577,12 @@ margin-bottom: 80px;
     @media only screen and (max-width: 1280px) {
       flex-direction: column;
       width: 1000px;
+  
+    }
+
+    @media only screen and (max-width: 1280px) {
+      flex-direction: column;
+      width: 80%;
   
     }
 
