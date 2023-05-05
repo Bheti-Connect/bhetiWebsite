@@ -22,17 +22,15 @@ const Advantages = () => {
 						<div className="card__content card__content1">
 							<div className='upper_container'>
 								<h3 className='card_title offre'>
-									Offre impact à 29,99€/mois HT ou 329,99 € annuel (économisez 29,99€ avec l’offre annuelle)
+									Économisez du temps et de l'argent tout en maximisant vos chances de succès avec Bheti App !		
 								</h3>
-								<p className='paragraph'>
-									Économisez du temps et de l'argent tout en maximisant vos chances de succès !
-								</p>
+								
 								<div className='need-pitch'>
 										<Link 
 										to={'/decouvrir-bheti-connect'}
 										>
 											<Button 
-													name={'Découvrir Bheti Connect'}
+													name={'Demande d’accès'}
 											/>
 										</Link>
 									</div>

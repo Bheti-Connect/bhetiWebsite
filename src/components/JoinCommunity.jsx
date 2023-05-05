@@ -207,8 +207,16 @@ const JoinCommunityStyled = styled.div`
             }
             .latest-text{
                 position: relative;
-                width: 80vw;
-                margin: 40% -10% !important;
+                width: 50vw;
+                margin: 40% auto;
+                .community{
+                    .inner{
+                        .button__div{
+                            width: 40%;
+                            margin: 0 auto;
+                        }
+                    }
+                }
             }
         }
         @media only screen and (max-width: 600px){

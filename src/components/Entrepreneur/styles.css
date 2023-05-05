@@ -145,19 +145,16 @@
 .need-container{
 	position: relative;
 	width: 400px;
-	margin: auto;
 }
 
 .need-pitch{
 	position: relative;
-	margin-left: 15%;
 	margin-bottom: 5%;
 }
 
 .need-previsionnel{
 	position: relative;
 	margin-bottom: 7%;
-	margin-left: 8%;
 }
 
 .paragraph{
@@ -202,7 +199,6 @@
 }
 
 .help{
-	margin-left: 15%;
 	margin-bottom: 6.5em;
 }
 
@@ -259,9 +255,7 @@
 		width: 80%;
 		font-size: 15.4px !important;
 	}
-	.need-pitch{
-		margin: auto;
-	}
+
 	.card__content > div {
 		width: 60vw;
 		margin: auto;
@@ -304,11 +298,7 @@
 		font-size: 2.4vw;
 		margin: 3% auto;
 	}
-	.need-pitch{
-		position: relative;
-		margin: auto;
-		width: 250px;
-	}
+	
 	.need-previsionnel{
 		position: relative;
 		margin: auto;
@@ -410,9 +400,7 @@
 	.need-previsionnel{
 		width: 60vw;
 	}
-	.need-pitch{
-		width: 200px;
-	}
+	
 }
 
 @media only screen and (max-width: 320px) {

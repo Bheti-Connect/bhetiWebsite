@@ -472,7 +472,6 @@ const AllProject = styled.div`
 
 const HeaderText = styled.div`
 
-
 margin: 55px;
 
 h3 {
@@ -550,11 +549,14 @@ p {
 
 @media only screen and (max-width: 768px) {
   h3{
-    font-size: 20px;
+    font-size: 30px;
+    text-align: left;
   }
 
   p {
-  font-size: 10px;
+  font-size: 15.5px;
+  text-align: left;
+
   }
 
   .menuSection li {
@@ -565,9 +567,7 @@ p {
 }
 
 @media only screen and (max-width: 578px) {
-
   margin: 40px;
-
   .containerMenu .Box{
     flex-direction: column;
 }
