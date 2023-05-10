@@ -274,10 +274,25 @@ const Investisseur = () => {
       handleTrieData()
     }, [trie])
 
+    const [text, setText] = useState("")
+    const [fullText] = useState(
+        "Découvrez des opportunités d'investissements exclusives !"
+        )
+    const [index, setIndex] = useState(0)
+
+    useEffect(() => {
+        if (index < fullText.length) {
+            setTimeout(() => {
+                setText(text + fullText[index])
+                setIndex(index + 1)
+            }, 60)
+            }
+        }, [index])
+
     return (
         <InvestisseurStyled>
             <HeaderText theme={theme}>
-            <h3 className='hello'>Découvrez des opportunités d'investissements exclusives</h3>
+            <h3 className='hello'>{text}</h3>
             <p>Vous trouverez ci-dessous des informations clés sur des startups et PME qui ouvrent leur capital pour prendre une position décisive sur leurs
             marchés.<br/>Vous souhaitez en savoir plus sur ces opportunités et/ou rencontrer les fondateurs ? Cliquez sur "Recevoir le deck".</p>
             <div className="containerMenu">
