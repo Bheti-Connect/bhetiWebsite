@@ -365,15 +365,24 @@ const InvestisseurStyled = styled.section`
 
 const AllCards = styled.div`
 display: flex;
-width: 89%;
-justify-content: center;
+width: 1200px;
+justify-content: space-around;
 margin:auto;
 flex-wrap: wrap;
+
+@media only screen and (max-width: 1200px) {
+  width: 90%;
+}
+
 @media only screen and (max-width: 900px) {
   width: 86%;
 }
 
-@media only screen and (max-width: 415px) {
+@media only screen and (max-width: 885px) {
+  width: 70%;
+}
+
+@media only screen and (max-width: 450px) {
   width: 68%;
 }
 
