@@ -1,7 +1,6 @@
 import {useState, useEffect} from 'react'
 import styled from 'styled-components'
 import Button from '../Button';
-import { IoIosBonfire } from 'react-icons/io';
 import { useTheme } from '../../context/themeContext';
 import { Link } from 'react-router-dom';
 
@@ -40,7 +39,7 @@ const Accueil = () => {
                         to={'/decouvrir-bheti-connect'}
                     >   
                         <Button 
-                            name={` ${'Essayez Bheti App'}`}
+                            name={` ${'Essayer Bheti App'}`}
                             arrow={'arrow'}
                             icon={'fas fa-arrow-right'}
                             

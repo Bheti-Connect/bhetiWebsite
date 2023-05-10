@@ -17,7 +17,7 @@ const Title = ({ name, subtext}) => {
 
 const TitleStyled = styled.div`
     h3{
-        font-size: 2.3rem;
+        font-size: 2.6vw;
         @media only screen and (max-width: 2560px){
             width:100%;
         }

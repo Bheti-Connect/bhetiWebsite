@@ -4,11 +4,12 @@ import './styles.css';
 
 import Team from '../../assets/images/pexels-rebrand-cities-1367272.jpg';
 import GetMoney from '../../assets/images/pexels-edmond-8553867.jpg';
-import {FaHandsHelping, FaShareSquare, FaRoad} from 'react-icons/fa'
-import {GiHumanTarget} from 'react-icons/gi'
+import HappyTeam from '../../assets/images/pexels-antoni-shkraba-5466285.jpg';
+// import {FaHandsHelping, FaShareSquare, FaRoad} from 'react-icons/fa'
+// import {GiHumanTarget} from 'react-icons/gi'
 import Help from '../../assets/images/pexels-brett-sayles-5368598.jpg'
-import { SiSymantec } from 'react-icons/si'
-import {MdAddBusiness} from 'react-icons/md'
+// import { SiSymantec } from 'react-icons/si'
+// import {MdAddBusiness} from 'react-icons/md'
 import Button from '../Button';
 import { Link } from 'react-router-dom';
 
@@ -19,7 +20,7 @@ const Advantages = () => {
             <main id='main'>
 				<ul id="cards">
 					<li className="card" id="card_1">
-						<div className="card__content card__content1">
+						<div className="card__content">
 							<div className='upper_container'>
 								<h3 className='card_title offre'>
 									Économisez du temps et de l'argent tout en maximisant vos chances de succès avec Bheti App !		
@@ -36,33 +37,8 @@ const Advantages = () => {
 									</div>
 							</div>
 							
-							<figure className='first__figure'>
-								<div className='advantage'>
-									<div className='offer'>
-										<FaHandsHelping className='offer-icon' />
-										<div className='paragraph offer-detail'>Identifiez les aides publiques et privées</div> 
-									</div>
-									<div className='offer'>
-										<GiHumanTarget className='offer-icon' />
-										<div className='paragraph offer-detail'>Identifiez les investisseurs pertinents </div>
-									</div>
-									<div className='offer'>
-										<SiSymantec className='offer-icon' />
-										<div className='paragraph offer-detail'>Visibilité de votre projet après certification</div>
-									</div>
-									<div className='offer'>
-										<FaShareSquare className='offer-icon' />
-										<div className='paragraph offer-detail'>Partagez simplement votre projet aux investisseurs </div>
-									</div>
-									<div className='offer '>
-										<MdAddBusiness className='offer-icon'/>
-										<div className='paragraph offer-detail '>Annoncez vos besoins et trouvez des partenaires business pertinents</div>
-									</div>
-									<div className='offer'>
-										<FaRoad className='offer-icon' />
-										<div className='paragraph offer-detail '>Accédez à des guides et recommandations exclusifs </div>
-									</div>
-								</div>
+							<figure className='image__figure'>
+								<img className='image-team' src={HappyTeam} alt='Image-Femmes'/>
 							</figure>
 						</div>
 					</li>

@@ -60,7 +60,7 @@ const Investisseur = () => {
 
     // GET data from API
     const getData = () => {
-      for (let i = 0; i < 9; i++) {
+      for (let i = 0; i < 8; i++) {
         setData(prevData => [...prevData, {
           nom: faker.name.firstName(),
           stade: faker.finance.accountName(),
