@@ -2,6 +2,7 @@ import styled from 'styled-components'
 import { useTheme } from '../context/themeContext';
 import premiereImg from '../assets/images/My-project.png';
 import Button from './Button';
+import { Link } from 'react-router-dom';
 
 const Header = () => {
     const theme = useTheme()
@@ -16,11 +17,15 @@ const Header = () => {
                         Réseaux, outils, stratégie. Un accompagnement pour réussir chaque étape de votre levée de fonds.
                     </p>
                     <div className='cta-button'>
+                    <Link
+                        to={'/formulaire'}
+                    > 
                         <Button
                             name='Intégrer le réseau'
                             arrow={'arrow'}
                             icon={'fas fa-arrow-right'}
                         />
+                    </Link>
                     </div>
                 </div>
                 <div className='image'>
