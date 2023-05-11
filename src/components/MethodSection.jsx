@@ -20,18 +20,15 @@ const MethodSection = () => {
             </div>
             <div className='methods-con' >
                 <MethodCard 
-                    title={"Nous préparons votre documentation"}
-                    desc={'BP, Pitch deck, Etats financiers.'}
+                    desc={'Nous préparons votre documentation BP, Pitch deck, Etats financiers.'}
                     icon={checking}
                 />
                 <MethodCard
-                    title={"Nous contactons et partageons"}
-                    desc={'votre besoin de financement à nos partenaires - investisseurs.'}
+                    desc={'Nous contactons et partageons votre besoin de financement à nos partenaires - investisseurs.'}
                     icon={investors}
                 />
                 <MethodCard
-                    title={"Nous vous accompagnons"}
-                    desc={'dans les négociations autour du montant de l’investissement, la valorisation de l’entreprise et les conditions de financement.'}
+                    desc={'Nous vous accompagnons dans les négociations autour du montant de l’investissement, la valorisation de l’entreprise et les conditions de financement.'}
                     icon={layout}
                 />
             </div>
@@ -52,7 +49,7 @@ const MethodSectionStyled = styled.section`
         padding-top: 3rem;
         @media only screen and (max-width: 2560px) {
             grid-template-columns: auto auto auto;
-            width: 100%;
+            width: 90%;
             margin:auto;
         }
 
@@ -69,18 +66,16 @@ const MethodSectionStyled = styled.section`
         @media only screen and (max-width: 768px) {
             width: 100% !important;
         }
-        @media only screen and (max-width: 440px) {
-            margin: auto;
-            width: 65vw !important;
-            h3{
-                text-align: left;
-            }
+        @media only screen and (max-width: 425px) {
+            margin-left: -28px;
         }
-        @media only screen and (max-width: 400px) {            
+        @media only screen and (max-width: 400px) {
+            width: 130%;
+            
             h3 {
                 width: 100%;
-                font-size: 1.2rem;
-                text-align: left;
+                font-size: 1.5rem;
+                text-align: center;
             }
         }
         @media only screen and (max-width: 375px) {

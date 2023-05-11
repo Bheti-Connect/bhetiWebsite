@@ -4,11 +4,12 @@ import './styles.css';
 
 import Team from '../../assets/images/pexels-rebrand-cities-1367272.jpg';
 import GetMoney from '../../assets/images/pexels-edmond-8553867.jpg';
-import {FaHandsHelping, FaShareSquare, FaRoad} from 'react-icons/fa'
-import {GiHumanTarget} from 'react-icons/gi'
+import HappyTeam from '../../assets/images/pexels-antoni-shkraba-5466285.jpg';
+// import {FaHandsHelping, FaShareSquare, FaRoad} from 'react-icons/fa'
+// import {GiHumanTarget} from 'react-icons/gi'
 import Help from '../../assets/images/pexels-brett-sayles-5368598.jpg'
-import { SiSymantec } from 'react-icons/si'
-import {MdAddBusiness} from 'react-icons/md'
+// import { SiSymantec } from 'react-icons/si'
+// import {MdAddBusiness} from 'react-icons/md'
 import Button from '../Button';
 import { Link } from 'react-router-dom';
 
@@ -19,52 +20,25 @@ const Advantages = () => {
             <main id='main'>
 				<ul id="cards">
 					<li className="card" id="card_1">
-						<div className="card__content card__content1">
+						<div className="card__content">
 							<div className='upper_container'>
 								<h3 className='card_title offre'>
-									Offre impact à 29,99€/mois HT ou 329,99 € annuel (économisez 29,99€ avec l’offre annuelle)
+									Économisez du temps et de l'argent tout en maximisant vos chances de succès avec Bheti App !		
 								</h3>
-								<p className='paragraph'>
-									Économisez du temps et de l'argent tout en maximisant vos chances de succès !
-								</p>
+								
 								<div className='need-pitch'>
 										<Link 
 										to={'/decouvrir-bheti-connect'}
 										>
 											<Button 
-													name={'Découvrir Bheti Connect'}
+													name={'Demande d’accès'}
 											/>
 										</Link>
 									</div>
 							</div>
 							
-							<figure className='first__figure'>
-								<div className='advantage'>
-									<div className='offer'>
-										<FaHandsHelping className='offer-icon' />
-										<div className='paragraph offer-detail'>Identifiez les aides publiques et privées</div> 
-									</div>
-									<div className='offer'>
-										<GiHumanTarget className='offer-icon' />
-										<div className='paragraph offer-detail'>Identifiez les investisseurs pertinents </div>
-									</div>
-									<div className='offer'>
-										<SiSymantec className='offer-icon' />
-										<div className='paragraph offer-detail'>Visibilité de votre projet après certification</div>
-									</div>
-									<div className='offer'>
-										<FaShareSquare className='offer-icon' />
-										<div className='paragraph offer-detail'>Partagez simplement votre projet aux investisseurs </div>
-									</div>
-									<div className='offer '>
-										<MdAddBusiness className='offer-icon'/>
-										<div className='paragraph offer-detail '>Annoncez vos besoins et trouvez des partenaires business pertinents</div>
-									</div>
-									<div className='offer'>
-										<FaRoad className='offer-icon' />
-										<div className='paragraph offer-detail '>Accédez à des guides et recommandations exclusifs </div>
-									</div>
-								</div>
+							<figure className='image__figure'>
+								<img className='image-team' src={HappyTeam} alt='Image-Femmes'/>
 							</figure>
 						</div>
 					</li>
@@ -72,15 +46,18 @@ const Advantages = () => {
 						<div className="card__content">
 							<div>
 								<h3 className='card_title'>Votre Pitch deck</h3>
-								<p className='paragraph paragraph__other__style'>
-								Votre pitch deck est un élément essentiel de votre processus de levée de fonds. 
-								C'est souvent le premier point de contact entre un entrepreneur et un investisseur. 
-								Il doit donc être efficace et concis.
-								</p>
-								<p className='paragraph paragraph__other__style'>
-								Chez Bheti Connect, Nous examinons des centaines de présentations d'investissement chaque année et mettons à profit notre expertise pour vous aider à élaborer ou à réviser votre présentation d'investissement. 
-								Avec notre aide, votre pitch deck sera clair, concis et convaincant pour les investisseurs.
-								</p>
+									<dl className='pitch-deck-elements'>
+										<dt>3 choses importantes à savoir sur le Pitch Dek :</dt>
+										<dd> Incontournable pour une levée de fond</dd>
+										<dd>Incontournable pour une levée de fond</dd>
+										<dd>Doit être efficace et concis</dd>
+									</dl>
+								<dl className='pitch-deck-elements'>
+									<dt>Chez BHC, nous élaborons/révisons votre présentation pour un résultat 3C :</dt>
+									<dd> Clair</dd>
+									<dd> Concis</dd>
+									<dd> Convaincant</dd>
+								</dl>
 								<div className='need-container'>
 									<div className='need-pitch'>
 										<Link
@@ -102,15 +79,15 @@ const Advantages = () => {
 						<div className="card__content">
 							<div>
 								<h3 className='card_title'>Votre Prévisionnel financier</h3>
-								<p className='paragraph paragraph__other__style'>
-								Le prévisionnel financier (ou Business Plan) est utilisé comme outil essentiel pour la gestion efficace d'une entreprise mais aussi comme support pour convaincre les investisseurs et guider leur prise de décision. 
-								</p>
-								<p className='paragraph paragraph__other__style'>
-									Votre BP doit décrire de manière détaillée et soignée vos objectifs commerciaux, stratégies, et doit répondre aux questions de vos investisseurs. 
-								</p>
-								<p className='paragraph paragraph__other__style'>
-									Notre expertise nous permet de répondre aux exigences des financeurs et de vous accompagner efficacement dans la construction de votre prévisionnel financier
-								</p>
+								<dl>
+									<dt>A quoi sert le Prévisionnel financier ?</dt>
+									<dd>Avoir une gestion efficace de l’entreprise</dd>
+									<dd> Permet aux investisseurs d’épouser votre vision</dd>
+									
+								</dl>
+								<dt>
+									BHC dispose d'une expertise solide pour vous aider à élaborer un plan d'affaires détaillé et soigné afin de répondre efficacement aux exigences des financeurs.
+								</dt>
 								<div className='need-container'>
 									<div className='need-previsionnel'>
 										<Button 
@@ -130,12 +107,17 @@ const Advantages = () => {
 								<div className='text-container'>
 									<h3 className='card_title'>Appui et Conseil </h3>
 									<div className='paragraph__container'>
-										<p className='paragraph paragraph__other__style'>Besoin de conseils pour approcher des investisseurs, défendre votre projet ou négocier avec les investisseurs ? 
-											Besoin  d’un accompagnement sur mesure pour la construction ou la révision de votre dossier de financement ?
-										</p>
-										<p className='paragraph paragraph__other__style'>
-											Nous proposons de vous accompagner dans toutes les étapes de votre levée de fonds. 
-										</p>
+										<dt className='appui__dt'>
+											Nous vous proposons un accompagnement sur mesure dans toutes les étapes de votre levée de fonds :
+										</dt>
+										<dt className='appui-conseil'>
+											<dd> Définition des critères de financement</dd>
+											<dd> Conception de la documentation</dd>
+											<dd> Préparation des réunions avec les investisseurs</dd>
+											<dd> Préparation à la négociation</dd>
+											<dd> Closing</dd>
+										</dt>
+										
 									</div>
 								</div>
 								<div className='need-container'>

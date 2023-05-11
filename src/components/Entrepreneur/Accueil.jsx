@@ -29,8 +29,7 @@ const Accueil = () => {
                     </div>
                     <div className='text-highlighted paragraph'>
                         <p>
-                            Avec des données, des outils et des conseils, libérez le potentiel de votre entreprise en toute autonomie ou avec un accompagnement dédié de nos experts et 
-                            obtenez les financements dont vous avez besoin pour faire décoller votre projet.
+                        Optimisez votre entreprise avec des données, outils et conseils, accompagné ou non par nos experts, et obtenez les financements pour réussir votre projet.
                         </p>
                     </div>
                 </div>
@@ -38,11 +37,12 @@ const Accueil = () => {
                 <div className='button-demo'>
                     <Link
                         to={'/decouvrir-bheti-connect'}
-                    >
+                    >   
                         <Button 
-                            name={'🚀 Découvrir la plateforme'}
-                            icon={'fas fa-chevron-right'}
+                            name={` ${'Essayer Bheti App'}`}
                             arrow={'arrow'}
+                            icon={'fas fa-arrow-right'}
+                            
                         />
                     </Link>
                 </div>
@@ -80,7 +80,7 @@ const AccueilStyled = styled.section`
                 font-size: 40px;
                 color: ${props => props.theme.colorBlack};
                 h1{
-                    font-family: 'cinzel';
+                    font-family: 'Montserrat', sans-serif;
                 }
                 @media only screen and (max-width: 2560px) {
                     top: 10vh;

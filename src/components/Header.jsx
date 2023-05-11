@@ -1,9 +1,7 @@
 import styled from 'styled-components'
 import { useTheme } from '../context/themeContext';
-import premiereImg from '../assets/images/pexels-jep-gambardella-7690161-removebg-preview.png';
+import premiereImg from '../assets/images/My-project.png';
 import Button from './Button';
-import { Link } from 'react-router-dom';
-
 
 const Header = () => {
     const theme = useTheme()
@@ -25,7 +23,7 @@ const Header = () => {
                         />
                     </div>
                 </div>
-                <div className='images'>
+                <div className='image'>
                     <img  className='h-img-1' src={premiereImg} alt='image-1' />
                 </div>
             </div>
@@ -49,14 +47,15 @@ justify-content: center;
     align-items: center;
     justify-content: space-between;
     gap: 2em;
+    width: 95%;
     @media screen and (max-width: 800px) {
         flex-direction: column;
         }
 
     .text {
-        flex: 1;
+        flex: 1 ;
         position: relative;
-        width:70%;
+        width: 70%;
         animation: contentHide 1.5s ease-in-out;
             @keyframes contentHide {
                 0%{
@@ -69,14 +68,14 @@ justify-content: center;
                 }
             }
         h2 {
-            font-size: 4vw;
+            font-size: 4.25vw;
             margin-bottom: 20px;
             text-align : left;
-            line-height: .9;
-            width: 80%;
-            margin: auto;
+            line-height: 1;
+            width: 92%;
+            margin-left: 5%;
             span{
-                background:${props => props.theme.colorGradientPrimary3};;
+                background:${props => props.theme.colorBheti};;
                 background-clip: text;
                 -webkit-background-clip: text;
                 color: transparent;
@@ -93,8 +92,9 @@ justify-content: center;
             text-align: left;
             font-family: 'Montserrat', sans-serif;
             width: 80%;
-            margin-left: 10%;
+            margin-left: 5%;
             margin-top: 3%;
+            font-size: 1.2em;
             @media screen and (max-width: 800px){
                 width: 75%;
                 margin-top: 2%;
@@ -102,13 +102,12 @@ justify-content: center;
             }
             @media screen and (max-width: 500px){
                 font-size: .8em;
-
             }
         }
         .cta-button{
             position: relative;
-            margin-left: 10%;
-            margin-top: 2%;
+            margin-top: 2.5%;
+            margin-left: 5%;
             @media screen and (max-width: 800px){
                 position: relative;
                 margin-top: 4%;
@@ -126,10 +125,9 @@ justify-content: center;
         }
     }
 
-    .images {
-        display: flex;
+    .image {
         position: relative;
-        width: 30%;
+        width: 32%;
         justify-content: center;
         transition: all .4s ease-in-out;
         animation: contentHide2 1s ease-in-out;
@@ -151,7 +149,7 @@ justify-content: center;
         &:hover{
             .h-img-1{
                 position: relative;
-                transform: scale(1.1);
+                transform: scale(1.09);
                 @media screen and (max-width: 540px) {
                     transform: none;
                     }
@@ -165,6 +163,9 @@ justify-content: center;
             margin: 2%;
             height: auto;
             transition: all .4s ease-in-out;
+            @media screen and (min-width: 800px){
+                margin: 0 -12%;
+            }
         }
         @media screen and (max-width: 800px){
             width: 70%;
@@ -193,7 +194,7 @@ justify-content: center;
             width: 6px;
             transform: translate(-50%, -50%);
             border-radius: 50%;
-            background: ${props => props.theme.colorGradientPrimary3};
+            background: ${props => props.theme.colorGradientPrimary2};
             animation: upDown 1s infinite;
             @keyframes upDown {
                 0%{
@@ -219,10 +220,9 @@ justify-content: center;
                 flex: none;
                 width: 100%;
             }
-
             .images {
                 justify-content: center;
-                display: flex
+                display: flex;
                 img {
                     width: 80%;
                     max-width: none;

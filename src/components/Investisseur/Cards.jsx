@@ -124,10 +124,12 @@ ul{
 
 ul li {
   margin-right:8px;
+  margin-top: 4px;
   background-color: #700b0b;
   color: white;
   border-radius: 40px;
-  padding:2px 5px;
+  padding:2px 9px;
+  width: 100%;
 }
 
 .boxPriceCountry{

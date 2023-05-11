@@ -93,6 +93,7 @@ const MethodCardStyled = styled.section`
         }
         .description{
             padding-bottom: 1.5rem;
+            text-align: left;
             @media only screen and (max-width: 525px) and (min-width: 425px){
                 font-size: 14px;
             }
