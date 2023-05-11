@@ -144,20 +144,18 @@
 
 .need-container{
 	position: relative;
-	width: 400px;
-	margin: auto;
+	width: 300px;
+	margin-bottom: 4%;
 }
 
 .need-pitch{
 	position: relative;
-	margin-left: 15%;
 	margin-bottom: 5%;
 }
 
 .need-previsionnel{
 	position: relative;
 	margin-bottom: 7%;
-	margin-left: 8%;
 }
 
 .paragraph{
@@ -201,14 +199,30 @@
 	text-align: center;
 }
 
-.help{
-	margin-left: 15%;
-	margin-bottom: 6.5em;
+.appui-conseil{
+	margin-top: 30px;
+}
+
+dt{
+	font-size: 1.1rem;
+	margin-bottom: 10px;
+}
+
+.appui__dt{
+	margin-top: 10px;
+}
+
+dd {
+	display: list-item;
+	list-style-type: "💼";
+	padding-inline-start: 1ch;
+	font-family: 'Montserrat', sans-serif;
+	font-size: 1.1rem;
 }
 
 .card_title{
 	margin-top: 40px;
-	font-size: 1.43em;
+	font-size: 1.47em;
 }
 
 .paragraph {
@@ -241,7 +255,11 @@
 	}
 }
 
-@media only screen and (max-width: 1400px){
+@media only screen and (max-width: 1400px) and (min-width: 1200px){
+
+}
+
+@media only screen and (max-width: 1200px){
 	.card__content{
 			display: block;
 			width: 70vw;
@@ -259,16 +277,13 @@
 		width: 80%;
 		font-size: 15.4px !important;
 	}
-	.need-pitch{
-		margin: auto;
-	}
+
 	.card__content > div {
 		width: 60vw;
 		margin: auto;
 	}
 	.help{
-		width: 35%;
-		margin: auto;
+		width: 60%;
 	}
 	.paragraph__container{
 		margin: 5% 0%;
@@ -297,26 +312,21 @@
 	}
 	.need-container{
 		position: relative;
-		margin: auto;
+		float: left;
 	}
 	.offre{
 		width: 98%;
 		font-size: 2.4vw;
 		margin: 3% auto;
 	}
-	.need-pitch{
-		position: relative;
-		margin: auto;
-		width: 250px;
-	}
+	
 	.need-previsionnel{
 		position: relative;
-		margin: auto;
 		max-width: 340px;
 	}
 	.need-container{
 		width: 40vw;
-		margin-bottom: 40px;
+		margin-bottom: 30px;
 	}
 	.offer-icon{
 		width: 55px;
@@ -350,10 +360,17 @@
 		margin-left: 16px;
 		margin-top: 15px;
 	}
+	.pitch-deck-elements{
+		list-style-type: square;
+		font-family: 'Montserrat', sans-serif;
+	}
+	.appui-conseil{
+		margin-top: 20px ;
+	}
 	.offre {
 		width: 90%;
 		font-size: 4.7vw;
-		margin: 3% auto;
+		margin: 0% auto;
 	}
 	.offer{
 		width: 50%;
@@ -410,9 +427,7 @@
 	.need-previsionnel{
 		width: 60vw;
 	}
-	.need-pitch{
-		width: 200px;
-	}
+	
 }
 
 @media only screen and (max-width: 320px) {
