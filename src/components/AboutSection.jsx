@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import { useTheme } from '../context/themeContext';
 import bhetiImage from '../assets/images/pexels-rdne-stock-project-5922212.jpg';
 import Button from "./Button";
+import { Link } from 'react-router-dom';
 
 const AboutSection = () => {
     const theme = useTheme();
@@ -24,11 +25,15 @@ const AboutSection = () => {
                         </b>
                     </div>
                     <div className='test-button'>
+                        <Link
+                            to={'/formulaire'}
+                        > 
                             <Button
                                 name='Tester Bheti App'
                                 arrow={'arrow'}
                                 icon={'fas fa-arrow-right'}
                             />
+                        </Link>
                     </div>
                 </div>
                 <div className='rightSide'>

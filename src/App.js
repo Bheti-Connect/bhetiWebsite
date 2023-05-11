@@ -13,6 +13,7 @@ import FormOne from './components/Forms/NewForms/FormOne/FormOne';
 import FormTwo from './components/Forms/NewForms/FormTwo/FormTwo';
 import FormInvestisseur from './components/Investisseur/form/FormInvestisseur';
 import ErrorPage from './components/Error/ErrorPage';
+import Formulaire from './components/Forms/Formulaire';
 
 const App = () => {
   const theme = useTheme();
@@ -46,6 +47,7 @@ const App = () => {
             {/* <Route path='evaluer-eligibilite' element={<EvaluerEligibilite />} /> */}
             <Route path='decouvrir-bheti-connect' exact caseSensitive={false} element={<FormTwo />} />
             <Route path='evaluer-eligibilite' exact caseSensitive={false} element={<FormTwo />} />
+            <Route path='formulaire' exact caseSensitive={false} element={<Formulaire />} />
             {/* Route : form investisseur */}
             <Route path='form-investisseur' exact caseSensitive={false} element={<FormInvestisseur />} />
             {/* Route : success stories media */}
