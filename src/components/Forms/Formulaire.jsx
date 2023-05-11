@@ -7,14 +7,10 @@ import Blob3 from '../../assets/images/img-3.png';
 import Blob4 from '../../assets/images/img-4.png';
 import BhetiWhite from '../../assets/images/bheti-white.png';
 
-const EvaluerEligibilite = () => {
+const Formulaire = () => {
     const theme = useTheme();
-    const listOptions = optionsActivity.map((option) => 
-        <option>{option}</option>
-    )
-
     return (
-        <EvaluerEligibiliteStyled theme={theme}>
+        <FormulaireStyled theme={theme}>
             <div className='container'>
                 <img className='blob-one' src={Blob} alt='blob1'/>
                 <img className='blob-two' src={Blob2} alt='blob2'/>
@@ -25,18 +21,12 @@ const EvaluerEligibilite = () => {
                 <div className='container-bheti'>
                     <img className='white-logo' src={BhetiWhite} alt='bheti-white-logo' />
                     <h3>
-                        Préparez votre levée de fonds avec des outils adaptés et
-                        présentez votre projet à des partenaires financiers pertinents
+                        Rejoindre la liste d’attente pour accéder à l’application dès quelle sera disponibe.
                     </h3>
-                    <p className='first-paragraph'>
-                        Profitez d'un diagnostic gratuit de votre projet pour vérifier votre éligibilité à la levée de fonds !
-                    </p>
-                    <p className='second-paragraph'>
-                        Complétez ce formulaire et un de nos experts vous contactera pour votre audit gratuit.
-                    </p>
+                  
                 </div>
                 <div className='container-form'>
-                    <form>
+                    <form className='form__elements'>
                         <div className='input-div'>
                             <label>Nom de la société<span>*</span></label>
                             <input
@@ -47,55 +37,43 @@ const EvaluerEligibilite = () => {
                             />
                         </div>
                         <div className='input-div'>
+                            <label>Votre Nom complet<span>*</span></label>
+                            <input
+                                id=''
+                                type='text'
+                                name=''
+                                placeholder='Nom complet'
+                            />
+                        </div>
+                        <div className='input-div'>
+                            <label>Adresse Email<span>*</span></label>
+                            <input
+                                id=''
+                                type='email'
+                                name='email'
+                                placeholder='Adresse Email'
+                            />
+                        </div>
+                        <div className='input-div'>
                             <label>Site web/LinkedIn de votre startup<span>*</span></label>
                             <input
                                 id=''
                                 type='text'
                                 name=''
-                                placeholder='Lien de votre site web ou LinkedIn'
+                                placeholder='Lien site web/LinkedIn'
                             />
-                        </div>
-                        <div className='input-div'>
-                            <label>Nombre d'années d'activité<span>*</span></label>
-                            <select className='select-element'>
-                                <option>-- Choisissez une option --</option>
-                                <option>0-2 ans</option>
-                                <option>2-5 ans</option>
-                                <option>5-10 ans</option>
-                                <option>+10 ans</option>
-                            </select>
-                        </div>
-                        <div className='input-div'>
-                            <label>Veuilez fournir une description en une phrase de votre activité<span>*</span></label>
-                            <input
-                                id=''
-                                type='text'
-                                name=''
-                                placeholder=''
-                            />
-                        </div>
-                        <div className='input-div'>
-                            <label>Quel secteur correspond le mieux à votre activité<span>*</span></label>
-                            <select className='select-element'>
-                                <option>-- Choisissez une option --</option>
-                                {listOptions}
-                            </select>
                         </div>
                     </form>
                     <div className='latest-controlls'>
-                        <div className='control control-1'></div>
-                        <div className='control control-2'></div>
-                        <div className='control control-3'></div>
-                        <div className='control control-4'></div>
-                        <button className='suivant'> Suivant</button>
+                        <button className='envoyer'> Envoyer</button>
                     </div>
                 </div>
             </div>
-    </EvaluerEligibiliteStyled>
+    </FormulaireStyled>
     )
 }
 
-const EvaluerEligibiliteStyled = styled.section`
+const FormulaireStyled = styled.section`
     .container {
         z-index: -100;
         img {
@@ -176,8 +154,8 @@ const EvaluerEligibiliteStyled = styled.section`
                 .input-div{
                     font-size: 16px;
                     display: grid;
-                    width: 280px;
-                    margin: 11% 15% 5%;
+                    width: 300px;
+                    margin: 17% 2% 5%;
                     span{
                         color: red;
                     }
@@ -220,40 +198,15 @@ const EvaluerEligibiliteStyled = styled.section`
             }
             .latest-controlls{
                 display: flex;
-                justify-content: center;
+                justify-content: end;
                 margin-top: 2.5rem;
-                .control{
-                    width: 1rem;
-                    height: 1rem;
-                    border-radius: 50%;
-                    margin: 0 0.25rem;
-                    cursor: pointer;
-                }
-                .control-1{
-                    background-color: ${props => props.theme.colorAccent};
-                }
-                .control-2{
-                    background-color: ${props => props.theme.colorGrey9};
-                    transform: scale(0.82);
-                }
-                .control-3{
-                    background-color: ${props => props.theme.colorGrey9};
-                    transform: scale(0.65);
-                }
-                .control-4{
-                    background-color: ${props => props.theme.colorGrey9};
-                    transform: scale(0.43);
-                }
-                .page-number {
-                    margin: 0px 0px 0px 20px;
-                    
-                }
-                .suivant {
-                    font-size: 14px;
-                    letter-spacing: 2px;
+                width:90%;
+                .envoyer {
+                    font-size: 16px;
+                    letter-spacing: 1px;
                     text-decoration: none;
-                    margin: 0px 0px 10px 50px;
-                    width: 100px;
+                    font-family: 'Montserrat', sans-serif;
+                    width: 110px;
                     color: ${props => props.theme.colorBlack};
                     cursor: pointer;
                     border: 1px solid;
@@ -265,14 +218,14 @@ const EvaluerEligibiliteStyled = styled.section`
                     touch-action: manipulation;
                     }
 
-                    .suivant:active {
+                    .envoyer:active {
                     box-shadow: 0px 0px 0px 0px;
                     top: 5px;
                     left: 5px;
                     }
 
                     @media (min-width: 768px) {
-                    .suivant {
+                    .envoyer {
                         padding: 0.25em 0.75em;
                         }
                     }
@@ -281,9 +234,12 @@ const EvaluerEligibiliteStyled = styled.section`
                 width: 900px;
                 height: 600px;
             }
+            .form__elements{
+                width: 90%;            
+            }
         }
     }
 
 `
 
-export default EvaluerEligibilite;
+export default Formulaire;

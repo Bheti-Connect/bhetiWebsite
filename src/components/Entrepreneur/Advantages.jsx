@@ -28,7 +28,7 @@ const Advantages = () => {
 								
 								<div className='need-pitch'>
 										<Link 
-										to={'/decouvrir-bheti-connect'}
+										to={'/formulaire'}
 										>
 											<Button 
 													name={'Demande d’accès'}
@@ -61,7 +61,7 @@ const Advantages = () => {
 								<div className='need-container'>
 									<div className='need-pitch'>
 										<Link
-											to={'/decouvrir-bheti-connect'}
+											to={'/formulaire'}
 										>
 											<Button 
 													name={'J’ai besoin d’un pitch'}
@@ -90,9 +90,13 @@ const Advantages = () => {
 								</dt>
 								<div className='need-container'>
 									<div className='need-previsionnel'>
+									<Link
+										to={'/formulaire'}
+									> 
 										<Button 
 												name={'J’ai besoin d’un prévisionnel Financier'}
 										/>
+									</Link>
 									</div>
 								</div>
 							</div>
@@ -123,7 +127,7 @@ const Advantages = () => {
 								<div className='need-container'>
 									<div className='help'>
 										<Link
-											to={'/decouvrir-bheti-connect'}
+											to={'/formulaire'}
 										>
 											<Button 
 													name={'Contactez-nous'}
@@ -131,7 +135,6 @@ const Advantages = () => {
 										</Link>
 									</div>
 								</div>
-								{/* <p className='paragraph'><a href="#top" class="btn btn--accent">👆🏼 Haut de page</a></p> */}
 							</div>
 							<figure className='image__figure'>
 								<img className='image-team' src={Help} alt='Image-Aide'/>
@@ -140,6 +143,8 @@ const Advantages = () => {
 					</li>
 				</ul>
             </main>
+			<div className='haut_de_page'><a href="#top" class="btn btn--accent">👆🏼 Haut de page</a></div>
+
         </AdvantagesDiv>
     )
 }
@@ -150,6 +155,10 @@ const AdvantagesDiv = styled.div`
 
 .paragraph{
     font-size: 18px ;
+}
+.haut_de_page{
+	position: absolute;
+	right: 10px;
 }
 
 `
