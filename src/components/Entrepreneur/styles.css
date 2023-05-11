@@ -144,7 +144,8 @@
 
 .need-container{
 	position: relative;
-	width: 400px;
+	width: 300px;
+	margin-bottom: 4%;
 }
 
 .need-pitch{
@@ -198,8 +199,25 @@
 	text-align: center;
 }
 
-.help{
-	margin-bottom: 6.5em;
+.appui-conseil{
+	margin-top: 30px;
+}
+
+dt{
+	font-size: 1.1rem;
+	margin-bottom: 10px;
+}
+
+.appui__dt{
+	margin-top: 10px;
+}
+
+dd {
+	display: list-item;
+	list-style-type: "💼";
+	padding-inline-start: 1ch;
+	font-family: 'Montserrat', sans-serif;
+	font-size: 1.1rem;
 }
 
 .card_title{
@@ -237,7 +255,11 @@
 	}
 }
 
-@media only screen and (max-width: 1400px){
+@media only screen and (max-width: 1400px) and (min-width: 1200px){
+
+}
+
+@media only screen and (max-width: 1200px){
 	.card__content{
 			display: block;
 			width: 70vw;
@@ -261,8 +283,7 @@
 		margin: auto;
 	}
 	.help{
-		width: 35%;
-		margin: auto;
+		width: 60%;
 	}
 	.paragraph__container{
 		margin: 5% 0%;
@@ -291,7 +312,7 @@
 	}
 	.need-container{
 		position: relative;
-		margin: auto;
+		float: left;
 	}
 	.offre{
 		width: 98%;
@@ -301,12 +322,11 @@
 	
 	.need-previsionnel{
 		position: relative;
-		margin: auto;
 		max-width: 340px;
 	}
 	.need-container{
 		width: 40vw;
-		margin-bottom: 40px;
+		margin-bottom: 30px;
 	}
 	.offer-icon{
 		width: 55px;
@@ -339,6 +359,13 @@
 		font-size: 1.3em;
 		margin-left: 16px;
 		margin-top: 15px;
+	}
+	.pitch-deck-elements{
+		list-style-type: square;
+		font-family: 'Montserrat', sans-serif;
+	}
+	.appui-conseil{
+		margin-top: 20px ;
 	}
 	.offre {
 		width: 90%;
