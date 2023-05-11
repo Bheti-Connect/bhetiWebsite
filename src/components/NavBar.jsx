@@ -106,10 +106,13 @@ const NavBarStyled = styled.nav`
                     width: 14vw;
                 }
                 @media only screen and (max-width: 768px) {
-                    width: 18vw;
+                    width: 23vw;
+                    margin-left: -35px;
                 }
                 @media only screen and (max-width: 600px) {
-                    width: 24vw;
+                    width: 25vw;
+                    margin-left: -40px;
+
                 }
             }
 }
