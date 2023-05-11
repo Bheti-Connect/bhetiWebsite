@@ -58,7 +58,7 @@ border-radius: 10px;
 box-shadow: 0 2px 20px rgba(0, 0, 0, 0.2);
 overflow: hidden;
 width: 250px;
-height: 330px;
+height: auto;
 cursor: pointer;
 
 &:hover{
@@ -69,17 +69,15 @@ cursor: pointer;
 
 @media only screen and (max-width: 900px) {
   width: 215px;
-  height: 325px;
 }
 
 @media only screen and (max-width: 768px) {
   width: 215px;
-  height: 310px;
+
 }
 
 @media only screen and (max-width: 578px) {
   width: 195px;
-  height: 275px;
 
 }
 
@@ -89,13 +87,12 @@ cursor: pointer;
 }
 
 @media only screen and (max-width: 428px) {
-  width: 160px;
-  height: 275px;
+  text-align: left !important;
+  width: 260px;
 }
 
 @media only screen and (max-width: 415px) {
   width: 250px;
-  height: 300px;
 }
 
 `
