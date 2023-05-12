@@ -112,7 +112,9 @@ const NavBarStyled = styled.nav`
                 @media only screen and (max-width: 600px) {
                     width: 25vw;
                     margin-left: -40px;
-
+                }
+                @media only screen and (max-width: 440px){
+                    width: 35vw;
                 }
             }
 }
