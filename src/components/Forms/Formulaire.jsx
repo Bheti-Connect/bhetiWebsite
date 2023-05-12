@@ -16,60 +16,60 @@ const Formulaire = () => {
         website: '',
         email: '',
         companyName: ''
-      });
-    
-      const [errors, setErrors] = useState({});
-      const [touchedFields, setTouchedFields] = useState({});
-    
-      const handleInputChange = (e) => {
-        const { name, value } = e.target;
-        setFormData({ ...formData, [name]: value });
-      };
-    
-      const handleInputBlur = (e) => {
-        const { name } = e.target;
-        setTouchedFields({ ...touchedFields, [name]: true });
-      };
-    
-      const validateForm = () => {
-        let valid = true;
-        const newErrors = {};
-    
-        if (!formData.fullName.trim()) {
-          newErrors.fullName = 'Please enter your full name.';
-          valid = false;
-        }
-    
-        if (!formData.website.trim()) {
-          newErrors.website = 'Please enter your website link.';
-          valid = false;
-        }
-    
-        if (!formData.email.trim()) {
-          newErrors.email = 'Please enter your email address.';
-          valid = false;
-        } else if (!/^\S+@\S+\.\S+$/.test(formData.email)) {
-          newErrors.email = 'Please enter a valid email address.';
-          valid = false;
-        }
-    
-        if (!formData.companyName.trim()) {
-          newErrors.companyName = 'Please enter your company name.';
-          valid = false;
-        }
-    
-        setErrors(newErrors);
-        return valid;
-      };
-    
-      const handleSubmit = (e) => {
-        e.preventDefault();
-    
-        if (validateForm()) {
-          console.log('Form submitted:', formData);
-        }
-      };
-    
+        });
+        
+        const [errors, setErrors] = useState({});
+        const [touchedFields, setTouchedFields] = useState({});
+        
+        const handleInputChange = (e) => {
+            const { name, value } = e.target;
+            setFormData({ ...formData, [name]: value });
+        };
+        
+        const handleInputBlur = (e) => {
+            const { name } = e.target;
+            setTouchedFields({ ...touchedFields, [name]: true });
+        };
+        
+        const validateForm = () => {
+            let valid = true;
+            const newErrors = {};
+        
+            if (!formData.fullName.trim()) {
+            newErrors.fullName = 'Please enter your full name.';
+            valid = false;
+            }
+        
+            if (!formData.website.trim()) {
+            newErrors.website = 'Please enter your website link.';
+            valid = false;
+            }
+        
+            if (!formData.email.trim()) {
+            newErrors.email = 'Please enter your email address.';
+            valid = false;
+            } else if (!/^\S+@\S+\.\S+$/.test(formData.email)) {
+            newErrors.email = 'Please enter a valid email address.';
+            valid = false;
+            }
+        
+            if (!formData.companyName.trim()) {
+            newErrors.companyName = 'Please enter your company name.';
+            valid = false;
+            }
+        
+            setErrors(newErrors);
+            return valid;
+        };
+        
+        const handleSubmit = (e) => {
+            e.preventDefault();
+        
+            if (validateForm()) {
+            console.log('Form submitted:', formData);
+            }
+        };
+        
     return (
         <FormulaireStyled theme={theme}>
             <div className='container'>
@@ -116,7 +116,7 @@ const Formulaire = () => {
                             {touchedFields.fullName && !formData.fullName.trim() && <p className='error__message'>Veuillez saisir votre nom complet.</p>}
                         </div>
                         <div className='input-div'>
-                            <label htmlFor="email">Adresse Email <span>*</span></label>
+                            <label htmlFor="email" id='email_label'>Adresse Email <span>*</span></label>
                             <input
                                 type="text"
                                 id="email"
@@ -130,7 +130,7 @@ const Formulaire = () => {
                             {touchedFields.email && !formData.email.trim() && <p className='error__message'>Veuillez saisir votre adresse électronique.</p>}
                         </div>
                         <div className='input-div'>
-                            <label htmlFor="website">Site web/LinkedIn de votre startup <span>*</span></label>
+                            <label htmlFor="website" id='website_label'>Site web/LinkedIn de votre startup <span>*</span></label>
                             <input
                                 type="text"
                                 id="website"
@@ -138,12 +138,12 @@ const Formulaire = () => {
                                 value={formData.website}
                                 onChange={handleInputChange}
                                 onBlur={handleInputBlur}
-                                placeholder='Lien site web ouLinkedIn'
+                                placeholder='Lien site web ou LinkedIn'
                                 className={touchedFields.website && !formData.website.trim() ? 'error' : formData.website.trim() ? 'valid' : ''}
                             />
                             {touchedFields.website && !formData.website.trim() && <p className='error__message'>Veuillez saisir le lien de votre site web ou Linkedin</p>}
                         </div>
-                        <div className='latest-controlls'>
+                        <div className='button__container'>
                             <button className='envoyer' type="submit"> Envoyer</button>
                         </div>
                     </form>
@@ -186,17 +186,38 @@ const FormulaireStyled = styled.section`
         .blob-four{
             width: 21%;
         }
-    }
+        @media all and (max-width: 1024px) {
+            .blob-one{
+                right: -1px;
+            }
+            .blob-two{
+                bottom: 800px;
+                right: -4px;
+            }
+            .blob-three{
+                bottom: 800px;
+            }
 
+        }
+    }
     .container-child{
         display: flex;
-        margin: 0% 25%;
+        margin: -1% 25%;
+        @media all and (max-width: 1500px) {
+            margin: -1% 17%;
+        }
         @media all and (max-width: 1300px) {
             margin: 0% 20%;
+        }
+        @media all and (max-width: 1024px){
+            margin: 7% 10%;
         }
         @media all and (max-width: 768px) {
             display:block;
             margin: 13% 16%;
+        }
+        @media all and (max-width: 600px) {
+            margin: 18vh 10%;
         }
         .container-bheti{
             position: relative;
@@ -211,11 +232,15 @@ const FormulaireStyled = styled.section`
                 width: 40%;
                 left: 25%;
                 margin: 150px 10px  10px;
+                @media all and (max-width: 440px){
+                    margin: 120px 0px  40px;
+                    left: 1%;
+                }
             }
             h3{
                 font-size: 1.1rem;
                 margin: 10% 10% 0%;
-                color: ${props => props.theme.colorWhiteIsh} ;
+                color: ${props => props.theme.colorWhiteIsh};
             }
             p{
                 font-size: 0.8rem;
@@ -238,7 +263,9 @@ const FormulaireStyled = styled.section`
                 height: 400px;
                 border-bottom-left-radius: 0px;
                 border-top-right-radius: 20px;
-
+            }
+            @media all and (max-width: 440px) {
+                width: 80vw;
             }
         }
         .container-form{
@@ -276,23 +303,44 @@ const FormulaireStyled = styled.section`
                         transition: 0.3s;
                         outline: none;
                     }
-
                     input[type=text]:focus {
                         border: 4px solid #9e3a3a;
                     }
                     .error {
                         border: 1px solid red;
                         }
-
                     .valid {
                         border: 2px solid #28B463;
                         }
                     .error__message{
                         color: ${props => props.theme.colorBheti};
+                        @media all and (max-width: 768px){
+                                margin: 15px -8px;
+                        }
+                        @media all and (max-width: 1500px){
+                            margin: 12px 13px;
+
+                        }
+                    }
+                    @media all and (max-width: 768px){
+                        margin: 8% 2% 5%;
+                    }
+                    @media all and (max-width: 440px){
+                        margin: 10% 2% 5%;
+                        label{
+                            margin-left: -50px;
+                            font-size: 17px;
+                        }
+                        #website_label{
+                            margin-left: 0px
+                        }
+                        #email_label{
+                            margin-left: -90px
+                        }
                     }
                 }
             }
-            .latest-controlls{
+            .button__container{
                 display: flex;
                 justify-content: end;
                 margin-top: 2.5rem;
@@ -331,7 +379,10 @@ const FormulaireStyled = styled.section`
                 height: 600px;
             }
             .form__elements{
-                width: 90%;            
+                width: 90%;
+                @media all and (max-width: 768px) {
+                    margin: 20% 5%;
+                }            
             }
             @media all and (max-width: 1300px) {
                 width: 70vw;
@@ -341,7 +392,9 @@ const FormulaireStyled = styled.section`
                 width: 65vw;
                 border-top-right-radius: 0px;
                 border-bottom-left-radius: 20px;
-
+            }
+            @media all and (max-width: 440px){
+                width: 80vw;
             }
         }
     }
