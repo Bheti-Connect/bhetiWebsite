@@ -186,12 +186,31 @@ const FormulaireStyled = styled.section`
         .blob-four{
             width: 21%;
         }
+        @media all and (max-width: 1024px) {
+            .blob-one{
+                right: -1px;
+            }
+            .blob-two{
+                bottom: 800px;
+                right: -4px;
+            }
+            .blob-three{
+                bottom: 800px;
+            }
+
+        }
     }
     .container-child{
         display: flex;
         margin: -1% 25%;
+        @media all and (max-width: 1500px) {
+            margin: -1% 17%;
+        }
         @media all and (max-width: 1300px) {
             margin: 0% 20%;
+        }
+        @media all and (max-width: 1024px){
+            margin: 7% 10%;
         }
         @media all and (max-width: 768px) {
             display:block;
@@ -297,6 +316,10 @@ const FormulaireStyled = styled.section`
                         color: ${props => props.theme.colorBheti};
                         @media all and (max-width: 768px){
                                 margin: 15px -8px;
+                        }
+                        @media all and (max-width: 1500px){
+                            margin: 12px 13px;
+
                         }
                     }
                     @media all and (max-width: 768px){
