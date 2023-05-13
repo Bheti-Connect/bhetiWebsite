@@ -13,9 +13,6 @@ const JoinCommunity = () => {
             <div className='title-con'>
                 <Title 
                     name={'Rejoignez notre communauté'}
-                    subtext="Si vous souhaitez identifier d’autre porteurs de projets en Afrique francophone ou dans la diaspora, 
-                    être informé en exclusivité des dynamiques business de l’écosystème des affaires en Afrique, 
-                    être informé des prochaines rencontres entrepreneurs-investisseurs que nous organisons ?"
                 />
             </div>
             <div className='latest-container'>
@@ -84,16 +81,14 @@ const JoinCommunityStyled = styled.div`
         }
     }
     .latest-container{
-        margin-top: 1.5rem;
-        background-color: ${props => props.theme.colorBlack};
         .latest-content{
             display: grid;
-            grid-template-columns: 40% auto;
+            grid-template-columns: 43% auto;
             padding: 10rem 10rem;
             grid-gap: .8rem;
-            width: 90%;
+            width: 95%;
             height: 50%;
-            margin: 0 auto;
+            margin: -12% auto 1%;
             .img-com-div{
                 position: relative;
                 width: 100%;
@@ -117,7 +112,7 @@ const JoinCommunityStyled = styled.div`
                     font-size: 1.2rem;
                 }
                 p{
-                    color: ${props => props.theme.colorGrey4};
+                    color: ${props => props.theme.colorBlack};
                     padding-bottom: 1.5rem;
                 }
                 .community{
@@ -127,8 +122,9 @@ const JoinCommunityStyled = styled.div`
                         .left-side{
                             width: 100%;
                             .paragraphs{
+                                font-family: 'Montserrat', sans-serif;
                                 font-size: 17px;
-                                width: 95%;
+                                width: 99%;
                             }
                             .linkedin{
                                 margin-top: 1rem;
@@ -143,28 +139,20 @@ const JoinCommunityStyled = styled.div`
                             }
                             .social-icon{
                                     position: relative;
-                                    width: 40px;
-                                    height: 40px;
+                                    width: 38px;
+                                    height: 38px;
                                     color: ${props => props.theme.colorGrey2};
                                     cursor: pointer;
-                                    margin: -15px 10px;
-                                }
-                                .slack:hover{
-                                        transform: scale(.8);
-                                }
-                                .linkedin{
-                                    &:hover{
-                                        transform: scale(.8);
-                                    }
+                                    margin: -10px 10px;
                                 }
                                 span{
-                                    padding: 20px .8px;
+                                    padding: 21px .8px;
                                     width: 95%;
                                 }
                                 #slack-span{
                                     display: flex;
                                     width: 300px;
-                                    border-radius: 15px;
+                                    border-radius: 50px;
                                     color: ${props => props.theme.colorWhite};
                                     background-color: ${props => props.theme.colorSlack};
                                     &:hover{
@@ -174,7 +162,7 @@ const JoinCommunityStyled = styled.div`
                                 #linkedin-span{
                                     display: flex;
                                     width: 300px;
-                                    border-radius: 15px;
+                                    border-radius: 50px;
                                     color: ${props => props.theme.colorWhite};
                                     background-color: ${props => props.theme.colorLinkedIn};
                                     &:hover{
