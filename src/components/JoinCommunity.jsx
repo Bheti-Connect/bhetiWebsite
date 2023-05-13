@@ -146,14 +146,6 @@ const JoinCommunityStyled = styled.div`
                                     cursor: pointer;
                                     margin: -10px 10px;
                                 }
-                                .slack:hover{
-                                        transform: scale(.8);
-                                }
-                                .linkedin{
-                                    &:hover{
-                                        transform: scale(.8);
-                                    }
-                                }
                                 span{
                                     padding: 21px .8px;
                                     width: 95%;
