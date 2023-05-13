@@ -175,7 +175,7 @@ const JoinCommunityStyled = styled.div`
                                 #linkedin-span{
                                     display: flex;
                                     width: 300px;
-                                    border-radius: 15px;
+                                    border-radius: 80px;
                                     color: ${props => props.theme.colorWhite};
                                     background-color: ${props => props.theme.colorLinkedIn};
                                     &:hover{
