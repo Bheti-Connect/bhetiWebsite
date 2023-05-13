@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faLinkedin, faFacebook, faInstagram } from '@fortawesome/free-brands-svg-icons';
+import { faLinkedin, faSlack } from '@fortawesome/free-brands-svg-icons';
 import { useTheme } from '../context/themeContext';
 import footerLogo from '../assets/images/bheti-white.png'
 
@@ -18,12 +18,11 @@ const Footer = () => {
                         <img src={footerLogo} alt="Footer Logo"/>
                     </div>
                     <p>
-                        Préparez votre levée de fonds avec des contenus adaptés et présentez votre projet à des investisseurs pertinents
+                        Trouvez du financement avec nous
                     </p>
                     <div className="b-nav-icons">
                         <a href='https://www.linkedin.com/company/bheti-connect'><FontAwesomeIcon icon={faLinkedin} className='icon icon-linkedin social' /></a>
-                        <a href='https://web.facebook.com/bheticonnect'><FontAwesomeIcon icon={faFacebook} className='icon icon-facebook social' /></a>
-                        <a href='https://www.instagram.com/bheticonnect/'><FontAwesomeIcon icon={faInstagram} className='icon icon-instagram social'/></a>
+                        <a href='https://web.facebook.com/bheticonnect'><FontAwesomeIcon icon={faSlack} className='icon icon-slack social' /></a>
                     </div>
                 </ul>
                 <ul className="nav-b nav-contact">
@@ -53,7 +52,7 @@ const Footer = () => {
                         <div className="f-text">
                             <h6>Adresse</h6>
                             <span>
-                            78 Avenue des Champs-Elysée 75008 Paris, France
+                            78 Avenue des Champs-Elysée <br/>75008 Paris, France
                             </span>
                         </div>
                     </li>
@@ -67,16 +66,10 @@ const Footer = () => {
                         <a href="#">F.A.Q</a>
                     </li>
                     <li className="nav-item important-link">
-                        <a href="#">Services</a>
-                    </li>
-                    <li className="nav-item important-link">
                         <a href="#">Politique de remboursements</a>
                     </li>
                     <li className="nav-item important-link">
                         <a href="#">Politique de confidentialité</a>
-                    </li>
-                    <li className="nav-item important-link">
-                        <a href="#">Licence & Droits d'auteur</a>
                     </li>
                 </ul>
             </nav>
@@ -122,7 +115,7 @@ const FooterSectionStyled = styled.footer`
     .bottom-navigation{
         display: flex;
         flex-wrap: wrap;
-        padding-bottom: 3rem;
+        padding-bottom: 2.5rem;
         margin: auto;
         h4{
             padding-bottom: 1.2rem;
@@ -192,10 +185,11 @@ const FooterSectionStyled = styled.footer`
             }
         }
         .logo-con{
-            flex: 5;
             align-items: left;
+            width: 30%;
+            margin-left: 100px;
             .logo img{
-                width: 32%;
+                width: 40%;
                 @media all and (max-width: 1150px) {
                     width: 38%;
                 }
@@ -213,6 +207,7 @@ const FooterSectionStyled = styled.footer`
     }
         .logo-con p{
             width: 80%;
+            margin: 10px 0px;
             @media all and (max-width: 768px) {
                 width: 100%;
             }
@@ -221,7 +216,7 @@ const FooterSectionStyled = styled.footer`
         .b-nav-icons{
             display: flex;
             margin: 1.5rem 0px;
-            width: 50%;
+            width: 30%;
             align-items: start;
             .icon {
                 color: aliceblue;
@@ -230,19 +225,14 @@ const FooterSectionStyled = styled.footer`
             }
             .icon-linkedin{
                 :hover{
-                    color: #2677b5;
+                    color: ${props => props.theme.colorBheti};
                 }
             }
-            .icon-facebook{
+            .icon-slack{
                 :hover{
-                    color: #2872e7 ;
+                    color: ${props => props.theme.colorBheti};
                 }
             } 
-            .icon-instagram{
-                :hover{
-                    color: #a9388b ;
-                }
-            }
             @media only screen and (max-width: 768px) {
                 width: 60%;
                 margin: auto;
@@ -276,10 +266,10 @@ const FooterSectionStyled = styled.footer`
             }
         }
         @media all and (max-width: 2500px){
-            width: 1100px;
+            width: 1200px;
         }
         @media all and (max-width: 1440px){
-            width: 950px;
+            width: 1000px;
         }
         @media all and (max-width: 1080px){
             width: 900px;
