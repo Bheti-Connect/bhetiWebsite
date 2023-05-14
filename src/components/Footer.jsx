@@ -22,7 +22,7 @@ const Footer = () => {
                     </p>
                     <div className="b-nav-icons">
                         <a href='https://www.linkedin.com/company/bheti-connect'><FontAwesomeIcon icon={faLinkedin} className='icon icon-linkedin social' /></a>
-                        <a href='https://web.facebook.com/bheticonnect'><FontAwesomeIcon icon={faSlack} className='icon icon-slack social' /></a>
+                        <a href='https://slack.com/'><FontAwesomeIcon icon={faSlack} className='icon icon-slack social' /></a>
                     </div>
                 </ul>
                 <ul className="nav-b nav-contact">

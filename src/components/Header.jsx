@@ -132,7 +132,7 @@ justify-content: center;
 
     .image {
         position: relative;
-        width: 32%;
+        width: 33%;
         justify-content: center;
         transition: all .4s ease-in-out;
         animation: contentHide2 1s ease-in-out;
