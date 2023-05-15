@@ -48,15 +48,15 @@ const Advantages = () => {
 								<h3 className='card_title'>Votre Pitch deck</h3>
 									<dl className='pitch-deck-elements'>
 										<dt>3 choses importantes à savoir sur le Pitch Dek :</dt>
-										<dd> Incontournable pour une levée de fond</dd>
-										<dd>Incontournable pour une levée de fond</dd>
-										<dd>Doit être efficace et concis</dd>
+										<dd><span className='point'>. </span> Incontournable pour une levée de fond</dd>
+										<dd><span className='point'>. </span>Incontournable pour une levée de fond</dd>
+										<dd><span className='point'>. </span>Doit être efficace et concis</dd>
 									</dl>
 								<dl className='pitch-deck-elements'>
 									<dt>Chez BHC, nous élaborons/révisons votre présentation pour un résultat 3C :</dt>
-									<dd> Clair</dd>
-									<dd> Concis</dd>
-									<dd> Convaincant</dd>
+									<dd><span className='point'>. </span> Clair</dd>
+									<dd><span className='point'>. </span> Concis</dd>
+									<dd><span className='point'>. </span> Convaincant</dd>
 								</dl>
 								<div className='need-container'>
 									<div className='need-pitch'>
@@ -81,8 +81,8 @@ const Advantages = () => {
 								<h3 className='card_title'>Votre Prévisionnel financier</h3>
 								<dl>
 									<dt>A quoi sert le Prévisionnel financier ?</dt>
-									<dd>Avoir une gestion efficace de l’entreprise</dd>
-									<dd> Permet aux investisseurs d’épouser votre vision</dd>
+									<dd><span className='point'>. </span>Avoir une gestion efficace de l’entreprise</dd>
+									<dd><span className='point'>. </span> Permet aux investisseurs d’épouser votre vision</dd>
 									
 								</dl>
 								<dt>
@@ -115,11 +115,11 @@ const Advantages = () => {
 											Nous vous proposons un accompagnement sur mesure dans toutes les étapes de votre levée de fonds :
 										</dt>
 										<dt className='appui-conseil'>
-											<dd> Définition des critères de financement</dd>
-											<dd> Conception de la documentation</dd>
-											<dd> Préparation des réunions avec les investisseurs</dd>
-											<dd> Préparation à la négociation</dd>
-											<dd> Closing</dd>
+											<dd><span className='point'>. </span> Définition des critères de financement</dd>
+											<dd><span className='point'>. </span> Conception de la documentation</dd>
+											<dd><span className='point'>. </span> Préparation des réunions avec les investisseurs</dd>
+											<dd><span className='point'>. </span> Préparation à la négociation</dd>
+											<dd><span className='point'>. </span> Closing</dd>
 										</dt>
 										
 									</div>
@@ -143,8 +143,6 @@ const Advantages = () => {
 					</li>
 				</ul>
             </main>
-			<div className='haut_de_page'><a href="#top" class="btn btn--accent">👆🏼 Haut de page</a></div>
-
         </AdvantagesDiv>
     )
 }

@@ -292,9 +292,8 @@ const Investisseur = () => {
     return (
         <InvestisseurStyled>
             <HeaderText theme={theme}>
-            <h3 className='hello'>{text}</h3>
-            <p>Vous trouverez ci-dessous des informations clés sur des startups et PME qui ouvrent leur capital pour prendre une position décisive sur leurs
-            marchés.<br/>Vous souhaitez en savoir plus sur ces opportunités et/ou rencontrer les fondateurs ? Cliquez sur "Recevoir le deck".</p>
+            <h1 className='hello'>{text}</h1>
+            <p>Vous trouverez ci-dessous des informations clés sur des startups et PME qui ouvrent leur capital pour prendre une position décisive sur leurs marchés.</p>
             <div className="containerMenu">
                 <div className='Box'>
 
@@ -489,18 +488,17 @@ const AllProject = styled.div`
   .nextLinkClassName{
     font-size: 13px;
   }
-
 }
-
 `;
 
 const HeaderText = styled.div`
 
-margin: 55px;
+margin: 52px;
 
-h3 {
+h1 {
   font-family: 'Montserrat', sans-serif;
-  font-size: 40px;
+  font-size: 50px;
+  margin-top: 5%;
   color: ${props => props.theme.colorPrimary};
   @media only screen and (max-width: 1400px) {
     font-size: 35px;
@@ -515,10 +513,10 @@ h3 {
 
 p {
   margin: 10px 0;
-  font-size: 17px;
+  font-size: 19px;
   line-height: 1.4;
   font-family: 'Montserrat', sans-serif;
-  color: ${props => props.theme.colorGrey};
+  color: ${props => props.theme.colorGrey6};
 
 
 }

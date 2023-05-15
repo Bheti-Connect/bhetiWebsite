@@ -32,9 +32,9 @@ const Header = () => {
                     <img  className='h-img-1' src={premiereImg} alt='image-1' />
                 </div>
             </div>
-            <div className='mouse'>
+            {/* <div className='mouse'>
                 <span></span>
-            </div>
+            </div> */}
         </HeaderStyled>
     )
 }
@@ -132,7 +132,7 @@ justify-content: center;
 
     .image {
         position: relative;
-        width: 32%;
+        width: 33%;
         justify-content: center;
         transition: all .4s ease-in-out;
         animation: contentHide2 1s ease-in-out;
@@ -160,6 +160,9 @@ justify-content: center;
                     }
             }
         }
+        @media screen and (min-width: 960px){
+            z-index: -1;
+        }
         @media screen and (max-width: 540px) {
             width: 80%;
             }
@@ -169,7 +172,7 @@ justify-content: center;
             height: auto;
             transition: all .4s ease-in-out;
             @media screen and (min-width: 800px){
-                margin: 0 -12%;
+                margin: 0 -2%;
             }
         }
         @media screen and (max-width: 800px){
@@ -259,4 +262,4 @@ justify-content: center;
         }
 `;
 
-export default Header
+export default Header;
