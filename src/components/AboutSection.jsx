@@ -51,6 +51,9 @@ const AboutSectionStyled = styled.section`
     background: ${props => props.theme.colorBlack};
     grid-template-columns: auto;
     grid-gap: 1rem;
+    @media only screen and (min-width: 960px){
+        margin-top: -1rem;
+    }
     .lower-container{
         display: flex;
         position: relative;
