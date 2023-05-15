@@ -55,17 +55,22 @@ const NavBar = () => {
                             >
                                 Investisseur
                             </NavLink>
-                            <a href='https://bheticonnect.super.site/'>
-                                <NavLink
+                            <NavLink
                                     onClick={handleClick}
-                                    to='media'
+                                    to='/media'
                                     className={({ isActive }) => (isActive ? 'link active' : 'link')}
-                                >
+                            >
                                     Média 
-                                </NavLink>
-                            </a>
-                            <a href='https://app.bheticonnect.com/' className='connexion-hover link'>
-                                Connexion
+                            </NavLink>
+                            <NavLink
+                                    onClick={handleClick}
+                                    to='/media'
+                                    className={({ isActive }) => (isActive ? 'link active' : 'link')}
+                            >
+                                    Contact 
+                            </NavLink>
+                            <a href='/formulaire' className='connexion-hover link'>
+                                    Connexion
                             </a>
 
                         </div>
@@ -145,7 +150,7 @@ const NavBarStyled = styled.nav`
         }
         .nav-menu {
             display: inline-block;
-            grid-template-columns: repeat(4, auto);
+            grid-template-columns: repeat(5, auto);
             grid-gap: 10px;
             text-align: center;
             width: 70vw;
@@ -181,6 +186,7 @@ const NavBarStyled = styled.nav`
     margin: 0 auto;
     .link {
     display: inline-block;
+    font-family: 'Montserrat', sans-serif;
     @media only screen and (min-width: 960px){
         margin-top: 15px;
     }
@@ -244,7 +250,7 @@ const NavBarStyled = styled.nav`
                 text-align: center;
                 margin: auto;
                 margin-top: 12vh;
-                font-size: 2.3rem;
+                font-size: 2rem;
                 margin-bottom: 70px;
                 width: 60%;
                 display: table;

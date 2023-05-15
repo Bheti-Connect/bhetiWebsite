@@ -42,12 +42,14 @@ const EconomicNewsStyled = styled.section`
     background-color: ${props => props.theme.colorBlack};
     margin-bottom: 6rem;
     box-shadow: 0 5px 18px #212529b7;
+    @media (min-width: 960px) {
+        height: 80vh;
+    }
     @media only  screen and (max-width: 425px) {
         position: relative;
         width: 100%;
         height: 140vh;
     }
-
     @media only  screen and (max-width: 415px) {
         height: 100vh;
     }
@@ -77,7 +79,7 @@ const EconomicNewsStyled = styled.section`
             @media only  screen and (max-width: 320px) {
                 width: 100%;
             }
-        }
+        } 
     }
     .right-rec{
         display: flex;

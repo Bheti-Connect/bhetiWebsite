@@ -139,11 +139,11 @@ const JoinCommunityStyled = styled.div`
                             }
                             .social-icon{
                                     position: relative;
-                                    width: 38px;
-                                    height: 38px;
+                                    width: 30px;
+                                    height: 30px;
                                     color: ${props => props.theme.colorGrey2};
                                     cursor: pointer;
-                                    margin: -10px 10px;
+                                    margin: -7px 10px;
                                 }
                                 span{
                                     padding: 21px .8px;
@@ -248,8 +248,8 @@ const JoinCommunityStyled = styled.div`
                             width: 100%;
                             .social-icon{
                                     position: relative;
-                                    width: 25px;
-                                    height: 25px;
+                                    width: 20px;
+                                    height: 20x;
                                     color: ${props => props.theme.colorGrey2};
                                     cursor: pointer;
                                     margin: -4px 10px;

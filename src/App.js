@@ -6,6 +6,8 @@ import Entrepreneur from './components/Entrepreneur/Entrepreneur';
 import Investisseur from './components/Investisseur/Investisseur';
 import Home from './components/Home';
 import Footer from './components/Footer';
+import FloatingButton from './components/FloatingButton';
+
 import NavBar from './components/NavBar';
 
 import Media from './components/Media/Media';
@@ -53,6 +55,7 @@ const App = () => {
             {/* Route : success stories media */}
             <Route path='*'  element={<ErrorPage />} />
           </Routes>
+          <FloatingButton />
         </main>
         <div>
           <Footer />
