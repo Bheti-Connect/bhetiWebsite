@@ -214,12 +214,21 @@ dt{
 
 dd {
 	display: list-item;
-	list-style-type: "💼";
 	padding-inline-start: 1ch;
 	font-family: 'Montserrat', sans-serif;
-	font-size: 1.1rem;
+	font-size: 1.12rem;
+	line-height: .8;
 }
 
+dt{
+	font-family: 'Montserrat', sans-serif;
+	font-size: 1.1rem;
+	line-height: 1.5;
+}
+
+.point{
+	font-size: 40px;
+}
 .card_title{
 	margin-top: 40px;
 	font-size: 1.47em;

@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { useTheme } from '../context/themeContext';
-import bhetiImage from '../assets/images/pexels-rdne-stock-project-5922212.jpg';
+import bhetiImage from '../assets/images/pexels-christina-morillo-1181405.jpg';
 import Button from "./Button";
 import { Link } from 'react-router-dom';
 
@@ -16,13 +16,11 @@ const AboutSection = () => {
                     </h3>
                     <p>Grâce à la plateforme Bheti App, accédez à un écosystème composé d’experts, d’outils et d’informations… Bref, tout ce qu’il vous faut pour trouver du financement.</p>
                     <div className='steps'>
-                        <b>
                         <ol>
                             <li>1. Publiez votre projet, </li>
                             <li>2. Précisez votre besoin,</li>
                             <li>3. Augmentez la visibilité de votre projet auprès d’investisseurs</li>
                         </ol>
-                        </b>
                     </div>
                     <div className='test-button'>
                         <Link
@@ -36,37 +34,39 @@ const AboutSection = () => {
                         </Link>
                     </div>
                 </div>
+            </div>
                 <div className='rightSide'>
                     <div className='image-div'>
                         <img src={bhetiImage} className='about-img' alt='bheti-image' />
                     </div>
                 </div>
-            </div>
         </AboutSectionStyled>
         )
 }
 
 const AboutSectionStyled = styled.section`
     display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 2rem;
+    box-shadow: 0 5px 18px #212529b7;
     background: ${props => props.theme.colorBlack};
-    grid-template-columns: auto;
-    grid-gap: 1rem;
     @media only screen and (min-width: 960px){
         margin-top: -1rem;
     }
     .lower-container{
         display: flex;
         position: relative;
-        width: 85%;
-        margin: 5% auto;
+        width:90%;
+        margin: 5% 10%;
         .leftSide{
             position: relative;
-            width: 80%;
+            margin: 5% 0%;
+            width: 100%;
             .title{
                 color: ${props => props.theme.colorWhite};
-                font-size: 2.6vw;
+                font-size: 2.45vw;
                 text-align: left;
-                width:85%;
+                width: 100%;
             }
             p{
                 color: ${props => props.theme.colorGrey5};
@@ -80,25 +80,13 @@ const AboutSectionStyled = styled.section`
                     list-style: none;
                     li{ 
                         font-family:'Montserrat', sans-serif;
-                        color: ${props => props.theme.colorGrey4};
-                        font-size: 1.5rem;
+                        color: ${props => props.theme.colorGrey5};
+                        font-size: 1.2rem;
                     }
                 }
             }
     
         } 
-        .rightSide{
-            position: relative;
-            .image-div{
-                margin: auto;
-                .about-img{
-                    position: relative; 
-                    width: 23vw;
-                    height: 50%;
-                    border-radius: 20px;
-            }
-        }
-    } 
 
     @media only screen and (max-width: 1150px){
         display: block;
@@ -113,17 +101,24 @@ const AboutSectionStyled = styled.section`
             }
         }
 
-        .rightSide{
-            position: relative;
-            .image-div{
-                margin: 5% auto;
-                .about-img{
-                    width: 70vw;
-            }
-        }
-    }
 }
     }
+    .rightSide{
+        overflow: hidden;
+        img{
+            width: 100%;
+            object-fit: cover;
+            height: 100%;
+            transition: all .3s ease-in-out;
+            &:hover{
+                filter: grayscale(0);
+                transform: scale(1.2) rotate(4deg);
+            }
+            @media only  screen and (max-width: 320px) {
+                width: 100%;
+            }
+        }
+    } 
 `;
 
 export default AboutSection

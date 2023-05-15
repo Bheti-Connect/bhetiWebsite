@@ -79,7 +79,7 @@ const EconomicNewsStyled = styled.section`
             @media only  screen and (max-width: 320px) {
                 width: 100%;
             }
-        }
+        } 
     }
     .right-rec{
         display: flex;
