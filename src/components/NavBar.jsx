@@ -64,7 +64,7 @@ const NavBar = () => {
                             </NavLink>
                             <NavLink
                                     onClick={handleClick}
-                                    to='/media'
+                                    to='/contact'
                                     className={({ isActive }) => (isActive ? 'link active' : 'link')}
                             >
                                     Contact 

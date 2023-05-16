@@ -131,6 +131,9 @@ const FooterSectionStyled = styled.footer`
             }
         }
         .company {
+            @media all and (min-width:1440px ){
+                margin-left: 120px;
+            }
             @media all and (max-width: 768px) {
                     width: 70%;
                     margin: auto;

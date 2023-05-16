@@ -18,48 +18,36 @@ const Formulaire = () => {
         companyName: ''
         });
         
-        const [errors, setErrors] = useState({});
         const [touchedFields, setTouchedFields] = useState({});
+        const [isValidEmail, setIsValidEmail] = useState(true);
+        const [isValidWebsite, setIsValidWebsite] = useState(true);
+
         
         const handleInputChange = (e) => {
             const { name, value } = e.target;
             setFormData({ ...formData, [name]: value });
+            if (name === 'email') {
+                setIsValidEmail(validateEmail(value));
+                }
+            if (name === 'website') {
+                    setIsValidWebsite(validateWebsite(value));
+                }
         };
+
+        const validateEmail = (email) => {
+            const emailRegex = /^\S+@\S+\.\S+$/;
+            return emailRegex.test(email);
+            };
+
+        const validateWebsite = (website) => {
+            // Regular expression pattern for website validation
+            const websiteRegex = /^(ftp|http|https):\/\/[^ "]+$/;
+            return websiteRegex.test(website);
+            };
         
         const handleInputBlur = (e) => {
             const { name } = e.target;
             setTouchedFields({ ...touchedFields, [name]: true });
-        };
-        
-        const validateForm = () => {
-            let valid = true;
-            const newErrors = {};
-        
-            if (!formData.fullName.trim()) {
-            newErrors.fullName = 'Please enter your full name.';
-            valid = false;
-            }
-        
-            if (!formData.website.trim()) {
-            newErrors.website = 'Please enter your website link.';
-            valid = false;
-            }
-        
-            if (!formData.email.trim()) {
-            newErrors.email = 'Please enter your email address.';
-            valid = false;
-            } else if (!/^\S+@\S+\.\S+$/.test(formData.email)) {
-            newErrors.email = 'Please enter a valid email address.';
-            valid = false;
-            }
-        
-            if (!formData.companyName.trim()) {
-            newErrors.companyName = 'Please enter your company name.';
-            valid = false;
-            }
-        
-            setErrors(newErrors);
-            return valid;
         };
         
         const handleSubmit = (e) => {
@@ -113,7 +101,7 @@ const Formulaire = () => {
                                 placeholder='ex: Richard Cool'
                                 className={touchedFields.fullName && !formData.fullName.trim() ? 'error' : formData.fullName.trim() ? 'valid' : ''}
                             />
-                            {touchedFields.fullName && !formData.fullName.trim() && <p className='error__message'>Veuillez saisir votre nom complet.</p>}
+                            {touchedFields.fullName && !formData.fullName.trim() && <p className='error__message'>Veuillez saisir votre nom complet.</p> }
                         </div>
                         <div className='input-div'>
                             <label htmlFor="email" id='email_label'>Adresse Email <span>*</span></label>
@@ -125,9 +113,11 @@ const Formulaire = () => {
                                 onChange={handleInputChange}
                                 onBlur={handleInputBlur}
                                 placeholder='ex: nom@email.com'
-                                className={touchedFields.email && !formData.email.trim() ? 'error' : formData.email.trim() ? 'valid' : ''}
+                                className={touchedFields.email && !formData.email.trim() || !isValidEmail ? 'error' : formData.email.trim() ? 'valid' : ''}
                             />
-                            {touchedFields.email && !formData.email.trim() && <p className='error__message'>Veuillez saisir votre adresse électronique.</p>}
+                            {touchedFields.email && !formData.email.trim() && <p className='error__message'>Veuillez saisir votre adresse électronique.</p> }
+                            {!isValidEmail && <p className='error__message'>Veuillez saisir une adresse email valide</p>}
+
                         </div>
                         <div className='input-div'>
                             <label htmlFor="website" id='website_label'>Site web/LinkedIn de votre startup <span>*</span></label>
@@ -138,10 +128,12 @@ const Formulaire = () => {
                                 value={formData.website}
                                 onChange={handleInputChange}
                                 onBlur={handleInputBlur}
-                                placeholder='Lien site web ou LinkedIn'
-                                className={touchedFields.website && !formData.website.trim() ? 'error' : formData.website.trim() ? 'valid' : ''}
+                                placeholder='ex: https://bheticonnect.com/'
+                                className={touchedFields.website && !formData.website.trim() || !isValidWebsite ? 'error' : formData.website.trim() ? 'valid' : ''}
                             />
                             {touchedFields.website && !formData.website.trim() && <p className='error__message'>Veuillez saisir le lien de votre site web ou Linkedin</p>}
+                            {!isValidWebsite && <p className='error__message'>Veuillez insérer un lien valide</p>}
+
                         </div>
                         <div className='button__container'>
                             <button className='envoyer' type="submit"> Envoyer</button>
@@ -294,7 +286,6 @@ const FormulaireStyled = styled.section`
                         height: 150%;
                         border-radius: 10px;
                         font-size: 1rem;
-                        margin-left: 12px;
                         padding: 1px 1px 0px 20px ;
                         color: #1E0101;
                         /* background: ${props => props.theme.colorWhiteIsh}; */
