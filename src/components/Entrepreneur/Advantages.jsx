@@ -31,7 +31,7 @@ const Advantages = () => {
 										to={'/formulaire'}
 										>
 											<Button 
-													name={'Demande d’accès'}
+													name={"Je demande l'accès"}
 											/>
 										</Link>
 									</div>
