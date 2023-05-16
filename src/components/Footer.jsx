@@ -131,6 +131,9 @@ const FooterSectionStyled = styled.footer`
             }
         }
         .company {
+            @media all and (min-width:1440px ){
+                margin-left: 120px;
+            }
             @media all and (max-width: 768px) {
                     width: 70%;
                     margin: auto;
@@ -153,6 +156,7 @@ const FooterSectionStyled = styled.footer`
             }
         }
         .nav-contact{
+            margin-left: 2rem;
             .nav-item{
                 display: grid;
                 grid-template-columns: 30px auto;
@@ -187,7 +191,7 @@ const FooterSectionStyled = styled.footer`
         .logo-con{
             align-items: left;
             width: 30%;
-            margin-left: 100px;
+            margin-left: 120px;
             .logo img{
                 width: 40%;
                 @media all and (max-width: 1150px) {

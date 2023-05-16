@@ -1,15 +1,12 @@
 import React from 'react'
 import styled from 'styled-components'
+import ContactForm from './ContactForm'
 
 const Contact = () => {
     return (
         <ContactStyled>
             <div>
-                <h2>Contact</h2>
-                <di></di>
-                <div>
-                    <input />
-                </div>
+                <ContactForm />
             </div>
         </ContactStyled>
     )

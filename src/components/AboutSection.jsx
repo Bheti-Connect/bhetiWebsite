@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { useTheme } from '../context/themeContext';
-import bhetiImage from '../assets/images/pexels-christina-morillo-1181405.jpg';
+import bhetiImage from '../assets/images/pexels-christina-morillo-1181421.jpg';
 import Button from "./Button";
 import { Link } from 'react-router-dom';
 
@@ -14,7 +14,7 @@ const AboutSection = () => {
                     <h3 className='title'>
                         Développez et financez vos projets
                     </h3>
-                    <p>Grâce à la plateforme Bheti App, accédez à un écosystème composé d’experts, d’outils et d’informations… Bref, tout ce qu’il vous faut pour trouver du financement.</p>
+                    <p className='subtitle-text'>Grâce à la plateforme Bheti App, accédez à un écosystème composé d’experts, d’outils et d’informations… Bref, tout ce qu’il vous faut pour trouver du financement.</p>
                     <div className='steps'>
                         <ol>
                             <li>1. Publiez votre projet, </li>
@@ -36,9 +36,7 @@ const AboutSection = () => {
                 </div>
             </div>
                 <div className='rightSide'>
-                    <div className='image-div'>
                         <img src={bhetiImage} className='about-img' alt='bheti-image' />
-                    </div>
                 </div>
         </AboutSectionStyled>
         )
@@ -48,8 +46,9 @@ const AboutSectionStyled = styled.section`
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-gap: 2rem;
+    background-color: ${props => props.theme.colorBlack};
+    margin-bottom: 6rem;
     box-shadow: 0 5px 18px #212529b7;
-    background: ${props => props.theme.colorBlack};
     @media only screen and (min-width: 960px){
         margin-top: -1rem;
     }
@@ -67,8 +66,16 @@ const AboutSectionStyled = styled.section`
                 font-size: 2.45vw;
                 text-align: left;
                 width: 100%;
+                &::after{
+                    content: '';
+                    position: absolute;
+                    left: 0;
+                    width: 23%;
+                    height: 2px;
+                    background-color: ${props => props.theme.colorAccent};
+                }
             }
-            p{
+            .subtitle-text{
                 color: ${props => props.theme.colorGrey5};
                 margin: 1% 0;
                 width: 80%;
@@ -109,6 +116,7 @@ const AboutSectionStyled = styled.section`
             width: 100%;
             object-fit: cover;
             height: 100%;
+            filter: grayscale(100%);
             transition: all .3s ease-in-out;
             &:hover{
                 filter: grayscale(0);

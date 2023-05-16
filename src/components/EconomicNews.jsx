@@ -70,7 +70,6 @@ const EconomicNewsStyled = styled.section`
             width: 100%;
             object-fit: cover;
             filter: grayscale(100%);
-            height: 100%;
             transition: all .3s ease-in-out;
             &:hover{
                 filter: grayscale(0);
@@ -85,7 +84,7 @@ const EconomicNewsStyled = styled.section`
         display: flex;
         align-items: center;
         .rec-content{
-            padding: 1rem;
+            padding: .8rem;
             h3{
                 color: ${props => props.theme.colorWhite};
                 font-size: 2.3rem;
@@ -97,7 +96,7 @@ const EconomicNewsStyled = styled.section`
                     position: absolute;
                     left: 0;
                     bottom: 0;
-                    width: 20%;
+                    width: 23%;
                     height: 2px;
                     background-color: ${props => props.theme.colorAccent};
                 }

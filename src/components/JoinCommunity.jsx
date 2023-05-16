@@ -88,7 +88,7 @@ const JoinCommunityStyled = styled.div`
             grid-gap: .8rem;
             width: 95%;
             height: 50%;
-            margin: -12% auto 1%;
+            margin: -10% auto 1%;
             .img-com-div{
                 position: relative;
                 width: 100%;
@@ -174,7 +174,13 @@ const JoinCommunityStyled = styled.div`
                                 }
                         }
                     }
+                    @media all and (min-width: 1650px){
+                        margin-top: 3vw;
+                    }
                 }
+        }
+        @media only screen and (min-width: 1650px){
+            margin: -8% auto 1%;
         }
         @media only screen and (max-width: 1440px){
             padding: 10rem 7rem;
