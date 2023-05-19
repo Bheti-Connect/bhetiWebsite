@@ -55,15 +55,13 @@ const NavBar = () => {
                             >
                                 Investisseur
                             </NavLink>
-                            <a href='https://bheticonnect.super.site/'>
-                                <NavLink
-                                    onClick={handleClick}
-                                    to='media'
-                                    className={({ isActive }) => (isActive ? 'link active' : 'link')}
-                                >
-                                    Média 
-                                </NavLink>
-                            </a>
+                            <NavLink
+                                onClick={handleClick}
+                                to='media'
+                                className={({ isActive }) => (isActive ? 'link active' : 'link')}
+                            >
+                                Média 
+                            </NavLink>
                             <a href='https://app.bheticonnect.com/' className='connexion-hover link'>
                                 Connexion
                             </a>
