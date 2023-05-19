@@ -40,12 +40,12 @@ const Cards = ({item, setSelect, setModal}) => {
             {
               item.secteurs.length < 3 ? (
                 item.secteurs.map((secteur) => (
-                  <li key={secteur}>{secteur}</li>
+                  <li key={secteur} title='Secteurs'>{secteur}</li>
                 ))
               )
               : (
                 item.secteurs.slice(0,3).map((secteur) => (
-                  <li key={secteur}>{secteur}</li>
+                  <li key={secteur} title='Secteurs'>{secteur}</li>
                 ))
               )
             }
