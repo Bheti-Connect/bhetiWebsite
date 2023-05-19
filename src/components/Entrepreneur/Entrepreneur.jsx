@@ -16,9 +16,9 @@ const Entrepreneur = () => {
             {/* <div className='method-container'>
                 <LaMethode />
             </div> */}
-            <div>
+            {/* <div>
                 <Satisfaction />
-            </div>
+            </div> */}
         </EntrepreneurStyled>
     )
 }

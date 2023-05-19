@@ -22,7 +22,7 @@ const Footer = () => {
                     </p>
                     <div className="b-nav-icons">
                         <a href='https://www.linkedin.com/company/bheti-connect'><FontAwesomeIcon icon={faLinkedin} className='icon icon-linkedin social' /></a>
-                        <a href='https://slack.com/'><FontAwesomeIcon icon={faSlack} className='icon icon-slack social' /></a>
+                        <a href='https://join.slack.com/t/bheticonnect/shared_invite/zt-1vpdzs7pd-Q5f49fTUU_Um9L_TJ9ci3g'><FontAwesomeIcon icon={faSlack} className='icon icon-slack social' /></a>
                     </div>
                 </ul>
                 <ul className="nav-b nav-contact">
@@ -129,6 +129,11 @@ const FooterSectionStyled = styled.footer`
             @media only screen and (max-width: 525px) and (min-width: 320px){
                 margin-top: 25px;
             }
+            h4{
+                @media all and (max-width: 500px) {
+                    float: left;
+                }
+            }
         }
         .company {
             @media all and (min-width:1440px ){
@@ -138,11 +143,17 @@ const FooterSectionStyled = styled.footer`
                     width: 70%;
                     margin: auto;
                 }
+            @media all and (max-width: 425px){
+                float: left;
+            }
             .nav-item a{
                 font-size: 12.5px;
                 color: ${props => props.theme.colorGrey6};
                 @media all and (max-width: 768px) {
                     margin: auto;
+                }
+                @media all and (max-width: 500px) {
+                    margin-top: 30px;
                 }
                 @media all and (max-width: 320px) {
                     margin-left: -1px;
@@ -200,22 +211,32 @@ const FooterSectionStyled = styled.footer`
                 @media all and (max-width: 768px) {
                     width: 38%;
                 }
-                @media all and (max-width: 425px) {
-                    width: 34%;
+                @media all and (max-width: 450px) {
+                    width: 50%;
+                    margin-left: -50%;
                 }
             }
             @media all and (max-width: 768px) {
                 width: 70%;
                 margin: 0 auto;
             }
+            @media all and (max-width: 1440px) {
+                margin-left: 50px;
+            }
+            @media all and (max-width: 440px) {
+                display: block;
+            }
     }
         .logo-con p{
             width: 80%;
             margin: 10px 0px;
-            @media all and (max-width: 768px) {
+            @media all and (max-width: 768px){
                 width: 100%;
             }
             color: ${props => props.theme.colorGrey6};
+            @media all and (max-width: 440px) {
+                text-align: left;
+            }
         }
         .b-nav-icons{
             display: flex;
@@ -313,7 +334,9 @@ const FooterSectionStyled = styled.footer`
         @media all and (max-width: 768px) {
             width: 90%;
         }
-        
+        @media all and (max-width: 425px) {
+            text-align: left;
+        }
     }
 
     .copyright-text{

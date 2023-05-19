@@ -28,7 +28,7 @@ const Advantages = () => {
 								
 								<div className='need-pitch'>
 										<Link 
-										to={'/formulaire'}
+										to={'/eligibilite'}
 										>
 											<Button 
 													name={"Je demande l'accès"}
@@ -61,7 +61,7 @@ const Advantages = () => {
 								<div className='need-container'>
 									<div className='need-pitch'>
 										<Link
-											to={'/formulaire'}
+											to={'/eligibilite'}
 										>
 											<Button 
 													name={'J’ai besoin d’un pitch'}
@@ -91,10 +91,10 @@ const Advantages = () => {
 								<div className='need-container'>
 									<div className='need-previsionnel'>
 									<Link
-										to={'/formulaire'}
+										to={'/eligibilite'}
 									> 
 										<Button 
-												name={'J’ai besoin d’un prévisionnel Financier'}
+												name={'J’ai besoin d’un BP'}
 										/>
 									</Link>
 									</div>
@@ -127,7 +127,7 @@ const Advantages = () => {
 								<div className='need-container'>
 									<div className='help'>
 										<Link
-											to={'/formulaire'}
+											to={'/contact'}
 										>
 											<Button 
 													name={'Contactez-nous'}

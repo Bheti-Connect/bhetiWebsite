@@ -28,8 +28,8 @@ const JoinCommunity = () => {
                                         Rencontrez d’autres porteurs de projets en Afrique francophone ou dans la diaspora, et resté informé en exclusivité des prochaines rencontres entrepreneurs-investisseurs ! 
                                     </p>
                                 </div>
-                                <div className='button__div'>
-                                        <a href='https://slack.com/'>
+                                <div className='button__div button_slack'>
+                                        <a href='https://join.slack.com/t/bheticonnect/shared_invite/zt-1vpdzs7pd-Q5f49fTUU_Um9L_TJ9ci3g'>
                                             <div className='our-community'>
                                                 <span id='slack-span'>
                                                     <FaSlack className='social-icon slack' />
@@ -76,8 +76,8 @@ const JoinCommunityStyled = styled.div`
             margin:auto;
         }
         @media only screen and (max-width: 425px) {
-            width: 300px;
-            margin: auto;
+            width: 90%;
+            margin:auto;
         }
     }
     .latest-container{
@@ -123,11 +123,16 @@ const JoinCommunityStyled = styled.div`
                             width: 100%;
                             .paragraphs{
                                 font-family: 'Montserrat', sans-serif;
+                                line-height: 1.4;
                                 font-size: 17px;
                                 width: 99%;
+                                @media all and (max-width: 440px){
+                                    line-height: 1.6;
+                                }
                             }
                             .linkedin{
-                                margin-top: 1rem;
+                                margin-top: 2rem;
+                                margin-bottom: -1rem;
                             }
                         }
                         .button__div{
@@ -173,6 +178,12 @@ const JoinCommunityStyled = styled.div`
                                     display: flex;
                                 }
                         }
+                        .button_slack{
+                            margin-top: -20px;
+                            @media all and (max-width: 440px){
+                                margin-top: -18px !important;
+                            }
+                        }
                     }
                     @media all and (min-width: 1650px){
                         margin-top: 3vw;
@@ -213,10 +224,21 @@ const JoinCommunityStyled = styled.div`
             }
         }
         @media only screen and (max-width: 600px){
+            .img-com-div{
+                width: 85vw;
+                height: 30vh;
+                margin: -38% 0;
+                margin-left: -23px;
+                .img-community{
+                    width: 100%;
+                }
+
+            }
             .latest-text{
                 position: relative;
-                
+                margin-top: 100%;
                 .community{
+                    width: 100%;
                     .inner{
                         width: 100%;
                         .left-side{
@@ -238,8 +260,8 @@ const JoinCommunityStyled = styled.div`
         @media only screen and (max-width: 440px){
             .latest-text{
                 .community{
-                    width: 100%;
-                    margin-left: -5px;
+                    width: 80vw;
+                    margin: 0 auto;
                     .inner{
                         width: 100%;
                         .left-side{
@@ -254,20 +276,25 @@ const JoinCommunityStyled = styled.div`
                             width: 100%;
                             .social-icon{
                                     position: relative;
-                                    width: 20px;
-                                    height: 20x;
+                                    width: 25px;
+                                    height: 25px;
                                     color: ${props => props.theme.colorGrey2};
                                     cursor: pointer;
                                     margin: -4px 10px;
                             }
                                 #slack-span{
-                                    width: 295px;                                   
+                                    height: 55px;
+                                    width: 250px;                                   
                                 }
                                 #linkedin-span{
-                                    width: 295px;
+                                    height: 55px;
+                                    width: 250px;
                                 }
                                 .our-community{
                                     display: flex;
+                                    h5{
+                                        font-size: 14px;
+                                    }
                                 }
                         }
                     }

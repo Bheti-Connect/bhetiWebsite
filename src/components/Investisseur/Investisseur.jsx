@@ -496,9 +496,11 @@ const HeaderText = styled.div`
 margin: 52px;
 
 h1 {
+  position: relative;
   font-family: 'Montserrat', sans-serif;
-  font-size: 50px;
-  margin-top: 5%;
+  font-size: 50px !important;
+  margin: 5% auto 0;
+  width: 60vw;
   color: ${props => props.theme.colorPrimary};
   @media only screen and (max-width: 1400px) {
     font-size: 35px;
@@ -512,13 +514,13 @@ h1 {
 }
 
 p {
-  margin: 10px 0;
+  margin: 10px auto;
   font-size: 19px;
   line-height: 1.4;
   font-family: 'Montserrat', sans-serif;
   color: ${props => props.theme.colorGrey6};
-
-
+  width: 70vw;
+  text-align: center;
 }
 
 .menuSection{
