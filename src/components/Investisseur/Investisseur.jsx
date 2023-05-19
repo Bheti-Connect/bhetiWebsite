@@ -10,10 +10,8 @@ import Cards from './Cards';
 import axios from 'axios';
 import CardModal from './CardModal';
 import LoaderReact from './LoaderReact';
-//import iconBheti from "../../assets/icons/icon_bheti_design.png";
 import LinksAPI from './../../utils/LinksAPI';
 import { ModalConnect } from './ModalSweetAlert';
-import { faker } from '@faker-js/faker';
 
 const Investisseur = () => {
   // useState of pagination
