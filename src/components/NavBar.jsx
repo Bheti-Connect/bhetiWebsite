@@ -1,20 +1,18 @@
-import { useState } from 'react';
+import { useState, useContext} from 'react';
 import styled from 'styled-components'
+import ScrollButtonContext from './ScrollButtonContext';
 import theLogo from '../assets/images/Logo.svg';
 import { useTheme } from '../context/themeContext';
 import { NavLink } from 'react-router-dom';
 
 const NavBar = () => {
-    // const navRef = useRef();
+    const { toggleButton } = useContext(ScrollButtonContext);
     const [etat, setEtat] = useState({clicked: false});
-
-    // const [rotate, setRotate] = useState(false);
-    // console.log("rotate status: ", rotate);
-    // rotate?document.body.style.overflow = "hidden": document.body.style.overflow = "auto";
-
-    // const stopScroll = () => {
-    //     setRotate(!rotate)
-    // }
+    
+    const handleNavbarToggle = () => {
+        toggleButton();
+        // Additional code for handling the navbar toggle
+      };
 
     const removeNavMenu = () => {
         setShow((show) => !show);
@@ -69,7 +67,7 @@ const NavBar = () => {
                             >
                                     Contact 
                             </NavLink>
-                            <a href='/formulaire' className='connexion-hover link'>
+                            <a href='/waitlist' className='connexion-hover link'>
                                     Connexion
                             </a>
 
@@ -119,7 +117,7 @@ const NavBarStyled = styled.nav`
                     margin-left: -40px;
                 }
                 @media only screen and (max-width: 440px){
-                    width: 35vw;
+                    width: 39vw;
                 }
             }
 }
@@ -249,8 +247,9 @@ const NavBarStyled = styled.nav`
                 position: relative;
                 text-align: center;
                 margin: auto;
+                font-family: 'Montserrat', sans-serif;
                 margin-top: 12vh;
-                font-size: 2rem;
+                font-size: 1.2rem;
                 margin-bottom: 70px;
                 width: 60%;
                 display: table;
@@ -261,7 +260,6 @@ const NavBarStyled = styled.nav`
                 border-radius: 0;
             }
         }
-        
         .nav-btn-container{
             margin: auto;
         }

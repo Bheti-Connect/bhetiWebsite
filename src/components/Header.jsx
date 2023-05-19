@@ -17,15 +17,15 @@ const Header = () => {
                         Réseaux, outils, stratégie. Un accompagnement pour réussir chaque étape de votre levée de fonds.
                     </p>
                     <div className='cta-button'>
-                    <Link
-                        to={'/formulaire'}
-                    > 
-                        <Button
-                            name='Intégrer le réseau'
-                            arrow={'arrow'}
-                            icon={'fas fa-arrow-right'}
-                        />
-                    </Link>
+                        <Link
+                            to={'/waitlist'}
+                        > 
+                            <Button
+                                name='Intégrer le réseau'
+                                arrow={'arrow'}
+                                icon={'fas fa-arrow-right'}
+                            />
+                        </Link>
                     </div>
                 </div>
                 <div className='image'>
@@ -56,7 +56,6 @@ justify-content: center;
     @media screen and (max-width: 800px) {
         flex-direction: column;
         }
-
     .text {
         flex: 1 ;
         position: relative;
@@ -90,7 +89,15 @@ justify-content: center;
                 width: 75% ;
             }
             @media screen and (max-width: 500px){
+                font-size: 2.58em;
+                margin-left: 10px;   
+            }
+            @media screen and (max-width: 425px){
                 font-size: 2.2em;
+                margin-left: 30px;   
+            }
+            @media screen and (max-width: 375px){
+                font-size: 2.1em;
             }
         }
         .sub-title{
@@ -106,7 +113,15 @@ justify-content: center;
                 margin-left: 12.5%;
             }
             @media screen and (max-width: 500px){
-                font-size: .8em;
+                font-size: 1.15em;
+                width: 85%;
+                margin-left: 8%;
+            }
+            @media screen and (max-width: 425px){
+                font-size: .85em;
+            }
+            @media screen and (max-width: 375px){
+                
             }
         }
         .cta-button{
@@ -180,6 +195,8 @@ justify-content: center;
         }
         @media screen and (max-width: 500px){
             width: 80%;
+            margin-left: -60px;
+            margin-top: -70px;
         }
     }
 }
@@ -247,7 +264,7 @@ justify-content: center;
                 width: 100%;
                 
                 h2 {
-                    font-size: 2rem;   
+                    font-size: 2rem;
                 }
             }
             .images {
