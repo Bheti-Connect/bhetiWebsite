@@ -478,8 +478,6 @@ width: 100%;
 
 const Container = styled.div`
 
-
-
 `;
 
 const SectionUne = styled.div`
@@ -487,7 +485,7 @@ margin-bottom: 80px;
 
 .head-text {
   display:flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: center;
   align-items: center;
   margin: 50px 0;
@@ -563,7 +561,7 @@ margin-bottom: 80px;
       }
       p{
         font-size: 14px;
-        text-align: center;
+        text-align: left;
       }
 
       .item-date {

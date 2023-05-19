@@ -4,54 +4,9 @@ import styled from 'styled-components';
 
 const SliderMedia = ({ items, item_key }) => {
 
-    
-    let value = 0;
-    let compteur = 0;
-    
-    // Right function of Slider
-    const handleRightSlide = (i) => {
-      const slide = document.querySelector(`#slide${i}`);
-      const ItemSlide = slide.querySelectorAll(".slide_img .images");
-      value -= 100;
-      compteur++;
-      if (compteur >= ItemSlide.length) {
-        compteur = 0;
-        value = 0;
-      }
-      ItemSlide.forEach((item) => {
-        item.style.transform = `translateX(${value}%)`;
-      });
-    };
+   
 
-    // Left function of Slider
-    const handleLeftSlide = (i) => {
-      const slide = document.querySelector(`#slide${i}`);
-      const ItemSlide = slide.querySelectorAll(".slide_img .images");
-      if (compteur !== 0) {
-        compteur--;
-        value += 100;
-        ItemSlide.forEach((item) => {
-          item.style.transform = `translateX(${value}%)`;
-        });
-      } else {
-        compteur = ItemSlide.length-1;
-        value = (ItemSlide.length * 100 - 100) * -1;
-        ItemSlide.forEach((item) => {
-          item.style.transform = `translateX(${value}%)`;
-        });
-      }
-    };
-
-
-    useEffect(() => {
-      const time = Math.floor(Math.random() * (15 - 10) + 5) * 1000
-      const interval = setInterval(() => {
-        handleRightSlide(item_key)
-      }, time);
-      return () => clearInterval(interval);
-    }, []);
-
-
+  
   return (
     <Container className={`item_${item_key}`}>
         <div className="slide" id={`slide${item_key}`}>
