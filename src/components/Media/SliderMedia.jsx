@@ -52,7 +52,7 @@ const Container = styled.div`
 margin-top: 30px;
 width: 40%;
 height: 35vh;
-background-color: red;
+background-color: white;
 position: relative;
 
 .swiper-slide {
