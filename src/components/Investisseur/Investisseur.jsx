@@ -10,10 +10,9 @@ import Cards from './Cards';
 import axios from 'axios';
 import CardModal from './CardModal';
 import LoaderReact from './LoaderReact';
-//import iconBheti from "../../assets/icons/icon_bheti_design.png";
 import LinksAPI from './../../utils/LinksAPI';
 import { ModalConnect } from './ModalSweetAlert';
-import { faker } from '@faker-js/faker';
+import projects from '../../data/TestData';
 
 const Investisseur = () => {
   // useState of pagination
@@ -60,14 +59,8 @@ const Investisseur = () => {
 
     // GET data from API
     const getData = () => {
-      for (let i = 0; i < 8; i++) {
-        setData(prevData => [...prevData, {
-          nom: faker.name.firstName(),
-          stade: faker.finance.accountName(),
-          siege: faker.animal.type(),
-          financement: faker.commerce.price(),
-        }])
-      }
+
+      setData(projects)
 
       /*
       axios.get(LinksAPI.projets).then(res => {

@@ -13,7 +13,7 @@ const CardModal = ({select, setModal, connect}) => {
   let currencyEuro = new Intl.NumberFormat('de-DE', { style : 'currency', currency: 'EUR'})
 
   // Generate image
-  let source = "https://" + `picsum.photos/id/${Math.floor(Math.random() * 200)}/200/300`;
+  let source = "https://" + `picsum.photos/id/${select.id}/200/300`;
 
 
   const handleFlouter = () => {
