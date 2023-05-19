@@ -36,7 +36,7 @@ const Accueil = () => {
                 
                 <div className='button-demo'>
                     <Link
-                        to={'/formulaire'}
+                        to={'/waitlist'}
                     >   
                         <Button 
                             name={` ${'Essayer Bheti App'}`}

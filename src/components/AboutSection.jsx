@@ -16,20 +16,20 @@ const AboutSection = () => {
                     </h3>
                     <p className='subtitle-text'>Grâce à la plateforme Bheti App, accédez à un écosystème composé d’experts, d’outils et d’informations… Bref, tout ce qu’il vous faut pour trouver du financement.</p>
                     <div className='steps'>
-                        <ol>
-                            <li>1. Publiez votre projet, </li>
-                            <li>2. Précisez votre besoin,</li>
-                            <li>3. Augmentez la visibilité de votre projet auprès d’investisseurs</li>
-                        </ol>
+                        <div className='each-step'>
+                            <p>1. Publiez votre projet,</p>
+                            <p>2. Précisez votre besoin,</p>
+                            <p>3. Augmentez la visibilité de votre projet auprès d’investisseurs</p>
+                        </div>
                     </div>
                     <div className='test-button'>
                         <Link
-                            to={'/formulaire'}
+                            to={'/waitlist'}
                         > 
                             <Button
                                 name='Tester Bheti App'
+                                icon={'fas fa-chevron-right'}
                                 arrow={'arrow'}
-                                icon={'fas fa-arrow-right'}
                             />
                         </Link>
                     </div>
@@ -52,6 +52,9 @@ const AboutSectionStyled = styled.section`
     @media only screen and (min-width: 960px){
         margin-top: -1rem;
     }
+    @media only screen and (max-width: 960px){
+        margin-top: -1.3rem;
+    }
     .lower-container{
         display: flex;
         position: relative;
@@ -73,26 +76,58 @@ const AboutSectionStyled = styled.section`
                     width: 23%;
                     height: 2px;
                     background-color: ${props => props.theme.colorAccent};
+                    @media all and (max-width: 500px){
+                        bottom: 80%;
+                        width: 40%;
+                    }
+                    @media all and (max-width: 500px){
+                        bottom: 80%;
+                        width: 40%;
+                    }
+                }
+                @media all and (max-width: 768px) {
+                    font-size: 2rem;
+                }
+                @media all and (max-width: 500px){
+                    font-size: 1.45rem;
+                    margin-bottom: 0.9rem;
                 }
             }
             .subtitle-text{
-                color: ${props => props.theme.colorGrey5};
+                color: ${props => props.theme.colorGrey4};
                 margin: 1% 0;
                 width: 80%;
+                @media all and (max-width: 500px) {
+                    font-size: .85em;
+                    line-height: 1.34;
+                    width: 100%;
+                    text-align: left;
+                }
             }
             .steps{
                 position: relative;
                 margin: 4% 0;
-                ol{
+                .each-step{
                     list-style: none;
-                    li{ 
+                    p{ 
                         font-family:'Montserrat', sans-serif;
-                        color: ${props => props.theme.colorGrey5};
+                        color: ${props => props.theme.colorGrey4};
                         font-size: 1.2rem;
                     }
                 }
+                @media all and (max-width: 500px) {
+                    text-align: left;
+                    .each-step{
+                        p{
+                            font-size: .85em;
+                            line-height: 1.3;
+                        }
+                    }
+                }
             }
-    
+            @media all and (max-width: 500px) {
+                width: 120% !important;
+            }
         } 
 
     @media only screen and (max-width: 1150px){
@@ -107,7 +142,6 @@ const AboutSectionStyled = styled.section`
                 margin: auto;
             }
         }
-
 }
     }
     .rightSide{
@@ -126,7 +160,10 @@ const AboutSectionStyled = styled.section`
                 width: 100%;
             }
         }
-    } 
+    }
+    @media only screen and (max-width: 768px) {
+        display: inline-block;
+    }
 `;
 
 export default AboutSection

@@ -16,8 +16,8 @@ const EconomicNews = () => {
                         Actualité économique & écosystèmes d’affaires
                     </h3>
                     <p className='subtitle-text'>
-                    L’information est l’une des clés stratégiques pour trouver du financement. Avec la plateforme BHC, vous retrouvez les informations essentielles qui permettront d’accélérer votre recherche de financement. 
-                    Mais aussi de tenir compte de l'environnement économique et des tendances du marché pour promouvoir votre projet.
+                        L’information est l’une des clés stratégiques pour trouver du financement. Avec la plateforme BHC, vous retrouvez les informations essentielles qui permettront d’accélérer votre recherche de financement. 
+                        Mais aussi de tenir compte de l'environnement économique et des tendances du marché pour promouvoir votre projet.
                     </p>
                     <div className='bouton'>
                         <a href='/media' className=''>
@@ -25,7 +25,6 @@ const EconomicNews = () => {
                                 name={"Je m'informe"}
                                 icon={'fas fa-chevron-right'}
                                 arrow={'arrow'}
-                                blob={'blob'}
                             />
                         </a>
                     </div>
@@ -45,10 +44,10 @@ const EconomicNewsStyled = styled.section`
     @media (min-width: 960px) {
         height: 80vh;
     }
-    @media only  screen and (max-width: 425px) {
+    @media only  screen and (max-width: 440px) {
         position: relative;
         width: 100%;
-        height: 140vh;
+        height: 105vh !important;
     }
     @media only  screen and (max-width: 415px) {
         height: 100vh;
@@ -99,6 +98,10 @@ const EconomicNewsStyled = styled.section`
                     width: 23%;
                     height: 2px;
                     background-color: ${props => props.theme.colorAccent};
+                    @media only screen and (max-width: 425px){
+                            margin-left: 15px;
+                            width: 45%;
+                    }
                 }
                 @media only screen and (max-width: 1600px) {
                     font-size: 2.1rem;
@@ -117,8 +120,8 @@ const EconomicNewsStyled = styled.section`
                     width: 100%;
                 }
                 @media only screen and (max-width: 425px) {
-                    font-size: 1.3rem;
-                    width: 90%;
+                    font-size: 1.5rem;
+                    width: 97%;
                 }
                 @media only screen and (max-width: 320px) {
                     margin-top: 20% ;
@@ -126,10 +129,12 @@ const EconomicNewsStyled = styled.section`
                 }
             }
             .subtitle-text{
+                font-family: 'Montserrat', sans-serif;
                 color: ${props => props.theme.colorGrey4};
                 padding-bottom: 2rem;
                 text-align: justify;
-                width: 95%;
+                line-height: 1.5;
+                width: 100%;
                 font-size: 1.1rem;
                 @media only screen and (max-width: 525px) and (min-width: 425px){
                     font-size: 16px ;
@@ -140,7 +145,7 @@ const EconomicNewsStyled = styled.section`
                 position: relative;
                 @media only screen and (max-width: 525px) {
                     margin: 5px auto;
-                    width: 60%;
+                    width: 70%;
                 }
                 @media only screen and (max-width: 320px) {
                     width: 70%;
@@ -156,11 +161,12 @@ const EconomicNewsStyled = styled.section`
         }
         .right-rec{
             .rec-content{
-                width: 90%;
+                width: 92%;
                 margin: 0 auto;
                 .subtitle-text{
-                    font-size: 15px;
-                    text-align: center;
+                    font-family: 'Montserrat', sans-serif;
+                    font-size: 15.5px;
+                    text-align: left;
                 }
             }
         }

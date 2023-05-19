@@ -5,7 +5,7 @@ const Button = ({name, icon, arrow, blob}) => {
     const theme = useTheme();
     return (
         <ButtonStyled theme={theme}>
-            {name}
+                {name}
             <span className={arrow}><i className={icon}></i></span>
             <span className={blob}></span>
         </ButtonStyled>
@@ -18,7 +18,9 @@ const ButtonStyled = styled.button`
     color: ${props => props.theme.colorWhite};
     background: ${props => props.theme.colorBheti};
     padding: .8rem 2rem;
+    font-size: 1rem;
     border-radius: 30px;
+    border: 0px;
     position: relative;
     transition: all .4s ease-in-out;
     display: inline-block;
@@ -44,6 +46,9 @@ const ButtonStyled = styled.button`
         .name {
             font-size: 3000px;
         }
+    }
+    @media only screen and (max-width: 425px){
+        font-size: 12px;
     }
 `;
 

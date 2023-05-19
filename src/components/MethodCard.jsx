@@ -27,22 +27,7 @@ const MethodCardStyled = styled.section`
     
     @media only screen and (max-width: 425px){
         width: 100%;
-        height: 100%;
-        margin: auto;
-    }
-    @media only screen and (max-width: 400px){
-        width: 100%;
-        height: 100%;
-        margin:auto;
-    }
-
-    @media only screen and (max-width: 391px){
-        width: 100%;
-        height: 100% ;
-    }
-    @media only screen and (max-width: 375px){
-        width: 75vw;
-        margin-left: -15%;
+        margin: 0 auto;
     }
     @media only screen and (max-width: 320px){
         width: 100%;
@@ -78,7 +63,7 @@ const MethodCardStyled = styled.section`
             height: 100px;
             @media only screen and (max-width: 425px){
                 width: 50px;
-                height: 70px;
+                height: 100%;
             }
         }
         h4{
@@ -102,7 +87,6 @@ const MethodCardStyled = styled.section`
             }
         }
     }
-    
 `;
 
 export default MethodCard
