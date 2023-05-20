@@ -7,24 +7,22 @@ const CardsMedia = ({item, setSelect, setModal}) => {
 
   const theme = useTheme()
 
-
    // Generate image
    let source = "https://" + `picsum.photos/id/${item.id}/200/300`;
-
-
+ 
   return (
 
     <CardItem onClick={() => handleSelect(setSelect, setModal, item)} theme={theme}>
         <CardHeader>
-          <img src={source} alt='media'/>
+          <img src={item.photo} alt='media'/>
         </CardHeader>
 
         <CardBody theme={theme}>
-        <h3>{item.poste}</h3>
+        <h3>{item.name}</h3>
 
         <ul>
           <li>{item.secteur}</li>
-          <li>{item.pays}</li>
+          <li>{item.secteur}</li>
         </ul>
         
         </CardBody>
@@ -49,7 +47,6 @@ background-color: ${props => props.theme.colorBheti};
   transition: transform 0.2s ease-in-out;
   transform: scale(1.05);
 }
-
 
 `;
 

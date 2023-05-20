@@ -35,6 +35,7 @@ const Media = () => {
   // Position change pagination : interview and success stories
   const [paginationSelect, setPaginationSelect] = useState("interview")
   const [displayDataOf, setDisplayDataOf] = useState("interview")
+  const [displayDataOfsuccess, setDisplayDataOfsuccess] = useState("success")
   // theme
   const theme = useTheme();
 
@@ -42,18 +43,22 @@ const Media = () => {
   const [aLaUne, setALaUne] = useState([
     {
       "id": 1,
-      "name": "peter",
-      "description": "Lorem Ipsum dolor set amet 1",
+      "name": "Bizao",
+      "secteur": "fintech",
+      "type": 'Lévée de fonds',
+      "pays": ["Sénégal", "Cameroun"],
+      "stage": "Seed",
       "photo": [
-        "https://s3-us-west-2.amazonaws.com/s.cdpn.io/785239/background.jpg",
+        "https://file.notion.so/f/s/413e3097-afe8-46a3-8f1a-05c260bc20d0/1659774299145.jfif?id=b65d406c-253e-442b-b85f-5dbd3331fa8b&table=block&spaceId=28a94394-8589-422e-b8b7-7387089d6ce4&expirationTimestamp=1684675163278&signature=R1bnL5_xVNQCwMDxhGn16W9R6aPIgOvQPwPsFynULBg",
       ]
     },
     {
       "id": 2,
       "name": "jack",
-      "description": "Lorem Ipsum dolor set amet 2",
+      "secteur": "Zazuu",
+      "type": "fintech",
       "photo": [
-        "https://s3-us-west-2.amazonaws.com/s.cdpn.io/785239/background.jpg",
+        "https://bheticonnect.notion.site/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F31601d58-4d12-4e63-9aa4-6e20e462b076%2F1657715746443_(1).jpg?table=block&id=ef72fd73-6d0a-41cf-8f6f-1e7833859815&spaceId=28a94394-8589-422e-b8b7-7387089d6ce4&width=1600&userId=&cache=v2",
       ]
     },
     {
@@ -61,7 +66,7 @@ const Media = () => {
       "name": "omari",
       "description": "Lorem Ipsum dolor set amet 3",
       "photo": [
-        "https://s3-us-west-2.amazonaws.com/s.cdpn.io/785239/background.jpg",
+        "https://bheticonnect.notion.site/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F515d3af6-8cf1-455c-b538-673ed278407f%2Fpremiere-levee-de-fonds-reussie-pour-afrikamart-la-startup-senegalaise-qui-revolutionne-la-chaine-de-valeur-des-produits-frais-grace-au-numerique.jpg?table=block&id=10f83102-687d-4ad1-b586-2f2140a0b5fd&spaceId=28a94394-8589-422e-b8b7-7387089d6ce4&width=2000&userId=&cache=v2",
       ]
     },
     {
@@ -69,7 +74,7 @@ const Media = () => {
       "name": "jack",
       "description": "Lorem Ipsum dolor set amet 2",
       "photo": [
-        "https://s3-us-west-2.amazonaws.com/s.cdpn.io/785239/background.jpg",
+        "https://bheticonnect.notion.site/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Fd742b7bc-6e07-4758-ab78-bad6d3ee9fb3%2F1646474558413.jpg?table=block&id=a18550f3-5825-4102-99e4-d2277f71df8f&spaceId=28a94394-8589-422e-b8b7-7387089d6ce4&width=1880&userId=&cache=v2",
  
       ]
     },
@@ -78,7 +83,7 @@ const Media = () => {
       "name": "omari",
       "description": "Lorem Ipsum dolor set amet 3",
       "photo": [
-        "https://s3-us-west-2.amazonaws.com/s.cdpn.io/785239/background.jpg",
+        "https://bheticonnect.notion.site/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F1bf81f95-1ea7-4349-b466-5cdb4624de93%2FGoMyCode.jpg?table=block&id=9603f47c-3916-47dd-a73b-489158875dfb&spaceId=28a94394-8589-422e-b8b7-7387089d6ce4&width=1920&userId=&cache=v2",
 
       ]
     },
@@ -87,7 +92,61 @@ const Media = () => {
       "name": "omari",
       "description": "Lorem Ipsum dolor set amet 3",
       "photo": [
-        "https://s3-us-west-2.amazonaws.com/s.cdpn.io/785239/background.jpg",
+        "https://bheticonnect.notion.site/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F5c8c26aa-60be-4cca-bdbd-cfe0a4306e64%2Fwas.jpg?table=block&id=47af2b8a-5254-4ffc-892b-a0c64747a9ae&spaceId=28a94394-8589-422e-b8b7-7387089d6ce4&width=2000&userId=&cache=v2",
+
+      ]
+    }
+  ]);
+
+  const [interviewList, setinterviewList] = useState([
+    {
+      "id": 1,
+      "name": "P.de Gaétan, PDG Fonds Pierre Castel",
+      "secteur": ["fintech"],
+      "photo": [
+        "https://bheticonnect.notion.site/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F21342cab-c941-42c4-84cd-5a17f4ebf761%2FPDG.png?table=block&id=a5237d02-62c0-4c26-9dd6-2480c6d89abc&spaceId=28a94394-8589-422e-b8b7-7387089d6ce4&width=1340&userId=&cache=v2",
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Bubacar Diallo, CEO Benoo",
+      "secteur": ["GreenTech"],
+      "photo": [
+        "https://bheticonnect.notion.site/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Ff12f2968-d83d-461e-a0c1-5acfe123e058%2FBD_Intro_canva_(Miniature_YouTube_-_musique).png?table=block&id=4f814c32-4083-4b08-b97b-95cda5037f7c&spaceId=28a94394-8589-422e-b8b7-7387089d6ce4&width=2000&userId=&cache=v2",
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Nelly Chatue-Diop, CEO Ejara",
+      "secteur": ["Blockchain"],
+      "photo": [
+        "https://bheticonnect.notion.site/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F74a960db-c413-4272-9e2e-fe029bfee3c6%2FFonds_podcast_Notion.png?table=block&id=fcdcd8a3-fea0-45c3-8bd8-4993770dd7e5&spaceId=28a94394-8589-422e-b8b7-7387089d6ce4&width=2000&userId=&cache=v2",
+      ]
+    },
+    {
+      "id": 4,
+      "name": "Duplex Eric Kamgang, CEO Studely",
+      "secteur": "Ed Tech",
+      "photo": [
+        "https://bheticonnect.notion.site/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F1a242b07-7535-4dfb-8f53-bb4c6d98bfc4%2FFonds_podcast_Notion_(1).png?table=block&id=7b82ac32-5d14-4fd1-8449-abba6392ea35&spaceId=28a94394-8589-422e-b8b7-7387089d6ce4&width=2000&userId=&cache=v2",
+ 
+      ]
+    },
+    {
+      "id": 5,
+      "name": "Joseph Larrose, VC Fonds Resiliance",
+      "secteur": "Capital risque et fond LBO",
+      "photo": [
+        "https://bheticonnect.notion.site/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F60fcb5f5-79e0-4cd6-bbc4-9f3d7519c8f9%2FWhatsApp_Image_2022-01-05_at_15.51.15.jpeg?table=block&id=c620b29c-9f3a-455d-8d81-e5207780eeee&spaceId=28a94394-8589-422e-b8b7-7387089d6ce4&width=2000&userId=&cache=v2",
+
+      ]
+    },
+    {
+      "id": 6,
+      "name": "Roger Nengwe, CEO Paysika",
+      "secteur": "Fintech",
+      "photo": [
+        "https://bheticonnect.notion.site/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F2d629742-f5e1-4337-ab4d-4643cd86431e%2Froger.png?table=block&id=81337128-c6ca-4ef8-b70b-7710fa314046&spaceId=28a94394-8589-422e-b8b7-7387089d6ce4&width=2000&userId=&cache=v2",
 
       ]
     }
@@ -118,7 +177,7 @@ const Media = () => {
     } else if (position == "success") {
       axios_get(LinksAPI.stories, handleSetData)
       setPaginationSelect("success")
-      setDisplayDataOf("success")
+      setDisplayDataOfsuccess("success")
     } else {
       getData()
       setPaginationSelect("interview")
@@ -181,9 +240,18 @@ const Media = () => {
   }
 
   // display items
-  let displayItems = aLaUne.map((item, index) => {
-    return displayDataOf == "interview" ? (<CardsMedia key={index} item={item} setSelect={setSelect} setModal={setModal} />) : (<CardSuccess key={index} item={item} setSelect={setSelect} setModal={setModal} />)
-  })
+  let displayItemsStory = aLaUne.map((item, index) => {
+
+    if (displayDataOfsuccess == "success"){
+      return (<CardSuccess key={index} item={item} setSelect={setSelect} setModal={setModal} />) 
+    }
+
+  });
+  let displayItemsInterview = interviewList.map((item, index) => {
+    if (displayDataOf == "interview"){
+    return  (<CardsMedia key={index} item={item} setSelect={setSelect} setModal={setModal} />) }
+
+  });
 
   // handle menu : tous, startup and PME for CSS
   const handleMenu = (e) => {
@@ -214,7 +282,7 @@ const Media = () => {
     setLoading(true)
     const waiting = setTimeout(() => {
       setLoading(false)
-    }, 4000);
+    }, 2000);
 
     setInitPage(currentPage - 1)
 
@@ -334,10 +402,9 @@ const Media = () => {
 
             <div className='container-all-cards'>
               {
-                loading ? (<LoaderMedia count={15} />) : (displayItems)
+               loading ? <LoaderMedia count={15} /> : (displayItemsInterview ? displayItemsStory : displayItemsStory)
               }
 
-              
             </div>
 
           </AllCards>
@@ -386,6 +453,7 @@ flex-direction: column;
   flex-wrap: wrap;
   list-style: none;
   align-items:center;
+  justify-content: center;
   user-select: none;
   font-size: 10px;
   

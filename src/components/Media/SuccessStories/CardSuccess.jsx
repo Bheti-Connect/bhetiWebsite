@@ -26,14 +26,15 @@ const CardSuccess = ({item, setSelect, setModal}) => {
 
 
           <CardHeader>
-            <img src={source} alt='project'/>
+            <img src={item.photo} alt='project'/>
           </CardHeader>
 
           <CardBody>
 
-          <h3>{item.titre}</h3>
+          <h3>{item.name}</h3>
           <ul>
-            <li>{item.titre}</li>
+            <li>{item.secteur}</li>
+            <li>{item.type}</li>
             <li>{item.pays}</li>
           </ul>
 
