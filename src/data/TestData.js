@@ -26,14 +26,38 @@ const projects = [
             "We are seeing the emergence of a middle class and the simultaneous expansion of mobile payment (27.4 billion transactions per month)"
         ],
         solutions: [
-            "Répondre au déficit de confiance, de mobilité, de numérisation et de paiements.",
-            "Répondre au déficit de livraisons des très petites entreprises du secteur formel et informel.",
-            "Simplifiez les livraisons à la demande, quel que soit l'endroit où vous vous trouvez.",
-            "Facilitez les paiements grâce à des outils financiers pour les petites entreprises formelles et informelles",
-            "Address the deficits in trust, of mobility, of digitization and of payment.",
-            "Address the delivery gap for very small businesses in the formal and informal sector.",
-            "Simplify on-demand deliveries regardless of location.",
-            "Facilitate payments with financial tools for formal and informal small businesses"
+            {
+                title: "Répondre au déficit de confiance, de mobilité, de numérisation et de paiements.",
+                description: []
+            },
+            {
+                title: "Répondre au déficit de livraisons des très petites entreprises du secteur formel et informel.",
+                description: []
+            },
+            {
+                title: "Simplifiez les livraisons à la demande, quel que soit l'endroit où vous vous trouvez.",
+                description: []
+            },
+            {
+                title: "Facilitez les paiements grâce à des outils financiers pour les petites entreprises formelles et informelles",
+                description: []
+            },
+           {
+            title: "Address the deficits in trust, of mobility, of digitization and of payment.",
+            description: []
+           },
+            {
+                title: "Address the delivery gap for very small businesses in the formal and informal sector.",
+                description: []
+            },
+            {
+                title: "Simplify on-demand deliveries regardless of location.",
+                description: []
+            },
+            {
+                title: "Facilitate payments with financial tools for formal and informal small businesses",
+                description: []
+            }
         ],
         equipe: [
             {
@@ -54,14 +78,34 @@ const projects = [
             }
         ],
         business_model: [
-            "Frais de livraison à partir de 1000 FCFA B2C",
-            "Abonnement mensuel selon la demande",
-            "15% sur toutes les commandes de produits alimentaires et de supermarchés",
-            "Campagne publicitaire pour les restaurants sur l'APP",
-            "B2C : Delivery fees from 1000 FCFA B2C",
-            "B2B : Monthly subscription according to the demand",
-            "15% on all food and supermarket orders",
-            "Advertising campaign for restaurants on the APP"
+            {
+                title: "Frais de livraison à partir de 1000 FCFA B2C",
+                description: []
+            },
+            {
+                title: "Abonnement mensuel selon la demande",
+                description: []
+            },
+            {
+                title: "15% sur toutes les commandes de produits alimentaires et de supermarchés",
+                description: []
+            },
+            {
+                title: "Campagne publicitaire pour les restaurants sur l'APP",
+                description: []
+            },
+            {
+                title: "B2C : Delivery fees from 1000 FCFA B2C",
+                description: []
+            },
+            {
+                title: "15% on all food and supermarket orders",
+                description: []
+            },
+            {
+                title: "Advertising campaign for restaurants on the APP",
+                description: []
+            }
         ],
         kpi: [
             {
@@ -100,7 +144,6 @@ const projects = [
             "High travel costs.",
             "Problems for the organization of transportation: no single reliable actor delivering an acceptable user experience.",
             "Mortality rate multiplied by 4"
-
         ],
         image: projet1,
     },
@@ -126,8 +169,14 @@ const projects = [
             "The project holder will become more integrated into thisvalue chain by the creation of an assembly unit followig a successful track-record in vehicle distribution."
         ],
         solutions: [
-            "Création d’une unité d’assemblage, de maintenance et de réparation d’équipements routiers : bennes semi remorques, plateaux semi remorques, citernes carburant, citernes à ciment et autres équipements.",
-            "Creation of an assembly, maintenance, and repair unit for road equipment: semi-trailers, semi-trailers, fuel tanks, cement tanks and other equipment."
+            {
+                title: "Création d’une unité d’assemblage, de maintenance et de réparation d’équipements routiers : bennes semi remorques, plateaux semi remorques, citernes carburant, citernes à ciment et autres équipements.",
+                description: []
+            },
+            {
+                title: "Creation of an assembly, maintenance, and repair unit for road equipment: semi-trailers, semi-trailers, fuel tanks, cement tanks and other equipment.",
+                description: []
+            }
         ],
         equipe: [
             {
@@ -144,10 +193,22 @@ const projects = [
             }
         ],
         business_model: [
-            "Vente de bennes, semi-remorques et camions",
-            "Service de réparation et maintenance de véhicules",
-            "Sale of tippers, semi-trailers and trucks",
-            "Repair and maintenance of vehicles"
+            {
+                title: "Vente de bennes, semi-remorques et camions",
+                description: []
+            },
+            {
+                title: "Service de réparation et maintenance de véhicules",
+                description: []
+            },
+            {
+                title: "Sale of tippers, semi-trailers and trucks",
+                description: []
+            },
+            {
+                title: "Repair and maintenance of vehicles",
+                description: []
+            }
         ],
         kpi: [
             {
@@ -188,7 +249,7 @@ const projects = [
         stage: "Seed B",
         type: "Startup",
         description: "Projet 003 est une application mobile de partage et de comparaison des pratiques agricoles Conçu par un agronome de formation qui comptabilise plus de 20 ans d’expériences dans l’analyse de données scientifiques et agricoles, Projet 003 offre de nouveaux itinéraires techniques afin de faire évoluer les pratiques agricoles grâce aux données.",
-        pourquoi: "",
+        pourquoi: [],
         solutions: [
             {
                 title: "Application mobile de partage et de comparaison des pratiques agricoles qui permet de :",
@@ -231,10 +292,12 @@ const projects = [
         ],
         kpi: [
             {
-                title: "+100 000 téléchargements"
+                title: "+100 000 téléchargements",
+                description: []
             },
             {
-                title: "10 000 visiteurs réguliers"
+                title: "10 000 visiteurs réguliers",
+                description: []
             }
         ],
         source: [
