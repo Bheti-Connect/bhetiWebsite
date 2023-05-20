@@ -56,7 +56,7 @@ margin: 10px;
 border-radius: 10px;
 box-shadow: 0 2px 20px rgba(0, 0, 0, 0.2);
 overflow: hidden;
-width: 250px;
+width: 300px;
 height: auto;
 cursor: pointer;
 
@@ -123,12 +123,9 @@ ul li {
   margin-top: 4px;
   background-color: #700b0b;
   color: white;
-  border-radius: 40px;
+  border-radius: 6px;
   padding:2px 9px;
-  width: 40%;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  overflow: hidden;
+ 
 }
 
 .more{
@@ -145,7 +142,7 @@ ul li {
 }
 
 .country {
-  border-radius: 50px;
+  border-radius: 6px;
   color: white;
   background-color: #000000;
   padding: 2px 5px;
