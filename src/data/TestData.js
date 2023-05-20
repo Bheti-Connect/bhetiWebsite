@@ -1,3 +1,7 @@
+import projet1 from "../assets/images/001.jpg"
+import projet2 from "../assets/images/002.jpg"
+import projet3 from "../assets/images/003.jpg"
+
 const projects = [
     {
         id: 1,
@@ -17,6 +21,7 @@ const projects = [
         image: "",
         video: "",
         problemes: "",
+        image: projet1,
     },
     {
         id: 2,
@@ -36,6 +41,7 @@ const projects = [
         image: "",
         video: "",
         problemes: "",
+        image: projet2,
     },
     {
         id: 3,
@@ -55,6 +61,7 @@ const projects = [
         image: "",
         video: "",
         problemes: "",
+        image: projet3,
     }
 ]
 

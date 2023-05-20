@@ -12,9 +12,6 @@ const CardModal = ({select, setModal, connect}) => {
   // Format currency Euro
   let currencyEuro = new Intl.NumberFormat('de-DE', { style : 'currency', currency: 'EUR'})
 
-  // Generate image
-  let source = "https://" + `picsum.photos/id/${select.id}/200/300`;
-
 
   const handleFlouter = () => {
     let  flouter = document.querySelectorAll(".cible-flouter")
@@ -66,7 +63,7 @@ const CardModal = ({select, setModal, connect}) => {
 
                 <div className='project-detail'>
                   <div>
-                  <img src={source} alt='project'/>
+                  <img src={select.image} alt='project'/>
                   </div>
 
                   <div className='detail'>
