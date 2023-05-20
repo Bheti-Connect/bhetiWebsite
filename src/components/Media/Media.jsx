@@ -10,7 +10,6 @@ import CardsMedia from "./CardsMedia";
 import CardSuccess from "./SuccessStories/CardSuccess";
 import LoaderMedia from "./LoaderMedia";
 import { axios_get, axios_post } from "../../utils/FunctionsComponent";
-import SliderMedia from "./SliderMedia";
 import CardModalSuccess from "./SuccessStories/CardModalSuccess";
 import LinksAPI from "../../utils/LinksAPI";
 
@@ -36,69 +35,6 @@ const Media = () => {
   const [displayDataOf, setDisplayDataOf] = useState("interview");
   // theme
   const theme = useTheme();
-
-  const [aLaUne, setALaUne] = useState([
-    {
-      id: 1,
-      name: "peter",
-      description: "Lorem Ipsum dolor set amet 1",
-      photo: [
-        "https://images.pexels.com/photos/1054218/pexels-photo-1054218.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-        "https://images.pexels.com/photos/772803/pexels-photo-772803.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-        "https://images.pexels.com/photos/354939/pexels-photo-354939.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-      ],
-    },
-    {
-      id: 2,
-      name: "jack",
-      description: "Lorem Ipsum dolor set amet 2",
-      photo: [
-        "https://images.pexels.com/photos/1261728/pexels-photo-1261728.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-        "https://images.pexels.com/photos/35857/amazing-beautiful-breathtaking-clouds.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-        "https://images.pexels.com/photos/1198817/pexels-photo-1198817.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-      ],
-    },
-    {
-      id: 3,
-      name: "omari",
-      description: "Lorem Ipsum dolor set amet 3",
-      photo: [
-        "https://images.pexels.com/photos/531321/pexels-photo-531321.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-        "https://images.pexels.com/photos/1292241/pexels-photo-1292241.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-        "https://images.pexels.com/photos/325185/pexels-photo-325185.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-      ],
-    },
-    {
-      id: 4,
-      name: "jack",
-      description: "Lorem Ipsum dolor set amet 2",
-      photo: [
-        "https://images.pexels.com/photos/1261728/pexels-photo-1261728.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-        "https://images.pexels.com/photos/35857/amazing-beautiful-breathtaking-clouds.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-        "https://images.pexels.com/photos/1198817/pexels-photo-1198817.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-      ],
-    },
-    {
-      id: 5,
-      name: "omari",
-      description: "Lorem Ipsum dolor set amet 3",
-      photo: [
-        "https://images.pexels.com/photos/531321/pexels-photo-531321.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-        "https://images.pexels.com/photos/1292241/pexels-photo-1292241.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-        "https://images.pexels.com/photos/325185/pexels-photo-325185.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-      ],
-    },
-    {
-      id: 6,
-      name: "omari",
-      description: "Lorem Ipsum dolor set amet 3",
-      photo: [
-        "https://images.pexels.com/photos/531321/pexels-photo-531321.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-        "https://images.pexels.com/photos/1292241/pexels-photo-1292241.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-        "https://images.pexels.com/photos/325185/pexels-photo-325185.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-      ],
-    },
-  ]);
 
   // handle for receive data and set in useState
   const handleSetData = (response) => {
@@ -258,14 +194,69 @@ const Media = () => {
           </div>
         </div>
         <div className="body-une">
-        <SliderMedia />
-        <SliderMedia />
-        <SliderMedia />
-        <SliderMedia />
-        <SliderMedia />
-        <SliderMedia />
-        </div>
+          <div className="cards-une">
+            <div className="card-1">1</div>
 
+            <div className="sub-card">
+              <div className="card-2">2</div>
+              <div className="card-3">3</div>
+            </div>
+          </div>
+
+          <div className="plus-consulter">
+            <h2>Les plus consultés</h2>
+
+            <div className="item-consult">
+              <a href="#">P.de Gaétan, PDG Fonds Pierre Castel</a>
+              <p>
+                Nelly Chatue-Diop, CEO Ejara, nous partage son parcours entre
+                l'Afrique et l'Europe et revient sur les enjeux de la
+                cryptomonaie.
+              </p>
+              <p className="item-date">15 decembre 2022</p>
+            </div>
+
+            <div className="item-consult">
+              <a href="#">P.de Gaétan, PDG Fonds Pierre Castel</a>
+              <p>
+                Nelly Chatue-Diop, CEO Ejara, nous partage son parcours entre
+                l'Afrique et l'Europe et revient sur les enjeux de la
+                cryptomonaie.
+              </p>
+              <p className="item-date">15 decembre 2022</p>
+            </div>
+
+            <div className="item-consult">
+              <a href="#">P.de Gaétan, PDG Fonds Pierre Castel</a>
+              <p>
+                Nelly Chatue-Diop, CEO Ejara, nous partage son parcours entre
+                l'Afrique et l'Europe et revient sur les enjeux de la
+                cryptomonaie.
+              </p>
+              <p className="item-date">15 decembre 2022</p>
+            </div>
+
+            <div className="item-consult">
+              <a href="#">P.de Gaétan, PDG Fonds Pierre Castel</a>
+              <p>
+                Nelly Chatue-Diop, CEO Ejara, nous partage son parcours entre
+                l'Afrique et l'Europe et revient sur les enjeux de la
+                cryptomonaie.
+              </p>
+              <p className="item-date">15 decembre 2022</p>
+            </div>
+
+            <div className="item-consult">
+              <a href="#">P.de Gaétan, PDG Fonds Pierre Castel</a>
+              <p>
+                Nelly Chatue-Diop, CEO Ejara, nous partage son parcours entre
+                l'Afrique et l'Europe et revient sur les enjeux de la
+                cryptomonaie.
+              </p>
+              <p className="item-date">15 decembre 2022</p>
+            </div>
+          </div>
+        </div>
       </SectionUne>
 
       <SectionEcouteVoir theme={theme}>
@@ -439,7 +430,6 @@ const SectionUne = styled.div`
 
   .head-text {
     display: flex;
-    flex-direction: row;
     justify-content: center;
     align-items: center;
     margin: 50px 0;
@@ -468,7 +458,7 @@ const SectionUne = styled.div`
 
   .body-une {
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     flex-wrap: wrap;
 
     @media only screen and (max-width: 1280px) {
@@ -507,7 +497,6 @@ const SectionUne = styled.div`
         }
         p {
           font-size: 14px;
-          text-align: left;
         }
 
         .item-date {
@@ -517,14 +506,48 @@ const SectionUne = styled.div`
         }
       }
     }
-    @media only screen and (max-width: 768px) {
+
+    .cards-une {
+      display: flex;
       flex-direction: column;
-      align-items: center;
+      width: 600px;
+
+      @media only screen and (max-width: 1280px) {
+        flex-direction: column;
+        width: 1000px;
+      }
+
+      .card-1 {
+        background-color: #700b0b;
+        width: 100%;
+        height: 238px;
+        border-radius: 20px;
+      }
+
+      .sub-card {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        margin-top: 15px;
+
+        .card-2 {
+          background-color: #700b0b;
+          width: 48%;
+          height: 250px;
+          border-radius: 20px;
+        }
+
+        .card-3 {
+          background-color: #700b0b;
+          width: 48%;
+          height: 250px;
+          border-radius: 20px;
+        }
+      }
     }
   }
 
   @media only screen and (max-width: 768px) {
-
     .head-text {
       margin-left: 20px;
       margin-right: 20px;
