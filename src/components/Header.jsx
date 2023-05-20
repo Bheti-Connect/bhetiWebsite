@@ -106,7 +106,7 @@ justify-content: center;
             width: 80%;
             margin-left: 5%;
             margin-top: 3%;
-            font-size: 1.2em;
+            font-size: 1.2rem;
             @media screen and (max-width: 800px){
                 width: 75%;
                 margin-top: 2%;
@@ -196,7 +196,7 @@ justify-content: center;
         @media screen and (max-width: 500px){
             width: 80%;
             margin-left: -60px;
-            margin-top: -70px;
+            margin-top: -50px;
         }
     }
 }

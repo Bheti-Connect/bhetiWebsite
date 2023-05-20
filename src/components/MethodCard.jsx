@@ -77,8 +77,11 @@ const MethodCardStyled = styled.section`
             }
         }
         .description{
+            font-family: 'Montserrat', sans-serif;
             padding-bottom: 1.5rem;
             text-align: left;
+            line-height: 1.45;
+            font-size: 1.1rem;
             @media only screen and (max-width: 525px) and (min-width: 425px){
                 font-size: 14px;
             }

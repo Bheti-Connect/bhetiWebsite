@@ -24,6 +24,8 @@ const ButtonStyled = styled.button`
     position: relative;
     transition: all .4s ease-in-out;
     display: inline-block;
+    box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.4);
+
     .blob{
         position: absolute;
         top: -5px;
