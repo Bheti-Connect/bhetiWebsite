@@ -13,6 +13,7 @@ import { axios_get, axios_post } from '../../utils/FunctionsComponent';
 import SliderMedia from './SliderMedia';
 import CardModalSuccess from './SuccessStories/CardModalSuccess';
 import LinksAPI from '../../utils/LinksAPI';
+import seminary from '../../assets/images/seminary.jpg'
 
 const Media = () => {
   const [currentPage, setCurrentPage] = useState(0);
@@ -44,9 +45,7 @@ const Media = () => {
       "name": "peter",
       "description": "Lorem Ipsum dolor set amet 1",
       "photo": [
-        "https://images.pexels.com/photos/1054218/pexels-photo-1054218.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-        "https://images.pexels.com/photos/772803/pexels-photo-772803.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-        "https://images.pexels.com/photos/354939/pexels-photo-354939.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+        "https://s3-us-west-2.amazonaws.com/s.cdpn.io/785239/background.jpg",
       ]
     },
     {
@@ -54,9 +53,7 @@ const Media = () => {
       "name": "jack",
       "description": "Lorem Ipsum dolor set amet 2",
       "photo": [
-        "https://images.pexels.com/photos/1261728/pexels-photo-1261728.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-        "https://images.pexels.com/photos/35857/amazing-beautiful-breathtaking-clouds.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-        "https://images.pexels.com/photos/1198817/pexels-photo-1198817.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+        "https://s3-us-west-2.amazonaws.com/s.cdpn.io/785239/background.jpg",
       ]
     },
     {
@@ -64,8 +61,7 @@ const Media = () => {
       "name": "omari",
       "description": "Lorem Ipsum dolor set amet 3",
       "photo": [
-        "https://images.pexels.com/photos/531321/pexels-photo-531321.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1", "https://images.pexels.com/photos/1292241/pexels-photo-1292241.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-        "https://images.pexels.com/photos/325185/pexels-photo-325185.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+        "https://s3-us-west-2.amazonaws.com/s.cdpn.io/785239/background.jpg",
       ]
     },
     {
@@ -73,9 +69,8 @@ const Media = () => {
       "name": "jack",
       "description": "Lorem Ipsum dolor set amet 2",
       "photo": [
-        "https://images.pexels.com/photos/1261728/pexels-photo-1261728.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-        "https://images.pexels.com/photos/35857/amazing-beautiful-breathtaking-clouds.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-        "https://images.pexels.com/photos/1198817/pexels-photo-1198817.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+        "https://s3-us-west-2.amazonaws.com/s.cdpn.io/785239/background.jpg",
+ 
       ]
     },
     {
@@ -83,8 +78,8 @@ const Media = () => {
       "name": "omari",
       "description": "Lorem Ipsum dolor set amet 3",
       "photo": [
-        "https://images.pexels.com/photos/531321/pexels-photo-531321.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1", "https://images.pexels.com/photos/1292241/pexels-photo-1292241.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-        "https://images.pexels.com/photos/325185/pexels-photo-325185.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+        "https://s3-us-west-2.amazonaws.com/s.cdpn.io/785239/background.jpg",
+
       ]
     },
     {
@@ -92,8 +87,8 @@ const Media = () => {
       "name": "omari",
       "description": "Lorem Ipsum dolor set amet 3",
       "photo": [
-        "https://images.pexels.com/photos/531321/pexels-photo-531321.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1", "https://images.pexels.com/photos/1292241/pexels-photo-1292241.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-        "https://images.pexels.com/photos/325185/pexels-photo-325185.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+        "https://s3-us-west-2.amazonaws.com/s.cdpn.io/785239/background.jpg",
+
       ]
     }
   ]);
@@ -186,7 +181,7 @@ const Media = () => {
   }
 
   // display items
-  let displayItems = data.map((item, index) => {
+  let displayItems = aLaUne.map((item, index) => {
     return displayDataOf == "interview" ? (<CardsMedia key={index} item={item} setSelect={setSelect} setModal={setModal} />) : (<CardSuccess key={index} item={item} setSelect={setSelect} setModal={setModal} />)
   })
 
@@ -255,10 +250,10 @@ const Media = () => {
 
       <div className='cards-une'>
 
-         <div className='card-1'>1</div>
+         <div className='card-1'>lorem ispum</div>
 
         <div className='sub-card'>
-          <div className='card-2'>2</div>
+          <div className='card-2'>lorem ispum</div>
           <div className='card-3'>3</div>
         </div>
 
@@ -341,6 +336,8 @@ const Media = () => {
               {
                 loading ? (<LoaderMedia count={15} />) : (displayItems)
               }
+
+              
             </div>
 
           </AllCards>
@@ -380,17 +377,19 @@ const Media = () => {
 
 const AllMedia = styled.div`
 margin: auto;
-
+#background-color: green;
+display:flex;
+flex-direction: column;
 
 .containerClassName {
   display: flex;
   flex-wrap: wrap;
   list-style: none;
-  justify-content: right;
   align-items:center;
   user-select: none;
   font-size: 10px;
-  margin-right: 50px;
+  
+
 }
 
 .containerClassName li {
@@ -483,8 +482,8 @@ margin-bottom: 80px;
   display:flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
-  margin: 50px 0;
+  align-items: start;
+  margin: 70px 0px 70px 70px ;
   
 
   h2 {
@@ -500,7 +499,7 @@ margin-bottom: 80px;
   }
 
   .icon-media {
-    margin-right: 30px;
+    
 
     img{
       height: 70px;
@@ -512,9 +511,15 @@ margin-bottom: 80px;
 
 .body-une {
   display: flex;
-  justify-content: center;
-  flex-wrap: wrap; 
-  gap : 15px; 
+  justify-content: space-around;
+  flex-wrap: wrap;  
+  #background-color: blue;
+  flex-direction: row;
+
+  @media only screen and (max-width: 1580px) {
+    width: 100%;
+    flex-direction: row;
+  }
 
   @media only screen and (max-width: 1280px) {
     width: 100%;
@@ -526,6 +531,7 @@ margin-bottom: 80px;
     width: 30%;
     justify-content: center;
     gap: 30px;
+    
 
     @media only screen and (max-width: 414px) {
       width: 100%;
@@ -572,11 +578,13 @@ margin-bottom: 80px;
   .cards-une{
     display:flex;
     flex-direction: column;
-    width: 600px;
-    
+    width: 800px;
+    margin-left: 20px;
+
+
     @media only screen and (max-width: 1280px) {
       flex-direction: column;
-      width: 1000px;
+      width: 800px;
   
     }
 
@@ -587,10 +595,13 @@ margin-bottom: 80px;
     }
 
     .card-1 {
-      background-color: #700b0b;
       width: 100%;
-      height: 238px;
-      border-radius: 20px;
+      height: 250px;
+      border-radius: 10px;
+      background-image: url(${seminary});
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
 
     .sub-card {
@@ -601,9 +612,14 @@ margin-bottom: 80px;
 
       .card-2{
         background-color: #700b0b;
+        display: flex;
+        justify-content: center;
+        align-items: center;
         width: 48%;
         height: 250px;
         border-radius: 20px;
+        background-image: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/785239/background.jpg");
+        object-fit: contain;
       }
 
       .card-3{
@@ -611,6 +627,7 @@ margin-bottom: 80px;
         width: 48%;
         height: 250px;
         border-radius: 20px;
+        background-image: url(${seminary});
       }
     }
 
@@ -669,9 +686,9 @@ const SectionEcouteVoir = styled.div`
 
 .head-text {
   display:flex;
-  justify-content: center;
+  justify-content: start;
   align-items: center;
-  margin: 50px 0;
+  margin: 60px 0px 60px 60px;
 
   h2 {
     color: ${props => props.theme.colorBheti};
