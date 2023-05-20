@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
+import Confetti from 'react-confetti';
 import { useTheme } from '../../context/themeContext';
+import FormSent from '../../assets/images/waitlistSuccess.svg';
 import Blob from '../../assets/images/img-1.png';
 import Blob2 from '../../assets/images/img-2.png';
 import Blob3 from '../../assets/images/img-3.png';
@@ -21,6 +23,7 @@ const Formulaire = () => {
         const [touchedFields, setTouchedFields] = useState({});
         const [isValidEmail, setIsValidEmail] = useState(true);
         const [isValidWebsite, setIsValidWebsite] = useState(true);
+        const [isSubmitted, setIsSubmitted] = useState(false);
 
         
         const handleInputChange = (e) => {
@@ -52,95 +55,117 @@ const Formulaire = () => {
         
         const handleSubmit = (e) => {
             e.preventDefault();
-        
-            if (validateForm()) {
-            console.log('Form submitted:', formData);
-            }
+
+            const url = new URL(
+                "https://api.bheticonnect.com/api/waitlists"
+            );
+            
+            const headers = {
+                "Content-Type": "application/json",
+                "Accept": "application/json",
+            };
+            
+            let body = {
+                "resources": []
+            };
+            
+            fetch(url, {
+                method: "PATCH",
+                headers,
+                body: JSON.stringify(body),
+            }).then(response => response.json());
+
+            setIsSubmitted(true);
+            setTimeout(() => {
+                setIsSubmitted(false);
+            }, 6000);
         };
         
     return (
         <FormulaireStyled theme={theme}>
-            <div className='container'>
-                <img className='blob-one' src={Blob} alt='blob1'/>
-                <img className='blob-two' src={Blob2} alt='blob2'/>
-                <img className='blob-three' src={Blob3} alt='blob3'/>
-                <img className='blob-four' src={Blob4} alt='blob4'/>
-            </div>
-            <div className='container-child'>
-                <div className='container-bheti'>
-                    <img className='white-logo' src={BhetiWhite} alt='bheti-white-logo' />
-                    <h3>
-                        Rejoindre la liste d’attente pour accéder à l’application dès quelle sera disponibe.
-                    </h3>
+        {isSubmitted && <Confetti width={window.innerWidth} height={window.innerHeight} />}
+                {
+                    isSubmitted ? (
+                    <div className='image'>
+                        <h3> Félicitations, vous avez bien rejoins la waitlist !</h3>
+                        <img src={FormSent} alt="Success" className="success-image" />
+                    </div>
+                    ) : (
+                        <div className='container-child'>
+                    <div className='container-bheti'>
+                        <img className='white-logo' src={BhetiWhite} alt='bheti-white-logo' />
+                        <h3>
+                            Rejoindre la liste d’attente pour accéder à l’application dès quelle sera disponibe.
+                        </h3>
+                    </div>
+                    <div className='container-form'>
+                        <form className='form__elements' onSubmit={handleSubmit}>
+                            <div className='input-div'>
+                                <label>Nom de la société <span>*</span></label>
+                                <input
+                                    type="text"
+                                    id="companyName"
+                                    name="companyName"
+                                    value={formData.companyName}
+                                    onChange={handleInputChange}
+                                    onBlur={handleInputBlur}
+                                    placeholder='ex: Bheti Connect'
+                                    className={touchedFields.companyName && !formData.companyName.trim() ? 'error' : formData.companyName.trim() ? 'valid' : ''}
+                                />
+                            {touchedFields.companyName && !formData.companyName.trim() && <p className='error__message'>Veuillez saisir le nom de votre entreprise.</p>}
+                            </div>
+                            <div className='input-div'>
+                                <label htmlFor="fullName">Votre Nom complet <span>*</span></label>
+                                <input
+                                    type="text"
+                                    id="fullName"
+                                    name="fullName"
+                                    value={formData.fullName}
+                                    onChange={handleInputChange}
+                                    onBlur={handleInputBlur}
+                                    placeholder='ex: Richard Cool'
+                                    className={touchedFields.fullName && !formData.fullName.trim() ? 'error' : formData.fullName.trim() ? 'valid' : ''}
+                                />
+                                {touchedFields.fullName && !formData.fullName.trim() && <p className='error__message'>Veuillez saisir votre nom complet.</p> }
+                            </div>
+                            <div className='input-div'>
+                                <label htmlFor="email" id='email_label'>Adresse Email <span>*</span></label>
+                                <input
+                                    type="text"
+                                    id="email"
+                                    name="email"
+                                    value={formData.email}
+                                    onChange={handleInputChange}
+                                    onBlur={handleInputBlur}
+                                    placeholder='ex: nom@email.com'
+                                    className={touchedFields.email && !formData.email.trim() || !isValidEmail ? 'error' : formData.email.trim() ? 'valid' : ''}
+                                />
+                                {touchedFields.email && !formData.email.trim() && <p className='error__message'>Veuillez saisir votre adresse électronique.</p> }
+                                {!isValidEmail && <p className='error__message'>Veuillez saisir une adresse email valide</p>}
+                            </div>
+                            <div className='input-div'>
+                                <label htmlFor="website" id='website_label'>Site web/LinkedIn de votre startup <span>*</span></label>
+                                <input
+                                    type="text"
+                                    id="website"
+                                    name="website"
+                                    value={formData.website}
+                                    onChange={handleInputChange}
+                                    onBlur={handleInputBlur}
+                                    placeholder='ex: https://bheticonnect.com/'
+                                    className={touchedFields.website && !formData.website.trim() || !isValidWebsite ? 'error' : formData.website.trim() ? 'valid' : ''}
+                                />
+                                {touchedFields.website && !formData.website.trim() && <p className='error__message'>Veuillez saisir le lien de votre site web ou Linkedin</p>}
+                                {!isValidWebsite && <p className='error__message'>Veuillez insérer un lien valide</p>}
+                            </div>
+                            <div className='button__container'>
+                                <button className='envoyer' type="submit"> Envoyer</button>
+                            </div>
+                        </form>
+                    </div>
                 </div>
-                <div className='container-form'>
-                    <form className='form__elements' onSubmit={handleSubmit}>
-                        <div className='input-div'>
-                            <label>Nom de la société <span>*</span></label>
-                            <input
-                                type="text"
-                                id="companyName"
-                                name="companyName"
-                                value={formData.companyName}
-                                onChange={handleInputChange}
-                                onBlur={handleInputBlur}
-                                placeholder='ex: Bheti Connect'
-                                className={touchedFields.companyName && !formData.companyName.trim() ? 'error' : formData.companyName.trim() ? 'valid' : ''}
-                            />
-                        {touchedFields.companyName && !formData.companyName.trim() && <p className='error__message'>Veuillez saisir le nom de votre entreprise.</p>}
-                        </div>
-                        <div className='input-div'>
-                            <label htmlFor="fullName">Votre Nom complet <span>*</span></label>
-                            <input
-                                type="text"
-                                id="fullName"
-                                name="fullName"
-                                value={formData.fullName}
-                                onChange={handleInputChange}
-                                onBlur={handleInputBlur}
-                                placeholder='ex: Richard Cool'
-                                className={touchedFields.fullName && !formData.fullName.trim() ? 'error' : formData.fullName.trim() ? 'valid' : ''}
-                            />
-                            {touchedFields.fullName && !formData.fullName.trim() && <p className='error__message'>Veuillez saisir votre nom complet.</p> }
-                        </div>
-                        <div className='input-div'>
-                            <label htmlFor="email" id='email_label'>Adresse Email <span>*</span></label>
-                            <input
-                                type="text"
-                                id="email"
-                                name="email"
-                                value={formData.email}
-                                onChange={handleInputChange}
-                                onBlur={handleInputBlur}
-                                placeholder='ex: nom@email.com'
-                                className={touchedFields.email && !formData.email.trim() || !isValidEmail ? 'error' : formData.email.trim() ? 'valid' : ''}
-                            />
-                            {touchedFields.email && !formData.email.trim() && <p className='error__message'>Veuillez saisir votre adresse électronique.</p> }
-                            {!isValidEmail && <p className='error__message'>Veuillez saisir une adresse email valide</p>}
-
-                        </div>
-                        <div className='input-div'>
-                            <label htmlFor="website" id='website_label'>Site web/LinkedIn de votre startup <span>*</span></label>
-                            <input
-                                type="text"
-                                id="website"
-                                name="website"
-                                value={formData.website}
-                                onChange={handleInputChange}
-                                onBlur={handleInputBlur}
-                                placeholder='ex: https://bheticonnect.com/'
-                                className={touchedFields.website && !formData.website.trim() || !isValidWebsite ? 'error' : formData.website.trim() ? 'valid' : ''}
-                            />
-                            {touchedFields.website && !formData.website.trim() && <p className='error__message'>Veuillez saisir le lien de votre site web ou Linkedin</p>}
-                            {!isValidWebsite && <p className='error__message'>Veuillez insérer un lien valide</p>}
-
-                        </div>
-                        <div className='button__container'>
-                            <button className='envoyer' type="submit"> Envoyer</button>
-                        </div>
-                    </form>
-                </div>
-            </div>
+                    )
+                }
     </FormulaireStyled>
     )
 }
@@ -203,9 +228,26 @@ const FormulaireStyled = styled.section`
             }
         }
     }
+    .image{
+        position:relative;
+        width: 60vw;
+        margin: 50px auto;
+        h3{
+            font-family: 'Montserrat', sans-serif;
+            width:60%;
+            color: ${props => props.theme.colorBheti};
+            margin: 0 auto;
+        }
+        .success-image{
+            display: block;
+            margin: auto;
+            width: 60%;
+
+        }
+    }
     .container-child{
         display: flex;
-        margin: -1% 25%;
+        margin: 20% 25% 0%;
         @media all and (max-width: 1500px) {
             margin: -1% 17%;
         }
@@ -296,7 +338,7 @@ const FormulaireStyled = styled.section`
                     input {
                         height: 150%;
                         border-radius: 10px;
-                        font-size: 1rem;
+                        font-size: .87rem;
                         padding: 1px 1px 0px 20px ;
                         color: #1E0101;
                         /* background: ${props => props.theme.colorWhiteIsh}; */
