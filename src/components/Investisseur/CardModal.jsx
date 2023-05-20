@@ -9,12 +9,6 @@ import { closeModal } from "../../utils/FunctionsComponent";
 const CardModal = ({ select, setModal, connect }) => {
   const theme = useTheme();
 
-  // Format currency Euro
-  let currencyEuro = new Intl.NumberFormat("de-DE", {
-    style: "currency",
-    currency: "EUR",
-  });
-
   const handleFlouter = () => {
     let flouter = document.querySelectorAll(".cible-flouter");
 
@@ -59,9 +53,7 @@ const CardModal = ({ select, setModal, connect }) => {
               </li>
               <li>
                 <span className="text-head">Besoin de financement</span> :{" "}
-                {select.financement
-                  ? currencyEuro.format(parseInt(select.financement))
-                  : "N'est pas mentionné"}
+                {select.financement}
               </li>
               <li>
                 <span className="text-head">Siège</span> :{" "}
