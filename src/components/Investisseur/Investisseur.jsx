@@ -497,7 +497,10 @@ h1 {
   width: 62vw;
   color: ${props => props.theme.colorPrimary};
   @media only screen and (max-width: 1400px) {
-    font-size: 35px;
+    font-size: 46px !important;
+  }
+  @media only screen and (max-width: 1250px) {
+    font-size: 45px !important;
   }
   @media only screen and (max-width: 768px) {
     font-size: 30px !important;
