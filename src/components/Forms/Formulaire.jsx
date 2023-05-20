@@ -178,6 +178,18 @@ const FormulaireStyled = styled.section`
         .blob-four{
             width: 21%;
         }
+        @media all and (max-width: 1400px) {
+            .blob-one{
+                right: 15px;
+            }
+            .blob-two{
+                right: -3px;
+            }
+            .blob-three{
+                left: -5px;
+                margin-bottom: 24px;
+            }
+        }
         @media all and (max-width: 1024px) {
             .blob-one{
                 right: -1px;
@@ -189,7 +201,6 @@ const FormulaireStyled = styled.section`
             .blob-three{
                 bottom: 800px;
             }
-
         }
     }
     .container-child{

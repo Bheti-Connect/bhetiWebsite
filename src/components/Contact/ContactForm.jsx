@@ -1,6 +1,7 @@
 import React, {useState, useRef} from 'react';
 import styled from 'styled-components';
 import Confetti from 'react-confetti';
+import MessageSent from '../../assets/images/messageSent.svg'
 import emailjs from "@emailjs/browser";
 
 
@@ -14,7 +15,15 @@ const FormContainer = styled.div`
     @media (max-width: 768px) {
         max-width: 80vw;
     }
-    
+    .image {
+        position: relative;
+        .success-image{
+            display: block;
+            position: relative;
+            margin: 0 auto;
+            width: 80%;
+        }
+    }
     `;
 
     const FormField = styled.div`
@@ -98,7 +107,7 @@ const FormContainer = styled.div`
             .then(
             () => {
                 setLoading(false);
-                alert("Merci pour votre message, nous vous répondrons dans les plus brefs délais🙏🏾!");
+                // alert("Merci pour votre message, nous vous répondrons dans les plus brefs délais🙏🏾!");
     
                 setForm({
                 name: "",
@@ -116,7 +125,7 @@ const FormContainer = styled.div`
         setIsSubmitted(true);
         setTimeout(() => {
             setIsSubmitted(false);
-        }, 6000);
+        }, 5000);
     };
 
     //Cn4ybzjhZP0jRiNp1 -- public key
@@ -125,48 +134,59 @@ const FormContainer = styled.div`
     return (
         <FormContainer>
             {isSubmitted && <Confetti width={window.innerWidth} height={window.innerHeight} />}
-            <form onSubmit={handleSubmit} ref={formRef}>
-                <FormField>
-                <Label htmlFor="name">Votre nom complet</Label>
-                <Input 
-                    type="text" 
-                    id="name" 
-                    name="name"
+            {
+                isSubmitted ? (
+                    <div className='image'>
+                        <img src={MessageSent} alt="Success" className="success-image" />
+                    </div>
+                ) : (
+                    <form onSubmit={handleSubmit} ref={formRef}>
+                    <FormField>
+                    <Label htmlFor="name">Votre nom complet</Label>
+                    <Input 
+                        type="text" 
+                        id="name" 
+                        name="name"
+                        onChange={handleChange}
+                        placeholder='Ecrivez votre nom complet'
+                        value={form.name} 
+                        required 
+                    />
+                    </FormField>
+                    <FormField>
+                    <Label htmlFor="email">Votre Email</Label>
+                    <Input 
+                        type="email" 
+                        id="email" 
+                        name="email"
+                        onChange={handleChange}
+                        placeholder='Ecrivez votre email'
+                        value={form.email} 
+                        required 
+                    />
+                    </FormField>
+                    <FormField>
+                    <Label htmlFor="message">Votre Message</Label>
+                    <TextArea 
+                    id="message"
+                    value={form.message} 
+                    name="message" 
                     onChange={handleChange}
-                    placeholder='Ecrivez votre nom complet'
-                    value={form.name} 
-                    required 
-                />
-                </FormField>
-                <FormField>
-                <Label htmlFor="email">Votre Email</Label>
-                <Input 
-                    type="email" 
-                    id="email" 
-                    name="email"
-                    onChange={handleChange}
-                    placeholder='Ecrivez votre email'
-                    value={form.email} 
-                    required 
-                />
-                </FormField>
-                <FormField>
-                <Label htmlFor="message">Votre Message</Label>
-                <TextArea 
-                id="message"
-                value={form.message} 
-                name="message" 
-                onChange={handleChange}
-                rows="5" 
-                placeholder="Que voulez-vous nous faire savoir ?"
-                required />
-                </FormField>
-                <Button type="submit">
-                {loading ? "Envoie en Cours..." : "Envoyer"}
-                </Button>
-            </form>
+                    rows="5" 
+                    placeholder="Que voulez-vous nous faire savoir ?"
+                    required />
+                    </FormField>
+                    <Button type="submit">
+                    {loading ? "Envoie en Cours..." : "Envoyer"}
+                    </Button>
+                </form>
+                )
+                }
+
         </FormContainer>
     );
     };
+
+    // 700b0a
 
 export default ContactForm;

@@ -115,7 +115,7 @@ const FooterSectionStyled = styled.footer`
     .bottom-navigation{
         display: flex;
         flex-wrap: wrap;
-        padding-bottom: 2.5rem;
+        padding-bottom: 3rem;
         margin: auto;
         h4{
             padding-bottom: 1.2rem;
@@ -129,31 +129,17 @@ const FooterSectionStyled = styled.footer`
             @media only screen and (max-width: 525px) and (min-width: 320px){
                 margin-top: 25px;
             }
-            h4{
-                @media all and (max-width: 500px) {
-                    float: left;
-                }
-            }
         }
         .company {
-            @media all and (min-width:1440px ){
-                margin-left: 120px;
-            }
             @media all and (max-width: 768px) {
                     width: 70%;
                     margin: auto;
                 }
-            @media all and (max-width: 425px){
-                float: left;
-            }
             .nav-item a{
                 font-size: 12.5px;
                 color: ${props => props.theme.colorGrey6};
                 @media all and (max-width: 768px) {
                     margin: auto;
-                }
-                @media all and (max-width: 500px) {
-                    margin-top: 30px;
                 }
                 @media all and (max-width: 320px) {
                     margin-left: -1px;
@@ -167,7 +153,6 @@ const FooterSectionStyled = styled.footer`
             }
         }
         .nav-contact{
-            margin-left: 2rem;
             .nav-item{
                 display: grid;
                 grid-template-columns: 30px auto;
@@ -200,48 +185,36 @@ const FooterSectionStyled = styled.footer`
             }
         }
         .logo-con{
+            flex: 5;
             align-items: left;
-            width: 30%;
-            margin-left: 120px;
             .logo img{
-                width: 40%;
+                width: 32%;
                 @media all and (max-width: 1150px) {
                     width: 38%;
                 }
                 @media all and (max-width: 768px) {
                     width: 38%;
                 }
-                @media all and (max-width: 450px) {
-                    width: 50%;
-                    margin-left: -50%;
+                @media all and (max-width: 425px) {
+                    width: 34%;
                 }
             }
             @media all and (max-width: 768px) {
                 width: 70%;
                 margin: 0 auto;
             }
-            @media all and (max-width: 1440px) {
-                margin-left: 50px;
-            }
-            @media all and (max-width: 440px) {
-                display: block;
-            }
     }
         .logo-con p{
             width: 80%;
-            margin: 10px 0px;
-            @media all and (max-width: 768px){
+            @media all and (max-width: 768px) {
                 width: 100%;
             }
             color: ${props => props.theme.colorGrey6};
-            @media all and (max-width: 440px) {
-                text-align: left;
-            }
         }
         .b-nav-icons{
             display: flex;
             margin: 1.5rem 0px;
-            width: 30%;
+            width: 50%;
             align-items: start;
             .icon {
                 color: aliceblue;
@@ -250,14 +223,19 @@ const FooterSectionStyled = styled.footer`
             }
             .icon-linkedin{
                 :hover{
-                    color: ${props => props.theme.colorBheti};
+                    color: #2677b5;
                 }
             }
-            .icon-slack{
+            .icon-facebook{
                 :hover{
-                    color: ${props => props.theme.colorBheti};
+                    color: #2872e7 ;
                 }
             } 
+            .icon-instagram{
+                :hover{
+                    color: #a9388b ;
+                }
+            }
             @media only screen and (max-width: 768px) {
                 width: 60%;
                 margin: auto;
@@ -291,10 +269,10 @@ const FooterSectionStyled = styled.footer`
             }
         }
         @media all and (max-width: 2500px){
-            width: 1200px;
+            width: 1100px;
         }
         @media all and (max-width: 1440px){
-            width: 1000px;
+            width: 950px;
         }
         @media all and (max-width: 1080px){
             width: 900px;
@@ -334,9 +312,7 @@ const FooterSectionStyled = styled.footer`
         @media all and (max-width: 768px) {
             width: 90%;
         }
-        @media all and (max-width: 425px) {
-            text-align: left;
-        }
+        
     }
 
     .copyright-text{
