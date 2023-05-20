@@ -41,6 +41,13 @@ const MethodSectionStyled = styled.section`
     display: flex;
     justify-content: center;
     flex-direction: column;
+    @media all and (max-width: 768px) {
+
+    }
+    @media all and (max-width: 425px) {
+        margin-top: -35px;
+    }
+
     
     .methods-con{
         display: grid;
@@ -52,9 +59,15 @@ const MethodSectionStyled = styled.section`
             width: 90%;
             margin:auto;
         }
-
         @media only screen and (max-width: 768px) {
             grid-template-columns: none;
+            width: 300px;
+        }
+        @media only screen and (max-width: 425px){
+            margin-left: -7%;
+        }
+        @media only screen and (max-width: 375px){
+            margin-left: -20%;
         }
     }
 

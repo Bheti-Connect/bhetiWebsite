@@ -1,7 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
 import { useTheme } from '../../context/themeContext';
-import LaMethode from './LaMethode';
 import Accueil from './Accueil';
 import Advantages from './Advantages';
 import Satisfaction from './Satisfaction/Satisfaction';
@@ -14,12 +13,12 @@ const Entrepreneur = () => {
             <div className='advantages__div'>
                 <Advantages />
             </div>
-            <div className='method-container'>
+            {/* <div className='method-container'>
                 <LaMethode />
-            </div>
-            <div>
+            </div> */}
+            {/* <div>
                 <Satisfaction />
-            </div>
+            </div> */}
         </EntrepreneurStyled>
     )
 }

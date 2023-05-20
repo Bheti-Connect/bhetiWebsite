@@ -1,7 +1,8 @@
 import styled from 'styled-components';
 import { useTheme } from '../context/themeContext';
-import bhetiImage from '../assets/images/pexels-rdne-stock-project-5922212.jpg';
+import bhetiImage from '../assets/images/pexels-christina-morillo-1181421.jpg';
 import Button from "./Button";
+import { Link } from 'react-router-dom';
 
 const AboutSection = () => {
     const theme = useTheme();
@@ -13,84 +14,124 @@ const AboutSection = () => {
                     <h3 className='title'>
                         Développez et financez vos projets
                     </h3>
-                    <p>Grâce à la plateforme Bheti App, accédez à un écosystème composé d’experts, d’outils et d’informations… Bref, tout ce qu’il vous faut pour trouver du financement.</p>
+                    <p className='subtitle-text'>Grâce à la plateforme Bheti App, accédez à un écosystème composé d’experts, d’outils et d’informations… Bref, tout ce qu’il vous faut pour trouver du financement.</p>
                     <div className='steps'>
-                        <b>
-                        <ol>
-                            <li>1. Publiez votre projet, </li>
-                            <li>2. Précisez votre besoin,</li>
-                            <li>3. Augmentez la visibilité de votre projet auprès d’investisseurs</li>
-                        </ol>
-                        </b>
+                        <div className='each-step'>
+                            <p>1. Publiez votre projet,</p>
+                            <p>2. Précisez votre besoin,</p>
+                            <p>3. Augmentez la visibilité de votre projet auprès d’investisseurs</p>
+                        </div>
                     </div>
                     <div className='test-button'>
+                        <Link
+                            to={'/waitlist'}
+                        > 
                             <Button
                                 name='Tester Bheti App'
+                                icon={'fas fa-chevron-right'}
                                 arrow={'arrow'}
-                                icon={'fas fa-arrow-right'}
                             />
-                    </div>
-                </div>
-                <div className='rightSide'>
-                    <div className='image-div'>
-                        <img src={bhetiImage} className='about-img' alt='bheti-image' />
+                        </Link>
                     </div>
                 </div>
             </div>
+                <div className='rightSide'>
+                        <img src={bhetiImage} className='about-img' alt='bheti-image' />
+                </div>
         </AboutSectionStyled>
         )
 }
 
 const AboutSectionStyled = styled.section`
     display: grid;
-    background: ${props => props.theme.colorBlack};
-    grid-template-columns: auto;
-    grid-gap: 1rem;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 2rem;
+    background-color: ${props => props.theme.colorBlack};
+    margin-bottom: 6rem;
+    box-shadow: 0 5px 18px #212529b7;
+    @media only screen and (min-width: 960px){
+        margin-top: -1rem;
+    }
+    @media only screen and (max-width: 960px){
+        margin-top: -1.3rem;
+    }
     .lower-container{
         display: flex;
         position: relative;
-        width: 85%;
-        margin: 5% auto;
+        width:90%;
+        margin: 5% 10%;
         .leftSide{
             position: relative;
-            width: 80%;
+            margin: 5% 0%;
+            width: 100%;
             .title{
                 color: ${props => props.theme.colorWhite};
-                font-size: 2.6vw;
+                font-size: 2.45vw;
                 text-align: left;
-                width:85%;
+                width: 100%;
+                &::after{
+                    content: '';
+                    position: absolute;
+                    left: 0;
+                    width: 23%;
+                    height: 2px;
+                    background-color: ${props => props.theme.colorAccent};
+                    @media all and (max-width: 500px){
+                        bottom: 80%;
+                        width: 40%;
+                    }
+                    @media all and (max-width: 500px){
+                        bottom: 80%;
+                        width: 40%;
+                    }
+                }
+                @media all and (max-width: 768px) {
+                    font-size: 2rem;
+                }
+                @media all and (max-width: 500px){
+                    font-size: 1.45rem;
+                    margin-bottom: 0.9rem;
+                }
             }
-            p{
-                color: ${props => props.theme.colorGrey5};
-                margin: 1% 0;
-                width: 80%;
+            .subtitle-text{
+                font-family:'Montserrat', sans-serif;
+                color: ${props => props.theme.colorGrey4};
+                margin: 5% 0;
+                line-height: 1.45;
+                width: 99%;
+                @media all and (max-width: 500px) {
+                    font-size: .85em;
+                    line-height: 1.34;
+                    width: 100%;
+                    text-align: left;
+                }
             }
             .steps{
                 position: relative;
                 margin: 4% 0;
-                ol{
+                .each-step{
                     list-style: none;
-                    li{ 
+                    p{ 
                         font-family:'Montserrat', sans-serif;
                         color: ${props => props.theme.colorGrey4};
-                        font-size: 1.5rem;
+                        font-size: 1.12rem;
+                        line-height: 1.6;
+                    }
+                }
+                @media all and (max-width: 500px) {
+                    text-align: left;
+                    .each-step{
+                        p{
+                            font-size: .85em;
+                            line-height: 1.3;
+                        }
                     }
                 }
             }
-    
-        } 
-        .rightSide{
-            position: relative;
-            .image-div{
-                margin: auto;
-                .about-img{
-                    position: relative; 
-                    width: 23vw;
-                    height: 50%;
-                    border-radius: 20px;
+            @media all and (max-width: 500px) {
+                width: 120% !important;
             }
-        }
-    } 
+        } 
 
     @media only screen and (max-width: 1150px){
         display: block;
@@ -104,17 +145,27 @@ const AboutSectionStyled = styled.section`
                 margin: auto;
             }
         }
-
-        .rightSide{
-            position: relative;
-            .image-div{
-                margin: 5% auto;
-                .about-img{
-                    width: 70vw;
+}
+    }
+    .rightSide{
+        overflow: hidden;
+        img{
+            width: 100%;
+            object-fit: cover;
+            height: 100%;
+            filter: grayscale(100%);
+            transition: all .3s ease-in-out;
+            &:hover{
+                filter: grayscale(0);
+                transform: scale(1.2) rotate(4deg);
+            }
+            @media only  screen and (max-width: 320px) {
+                width: 100%;
             }
         }
     }
-}
+    @media only screen and (max-width: 768px) {
+        display: inline-block;
     }
 `;
 

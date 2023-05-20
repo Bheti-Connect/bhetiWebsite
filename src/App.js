@@ -4,8 +4,12 @@ import { useTheme } from './context/themeContext';
 import { BrowserRouter as Router, Routes, Route, useLocation, useNavigate } from 'react-router-dom'
 import Entrepreneur from './components/Entrepreneur/Entrepreneur';
 import Investisseur from './components/Investisseur/Investisseur';
+import ScrollButtonContext, { ScrollButtonProvider } from './components/ScrollButtonContext';
+
 import Home from './components/Home';
 import Footer from './components/Footer';
+import FloatingButton from './components/FloatingButton';
+
 import NavBar from './components/NavBar';
 
 import Media from './components/Media/Media';
@@ -13,6 +17,8 @@ import FormOne from './components/Forms/NewForms/FormOne/FormOne';
 import FormTwo from './components/Forms/NewForms/FormTwo/FormTwo';
 import FormInvestisseur from './components/Investisseur/form/FormInvestisseur';
 import ErrorPage from './components/Error/ErrorPage';
+import Formulaire from './components/Forms/Formulaire';
+import Contact from './components/Contact/Contact';
 
 const App = () => {
   const theme = useTheme();
@@ -32,10 +38,12 @@ const App = () => {
   const [isAuthenticated, setIsAuthenticated] = useState();
 
   return (
-    
+
+
+    <ScrollButtonProvider>
       <AppStyled theme={theme}>
         <div>
-          <NavBar />
+          <NavBar  />
         </div>
         <main>
           <Routes>
@@ -45,17 +53,23 @@ const App = () => {
             <Route path='media' exact element={<Media />} />
             {/* <Route path='evaluer-eligibilite' element={<EvaluerEligibilite />} /> */}
             <Route path='decouvrir-bheti-connect' exact caseSensitive={false} element={<FormTwo />} />
-            <Route path='evaluer-eligibilite' exact caseSensitive={false} element={<FormTwo />} />
+            <Route path='eligibilite' exact caseSensitive={false} element={<FormTwo />} />
+            <Route path='waitlist' exact caseSensitive={false} element={<Formulaire />} />
+            <Route path='contact' exact caseSensitive={false} element={<Contact />} />
+            <Route path='pitch-deck' exact caseSensitive={false} element={<FormOne />} />
+
             {/* Route : form investisseur */}
             <Route path='form-investisseur' exact caseSensitive={false} element={<FormInvestisseur />} />
             {/* Route : success stories media */}
             <Route path='*'  element={<ErrorPage />} />
           </Routes>
+          <FloatingButton />
         </main>
         <div>
           <Footer />
         </div>
       </AppStyled>
+    </ScrollButtonProvider>
     
   )
 }

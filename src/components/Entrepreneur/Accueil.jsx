@@ -36,7 +36,7 @@ const Accueil = () => {
                 
                 <div className='button-demo'>
                     <Link
-                        to={'/decouvrir-bheti-connect'}
+                        to={'/waitlist'}
                     >   
                         <Button 
                             name={` ${'Essayer Bheti App'}`}
@@ -85,16 +85,13 @@ const AccueilStyled = styled.section`
                 @media only screen and (max-width: 2560px) {
                     top: 10vh;
                     width: 60vw;
-                    font-size: 60px;
-                }
-                @media only screen and (max-width: 1800px){
                     font-size: 55px;
                 }
                 @media only screen and (max-width: 1440px){
                     font-size: 45px;
                 }
                 @media only screen and (max-width: 1350px){
-                    font-size: 40px; 
+                    font-size: 44px; 
                 }
                 @media only screen and (max-width: 1024px) {
                     width: 74vw;

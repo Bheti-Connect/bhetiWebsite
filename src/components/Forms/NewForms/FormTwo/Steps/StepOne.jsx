@@ -11,11 +11,11 @@ import { optionsActivity, optionsYears } from "../../../FormInput";
 const StepOne = (props) => {
 
   const listOptions = optionsActivity.map((option) => 
-    <option value={option}>{option}</option>
+    <option key={option.id}  value={option.name}>{option.name}</option>
   )
 
   const yearsOptions = optionsYears.map((option) => 
-    <option value={option}>{option}</option>
+    <option key={option.id}  value={option.year}>{option.year}</option>
   )
 
     const {

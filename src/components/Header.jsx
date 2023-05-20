@@ -2,6 +2,7 @@ import styled from 'styled-components'
 import { useTheme } from '../context/themeContext';
 import premiereImg from '../assets/images/My-project.png';
 import Button from './Button';
+import { Link } from 'react-router-dom';
 
 const Header = () => {
     const theme = useTheme()
@@ -16,20 +17,24 @@ const Header = () => {
                         Réseaux, outils, stratégie. Un accompagnement pour réussir chaque étape de votre levée de fonds.
                     </p>
                     <div className='cta-button'>
-                        <Button
-                            name='Intégrer le réseau'
-                            arrow={'arrow'}
-                            icon={'fas fa-arrow-right'}
-                        />
+                        <Link
+                            to={'/waitlist'}
+                        > 
+                            <Button
+                                name='Intégrer le réseau'
+                                arrow={'arrow'}
+                                icon={'fas fa-arrow-right'}
+                            />
+                        </Link>
                     </div>
                 </div>
                 <div className='image'>
                     <img  className='h-img-1' src={premiereImg} alt='image-1' />
                 </div>
             </div>
-            <div className='mouse'>
+            {/* <div className='mouse'>
                 <span></span>
-            </div>
+            </div> */}
         </HeaderStyled>
     )
 }
@@ -51,7 +56,6 @@ justify-content: center;
     @media screen and (max-width: 800px) {
         flex-direction: column;
         }
-
     .text {
         flex: 1 ;
         position: relative;
@@ -85,7 +89,15 @@ justify-content: center;
                 width: 75% ;
             }
             @media screen and (max-width: 500px){
+                font-size: 2.58em;
+                margin-left: 10px;   
+            }
+            @media screen and (max-width: 425px){
                 font-size: 2.2em;
+                margin-left: 30px;   
+            }
+            @media screen and (max-width: 375px){
+                font-size: 2.1em;
             }
         }
         .sub-title{
@@ -94,14 +106,22 @@ justify-content: center;
             width: 80%;
             margin-left: 5%;
             margin-top: 3%;
-            font-size: 1.2em;
+            font-size: 1.2rem;
             @media screen and (max-width: 800px){
                 width: 75%;
                 margin-top: 2%;
                 margin-left: 12.5%;
             }
             @media screen and (max-width: 500px){
-                font-size: .8em;
+                font-size: 1.15em;
+                width: 85%;
+                margin-left: 8%;
+            }
+            @media screen and (max-width: 425px){
+                font-size: .85em;
+            }
+            @media screen and (max-width: 375px){
+                
             }
         }
         .cta-button{
@@ -127,7 +147,7 @@ justify-content: center;
 
     .image {
         position: relative;
-        width: 32%;
+        width: 33%;
         justify-content: center;
         transition: all .4s ease-in-out;
         animation: contentHide2 1s ease-in-out;
@@ -155,6 +175,9 @@ justify-content: center;
                     }
             }
         }
+        @media screen and (min-width: 960px){
+            z-index: -1;
+        }
         @media screen and (max-width: 540px) {
             width: 80%;
             }
@@ -164,7 +187,7 @@ justify-content: center;
             height: auto;
             transition: all .4s ease-in-out;
             @media screen and (min-width: 800px){
-                margin: 0 -12%;
+                margin: 0 -2%;
             }
         }
         @media screen and (max-width: 800px){
@@ -172,6 +195,8 @@ justify-content: center;
         }
         @media screen and (max-width: 500px){
             width: 80%;
+            margin-left: -60px;
+            margin-top: -50px;
         }
     }
 }
@@ -239,7 +264,7 @@ justify-content: center;
                 width: 100%;
                 
                 h2 {
-                    font-size: 2rem;   
+                    font-size: 2rem;
                 }
             }
             .images {
@@ -254,4 +279,4 @@ justify-content: center;
         }
 `;
 
-export default Header
+export default Header;

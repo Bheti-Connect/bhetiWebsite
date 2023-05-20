@@ -1,20 +1,18 @@
-import { useState } from 'react';
+import { useState, useContext} from 'react';
 import styled from 'styled-components'
+import ScrollButtonContext from './ScrollButtonContext';
 import theLogo from '../assets/images/Logo.svg';
 import { useTheme } from '../context/themeContext';
 import { NavLink } from 'react-router-dom';
 
 const NavBar = () => {
-    // const navRef = useRef();
+    const { toggleButton } = useContext(ScrollButtonContext);
     const [etat, setEtat] = useState({clicked: false});
-
-    // const [rotate, setRotate] = useState(false);
-    // console.log("rotate status: ", rotate);
-    // rotate?document.body.style.overflow = "hidden": document.body.style.overflow = "auto";
-
-    // const stopScroll = () => {
-    //     setRotate(!rotate)
-    // }
+    
+    const handleNavbarToggle = () => {
+        toggleButton();
+        // Additional code for handling the navbar toggle
+      };
 
     const removeNavMenu = () => {
         setShow((show) => !show);
@@ -56,14 +54,21 @@ const NavBar = () => {
                                 Investisseur
                             </NavLink>
                             <NavLink
-                                onClick={handleClick}
-                                to='media'
-                                className={({ isActive }) => (isActive ? 'link active' : 'link')}
+                                    onClick={handleClick}
+                                    to='/media'
+                                    className={({ isActive }) => (isActive ? 'link active' : 'link')}
                             >
-                                Média 
+                                    Média
                             </NavLink>
-                            <a href='https://app.bheticonnect.com/' className='connexion-hover link'>
-                                Connexion
+                            <NavLink
+                                    onClick={handleClick}
+                                    to='/contact'
+                                    className={({ isActive }) => (isActive ? 'link active' : 'link')}
+                            >
+                                    Contact
+                            </NavLink>
+                            <a href='/waitlist' className='connexion-hover link'>
+                                    Connexion
                             </a>
 
                         </div>
@@ -104,10 +109,15 @@ const NavBarStyled = styled.nav`
                     width: 14vw;
                 }
                 @media only screen and (max-width: 768px) {
-                    width: 18vw;
+                    width: 23vw;
+                    margin-left: -35px;
                 }
                 @media only screen and (max-width: 600px) {
-                    width: 24vw;
+                    width: 25vw;
+                    margin-left: -40px;
+                }
+                @media only screen and (max-width: 440px){
+                    width: 39vw;
                 }
             }
 }
@@ -138,7 +148,7 @@ const NavBarStyled = styled.nav`
         }
         .nav-menu {
             display: inline-block;
-            grid-template-columns: repeat(4, auto);
+            grid-template-columns: repeat(5, auto);
             grid-gap: 10px;
             text-align: center;
             width: 70vw;
@@ -174,6 +184,7 @@ const NavBarStyled = styled.nav`
     margin: 0 auto;
     .link {
     display: inline-block;
+    font-family: 'Montserrat', sans-serif;
     @media only screen and (min-width: 960px){
         margin-top: 15px;
     }
@@ -236,8 +247,9 @@ const NavBarStyled = styled.nav`
                 position: relative;
                 text-align: center;
                 margin: auto;
+                font-family: 'Montserrat', sans-serif;
                 margin-top: 12vh;
-                font-size: 2.3rem;
+                font-size: 1.2rem;
                 margin-bottom: 70px;
                 width: 60%;
                 display: table;
@@ -248,7 +260,6 @@ const NavBarStyled = styled.nav`
                 border-radius: 0;
             }
         }
-        
         .nav-btn-container{
             margin: auto;
         }

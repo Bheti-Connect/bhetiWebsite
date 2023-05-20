@@ -14,9 +14,6 @@ const JoinCommunity = () => {
             <div className='title-con'>
                 <Title 
                     name={'Rejoignez notre communauté'}
-                    subtext="Si vous souhaitez identifier d’autre porteurs de projets en Afrique francophone ou dans la diaspora, 
-                    être informé en exclusivité des dynamiques business de l’écosystème des affaires en Afrique, 
-                    être informé des prochaines rencontres entrepreneurs-investisseurs que nous organisons ?"
                 />
             </div>
             <div className='latest-container'>
@@ -32,8 +29,8 @@ const JoinCommunity = () => {
                                     Rencontrez d’autres porteurs de projets en Afrique francophone ou dans la diaspora, et resté informé en exclusivité des prochaines rencontres entrepreneurs-investisseurs ! 
                                     </p>
                                 </div>
-                                <div className='button__div'>
-                                        <a href='https://slack.com/'>
+                                <div className='button__div button_slack'>
+                                        <a href='https://join.slack.com/t/bheticonnect/shared_invite/zt-1vpdzs7pd-Q5f49fTUU_Um9L_TJ9ci3g'>
                                             <div className='our-community'>
                                                 <span id='slack-span'>
                                                     <FaSlack className='social-icon slack' />
@@ -80,21 +77,19 @@ const JoinCommunityStyled = styled.div`
             margin:auto;
         }
         @media only screen and (max-width: 425px) {
-            width: 300px;
-            margin: auto;
+            width: 90%;
+            margin:auto;
         }
     }
     .latest-container{
-        margin-top: 1.5rem;
-        background-color: ${props => props.theme.colorBlack};
         .latest-content{
             display: grid;
-            grid-template-columns: 40% auto;
+            grid-template-columns: 43% auto;
             padding: 10rem 10rem;
             grid-gap: .8rem;
-            width: 90%;
+            width: 95%;
             height: 50%;
-            margin: 0 auto;
+            margin: -10% auto 1%;
             .img-com-div{
                 position: relative;
                 width: 100%;
@@ -118,7 +113,7 @@ const JoinCommunityStyled = styled.div`
                     font-size: 1.2rem;
                 }
                 p{
-                    color: ${props => props.theme.colorGrey4};
+                    color: ${props => props.theme.colorBlack};
                     padding-bottom: 1.5rem;
                 }
                 .community{
@@ -128,11 +123,17 @@ const JoinCommunityStyled = styled.div`
                         .left-side{
                             width: 100%;
                             .paragraphs{
+                                font-family: 'Montserrat', sans-serif;
+                                line-height: 1.4;
                                 font-size: 17px;
-                                width: 95%;
+                                width: 99%;
+                                @media all and (max-width: 440px){
+                                    line-height: 1.6;
+                                }
                             }
                             .linkedin{
-                                margin-top: 1rem;
+                                margin-top: 2rem;
+                                margin-bottom: -1rem;
                             }
                         }
                         .button__div{
@@ -144,28 +145,20 @@ const JoinCommunityStyled = styled.div`
                             }
                             .social-icon{
                                     position: relative;
-                                    width: 40px;
-                                    height: 40px;
+                                    width: 30px;
+                                    height: 30px;
                                     color: ${props => props.theme.colorGrey2};
                                     cursor: pointer;
-                                    margin: -15px 10px;
-                                }
-                                .slack:hover{
-                                        transform: scale(.8);
-                                }
-                                .linkedin{
-                                    &:hover{
-                                        transform: scale(.8);
-                                    }
+                                    margin: -7px 10px;
                                 }
                                 span{
-                                    padding: 20px .8px;
+                                    padding: 21px .8px;
                                     width: 95%;
                                 }
                                 #slack-span{
                                     display: flex;
                                     width: 300px;
-                                    border-radius: 15px;
+                                    border-radius: 50px;
                                     color: ${props => props.theme.colorWhite};
                                     background-color: ${props => props.theme.colorSlack};
                                     &:hover{
@@ -175,7 +168,7 @@ const JoinCommunityStyled = styled.div`
                                 #linkedin-span{
                                     display: flex;
                                     width: 300px;
-                                    border-radius: 15px;
+                                    border-radius: 50px;
                                     color: ${props => props.theme.colorWhite};
                                     background-color: ${props => props.theme.colorLinkedIn};
                                     &:hover{
@@ -186,8 +179,20 @@ const JoinCommunityStyled = styled.div`
                                     display: flex;
                                 }
                         }
+                        .button_slack{
+                            margin-top: -20px;
+                            @media all and (max-width: 440px){
+                                margin-top: -18px !important;
+                            }
+                        }
+                    }
+                    @media all and (min-width: 1650px){
+                        margin-top: 3vw;
                     }
                 }
+        }
+        @media only screen and (min-width: 1650px){
+            margin: -8% auto 1%;
         }
         @media only screen and (max-width: 1440px){
             padding: 10rem 7rem;
@@ -220,10 +225,21 @@ const JoinCommunityStyled = styled.div`
             }
         }
         @media only screen and (max-width: 600px){
+            .img-com-div{
+                width: 85vw;
+                height: 30vh;
+                margin: -38% 0;
+                margin-left: -23px;
+                .img-community{
+                    width: 100%;
+                }
+
+            }
             .latest-text{
                 position: relative;
-                
+                margin-top: 100%;
                 .community{
+                    width: 100%;
                     .inner{
                         width: 100%;
                         .left-side{
@@ -245,8 +261,8 @@ const JoinCommunityStyled = styled.div`
         @media only screen and (max-width: 440px){
             .latest-text{
                 .community{
-                    width: 100%;
-                    margin-left: -5px;
+                    width: 80vw;
+                    margin: 0 auto;
                     .inner{
                         width: 100%;
                         .left-side{
@@ -268,13 +284,18 @@ const JoinCommunityStyled = styled.div`
                                     margin: -4px 10px;
                             }
                                 #slack-span{
-                                    width: 295px;                                   
+                                    height: 55px;
+                                    width: 250px;                                   
                                 }
                                 #linkedin-span{
-                                    width: 295px;
+                                    height: 55px;
+                                    width: 250px;
                                 }
                                 .our-community{
                                     display: flex;
+                                    h5{
+                                        font-size: 14px;
+                                    }
                                 }
                         }
                     }

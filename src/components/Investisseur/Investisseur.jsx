@@ -285,9 +285,8 @@ const Investisseur = () => {
     return (
         <InvestisseurStyled>
             <HeaderText theme={theme}>
-            <h3 className='hello'>{text}</h3>
-            <p>Vous trouverez ci-dessous des informations clés sur des startups et PME qui ouvrent leur capital pour prendre une position décisive sur leurs
-            marchés.<br/>Vous souhaitez en savoir plus sur ces opportunités et/ou rencontrer les fondateurs ? Cliquez sur "Recevoir le deck".</p>
+            <h1 className='hello'>{text}</h1>
+            <p>Vous trouverez ci-dessous des informations clés sur des startups et PME qui ouvrent leur capital pour prendre une position décisive sur leurs marchés.</p>
             <div className="containerMenu">
                 <div className='Box'>
 
@@ -482,38 +481,45 @@ const AllProject = styled.div`
   .nextLinkClassName{
     font-size: 13px;
   }
-
 }
-
 `;
 
 const HeaderText = styled.div`
 
-margin: 55px;
-
-h3 {
+margin: 52px;
+width: 80vw;
+margin: auto;
+h1 {
+  position: relative;
   font-family: 'Montserrat', sans-serif;
-  font-size: 40px;
+  font-size: 55px !important;
+  margin: 5% auto 0;
+  width: 62vw;
   color: ${props => props.theme.colorPrimary};
   @media only screen and (max-width: 1400px) {
-    font-size: 35px;
+    font-size: 46px !important;
+  }
+  @media only screen and (max-width: 1250px) {
+    font-size: 45px !important;
   }
   @media only screen and (max-width: 768px) {
-    font-size: 30px;
+    font-size: 30px !important;
   }
-  @media only screen and (max-width: 415px) {
-    font-size: 25px;
+  @media only screen and (max-width: 440px) {
+    text-align: left;
+    width: 70vw;
+    font-size: 31px !important;
   }
 }
 
 p {
-  margin: 10px 0;
-  font-size: 17px;
+  margin: 10px auto;
+  font-size: 19px;
   line-height: 1.4;
   font-family: 'Montserrat', sans-serif;
-  color: ${props => props.theme.colorGrey};
-
-
+  color: ${props => props.theme.colorGrey6};
+  width: 70vw;
+  text-align: center;
 }
 
 .menuSection{

@@ -14,7 +14,6 @@ const Title = ({ name, subtext}) => {
     )
 }
 
-
 const TitleStyled = styled.div`
     h3{
         font-size: 2.6vw;
@@ -29,27 +28,30 @@ const TitleStyled = styled.div`
             width: 100% !important;
         }
         @media only screen and (max-width: 425px){
-            font-size: 29px;
+            font-size: 30px;
             width: 100% !important;
-
         }
-        @media only screen and (max-width: 320px){
-            font-size: 20px;
-            margin-top: -20%;
+        @media only screen and (max-width: 375px){
+            font-size: 39px;
         }
     }
-
     .subtext{
+        font-family: 'Montserrat', sans-serif;
+        position: relative;
+        line-height: 1.45;
         text-align: justify;
         text-justify: inter-word;
         @media only screen and (max-width: 525px) and (min-width: 425px){
             font-size: 15px;
         }
         @media only screen and (max-width: 425px){
-                font-size: 14.3px;
+                width: 80vw;
+                font-size: 15px;
+                text-align: left;
         }
-        @media only screen and (max-width: 320px){
-                font-size: 14.8px;
+        @media only screen and (max-width: 375px){
+            width: 85vw;
+            margin-left: -50px;
         }
     }
 `;
