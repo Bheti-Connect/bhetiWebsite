@@ -1,5 +1,4 @@
-import axios from 'axios';
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import { useTheme } from '../../context/themeContext';
 import { handleSelect } from '../../utils/FunctionsComponent';
@@ -7,31 +6,16 @@ import { handleSelect } from '../../utils/FunctionsComponent';
 const Cards = ({item, setSelect, setModal}) => {
 
   const theme = useTheme()
-  const [imgProject, setImgProject] = useState(null)
 
   // Format currency Euro
   let currencyEuro = new Intl.NumberFormat('de-DE', { style : 'currency', currency: 'EUR'})
 
-  // Generate image
-  const handleImage = () => {
-    let source = "https://" + `picsum.photos/id/${Math.floor(Math.random() * 200)}/200/300`;
-    let source2 = "https://" + `picsum.photos/id/${item.id}/200/300`;
-    axios.get(source2).then((res) => {
-      setImgProject(source2)
-    }).catch((error) => {
-      setImgProject("https://picsum.photos/id/10/200/300")
-    })
-  }
-
-  useEffect(() => {
-    handleImage()
-  },[item])
 
 
   return (
     <CardItem onClick={() => handleSelect(setSelect, setModal, item)} theme={theme}>
           <CardHeader>
-            <img src={imgProject} alt='project'/>
+            <img src={item.image} alt='project'/>
           </CardHeader>
 
           <CardBody>
@@ -40,12 +24,12 @@ const Cards = ({item, setSelect, setModal}) => {
             {
               item.secteurs.length < 3 ? (
                 item.secteurs.map((secteur) => (
-                  <li key={secteur}>{secteur}</li>
+                  <li key={secteur} title='Secteurs'>{secteur}</li>
                 ))
               )
               : (
                 item.secteurs.slice(0,3).map((secteur) => (
-                  <li key={secteur}>{secteur}</li>
+                  <li key={secteur} title='Secteurs'>{secteur}</li>
                 ))
               )
             }

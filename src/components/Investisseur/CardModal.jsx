@@ -12,9 +12,6 @@ const CardModal = ({select, setModal, connect}) => {
   // Format currency Euro
   let currencyEuro = new Intl.NumberFormat('de-DE', { style : 'currency', currency: 'EUR'})
 
-  // Generate image
-  let source = "https://" + `picsum.photos/id/${select.id}/200/300`;
-
 
   const handleFlouter = () => {
     let  flouter = document.querySelectorAll(".cible-flouter")
@@ -66,7 +63,7 @@ const CardModal = ({select, setModal, connect}) => {
 
                 <div className='project-detail'>
                   <div>
-                  <img src={source} alt='project'/>
+                  <img src={select.image} alt='project'/>
                   </div>
 
                   <div className='detail'>
@@ -77,37 +74,37 @@ const CardModal = ({select, setModal, connect}) => {
 
                 {/* Pourquoi maintenant ?  */}
                 <div className='item-detail'>
-                  <h3>✅ Pourquoi maintenant ?</h3>
+                  <h3><span>&#x2022;</span> Pourquoi maintenant ?</h3>
                   <p className='cible-flouter flouter'>{select.description ? (select.description) : ("")}</p>
                 </div>
 
                 {/* Problèmes  */}
                 <div className='item-detail'>
-                  <h3>🚨 Problèmes</h3>
+                  <h3><span>&#x2022;</span> Problèmes</h3>
                   <p className='cible-flouter flouter'>{select.problemes ? (select.problemes) : ("")}</p>
                 </div>
 
                 {/* Solutions  */}
                 <div className='item-detail'>
-                  <h3>☝ Solutions</h3>
+                  <h3><span>&#x2022;</span> Solutions</h3>
                   <p className='cible-flouter flouter'>{select.solutions ? (select.solutions) : ("")}</p>
                 </div>
 
                 {/* Equipe  */}
                 <div className='item-detail'>
-                  <h3>👬 Equipe</h3>
+                  <h3><span>&#x2022;</span> Equipe</h3>
                   <p className='cible-flouter flouter'>{select.equipe ? (select.equipe) : ("")}</p>
                 </div>
 
                 {/* Business Modal  */}
                 <div className='item-detail'>
-                  <h3>💰 Business Modal</h3>
+                  <h3><span>&#x2022;</span> Business Modal</h3>
                   <p className='cible-flouter flouter'>{select.business_model ? (select.business_model) : ("")}</p>
                 </div>
 
                 {/* KPI  */}
                 <div className='item-detail'>
-                  <h3>📊 KPI</h3>
+                  <h3><span>&#x2022;</span> KPI</h3>
                   <p className='cible-flouter flouter'>{select.kpi ? (select.kpi) : ("")}</p>
                 </div>
 
@@ -256,7 +253,7 @@ text-align: justify;
   padding: 10px;
   padding-right: 0px;
   display: grid;
-  grid-template-columns: 10fr 1fr;
+  grid-template-columns: auto 1fr;
   background-color: ${props => props.theme.colorBheti};
   color: white;
   font-size: 13px;
@@ -264,6 +261,10 @@ text-align: justify;
   border: 1px solid transparent;
   border-radius: 1px;
   margin: 15px 0;
+
+  span{
+    font-size: 14px;
+  }
 }
 
 .deck {
