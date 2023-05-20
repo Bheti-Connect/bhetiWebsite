@@ -36,7 +36,9 @@ const TitleStyled = styled.div`
         }
     }
     .subtext{
+        font-family: 'Montserrat', sans-serif;
         position: relative;
+        line-height: 1.45;
         text-align: justify;
         text-justify: inter-word;
         @media only screen and (max-width: 525px) and (min-width: 425px){

@@ -94,9 +94,11 @@ const AboutSectionStyled = styled.section`
                 }
             }
             .subtitle-text{
+                font-family:'Montserrat', sans-serif;
                 color: ${props => props.theme.colorGrey4};
-                margin: 1% 0;
-                width: 80%;
+                margin: 5% 0;
+                line-height: 1.45;
+                width: 99%;
                 @media all and (max-width: 500px) {
                     font-size: .85em;
                     line-height: 1.34;
@@ -112,7 +114,8 @@ const AboutSectionStyled = styled.section`
                     p{ 
                         font-family:'Montserrat', sans-serif;
                         color: ${props => props.theme.colorGrey4};
-                        font-size: 1.2rem;
+                        font-size: 1.12rem;
+                        line-height: 1.6;
                     }
                 }
                 @media all and (max-width: 500px) {

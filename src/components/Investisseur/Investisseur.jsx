@@ -10,10 +10,9 @@ import Cards from './Cards';
 import axios from 'axios';
 import CardModal from './CardModal';
 import LoaderReact from './LoaderReact';
-//import iconBheti from "../../assets/icons/icon_bheti_design.png";
 import LinksAPI from './../../utils/LinksAPI';
 import { ModalConnect } from './ModalSweetAlert';
-import { faker } from '@faker-js/faker';
+import projects from '../../data/TestData';
 
 const Investisseur = () => {
   // useState of pagination
@@ -60,14 +59,8 @@ const Investisseur = () => {
 
     // GET data from API
     const getData = () => {
-      for (let i = 0; i < 8; i++) {
-        setData(prevData => [...prevData, {
-          nom: faker.name.firstName(),
-          stade: faker.finance.accountName(),
-          siege: faker.animal.type(),
-          financement: faker.commerce.price(),
-        }])
-      }
+
+      setData(projects)
 
       /*
       axios.get(LinksAPI.projets).then(res => {
@@ -494,22 +487,28 @@ const AllProject = styled.div`
 const HeaderText = styled.div`
 
 margin: 52px;
-
+width: 80vw;
+margin: auto;
 h1 {
   position: relative;
   font-family: 'Montserrat', sans-serif;
-  font-size: 50px !important;
+  font-size: 55px !important;
   margin: 5% auto 0;
-  width: 60vw;
+  width: 62vw;
   color: ${props => props.theme.colorPrimary};
   @media only screen and (max-width: 1400px) {
-    font-size: 35px;
+    font-size: 46px !important;
+  }
+  @media only screen and (max-width: 1250px) {
+    font-size: 45px !important;
   }
   @media only screen and (max-width: 768px) {
-    font-size: 30px;
+    font-size: 30px !important;
   }
-  @media only screen and (max-width: 415px) {
-    font-size: 25px;
+  @media only screen and (max-width: 440px) {
+    text-align: left;
+    width: 70vw;
+    font-size: 31px !important;
   }
 }
 

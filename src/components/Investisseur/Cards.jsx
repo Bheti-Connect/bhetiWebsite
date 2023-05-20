@@ -15,8 +15,9 @@ const Cards = ({item, setSelect, setModal}) => {
   // Generate image
   const handleImage = () => {
     let source = "https://" + `picsum.photos/id/${Math.floor(Math.random() * 200)}/200/300`;
-    axios.get(source).then((res) => {
-      setImgProject(source)
+    let source2 = "https://" + `picsum.photos/id/${item.id}/200/300`;
+    axios.get(source2).then((res) => {
+      setImgProject(source2)
     }).catch((error) => {
       setImgProject("https://picsum.photos/id/10/200/300")
     })
@@ -36,9 +37,26 @@ const Cards = ({item, setSelect, setModal}) => {
           <CardBody>
           <h3>{item.nom}</h3>
           <ul>
-            <li>{item.stade}</li>
-            <li>{item.stade}</li>
+            {
+              item.secteurs.length < 3 ? (
+                item.secteurs.map((secteur) => (
+                  <li key={secteur}>{secteur}</li>
+                ))
+              )
+              : (
+                item.secteurs.slice(0,3).map((secteur) => (
+                  <li key={secteur}>{secteur}</li>
+                ))
+              )
+            }
           </ul>
+          {
+            item.secteurs.length > 3 ? (
+              <p className="more">Plusieurs secteurs</p>
+            ) : (
+              ""
+            )
+          }
           <div className='boxPriceCountry'>
             <p className='price'>{item.financement ? (currencyEuro.format(parseInt(item.financement))) : ("ne pas mentionné")}</p>
             <p className='country'>{item.siege}</p>
@@ -126,7 +144,16 @@ ul li {
   color: white;
   border-radius: 40px;
   padding:2px 9px;
-  width: 100%;
+  width: 40%;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.more{
+  color: #700b0b;
+  font-size: 12px;
+  margin-top: 10px;
 }
 
 .boxPriceCountry{
