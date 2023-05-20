@@ -187,18 +187,66 @@ const projects = [
         siege: "France",
         stage: "Seed B",
         type: "Startup",
-        description: "",
+        description: "Projet 003 est une application mobile de partage et de comparaison des pratiques agricoles Conçu par un agronome de formation qui comptabilise plus de 20 ans d’expériences dans l’analyse de données scientifiques et agricoles, Projet 003 offre de nouveaux itinéraires techniques afin de faire évoluer les pratiques agricoles grâce aux données.",
         pourquoi: "",
-        solutions: "",
-        equipe: "",
-        business_model: "",
-        kpi: "",
+        solutions: [
+            {
+                title: "Application mobile de partage et de comparaison des pratiques agricoles qui permet de :",
+                description: [
+                    "Partager son expérience entre agriculteurs et se comparer pour apprendre plus vite",
+                    "Alimenter les acteurs de l’agriculture, de alimentation de données sur les pratiques agricoles pour éclairer les décisions, orienter la R&D",
+                    "Concevoir de nouveaux itinéraires techniques grâce aux données pour proposer des évolutions des pratiques agronomiques"
+                ]
+            }
+        ],
+        equipe: [
+            {
+                title: "2 personnes à temps plein",
+                description: [
+                    "Co-Fondateur et CEO: ingénieur agronome passionné par le numérique",
+                    "Co-Fondateur et CTO: expert en science et technologies logicielles passionné par l'imagination et la création d'architectures informatiques,"
+                ]
+            }
+        ],
+        business_model: [
+            {
+                title: "Vente de l’application mobile :",
+                description: [
+                    "Freemium (accès limité à certains outils et données)",
+                    "tarifs variables en fonction des pays (2 zones : pays développés/en développement)"
+                ]
+            },
+            {
+                title: "Vente de services associés aux données",
+                description: [
+                    "Tableaux de bord et études spécifiques"
+                ]
+            },
+            {
+                title: "Partenariat de R&D de développement agricoles ",
+                description: [
+                    "Partenariat de recherche public/privé avec financements publics"
+                ]
+            }
+        ],
+        kpi: [
+            {
+                title: "+100 000 téléchargements"
+            },
+            {
+                title: "10 000 visiteurs réguliers"
+            }
+        ],
         source: [
             source4,
             source6
         ],
         video: "",
-        problemes: "",
+        problemes: [
+            "Les modes de production de l’agriculture dans le monde sont remis cause",
+            "L’agriculture dégrade la planète : biodiversité, pollution, réchauffement climatique",
+            "Le revenu des agriculteurs est faible et ne permet pas de changement"
+        ],
         image: projet3,
     }
 ]
