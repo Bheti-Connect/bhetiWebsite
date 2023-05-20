@@ -7,9 +7,6 @@ const Cards = ({item, setSelect, setModal}) => {
 
   const theme = useTheme()
 
-  // Format currency Euro
-  let currencyEuro = new Intl.NumberFormat('de-DE', { style : 'currency', currency: 'EUR'})
-
 
 
   return (
@@ -42,7 +39,7 @@ const Cards = ({item, setSelect, setModal}) => {
             )
           }
           <div className='boxPriceCountry'>
-            <p className='price'>{item.financement ? (currencyEuro.format(parseInt(item.financement))) : ("ne pas mentionné")}</p>
+            <p className='price'>{item.financement ? (item.financement) : ("ne pas mentionné")}</p>
             <p className='country'>{item.siege}</p>
           </div>
           

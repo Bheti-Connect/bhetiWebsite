@@ -21,7 +21,7 @@ export const ModalConnect = (hookNavigate) => {
         }).then((result) => {
           if (result.isConfirmed)
           {
-            hookNavigate("/connexion")
+            hookNavigate("/waitlist")
           }
     })
 

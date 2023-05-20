@@ -26,7 +26,7 @@ const projects = [
     {
         id: 2,
         nom: "Projet 002",
-        secteurs: ["Industry", "Automobile", "Mobility", "IA/Big Data", "Agritech"],
+        secteurs: ["Industry", "Automobile"],
         financement: "5 000 000 €",
         siege: "Cote d'ivoire",
         stage: "Seed B",
