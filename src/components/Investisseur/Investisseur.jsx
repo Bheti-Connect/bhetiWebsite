@@ -487,22 +487,25 @@ const AllProject = styled.div`
 const HeaderText = styled.div`
 
 margin: 52px;
-
+width: 80vw;
+margin: auto;
 h1 {
   position: relative;
   font-family: 'Montserrat', sans-serif;
-  font-size: 50px !important;
+  font-size: 55px !important;
   margin: 5% auto 0;
-  width: 60vw;
+  width: 62vw;
   color: ${props => props.theme.colorPrimary};
   @media only screen and (max-width: 1400px) {
     font-size: 35px;
   }
   @media only screen and (max-width: 768px) {
-    font-size: 30px;
+    font-size: 30px !important;
   }
-  @media only screen and (max-width: 415px) {
-    font-size: 25px;
+  @media only screen and (max-width: 440px) {
+    text-align: left;
+    width: 70vw;
+    font-size: 31px !important;
   }
 }
 

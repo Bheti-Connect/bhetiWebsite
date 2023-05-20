@@ -196,7 +196,7 @@ justify-content: center;
         @media screen and (max-width: 500px){
             width: 80%;
             margin-left: -60px;
-            margin-top: -70px;
+            margin-top: -50px;
         }
     }
 }

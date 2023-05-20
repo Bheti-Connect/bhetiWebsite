@@ -1,5 +1,8 @@
-import React from 'react';
+import React, {useState, useRef} from 'react';
 import styled from 'styled-components';
+import Confetti from 'react-confetti';
+import emailjs from "@emailjs/browser";
+
 
 const FormContainer = styled.div`
     max-width: 500px;
@@ -55,27 +58,112 @@ const FormContainer = styled.div`
     `;
 
     const ContactForm = () => {
+        const formRef = useRef();
+        const [form, setForm] = useState({
+            name: "",
+            email: "",
+            message: "",
+        });
+
+    const [isSubmitted, setIsSubmitted] = useState(false);
+
+    const [loading, setLoading] = useState(false);
+
+    const handleChange = (e) => {
+        const { target } = e;
+        const { name, value } = target;
+    
+        setForm({
+            ...form,
+            [name]: value,
+            });
+        };
+
     const handleSubmit = (e) => {
         e.preventDefault();
         // Add form submission logic here
+        emailjs
+        .send(
+            'service_akbs6hh',
+            'template_f2fn8af',
+            {
+                from_name: form.name,
+                to_name: "Bheti Connect",
+                from_email: form.email,
+                to_email: "contact@bheticonnect.com",
+                message: form.message,
+            },
+            'Cn4ybzjhZP0jRiNp1'
+            )
+            .then(
+            () => {
+                setLoading(false);
+                alert("Merci pour votre message, nous vous répondrons dans les plus brefs délais🙏🏾!");
+    
+                setForm({
+                name: "",
+                email: "",
+                message: "",
+                });
+            },
+            (error) => {
+                setLoading(false);
+                console.error(error);
+    
+                alert("Il, y a eu un problème lors de l'envoie du message🙏🏾!");
+            }
+        );
+        setIsSubmitted(true);
+        setTimeout(() => {
+            setIsSubmitted(false);
+        }, 6000);
     };
 
+    //Cn4ybzjhZP0jRiNp1 -- public key
+    //service_akbs6hh -- service id
+    //template_f2fn8af -- template id
     return (
         <FormContainer>
-            <form onSubmit={handleSubmit}>
+            {isSubmitted && <Confetti width={window.innerWidth} height={window.innerHeight} />}
+            <form onSubmit={handleSubmit} ref={formRef}>
                 <FormField>
                 <Label htmlFor="name">Votre nom complet</Label>
-                <Input type="text" id="name" name="name" required />
+                <Input 
+                    type="text" 
+                    id="name" 
+                    name="name"
+                    onChange={handleChange}
+                    placeholder='Ecrivez votre nom complet'
+                    value={form.name} 
+                    required 
+                />
                 </FormField>
                 <FormField>
                 <Label htmlFor="email">Votre Email</Label>
-                <Input type="email" id="email" name="email" required />
+                <Input 
+                    type="email" 
+                    id="email" 
+                    name="email"
+                    onChange={handleChange}
+                    placeholder='Ecrivez votre email'
+                    value={form.email} 
+                    required 
+                />
                 </FormField>
                 <FormField>
                 <Label htmlFor="message">Votre Message</Label>
-                <TextArea id="message" name="message" rows="5" placeholder='' required />
+                <TextArea 
+                id="message"
+                value={form.message} 
+                name="message" 
+                onChange={handleChange}
+                rows="5" 
+                placeholder="Que voulez-vous nous faire savoir ?"
+                required />
                 </FormField>
-                <Button type="submit">Envoyer</Button>
+                <Button type="submit">
+                {loading ? "Envoie en Cours..." : "Envoyer"}
+                </Button>
             </form>
         </FormContainer>
     );
