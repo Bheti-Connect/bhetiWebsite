@@ -133,8 +133,8 @@ const EconomicNewsStyled = styled.section`
                 color: ${props => props.theme.colorGrey4};
                 padding-bottom: 2rem;
                 text-align: justify;
-                line-height: 1.5;
-                width: 100%;
+                line-height: 1.47;
+                width: 95%;
                 font-size: 1.1rem;
                 @media only screen and (max-width: 525px) and (min-width: 425px){
                     font-size: 16px ;

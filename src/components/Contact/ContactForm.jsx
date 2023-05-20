@@ -74,6 +74,8 @@ const FormContainer = styled.div`
             message: "",
         });
 
+    const [touchedFields, setTouchedFields] = useState({});
+
     const [isSubmitted, setIsSubmitted] = useState(false);
 
     const [loading, setLoading] = useState(false);
