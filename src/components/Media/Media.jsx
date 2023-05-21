@@ -12,6 +12,7 @@ import LoaderMedia from "./LoaderMedia";
 import { axios_get, axios_post } from "../../utils/FunctionsComponent";
 import CardModalSuccess from "./SuccessStories/CardModalSuccess";
 import LinksAPI from "../../utils/LinksAPI";
+import { interviews } from "../../data/TestData";
 
 const Media = () => {
   const [currentPage, setCurrentPage] = useState(0);
@@ -46,7 +47,10 @@ const Media = () => {
 
   // GET data from API
   const getData = () => {
+    setData(interviews)
+    /*
     axios_get(LinksAPI.entrevues, handleSetData);
+    */
   };
 
   // Change Section of data : interview, Succes stories
