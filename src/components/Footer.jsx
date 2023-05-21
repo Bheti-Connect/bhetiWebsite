@@ -166,7 +166,6 @@ const FooterSectionStyled = styled.footer`
                 float: left;
                 }
             }
-
             .nav-item div{
                 @media all and (max-width: 768px){
                     margin-top: 15px;
@@ -185,7 +184,7 @@ const FooterSectionStyled = styled.footer`
             }
         }
         .logo-con{
-            flex: 5;
+            margin: 0 auto;
             align-items: left;
             .logo img{
                 width: 32%;
@@ -272,7 +271,7 @@ const FooterSectionStyled = styled.footer`
             width: 1100px;
         }
         @media all and (max-width: 1440px){
-            width: 950px;
+            width: 940px;
         }
         @media all and (max-width: 1080px){
             width: 900px;

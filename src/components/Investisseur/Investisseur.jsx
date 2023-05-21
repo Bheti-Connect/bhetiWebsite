@@ -358,7 +358,7 @@ const InvestisseurStyled = styled.section`
 const AllCards = styled.div`
 display: flex;
 width: 1200px;
-justify-content: space-around;
+justify-content: left;
 margin:auto;
 flex-wrap: wrap;
 
