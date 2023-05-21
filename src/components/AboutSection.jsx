@@ -69,12 +69,12 @@ const AboutSectionStyled = styled.section`
                 font-size: 2.45vw;
                 text-align: left;
                 width: 100%;
-                &::after{
+                /* &::after{
                     content: '';
                     position: absolute;
                     left: 0;
-                    width: 23%;
-                    height: 2px;
+                    width: 21%;
+                    height: 2.2px;
                     background-color: ${props => props.theme.colorAccent};
                     @media all and (max-width: 500px){
                         bottom: 80%;
@@ -84,7 +84,7 @@ const AboutSectionStyled = styled.section`
                         bottom: 80%;
                         width: 40%;
                     }
-                }
+                } */
                 @media all and (max-width: 768px) {
                     font-size: 2rem;
                 }

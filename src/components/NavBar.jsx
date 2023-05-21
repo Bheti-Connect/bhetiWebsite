@@ -58,14 +58,14 @@ const NavBar = () => {
                                     to='/media'
                                     className={({ isActive }) => (isActive ? 'link active' : 'link')}
                             >
-                                    Média 
+                                    Média
                             </NavLink>
                             <NavLink
                                     onClick={handleClick}
                                     to='/contact'
                                     className={({ isActive }) => (isActive ? 'link active' : 'link')}
                             >
-                                    Contact 
+                                    Contact
                             </NavLink>
                             <a href='/waitlist' className='connexion-hover link'>
                                     Connexion

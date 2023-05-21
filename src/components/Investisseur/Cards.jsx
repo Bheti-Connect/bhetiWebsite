@@ -1,5 +1,4 @@
-import axios from 'axios';
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import { useTheme } from '../../context/themeContext';
 import { handleSelect } from '../../utils/FunctionsComponent';
@@ -7,45 +6,24 @@ import { handleSelect } from '../../utils/FunctionsComponent';
 const Cards = ({item, setSelect, setModal}) => {
 
   const theme = useTheme()
-  const [imgProject, setImgProject] = useState(null)
-
-  // Format currency Euro
-  let currencyEuro = new Intl.NumberFormat('de-DE', { style : 'currency', currency: 'EUR'})
-
-  // Generate image
-  const handleImage = () => {
-    let source = "https://" + `picsum.photos/id/${Math.floor(Math.random() * 200)}/200/300`;
-    let source2 = "https://" + `picsum.photos/id/${item.id}/200/300`;
-    axios.get(source2).then((res) => {
-      setImgProject(source2)
-    }).catch((error) => {
-      setImgProject("https://picsum.photos/id/10/200/300")
-    })
-  }
-
-  useEffect(() => {
-    handleImage()
-  },[item])
-
 
   return (
     <CardItem onClick={() => handleSelect(setSelect, setModal, item)} theme={theme}>
           <CardHeader>
-            <img src={imgProject} alt='project'/>
+            <img src={item.image} alt='project'/>
           </CardHeader>
-
           <CardBody>
           <h3>{item.nom}</h3>
           <ul>
             {
               item.secteurs.length < 3 ? (
                 item.secteurs.map((secteur) => (
-                  <li key={secteur}>{secteur}</li>
+                  <li key={secteur} title='Secteurs'>{secteur}</li>
                 ))
               )
               : (
                 item.secteurs.slice(0,3).map((secteur) => (
-                  <li key={secteur}>{secteur}</li>
+                  <li key={secteur} title='Secteurs'>{secteur}</li>
                 ))
               )
             }
@@ -58,10 +36,9 @@ const Cards = ({item, setSelect, setModal}) => {
             )
           }
           <div className='boxPriceCountry'>
-            <p className='price'>{item.financement ? (currencyEuro.format(parseInt(item.financement))) : ("ne pas mentionné")}</p>
+            <p className='price'>{item.financement ? (item.financement) : ("ne pas mentionné")}</p>
             <p className='country'>{item.siege}</p>
           </div>
-          
           </CardBody>
     </CardItem>
   )
@@ -75,7 +52,7 @@ margin: 10px;
 border-radius: 10px;
 box-shadow: 0 2px 20px rgba(0, 0, 0, 0.2);
 overflow: hidden;
-width: 250px;
+width: 300px;
 height: auto;
 cursor: pointer;
 
@@ -85,18 +62,24 @@ cursor: pointer;
   
 }
 
+@media only screen and (max-width: 1400px) {
+  width: 290px;
+}
+
+@media only screen and (max-width: 1300px) {
+  width: 250px;
+}
+
 @media only screen and (max-width: 900px) {
   width: 215px;
 }
 
 @media only screen and (max-width: 768px) {
   width: 215px;
-
 }
 
 @media only screen and (max-width: 578px) {
   width: 195px;
-
 }
 
 @media only screen and (max-width: 508px) {
@@ -142,12 +125,8 @@ ul li {
   margin-top: 4px;
   background-color: #700b0b;
   color: white;
-  border-radius: 40px;
+  border-radius: 6px;
   padding:2px 9px;
-  width: 40%;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  overflow: hidden;
 }
 
 .more{
@@ -164,9 +143,9 @@ ul li {
 }
 
 .country {
-  border-radius: 50px;
+  border-radius: 6px;
   color: white;
-  background-color: #000000;
+  background-color: #34495E;
   padding: 2px 5px;
   margin-top: 8px;
   text-align:center;

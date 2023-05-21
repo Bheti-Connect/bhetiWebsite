@@ -47,14 +47,10 @@ const EconomicNewsStyled = styled.section`
     @media only  screen and (max-width: 440px) {
         position: relative;
         width: 100%;
-        height: 105vh !important;
+        height: 109vh !important;
     }
     @media only  screen and (max-width: 415px) {
-        height: 100vh;
-    }
-
-    @media only  screen and (max-width: 376px) {
-        height: 780px;
+        height: 103vh;
     }
 
     @media only  screen and (max-width: 321px) {

@@ -204,25 +204,27 @@
 }
 
 dt{
-	font-size: 1.1rem;
+	font-size: 1rem;
 	margin-bottom: 10px;
 }
 
 .appui__dt{
-	margin-top: 10px;
+	margin-top: 12px;
+	width: 98%;
 }
 
 dd {
 	display: list-item;
 	padding-inline-start: 1ch;
 	font-family: 'Montserrat', sans-serif;
-	font-size: 1.12rem;
-	line-height: .8;
+	font-size: 1rem;
+	line-height: .7;
+	margin-left: -13px;
 }
 
 dt{
 	font-family: 'Montserrat', sans-serif;
-	font-size: 1.1rem;
+	font-size: 1rem;
 	line-height: 1.5;
 }
 
