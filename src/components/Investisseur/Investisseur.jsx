@@ -487,7 +487,7 @@ const AllProject = styled.div`
 const HeaderText = styled.div`
 
 margin: 52px;
-width: 80vw;
+width: 90vw;
 margin: auto;
 h1 {
   position: relative;
