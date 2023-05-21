@@ -1,12 +1,12 @@
-import projet1 from "../assets/images/001.jpg"
-import projet2 from "../assets/images/002.jpg"
-import projet3 from "../assets/images/003.jpg"
-import source1 from "../assets/images/source1.jpg"
-import source2 from "../assets/images/source2.jpg"
-import source3 from "../assets/images/source3.jpg"
-import source4 from "../assets/images/source4.jpg"
-import source5 from "../assets/images/source5.jpg"
-import source6 from "../assets/images/source6.jpg"
+import projet1 from "../assets/images/projets/001.jpg"
+import projet2 from "../assets/images/projets/002.jpg"
+import projet3 from "../assets/images/projets/003.jpg"
+import source1 from "../assets/images/projets/source1.jpg"
+import source2 from "../assets/images/projets/source2.jpg"
+import source3 from "../assets/images/projets/source3.jpg"
+import source4 from "../assets/images/projets/source4.jpg"
+import source5 from "../assets/images/projets/source5.jpg"
+import source6 from "../assets/images/projets/source6.jpg"
 
 
 const projects = [
@@ -315,4 +315,36 @@ const projects = [
     }
 ]
 
-export default projects
+
+
+const successstories = [
+    {
+        id: 1,
+        nom: "Success 1",
+        description: "",
+        link: "",
+        image: ""
+    }
+]
+
+
+
+const interviews = [
+    {
+        id: 1,
+        title: "P.de Gaétan, PDG Fonds Pierre Castel",
+        subtitle: "Fonds Pierre Castel",
+        description: "Pierre De Gaétan Njikam, DG du fonds Pierre Castel, nous parle du « mythe du rêve africain ». Il revient aussi sur les variables à prendre en compte dans notre recherche d’opportunités dans les pays d’Afrique.",
+        point: "Nous savons que chaque fait se lit à travers sa propre histoire. Nous vous donnons donc tous les éléments de lecture sur l’Homme qu’est notre invité et son parcours depuis Yaoundé",
+        youtube: "https://youtu.be/y310_TOicJ0",
+        image: ""
+    }
+]
+
+
+
+export {
+    projects,
+    successstories,
+    interviews
+}
