@@ -12,7 +12,7 @@ import CardModal from './CardModal';
 import LoaderReact from './LoaderReact';
 import LinksAPI from './../../utils/LinksAPI';
 import { ModalConnect } from './ModalSweetAlert';
-import projects from '../../data/TestData';
+import { projects } from '../../data/TestData';
 
 const Investisseur = () => {
   // useState of pagination
