@@ -56,7 +56,7 @@ const FormTwo = () => {
       "Accept": "application/json",
   };
 
-    let data = await fetch('https://bheti-connect.smirltech.com/api/evaluations', {
+    let data = await fetch('https://api.bheticonnect.com/api/evaluations', {
       method: 'POST', 
       headers,
       body: JSON.stringify(values),

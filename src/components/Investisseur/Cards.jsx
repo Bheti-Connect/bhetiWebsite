@@ -7,14 +7,11 @@ const Cards = ({item, setSelect, setModal}) => {
 
   const theme = useTheme()
 
-
-
   return (
     <CardItem onClick={() => handleSelect(setSelect, setModal, item)} theme={theme}>
           <CardHeader>
             <img src={item.image} alt='project'/>
           </CardHeader>
-
           <CardBody>
           <h3>{item.nom}</h3>
           <ul>
@@ -42,7 +39,6 @@ const Cards = ({item, setSelect, setModal}) => {
             <p className='price'>{item.financement ? (item.financement) : ("ne pas mentionné")}</p>
             <p className='country'>{item.siege}</p>
           </div>
-          
           </CardBody>
     </CardItem>
   )
@@ -66,18 +62,24 @@ cursor: pointer;
   
 }
 
+@media only screen and (max-width: 1400px) {
+  width: 290px;
+}
+
+@media only screen and (max-width: 1300px) {
+  width: 250px;
+}
+
 @media only screen and (max-width: 900px) {
   width: 215px;
 }
 
 @media only screen and (max-width: 768px) {
   width: 215px;
-
 }
 
 @media only screen and (max-width: 578px) {
   width: 195px;
-
 }
 
 @media only screen and (max-width: 508px) {
@@ -125,7 +127,6 @@ ul li {
   color: white;
   border-radius: 6px;
   padding:2px 9px;
- 
 }
 
 .more{
@@ -144,7 +145,7 @@ ul li {
 .country {
   border-radius: 6px;
   color: white;
-  background-color: #000000;
+  background-color: #34495E;
   padding: 2px 5px;
   margin-top: 8px;
   text-align:center;
