@@ -89,7 +89,7 @@ const Formulaire = () => {
             setTimeout(() => {
                 setIsSubmitted(false);
                 history('/');
-            }, 5000);
+            }, 6000);
         };
 
         // Check if the email exists in the database  before submitting the form
@@ -148,7 +148,7 @@ const Formulaire = () => {
                                     value={formData.fullName}
                                     onChange={handleInputChange}
                                     onBlur={handleInputBlur}
-                                    placeholder='ex: Richard Cool'
+                                    placeholder='ex: Richard Nkulu'
                                     className={touchedFields.fullName && !formData.fullName.trim() ? 'error' : formData.fullName.trim() ? 'valid' : ''}
                                 />
                                 {touchedFields.fullName && !formData.fullName.trim() && <p className='error__message'>Veuillez saisir votre nom complet.</p> }
@@ -198,6 +198,9 @@ const Formulaire = () => {
 const FormulaireStyled = styled.section`
     @media all and (max-width: 768px) {
         height: 1100px;
+    }
+    @media all and (max-width: 440px) {
+        height: 700px;
     }
     .container {
         z-index: -100;
@@ -267,7 +270,17 @@ const FormulaireStyled = styled.section`
             display: block;
             margin: auto;
             width: 60%;
-
+        }
+        @media all and (max-width: 768px) {
+            width: 90vw;
+            margin: 130px auto;
+            h3{
+                font-size: 1.5rem;
+                width: 100%;
+            }
+            .success-image{
+                width: 90%;
+            }
         }
     }
     .container-child{
@@ -287,7 +300,7 @@ const FormulaireStyled = styled.section`
             margin: 13% 16%;
         }
         @media all and (max-width: 600px) {
-            margin: 18vh 10%;
+            margin: 62% 5% 0%;
         }
         .container-bheti{
             position: relative;
@@ -303,7 +316,7 @@ const FormulaireStyled = styled.section`
                 left: 25%;
                 margin: 150px 10px  10px;
                 @media all and (max-width: 440px){
-                    margin: 120px 0px  40px;
+                    margin: 40px 0px  0px;
                     left: 1%;
                 }
             }
@@ -311,6 +324,9 @@ const FormulaireStyled = styled.section`
                 font-size: 1.1rem;
                 margin: 10% 10% 0%;
                 color: ${props => props.theme.colorWhiteIsh};
+                @media all and (max-width: 600px){
+                    font-size: .95rem;
+                }
             }
             p{
                 font-size: 0.8rem;
@@ -335,7 +351,8 @@ const FormulaireStyled = styled.section`
                 border-top-right-radius: 20px;
             }
             @media all and (max-width: 440px) {
-                width: 80vw;
+                width: 90vw;
+                height: 220px;
             }
         }
         .container-form{
@@ -361,7 +378,8 @@ const FormulaireStyled = styled.section`
                         margin-bottom: 3%;
                     }
                     input {
-                        height: 150%;
+                        height: 140%;
+                        width: 110%;
                         border-radius: 10px;
                         font-size: .87rem;
                         padding: 1px 1px 0px 20px ;
@@ -371,6 +389,9 @@ const FormulaireStyled = styled.section`
                         -webkit-transition: 0.3s;
                         transition: 0.3s;
                         outline: none;
+                        @media all and (max-width: 440px){
+                            width: 110%;
+                        }
                     }
                     input[type=text]:focus {
                         border: 4px solid #9e3a3a;
@@ -388,7 +409,6 @@ const FormulaireStyled = styled.section`
                         }
                         @media all and (max-width: 1500px){
                             margin: 12px 13px;
-
                         }
                     }
                     @media all and (max-width: 768px){
@@ -397,15 +417,16 @@ const FormulaireStyled = styled.section`
                     @media all and (max-width: 440px){
                         margin: 10% 2% 5%;
                         label{
-                            margin-left: -50px;
-                            font-size: 17px;
+                            margin-left: -100px;
+                            font-size: 12.5px;
                         }
                         #website_label{
-                            margin-left: 0px
+                            margin-left: -2px
                         }
                         #email_label{
-                            margin-left: -90px
+                            margin-left: -130px
                         }
+                        
                     }
                 }
             }
@@ -463,7 +484,8 @@ const FormulaireStyled = styled.section`
                 border-bottom-left-radius: 20px;
             }
             @media all and (max-width: 440px){
-                width: 80vw;
+                width: 90vw;
+                height: 500px;
             }
         }
     }
