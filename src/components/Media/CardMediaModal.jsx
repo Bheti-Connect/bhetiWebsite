@@ -9,9 +9,6 @@ const CardMediaModal = ({select, setModal}) => {
 
   const theme = useTheme();
 
-  // Generate image
-  let source = "https://" + `picsum.photos/id/${select.id}/200/300`;
-
 
 
   return (
@@ -20,7 +17,7 @@ const CardMediaModal = ({select, setModal}) => {
             <div>
                 <div onClick={(e) => closeModal(e.currentTarget, setModal)} className="modal-close"><FontAwesomeIcon className="close" icon={faXmark} size="lg"/></div>
                 <Header>
-                  <p>{select.poste}</p>
+                  <p>{select.title}</p>
                 </Header>
 
                 <Body theme={theme}>
@@ -28,10 +25,11 @@ const CardMediaModal = ({select, setModal}) => {
                 <div className='media-detail'>
 
                   <div>
-                    <img src={source} alt='media'/>
+                    <img src={select.image2} alt='media'/>
                   </div>
 
                   <div className='detail'>
+                    <p>{select.subtitle}</p>
                     <p>{select.description}</p>
                   </div>
 
@@ -40,10 +38,7 @@ const CardMediaModal = ({select, setModal}) => {
                  {/* Info  */}
                  <div className='item-detail'>
                     <ul>
-                      <li><span>Entreprise  : </span>{select.entreprise}</li>
-                      <li><span>Représentant : </span>{select.representant}</li>
-                      <li><span>Secteur : </span>{select.secteur}</li>
-                      <li><span>Pays : </span>{select.pays}</li>
+                      <li>{select.point}</li>
                     </ul>
                   </div>
 
@@ -51,7 +46,7 @@ const CardMediaModal = ({select, setModal}) => {
                 <div className='item-detail'>
                   <h3>Lien du site</h3>
                   
-                  <iframe width="620" height="315" src="https://www.youtube.com/embed/2TlN_8oB6D4" title="Carrying You - Castle In The Sky - Tank Drum/ Steel Tongue Drum君をのせて 天空の城" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                  <iframe width="620" height="315" src={select.youtube} allowfullscreen></iframe>
           
                 </div>
 
