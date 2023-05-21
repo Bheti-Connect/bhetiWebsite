@@ -6,8 +6,6 @@ import { handleSelect } from '../../utils/FunctionsComponent';
 const CardsMedia = ({item, setSelect, setModal}) => {
 
   const [backColor, setBackColor] = useState(["#406880", "#978840", "#975450", "#636769", "#88456c", "#61534d"])
-  // Generate image API
-  let source = "https://" + `picsum.photos/id/${item.id}/800/900`;
   const theme = useTheme()
 
 
@@ -15,7 +13,7 @@ const CardsMedia = ({item, setSelect, setModal}) => {
 
     <CardItem onClick={() => handleSelect(setSelect, setModal, item)} theme={theme}>
         <CardHeader>
-          <img src={source} alt='media'/>
+          <img src={item.image2} alt='media'/>
         </CardHeader>
 
         <CardBody theme={theme}>
