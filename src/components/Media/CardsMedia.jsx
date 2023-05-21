@@ -5,12 +5,9 @@ import { handleSelect } from '../../utils/FunctionsComponent';
 
 const CardsMedia = ({item, setSelect, setModal}) => {
 
-  // Generate color for background
-  const [backColor, setBackColor] = useState("rgb(" + Math.floor(Math.random() * 255) + "," + Math.floor(Math.random() * 255) + "," + Math.floor(Math.random() * 255) + ")");
-
+  const [backColor, setBackColor] = useState(["#406880", "#978840", "#975450", "#636769", "#88456c", "#61534d"])
   // Generate image API
-  let source = 
-  
+  let source = "https://" + `picsum.photos/id/${item.id}/800/900`;
   const theme = useTheme()
 
 
@@ -31,7 +28,7 @@ const CardsMedia = ({item, setSelect, setModal}) => {
         <ul>
           {
             item.secteurs.map((secteur,  index) => (
-              <li key={index} title='Secteurs' style={{backgroundColor: `${backColor}`}}>{secteur}</li>
+              <li key={index} title='Secteurs' style={{backgroundColor: backColor[Math.floor(Math.random() * backColor.length)]}}>{secteur}</li>
             ))
           }
         </ul>
