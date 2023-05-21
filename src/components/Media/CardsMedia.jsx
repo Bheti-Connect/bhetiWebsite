@@ -44,7 +44,7 @@ margin: 10px;
 border-radius: 10px;
 box-shadow: 0 2px 20px rgba(0, 0, 0, 0.2);
 overflow: hidden;
-width: 360px;
+width: 320px;
 height: auto;
 cursor: pointer;
 background-color: ${props => props.theme.body};
@@ -54,7 +54,6 @@ background-color: ${props => props.theme.body};
   transform: scale(1.05);
 }
 
-
 `;
 
 const CardBody = styled.div`
@@ -63,7 +62,7 @@ padding: 10px;
 
 h3{
   font-style: normal;
-  font-family: 'Inter', sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-weight: 700;
   font-size: 15px;
   color: ${props => props.theme.colorBheti};
@@ -79,12 +78,12 @@ ul{
 }
 
 ul li {
+  font-family: 'Montserrat', sans-serif;
   margin-right:8px;
   margin-top: 4px;
   color: white;
   border-radius: 6px;
   padding:2px 9px;
- 
 }
 
 .boxTitle{

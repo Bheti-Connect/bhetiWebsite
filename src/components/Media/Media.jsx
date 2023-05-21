@@ -13,6 +13,7 @@ import { axios_get, axios_post } from "../../utils/FunctionsComponent";
 import CardModalSuccess from "./SuccessStories/CardModalSuccess";
 import LinksAPI from "../../utils/LinksAPI";
 import { interviews } from "../../data/TestData";
+import LinkedInPosts from "../LinkedinPost/LinkedInPosts";
 
 const Media = () => {
   const [currentPage, setCurrentPage] = useState(0);
@@ -184,83 +185,7 @@ const Media = () => {
   return (
     <Container>
       <SectionUne theme={theme}>
-        <div className="head-text">
-          <div className="icon-media">
-            <img src={UneMedia} alt="a la une icon" />
-          </div>
-
-          <div>
-            <h2>A LA UNE...</h2>
-            <p>
-              Chaque semaine, découvrez les figures comme les startups qui font
-              bouger les lignes sur les marchés africains
-            </p>
-          </div>
-        </div>
-        <div className="body-une">
-          <div className="cards-une">
-            <div className="card-1">1</div>
-
-            <div className="sub-card">
-              <div className="card-2">2</div>
-              <div className="card-3">3</div>
-            </div>
-          </div>
-
-          <div className="plus-consulter">
-            <h2>Les plus consultés</h2>
-
-            <div className="item-consult">
-              <a href="#">P.de Gaétan, PDG Fonds Pierre Castel</a>
-              <p>
-                Nelly Chatue-Diop, CEO Ejara, nous partage son parcours entre
-                l'Afrique et l'Europe et revient sur les enjeux de la
-                cryptomonaie.
-              </p>
-              <p className="item-date">15 decembre 2022</p>
-            </div>
-
-            <div className="item-consult">
-              <a href="#">P.de Gaétan, PDG Fonds Pierre Castel</a>
-              <p>
-                Nelly Chatue-Diop, CEO Ejara, nous partage son parcours entre
-                l'Afrique et l'Europe et revient sur les enjeux de la
-                cryptomonaie.
-              </p>
-              <p className="item-date">15 decembre 2022</p>
-            </div>
-
-            <div className="item-consult">
-              <a href="#">P.de Gaétan, PDG Fonds Pierre Castel</a>
-              <p>
-                Nelly Chatue-Diop, CEO Ejara, nous partage son parcours entre
-                l'Afrique et l'Europe et revient sur les enjeux de la
-                cryptomonaie.
-              </p>
-              <p className="item-date">15 decembre 2022</p>
-            </div>
-
-            <div className="item-consult">
-              <a href="#">P.de Gaétan, PDG Fonds Pierre Castel</a>
-              <p>
-                Nelly Chatue-Diop, CEO Ejara, nous partage son parcours entre
-                l'Afrique et l'Europe et revient sur les enjeux de la
-                cryptomonaie.
-              </p>
-              <p className="item-date">15 decembre 2022</p>
-            </div>
-
-            <div className="item-consult">
-              <a href="#">P.de Gaétan, PDG Fonds Pierre Castel</a>
-              <p>
-                Nelly Chatue-Diop, CEO Ejara, nous partage son parcours entre
-                l'Afrique et l'Europe et revient sur les enjeux de la
-                cryptomonaie.
-              </p>
-              <p className="item-date">15 decembre 2022</p>
-            </div>
-          </div>
-        </div>
+        {/* <LinkedInPosts /> */}
       </SectionUne>
 
       <SectionEcouteVoir theme={theme}>
@@ -381,7 +306,7 @@ const AllMedia = styled.div`
   .previousLinkClassName {
     color: ${(props) => props.theme.colorBheti};
     padding: 5px;
-    font-family: sans-serif;
+    font-family: 'Montserrat' sans-serif;
     border-radius: 5px;
     cursor: pointer;
     font-weight: 600;
@@ -410,7 +335,6 @@ const AllMedia = styled.div`
     border-radius: 50px;
     padding: 4px 7px;
   }
-
   .disabledClassName {
   }
 `;
@@ -441,10 +365,11 @@ const SectionUne = styled.div`
     h2 {
       color: ${(props) => props.theme.colorBheti};
       margin-bottom: 5px;
+      font-family: 'Montserrat', sans-serif;
     }
 
     p {
-      font-family: "Inter", sans-serif;
+      font-family: "Montserrat", sans-serif;
       font-style: normal;
       font-weight: 600;
       font-size: 18px;
@@ -487,7 +412,7 @@ const SectionUne = styled.div`
         color: ${(props) => props.theme.colorBheti};
         margin-bottom: 10px;
         font-weight: 600;
-        font-family: "Inter", sans-serif;
+        font-family: "Montserrat", sans-serif;
       }
 
       .item-consult {
@@ -602,7 +527,7 @@ const SectionEcouteVoir = styled.div`
   }
 
   p{
-    font-family: 'Inter', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     font-style: normal;
     font-weight: 600;
     font-size: 18px;
@@ -631,7 +556,7 @@ const SectionEcouteVoir = styled.div`
   padding-bottom: 5px;
   text-transform: uppercase;
   cursor: pointer;
-  font-family: 'Inter', sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-weight: 600;
   font-size: 15px;
   font-style: normal;
