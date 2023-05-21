@@ -7,6 +7,10 @@ import source3 from "../assets/images/projets/source3.jpg"
 import source4 from "../assets/images/projets/source4.jpg"
 import source5 from "../assets/images/projets/source5.jpg"
 import source6 from "../assets/images/projets/source6.jpg"
+import interview1 from "../assets/images/interviews/interview1.jpg"
+import interview2 from "../assets/images/interviews/interview2.jpg"
+import interview3 from "../assets/images/interviews/interview3.jpg"
+import interview4 from "../assets/images/interviews/interview4.png"
 
 
 const projects = [
@@ -334,10 +338,62 @@ const interviews = [
         id: 1,
         title: "P.de Gaétan, PDG Fonds Pierre Castel",
         subtitle: "Fonds Pierre Castel",
+        secteurs: ["Entrepreneuriat", "Fonds de dotation"],
         description: "Pierre De Gaétan Njikam, DG du fonds Pierre Castel, nous parle du « mythe du rêve africain ». Il revient aussi sur les variables à prendre en compte dans notre recherche d’opportunités dans les pays d’Afrique.",
         point: "Nous savons que chaque fait se lit à travers sa propre histoire. Nous vous donnons donc tous les éléments de lecture sur l’Homme qu’est notre invité et son parcours depuis Yaoundé",
         youtube: "https://youtu.be/y310_TOicJ0",
-        image: ""
+        image: interview1
+    },
+    {
+        id: 2,
+        title: "Bubacar Diallo, CEO Benoo",
+        secteurs: ["Energie", "Greentech"],
+        subtitle: "Benoo",
+        description: "Benoo accompagne les entreprises africaines dans le développement et la gestion de leurs activités commerciales. Elle opère essentiellement dans les zones mal connectées au réseau électrique et où le solaire peut être une alternative viable.",
+        point: "Bubacar nous partage son expérience du terrain et les réalités propres aux secteurs des énergies et à la Transition Digitale",
+        youtube: "https://youtu.be/0Vwwq0qOorg",
+        image: interview2
+    },
+    {
+        id: 3,
+        title: "Roger Nengwe, CEO Paysika",
+        secteurs: ["Fintech"],
+        subtitle: "Paysika",
+        description: "PaySika est la première néo-banque d'Afrique à offrir des services bancaires sur des messageries populaires telles que WhatsApp, Messenger et Telegram, en plus des applications mobiles et web.",
+        point: "Roger nous parle de son parcous et de comment son équipe et lui comptent démocratiser l'accès aux services financiers en Afrique Francophone.",
+        youtube: "https://youtu.be/1CWV95a-YrQ",
+        image: interview3
+    },
+    {
+        id: 4,
+        title: "Webinaire: rapprocher les entrepreneurs et les investisseurs d'Afrique francophone",
+        secteurs: ["Finance", "Investissement", "Webinaire"],
+        subtitle: "Webinaire",
+        description: "Rapprocher les entrepreneurs et les investisseurs d'Afrique francophone A l'ère où l'essentiel des investissements va en priorité aux pays d'Afrique anglophone, nous pensons qu'il est plus que crucial de se poser les bonnes questions et de créer les conditions nécessaires au développement de relation durable entre les entrepreneurs et les investisseurs intéressés par l'Afrique francophone.",
+        point: "Merci à Stezen BISSELOU-NZENGUE, CEO PaySika, Saïd SAKO, Directeur Investissement chez USAID Entrepreneuriat & Investissement et Aube Kouamé, CEO Bheti Connect pour leurs interventions.",
+        youtube: "https://youtu.be/h5IPEVqJ5XM",
+        image: interview4
+
+    },
+    {
+        id: 5,
+        title: "Webinaire: les aspects de l'entreprise les plus évalués par les investisseurs",
+        secteurs: ["Finance", "Investissement", "Webinaire"],
+        subtitle: "Webinaire",
+        description: "Vous vous demandez si votre projet respecte les pré requis pour convaincre des investisseurs et obtenir du financement? Trouver du financement pour développer votre activité nécessite de confronter votre projet aux attentes des investisseurs. Toutefois, cette étape de la levée de fonds peut être complexe lorsqu’on ignore les critères d’évaluation des investisseurs et la capacité de son projet à répondre à ces critères.",
+        point: "Découvrir les critères d'évaluation sur lesquels se fondent les décisions d’investissement des investisseurs !",
+        youtube: "https://youtu.be/Q6XxhOPYFSw",
+        image: interview4
+    },
+    {
+        id: 6,
+        title: "Webinaire: Entreprendre et investir dans un projet qui a du sens : comment ca marche ?",
+        secteurs: ["Finance", "Investissement", "Webinaire"],
+        subtitle: "Webinaire",
+        description: "Vous portez un projet à impact et souhaitez le développer ? Vous souhaitez investir dans des projets qui ont du sens ? Nous avons échangé le jeudi 2 juin à 19h30 (UTC+2) pour parler d’entrepreneuriat social et de comment rapprocher entrepreneurs et investisseurs à impact pour répondre aux défis de la crise économique, sociale et environnementale actuelle Rasmey partage avec nous les exigences et les enjeux de l’investissement à impact en Afrique subsaharienne et comment entrepreneurs et investisseurs peuvent collaborer pour répondre aux problématiques sociales et environnementales actuelles. Marwa partage avec nous comment valoriser les projets de l'économie sociale et solidaire sur les marchés africains ainsi que son expérience en tant qu’entrepreneure engagée.",
+        point: "Comment rapprocher entrepreneurs et investisseurs à impact pour répondre aux défis de la crise économique, sociale et environnementale actuelle ?",
+        youtube: "https://youtu.be/yP26X-5OCIs",
+        image: interview4
     }
 ]
 
