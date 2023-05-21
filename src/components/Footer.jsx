@@ -128,6 +128,13 @@ const FooterSectionStyled = styled.footer`
             }
             @media only screen and (max-width: 525px) and (min-width: 320px){
                 margin-top: 25px;
+                margin-left: 0px;
+            }
+            @media only screen and (max-width: 1500px){
+                margin-left: 60px;
+            }
+            @media only screen and (max-width: 1024px){
+                margin-left: 50px;
             }
         }
         .company {
@@ -182,6 +189,16 @@ const FooterSectionStyled = styled.footer`
                 margin: 10px auto;
                 width: 70%;
             }
+            @media all and (max-width: 1500px) {
+                margin-left: -50px;
+            }
+            @media only screen and (max-width: 1024px){
+                margin-left: 10px;
+            }
+            @media all and (max-width: 768px) {
+                margin: 10px auto;
+                width: 70%;
+            }
         }
         .logo-con{
             margin: 0 auto;
@@ -219,20 +236,8 @@ const FooterSectionStyled = styled.footer`
                 color: aliceblue;
                 width: 1.5rem;
                 height: 1.5rem;
-            }
-            .icon-linkedin{
                 :hover{
-                    color: #2677b5;
-                }
-            }
-            .icon-facebook{
-                :hover{
-                    color: #2872e7 ;
-                }
-            } 
-            .icon-instagram{
-                :hover{
-                    color: #a9388b ;
+                    color: ${props => props.theme.colorBheti};
                 }
             }
             @media only screen and (max-width: 768px) {
@@ -277,7 +282,7 @@ const FooterSectionStyled = styled.footer`
             width: 900px;
         }
         @media all and (max-width: 1024px) {
-            width: 680px;
+            width: 88vw;
         }
         @media all and (max-width: 768px){
             display: block !important;
