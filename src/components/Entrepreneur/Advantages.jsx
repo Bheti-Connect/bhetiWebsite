@@ -34,7 +34,7 @@ const Advantages = () => {
 													name={"Je demande l'accès"}
 											/>
 										</Link>
-									</div>
+									`</div>
 							</div>
 							
 							<figure className='image__figure'>
