@@ -9,7 +9,6 @@ import {FaSlack, FaLinkedinIn} from 'react-icons/fa'
 const JoinCommunity = () => {
     const theme = useTheme();
     return (
-
         <JoinCommunityStyled className='u-pad-lg-2' theme={theme}>
             <div className='title-con'>
                 <Title 
@@ -26,7 +25,7 @@ const JoinCommunity = () => {
                             <div className='inner slack-div'>
                                 <div className='left-side'>
                                     <p className='paragraphs slack'>
-                                    Rencontrez d’autres porteurs de projets en Afrique francophone ou dans la diaspora, et resté informé en exclusivité des prochaines rencontres entrepreneurs-investisseurs ! 
+                                        Rencontrez d’autres porteurs de projets en Afrique francophone ou dans la diaspora, et resté informé en exclusivité des prochaines rencontres entrepreneurs-investisseurs ! 
                                     </p>
                                 </div>
                                 <div className='button__div button_slack'>
