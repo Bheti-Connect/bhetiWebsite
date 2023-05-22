@@ -60,10 +60,10 @@ const Footer = () => {
                 <ul className="nav-b company">
                     <h4>Liens utiles</h4>
                     <li className="nav-item important-link">
-                        <a href="#">Contact</a>
+                        <a href="/contact">Contact</a>
                     </li>
                     <li className="nav-item important-link">
-                        <a href="#">F.A.Q</a>
+                        <a href="foire-aux-questions">F.A.Q</a>
                     </li>
                     <li className="nav-item important-link">
                         <a href="#">Politique de remboursements</a>

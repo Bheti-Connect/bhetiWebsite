@@ -150,7 +150,6 @@ const  PrivacyPolicyContainer = styled.div`
             }
         }
     }
-
 `
 
 export default PrivacyPolicy;
