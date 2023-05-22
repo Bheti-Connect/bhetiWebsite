@@ -17,6 +17,14 @@ import inter3 from "../assets/images/interviews/inter3.jpg"
 import inter4 from "../assets/images/interviews/inter4.jpg"
 import inter5 from "../assets/images/interviews/inter5.jpg"
 import inter6 from "../assets/images/interviews/inter6.jpg"
+import bizaoImage from "../assets/images/success/bizao_image.jpg"
+import bizaoIcon from "../assets/images/success/bizao_icon.jpg"
+import zazuuImage from "../assets/images/success/zazuu_image.jpg"
+import zazuuIcon from "../assets/images/success/zazuu_icon.jpg"
+import susuImage from "../assets/images/success/susu_image.jpg"
+import susuIcon from "../assets/images/success/susu_icon.jpg"
+import afrikamartImage from "../assets/images/success/afrikamart_image.jpg"
+import afrikamartIcon from "../assets/images/success/afrikamart_icon.jpg"
 
 
 const projects = [
@@ -327,18 +335,6 @@ const projects = [
 
 
 
-const successstories = [
-    {
-        id: 1,
-        nom: "Success 1",
-        description: "",
-        link: "",
-        image: ""
-    }
-]
-
-
-
 const interviews = [
     {
         id: 1,
@@ -406,6 +402,56 @@ const interviews = [
         youtube: "https://www.youtube.com/embed/yP26X-5OCIs",
         image: interview4,
         image2: inter3
+    }
+]
+
+
+
+
+const successstories = [
+    {
+        id: 1,
+        nom: "Bizao",
+        pays: ["Côte d'Ivoire", "Sénégal", "Cameroun", "Tunisie"],
+        secteurs: ["Fintech"],
+        stage: "",
+        type: "Levée de fonds",
+        image: bizaoImage,
+        icon: bizaoIcon,
+        linkedin:"https://www.linkedin.com/feed/update/urn:li:activity:6961597988766892032"
+    },
+    {
+        id: 2,
+        nom: "Zazuu",
+        pays: ["Royaume-Uni"],
+        secteurs: ["Fintech"],
+        type: "Levée de fonds",
+        stage: "",
+        image: zazuuImage,
+        icon: zazuuIcon,
+        linkedin: "https://www.linkedin.com/feed/update/urn:li:activity:6956518384989519872"
+    },
+    {
+        id: 3,
+        nom: "Afrikamart",
+        pays: [],
+        stage: "Seed",
+        secteurs: ["Logistique", "Transport", "Logistique & Transport", "Agritech"],
+        type: "Levée de fonds",
+        image: afrikamartImage,
+        icon: afrikamartIcon,
+        linkedin: "https://www.linkedin.com/feed/update/urn:li:activity:6953985650794614784"
+    },
+    {
+        id: 4,
+        nom: "Susu",
+        pays: [],
+        stage: "Pre seed",
+        type: "Levée de fonds",
+        secteurs: ["Santé", "Medtech"],
+        image: susuImage,
+        icon: susuIcon,
+        linkedin: "https://www.linkedin.com/feed/update/urn:li:activity:6905814829907746816"
     }
 ]
 
