@@ -8,6 +8,7 @@ import { closeModal } from "../../utils/FunctionsComponent";
 
 const CardModal = ({ select, setModal, connect }) => {
   const theme = useTheme();
+  const parts = select.description.split("<hr/>");
 
   const handleFlouter = () => {
     let flouter = document.querySelectorAll(".cible-flouter");
@@ -74,7 +75,15 @@ const CardModal = ({ select, setModal, connect }) => {
 
               <div className="detail">
                 <h3>Projet {select.nom}</h3>
-                <p>{select.description}</p>
+                {
+                  parts.map((part, index) => (
+                    <React.Fragment key={index}>
+                      {part}
+                      {index !== parts.length - 1 && <hr />}
+                    </React.Fragment>
+                  ))
+                }
+
               </div>
             </div>
 
