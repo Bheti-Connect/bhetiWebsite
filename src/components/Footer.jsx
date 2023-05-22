@@ -216,6 +216,7 @@ const FooterSectionStyled = styled.footer`
                 width: 70%;
                 margin: 0 auto;
             }
+            
     }
         .logo-con p{
             width: 80%;
