@@ -408,7 +408,7 @@ const AllCards = styled.div`
   width: 100%;
 
   .container-all-cards {
-    justify-content: space-around;
+    justify-content: start;
     flex-wrap: wrap;
     display: flex;
     width: 80%;

@@ -35,7 +35,9 @@ const CardSuccess = ({item, setSelect, setModal}) => {
                 <li key={index} style={{backgroundColor: backColor[Math.floor(Math.random() * backColor.length)]}}> {item} </li>
               })
             }
-            <li style={{backgroundColor: backColor[Math.floor(Math.random() * backColor.length)]}}>{item.stage}</li>
+            {
+              item.stage ? <li style={{backgroundColor: backColor[Math.floor(Math.random() * backColor.length)]}}>{item.stage}</li> : ""
+            }
             {
               item.pays.map((item, index) => {
                 <li key={index} style={{backgroundColor: backColor[Math.floor(Math.random() * backColor.length)]}}> {item} </li>
