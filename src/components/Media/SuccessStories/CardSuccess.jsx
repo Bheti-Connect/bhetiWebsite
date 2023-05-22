@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import { useTheme } from '../../../context/themeContext';
+import { successstories } from '../../../data/TestData';
 
 const CardSuccess = ({item, setSelect, setModal}) => {
 
@@ -8,10 +9,6 @@ const CardSuccess = ({item, setSelect, setModal}) => {
   // random image API :  https://random.imagecdn.app/500/150
 
   const theme = useTheme();
-
-   // Generate image
-   let source = "https://" + `picsum.photos/id/${Math.floor(Math.random() * 200)}/200/300`;
- 
  
    const handleSelect = () => {
      const body = document.querySelector("body");
