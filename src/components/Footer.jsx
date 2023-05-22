@@ -52,7 +52,7 @@ const Footer = () => {
                         <div className="f-text">
                             <h6>Adresse</h6>
                             <span>
-                            78 Avenue des Champs-Elysée <br/>75008 Paris, France
+                                78 Avenue des Champs-Elysée <br/>75008 Paris, France
                             </span>
                         </div>
                     </li>
@@ -64,9 +64,6 @@ const Footer = () => {
                     </li>
                     <li className="nav-item important-link">
                         <a href="foire-aux-questions">F.A.Q</a>
-                    </li>
-                    <li className="nav-item important-link">
-                        <a href="#">Politique de remboursements</a>
                     </li>
                     <li className="nav-item important-link">
                         <a href="/politique-de-confidentialite">Politique de confidentialité</a>
