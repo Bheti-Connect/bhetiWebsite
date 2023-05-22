@@ -79,7 +79,7 @@ const CardModal = ({ select, setModal, connect }) => {
                   parts.map((part, index) => (
                     <React.Fragment key={index}>
                       {part}
-                      {index !== parts.length - 1 && <hr />}
+                      {index !== parts.length - 1 && <hr className="lang-separation" />}
                     </React.Fragment>
                   ))
                 }
@@ -356,6 +356,11 @@ const Body = styled.div`
       margin-right: 20px;
       object-fit: cover;
       border-radius: 10px;
+    }
+    .detail {
+      .lang-separation{
+        margin: 3% 0%;
+      }
     }
   }
 
