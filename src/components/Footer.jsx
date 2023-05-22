@@ -69,7 +69,7 @@ const Footer = () => {
                         <a href="#">Politique de remboursements</a>
                     </li>
                     <li className="nav-item important-link">
-                        <a href="#">Politique de confidentialité</a>
+                        <a href="/politique-de-confidentialite">Politique de confidentialité</a>
                     </li>
                 </ul>
             </nav>
