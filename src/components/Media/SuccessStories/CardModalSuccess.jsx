@@ -9,10 +9,7 @@ import { closeModal } from '../../../utils/FunctionsComponent';
 
 const CardModalSuccess = ({select, setModal}) => {
 
-    const theme = useTheme(); 
-
-    // Generate image
-    let source = "https://" + `picsum.photos/id/${select.id}/200/300`; 
+    const theme = useTheme();
 
 
   return (
@@ -21,16 +18,16 @@ const CardModalSuccess = ({select, setModal}) => {
             <div>
                 <div onClick={(e) => closeModal(e.currentTarget, setModal)} className="modal-close"><FontAwesomeIcon className='close' icon={faXmark} size="lg"/></div>
                 <Header>
-                  <p>{select.pays}</p>
+                  <img src={select.icon} alt='media'/>
                 </Header>
                 
                 {/* Info  */}
                 <div className='item-detail'>
                     <ul>
-                      <li><span>Entreprise  : </span>{select.pays}</li>
-                      <li><span>Représentant : </span>{select.pays}</li>
-                      <li><span>Secteur : </span>{select.pays}</li>
-                      <li><span>Pays : </span>{select.pays}</li>
+                      <li><span>Secteur  : </span>  </li>
+                      <li><span>Type : </span></li>
+                      <li><span>Stage : </span> </li>
+                      <li><span>Pays d'implantation : </span></li>
                     </ul>
                 </div>
 
@@ -39,7 +36,7 @@ const CardModalSuccess = ({select, setModal}) => {
                 <div className='media-detail'>
 
                   <div className='image-modal'>
-                    <img src={source} alt='media'/>
+                    <img src={select.image} alt='media'/>
                   </div>
 
                 </div>
