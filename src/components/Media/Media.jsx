@@ -12,7 +12,7 @@ import LoaderMedia from "./LoaderMedia";
 import { axios_get, axios_post } from "../../utils/FunctionsComponent";
 import CardModalSuccess from "./SuccessStories/CardModalSuccess";
 import LinksAPI from "../../utils/LinksAPI";
-import { interviews } from "../../data/TestData";
+import { interviews, successstories } from "../../data/TestData";
 import LinkedInPosts from "../LinkedinPost/LinkedInPosts";
 
 const Media = () => {
@@ -57,11 +57,13 @@ const Media = () => {
   // Change Section of data : interview, Succes stories
   const changeSectionMenu = (position) => {
     if (position == "interview") {
-      axios_get(LinksAPI.entrevues, handleSetData);
+      //axios_get(LinksAPI.entrevues, handleSetData);
+      getData();
       setPaginationSelect("interview");
       setDisplayDataOf("interview");
     } else if (position == "success") {
-      axios_get(LinksAPI.stories, handleSetData);
+      //axios_get(LinksAPI.stories, handleSetData);
+      setData(successstories)
       setPaginationSelect("success");
       setDisplayDataOf("success");
     } else {
