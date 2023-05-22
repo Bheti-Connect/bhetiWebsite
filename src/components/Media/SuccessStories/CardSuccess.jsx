@@ -9,13 +9,13 @@ const CardSuccess = ({item, setSelect, setModal}) => {
   // random image API :  https://random.imagecdn.app/500/150
 
   const theme = useTheme();
- 
-   const handleSelect = () => {
-     const body = document.querySelector("body");
-     body.style.overflow = "hidden";
-     setSelect(item);
-     setModal(true);
-   }
+
+    const handleSelect = () => {
+      const body = document.querySelector("body");
+      body.style.overflow = "hidden";
+      setSelect(item);
+      setModal(true);
+    }
 
 
   return (
@@ -33,8 +33,6 @@ const CardSuccess = ({item, setSelect, setModal}) => {
             <li>{item.titre}</li>
             <li>{item.pays}</li>
           </ul>
-
-         
 
         </CardBody>
 

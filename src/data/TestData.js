@@ -25,6 +25,20 @@ import susuImage from "../assets/images/success/susu_image.jpg"
 import susuIcon from "../assets/images/success/susu_icon.jpg"
 import afrikamartImage from "../assets/images/success/afrikamart_image.jpg"
 import afrikamartIcon from "../assets/images/success/afrikamart_icon.jpg"
+import voyanceIcon from "../assets/images/success/voyance_icon.jpeg"
+import voyanceImage from "../assets/images/success/voyance_image.jpeg"
+import goIcon from "../assets/images/success/go_icon.jpg"
+import goImage from "../assets/images/success/go_image.jpg"
+import waspIcon from "../assets/images/success/wasp_icon.jpg"
+import waspImage from "../assets/images/success/wasp_image.jpg"
+import fidoIcon from "../assets/images/success/fido_icon.jpg"
+import fidoImage from "../assets/images/success/fido_image.jpg"
+import spleetIcon from "../assets/images/success/spleet_icon.jpg"
+import spleetImage from "../assets/images/success/spleet_image.jpg"
+
+
+
+
 
 
 const projects = [
@@ -452,7 +466,73 @@ const successstories = [
         image: susuImage,
         icon: susuIcon,
         linkedin: "https://www.linkedin.com/feed/update/urn:li:activity:6905814829907746816"
-    }
+    },
+    {
+        id: 5,
+        nom: "Voyance",
+        pays: [],
+        stage: "Pre seed",
+        type: "Levée de fonds",
+        secteurs: ["Tech", "Data"],
+        image: voyanceImage,
+        icon: voyanceIcon,
+        linkedin: "https://www.linkedin.com/feed/update/urn:li:activity:6941303539050672128/"
+    },
+    {
+        id: 6,
+        nom: "GOMYCODE",
+        pays: [],
+        stage: "Serie A",
+        type: "Levée de fonds",
+        secteurs: ["edTech"],
+        image: goImage,
+        icon: goIcon,
+        linkedin: "https://www.linkedin.com/feed/update/urn:li:activity:6941303539050672128/"
+    },
+    {
+        id: 7,
+        nom: "Waspito",
+        pays: [],
+        stage: "Serie A",
+        type: "Levée de fonds",
+        secteurs: ["Santé", "Medtech"],
+        image: waspImage,
+        icon: waspIcon,
+        linkedin: "https://www.linkedin.com/feed/update/urn:li:activity:6915955037785481216/"
+    },
+    {
+        id: 8,
+        nom: "Fido",
+        pays: [],
+        stage: "Serie A",
+        type: "Levée de fonds",
+        secteurs: ["services financiers"],
+        image: susuImage,
+        icon: susuIcon,
+        linkedin: "https://www.linkedin.com/feed/update/urn:li:activity:6951439680533880832/"
+    },
+    {
+        id: 9,
+        nom: "Fido",
+        pays: [],
+        stage: "Serie A",
+        type: "Levée de fonds",
+        secteurs: ["services financiers"],
+        image: fidoImage,
+        icon: fidoIcon,
+        linkedin: "https://www.linkedin.com/feed/update/urn:li:activity:6951439680533880832/"
+    },
+    {
+        id: 10,
+        nom: "Spleet",
+        pays: [],
+        stage: "Pre seed",
+        type: "Levée de fonds",
+        secteurs: ["services financiers"],
+        image: spleetImage,
+        icon: spleetIcon,
+        linkedin: "https://www.linkedin.com/feed/update/urn:li:activity:6905814829907746816"
+    },
 ]
 
 
