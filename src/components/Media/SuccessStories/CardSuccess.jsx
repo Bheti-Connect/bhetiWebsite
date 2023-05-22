@@ -58,7 +58,7 @@ margin: 10px;
 border-radius: 10px;
 box-shadow: 0 2px 20px rgba(0, 0, 0, 0.2);
 overflow: hidden;
-width: 360px;
+width: 320px;
 height: auto;
 cursor: pointer;
 background-color: ${props => props.theme.body};
