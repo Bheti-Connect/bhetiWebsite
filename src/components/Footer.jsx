@@ -271,10 +271,7 @@ const FooterSectionStyled = styled.footer`
             }
         }
         @media all and (max-width: 2500px){
-            width: 1100px;
-        }
-        @media all and (max-width: 1440px){
-            width: 940px;
+            width: 950px;
         }
         @media all and (max-width: 1080px){
             width: 900px;
