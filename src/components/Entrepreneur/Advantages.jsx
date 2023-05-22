@@ -28,7 +28,7 @@ const Advantages = () => {
 								
 								<div className='need-pitch'>
 										<Link 
-										to={'/eligibilite'}
+										to={'/waitlist'}
 										>
 											<Button 
 													name={"Je demande l'accès"}

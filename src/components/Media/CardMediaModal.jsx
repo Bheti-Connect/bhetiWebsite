@@ -36,10 +36,8 @@ const CardMediaModal = ({select, setModal}) => {
                 </div>
 
                  {/* Info  */}
-                 <div className='item-detail'>
-                    <ul>
-                      <li>{select.point}</li>
-                    </ul>
+                  <div className='item-detail'>
+                      <p>{select.point}</p>
                   </div>
 
                 {/* Video */}
@@ -119,7 +117,6 @@ text-align: justify;
   display: flex;
   justify-content: space-between;
 
-
   img {
     height: 200px;
     width: 280px;
@@ -127,12 +124,28 @@ text-align: justify;
     object-fit: cover;
     border-radius: 10px;
   }
+  .detail {
+    p{
+      margin-top: 10px;
+      font-size: 1rem;
+      font-family: 'Montserrat', sans-serif;
+      line-height: 1.45;
+    }
+  }
+}
+.item-detail{
+  p{
+      font-size: 1rem;
+      font-family: 'Montserrat', sans-serif;
+      line-height: 1.45;
+  }
 }
 
 .item-detail h3 {
   padding: 10px;
   padding-right: 0px;
   display: grid;
+  font-family: 'Montserrat', sans-serif;
   grid-template-columns: 10fr 1fr;
   background-color: ${props => props.theme.colorBheti};
   color: white;
@@ -146,10 +159,10 @@ text-align: justify;
 `;
 
 const Header = styled.div`
-
 p {
-    font-size: 150%;
+    font-size: 1.4rem;
     margin: 0 0 15px;
+    font-family: 'Montserrat', sans-serif;
 }
 
 `;
