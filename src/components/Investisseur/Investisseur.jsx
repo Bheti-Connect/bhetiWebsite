@@ -75,21 +75,27 @@ const Investisseur = () => {
 
       if (position == "pme")
       {
+        setData(projects.filter(item => item.type == "PME"))
+        /*
         let pmeFilter = {filters: [{field: 'company_type', value: 'pme'}]}
-
         axios.post(LinksAPI.projetsSearch, pmeFilter).then(res => {
           handleSetData(res.data)
         }).catch((error) => console.log(error))
+        */
 
         setPaginationSelect("pme")
 
       }else if(position == "startup")
       {
-        let startupFilter = {filters: [{field: 'company_type', value: 'startup'}]}
+        // filter data
+        setData(projects.filter(item => item.type == "Startup"))
 
+        /*
+        let startupFilter = {filters: [{field: 'company_type', value: 'startup'}]}
         axios.post(LinksAPI.projetsSearch, startupFilter).then(res => {
           handleSetData(res.data)
         }).catch((error) => console.log(error))
+        */
         setPaginationSelect("startup")
       }else{
         getData()
