@@ -13,6 +13,7 @@ import { axios_get, axios_post } from "../../utils/FunctionsComponent";
 import CardModalSuccess from "./SuccessStories/CardModalSuccess";
 import LinksAPI from "../../utils/LinksAPI";
 import { interviews } from "../../data/TestData";
+import LinkedInPosts from "../LinkedinPost/LinkedInPosts";
 
 const Media = () => {
   const [currentPage, setCurrentPage] = useState(0);
@@ -211,53 +212,40 @@ const Media = () => {
             <h2>Les plus consultés</h2>
 
             <div className="item-consult">
-              <a href="#">P.de Gaétan, PDG Fonds Pierre Castel</a>
+              <a href="https://www.linkedin.com/feed/update/urn:li:activity:7060912715522789377?updateEntityUrn=urn%3Ali%3Afs_feedUpdate%3A%28V2%2Curn%3Ali%3Aactivity%3A7060912715522789377%29">45 startups pré-sélectionnées...</a>
               <p>
-                Nelly Chatue-Diop, CEO Ejara, nous partage son parcours entre
-                l'Afrique et l'Europe et revient sur les enjeux de la
-                cryptomonaie.
+              La Société financière internationale (IFC) et Viva Technology 
+              ont annoncé les 45 start-ups présélectionnées pour les AfricaTech...
               </p>
-              <p className="item-date">15 decembre 2022</p>
+              <p className="item-date">Mai 2023</p>
             </div>
 
             <div className="item-consult">
-              <a href="#">P.de Gaétan, PDG Fonds Pierre Castel</a>
+              <a href="https://www.linkedin.com/posts/bheti-connect_bheticonnect-afrique-startup-activity-7055795292893237248-Y1QH?utm_source=share&utm_medium=member_desktop">Chargel, une société Sénégalaise lève 2.5 millions $ ... </a>
               <p>
-                Nelly Chatue-Diop, CEO Ejara, nous partage son parcours entre
-                l'Afrique et l'Europe et revient sur les enjeux de la
-                cryptomonaie.
+              Après avoir obtenu un financement de préamorçage de
+              750 000 dollars au près de Century Oak Ventures et Logos Venture Partners...
               </p>
-              <p className="item-date">15 decembre 2022</p>
+              <p className="item-date">Avril 2023</p>
             </div>
 
             <div className="item-consult">
-              <a href="#">P.de Gaétan, PDG Fonds Pierre Castel</a>
+              <a href="https://www.linkedin.com/posts/bheti-connect_entrepreneurs-innovation-entreprises-activity-7004031286008774656-qh9k?utm_source=share&utm_medium=member_desktop">Comment les entreprises s’imposent-elles sur leur marché en Afrique ?</a>
               <p>
-                Nelly Chatue-Diop, CEO Ejara, nous partage son parcours entre
-                l'Afrique et l'Europe et revient sur les enjeux de la
-                cryptomonaie.
+              Merci à AfricAngels de nous avoir fait confiance pour intervenir sur la thématique ... 
+              Ce fut un plaisir d'échanger sur cette thématique au moment où l'entrepreneuriat connait un réel essor sur le continent Africain...
               </p>
-              <p className="item-date">15 decembre 2022</p>
+              <p className="item-date">Décembre 2022</p>
             </div>
 
             <div className="item-consult">
-              <a href="#">P.de Gaétan, PDG Fonds Pierre Castel</a>
+              <a href="https://www.linkedin.com/posts/bheti-connect_lives-bheti-connect-activity-6971029367661457409-17uq?utm_source=share&utm_medium=member_desktop">Les lives Bheti Connect, c'est ....</a>
               <p>
-                Nelly Chatue-Diop, CEO Ejara, nous partage son parcours entre
-                l'Afrique et l'Europe et revient sur les enjeux de la
-                cryptomonaie.
+                <li>📌Plus de 500 participants</li> <br />
+                <li> 📌7 lives avec 8 invités qui font bouger les choses sur les marchés africains</li><br />
+                <li>📌Une pluralité de sujets qui portent sur les réels tendances économiques en Afrique</li>
               </p>
-              <p className="item-date">15 decembre 2022</p>
-            </div>
-
-            <div className="item-consult">
-              <a href="#">P.de Gaétan, PDG Fonds Pierre Castel</a>
-              <p>
-                Nelly Chatue-Diop, CEO Ejara, nous partage son parcours entre
-                l'Afrique et l'Europe et revient sur les enjeux de la
-                cryptomonaie.
-              </p>
-              <p className="item-date">15 decembre 2022</p>
+              <p className="item-date">Septembre 2022</p>
             </div>
           </div>
         </div>
@@ -381,7 +369,7 @@ const AllMedia = styled.div`
   .previousLinkClassName {
     color: ${(props) => props.theme.colorBheti};
     padding: 5px;
-    font-family: sans-serif;
+    font-family: 'Montserrat' sans-serif;
     border-radius: 5px;
     cursor: pointer;
     font-weight: 600;
@@ -410,7 +398,6 @@ const AllMedia = styled.div`
     border-radius: 50px;
     padding: 4px 7px;
   }
-
   .disabledClassName {
   }
 `;
@@ -430,13 +417,16 @@ const AllCards = styled.div`
 const Container = styled.div``;
 
 const SectionUne = styled.div`
-  margin-bottom: 80px;
+margin-bottom: 80px;
 
-  .head-text {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 50px 0;
+
+.head-text {
+  display: flex;
+  justify-content: flex-start;
+  align-items: start;
+  margin: 50px 0;
+  margin-left: 55px;
+
 
     h2 {
       color: ${(props) => props.theme.colorBheti};
@@ -450,38 +440,46 @@ const SectionUne = styled.div`
       font-size: 18px;
     }
 
-    .icon-media {
-      margin-right: 30px;
+  .icon-media {
+    margin-right: 30px;
 
-      img {
-        height: 70px;
-        width: 80px;
-      }
+    img {
+      height: 70px;
+      width: 80px;
     }
   }
+}
 
-  .body-une {
+.body-une {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;  
+  flex-direction: row;
+
+  @media only screen and (max-width: 1580px) {
+    width: 100%;
+    flex-direction: row;
+  }
+
+  @media only screen and (max-width: 1280px) {
+    width: 100%;
+  }
+
+  .plus-consulter {
     display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
+    flex-direction: column;
+    width: 30%;
+    
 
-    @media only screen and (max-width: 1280px) {
+    @media only screen and (max-width: 414px) {
       width: 100%;
-      margin-left: 0px;
+      background-color: white;
     }
 
-    .plus-consulter {
-      display: flex;
-      flex-direction: column;
-      width: 30%;
-      margin-left: 40px;
-      justify-content: center;
-      gap: 30px;
-
-      @media only screen and (max-width: 1280px) {
-        width: 100%;
-        margin-left: 0px;
-      }
+    @media only screen and (max-width: 1280px) {
+      width: 80%;
+  
+    }
 
       h2 {
         color: ${(props) => props.theme.colorBheti};
@@ -490,111 +488,148 @@ const SectionUne = styled.div`
         font-family: "Inter", sans-serif;
       }
 
-      .item-consult {
-        a {
+
+    .item-consult {
+      a{
+        
+        font-size: 17px;
+        
+        &:hover{
+          color:${props => props.theme.colorBheti};
           text-decoration: underline;
-          font-size: 17px;
-
-          &:hover {
-            color: ${(props) => props.theme.colorBheti};
-          }
-        }
-        p {
-          font-size: 14px;
-        }
-
-        .item-date {
-          text-align: right;
-          font-size: 11px;
-          margin-top: 10px;
         }
       }
-    }
+      p{
+        font-size: 14px;
+        text-align: start;
+        &:hover{
+          color:${props => props.theme.colorBheti};
+         
+        }
+      }
 
-    .cards-une {
-      display: flex;
+      .item-date {
+        text-align: right;
+        font-size: 11px;
+        margin-top: 10px;
+      }
+    }
+  }
+
+  .cards-une{
+    display:flex;
+    flex-direction: column;
+    width: 800px;
+    margin-left: 20px;
+
+
+    @media only screen and (max-width: 1280px) {
       flex-direction: column;
-      width: 600px;
+      width: 800px;
+  
+    }
 
-      @media only screen and (max-width: 1280px) {
-        flex-direction: column;
-        width: 1000px;
-      }
+    @media only screen and (max-width: 1280px) {
+      flex-direction: column;
+      width: 80%;
+  
+    }
 
-      .card-1 {
+    .card-1 {
+      width: 100%;
+      height: 250px;
+      border-radius: 10px;
+      background-image: url("https://media.licdn.com/dms/image/D4E22AQESJf1-PXsAkw/feedshare-shrink_1280/0/1684550172700?e=1687392000&v=beta&t=iGU8Kp2bJ_OJnH22nXI37dHijDyyWNhZIc_N8kdOvzs") ;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+      box-shadow: 5px 3px 3px #b86a6a;
+      cursor: pointer;
+    }
+
+    .sub-card {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-top: 15px;
+
+      .card-2{
         background-color: #700b0b;
-        width: 100%;
-        height: 238px;
-        border-radius: 20px;
-      }
-
-      .sub-card {
         display: flex;
-        justify-content: space-between;
-        align-items: flex-end;
-        margin-top: 15px;
+        justify-content: center;
+        align-items: center;
+        width: 48%;
+        height: 250px;
+        border-radius: 20px;
+        background-image: url("https://media.licdn.com/dms/image/D4D22AQEbCKn9KpRsAQ/feedshare-shrink_2048_1536/0/1682566161543?e=1687392000&v=beta&t=xtScCWmGg7quHqUVwU2j6YMWjEe9uBLvn5jhDT8mux8") ;
+        background-size: cover;
+        background-repeat: no-repeat;
+        box-shadow: 5px 3px 3px #b86a6a;
+        cursor: pointer;
+      }
 
-        .card-2 {
-          background-color: #700b0b;
-          width: 48%;
-          height: 250px;
-          border-radius: 20px;
-        }
+      .card-3{
+        background-color: #700b0b;
+        width: 48%;
+        height: 250px;
+        border-radius: 20px;
+        background-image: url("https://media.licdn.com/dms/image/D4E22AQGL9kpucb9Jkg/feedshare-shrink_1280/0/1684204180071?e=1687392000&v=beta&t=bdXKo7NF2QSX_yA0geJSVi1lUYNSHwvYJQtwXF-fLB8") ;
+        background-size: cover;
+        background-repeat: no-repeat;
+        box-shadow: 5px 3px 3px #b86a6a;
+        cursor: pointer;
+      }
+    }
 
-        .card-3 {
-          background-color: #700b0b;
-          width: 48%;
-          height: 250px;
-          border-radius: 20px;
-        }
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .head-text {
+    margin-left: 20px;
+    margin-right: 20px;
+
+    h2 {
+      margin-bottom: 5px;
+      font-size: 18px;
+    }
+
+    p {
+      font-weight: 600;
+      font-size: 15px;
+    }
+
+    .icon-media {
+      img {
+        height: 60px;
+        width: 50px;
       }
     }
   }
+}
 
-  @media only screen and (max-width: 768px) {
-    .head-text {
-      margin-left: 20px;
-      margin-right: 20px;
+@media only screen and (max-width: 578px) {
+}
 
-      h2 {
-        margin-bottom: 5px;
-        font-size: 18px;
-      }
+@media only screen and (max-width: 425px) {
+}
 
-      p {
-        font-weight: 600;
-        font-size: 15px;
-      }
+@media only screen and (max-width: 375px) {
+}
 
-      .icon-media {
-        img {
-          height: 60px;
-          width: 50px;
-        }
-      }
-    }
-  }
-
-  @media only screen and (max-width: 578px) {
-  }
-
-  @media only screen and (max-width: 425px) {
-  }
-
-  @media only screen and (max-width: 375px) {
-  }
-
-  @media only screen and (max-width: 320px) {
-  }
+@media only screen and (max-width: 320px) {
+}
 `;
 
 const SectionEcouteVoir = styled.div`
 
 .head-text {
   display:flex;
-  justify-content: center;
-  align-items: center;
-  margin: 50px 0;
+  justify-content: flex-start;
+  align-items: start;
+  margin-left: 55px;
 
   h2 {
     color: ${(props) => props.theme.colorBheti};
@@ -602,7 +637,7 @@ const SectionEcouteVoir = styled.div`
   }
 
   p{
-    font-family: 'Inter', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     font-style: normal;
     font-weight: 600;
     font-size: 18px;
@@ -631,7 +666,7 @@ const SectionEcouteVoir = styled.div`
   padding-bottom: 5px;
   text-transform: uppercase;
   cursor: pointer;
-  font-family: 'Inter', sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-weight: 600;
   font-size: 15px;
   font-style: normal;

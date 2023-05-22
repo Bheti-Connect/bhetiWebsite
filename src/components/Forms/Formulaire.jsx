@@ -197,7 +197,7 @@ const Formulaire = () => {
 
 const FormulaireStyled = styled.section`
     @media all and (max-width: 768px) {
-        height: 1100px;
+        height: 900px;
     }
     @media all and (max-width: 440px) {
         height: 700px;
@@ -286,9 +286,6 @@ const FormulaireStyled = styled.section`
     .container-child{
         display: flex;
         margin: 20% 25% 0%;
-        @media all and (max-width: 1500px) {
-            margin: 15% 17% 0%;
-        }
         @media all and (max-width: 1300px) {
             margin: 23% 19% 0%;
         }
@@ -297,10 +294,13 @@ const FormulaireStyled = styled.section`
         }
         @media all and (max-width: 768px) {
             display:block;
-            margin: 13% 16%;
+            margin: 40% 16%;
         }
         @media all and (max-width: 600px) {
-            margin: 62% 5% 0%;
+            margin: 60% 10% 0%;
+        }
+        @media all and (max-width: 440px) {
+            margin: 60% 5% 0%;
         }
         .container-bheti{
             position: relative;
@@ -315,6 +315,9 @@ const FormulaireStyled = styled.section`
                 width: 40%;
                 left: 25%;
                 margin: 150px 10px  10px;
+                @media all and (max-width: 768px){
+                    margin: 40px 0px  0px;
+                }
                 @media all and (max-width: 440px){
                     margin: 40px 0px  0px;
                     left: 1%;
@@ -324,7 +327,7 @@ const FormulaireStyled = styled.section`
                 font-size: 1.1rem;
                 margin: 10% 10% 0%;
                 color: ${props => props.theme.colorWhiteIsh};
-                @media all and (max-width: 600px){
+                @media all and (max-width: 768px){
                     font-size: .95rem;
                 }
             }
@@ -346,9 +349,13 @@ const FormulaireStyled = styled.section`
             }
             @media all and (max-width: 768px) {
                 width: 65vw;
-                height: 400px;
+                height: 300px;
                 border-bottom-left-radius: 0px;
                 border-top-right-radius: 20px;
+            }
+            @media all and (max-width: 600px) {
+                width: 80vw;
+                height: 220px;
             }
             @media all and (max-width: 440px) {
                 width: 90vw;
@@ -426,7 +433,6 @@ const FormulaireStyled = styled.section`
                         #email_label{
                             margin-left: -130px
                         }
-                        
                     }
                 }
             }
@@ -482,6 +488,10 @@ const FormulaireStyled = styled.section`
                 width: 65vw;
                 border-top-right-radius: 0px;
                 border-bottom-left-radius: 20px;
+            }
+            @media all and (max-width: 600px){
+                width: 80vw;
+                height: 500px;
             }
             @media all and (max-width: 440px){
                 width: 90vw;

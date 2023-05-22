@@ -19,6 +19,8 @@ import FormInvestisseur from './components/Investisseur/form/FormInvestisseur';
 import ErrorPage from './components/Error/ErrorPage';
 import Formulaire from './components/Forms/Formulaire';
 import Contact from './components/Contact/Contact';
+import PrivacyPolicy from './components/Footer-Elements/PrivacyPolicy';
+import Faq from './components/Footer-Elements/Faq';
 
 const App = () => {
   const theme = useTheme();
@@ -57,6 +59,9 @@ const App = () => {
             <Route path='waitlist' exact caseSensitive={false} element={<Formulaire />} />
             <Route path='contact' exact caseSensitive={false} element={<Contact />} />
             <Route path='pitch-deck' exact caseSensitive={false} element={<FormOne />} />
+            <Route path='politique-de-confidentialite' exact caseSensitive={false} element={<PrivacyPolicy />} />
+            <Route path='foire-aux-questions' exact caseSensitive={false} element={<Faq />} />
+
 
             {/* Route : form investisseur */}
             <Route path='form-investisseur' exact caseSensitive={false} element={<FormInvestisseur />} />
