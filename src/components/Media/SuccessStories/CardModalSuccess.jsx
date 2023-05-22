@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faXmark } from '@fortawesome/free-solid-svg-icons';
@@ -8,8 +8,8 @@ import { closeModal } from '../../../utils/FunctionsComponent';
 //import LinkPreview from './LinkPreview';
 
 const CardModalSuccess = ({select, setModal}) => {
-
-    const theme = useTheme();
+  const [backColor, setBackColor] = useState(["#406880", "#978840", "#975450", "#636769", "#88456c", "#61534d"]);
+  const theme = useTheme();
 
 
   return (
@@ -18,18 +18,31 @@ const CardModalSuccess = ({select, setModal}) => {
             <div>
                 <div onClick={(e) => closeModal(e.currentTarget, setModal)} className="modal-close"><FontAwesomeIcon className='close' icon={faXmark} size="lg"/></div>
                 <Header>
-                  <img src={select.icon} alt='media'/>
+                  <img src={select.icon} className='icon-success' alt='media'/>
+                  {/* Info  */}
+                  <ul>
+                    <li>
+                      <span className="text-head">Secteurs</span> :{" "}
+                      <ul className="secteurs">
+                        {select.secteurs.map((secteur, index) => (
+                          <li key={index} style={{backgroundColor: backColor[Math.floor(Math.random() * backColor.length)]}}>{secteur}</li>
+                        ))}
+                      </ul>
+                    </li>
+                    <li><span className="text-head">Type</span> : <span className='background' style={{backgroundColor: backColor[Math.floor(Math.random() * backColor.length)]}}>{select.type}</span></li>
+                    <li>
+                      <span className="text-head">Stage</span> : <span className='background' style={{backgroundColor: backColor[Math.floor(Math.random() * backColor.length)]}}>{select.stage ? select.stage : 'Vide'}</span>
+                    </li>
+                    <li>
+                      <span className="text-head">Pays d'implantation</span> :
+                      <ul className="secteurs">
+                        {select.pays.map((p, index) => (
+                          <li key={index} style={{backgroundColor: backColor[Math.floor(Math.random() * backColor.length)]}}>{p}</li>
+                        ))}
+                      </ul>
+                    </li>
+                  </ul>
                 </Header>
-                
-                {/* Info  */}
-                <div className='item-detail'>
-                    <ul>
-                      <li><span>Secteur  : </span>  </li>
-                      <li><span>Type : </span></li>
-                      <li><span>Stage : </span> </li>
-                      <li><span>Pays d'implantation : </span></li>
-                    </ul>
-                </div>
 
                 <Body theme={theme}>
 
@@ -150,10 +163,50 @@ const Body = styled.div`
 
 const Header = styled.div`
 
+margin-top: 20px;
+margin-bottom: 20px;
+
+.icon-success{
+  height: 150px;
+  width: 150px;
+}
+
 p {
     font-size: 150%;
     margin: 0 0 15px;
 }
+
+ul {
+    margin: 15px 0;
+
+    .secteurs {
+      display: inline-flex;
+      list-style: none;
+      font-size: 12px;
+      padding: 0;
+      margin-bottom: 0;
+      margin-top: 0;
+      li {
+        color: white;
+        border-radius: 6px;
+        padding: 2px 9px;
+        margin-right: 10px;
+        margin-bottom: 0;
+        margin-top: 0;
+      }
+    }
+  }
+
+  ul li {
+    margin-bottom: 8px;
+  }
+
+  .background{
+    color: white;
+    font-size: 12px;
+    border-radius: 6px;
+    padding: 2px 9px;
+  }
 
 `;
 
