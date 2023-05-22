@@ -212,53 +212,40 @@ const Media = () => {
             <h2>Les plus consultés</h2>
 
             <div className="item-consult">
-              <a href="#">P.de Gaétan, PDG Fonds Pierre Castel</a>
+              <a href="https://www.linkedin.com/feed/update/urn:li:activity:7060912715522789377?updateEntityUrn=urn%3Ali%3Afs_feedUpdate%3A%28V2%2Curn%3Ali%3Aactivity%3A7060912715522789377%29">45 startups pré-sélectionnées...</a>
               <p>
-                Nelly Chatue-Diop, CEO Ejara, nous partage son parcours entre
-                l'Afrique et l'Europe et revient sur les enjeux de la
-                cryptomonaie.
+              La Société financière internationale (IFC) et Viva Technology 
+              ont annoncé les 45 start-ups présélectionnées pour les AfricaTech...
               </p>
-              <p className="item-date">15 decembre 2022</p>
+              <p className="item-date">Mai 2023</p>
             </div>
 
             <div className="item-consult">
-              <a href="#">P.de Gaétan, PDG Fonds Pierre Castel</a>
+              <a href="https://www.linkedin.com/posts/bheti-connect_bheticonnect-afrique-startup-activity-7055795292893237248-Y1QH?utm_source=share&utm_medium=member_desktop">Chargel, une société Sénégalaise lève 2.5 millions $ ... </a>
               <p>
-                Nelly Chatue-Diop, CEO Ejara, nous partage son parcours entre
-                l'Afrique et l'Europe et revient sur les enjeux de la
-                cryptomonaie.
+              Après avoir obtenu un financement de préamorçage de
+              750 000 dollars au près de Century Oak Ventures et Logos Venture Partners...
               </p>
-              <p className="item-date">15 decembre 2022</p>
+              <p className="item-date">Avril 2023</p>
             </div>
 
             <div className="item-consult">
-              <a href="#">P.de Gaétan, PDG Fonds Pierre Castel</a>
+              <a href="https://www.linkedin.com/posts/bheti-connect_entrepreneurs-innovation-entreprises-activity-7004031286008774656-qh9k?utm_source=share&utm_medium=member_desktop">Comment les entreprises s’imposent-elles sur leur marché en Afrique ?</a>
               <p>
-                Nelly Chatue-Diop, CEO Ejara, nous partage son parcours entre
-                l'Afrique et l'Europe et revient sur les enjeux de la
-                cryptomonaie.
+              Merci à AfricAngels de nous avoir fait confiance pour intervenir sur la thématique ... 
+              Ce fut un plaisir d'échanger sur cette thématique au moment où l'entrepreneuriat connait un réel essor sur le continent Africain...
               </p>
-              <p className="item-date">15 decembre 2022</p>
+              <p className="item-date">Décembre 2022</p>
             </div>
 
             <div className="item-consult">
-              <a href="#">P.de Gaétan, PDG Fonds Pierre Castel</a>
+              <a href="https://www.linkedin.com/posts/bheti-connect_lives-bheti-connect-activity-6971029367661457409-17uq?utm_source=share&utm_medium=member_desktop">Les lives Bheti Connect, c'est ....</a>
               <p>
-                Nelly Chatue-Diop, CEO Ejara, nous partage son parcours entre
-                l'Afrique et l'Europe et revient sur les enjeux de la
-                cryptomonaie.
+                <li>📌Plus de 500 participants</li> <br />
+                <li> 📌7 lives avec 8 invités qui font bouger les choses sur les marchés africains</li><br />
+                <li>📌Une pluralité de sujets qui portent sur les réels tendances économiques en Afrique</li>
               </p>
-              <p className="item-date">15 decembre 2022</p>
-            </div>
-
-            <div className="item-consult">
-              <a href="#">P.de Gaétan, PDG Fonds Pierre Castel</a>
-              <p>
-                Nelly Chatue-Diop, CEO Ejara, nous partage son parcours entre
-                l'Afrique et l'Europe et revient sur les enjeux de la
-                cryptomonaie.
-              </p>
-              <p className="item-date">15 decembre 2022</p>
+              <p className="item-date">Septembre 2022</p>
             </div>
           </div>
         </div>
