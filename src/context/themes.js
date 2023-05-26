@@ -22,7 +22,7 @@ const themes = [
         colorGradientPrimary: 'linear-gradient(143.82deg, #554DDE 4.75%, rgba(85, 77, 222, 0) 61.12%)',
         colorGradientAccent: 'linear-gradient(132.34deg, #F44E77 -7.22%, rgba(244, 78, 119, 0) 77.9%)',
         colorGradientPrimary2: 'linear-gradient(171.21deg, #541010 -10.74%, #BDC3C7 112.82%, #BDC3C7 112.82%)',
-        colorGradientPrimary3: 'linear-gradient(300.81deg, #540000 -17.99%, #D0D3D4 111.32%, #D0D3D4 111.32%)',
+        colorGradientPrimary3: 'linear-gradient(450.81deg, #540000 -17.99%, #aeb0b0 111.32%, #aeb0b0 131.32%)',
         colorGray: '#6c757d',
         colorGrey: '#343a40',
         colorFont: '#515A5A',
@@ -37,7 +37,9 @@ const themes = [
         colorBorder: '#f8f9fa14',
         colorGrey9: '#212529b7',
         colorSlack: '#e91e62',
-        colorLinkedIn: '#2266C2'
+        colorSlackDeep: '#b8184d',
+        colorLinkedIn: '#2266C2',
+        colorLinkedInDeep: '#1b4c8f',
     },
     {
         name: 'light',

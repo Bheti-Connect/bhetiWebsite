@@ -1,20 +1,18 @@
-import { useState } from 'react';
+import { useState, useContext} from 'react';
 import styled from 'styled-components'
-import theLogo from '../assets/images/logo.png';
+import ScrollButtonContext from './ScrollButtonContext';
+import theLogo from '../assets/images/Logo.svg';
 import { useTheme } from '../context/themeContext';
 import { NavLink } from 'react-router-dom';
 
 const NavBar = () => {
-    // const navRef = useRef();
+    const { toggleButton } = useContext(ScrollButtonContext);
     const [etat, setEtat] = useState({clicked: false});
-
-    // const [rotate, setRotate] = useState(false);
-    // console.log("rotate status: ", rotate);
-    // rotate?document.body.style.overflow = "hidden": document.body.style.overflow = "auto";
-
-    // const stopScroll = () => {
-    //     setRotate(!rotate)
-    // }
+    
+    const handleNavbarToggle = () => {
+        toggleButton();
+        // Additional code for handling the navbar toggle
+      };
 
     const removeNavMenu = () => {
         setShow((show) => !show);
@@ -55,17 +53,22 @@ const NavBar = () => {
                             >
                                 Investisseur
                             </NavLink>
-                            <a href='https://bheticonnect.super.site/'>
-                                <NavLink
+                            <NavLink
                                     onClick={handleClick}
-                                    to='media'
+                                    to='/media'
                                     className={({ isActive }) => (isActive ? 'link active' : 'link')}
-                                >
-                                    Média 
-                                </NavLink>
-                            </a>
-                            <a href='https://app.bheticonnect.com/' className='connexion-hover link'>
-                                Connexion
+                            >
+                                    Média
+                            </NavLink>
+                            <NavLink
+                                    onClick={handleClick}
+                                    to='/contact'
+                                    className={({ isActive }) => (isActive ? 'link active' : 'link')}
+                            >
+                                    Contact
+                            </NavLink>
+                            <a href='/waitlist' className='connexion-hover link'>
+                                    Connexion
                             </a>
 
                         </div>
@@ -79,7 +82,6 @@ const NavBar = () => {
 }
 
 const NavBarStyled = styled.nav`
-
 .hero{
     display: flex;
 	justify-content: space-between;
@@ -92,16 +94,33 @@ const NavBarStyled = styled.nav`
             animation-delay: 0.2s;
             visibility: hidden;
             animation-fill-mode: forwards;
+            width: 20%;
             .theLogo{
                 margin-top: 10%;
-                width: 55%;
-                @media only screen and (max-width: 440px) and (min-width: 320px) {
-                    width: 100%;
-                    margin-left: -30px;
+                width: 10vw;
+                margin-right: 10rem;
+                @media only screen and (max-width: 1280px) {
+                    width: 11vw;
+                }
+                @media only screen and (max-width: 1024px) {
+                    width: 13vw;
+                }
+                @media only screen and (max-width: 860px) {
+                    width: 14vw;
+                }
+                @media only screen and (max-width: 768px) {
+                    width: 23vw;
+                    margin-left: -35px;
+                }
+                @media only screen and (max-width: 600px) {
+                    width: 25vw;
+                    margin-left: -40px;
+                }
+                @media only screen and (max-width: 440px){
+                    width: 39vw;
                 }
             }
 }
-
 .navigation {
         display: flex;
         grid-template-columns: 100px 1fr auto;
@@ -109,11 +128,9 @@ const NavBarStyled = styled.nav`
         align-items: center;
         flex-wrap: wrap;
         justify-content: space-between;
-
         @media only screen and (max-width: 2560px) {
             
         }
-
         @media only screen and (max-width: 1024px) {
             border-bottom: 0px solid ${props => props.theme.colorBg};
         }
@@ -131,17 +148,15 @@ const NavBarStyled = styled.nav`
         }
         .nav-menu {
             display: inline-block;
-            grid-template-columns: repeat(4, auto);
+            grid-template-columns: repeat(5, auto);
             grid-gap: 10px;
             text-align: center;
             width: 70vw;
             justify-content: end;
             margin-right: .2rem;
-
             @media only screen and (max-width: 2560px) {
                 
             }
-
             @media only screen and (min-width: 960px) {
                 display: grid;
                 justify-content: space-around;
@@ -169,11 +184,11 @@ const NavBarStyled = styled.nav`
     margin: 0 auto;
     .link {
     display: inline-block;
+    font-family: 'Montserrat', sans-serif;
     @media only screen and (min-width: 960px){
         margin-top: 15px;
     }
     color: ${props => props.theme.colorGrey};
-
     }
     .link:hover{
         color: ${props => props.theme.colorBheti};
@@ -189,14 +204,12 @@ const NavBarStyled = styled.nav`
     .link:hover {
         color: ${props => props.theme.colorBheti};
     }
-
     .connexion-hover{
         border: 2px solid ${props => props.theme.colorBheti};
-        padding: 5px;
+        padding: 5px 15px;
         border-radius: 50px;
         margin-top: 10px;
         transition: .3s;
-
         &:hover{
             background-color: ${props => props.theme.colorBheti};
             color: ${props => props.theme.colorWhite};
@@ -204,11 +217,10 @@ const NavBarStyled = styled.nav`
         }
     }
 }
-
 @media only screen and (max-width: 960px){
     .hero{
         .logo{
-            width: 40%;
+            width: 50%;
         }
     }
     .navigation {
@@ -218,7 +230,7 @@ const NavBarStyled = styled.nav`
         justify-content: flex-start;
         position: fixed;
         top: 0px;
-        right: -1500px;
+        right: -2000px;
         transition: all 0.6s ease;
         width: 100vw;
         height: 100vh;
@@ -235,8 +247,9 @@ const NavBarStyled = styled.nav`
                 position: relative;
                 text-align: center;
                 margin: auto;
+                font-family: 'Montserrat', sans-serif;
                 margin-top: 12vh;
-                font-size: 2.3rem;
+                font-size: 1.2rem;
                 margin-bottom: 70px;
                 width: 60%;
                 display: table;
@@ -247,7 +260,6 @@ const NavBarStyled = styled.nav`
                 border-radius: 0;
             }
         }
-        
         .nav-btn-container{
             margin: auto;
         }
@@ -259,21 +271,22 @@ const NavBarStyled = styled.nav`
             transition: all 0.6s ease;
             z-index: 3;
         }
-
     #menu-icon {
-            margin-top: 7%;
+            margin-top: 4%;
             right: 4%;
             z-index: 50;
             cursor: pointer;
             .fa-xmark {
                     color: ${props => props.theme.colorWhite};
-                }
+                } 
+            @media only screen and (max-width: 600px){
+                margin-top: 7%;
+            } 
         }
     #menu-icon i{
         visibility: visible;
     }
 }
-
 `;
 
 export default NavBar

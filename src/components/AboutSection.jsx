@@ -1,363 +1,172 @@
-import React, { useState, useEffect } from "react"
 import styled from 'styled-components';
 import { useTheme } from '../context/themeContext';
-import projectManagement from '../assets/images/analytics.png';
-import bhetiImage from '../assets/images/bheti-img.jpg';
-import giveMoney from '../assets/images/give-money.png'
-
-
+import bhetiImage from '../assets/images/pexels-christina-morillo-1181421.jpg';
+import Button from "./Button";
+import { Link } from 'react-router-dom';
 
 const AboutSection = () => {
     const theme = useTheme();
 
-    const [text, setText] = useState("")
-    const [fullText, setFullText] = useState(
-        "Publiez votre projet, précisez votre besoin et augmentez la visibilité de votre projet auprès d’investisseurs."
-        )
-
-    const [index, setIndex] = useState(0)
-
-    useEffect(() => {
-        if (index < fullText.length) {
-            setTimeout(() => {
-                setText(text + fullText[index])
-                setIndex(index + 1)
-            }, 40)
-            }
-        }, [index])
     return (
         <AboutSectionStyled  theme={theme}>
-            <div className='upper-container'>
-                <h3 className='title'>
-                    Développez et financez vos projets
-                </h3>
-                <h4>Grâce à la plateforme BHC, accédez à un écosystème composé d’experts, d’outils et d’informations… Bref, tout ce qu’il vous faut pour trouver du financement.</h4>
-            </div>
             <div className='lower-container'>
                 <div className='leftSide'>
-                    <div className='inner-container'>
-                        <h2>{text}</h2>
+                    <h3 className='title'>
+                        Développez et financez vos projets
+                    </h3>
+                    <p className='subtitle-text'>Grâce à la plateforme Bheti App, accédez à un écosystème composé d’experts, d’outils et d’informations… Bref, tout ce qu’il vous faut pour trouver du financement.</p>
+                    <div className='steps'>
+                        <div className='each-step'>
+                            <p>1. Publiez votre projet,</p>
+                            <p>2. Précisez votre besoin,</p>
+                            <p>3. Augmentez la visibilité de votre projet auprès d’investisseurs</p>
+                        </div>
                     </div>
-                </div>
-                <div className='rightSide'>
-                    <div className='image-div'>
-                        <img src={bhetiImage} className='about-img' alt='bheti-image' />
+                    <div className='test-button'>
+                        <Link
+                            to={'/waitlist'}
+                        > 
+                            <Button
+                                name='Tester Bheti App'
+                                icon={'fas fa-chevron-right'}
+                                arrow={'arrow'}
+                            />
+                        </Link>
                     </div>
                 </div>
             </div>
+                <div className='rightSide'>
+                        <img src={bhetiImage} className='about-img' alt='bheti-image' />
+                </div>
         </AboutSectionStyled>
         )
 }
 
 const AboutSectionStyled = styled.section`
     display: grid;
-    background: ${props => props.theme.colorBlack};
     grid-template-columns: 1fr 1fr;
     grid-gap: 2rem;
-    text-align: center;
-    padding-top: 10rem !important;
-    @media only screen and (max-width: 2560px) and (min-width: 1800px) {
-            height: 800px;
-        }
-    @media only screen and (max-width: 1800px) and (min-width: 1440px) {
-            height: 800px;
-        }
-    .left-about{
-        width: 90%;
-        margin-left: 10%;
-       
-        h3{
-            color: ${props => props.theme.colorWhite};
-        }
-        h4{
-            width: 50%;
-            color: ${props => props.theme.colorWhiteIsh};
-        }
-        p{
-            padding: 1.5rem 0;
-            font-size: 17.7px;
-            color: ${props => props.theme.colorGrey5};
-            @media only screen and (max-width: 525px) and (min-width: 425px){
-                padding: 1rem 0;
-                font-size: 14px;
-                margin-left: 35px;
-            }
-        }
-        
-        .title{
-            /*margin-left: 10%;*/
-            margin-bottom: 3%;
-            font-size: 1.6rem;
-            @media only screen and (max-width: 2560px){
-                font-size: 2.7rem;
-            }
-            @media only screen and (max-width: 1800px){
-                font-size: 2.4rem;
-                margin-bottom: 5%;
-            }
-            @media only screen and (max-width: 1440px){
-                font-size: 2.1rem;
-                margin-bottom: 9%;
-            }
-            @media only screen and (max-width: 1350px){
-                font-size: 2rem;
-                margin-bottom: 9%;
-            }
-            @media only screen and (max-width: 1024px){
-                font-size: 1.9rem;
-                width: 600px;
-                margin-bottom: 6%;
-                margin-top: -20%;
-                margin-left: 16vw;
-            }
-            @media only screen and (max-width: 960px){
-                font-size: 1.9rem;
-                margin-bottom: 8%;
-                margin-top: -25%;
-                margin-left: 60px;
-            }
-            @media only screen and (max-width: 768px){
-                font-size: 1.9rem;
-                margin-bottom: 5%;
-                margin-top: -10%;
-                margin-left: 50px;
-            }
-/* 
-            @media only screen and (max-width: 600px){
-                font-size: 1.9rem;
-                margin-bottom: 5%;
-                margin-top: -10%;
-                width: 150px;
-            }
-*/
-            @media only screen and (max-width: 425px){
-                font-size: 1.2rem;
-                margin-bottom: 5%;
-                margin-top: -2900%;
-                width: 350px;
-                margin-left: -2px;
-            }
-            @media only screen and (max-width: 375px){
-                font-size: 1.2rem;
-                margin-bottom: 5%;
-                margin-top: -2900%;
-                width: 350px;
-                margin-left: -2px;
-            }
-            @media only screen and (max-width: 320px){
-                font-size: 1.3rem;
-                width: 220px;
-                margin-left: 50px;
-            }
-        }
-        .sub_div{
-            margin: 100px 0;
-            text-align: left;
-            width: 90%;
-            .subTittle_elements{
-                .sub{
-                    font-size: 30px;
-                    font-family: sans-serif;
-                    color: ${props => props.theme.colorWhite};
-                }
-            }
-        }
-        .about-info{
-            .about-info-item{
-                display: grid;
-                grid-template-columns: 120px auto;
-                margin-bottom: 1.5rem;
-                p{
-                    padding: .7rem 0;
-                }
-                h5{
-                    font-size: 1.3rem;
-                    color: ${props => props.theme.colorWhite};
-                    @media only screen and (max-width: 525px) and (min-width: 425px){
-                        font-size: 16.3px;
-                        margin-top: 30px;
-                    }
-                    @media only screen and (max-width: 425px){
-                        display: none;
-                    }
-                }
-                .icon{
-                    background-color: ${props => props.theme.colorWhite};
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    align-self: flex-start;
-                    margin-right: 1rem;
-                    padding: 1rem;
-                    border-radius: 7px;
-                    .project-img{
-                        width: 60px;
-                    }
-                }
-                .text-container p{
-                    text-align: justify;
-                    text-justify: inter-word;
-                    @media only screen and (max-width: 2560px) and (min-width: 1800px){
-                        padding-bottom: 10%;
-                    }
-                    @media only screen and (max-width: 1800px) and (min-width: 1440px){
-                        padding-bottom: 10%;
-                    }
-                    @media only screen and (max-width: 768px) {
-                        width: 500px;
-                    }
-                    @media only screen and (max-width: 425px){
-                        font-size: 15px;
-                        width: 250px;
-                        margin-left: -50px;
-                    }
-                    @media only screen and (max-width: 320px){
-                        font-size: 12.1px;
-                        width: 200px;
-                        margin-left: -50px;
-                    }
-                }
-                @media only screen and (max-width: 2560px) and (min-width: 1800px) {
-                    margin-top: 70px;
-                }
-                @media only screen and (max-width: 2560px) {
-                    margin-left: 80px;
-                }
-                @media only screen and (max-width: 1024px) {
-                    width: 650px;
-                    margin-left: 15%;
-                    .icon {
-                        width: 70px;
-                        height: 65px;
-                        margin-top: 30%;
-                        .project-img{
-                            width: 60px;
-                            margin-top: 10%;
-                        }
-                    }
-                }
-                @media only screen and (max-width: 960px) {
-                    width: 600px;
-                    margin-left: 70px;
-                }
-                @media only screen and (max-width: 768px) {
-                    width: 400px;
-                    margin-left: 10px;
-                }
-                @media only screen and (max-width: 425px) {
-                    width: 300px;
-                }
-                @media only screen and (max-width: 320px) {
-                    width: 280px;
-                }
-
-                @media only screen and (max-width: 525px) and (min-width: 425px) {
-                    .icon {
-                        width: 50px;
-                        height: 55px;
-                        margin-top: 30%;
-                        .project-img{
-                            width: 40px;
-                            margin-top: 10%;
-                        }
-                    }
-                    .text-container {
-                        display: contents;
-                    }
-                }
-                @media only screen and (max-width: 425px){
-                    .icon{
-                        width: 50px;
-                        height: 55px;
-                        margin-top: 30%;
-                        .project-img{
-                            width: 40px;
-                            margin-top: 10%;
-                        }
-                    }
-                    .text-container {
-                        margin-top: 10%;
-                        display: contents;
-                    }
-                }
-            }
-        }
-        @media only screen and (max-width: 2560px) and (min-width: 1800px) {
-            width: 100%;
-            bottom: 5rem;
-
-            h4{
-                margin:auto;
-                width: 90%;
-            }
-
-        }
-        @media only screen and (max-width: 1800px) and (min-width: 1440px) {
-            width: 100%;
-            bottom: 5rem;
-        }
-
-        @media only screen and (max-width: 1440px){
-            grid-template-columns: none;
-            padding-top: 2rem !important;
-
-            h4{
-                width: 100%;
-                margin: auto;
-                text-align: center;
-                margin-right: -60px;
-            }
-
-            .sub_div{
-                .subTittle_elements{
-                    .sub{
-                        font-size: 20px;
-                    }
-            }
-        }
-        }
-
-        @media screen and (max-width: 376px) {
-                width: 330px;
-                margin-left: 5%;
-	            }
-        @media only screen and (max-width: 768px){
-            width: 100%;
-            bottom: 5rem;
-        }
-        h4{
-            color: ${props =>props.theme.colorGrey5};
-        }
+    background-color: ${props => props.theme.colorBlack};
+    margin-bottom: 6rem;
+    box-shadow: 0 5px 18px #212529b7;
+    @media only screen and (min-width: 960px){
+        margin-top: -1rem;
+    }
+    @media only screen and (max-width: 960px){
+        margin-top: -1.3rem;
     }
     .lower-container{
         display: flex;
         position: relative;
-        width: 90%;
-        margin: auto;
+        width:90%;
+        margin: 5% 10%;
         .leftSide{
             position: relative;
-            width: 50%;
-            .inner-container{
-                background-color: ${props =>props.theme.colorBg};
-                align-items: flex-start;
-                position: relative;
-                width: 80%;
-                margin: 30% auto;
-                padding: 100px 50px;
-            }
-        }
-        .rightSide{
-            position: relative;
-            .image-div{
-                width: 20%;
-                margin: 120px auto;
-                .about-img{
-                    width: 25vw;
-                    height: 35vw;
+            margin: 5% 0%;
+            width: 100%;
+            .title{
+                color: ${props => props.theme.colorWhite};
+                font-size: 2.45vw;
+                text-align: left;
+                width: 100%;
+                /* &::after{
+                    content: '';
+                    position: absolute;
+                    left: 0;
+                    width: 21%;
+                    height: 2.2px;
+                    background-color: ${props => props.theme.colorAccent};
+                    @media all and (max-width: 500px){
+                        bottom: 80%;
+                        width: 40%;
+                    }
+                    @media all and (max-width: 500px){
+                        bottom: 80%;
+                        width: 40%;
+                    }
+                } */
+                @media all and (max-width: 768px) {
+                    font-size: 2rem;
                 }
+                @media all and (max-width: 500px){
+                    font-size: 1.45rem;
+                    margin-bottom: 0.9rem;
+                }
+            }
+            .subtitle-text{
+                font-family:'Montserrat', sans-serif;
+                color: ${props => props.theme.colorGrey4};
+                margin: 5% 0;
+                line-height: 1.45;
+                width: 99%;
+                @media all and (max-width: 500px) {
+                    font-size: .85em;
+                    line-height: 1.34;
+                    width: 100%;
+                    text-align: left;
+                }
+            }
+            .steps{
+                position: relative;
+                margin: 4% 0;
+                .each-step{
+                    list-style: none;
+                    p{ 
+                        font-family:'Montserrat', sans-serif;
+                        color: ${props => props.theme.colorGrey4};
+                        font-size: 1.12rem;
+                        line-height: 1.6;
+                    }
+                }
+                @media all and (max-width: 500px) {
+                    text-align: left;
+                    .each-step{
+                        p{
+                            font-size: .85em;
+                            line-height: 1.3;
+                        }
+                    }
+                }
+            }
+            @media all and (max-width: 500px) {
+                width: 120% !important;
+            }
+        } 
+
+    @media only screen and (max-width: 1150px){
+        display: block;
+        width: 70%;
+        .leftSide{
+            position: relative;
+            width: 100%;
+            .inner-container{
+                position: relative;
+                width: 100%;
+                margin: auto;
             }
         }
 }
+    }
+    .rightSide{
+        overflow: hidden;
+        img{
+            width: 100%;
+            object-fit: cover;
+            height: 100%;
+            filter: grayscale(100%);
+            transition: all .3s ease-in-out;
+            &:hover{
+                filter: grayscale(0);
+                transform: scale(1.2) rotate(4deg);
+            }
+            @media only  screen and (max-width: 320px) {
+                width: 100%;
+            }
+        }
+    }
+    @media only screen and (max-width: 768px) {
+        display: inline-block;
+    }
 `;
 
 export default AboutSection

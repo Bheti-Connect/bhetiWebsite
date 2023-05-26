@@ -9,14 +9,10 @@ import {FaSlack, FaLinkedinIn} from 'react-icons/fa'
 const JoinCommunity = () => {
     const theme = useTheme();
     return (
-
         <JoinCommunityStyled className='u-pad-lg-2' theme={theme}>
             <div className='title-con'>
                 <Title 
                     name={'Rejoignez notre communauté'}
-                    subtext="Si vous souhaitez identifier d’autre porteurs de projets en Afrique francophone ou dans la diaspora, 
-                    être informé en exclusivité des dynamiques business de l’écosystème des affaires en Afrique, 
-                    être informé des prochaines rencontres entrepreneurs-investisseurs que nous organisons ?"
                 />
             </div>
             <div className='latest-container'>
@@ -25,34 +21,39 @@ const JoinCommunity = () => {
                         <img className='img-community' src={mediaImg} alt='' />
                     </div>
                     <div className='latest-text'>
-                        <h4 className='title'>
-                            Qu'est-ce qui se passe dans la communauté?
-                        </h4>
                         <div className='community'>
                             <div className='inner slack-div'>
                                 <div className='left-side'>
                                     <p className='paragraphs slack'>
-                                    Rencontrez d’autres porteurs de projets en Afrique francophone ou dans la diaspora, et resté informé en exclusivité des prochaines rencontres entrepreneurs-investisseurs ! 
+                                        Rencontrez d’autres porteurs de projets en Afrique francophone ou dans la diaspora, et resté informé en exclusivité des prochaines rencontres entrepreneurs-investisseurs ! 
                                     </p>
                                 </div>
-                                <div className='right-side'>
-                                    <a href='https://slack.com/'>
-                                        <FaSlack className='social-icon slack' />
-                                    </a>
-                                    Slack
+                                <div className='button__div button_slack'>
+                                        <a href='https://join.slack.com/t/bheticonnect/shared_invite/zt-1vpdzs7pd-Q5f49fTUU_Um9L_TJ9ci3g'>
+                                            <div className='our-community'>
+                                                <span id='slack-span'>
+                                                    <FaSlack className='social-icon slack' />
+                                                    <h5> Je rejoins la communauté</h5>
+                                                </span>                                            
+                                            </div>
+                                        </a>
                                 </div>
                             </div>
                             <div className='inner linkedin-div'>
                                 <div className='left-side'>
                                     <p className='paragraphs linkedin'>
-                                    Accédez à un contenu d’information hebdomadaire pour positionner votre projet en fonction de l’actualité du marché économique et financier africain
+                                        Accédez à un contenu d’information hebdomadaire pour positionner votre projet en fonction de l’actualité du marché économique et financier africain
                                     </p>
                                 </div>
-                                <div className='right-side'>
-                                    <a href='https://www.linkedin.com/company/bheti-connect'>
-                                        <FaLinkedinIn className='social-icon linkedin' />
-                                    </a>
-                                    Linkedin
+                                <div className='button__div'>
+                                        <a href='https://www.linkedin.com/company/bheti-connect'>
+                                            <div className='our-community'>
+                                                <span id='linkedin-span'>
+                                                    <FaLinkedinIn className='social-icon linkedin' />
+                                                    <h5> Je rejoins la communauté</h5>
+                                                </span>
+                                            </div>
+                                        </a>
                                 </div>
                             </div>
                         </div>
@@ -66,159 +67,39 @@ const JoinCommunity = () => {
 const JoinCommunityStyled = styled.div`
     .title-con{
         width: 1000px;
-        @media only screen and (max-width: 1440px) and (min-width: 1350px) {
+        @media only screen and (max-width: 1440px) {
             margin: auto ;
-            width: 60%;
-        }
-        @media only screen and (max-width: 1350px) and (min-width: 1250px) {
-            margin: auto ;
-            width: 60%;
-        }
-        @media only screen and (max-width: 1250px) and (min-width: 1024px) {
-            margin: auto ;
-            width: 60%;
-        }
-        @media only screen and (max-width: 1024px){
-            /*margin-left: -15%;*/
-            /*width: 600px;*/
-            width:70%;
-            margin:auto;
-        }
-        @media only screen and (max-width: 960px) {
-            /*margin-left: -150px;*/
-        }
-        @media only screen and (max-width: 768px) {
-            width:70%;
-            margin:auto;
+            width: 80%;
         }
         @media only screen and (max-width: 525px) and (min-width: 425px) {
             width:70%;
             margin:auto;
         }
         @media only screen and (max-width: 425px) {
-            width: 300px;
-            margin: auto;
+            width: 90%;
+            margin:auto;
         }
     }
     .latest-container{
-        margin-top: 1.5rem;
-        background-color: ${props => props.theme.colorBlack};
-        border-radius: 3px;
-        @media only screen and (max-width: 2560px) and (min-width: 1800px) {
-            width: 100%;
-        }
-        @media only screen and (max-width: 1800px) and (min-width: 1440px) {
-            width: 100%;
-        }
-        @media only screen and (max-width: 1440px) and (min-width: 1350px) {
-            width: 100%;
-        }
-        @media only screen and (max-width: 1350px) and (min-width: 1250px) {
-            width: 100%;
-        }
-        @media only screen and (max-width: 1250px) and (min-width: 1024px) {
-            width: 900px;
-            margin-left: -160px;
-        }
-        @media only screen and (max-width: 1024px) {
-            width: 650px;
-            height: auto;
-            /*margin-left: -18%;*/
-        }
-        @media only screen and (max-width: 960px) {
-            width: 100%;
-            /*margin-left: -180px;*/
-        }
-        @media only screen and (max-width: 768px) {
-            /*margin-left: -225px;*/
-        }
-        @media only screen and (max-width: 525px){
-            width: 100%;
-            /*height: 650px;
-            margin-left: -300px;*/
-        }
-        @media only screen and (max-width: 425px) {
-            width: 100%;
-            margin: auto;
-            border-radius: 0px;
-        }
         .latest-content{
             display: grid;
-            grid-template-columns: 40% auto;
+            grid-template-columns: 43% auto;
             padding: 10rem 10rem;
-            grid-gap: 2rem;
-            height: -300px;
-            img{
+            grid-gap: .8rem;
+            width: 95%;
+            height: 50%;
+            margin: -10% auto 1%;
+            .img-com-div{
+                position: relative;
                 width: 100%;
-                border-radius: 10px;
-                object-fit: cover;
-                @media only screen and (max-width: 2560px) and (min-width: 1800px) {
-                    width: 600px;
-                    margin-left: 40px;
-                }
-                @media only screen and (max-width: 1800px) and (min-width: 1440px) {
-                    width: 450px;
-                    margin-left: -80px;
-                }
-                @media only screen and (max-width: 1440px) and (min-width: 1350px) {
-                    width: 450px;
-                    margin-left: -80px;
-                    /*width: 380px;
-                    height: 250px;
-                    margin-left: -100px;
-                    margin-top: -80px;*/
-                }
-                @media only screen and (max-width: 1350px) and (min-width: 1250px) {
-                    width: 450px;
-                    height: 250px;
-                    margin-left: -100px;
-                }
-                @media only screen and (max-width: 1250px) and (min-width: 1024px) {
-                    width: 290px;
-                    height: 200px;
-                    margin-left: -120px;
-                }
-                @media only screen and (max-width: 1024px) {
-                    width: 500px;
-                    height: 280px;
-                    /*margin-left: -90px;*/
-                    margin-top: -100px;
-                }
-
-                @media only screen and (max-width: 820px) {
-                    width: 500px;
-                    height: 280px;
-                    margin-left: -50px;
-                    margin-top: -100px;
-                }
-                @media only screen and (max-width: 600px) {
-                    width: 200px;
-                    height: 280px;
-                    margin:auto;
-                    /*margin-left: 0;
-                    /*margin-top: -100px;
-                }
-                
-                @media only screen and (max-width: 425px){
-                    width: 300px;
-                    height: 110px;
-                    margin-left: -95px;
-                    margin-top: -120px;
-                }
-                @media only screen and (max-width: 400px){
-                    margin-left: -110px;
-                }
-                @media only screen and (max-width: 375px){
-                    width: 260px;
-                    height: 100px;
-                    margin-left: -100px;
-                }
-                @media only screen and (max-width: 320px){
-                    margin-left: -130px;
+                img {
+                    width: 100%;
+                    height: 100%;
+                    border-radius: 10px;
                 }
             }
             .latest-text{
-                width: 500px;
+                width: 100%;
                 margin-left: 4rem;
                 h4{
                     color: ${props => props.theme.colorWhite};
@@ -230,145 +111,211 @@ const JoinCommunityStyled = styled.div`
                     color: ${props => props.theme.colorClothes};
                     font-size: 1.2rem;
                 }
-                p{  
-                    color: ${props => props.theme.colorGrey4};
+                p{
+                    color: ${props => props.theme.colorBlack};
                     padding-bottom: 1.5rem;
                 }
                 .community{
                     display: inline-block;
                     .inner{
-                        display: flex;
+                        display: block;
                         .left-side{
-                            width: 90%;
+                            width: 100%;
                             .paragraphs{
-                                font-size: 18px;
-                            }
-                        }
-                        .right-side{
-                            margin: 0 30px;
-                            color: ${props => props.theme.colorGrey2};
-                            .social-icon{
-                                width: 50px;
-                                height: 50px;
-                                color: ${props => props.theme.colorGrey2};
-                                cursor: pointer;
-                            }
-                            .slack:hover{
-                                    color: ${props => props.theme.colorSlack};
-                                    transform: scale(.8);
-                            }
-                            .linkedin{
-                                &:hover{
-                                    color: ${props => props.theme.colorLinkedIn};                      
-                                    transform: scale(.8);
+                                font-family: 'Montserrat', sans-serif;
+                                line-height: 1.4;
+                                font-size: 17px;
+                                width: 99%;
+                                @media all and (max-width: 440px){
+                                    line-height: 1.6;
                                 }
                             }
+                            .linkedin{
+                                margin-top: 2rem;
+                                margin-bottom: -1rem;
+                            }
+                        }
+                        .button__div{
+                            display: block;
+                            width: 80%;
+                            .icon__name{
+                                margin: 0px  2px;
+                                color: ${props => props.theme.colorGrey2};
+                            }
+                            .social-icon{
+                                    position: relative;
+                                    width: 30px;
+                                    height: 30px;
+                                    color: ${props => props.theme.colorGrey2};
+                                    cursor: pointer;
+                                    margin: -7px 10px;
+                                }
+                                span{
+                                    padding: 21px .8px;
+                                    width: 95%;
+                                }
+                                #slack-span{
+                                    display: flex;
+                                    width: 300px;
+                                    border-radius: 50px;
+                                    color: ${props => props.theme.colorWhite};
+                                    background-color: ${props => props.theme.colorSlack};
+                                    &:hover{
+                                        background-color: ${props => props.theme.colorSlackDeep};
+                                    }
+                                }
+                                #linkedin-span{
+                                    display: flex;
+                                    width: 300px;
+                                    border-radius: 50px;
+                                    color: ${props => props.theme.colorWhite};
+                                    background-color: ${props => props.theme.colorLinkedIn};
+                                    &:hover{
+                                        background-color: ${props => props.theme.colorLinkedInDeep};
+                                    }
+                                }
+                                .our-community{
+                                    display: flex;
+                                }
+                        }
+                        .button_slack{
+                            margin-top: -20px;
+                            @media all and (max-width: 440px){
+                                margin-top: -18px !important;
+                            }
                         }
                     }
-                }
-                .anchor-tag{
-                    margin-left: 25%;
-                    @media only screen and (max-width: 425px) and (min-width: 320px){
-                        margin-left: -15%;
-                        width: 200px;
+                    @media all and (min-width: 1650px){
+                        margin-top: 3vw;
                     }
                 }
-                @media only screen and (max-width: 2560px) and (min-width: 1800px) {
-                    width: 600px;
-                    height: 200px;
-                    margin-left: 150px;
-                    margin-top: 7%;
-                }
-                @media only screen and (max-width: 1800px) and (min-width: 1440px) {
-                    width: 550px;
-                    height: 200px;
-                    margin-left: 70px;
-                    margin-top: 2%;
-                }
-                @media only screen and (max-width: 1440px) and (min-width: 1350px) {
-                    width: 500px;
-                    height: 200px;
-                    margin-left: 20px;
-                    margin-top: -15%;
-                }
-                @media only screen and (max-width: 1350px) and (min-width: 1250px) {
-                    width: 500px;
-                    height: 200px;
-                    margin-left: 10px;
-                    margin-top: -2%;
-                }
-                @media only screen and (max-width: 1250px) and (min-width: 1024px) {
-                    width: 450px;
-                    height: 200px;
-                    margin-left: -23px;
-                    margin-top: -10%;
-                }
-                @media only screen and (max-width: 1024px) {
-                    width: 550px;
-                    height: 190px;
-                    margin-left: -260px;
-                    margin-top: 70%;
-                }
-                @media only screen and (max-width: 425px){
-                    width: 320px;
-                    height: 400px;
-                    margin-left: -160px;
-                    margin-top: 40%;
-                }
-                @media only screen and (max-width: 320px){
-                    width: 250px;
-                    height: 350px;
-                    margin-left: -140px;
-                    margin-top: 60%;
-                    p{
-                        font-size: .9rem;
-                    }
-                    h4 {
-                        font-size: 1.2rem;
-                    }
-                    h6 {
-                        font-size: 1rem;
-                    }
-                }
-                .anchor-tag {
-                    margin-top: 40px;
-                    margin: 1;
-                    @media only screen and (max-width: 425px) {
-                        margin-left: 5px;
-                    }
-                    @media only screen and (max-width: 400px) {
-                        margin-left: 17px;
-                    }
-                    @media only screen and (max-width: 375px) {
-                        margin-left: -60px;
+        }
+        @media only screen and (min-width: 1650px){
+            margin: -8% auto 1%;
+        }
+        @media only screen and (max-width: 1440px){
+            padding: 10rem 7rem;
+        }
+        @media only screen and (max-width: 1350px){
+            padding: 10rem 5rem;
+        }
+        @media only screen and (max-width: 1250px){
+            padding: 10rem 3rem;
+        }
+        @media only screen and (max-width: 1100px){
+            .img-com-div{
+                grid-column-start: 1;
+                grid-column-end: 3;
+                width: 60vw;
+                margin: -10% auto;
+            }
+            .latest-text{
+                position: relative;
+                width: 50vw;
+                margin: 40% auto;
+                .community{
+                    .inner{
+                        .button__div{
+                            width: 40%;
+                            margin: 0 auto;
+                        }
                     }
                 }
             }
         }
+        @media only screen and (max-width: 600px){
+            .img-com-div{
+                width: 85vw;
+                height: 30vh;
+                margin: -38% 0;
+                margin-left: -23px;
+                .img-community{
+                    width: 100%;
+                }
+
+            }
+            .latest-text{
+                position: relative;
+                margin-top: 100%;
+                .community{
+                    width: 100%;
+                    .inner{
+                        width: 100%;
+                        .left-side{
+                            margin: 0 auto;
+                            width: 100%;
+                            p{
+                                text-align: left;
+                                font-size: 15.5px !important;
+                            }
+                        }
+                        .button__div{
+                            margin: 0 auto;
+                            width: 100%;
+                        }
+                    }
+                }
+            }
+        }
+        @media only screen and (max-width: 440px){
+            .latest-text{
+                .community{
+                    width: 80vw;
+                    margin: 0 auto;
+                    .inner{
+                        width: 100%;
+                        .left-side{
+                            margin: 0 auto;
+                            width: 100%;
+                            p{
+                                text-align: left;
+                                font-size: 15.5px !important;
+                            }
+                        }
+                        .button__div{
+                            width: 100%;
+                            .social-icon{
+                                    position: relative;
+                                    width: 25px;
+                                    height: 25px;
+                                    color: ${props => props.theme.colorGrey2};
+                                    cursor: pointer;
+                                    margin: -4px 10px;
+                            }
+                                #slack-span{
+                                    height: 55px;
+                                    width: 250px;                                   
+                                }
+                                #linkedin-span{
+                                    height: 55px;
+                                    width: 250px;
+                                }
+                                .our-community{
+                                    display: flex;
+                                    h5{
+                                        font-size: 14px;
+                                    }
+                                }
+                        }
+                    }
+                }
+            }
+        }
+        @media only screen and (max-width: 375px){
+            .latest-text{
+                .community {
+                    margin-left: -25px;
+                }
+            }
+        }
     }
-    .latest-controlls{
-        display: flex;
-        justify-content: center;
-        margin-top: 2.5rem;
-        .control{
-            width: 1rem;
-            height: 1rem;
-            border-radius: 50%;
-            margin: 0 0.2rem;
-            cursor: pointer;
-        }
-        .control-1{
-            background-color: ${props => props.theme.colorAccent};
-        }
-        .control-2{
-            background-color: ${props => props.theme.colorGrey9};
-            transform: scale(0.85);
-        }
-        .control-3{
-            background-color: ${props => props.theme.colorGrey9};
-            transform: scale(0.6);
-        }
+    @media only screen and (max-width: 1100px){
+        height: 850px;
     }
+    @media only screen and (max-width: 768px){
+        height: 750px;
+    }
+}
 `;
 
 export default JoinCommunity;

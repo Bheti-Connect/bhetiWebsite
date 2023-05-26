@@ -2,11 +2,10 @@ import styled from 'styled-components';
 import { useTheme } from 'styled-components';
 import MethodCard from './MethodCard';
 import Title from './Title';
+import {FaClipboardList} from 'react-icons/fa'
 import checking from '../assets/images/list.png';
 import investors from '../assets/images/investor.png';
 import layout from '../assets/images/layout.png';
-import conditions from '../assets/images/contract.png';
-
 
 
 const MethodSection = () => {
@@ -20,22 +19,18 @@ const MethodSection = () => {
                 />
             </div>
             <div className='methods-con' >
-                <MethodCard
-                    title={"Nous préparons votre documentation"}
-                    desc={'BP, Pitch deck, Etats financiers.'}
+                <MethodCard 
+                    desc={'Nous préparons votre documentation BP, Pitch deck, Etats financiers.'}
                     icon={checking}
                 />
                 <MethodCard
-                    title={"Nous contactons et partageons"}
-                    desc={'votre besoin de financement à nos partenaires - investisseurs.'}
+                    desc={'Nous contactons et partageons votre besoin de financement à nos partenaires - investisseurs.'}
                     icon={investors}
                 />
                 <MethodCard
-                    title={"Nous vous accompagnons"}
-                    desc={'dans les négociations autour du montant de l’investissement, la valorisation de l’entreprise et les conditions de financement.'}
+                    desc={'Nous vous accompagnons dans les négociations autour du montant de l’investissement, la valorisation de l’entreprise et les conditions de financement.'}
                     icon={layout}
                 />
-            
             </div>
         </MethodSectionStyled>
     )
@@ -43,6 +38,16 @@ const MethodSection = () => {
 
 const MethodSectionStyled = styled.section`
     margin: 60px 80px 100px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    @media all and (max-width: 768px) {
+
+    }
+    @media all and (max-width: 425px) {
+        margin-top: -35px;
+    }
+
     
     .methods-con{
         display: grid;
@@ -54,31 +59,50 @@ const MethodSectionStyled = styled.section`
             width: 90%;
             margin:auto;
         }
-
         @media only screen and (max-width: 768px) {
             grid-template-columns: none;
+            width: 300px;
         }
-
-        @media only screen and (max-width: 425px) {
-            margin-left: -4vw ;
+        @media only screen and (max-width: 425px){
+            margin-left: -7%;
         }
-        @media only screen and (max-width: 376px) {
-            margin-left: -0.2vw ;
+        @media only screen and (max-width: 375px){
+            margin-left: -20%;
         }
     }
 
     .title-con {
+        width: 60vw;
+        @media only screen and (max-width: 2500px) {
+            width: 70% !important;
+        }
+        @media only screen and (max-width: 768px) {
+            width: 100% !important;
+        }
         @media only screen and (max-width: 425px) {
-            width: 120%;
             margin-left: -28px;
         }
         @media only screen and (max-width: 400px) {
             width: 130%;
-            margin-left: -30px;
+            
+            h3 {
+                width: 100%;
+                font-size: 1.5rem;
+                text-align: center;
+            }
         }
         @media only screen and (max-width: 375px) {
-            width: 120%;
-            margin-left: -20px;
+            width: 100%;
+            margin: auto;
+        }
+        @media only screen and (max-width: 280px) {
+            text-align: center;
+
+            h3 {
+                font-size: 1.5rem;
+                text-align: center;
+                margin-left: -20px;
+            }
         }
     }
 `;

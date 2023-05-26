@@ -56,7 +56,7 @@ const FormTwo = () => {
       "Accept": "application/json",
   };
 
-    let data = await fetch('https://bheti-connect.smirltech.com/api/evaluations', {
+    let data = await fetch('https://api.bheticonnect.com/api/evaluations', {
       method: 'POST', 
       headers,
       body: JSON.stringify(values),
@@ -85,10 +85,7 @@ const FormTwo = () => {
     <FormOuterWrapper>
       <Wrap>
         <FormType
-          formHeading={`Evaluez l'éligibilité de votre projet 
-        à la levée de fonds`}
-          formSecondHeading={`Profitez d'un diagnostic gratuit de votre projet pour vérifier votre éligibilité à la levée de fonds !`}
-          formThirdHeading={` Complétez ce formulaire et un de nos experts vous contactera pour votre audit gratuit.`}
+        formHeading={`Rejoindre la liste d’attente pour accéder à l’application dès quelle sera disponibe.`}
         />
         <>
           {activeStep === steps.length ? (

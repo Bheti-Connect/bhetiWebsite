@@ -2,7 +2,7 @@ import {useState, useEffect} from 'react'
 import styled from 'styled-components'
 import Button from '../Button';
 import { useTheme } from '../../context/themeContext';
-
+import { Link } from 'react-router-dom';
 
 const Accueil = () => {
     const theme = useTheme();
@@ -23,26 +23,29 @@ const Accueil = () => {
     return (
         <AccueilStyled  theme={theme}>
             <div className='first-container'>
-                <div className='headache'>
+                <div className='head'>
                     <div className='centered mobile-view'>
                         <h1><b>{text}</b></h1>
                     </div>
                     <div className='text-highlighted paragraph'>
                         <p>
-                        Avec des données, des outils et des conseils, libérez le potentiel de votre entreprise en toute autonomie ou avec un accompagnement dédié de nos experts et 
-                        obtenez les financements dont vous avez besoin pour faire décoller votre projet.
+                        Optimisez votre entreprise avec des données, outils et conseils, accompagné ou non par nos experts, et obtenez les financements pour réussir votre projet.
                         </p>
                     </div>
                 </div>
                 
                 <div className='button-demo'>
+                    <Link
+                        to={'/waitlist'}
+                    >   
                         <Button 
-                            name={'🚀 Découvrir la plateforme'}
-                            icon={'fas fa-chevron-right'}
+                            name={` ${'Essayer Bheti App'}`}
                             arrow={'arrow'}
-                            blob={'blob'}
+                            icon={'fas fa-arrow-right'}
+                            
                         />
-                    </div>
+                    </Link>
+                </div>
             </div>
         </AccueilStyled>
     )
@@ -54,7 +57,7 @@ const AccueilStyled = styled.section`
     }
 
         .first-container{
-        .headache {
+        .head {
             display: block;
             position: relative;
             margin: auto;
@@ -77,53 +80,40 @@ const AccueilStyled = styled.section`
                 font-size: 40px;
                 color: ${props => props.theme.colorBlack};
                 h1{
-                    font-family: 'cinzel';
+                    font-family: 'Montserrat', sans-serif;
                 }
                 @media only screen and (max-width: 2560px) {
                     top: 10vh;
                     width: 60vw;
-                    font-size: 60px;
-                }
-                @media only screen and (max-width: 1800px){
                     font-size: 55px;
                 }
                 @media only screen and (max-width: 1440px){
                     font-size: 45px;
                 }
                 @media only screen and (max-width: 1350px){
-                    font-size: 40px; 
+                    font-size: 44px; 
                 }
                 @media only screen and (max-width: 1024px) {
                     width: 74vw;
-                    font-size: 38px; 
+                    font-size: 37px; 
                 }
-                
                 @media only screen and (max-width: 768px){
                     width: 70vw;
                     font-size: 30px;
                     color: ${props => props.theme.colorBlack}; 
                 }
-                
-                @media only screen and (max-width: 440px){
-                    font-size: 30px;
-                }
             }
             .mobile-view {
                 @media only screen and (max-width: 425px){
-                    width: 80vw;
-                    font-size: 1.8em;
-                    margin: 0 auto;
-                    color: ${props => props.theme.colorBlack};
-                }
-                @media only screen and (max-width: 375px){
-                    display: block;
-                    left: 4vw;
-                    font-size: 22px;
+                    width: 90vw;
+                    font-size: 1.3em;
+                    margin: 0 -25px;
                     color: ${props => props.theme.colorBlack};
                 }
                 @media only screen and (max-width: 320px){
-                    left: 8vw;
-                    font-size: 20px;
+                    width: 90vw;
+                    font-size: 1.4em;
+                    margin: 0 -20px;
                 }
             }
         }
@@ -149,24 +139,19 @@ const AccueilStyled = styled.section`
             }
             @media only screen and (max-width: 768px){
                 font-size: 1.01rem;
-                width: 70vw;
+                width: 75vw;
                 margin-top: 20px;
             }
             @media only screen and (max-width: 430px) {
-                font-size: 1.02rem;
+                font-size: 1rem;
                 position: relative;
                 text-align: justify;
-                width: 290px;
-            }
-            @media only screen and (max-width: 375px) {
-                position: relative;
-                width: 290px;
-                margin-left: 30px;
+                width: 80vw;
             }
             @media only screen and (max-width: 320px) {
                 position: relative;
                 width: 260px;
-                margin-left: 40px;
+                margin-left: 10px;
             }
         }
         .button-demo{
@@ -180,34 +165,30 @@ const AccueilStyled = styled.section`
             }
             @media only screen and (max-width: 500px){
                 position: relative;
-                width: 80%;
-                margin: 20px  auto;
-            }
-
-            @media only screen and (max-width: 425px){
-                position: relative;
                 width: 100%;
                 margin: 20px  auto;
             }
-            @media only screen and (max-width: 375px){
+            @media only screen and (max-width: 425px){
                 position: relative;
-                width: 80%;
+                width: 75%;
                 margin: 20px  auto;
             }
+            @media only screen and (max-width: 320px){
+                width: 78%;
+                margin: 160px  auto;
+            }
         }
-
         @media only screen and (max-width: 1440px){
             position: relative;
         }
         @media only screen and (max-width: 768px) {
             width: 80vw;
-            margin-left: 50px;
+            margin: 4px auto;
         }
         @media only screen and (max-width: 425px) {
             width: 80%;
         }
     }
-    
 `;
 
 export default Accueil;

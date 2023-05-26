@@ -1,11 +1,14 @@
 import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faLinkedin, faFacebook, faInstagram } from '@fortawesome/free-brands-svg-icons';
+import { faLinkedin, faSlack } from '@fortawesome/free-brands-svg-icons';
 import { useTheme } from '../context/themeContext';
-import footerLogo from '../assets/images/footer-logo.png'
+import footerLogo from '../assets/images/bheti-white.png'
 
 
 const Footer = () => {
+    const date = new Date();
+    const year = date.getFullYear();
+
     const theme = useTheme();
     return (
         <FooterSectionStyled theme={theme}>
@@ -13,19 +16,17 @@ const Footer = () => {
                 <ul className="logo-con">
                     <div className="logo">
                         <img src={footerLogo} alt="Footer Logo"/>
-                        <h1>BHETI CONNECT</h1>
                     </div>
                     <p>
-                        Préparez votre levée de fonds avec des contenus adaptés et présentez votre projet à des investisseurs pertinents
+                        Trouvez du financement avec nous
                     </p>
                     <div className="b-nav-icons">
-                        <a href='https://www.linkedin.com/company/bheti-connect'><FontAwesomeIcon icon={faLinkedin} className='icon icon-linkedin' /></a>
-                        <a href='https://web.facebook.com/bheticonnect'><FontAwesomeIcon icon={faFacebook} className='icon icon-facebook' /></a>
-                        <a href='https://www.instagram.com/bheticonnect/'><FontAwesomeIcon icon={faInstagram} className='icon icon-instagram'/></a>
+                        <a href='https://www.linkedin.com/company/bheti-connect'><FontAwesomeIcon icon={faLinkedin} className='icon icon-linkedin social' /></a>
+                        <a href='https://join.slack.com/t/bheticonnect/shared_invite/zt-1vpdzs7pd-Q5f49fTUU_Um9L_TJ9ci3g'><FontAwesomeIcon icon={faSlack} className='icon icon-slack social' /></a>
                     </div>
                 </ul>
                 <ul className="nav-b nav-contact">
-                    <h4>Contactez-Nous</h4>
+                    <h4>Nos coordonnées</h4>
                     <li className="nav-item">
                         <div className="icon">
                             <i className="fas fa-envelope"></i>
@@ -51,36 +52,27 @@ const Footer = () => {
                         <div className="f-text">
                             <h6>Adresse</h6>
                             <span>
-                            78 Avenue des Champs-Elysée 75008 Paris, France
+                                78 Avenue des Champs-Elysée <br/>75008 Paris, France
                             </span>
                         </div>
                     </li>
                 </ul>
                 <ul className="nav-b company">
-                    <h4>Compagnie</h4>
-                    <li className="nav-item">
-                        <a href="#">Contact</a>
+                    <h4>Liens utiles</h4>
+                    <li className="nav-item important-link">
+                        <a href="/contact">Contact</a>
                     </li>
-                    <li className="nav-item">
-                        <a href="#">F.A.Q</a>
+                    <li className="nav-item important-link">
+                        <a href="foire-aux-questions">F.A.Q</a>
                     </li>
-                    <li className="nav-item">
-                        <a href="#">Services</a>
-                    </li>
-                    <li className="nav-item">
-                        <a href="#">Politique de remboursements</a>
-                    </li>
-                    <li className="nav-item">
-                        <a href="#">Politique de confidentialité</a>
-                    </li>
-                    <li className="nav-item">
-                        <a href="#">Licence & Droits d'auteur</a>
+                    <li className="nav-item important-link">
+                        <a href="/politique-de-confidentialite">Politique de confidentialité</a>
                     </li>
                 </ul>
             </nav>
             <div className="footer-copyright">
                 <div className='copyright-text'>
-                    Copyright © 2022 <span>Bheti Connect.</span> Tous droits réservés.
+                    Copyright ©<span id='year'>{year}</span> <span className='company-name'>Bheti Connect.</span> Tous droits réservés.
                 </div>
             </div>
         </FooterSectionStyled>
@@ -117,11 +109,6 @@ const FooterSectionStyled = styled.footer`
             color: ${props => props.theme.colorBheti};
         }
     }
-    h1{
-        color: ${props => props.theme.colorWhite};
-        margin-bottom: 1rem;
-        font-size: 1.1rem;
-    }
     .bottom-navigation{
         display: flex;
         flex-wrap: wrap;
@@ -138,6 +125,13 @@ const FooterSectionStyled = styled.footer`
             }
             @media only screen and (max-width: 525px) and (min-width: 320px){
                 margin-top: 25px;
+                margin-left: 0px;
+            }
+            @media only screen and (max-width: 1500px){
+                margin-left: 60px;
+            }
+            @media only screen and (max-width: 1024px){
+                margin-left: 50px;
             }
         }
         .company {
@@ -155,6 +149,12 @@ const FooterSectionStyled = styled.footer`
                     margin-left: -1px;
                 }
             }
+            .important-link a{
+                margin: 0 0rem;
+                &:hover{
+                    color: ${props => props.theme.colorGrey2};
+                }
+            }
         }
         .nav-contact{
             .nav-item{
@@ -167,7 +167,8 @@ const FooterSectionStyled = styled.footer`
                 @media all and (max-width: 768px) {
                 margin: auto;
                 width: 90%;
-            }
+                float: left;
+                }
             }
             .nav-item div{
                 @media all and (max-width: 768px){
@@ -176,7 +177,7 @@ const FooterSectionStyled = styled.footer`
             }
             .f-text{
                 text-align: left;
-                margin-left: .5vw;
+                margin-left: .1vw;
             }
             .f-text h6{
                 font-size: 14px ;
@@ -185,25 +186,40 @@ const FooterSectionStyled = styled.footer`
                 margin: 10px auto;
                 width: 70%;
             }
+            @media all and (max-width: 1500px) {
+                margin-left: -50px;
+            }
+            @media only screen and (max-width: 1024px){
+                margin-left: 10px;
+            }
+            @media all and (max-width: 768px) {
+                margin: 10px auto;
+                width: 70%;
+            }
         }
         .logo-con{
-            flex: 5;
+            margin: 0 auto;
+            align-items: left;
             .logo img{
-                width: 12%;
+                width: 32%;
+                @media all and (max-width: 1150px) {
+                    width: 38%;
+                }
+                @media all and (max-width: 768px) {
+                    width: 38%;
+                }
                 @media all and (max-width: 425px) {
-                    width: 22%;
+                    width: 34%;
                 }
             }
             @media all and (max-width: 768px) {
                 width: 70%;
                 margin: 0 auto;
             }
+            
     }
         .logo-con p{
             width: 80%;
-            @media all and (min-width: 768px) {
-                margin-left: 50px;
-            }
             @media all and (max-width: 768px) {
                 width: 100%;
             }
@@ -211,34 +227,35 @@ const FooterSectionStyled = styled.footer`
         }
         .b-nav-icons{
             display: flex;
-            margin: 2rem auto;
+            margin: 1.5rem 0px;
             width: 50%;
+            align-items: start;
             .icon {
                 color: aliceblue;
-                width: 1rem;
-            }
-            .icon-linkedin{
+                width: 1.5rem;
+                height: 1.5rem;
                 :hover{
-                    color: #2677b5;
-                }
-            }
-            .icon-facebook{
-                :hover{
-                    color: #2872e7 ;
-                }
-            } 
-            .icon-instagram{
-                :hover{
-                    color: #a9388b ;
+                    color: ${props => props.theme.colorBheti};
                 }
             }
             @media only screen and (max-width: 768px) {
-                width: 55%;
+                width: 60%;
+                margin: auto;
             }
             @media only screen and (max-width: 425px) {
                 width: 90%;
             }
         }
+        .b-nav-icons a{
+            margin: 0 0rem;
+            @media only screen and (max-width: 768px) {
+                margin: 1rem auto;
+            }
+        }
+        .b-nav-icons a + a{
+            margin-left: 2rem;
+        }
+
         .ig{
             .ig-images{
                 display: grid;
@@ -254,17 +271,17 @@ const FooterSectionStyled = styled.footer`
             }
         }
         @media all and (max-width: 2500px){
-            width: 1080px;
+            width: 950px;
         }
         @media all and (max-width: 1080px){
-            width: 850px;
+            width: 900px;
         }
         @media all and (max-width: 1024px) {
-            width: 750px;
+            width: 88vw;
         }
         @media all and (max-width: 768px){
             display: block !important;
-            width: 90vw;
+            width: 85vw;
         }
         @media all and (max-width: 425px) {
             width: 90%;
@@ -276,13 +293,13 @@ const FooterSectionStyled = styled.footer`
     }
     .footer-copyright{
         position: relative;
-        padding-top: 3rem;
+        padding-top: 2.5rem;
         margin: 0 auto;
-        width: 60%;
+        width: 55%;
         border-top: 1px solid ${props => props.theme.colorGrey9};
-
+        text-align: center;
         align-items: center;
-        span{
+        .company-name{
             color: ${props => props.theme.colorWhite};
             cursor: pointer;
             transition: all .4s ease-in-out;
@@ -291,13 +308,20 @@ const FooterSectionStyled = styled.footer`
                 color: ${props => props.theme.colorBheti};
             }
         }
-        @media all and (max-width: 425px) {
+        @media all and (max-width: 768px) {
             width: 90%;
         }
+        
     }
 
     .copyright-text{
         color: ${props => props.theme.colorGrey6};
+        margin: auto;
+        text-align: center;
+        @media all and (max-width: 768px) {
+            width: 100%;
+            font-size: 14px;
+        }
         @media all and (max-width: 425px) {
             width: 100%;
             font-size: 11px;

@@ -10,9 +10,9 @@ import Cards from './Cards';
 import axios from 'axios';
 import CardModal from './CardModal';
 import LoaderReact from './LoaderReact';
-//import iconBheti from "../../assets/icons/icon_bheti_design.png";
 import LinksAPI from './../../utils/LinksAPI';
 import { ModalConnect } from './ModalSweetAlert';
+import { projects } from '../../data/TestData';
 
 const Investisseur = () => {
   // useState of pagination
@@ -48,7 +48,6 @@ const Investisseur = () => {
 
 // *******************************************************************************************
 
-
     // handle for receive data and set in useState
     const handleSetData = (response) => {
       setCurrentPage(response.meta.current_page);
@@ -60,9 +59,14 @@ const Investisseur = () => {
 
     // GET data from API
     const getData = () => {
+
+      setData(projects)
+
+      /*
       axios.get(LinksAPI.projets).then(res => {
         handleSetData(res.data)
       }).catch((error) => console.log(error))
+      */
     }
 
 
@@ -71,21 +75,27 @@ const Investisseur = () => {
 
       if (position == "pme")
       {
+        setData(projects.filter(item => item.type == "PME"))
+        /*
         let pmeFilter = {filters: [{field: 'company_type', value: 'pme'}]}
-
         axios.post(LinksAPI.projetsSearch, pmeFilter).then(res => {
           handleSetData(res.data)
         }).catch((error) => console.log(error))
+        */
 
         setPaginationSelect("pme")
 
       }else if(position == "startup")
       {
-        let startupFilter = {filters: [{field: 'company_type', value: 'startup'}]}
+        // filter data
+        setData(projects.filter(item => item.type == "Startup"))
 
+        /*
+        let startupFilter = {filters: [{field: 'company_type', value: 'startup'}]}
         axios.post(LinksAPI.projetsSearch, startupFilter).then(res => {
           handleSetData(res.data)
         }).catch((error) => console.log(error))
+        */
         setPaginationSelect("startup")
       }else{
         getData()
@@ -192,9 +202,8 @@ const Investisseur = () => {
       }
 
      // get Add for another page
-     if (request)
+      if (request)
       {
-
         console.log(request);
         axios.post(LinksAPI.projetsSearchPage(pageNumber), request).then((resp) =>{
           handleSetData(resp.data)
@@ -207,11 +216,10 @@ const Investisseur = () => {
           handleSetData(res.data)
         }).catch(error => console.log(error))
       }
-
     }
 
      // display items
-     let displayItems = data.map((item, index) => {
+      let displayItems = data.map((item, index) => {
       return <Cards key={index} item={item} setModal={setModal} setSelect={setSelect} />
     })
 
@@ -223,7 +231,7 @@ const Investisseur = () => {
       //This code sets a timeout of 4 seconds (4000 milliseconds) and then sets the loading state to false.
       let waiting = setTimeout(() => {
         setLoading(false)
-      }, 4000);
+      }, 500);
 
       
       changeSectionMenu()
@@ -265,12 +273,26 @@ const Investisseur = () => {
       handleTrieData()
     }, [trie])
 
+    const [text, setText] = useState("")
+    const [fullText] = useState(
+        "Découvrez des opportunités d'investissements exclusives !"
+        )
+    const [index, setIndex] = useState(0)
+
+    useEffect(() => {
+        if (index < fullText.length) {
+            setTimeout(() => {
+                setText(text + fullText[index])
+                setIndex(index + 1)
+            }, 60)
+            }
+        }, [index])
+
     return (
         <InvestisseurStyled>
             <HeaderText theme={theme}>
-            <h3 className='hello'>Découvrez des opportunités d'investissements exclusives</h3>
-            <p>Vous trouverez ci-dessous des informations clés sur des startups et PME qui ouvrent leur capital pour prendre une position décisive sur leurs
-            marchés.<br/>Vous souhaitez en savoir plus sur ces opportunités et/ou rencontrer les fondateurs ? Cliquez sur "Recevoir le deck".</p>
+            <h1 className='hello'>{text}</h1>
+            <p>Vous trouverez ci-dessous des informations clés sur des startups et PME qui ouvrent leur capital pour prendre une position décisive sur leurs marchés.</p>
             <div className="containerMenu">
                 <div className='Box'>
 
@@ -337,21 +359,28 @@ const Investisseur = () => {
 
 const InvestisseurStyled = styled.section`
 
-
-
 `;
 
 const AllCards = styled.div`
 display: flex;
-width: 89%;
-justify-content: center;
+width: 1200px;
+justify-content: left;
 margin:auto;
 flex-wrap: wrap;
+
+@media only screen and (max-width: 1200px) {
+  width: 90%;
+}
+
 @media only screen and (max-width: 900px) {
   width: 86%;
 }
 
-@media only screen and (max-width: 415px) {
+@media only screen and (max-width: 885px) {
+  width: 70%;
+}
+
+@media only screen and (max-width: 450px) {
   width: 68%;
 }
 
@@ -458,25 +487,45 @@ const AllProject = styled.div`
   .nextLinkClassName{
     font-size: 13px;
   }
-
 }
-
-
 `;
 
 const HeaderText = styled.div`
 
-
-margin: 55px;
-
-h3 {
-  font-size: 25px;
+margin: 52px;
+width: 90vw;
+margin: auto;
+h1 {
+  position: relative;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 55px !important;
+  margin: 5% auto 0;
+  width: 62vw;
   color: ${props => props.theme.colorPrimary};
+  @media only screen and (max-width: 1400px) {
+    font-size: 46px !important;
+  }
+  @media only screen and (max-width: 1250px) {
+    font-size: 45px !important;
+  }
+  @media only screen and (max-width: 768px) {
+    font-size: 30px !important;
+  }
+  @media only screen and (max-width: 440px) {
+    text-align: left;
+    width: 70vw;
+    font-size: 31px !important;
+  }
 }
 
 p {
-  margin: 10px 0;
-  font-size: 14px;
+  margin: 10px auto;
+  font-size: 19px;
+  line-height: 1.4;
+  font-family: 'Montserrat', sans-serif;
+  color: ${props => props.theme.colorGrey6};
+  width: 70vw;
+  text-align: center;
 }
 
 .menuSection{
@@ -504,7 +553,6 @@ p {
   &:hover{
     color: ${props => props.theme.colorBheti};
   }
-
 }
 
 .containerMenu{
@@ -524,16 +572,20 @@ p {
 }
 
 .active {
-    border-bottom: 2px solid ${props => props.theme.colorBheti};
+  border-bottom: 2px solid ${props => props.theme.colorBheti};
+  color: ${props => props.theme.colorBheti};
 }
 
 @media only screen and (max-width: 768px) {
   h3{
-    font-size: 20px;
+    font-size: 30px;
+    text-align: left;
   }
 
   p {
-  font-size: 10px;
+  font-size: 15.5px;
+  text-align: left;
+
   }
 
   .menuSection li {
@@ -544,9 +596,7 @@ p {
 }
 
 @media only screen and (max-width: 578px) {
-
   margin: 40px;
-
   .containerMenu .Box{
     flex-direction: column;
 }

@@ -9,9 +9,6 @@ const CardMediaModal = ({select, setModal}) => {
 
   const theme = useTheme();
 
-  // Generate image
-  let source = "https://" + `picsum.photos/id/${select.id}/200/300`;
-
 
 
   return (
@@ -20,7 +17,7 @@ const CardMediaModal = ({select, setModal}) => {
             <div>
                 <div onClick={(e) => closeModal(e.currentTarget, setModal)} className="modal-close"><FontAwesomeIcon className="close" icon={faXmark} size="lg"/></div>
                 <Header>
-                  <p>{select.poste}</p>
+                  <p>{select.title}</p>
                 </Header>
 
                 <Body theme={theme}>
@@ -28,30 +25,26 @@ const CardMediaModal = ({select, setModal}) => {
                 <div className='media-detail'>
 
                   <div>
-                    <img src={source} alt='media'/>
+                    <img src={select.image2} alt='media'/>
                   </div>
 
                   <div className='detail'>
+                    <p>{select.subtitle}</p>
                     <p>{select.description}</p>
                   </div>
 
                 </div>
 
                  {/* Info  */}
-                 <div className='item-detail'>
-                    <ul>
-                      <li><span>Entreprise  : </span>{select.entreprise}</li>
-                      <li><span>Représentant : </span>{select.representant}</li>
-                      <li><span>Secteur : </span>{select.secteur}</li>
-                      <li><span>Pays : </span>{select.pays}</li>
-                    </ul>
+                  <div className='item-detail'>
+                      <p>{select.point}</p>
                   </div>
 
                 {/* Video */}
                 <div className='item-detail'>
                   <h3>Lien du site</h3>
                   
-                  <iframe width="620" height="315" src="https://www.youtube.com/embed/2TlN_8oB6D4" title="Carrying You - Castle In The Sky - Tank Drum/ Steel Tongue Drum君をのせて 天空の城" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                  <iframe width="620" height="315" src={select.youtube} allowfullscreen></iframe>
           
                 </div>
 
@@ -124,7 +117,6 @@ text-align: justify;
   display: flex;
   justify-content: space-between;
 
-
   img {
     height: 200px;
     width: 280px;
@@ -132,12 +124,28 @@ text-align: justify;
     object-fit: cover;
     border-radius: 10px;
   }
+  .detail {
+    p{
+      margin-top: 10px;
+      font-size: 1rem;
+      font-family: 'Montserrat', sans-serif;
+      line-height: 1.45;
+    }
+  }
+}
+.item-detail{
+  p{
+      font-size: 1rem;
+      font-family: 'Montserrat', sans-serif;
+      line-height: 1.45;
+  }
 }
 
 .item-detail h3 {
   padding: 10px;
   padding-right: 0px;
   display: grid;
+  font-family: 'Montserrat', sans-serif;
   grid-template-columns: 10fr 1fr;
   background-color: ${props => props.theme.colorBheti};
   color: white;
@@ -151,10 +159,10 @@ text-align: justify;
 `;
 
 const Header = styled.div`
-
 p {
-    font-size: 150%;
+    font-size: 1.4rem;
     margin: 0 0 15px;
+    font-family: 'Montserrat', sans-serif;
 }
 
 `;

@@ -1,19 +1,50 @@
 import React from 'react'
 import './ErrorPage.css'
+import styled from 'styled-components';
+import error from '../../assets/images/404.png';
+import { NavLink } from 'react-router-dom';
+
 
 const ErrorPage = () => {
     return (
-        <div className='error_div'>
-            <div class="noise"></div>
-            <div class="overlay"></div>
-            <div class="terminal">
-            <h1>Page Introuvable <span class="errorcode">Erreur 404</span></h1>
-            <p class="output">La page que vous recherchez a peut-être été retirée, son nom a été modifié ou elle est temporairement indisponible.</p>
-            <p class="output">Essayer plutôt cette <a className='error_link_' href="#1">page</a> ou <a className='error_link_' href="#2"> retourner à l'accueil</a>.</p>
-            <p class="output">Bonne chance.</p>
-            </div>
-        </div>
+           <ErrorDiv>
+                <ErrorP>
+                    <p>Cette page n'existe pas. Cliquez ==> <span> <NavLink to='/'>ici</NavLink></span></p>
+                </ErrorP>
+            </ErrorDiv>
     )
 }
 
-export default ErrorPage
+const ErrorP = styled.div`
+  display: flex;
+  align-items: start;
+  align-self: center;
+  justify-content: center;
+  background-image: url(${error});
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 100%;
+  width: 100%;
+
+
+
+  p{
+    margin-top: 2rem;
+   color: black;
+   font-size: 2rem;
+   
+   span {
+      color: #540000;
+   }
+  }
+`;
+
+const ErrorDiv = styled.div`
+   height: 80vh;
+   width: 80vw;
+   margin: auto;
+`;
+
+
+export default ErrorPage;

@@ -1,7 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
 import { useTheme } from '../../context/themeContext';
-import LaMethode from './LaMethode';
 import Accueil from './Accueil';
 import Advantages from './Advantages';
 import Satisfaction from './Satisfaction/Satisfaction';
@@ -11,15 +10,15 @@ const Entrepreneur = () => {
     return (
         <EntrepreneurStyled  theme={theme}>
             <Accueil />
-            <div className=''>
+            <div className='advantages__div'>
                 <Advantages />
             </div>
-            <div className='method-container'>
+            {/* <div className='method-container'>
                 <LaMethode />
-            </div>
-            <div>
+            </div> */}
+            {/* <div>
                 <Satisfaction />
-            </div>
+            </div> */}
         </EntrepreneurStyled>
     )
 }
@@ -29,6 +28,10 @@ const EntrepreneurStyled = styled.section`
     .method-container{
         margin-top: 2%;
         width: 100%;
+    }
+    .advantages__div{
+        position: relative;;
+        height: 100%;
     }
 `;
 
