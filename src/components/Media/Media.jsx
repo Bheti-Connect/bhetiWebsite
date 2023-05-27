@@ -410,10 +410,10 @@ const AllCards = styled.div`
   width: 100%;
 
   .container-all-cards {
-    justify-content: start;
+    justify-content: space-around;
     flex-wrap: wrap;
     display: flex;
-    width: 80%;
+    width: 75%;
     margin: auto;
   }
 `;
