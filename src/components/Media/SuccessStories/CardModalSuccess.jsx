@@ -1,16 +1,29 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faXmark } from '@fortawesome/free-solid-svg-icons';
 import { useTheme } from '../../../context/themeContext';
 import { closeModal } from '../../../utils/FunctionsComponent';
-//import { ReactTinyLink } from 'react-tiny-link'
-//import LinkPreview from './LinkPreview';
+import { ReactTinyLink } from 'react-tiny-link'
+import axios from 'axios';
 
 const CardModalSuccess = ({select, setModal}) => {
   const [backColor, setBackColor] = useState(["#406880", "#978840", "#975450", "#636769", "#88456c", "#61534d"]);
   const theme = useTheme();
+  const [link, setLink] = useState('');
 
+  // get link preview
+/*
+  useEffect(() => {
+    axios.get('http://localhost:3500/proxy').then((res) => {
+      setLink(res.data);
+    }).catch((err) => {
+      console.log(err);
+    })
+
+    console.log(link)
+  },[])
+*/
 
   return (
     <Container onClick={(e) => closeModal(e.currentTarget, setModal)}>
@@ -56,7 +69,14 @@ const CardModalSuccess = ({select, setModal}) => {
 
                 {/* Video */}
                 <div className='preview-link'>
-                  {/*<LinkPreview url="https://www.linkedin.com/feed/update/urn:li:activity:6956518384989519872"/>*/}
+                <ReactTinyLink
+                cardSize="small"
+                showGraphic={true}
+                maxLine={2}
+                minLine={1}
+                url="https://www.linkedin.com/feed/update/urn:li:activity:6915955037785481216/"
+                proxyUrl="http://localhost:3500/proxy?url="
+                 />
                 </div>
 
                 </Body>
