@@ -202,7 +202,9 @@ const Media = () => {
         </div>
         <div className="body-une">
         <div className="cards-une">
-            <div className="card-1" onClick={() => { window.location.href = window.location.href='https://www.linkedin.com/posts/bheti-connect_bheticonnect-startup-afrique-activity-7065574379513892865-kPIc?utm_source=share&utm_medium=member_desktop'; }}> </div>
+            <div className="card-1" onClick={() => { window.location.href = window.location.href='https://www.linkedin.com/posts/bheti-connect_bheticonnect-startup-afrique-activity-7065574379513892865-kPIc?utm_source=share&utm_medium=member_desktop'; }}>
+              <img />
+            </div>
             <div className="sub-card">
                <div className="card-2" onClick={() => { window.location.href = window.location.href='https://www.linkedin.com/posts/bheti-connect_fintechs-bheticonnect-startups-activity-7057239472421109760-abyN?utm_source=share&utm_medium=member_desktop'; }}></div>
                <div className="card-3" onClick={() => { window.location.href = window.location.href='https://www.linkedin.com/posts/bheti-connect_bheticonnect-africa-entreprise-activity-7064124827267158016-s_bH?utm_source=share&utm_medium=member_desktop'; }}></div>

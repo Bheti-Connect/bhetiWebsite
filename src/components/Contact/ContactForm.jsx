@@ -162,7 +162,7 @@ const FormContainer = styled.div`
                         id="email" 
                         name="email"
                         onChange={handleChange}
-                        placeholder='Ecrivez votre email'
+                        placeholder='Ecrivez votre adresse email'
                         value={form.email} 
                         required 
                     />
@@ -175,7 +175,7 @@ const FormContainer = styled.div`
                     name="message" 
                     onChange={handleChange}
                     rows="5" 
-                    placeholder="Que voulez-vous nous faire savoir ?"
+                    placeholder="Quel est votre message ?"
                     required />
                     </FormField>
                     <Button type="submit">

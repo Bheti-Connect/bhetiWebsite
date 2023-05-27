@@ -1,231 +1,183 @@
-import styled from 'styled-components';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faLinkedin, faSlack } from '@fortawesome/free-brands-svg-icons';
-import { useTheme } from '../context/themeContext';
-import footerLogo from '../assets/images/bheti-white.png'
-
+import styled from "styled-components";
+import Logo from "../assets/images/bheti-white.png";
+import { useTheme } from "../context/themeContext";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faLinkedin, faSlack,  } from "@fortawesome/free-brands-svg-icons";
+import { MdEmail, MdLocationOn } from 'react-icons/md'
+import { FaPhoneAlt } from 'react-icons/fa'
 
 const Footer = () => {
-    const date = new Date();
-    const year = date.getFullYear();
-
     const theme = useTheme();
     return (
-        <FooterSectionStyled theme={theme}>
-            <nav className="bottom-navigation">
-                <ul className="logo-con">
-                    <div className="logo">
-                        <img src={footerLogo} alt="Footer Logo"/>
-                    </div>
-                    <p>
-                        Trouvez du financement avec nous
-                    </p>
-                    <div className="b-nav-icons">
-                        <a href='https://www.linkedin.com/company/bheti-connect'><FontAwesomeIcon icon={faLinkedin} className='icon icon-linkedin social' /></a>
-                        <a href='https://join.slack.com/t/bheticonnect/shared_invite/zt-1vpdzs7pd-Q5f49fTUU_Um9L_TJ9ci3g'><FontAwesomeIcon icon={faSlack} className='icon icon-slack social' /></a>
-                    </div>
-                </ul>
-                <ul className="nav-b nav-contact">
-                    <h4>Nos coordonnées</h4>
-                    <li className="nav-item">
-                        <div className="icon">
-                            <i className="fas fa-envelope"></i>
-                        </div>
-                        <div className="f-text">
-                            <h6>Email</h6>
-                            <span>contact@bheticonnect.com</span>
-                        </div>
-                    </li>
-                    <li className="nav-item">
-                        <div className="icon">
-                            <i className="fas fa-phone-alt"></i>
-                        </div>
-                        <div className="f-text">
-                            <h6>Numéro de contact</h6>
-                            <span> +33 (0) 123-456-789</span>
-                        </div>
-                    </li>
-                    <li className="nav-item">
-                        <div className="icon">
-                            <i className="fas fa-map-marker-alt"></i>
-                        </div>
-                        <div className="f-text">
-                            <h6>Adresse</h6>
-                            <span>
-                                78 Avenue des Champs-Elysée <br/>75008 Paris, France
-                            </span>
-                        </div>
-                    </li>
-                </ul>
-                <ul className="nav-b company">
-                    <h4>Liens utiles</h4>
-                    <li className="nav-item important-link">
+        <FooterContainer theme={theme}>
+        <FooterContent>
+            <FooterBlock>
+            <FooterLogo>
+                <img src={Logo} alt="logo-bheti" />
+            </FooterLogo>
+            <FooterLinks>
+                <div className="finance-paragraph">
+                    <p className="find-finance">Trouvez du financement avec nous</p>
+                </div>
+                <div className="b-nav-icons">
+                <a href="https://www.linkedin.com/company/bheti-connect">
+                    <FontAwesomeIcon
+                        icon={faLinkedin}
+                        className="icon icon-linkedin social"
+                    />
+                </a>
+                <a href="https://join.slack.com/t/bheticonnect/shared_invite/zt-1vpdzs7pd-Q5f49fTUU_Um9L_TJ9ci3g">
+                    <FontAwesomeIcon
+                    icon={faSlack}
+                    className="icon icon-slack social"
+                    />
+                </a>
+                </div>
+            </FooterLinks>
+            </FooterBlock>
+            <FooterBlock>
+                <h3>Nos coordonnées</h3>
+                <div className="coordonnees-container">
+                    <MdEmail className="coordonnees-icons" />
+                    <p>contact@bheticonnect.com</p> 
+                </div>
+                <div className="coordonnees-container">
+                    <FaPhoneAlt className="coordonnees-icons" />
+                    <p>+33(0) 644-086-378</p> 
+                </div>
+                <div className="coordonnees-container">
+                    <MdLocationOn className="coordonnees-icons" />
+                    <p>78 Avenue des Champs-Elysée<br/> 75008 Paris, France</p> 
+                </div>
+            </FooterBlock>
+            <FooterBlock>
+            <h3>Lien utiles</h3>
+            <FooterLinks>
+                <div className="elements">
+                    <li>
                         <a href="/contact">Contact</a>
                     </li>
-                    <li className="nav-item important-link">
-                        <a href="foire-aux-questions">F.A.Q</a>
-                    </li>
-                    <li className="nav-item important-link">
-                        <a href="/politique-de-confidentialite">Politique de confidentialité</a>
-                    </li>
-                </ul>
-            </nav>
-            <div className="footer-copyright">
-                <div className='copyright-text'>
-                    Copyright ©<span id='year'>{year}</span> <span className='company-name'>Bheti Connect.</span> Tous droits réservés.
                 </div>
-            </div>
-        </FooterSectionStyled>
-        )
-}
+                <div className="elements">
+                    <li>
+                        <a href="/privacy">Politique de confidentialité</a>
+                    </li>
+                </div>
+                <div className="elements">
+                    <li>
+                        <a href="/faq">FAQ</a>
+                    </li>
+                </div>
+            </FooterLinks>
+            </FooterBlock>
+        </FooterContent>
+        </FooterContainer>
+    );
+    };
 
-const FooterSectionStyled = styled.footer`
-    background-color: ${props => props.theme.colorBg3};
-    padding-top: 6rem !important;
-    color: ${props => props.theme.colorFont};
-    padding-bottom: 3rem !important;
-    font-size: 14px;
-    h6{
+    const FooterContainer = styled.footer`
+    background-color: #111111;
+    padding: 100px 30px;
+    `;
+
+    const FooterContent = styled.div`
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+
+    @media (min-width: 768px) {
+        width: 70%;
+        margin: 0 auto;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+    @media (max-width: 1200px) {
+        width: 85vw;
+        }
+    @media (max-width: 870px) {
+        width: 85vw;
+        }
+    `;
+    const FooterBlock = styled.div`
+    margin-bottom: 20px;
+    h3{
+        color: #ced4d9;
         font-size: 1.1rem;
+        margin-bottom: 10px;
     }
-    h4{
-        font-size: 1.3rem;
-        color: ${props => props.theme.colorGrey4};
+
+    @media (min-width: 768px) {
+        margin-bottom: 0;
     }
-    a{  
-        color: ${props => props.theme.colorGre6};
-        transition: all 0.3s ease-in-out;
-        margin-left: 2.5rem;
-        &:hover{
-            color: ${props => props.theme.colorBheti};
-            text-decoration: underline;
-        }
-    }
-    i{  
-        color: ${props => props.theme.colorWhite};
-        font-size: 1.3rem;
-        transition: all 0.3s ease-in-out;
-        &:hover{
-            color: ${props => props.theme.colorBheti};
-        }
-    }
-    .bottom-navigation{
+    .coordonnees-container{
         display: flex;
-        flex-wrap: wrap;
-        padding-bottom: 3rem;
-        margin: auto;
-        h4{
-            padding-bottom: 1.2rem;
-            font-size: 1.07rem ;
+        margin-bottom: 15px;
+        p{  
+            margin-top: 5px;
+            font-size: .9rem;
+            color: #797D7F;
         }
-        .nav-b{
-            margin: 0 1rem;
-            .nav-item{
-                margin-bottom: 1rem;
-            }
-            @media only screen and (max-width: 525px) and (min-width: 320px){
-                margin-top: 25px;
-                margin-left: 0px;
-            }
-            @media only screen and (max-width: 1500px){
-                margin-left: 60px;
-            }
-            @media only screen and (max-width: 1024px){
-                margin-left: 50px;
-            }
+        .coordonnees-icons{
+            color: #ced4d9;
+            width: 23px;
+            height: 23px;
+            margin-right: 7px;
         }
-        .company {
-            @media all and (max-width: 768px) {
-                    width: 70%;
-                    margin: auto;
-                }
-            .nav-item a{
-                font-size: 12.5px;
-                color: ${props => props.theme.colorGrey6};
-                @media all and (max-width: 768px) {
-                    margin: auto;
-                }
-                @media all and (max-width: 320px) {
-                    margin-left: -1px;
-                }
-            }
-            .important-link a{
-                margin: 0 0rem;
-                &:hover{
-                    color: ${props => props.theme.colorGrey2};
-                }
-            }
-        }
-        .nav-contact{
-            .nav-item{
-                display: grid;
-                grid-template-columns: 30px auto;
-                color: ${props => props.theme.colorGrey6};
-                @media all and (max-width: 420px) {
-                margin-left: -5px;
-                }
-                @media all and (max-width: 768px) {
-                margin: auto;
-                width: 90%;
-                float: left;
-                }
-            }
-            .nav-item div{
-                @media all and (max-width: 768px){
-                    margin-top: 15px;
-                }
-            }
-            .f-text{
-                text-align: left;
-                margin-left: .1vw;
-            }
-            .f-text h6{
-                font-size: 14px ;
-            }
-            @media all and (max-width: 768px) {
-                margin: 10px auto;
-                width: 70%;
-            }
-            @media all and (max-width: 1500px) {
-                margin-left: -50px;
-            }
-            @media only screen and (max-width: 1024px){
-                margin-left: 10px;
-            }
-            @media all and (max-width: 768px) {
-                margin: 10px auto;
-                width: 70%;
-            }
-        }
-        .logo-con{
-            margin: 0 auto;
-            align-items: left;
-            .logo img{
-                width: 32%;
-                @media all and (max-width: 1150px) {
-                    width: 38%;
-                }
-                @media all and (max-width: 768px) {
-                    width: 38%;
-                }
-                @media all and (max-width: 425px) {
-                    width: 34%;
-                }
-            }
-            @media all and (max-width: 768px) {
-                width: 70%;
-                margin: 0 auto;
-            }
-            
-    }
-        .logo-con p{
+        .coordonnees-elements{
+            display: block;
             width: 80%;
-            @media all and (max-width: 768px) {
-                width: 100%;
-            }
-            color: ${props => props.theme.colorGrey6};
         }
-        .b-nav-icons{
+    }
+    `;
+
+    const FooterLogo = styled.h1`
+    display: block;
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+    img {
+        width: 35%;
+        @media (max-width: 440px) {
+            display: block;
+        float: left;
+        }
+    }
+    @media (min-width: 768px) {
+        margin-bottom: 0;
+    }
+    
+    `;
+
+const FooterLinks = styled.ul`
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    .elements{
+        margin-bottom: 15px;
+    }
+    .finance-paragraph{
+        .find-finance{
+            color: #797D7F;
+            font-size: .9rem;
+        }
+    }
+    h5{
+        color: #ced4d9;
+        font-size: 1.9rem:
+    }
+    li {
+        a {
+            color: #797D7F;
+            text-decoration: none;
+            font-size: .85rem;
+        &:hover {
+            text-decoration: none;
+        }
+        }
+    }
+    .b-nav-icons{
             display: flex;
             margin: 1.5rem 0px;
             width: 50%;
@@ -234,99 +186,26 @@ const FooterSectionStyled = styled.footer`
                 color: aliceblue;
                 width: 1.5rem;
                 height: 1.5rem;
+            }
+            .icon-linkedin{
                 :hover{
-                    color: ${props => props.theme.colorBheti};
+                    color: #2677b5;
                 }
             }
-            @media only screen and (max-width: 768px) {
-                width: 60%;
-                margin: auto;
-            }
-            @media only screen and (max-width: 425px) {
-                width: 90%;
-            }
-        }
-        .b-nav-icons a{
-            margin: 0 0rem;
-            @media only screen and (max-width: 768px) {
-                margin: 1rem auto;
+            .icon-facebook{
+                :hover{
+                    color: #2872e7 ;
+                }
+            } 
+            .icon-instagram{
+                :hover{
+                    color: #a9388b ;
+                }
             }
         }
         .b-nav-icons a + a{
-            margin-left: 2rem;
+            margin-left: 1.2rem;
         }
-
-        .ig{
-            .ig-images{
-                display: grid;
-                grid-template-columns: repeat(3, 90px);
-                grid-template-rows: repeat(2, 90px);
-                grid-gap: .5rem;
-                img{
-                    width: 100%;
-                    object-fit: cover;
-                    height: 100%;
-                    cursor: pointer;
-                }
-            }
-        }
-        @media all and (max-width: 2500px){
-            width: 950px;
-        }
-        @media all and (max-width: 1080px){
-            width: 900px;
-        }
-        @media all and (max-width: 1024px) {
-            width: 88vw;
-        }
-        @media all and (max-width: 768px){
-            display: block !important;
-            width: 85vw;
-        }
-        @media all and (max-width: 425px) {
-            width: 90%;
-        }
-        @media all and (max-width: 320px) {
-            width: 230px;
-            margin-left: 55px;
-        }
-    }
-    .footer-copyright{
-        position: relative;
-        padding-top: 2.5rem;
-        margin: 0 auto;
-        width: 55%;
-        border-top: 1px solid ${props => props.theme.colorGrey9};
-        text-align: center;
-        align-items: center;
-        .company-name{
-            color: ${props => props.theme.colorWhite};
-            cursor: pointer;
-            transition: all .4s ease-in-out;
-            margin: 0 .3rem;
-            &:hover{
-                color: ${props => props.theme.colorBheti};
-            }
-        }
-        @media all and (max-width: 768px) {
-            width: 90%;
-        }
-        
-    }
-
-    .copyright-text{
-        color: ${props => props.theme.colorGrey6};
-        margin: auto;
-        text-align: center;
-        @media all and (max-width: 768px) {
-            width: 100%;
-            font-size: 14px;
-        }
-        @media all and (max-width: 425px) {
-            width: 100%;
-            font-size: 11px;
-        }
-    }
 `;
 
-export default Footer
+export default Footer;

@@ -20,6 +20,8 @@ import ErrorPage from './components/Error/ErrorPage';
 import Formulaire from './components/Forms/Formulaire';
 import Contact from './components/Contact/Contact';
 import PrivacyPolicy from './components/Footer-Elements/PrivacyPolicy';
+import Evaluation from './components/Evaluation/Evaluation';
+
 import Faq from './components/Footer-Elements/Faq';
 
 const App = () => {
@@ -61,10 +63,10 @@ const App = () => {
             <Route path='pitch-deck' exact caseSensitive={false} element={<FormOne />} />
             <Route path='politique-de-confidentialite' exact caseSensitive={false} element={<PrivacyPolicy />} />
             <Route path='foire-aux-questions' exact caseSensitive={false} element={<Faq />} />
-
-
             {/* Route : form investisseur */}
             <Route path='form-investisseur' exact caseSensitive={false} element={<FormInvestisseur />} />
+            <Route path='evaluation' exact caseSensitive={false} element={<Evaluation /> } />
+
             {/* Route : success stories media */}
             <Route path='*'  element={<ErrorPage />} />
           </Routes>
