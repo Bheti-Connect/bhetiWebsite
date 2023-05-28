@@ -4,7 +4,7 @@ import './styles.css';
 
 import Team from '../../assets/images/pexels-rebrand-cities-1367272.jpg';
 import GetMoney from '../../assets/images/pexels-edmond-8553867.jpg';
-import HappyTeam from '../../assets/images/pexels-antoni-shkraba-5466285.jpg';
+import Block1 from '../../assets/images/Block1-img.png';
 // import {FaHandsHelping, FaShareSquare, FaRoad} from 'react-icons/fa'
 // import {GiHumanTarget} from 'react-icons/gi'
 import Help from '../../assets/images/pexels-brett-sayles-5368598.jpg'
@@ -36,9 +36,8 @@ const Advantages = () => {
 										</Link>
 									`</div>
 							</div>
-							
 							<figure className='image__figure'>
-								<img className='image-team' src={HappyTeam} alt='Image-Femmes'/>
+								<img className='image-team' src={Block1} alt='Image-Femmes'/>
 							</figure>
 						</div>
 					</li>

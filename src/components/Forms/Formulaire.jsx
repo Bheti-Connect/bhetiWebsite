@@ -115,12 +115,12 @@ const Formulaire = () => {
                         <h3> Félicitations, vous avez bien rejoins la waitlist !</h3>
                         <img src={FormSent} alt="Success" className="success-image" />
                     </div>
-                    ) : (
+                    ) : ( 
                         <div className='container-child'>
                     <div className='container-bheti'>
                         <img className='white-logo' src={BhetiWhite} alt='bheti-white-logo' />
                         <h3>
-                            Rejoindre la liste d’attente pour accéder à l’application dès quelle sera disponibe.
+                            Rejoindre la liste d’attente pour accéder à l’application dès qu'elle sera disponibe.
                         </h3>
                     </div>
                     <div className='container-form'>
