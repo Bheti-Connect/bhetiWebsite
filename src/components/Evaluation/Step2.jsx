@@ -1,8 +1,10 @@
-import React from 'react';
+import { useState } from 'react';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
 import * as Components from "./styles";
 import Select from 'react-select';
+import { countriesList } from './formData';
+import { optionsActivity, optionsYears } from '../Forms/FormInput'
 
 
 
@@ -16,21 +18,23 @@ const validationSchema = Yup.object().shape({
 const customStyles = {
   control: (base, state) => ({
     ...base,
-    border: state.isFocused ? '1px solid blue' : '1px solid gray',
-    boxShadow: state.isFocused ? '0 0 1px blue' : 'none',
-    width: "25vw",
+    border: state.isFocused ? '1px solid #ed8b8b' : '1px solid #ed8b8b',
+    fontSize: '16px',
+    boxShadow: state.isFocused ? '0 0 1px #ed8b8b' : 'none',
+    width: "250px",
     '&:hover': {
-      border: state.isFocused ? '1px solid blue' : '1px solid gray'
+      border: state.isFocused ? '1px solid #ed8b8b' : '1px solid #ed8b8b'
     }
   }),
   option: (base, state) => ({
     ...base,
-    backgroundColor: state.isFocused ? 'lightgray' : 'white'
+    backgroundColor: state.isFocused ? '#efdcdc' : 'white'
   }),
   // You can add more styles here...
 };
 
-const countries = ["Afghanistan", "Albania", "Algeria", /* Add rest of the countries here */];
+
+
 
 export default function Step2({ setFormValues, prevValues }) {
   const formik = useFormik({
@@ -41,44 +45,51 @@ export default function Step2({ setFormValues, prevValues }) {
     },
   });
 
-  const options = [
-    { value: '0-2', label: '0 à 2 ans' },
-    { value: '2-5', label: '2 à 5 ans' },
-    { value: '5+', label: 'Plus de 5 ans' },
-  ];
+  const countryOptions = countriesList.map(country => ({ value: country, label: country }));
 
   return (
     <Components.StyledForm onSubmit={formik.handleSubmit}>
+      <Components.StyledTitle>Informations sur l'entreprise</Components.StyledTitle>
+      <Components.StyledLabel htmlFor="yearsOfActivity">Nombre d'années d'activité</Components.StyledLabel>
       <Select 
         name="yearsOfActivity"
-        options={options}
-        placeholder="Nombre d'année d'activité..."
-        onChange={formik.handleChange}
-        value={formik.values.yearsOfActivity}
+        options={optionsYears}
+        placeholder="Nombre d'années..."
+        onChange={option => formik.setFieldValue("yearsOfActivity", option.value)}
+        value = {optionsYears.find(option => option.value === formik.values.yearsOfActivity)}
         styles={customStyles}
       />
-      <textarea
+      <Components.StyledLabel htmlFor="fullName">Brève description</Components.StyledLabel>
+      <Components.StyledTextArea
         name="description"
         onChange={formik.handleChange}
+        placeholder='Décrivez votre entreprise en quelques mots...'
         value={formik.values.description}
       />
-      <select
+      <Components.StyledLabel htmlFor="country">Pays d'activité</Components.StyledLabel>
+      <Select
+        id="country"
         name="country"
-        onChange={formik.handleChange}
-        value={formik.values.country}
-      >
-        <option value="">Select...</option>
-        {countries.map((country, index) => (
-          <option key={index} value={country}>{country}</option>
-        ))}
-      </select>
-      <input
-        name="sector"
-        type="text"
-        onChange={formik.handleChange}
-        value={formik.values.sector}
+        options={countryOptions}
+        styles={customStyles}
+        onChange={option => formik.setFieldValue("country", option.value)}
+        value={countryOptions.find(option => option.value === formik.values.country)}
+        placeholder="Choisir votre pays..." 
       />
-      <button type="submit">Next</button>
+      <Components.StyledLabel htmlFor="sector">Secteur d'activité</Components.StyledLabel>
+      <Select 
+        name="sector"
+        options={optionsActivity}
+        placeholder="Secteur d'activité..."
+        onChange={option => formik.setFieldValue("sector", option.value)}
+        value={ optionsActivity.find(option => option.value === formik.values.sector) }
+        styles={customStyles}
+      />
+        
+      <Components.ButtonContainer>
+        <Components.StyledButtonBack type="button" onClick={() => setFormValues({ ...prevValues, step: prevValues.step - 1 })}>Retour</Components.StyledButtonBack>
+        <Components.StyledButtonNext type="submit">Suivant</Components.StyledButtonNext>
+      </Components.ButtonContainer>
     </Components.StyledForm>
   );
 }

@@ -5,6 +5,12 @@ import * as Yup from 'yup';
 import * as Components from "./styles";
 
 
+const validationSchema = Yup.object().shape({
+    companyName: Yup.string().required('Required'),
+    fullName: Yup.string().required('Required'),
+    email: Yup.string().email('Invalid email').required('Required'),
+    });
+
     // use your styled components instead of html elements
     export default function Step1({ setFormValues, prevValues }) {
     const formik = useFormik({
@@ -17,7 +23,8 @@ import * as Components from "./styles";
 
     return (
         <Components.StyledForm onSubmit={formik.handleSubmit}>
-            <Components.StyledTitle>Informations personnelles</Components.StyledTitle>
+        <Components.StyledTitle>Informations sur l'entreprise</Components.StyledTitle>
+        <Components.StyledLabel htmlFor="companyName">Entreprise</Components.StyledLabel>
         <Components.StyledInput
             name="companyName"
             placeholder="Nom de l'entreprise"
@@ -25,6 +32,7 @@ import * as Components from "./styles";
             onChange={formik.handleChange}
             value={formik.values.companyName}
         />
+        <Components.StyledLabel htmlFor="fullName">Nom complet</Components.StyledLabel>
         <Components.StyledInput
             name="fullName"
             placeholder="Votre nom complet"
@@ -32,6 +40,7 @@ import * as Components from "./styles";
             onChange={formik.handleChange}
             value={formik.values.fullName}
         />
+        <Components.StyledLabel htmlFor="email">Adresse Email</Components.StyledLabel>
         <Components.StyledInput
             name="email"
             type="email"
@@ -39,14 +48,9 @@ import * as Components from "./styles";
             onChange={formik.handleChange}
             value={formik.values.email}
         />
-        <Components.StyledButton type="submit">Next</Components.StyledButton>
+        <Components.StyledButtonNext type="submit">Suivant</Components.StyledButtonNext>
         </Components.StyledForm>
     );
 
 }
-    const validationSchema = Yup.object().shape({
-        companyName: Yup.string().required('Required'),
-        fullName: Yup.string().required('Required'),
-        email: Yup.string().email('Invalid email').required('Required'),
-    });
 
