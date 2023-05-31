@@ -9,10 +9,10 @@ import { optionsActivity } from '../Forms/FormInput'
 
 
 const validationSchema = Yup.object().shape({
-  yearsOfActivity: Yup.string().required('Required'),
-  description: Yup.string().required('Required'),
-  country: Yup.string().required('Required'),
-  sector: Yup.string().required('Required'),
+  amount: Yup.string().required('Required'),
+  delai: Yup.string().required('Required'),
+  prev_amount: Yup.string().required('Required'),
+  turnover: Yup.string().required('Required'),
 });
 
 const customStyles = {
@@ -61,7 +61,7 @@ export default function Step2({ setFormValues, prevValues }) {
             onChange={formik.handleChange}
             value={formik.values.amount}
         />
-        <Components.StyledLabel htmlFor="fullName">Délai de financement</Components.StyledLabel>
+        <Components.StyledLabel htmlFor="delai">Délai de financement</Components.StyledLabel>
         <Components.StyledInput
             name="delai"
             type="text"
