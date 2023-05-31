@@ -101,239 +101,243 @@ export const inputs = [
 
 export const optionsActivity = [
     {
-        id: 1,
-        name: 'Tout secteur',
+        value: 'Tout secteur',
+        label: 'Tout secteur',
     },
     {
-        id: 2,
-        name: 'Finance',
+        value: 'Finance',
+        label: 'Finance',
     },
     {
-        id: 3,
-        name: 'Impact',
+        value: 'Impact',
+        label: 'Impact',
     },
     {
-        id: 4,
-        name: 'Blockchain',
+        value: 'Blockchain',
+        label: 'Blockchain',
     },
     {
-        id: 5,
-        name: 'Energy',
+        value: 'Energy',
+        label: 'Energy',
     },
     {
-        id: 6,
-        name: 'Logistics',
+        value: 'Logistics',
+        label: 'Logistics',
     },
     {
-        id: 7,
-        name: 'Technology',
+        value: 'Technology',
+        label: 'Technology',
     },
     {
-        id: 8,
-        name: 'Health',
+        value: 'Health',
+        label: 'Health',
     },
     {
-        id: 9,
-        name: 'Education',
+        value: 'Education',
+        label: 'Education',
     },
     {
-        id: 10,
-        name: 'Media',
+        value: 'Media',
+        label: 'Media',
     },
     {
-        id: 11,
-        name: 'Mobile',
+        value: 'Mobile',
+        label: 'Mobile',
     },
     {
-        id: 12,
-        name: 'Fintech',
+        value: 'Fintech',
+        label: 'Fintech',
     },
     {
-        id: 13,
-        name: 'Female founders',
+        value: 'Female founders',
+        label: 'Female founders',
     },
     {
-        id: 14,
-        name: 'ICT',
+        value: 'ICT',
+        label: 'ICT',
     },
     {
-        id: 15,
-        name: 'Agriculture',
+        value: 'Agriculture',
+        label: 'Agriculture',
     },
     {
-        id: 16,
-        name: 'Agritech',
+        value: 'Agritech',
+        label: 'Agritech',
     },
     {
-        id: 17,
-        name: 'HealthTech',
+        value: 'HealthTech',
+        label: 'HealthTech',
     },
     {
-        id: 18,
-        name: 'IoT',
+        value: 'IoT',
+        label: 'IoT',
     },
     {
-        id: 19,
+        value: 'Smart city',
         name: 'Smart city',
     },
     {
-        id: 20,
-        name: 'Clean Energy',
+        value: 'Clean Energy',
+        label: 'Clean Energy',
     },
     {
-        id: 21,
-        name: 'InsurTech',
+        value: 'InsurTech',
+        label: 'InsurTech',
     },
     {
-        id: 22,
-        name:  'Real Estate'
+        value: 'Real Estate',
+        label:  'Real Estate'
     },
     {
-        id: 23,
-        name: 'AI and Machine Learning'
+        value: 'AI and Machine Learning',
+        label: 'AI and Machine Learning'
     },
     {
-        id: 24,
-        name: 'Platforms/Marketplaces',
+        value: 'Platforms/Marketplaces',
+        label: 'Platforms/Marketplaces',
     },
     {
-        id: 25,
-        name: 'CivicTech',
+        value: 'CivicTech',
+        label: 'CivicTech',
     },
     {
-        id: 26,
-        name: 'Open data',
+        value: 'Open data',
+        label: 'Open data',
     },
     {
-        id: 27,
-        name: 'Gouvernance',
+        value: 'Gouvernance',
+        label: 'Gouvernance',
     },
     {
-        id: 28,
-        name: 'Retail',
+        value: 'Retail',
+        label: 'Retail',
     },
     {
-        id: 29,
-        name: 'e-Commerce',
+        value: 'e-Commerce',
+        label: 'e-Commerce',
     },
     {
-        id: 30,
-        name: 'Infrastructure',
+        value: 'Infrastructure',
+        label: 'Infrastructure',
     },
     {
-        id: 31,
-        name: 'Digital Brand',
+        value: 'Digital Brand',
+        label: 'Digital Brand',
     },
     {
-        id: 32,
-        name: 'Investisseur',
+        value: 'Investisseur',
+        label: 'Investisseur',
     },
     {
-        id: 33,
-        name: 'Robotics',
+        value: 'Robotics',
+        label: 'Robotics',
     },
     {
-        id: 34,
-        name: 'Science',
+        value: 'Science',
+        label: 'Science',
     },
     {
-        id: 35,
-        name: 'Justice & Opportunity',
+        value: 'Justice & Opportunity',
+        label: 'Justice & Opportunity',
     },
     {
-        id: 36,
-        name: 'Interactivity',
+        value: 'Interactivity',
+        label: 'Interactivity',
     },
     {
-        id: 37,
-        name: 'Sustainability',
+        value: 'Sustainability',
+        label: 'Sustainability',
     },
     {
-        id: 38,
-        name: 'Consumer Product',
+        value: 'Consumer Product',
+        label: 'Consumer Product',
     },
     {
-        id: 39,
-        name: 'Agribusiness',
+        value: 'Agribusiness',
+        label: 'Agribusiness',
     },
     {
-        id: 40,
-        name: 'Sexual and Reproductive Health and Rights',
+        value: 'sexual and Reproductive Health and Rights',
+        label: 'Sexual and Reproductive Health and Rights',
     },
     {
-        id: 41,
-        name: 'Newborn & Child Health / Urban Sanitation',
+        value: 'Newborn & Child Health / Urban Sanitation',
+        label: 'Newborn & Child Health / Urban Sanitation',
     },
     {
-        id: 42,
-        name: 'Transportation',
+        value: 'Transportation',
+        label: 'Transportation',
     },
     {
-        id: 43,
-        name: 'CleanTech',
+        value: 'CleanTech',
+        label: 'CleanTech',
     },
     {
-        id: 44,
-        name: 'MedTech',
+        value: 'MedTech',
+        label: 'MedTech',
     },
     {
-        id: 45,
-        name: 'EdTech',
+        value: 'EdTech',
+        label: 'EdTech',
     },
     {
-        id: 46,
-        name: 'Consumer platforme',
+        value: 'Consumer platform',
+        label: 'Consumer platform',
     },
     {
-        id: 47,
-        name: 'Services digitales',
+        value: 'Services digitales',
+        label: 'Services digitales',
     },
     {
-        id: 48,
-        name: 'Telecom',
+        value: 'Telecom',
+        label: 'Telecom',
     },
     {
-        id: 49,
-        name: 'FoodTech',
+        value: 'FoodTech',
+        label: 'FoodTech',
     },
     {
-        id: 50,
-        name: 'CleanTech',
+        value: 'CleanTech',
+        label: 'CleanTech',
     },
     {
-        id: 51,
-        name: 'Food and Beverage',
+        value: 'Food and Beverage',
+        label: 'Food and Beverage',
     },
     {
-        id: 52,
-        name: 'Food and Drink',
+        value: 'Food and Drink',
+        label: 'Food and Drink',
     },
     {
-        id: 53,
-        name: 'Food Processing',
-    }
+        value: 'Food Processing',
+        label: 'Food Processing',
+    },
+    {
+        value: 'Autre',
+        label: 'Autre'
+    },
 ]
 
 export const optionsYears =[
     {
-        id: 1,
-        year: '0-2 ans',
+        value: '0-2 ans',
+        label: '0-2 ans',
     },
     {
-        id: 2,
-        year: '2-5 ans',
+        value: '2-5 ans',
+        label: '2-5 ans',
     },
     {
-        id: 3,
-        year: '5-10 ans',
+        value: '5-10 ans',
+        label: '5-10 ans',
     },
     {
-        id: 4,
-        year: '10-15 ans',
+        value: '10-15 ans',
+        label: '10-15 ans',
     },
     {
-        id: 5,
-        year: '+15 ans',
+        value: '+15 ans',
+        label: '+15 ans',
     }
 ];
 

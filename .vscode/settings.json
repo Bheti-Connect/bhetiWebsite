@@ -5,6 +5,7 @@
     "connexion",
     "deuxieme",
     "etat",
+    "Formik",
     "Formulaire",
     "Investisseur",
     "Investisseurs",
@@ -13,6 +14,7 @@
     "Methode",
     "Parler",
     "S'inscrire",
+    "Sélectionner",
     "Tete"
   ]
 }
