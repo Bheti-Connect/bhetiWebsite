@@ -7922,10 +7922,10 @@
   optionalDependencies:
     "fsevents" "^2.3.2"
 
-"react-select@^5.6.1":
-  "integrity" "sha512-dYNRswtxUHW+F1Sc0HnxO5ryecPIAsG0+Cwyq5EIXZJBxCxUG2hFfQz41tc++30/2ISuuPglDikc4hEb4NsiuA=="
-  "resolved" "https://registry.npmjs.org/react-select/-/react-select-5.6.1.tgz"
-  "version" "5.6.1"
+"react-select@^5.7.3":
+  "integrity" "sha512-z8i3NCuFFWL3w27xq92rBkVI2onT0jzIIPe480HlBjXJ3b5o6Q+Clp4ydyeKrj9DZZ3lrjawwLC5NGl0FSvUDg=="
+  "resolved" "https://registry.npmjs.org/react-select/-/react-select-5.7.3.tgz"
+  "version" "5.7.3"
   dependencies:
     "@babel/runtime" "^7.12.0"
     "@emotion/cache" "^11.4.0"

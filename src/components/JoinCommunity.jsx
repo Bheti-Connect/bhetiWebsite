@@ -91,7 +91,8 @@ const JoinCommunityStyled = styled.div`
             margin: -10% auto 1%;
             .img-com-div{
                 position: relative;
-                width: 100%;
+                width:;
+                margin: 0 auto;
                 img {
                     width: 100%;
                     height: 100%;
@@ -211,95 +212,64 @@ const JoinCommunityStyled = styled.div`
             }
             .latest-text{
                 position: relative;
-                width: 50vw;
-                margin: 40% auto;
+                width: 90vw;
+                margin: 40% -10%;
                 .community{
                     .inner{
                         .button__div{
-                            width: 40%;
-                            margin: 0 auto;
-                        }
-                    }
-                }
-            }
-        }
-        @media only screen and (max-width: 600px){
-            .img-com-div{
-                width: 85vw;
-                height: 30vh;
-                margin: -38% 0;
-                margin-left: -23px;
-                .img-community{
-                    width: 100%;
-                }
-
-            }
-            .latest-text{
-                position: relative;
-                margin-top: 100%;
-                .community{
-                    width: 100%;
-                    .inner{
-                        width: 100%;
-                        .left-side{
-                            margin: 0 auto;
                             width: 100%;
-                            p{
-                                text-align: left;
-                                font-size: 15.5px !important;
-                            }
-                        }
-                        .button__div{
                             margin: 0 auto;
-                            width: 100%;
                         }
                     }
                 }
             }
         }
         @media only screen and (max-width: 440px){
-            .latest-text{
-                .community{
-                    width: 80vw;
-                    margin: 0 auto;
-                    .inner{
-                        width: 100%;
-                        .left-side{
-                            margin: 0 auto;
+                width: 90vw;
+                .latest-text{
+                    margin-left: -10vw;
+                    .community{
+                        width: 80vw;
+                        margin: 0 auto;
+                        .inner{
                             width: 100%;
-                            p{
-                                text-align: left;
-                                font-size: 15.5px !important;
-                            }
-                        }
-                        .button__div{
-                            width: 100%;
-                            .social-icon{
-                                    position: relative;
-                                    width: 25px;
-                                    height: 25px;
-                                    color: ${props => props.theme.colorGrey2};
-                                    cursor: pointer;
-                                    margin: -4px 10px;
-                            }
-                                #slack-span{
-                                    height: 55px;
-                                    width: 250px;                                   
+                            .left-side{
+                                margin: 0 auto;
+                                width: 100%;
+                                p{
+                                    text-align: left;
+                                    font-size: 15.5px !important;
                                 }
-                                #linkedin-span{
-                                    height: 55px;
-                                    width: 250px;
+                            }
+                            .button__div{
+                                width: 100%;
+                                .social-icon{
+                                        position: relative;
+                                        width: 25px;
+                                        height: 25px;
+                                        color: ${props => props.theme.colorGrey2};
+                                        cursor: pointer;
+                                        margin: -4px 10px;
                                 }
-                                .our-community{
-                                    display: flex;
-                                    h5{
-                                        font-size: 14px;
+                                    #slack-span{
+                                        height: 55px;
+                                        width: 250px;                                   
                                     }
-                                }
+                                    #linkedin-span{
+                                        height: 55px;
+                                        width: 250px;
+                                    }
+                                    .our-community{
+                                        display: flex;
+                                        h5{
+                                            font-size: 14px;
+                                        }
+                                    }
+                            }
                         }
                     }
                 }
-            }
+            
         }
         @media only screen and (max-width: 375px){
             .latest-text{
@@ -313,7 +283,7 @@ const JoinCommunityStyled = styled.div`
         height: 850px;
     }
     @media only screen and (max-width: 768px){
-        height: 750px;
+        height: 800px;
     }
 }
 `;

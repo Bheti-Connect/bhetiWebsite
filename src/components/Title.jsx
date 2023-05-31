@@ -32,7 +32,7 @@ const TitleStyled = styled.div`
             width: 100% !important;
         }
         @media only screen and (max-width: 375px){
-            font-size: 39px;
+            font-size: 30px;
         }
     }
     .subtext{
