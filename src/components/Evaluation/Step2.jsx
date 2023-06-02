@@ -11,6 +11,7 @@ import { optionsActivity, optionsYears } from '../Forms/FormInput'
 const validationSchema = Yup.object().shape({
   yearsOfActivity: Yup.string().required('Required'),
   description: Yup.string().required('Required'),
+  numberOfPeople: Yup.string().required('Required'),
   country: Yup.string().required('Required'),
   sector: Yup.string().required('Required'),
 });
@@ -21,7 +22,7 @@ const customStyles = {
     border: state.isFocused ? '1px solid #ed8b8b' : '1px solid #ed8b8b',
     fontSize: '16px',
     boxShadow: state.isFocused ? '0 0 1px #ed8b8b' : 'none',
-    width: "250px",
+    width: "350px",
     '&:hover': {
       border: state.isFocused ? '1px solid #ed8b8b' : '1px solid #ed8b8b'
     }
@@ -33,9 +34,6 @@ const customStyles = {
   // You can add more styles here...
 };
 
-
-
-
 export default function Step2({ setFormValues, prevValues }) {
   const formik = useFormik({
     initialValues: prevValues,
@@ -46,7 +44,6 @@ export default function Step2({ setFormValues, prevValues }) {
   });
 
   const countryOptions = countriesList.map(country => ({ value: country, label: country }));
-
   return (
     <Components.StyledForm onSubmit={formik.handleSubmit}>
       <Components.StyledTitle>Informations sur l'entreprise</Components.StyledTitle>
@@ -66,6 +63,14 @@ export default function Step2({ setFormValues, prevValues }) {
         placeholder='Décrivez votre entreprise en quelques mots...'
         value={formik.values.description}
       />
+      <Components.StyledLabel htmlFor="numberOfPeople">Nombre de personnes sur le projet ?</Components.StyledLabel>
+      <Components.StyledInput
+            name="numberOfPeople"
+            type="number"
+            placeholder="Saisissez le nombre de personnes"
+            onChange={formik.handleChange}
+            value={formik.values.numberOfPeople}
+        />
       <Components.StyledLabel htmlFor="country">Pays d'activité</Components.StyledLabel>
       <Select
         id="country"

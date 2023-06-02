@@ -6,9 +6,9 @@ import * as Components from "./styles";
 
 
 const validationSchema = Yup.object().shape({
-    companyName: Yup.string().required('Required'),
-    fullName: Yup.string().required('Required'),
-    email: Yup.string().email('Invalid email').required('Required'),
+        companyName: Yup.string().required('Required'),
+        fullName: Yup.string().required('Required'),
+        email: Yup.string().email('Invalid email').required('Required'),
     });
 
     // use your styled components instead of html elements
@@ -53,4 +53,5 @@ const validationSchema = Yup.object().shape({
     );
 
 }
+
 
