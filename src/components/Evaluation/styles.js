@@ -12,7 +12,7 @@ export const StyledForm = styled.form`
 export const StyledInput = styled.input`
     margin: 10px 0;
     padding: 10px;
-    width: 280px;
+    width: 350px;
     border-radius: 18px;
     `;
 
@@ -33,9 +33,8 @@ export const StyledTextArea = styled.textarea`
     font-family: 'Montserrat', sans-serif;
     font-size: 1rem;
     padding: 20px 10px;
-    width: 260px;
+    width: 350px;
     border-radius: 18px;
-
 `
 
 export const StyledSelect = styled.select`
@@ -56,6 +55,19 @@ export const StyledButtonNext = styled.button`
     cursor: pointer;
     &:hover {
         background-color: #660d0d;
+    }
+    `;
+export const StyledButtonSend = styled.button`
+    font-family: 'Montserrat', sans-serif;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #1E8449;
+    border: none;
+    color: white;
+    border-radius: 23px;
+    cursor: pointer;
+    &:hover {
+        background-color: #196F3D;
     }
     `;
 

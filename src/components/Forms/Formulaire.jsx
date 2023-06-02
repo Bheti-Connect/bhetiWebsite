@@ -63,7 +63,6 @@ const Formulaire = () => {
                     alert('Veuillez remplir tous les champs');
                     return;
                 }
-
             const headers = {
                 "Content-Type": "application/json",
                 "Accept": "application/json",
