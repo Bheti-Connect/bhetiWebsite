@@ -60,12 +60,12 @@ const Footer = () => {
                 </div>
                 <div className="elements">
                     <li>
-                        <a href="/privacy">Politique de confidentialité</a>
+                        <a href="/politique-de-confidentialite">Politique de confidentialité</a>
                     </li>
                 </div>
                 <div className="elements">
                     <li>
-                        <a href="/faq">FAQ</a>
+                        <a href="/foire-aux-questions">FAQ</a>
                     </li>
                 </div>
             </FooterLinks>
