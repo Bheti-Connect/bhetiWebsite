@@ -12,7 +12,7 @@ const NavBar = () => {
     const handleNavbarToggle = () => {
         toggleButton();
         // Additional code for handling the navbar toggle
-      };
+        };
 
     const removeNavMenu = () => {
         setShow((show) => !show);
@@ -117,7 +117,7 @@ const NavBarStyled = styled.nav`
                     margin-left: -40px;
                 }
                 @media only screen and (max-width: 440px){
-                    width: 39vw;
+                    width: 30vw;
                 }
             }
 }
@@ -171,7 +171,7 @@ const NavBarStyled = styled.nav`
                 }
             }
             #menu-icon i{
-                font-size: 2.4rem;
+                font-size: 1.8rem;
             }
             
             }
@@ -280,7 +280,7 @@ const NavBarStyled = styled.nav`
                     color: ${props => props.theme.colorWhite};
                 } 
             @media only screen and (max-width: 600px){
-                margin-top: 7%;
+                margin-top: 9%;
             } 
         }
     #menu-icon i{
