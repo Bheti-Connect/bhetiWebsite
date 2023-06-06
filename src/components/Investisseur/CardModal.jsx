@@ -209,13 +209,13 @@ const CardModal = ({ select, setModal, connect }) => {
 
             <div className="deck">
               {connect ? (
-                <Link to={"/waitlist"} className="Btn-deck">
+                <a href="https://airtable.com/shrI34nFDIU2xmipb"  className="Btn-deck">
                   Récevoir le deck
-                </Link>
+                </a>
               ) : (
-                <Link to={"/waitlist"} className="Btn-deck">
+                <a href="https://airtable.com/shrI34nFDIU2xmipb" className="Btn-deck">
                   Récevoir le deck
-                </Link>
+                </a>
               )}
             </div>
           </Body>

@@ -35,9 +35,18 @@ import fidoIcon from "../assets/images/success/fido_icon.jpg"
 import fidoImage from "../assets/images/success/fido_image.jpg"
 import spleetIcon from "../assets/images/success/spleet_icon.jpg"
 import spleetImage from "../assets/images/success/spleet_image.jpg"
-
-
-
+import freetIcon from "../assets/images/success/freet_icon.jpeg"
+import freetImage from "../assets/images/success/freet_image.jpeg"
+import papsIcon from "../assets/images/success/paps.png"
+import papsImage from "../assets/images/success/paps-img.jpg"
+import YallaIcon from "../assets/images/success/yalla.jpeg"
+import YallaImage from "../assets/images/success/yalla-img.jpeg"
+import ProxaIcon from "../assets/images/success/proxalys.jpeg"
+import ProxaImage from "../assets/images/success/proxalys-img.jpeg"
+import WaveIcon from "../assets/images/success/wave.jpg"
+import WaveImage from "../assets/images/success/wave-img.jpg"
+import ShuttIcon from "../assets/images/success/shuttlers.jpg"
+import ShuttImage from "../assets/images/success/shuttlers-img.jpg"
 
 
 
@@ -532,6 +541,72 @@ const successstories = [
         image: spleetImage,
         icon: spleetIcon,
         linkedin: "https://www.linkedin.com/feed/update/urn:li:activity:6905814829907746816"
+    },
+    {
+        id: 11,
+        nom: "Freeterium",
+        pays: [],
+        stage: "Seed",
+        type: "Levée de fonds",
+        secteurs: ["Logistique & transport"],
+        image: freetImage,
+        icon: freetIcon,
+        linkedin: "https://www.linkedin.com/feed/update/urn:li:activity:6905814829907746816"
+    },
+    {
+        id: 12,
+        nom: "Paps",
+        pays: [],
+        stage: "pré-série A",
+        type: "Levée de fonds",
+        secteurs: ["Logistique & transport"],
+        image: papsImage,
+        icon: papsIcon,
+        linkedin: "https://www.linkedin.com/feed/update/urn:li:activity:6890581960243429377/"
+    },
+    {
+        id: 13,
+        nom: "Yalla Fel Sekka",
+        pays: [],
+        stage: "Série A",
+        type: "Levée de fonds",
+        secteurs: ["Logistique & transport"],
+        image: YallaImage,
+        icon: YallaIcon,
+        linkedin: "https://www.linkedin.com/feed/update/urn:li:activity:6895647042689933312/"
+    },
+    {
+        id: 14,
+        nom: "Proxalys",
+        pays: [],
+        stage: "Pré seed",
+        type: "Levée de fonds",
+        secteurs: ["services financiers"],
+        image: ProxaImage,
+        icon: ProxaIcon,
+        linkedin: "https://www.linkedin.com/feed/update/urn:li:activity:6898218726508830720/"
+    },
+    {
+        id: 15,
+        nom: "Wave",
+        pays: ["Sénégal"],
+        stage: "Série A",
+        type: "Levée de fonds",
+        secteurs: ["Fintech"],
+        image: WaveImage,
+        icon: WaveIcon,
+        linkedin: "https://www.linkedin.com/feed/update/urn:li:activity:6867154146345156608/"
+    },
+    {
+        id: 16,
+        nom: "Shuttlers",
+        pays: [],
+        stage: "",
+        type: "Levée de fonds",
+        secteurs: ["Transport & Logistique"],
+        image: ShuttImage,
+        icon: ShuttIcon,
+        linkedin: "https://www.linkedin.com/feed/update/urn:li:activity:6870296479169314817/"
     },
 ]
 
