@@ -403,24 +403,55 @@ dt{
 	body {
 		text-align: center;
 	}
+	dd{
+		font-size: .75rem;
+	}
+	dt{
+		
+		font-size: .80rem;
+	}
 	#main {
-		margin-top: -470px !important;
+		width: 93%;
+		margin-top: -73vh !important;
 	}
 	#cards {
 		display: block;
 		margin-top: -42vh;
 	}
-	
+	.upper_container{
+		margin-top: 4% !important;
+	}
+	.upper_container h3{
+		font-size: 1em;
+	}
+	.need-pitch{
+		margin: 0 auto 8%;
+	}
+	.card_title{
+		font-size: 1em;
+		margin-left: 16px;
+		margin-top: 16px;
+	}
+	.pitch-deck-elements{
+		width: 90%;
+		margin: auto;
+	}
+	.image__figure{
+		width: 100% ;
+		height: 100%;
+		margin-bottom: -2% !important;
+	}
 	
 	.btn{
 		margin-bottom: 10px;
 		margin-left: 10px;
 	}
 	.need-container{
-		width: 100%;
+		width: 55%;
+		margin: 0 auto 5%;
 	}
 	.help{
-		width: 55%;
+		width: 90%;
 	}
 	.paragraph{
 		font-size: .75em !important;

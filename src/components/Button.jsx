@@ -49,8 +49,8 @@ const ButtonStyled = styled.button`
             font-size: 3000px;
         }
     }
-    @media only screen and (max-width: 425px){
-        font-size: 12px;
+    @media only screen and (max-width: 440px){
+        font-size: 10px;
     }
 `;
 
