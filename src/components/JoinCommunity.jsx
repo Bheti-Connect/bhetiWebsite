@@ -225,6 +225,14 @@ const JoinCommunityStyled = styled.div`
             }
         }
         @media only screen and (max-width: 440px){
+            .img-com-div{
+                position: relative;
+                margin: -47% -13% 0;
+                width: 87.8vw;
+                img{
+                    width: 100%;
+                }
+            }
                 width: 90vw;
                 .latest-text{
                     margin-left: -10vw;
