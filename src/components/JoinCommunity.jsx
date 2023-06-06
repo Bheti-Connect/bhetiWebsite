@@ -227,7 +227,7 @@ const JoinCommunityStyled = styled.div`
         @media only screen and (max-width: 440px){
             .img-com-div{
                 position: relative;
-                margin: -50% -13% 0;
+                margin: -47% -13% 0;
                 width: 87.8vw;
                 img{
                     width: 100%;
