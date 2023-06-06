@@ -34,10 +34,10 @@ const Advantages = () => {
 													name={"Je demande l'accès"}
 											/>
 										</Link>
-									`</div>
+								</div>
 							</div>
 							<figure className='image__figure'>
-								<img className='image-team' src={Block1} alt='Image-Femmes'/>
+								<img className='image-woman' src={Block1} alt='femme-avec-laptop'/>
 							</figure>
 						</div>
 					</li>
@@ -78,13 +78,13 @@ const Advantages = () => {
 						<div className="card__content">
 							<div>
 								<h3 className='card_title'>Votre Prévisionnel financier</h3>
-								<dl>
+								<dl className='pitch-deck-elements'>
 									<dt>A quoi sert le Prévisionnel financier ?</dt>
 									<dd><span className='point'>. </span>Avoir une gestion efficace de l’entreprise</dd>
 									<dd><span className='point'>. </span> Permet aux investisseurs d’épouser votre vision</dd>
 									
 								</dl>
-								<dt>
+								<dt className='pitch-deck-elements'>
 									BHC dispose d'une expertise solide pour vous aider à élaborer un plan d'affaires détaillé et soigné afin de répondre efficacement aux exigences des financeurs.
 								</dt>
 								<div className='need-container'>
@@ -110,10 +110,10 @@ const Advantages = () => {
 								<div className='text-container'>
 									<h3 className='card_title'>Appui et Conseil </h3>
 									<div className='paragraph__container'>
-										<dt className='appui__dt'>
+										<dt className='appui__dt pitch-deck-elements'>
 											Nous vous proposons un accompagnement sur mesure dans toutes les étapes de votre levée de fonds :
 										</dt>
-										<dt className='appui-conseil'>
+										<dt className='appui-conseil pitch-deck-elements'>
 											<dd><span className='point'>. </span> Définition des critères de financement</dd>
 											<dd><span className='point'>. </span> Conception de la documentation</dd>
 											<dd><span className='point'>. </span> Préparation des réunions avec les investisseurs</dd>
