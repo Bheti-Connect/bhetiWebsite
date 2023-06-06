@@ -106,6 +106,9 @@ const Footer = () => {
         color: #ced4d9;
         font-size: 1.1rem;
         margin-bottom: 10px;
+        @media all and (max-width: 500px){
+            text-align: left;
+        }
     }
 
     @media (min-width: 768px) {
@@ -162,6 +165,11 @@ const FooterLinks = styled.ul`
             color: #797D7F;
             font-size: .9rem;
         }
+        @media all and (max-width:500px) {
+            display: inline-block;
+            width: 100%;
+            text-align: left;
+        }
     }
     h5{
         color: #ced4d9;
@@ -176,6 +184,9 @@ const FooterLinks = styled.ul`
             text-decoration: none;
         }
         }
+        @media all and (max-width:500px){
+            text-align: left;
+        }
     }
     .b-nav-icons{
             display: flex;
@@ -189,17 +200,12 @@ const FooterLinks = styled.ul`
             }
             .icon-linkedin{
                 :hover{
-                    color: #2677b5;
+                    color: #ced4d9;
                 }
             }
-            .icon-facebook{
+            .icon-slack{
                 :hover{
-                    color: #2872e7 ;
-                }
-            } 
-            .icon-instagram{
-                :hover{
-                    color: #a9388b ;
+                    color: #ced4d9 ;
                 }
             }
         }
