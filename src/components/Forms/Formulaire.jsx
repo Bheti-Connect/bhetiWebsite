@@ -441,26 +441,22 @@ const FormulaireStyled = styled.section`
                 margin-top: 2.5rem;
                 width: 83%;
                 .envoyer {
+                    padding: 10px 20px;
                     font-size: 16px;
-                    letter-spacing: 1px;
-                    text-decoration: none;
-                    font-family: 'Montserrat', sans-serif;
-                    width: 110px;
-                    color: ${props => props.theme.colorBlack};
+                    background-color: #641c1c;
+                    color: #fff;
+                    border-radius: 20px;
+                    border: none;
                     cursor: pointer;
-                    border: 1px solid;
-                    padding: 0.25em 0.5em;
-                    box-shadow: 1px 1px 0px 0px, 2px 2px 0px 0px, 3px 3px 0px 0px, 4px 4px 0px 0px, 5px 5px 0px 0px ;
-                    position: relative;
-                    user-select: none;
-                    -webkit-user-select: none;
-                    touch-action: manipulation;
+                    &:hover {
+                        background-color: #7a2323;
+                    }
                     }
 
                     .envoyer:active {
-                    box-shadow: 0px 0px 0px 0px;
-                    top: 5px;
-                    left: 5px;
+                        box-shadow: 0px 0px 0px 0px;
+                        top: 5px;
+                        left: 5px;
                     }
 
                     @media (min-width: 768px) {
