@@ -7,6 +7,13 @@ export const StyledForm = styled.form`
     align-items: center;
     padding: 20px;
     margin-bottom: 50px;
+    .error{
+        color: #900D09;
+        font-size: 0.8em;
+    }
+    .required{
+        color: #900D09;
+    }
     `;
 
 export const StyledInput = styled.input`
@@ -14,18 +21,28 @@ export const StyledInput = styled.input`
     padding: 10px;
     width: 350px;
     border-radius: 18px;
+    @media all and (max-width: 440px){
+        width: 300px;
+    }
     `;
 
 export const StyledTitle = styled.h1`
         font-family: 'Montserrat', sans-serif;
         font-size: 1.5rem;
         margin-bottom: 40px;
+        @media all and (max-width: 440px){
+            font-size: 1.35rem;
+        }
     `
 export const StyledLabel = styled.label`
     font-family: 'Montserrat', sans-serif;
     font-weight: bold;
     font-size: 1.2rem;
     float: left;
+    @media all and (max-width: 440px){
+        font-size: 1.19rem;
+        margin-bottom: 7px;
+    }
 `
 
 export const StyledTextArea = styled.textarea`
@@ -35,6 +52,9 @@ export const StyledTextArea = styled.textarea`
     padding: 20px 10px;
     width: 350px;
     border-radius: 18px;
+    @media all and (max-width: 440px){
+        width: 300px;
+    }
 `
 
 export const StyledSelect = styled.select`
@@ -42,6 +62,7 @@ export const StyledSelect = styled.select`
     margin: 10px 0;
     padding: 10px;
     width: 200px;
+    
     `;
 
 export const StyledButtonNext = styled.button`
