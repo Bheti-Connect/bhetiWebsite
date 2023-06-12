@@ -74,7 +74,7 @@ const CardModalSuccess = ({select, setModal}) => {
                 showGraphic={true}
                 maxLine={2}
                 minLine={1}
-                url="https://www.linkedin.com/feed/update/urn:li:activity:6915955037785481216/"
+                url="https://www.google.com/"
                 proxyUrl="http://localhost:3500/proxy?url="
                  />
                 </div>
