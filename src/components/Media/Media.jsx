@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import ReactPaginate from "react-paginate";
+import { BsArrowDownSquareFill } from 'react-icons/bs';
 import styled from "styled-components";
 import UneMedia from "../../assets/icons/a_la_une_media.svg";
 import VideoMedia from "../../assets/icons/Video_media.svg";
@@ -36,8 +37,15 @@ const Media = () => {
   // Position change pagination : interview and success stories
   const [paginationSelect, setPaginationSelect] = useState("interview");
   const [displayDataOf, setDisplayDataOf] = useState("interview");
+  const [showParagraph, setShowParagraph] = useState(false);
   // theme
   const theme = useTheme();
+
+  // initialize
+
+    const handleToggleParagraph = () => {
+      setShowParagraph(!showParagraph);
+    };
 
   // handle for receive data and set in useState
   const handleSetData = (response) => {
@@ -216,38 +224,70 @@ const Media = () => {
             <h2>Les plus consultés</h2>
 
             <div className="item-consult">
-              <a href="https://www.linkedin.com/feed/update/urn:li:activity:7060912715522789377?updateEntityUrn=urn%3Ali%3Afs_feedUpdate%3A%28V2%2Curn%3Ali%3Aactivity%3A7060912715522789377%29">45 startups pré-sélectionnées...</a>
+              <div className="title">
+                <a href="https://www.linkedin.com/feed/update/urn:li:activity:7060912715522789377?updateEntityUrn=urn%3Ali%3Afs_feedUpdate%3A%28V2%2Curn%3Ali%3Aactivity%3A7060912715522789377%29">
+                  <Title>
+                    45 startups pré-sélectionnées...
+                  </Title>
+                </a>
+                <ArrowIcon onClick={handleToggleParagraph} />
+              </div>
+              {
+                showParagraph 
+                &&
               <p>
               La Société financière internationale (IFC) et Viva Technology 
               ont annoncé les 45 start-ups présélectionnées pour les AfricaTech...
               </p>
+              }
               <p className="item-date">Mai 2023</p>
             </div>
 
             <div className="item-consult">
-              <a href="https://www.linkedin.com/posts/bheti-connect_bheticonnect-afrique-startup-activity-7055795292893237248-Y1QH?utm_source=share&utm_medium=member_desktop">Chargel, une société Sénégalaise lève 2.5 millions $ ... </a>
+              <div className="title">
+                <a href="https://www.linkedin.com/posts/bheti-connect_bheticonnect-afrique-startup-activity-7055795292893237248-Y1QH?utm_source=share&utm_medium=member_desktop">
+                  <Title>
+                    Chargel, une société Sénégalaise lève 2.5 millions $...
+                  </Title>
+                </a>
+                <ArrowIcon onClick={handleToggleParagraph} />
+              </div>
+              {
+                showParagraph
+                &&
               <p>
               Après avoir obtenu un financement de préamorçage de
               750 000 dollars au près de Century Oak Ventures et Logos Venture Partners...
               </p>
+              }
               <p className="item-date">Avril 2023</p>
             </div>
 
             <div className="item-consult">
-              <a href="https://www.linkedin.com/posts/bheti-connect_entrepreneurs-innovation-entreprises-activity-7004031286008774656-qh9k?utm_source=share&utm_medium=member_desktop">Comment les entreprises s’imposent-elles sur leur marché en Afrique ?</a>
+              <div className="title">
+                <a href="https://www.linkedin.com/posts/bheti-connect_entrepreneurs-innovation-entreprises-activity-7004031286008774656-qh9k?utm_source=share&utm_medium=member_desktop">
+                  <Title>
+                    Comment les entreprises s’imposent-elles sur leur marché en Afrique ?
+                  </Title>
+                </a>
+                <ArrowIcon onClick={handleToggleParagraph} />
+              </div>
+              {
+                showParagraph
+                &&
               <p>
-              Merci à AfricAngels de nous avoir fait confiance pour intervenir sur la thématique ... 
-              Ce fut un plaisir d'échanger sur cette thématique au moment où l'entrepreneuriat connait un réel essor sur le continent Africain...
+                Merci à AfricAngels de nous avoir fait confiance pour intervenir sur la thématique ... 
+                Ce fut un plaisir d'échanger sur cette thématique au moment où l'entrepreneuriat connait un réel essor sur le continent Africain...
               </p>
+              }
               <p className="item-date">Décembre 2022</p>
             </div>
-
             <div className="item-consult">
               <a href="https://www.linkedin.com/posts/bheti-connect_lives-bheti-connect-activity-6971029367661457409-17uq?utm_source=share&utm_medium=member_desktop">Les lives Bheti Connect, c'est ....</a>
               <p>
-                <li>📌Plus de 500 participants</li> <br />
-                <li> 📌7 lives avec 8 invités qui font bouger les choses sur les marchés africains</li><br />
-                <li>📌Une pluralité de sujets qui portent sur les réels tendances économiques en Afrique</li>
+                <li>📌 Plus de 500 participants</li> <br />
+                <li> 📌 7 lives avec 8 invités qui font bouger les choses sur les marchés africains</li><br />
+                <li>📌 Une pluralité de sujets qui portent sur les réels tendances économiques en Afrique</li>
               </p>
               <p className="item-date">Septembre 2022</p>
             </div>
@@ -263,10 +303,14 @@ const Media = () => {
 
           <div>
             <h2>Ecouter et voir</h2>
+            {
+              showParagraph 
+              &&
             <p>
               Apprenez de ceux qui analysent le climat des affaires pour piloter
               et prendre des décisions au quotidien
             </p>
+            }
           </div>
         </div>
 
@@ -404,6 +448,27 @@ const AllMedia = styled.div`
   }
 `;
 
+const Title = styled.h3`
+  display: flex;
+  align-items: center;
+  font-size: 15px;
+  cursor: pointer;
+  text-align: left;
+  /* Title styles */
+  @media only screen and (max-width: 500px) {
+    width: 95%;
+  }
+`;
+
+
+const ArrowIcon = styled(BsArrowDownSquareFill)`
+  /* Arrow icon styles */
+  margin-left: 16px;
+  width: 40px;
+  height: 30px;
+  color: ${(props) => props.theme.colorBheti};
+`;
+
 const AllCards = styled.div`
   width: 100%;
 
@@ -473,14 +538,13 @@ margin-bottom: 80px;
     width: 30%;
     
 
-    @media only screen and (max-width: 414px) {
-      width: 100%;
-      margin: 15px auto 0;
-      background-color: white;
-    }
-
     @media only screen and (max-width: 1280px) {
       width: 80%;
+    }
+    @media only screen and (max-width: 480px) {
+      width: 90%;
+      margin: 15px auto 0;
+      background-color: white;
     }
 
       h2 {
@@ -517,6 +581,9 @@ margin-bottom: 80px;
         text-align: right;
         font-size: 11px;
         margin-top: 10px;
+      }
+      .title{
+        display: flex;
       }
     }
   }
@@ -604,7 +671,7 @@ margin-bottom: 80px;
         }
       }
       @media only screen and (max-width: 500px) {
-         display: block;
+          display: block;
         }
     }
 
@@ -633,18 +700,6 @@ margin-bottom: 80px;
       }
     }
   }
-}
-
-@media only screen and (max-width: 578px) {
-}
-
-@media only screen and (max-width: 425px) {
-}
-
-@media only screen and (max-width: 375px) {
-}
-
-@media only screen and (max-width: 320px) {
 }
 `;
 
