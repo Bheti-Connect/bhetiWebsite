@@ -556,6 +556,10 @@ margin-bottom: 80px;
       background-repeat: no-repeat;
       box-shadow: 5px 3px 3px #b86a6a;
       cursor: pointer;
+      @media only screen and (max-width: 500px) {
+          width: 100% ;
+          height: 340px;
+        }
     }
 
     .sub-card {
@@ -579,6 +583,7 @@ margin-bottom: 80px;
         cursor: pointer;
         @media only screen and (max-width: 500px) {
           width: 100% ;
+          height: 340px;
         }
       }
 
@@ -594,7 +599,8 @@ margin-bottom: 80px;
         cursor: pointer;
         @media only screen and (max-width: 500px) {
           margin-top: 12px;
-          width: 100% ;
+          width: 100%;
+          height: 340px;
         }
       }
       @media only screen and (max-width: 500px) {
