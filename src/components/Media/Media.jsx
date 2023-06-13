@@ -7,6 +7,7 @@ import { useTheme } from "../../context/themeContext";
 import Search from "./Search";
 import CardMediaModal from "./CardMediaModal";
 import CardsMedia from "./CardsMedia";
+import Img_test from '../../assets/images/Amini-startup.jpg'
 import CardSuccess from "./SuccessStories/CardSuccess";
 import LoaderMedia from "./LoaderMedia";
 import { axios_get, axios_post } from "../../utils/FunctionsComponent";
@@ -202,13 +203,12 @@ const Media = () => {
         </div>
         <div className="body-une">
         <div className="cards-une">
-            <div className="card-1" onClick={() => { window.location.href = window.location.href='https://www.linkedin.com/posts/bheti-connect_bheticonnect-startup-afrique-activity-7065574379513892865-kPIc?utm_source=share&utm_medium=member_desktop'; }}>
-              <img />
+            <div className="card-1" onClick={() => { window.location.href = window.location.href='https://www.linkedin.com/posts/bheti-connect_bheticonnect-afrique-banque-activity-70736151431289692'; }}>
+              <img  />
             </div>
             <div className="sub-card">
-               <div className="card-2" onClick={() => { window.location.href = window.location.href='https://www.linkedin.com/posts/bheti-connect_fintechs-bheticonnect-startups-activity-7057239472421109760-abyN?utm_source=share&utm_medium=member_desktop'; }}></div>
-               <div className="card-3" onClick={() => { window.location.href = window.location.href='https://www.linkedin.com/posts/bheti-connect_bheticonnect-africa-entreprise-activity-7064124827267158016-s_bH?utm_source=share&utm_medium=member_desktop'; }}></div>
-             
+                <div className="card-2" onClick={() => { window.location.href = window.location.href='https://www.linkedin.com/posts/bheti-connect_bheticonnect-entreprise-innovation-activity-7071774045012160512-HxHW?utm_source=share&utm_medium=member_desktop'; }}></div>
+                <div className="card-3" onClick={() => { window.location.href = window.location.href='https://www.linkedin.com/posts/bheti-connect_bheticonnect-africa-entreprise-activity-7064124827267158016-s_bH?utm_source=share&utm_medium=member_desktop'; }}></div>
             </div>
           </div>
 
@@ -333,7 +333,6 @@ const Media = () => {
 
 const AllMedia = styled.div`
   margin: auto;
-
   .containerClassName {
     display: flex;
     flex-wrap: wrap;
@@ -355,7 +354,6 @@ const AllMedia = styled.div`
     cursor: pointer;
     padding: 4px 7px;
     transition: 0.3s ease;
-
     &:hover {
       background-color: ${(props) => props.theme.colorBheti};
     }
@@ -477,38 +475,41 @@ margin-bottom: 80px;
 
     @media only screen and (max-width: 414px) {
       width: 100%;
+      margin: 15px auto 0;
       background-color: white;
     }
 
     @media only screen and (max-width: 1280px) {
       width: 80%;
-  
     }
 
       h2 {
         color: ${(props) => props.theme.colorBheti};
         margin-bottom: 10px;
         font-weight: 600;
-        font-family: "Inter", sans-serif;
+        font-family: "Montserrat", sans-serif;
       }
 
 
     .item-consult {
       a{
-        
+        font-family: "Montserrat", sans-serif;
         font-size: 17px;
-        
         &:hover{
           color:${props => props.theme.colorBheti};
           text-decoration: underline;
         }
       }
       p{
+        font-family: "Montserrat", sans-serif;
         font-size: 14px;
         text-align: start;
         &:hover{
           color:${props => props.theme.colorBheti};
-         
+        }
+        @media only screen and (max-width: 500px){
+          width: 90%;
+          margin-left: 12px;
         }
       }
 
@@ -536,14 +537,18 @@ margin-bottom: 80px;
     @media only screen and (max-width: 1280px) {
       flex-direction: column;
       width: 80%;
-  
     }
+    @media only screen and (max-width: 500px) {
+      margin: auto;
+      width: 90%;
+    }
+
 
     .card-1 {
       width: 100%;
       height: 250px;
       border-radius: 10px;
-      background-image: url("https://media.licdn.com/dms/image/D4E22AQESJf1-PXsAkw/feedshare-shrink_1280/0/1684550172700?e=1687392000&v=beta&t=iGU8Kp2bJ_OJnH22nXI37dHijDyyWNhZIc_N8kdOvzs") ;
+      background-image: url("https://media.licdn.com/dms/image/D4E22AQH-edv2yUXzzw/feedshare-shrink_2048_1536/0/1686481269949?e=1689811200&v=beta&t=NgyfAfnMoBiZPNOTUq_IVr0pdbRitcV6_DeuSw-7AAk") ;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -567,11 +572,14 @@ margin-bottom: 80px;
         width: 48%;
         height: 250px;
         border-radius: 20px;
-        background-image: url("https://media.licdn.com/dms/image/D4D22AQEbCKn9KpRsAQ/feedshare-shrink_2048_1536/0/1682566161543?e=1687392000&v=beta&t=xtScCWmGg7quHqUVwU2j6YMWjEe9uBLvn5jhDT8mux8") ;
+        background-image: url("https://media.licdn.com/dms/image/D4E22AQGuZ4qsNZje8Q/feedshare-shrink_1280/0/1686042318022?e=1689811200&v=beta&t=CZk-G45cOZ0MSeCoLVInO1MzGjVqsO5MnKDxndpB3xo") ;
         background-size: cover;
         background-repeat: no-repeat;
         box-shadow: 5px 3px 3px #b86a6a;
         cursor: pointer;
+        @media only screen and (max-width: 500px) {
+          width: 100% ;
+        }
       }
 
       .card-3{
@@ -584,7 +592,14 @@ margin-bottom: 80px;
         background-repeat: no-repeat;
         box-shadow: 5px 3px 3px #b86a6a;
         cursor: pointer;
+        @media only screen and (max-width: 500px) {
+          margin-top: 12px;
+          width: 100% ;
+        }
       }
+      @media only screen and (max-width: 500px) {
+         display: block;
+        }
     }
 
   }
@@ -764,7 +779,7 @@ const SectionEcouteVoir = styled.div`
     }
   }
   }
-}
+}}
 
 
 @media only screen and (max-width: 428px) {
