@@ -37,14 +37,23 @@ const Media = () => {
   // Position change pagination : interview and success stories
   const [paginationSelect, setPaginationSelect] = useState("interview");
   const [displayDataOf, setDisplayDataOf] = useState("interview");
-  const [showParagraph, setShowParagraph] = useState(false);
+  const [showFirstParagraph, setshowFirstParagraph] = useState(false);
+  const [showSecondParagraph, setshowSecondParagraph] = useState(false);
+  const [showThirdParagraph, setshowThirdParagraph] = useState(false);
+
   // theme
   const theme = useTheme();
 
   // initialize
 
-    const handleToggleParagraph = () => {
-      setShowParagraph(!showParagraph);
+    const handleToggleFirstParagraph = () => {
+      setshowFirstParagraph(!showFirstParagraph);
+    };
+    const handleToggleSecondParagraph = () => {
+      setshowSecondParagraph(!showSecondParagraph);
+    };
+    const handleToggleThirdParagraph = () => {
+      setshowThirdParagraph(!showThirdParagraph);
     };
 
   // handle for receive data and set in useState
@@ -227,17 +236,17 @@ const Media = () => {
               <div className="title">
                 <a href="https://www.linkedin.com/feed/update/urn:li:activity:7060912715522789377?updateEntityUrn=urn%3Ali%3Afs_feedUpdate%3A%28V2%2Curn%3Ali%3Aactivity%3A7060912715522789377%29">
                   <Title>
-                    45 startups pré-sélectionnées...
+                    45 startups pré-sélectionnées pour le programme AfricaTech...
                   </Title>
                 </a>
-                <ArrowIcon onClick={handleToggleParagraph} />
+                <ArrowIcon onClick={handleToggleFirstParagraph} />
               </div>
               {
-                showParagraph 
+                showFirstParagraph 
                 &&
               <p>
-              La Société financière internationale (IFC) et Viva Technology 
-              ont annoncé les 45 start-ups présélectionnées pour les AfricaTech...
+                La Société financière internationale (IFC) et Viva Technology 
+                ont annoncé les 45 start-ups présélectionnées pour les AfricaTech...
               </p>
               }
               <p className="item-date">Mai 2023</p>
@@ -250,10 +259,10 @@ const Media = () => {
                     Chargel, une société Sénégalaise lève 2.5 millions $...
                   </Title>
                 </a>
-                <ArrowIcon onClick={handleToggleParagraph} />
+                <ArrowIcon onClick={handleToggleSecondParagraph} />
               </div>
               {
-                showParagraph
+                showSecondParagraph
                 &&
               <p>
               Après avoir obtenu un financement de préamorçage de
@@ -270,10 +279,10 @@ const Media = () => {
                     Comment les entreprises s’imposent-elles sur leur marché en Afrique ?
                   </Title>
                 </a>
-                <ArrowIcon onClick={handleToggleParagraph} />
+                <ArrowIcon onClick={handleToggleThirdParagraph} />
               </div>
               {
-                showParagraph
+                showThirdParagraph
                 &&
               <p>
                 Merci à AfricAngels de nous avoir fait confiance pour intervenir sur la thématique ... 
@@ -283,7 +292,7 @@ const Media = () => {
               <p className="item-date">Décembre 2022</p>
             </div>
             <div className="item-consult">
-              <a href="https://www.linkedin.com/posts/bheti-connect_lives-bheti-connect-activity-6971029367661457409-17uq?utm_source=share&utm_medium=member_desktop">Les lives Bheti Connect, c'est ....</a>
+              <a href="https://www.linkedin.com/posts/bheti-connect_lives-bheti-connect-activity-6971029367661457409-17uq?utm_source=share&utm_medium=member_desktop">Les lives Bheti Connect, c'est :</a>
               <p>
                 <li>📌 Plus de 500 participants</li> <br />
                 <li> 📌 7 lives avec 8 invités qui font bouger les choses sur les marchés africains</li><br />
@@ -303,14 +312,10 @@ const Media = () => {
 
           <div>
             <h2>Ecouter et voir</h2>
-            {
-              showParagraph 
-              &&
             <p>
               Apprenez de ceux qui analysent le climat des affaires pour piloter
               et prendre des décisions au quotidien
             </p>
-            }
           </div>
         </div>
 
@@ -448,25 +453,29 @@ const AllMedia = styled.div`
   }
 `;
 
-const Title = styled.h3`
+const Title = styled.h5`
   display: flex;
   align-items: center;
   font-size: 15px;
   cursor: pointer;
+  margin-left: 15px;
+  margin-bottom: 10px;
   text-align: left;
   /* Title styles */
   @media only screen and (max-width: 500px) {
-    width: 95%;
+    width: 85%;
   }
 `;
 
 
 const ArrowIcon = styled(BsArrowDownSquareFill)`
   /* Arrow icon styles */
+  position: absolute;
+  right: 25px;
   margin-left: 16px;
-  width: 40px;
-  height: 30px;
-  color: ${(props) => props.theme.colorBheti};
+  width: 20px;
+  height: 20px;
+  color: #641C1C;
 `;
 
 const AllCards = styled.div`
@@ -550,8 +559,14 @@ margin-bottom: 80px;
       h2 {
         color: ${(props) => props.theme.colorBheti};
         margin-bottom: 10px;
+
         font-weight: 600;
         font-family: "Montserrat", sans-serif;
+        @media only screen and (max-width: 480px) {
+          font-size: 23px;
+          text-align: left;
+          margin-left: 15px;
+        }
       }
 
 
@@ -685,7 +700,7 @@ margin-bottom: 80px;
 
     h2 {
       margin-bottom: 5px;
-      font-size: 18px;
+      font-size: 17px;
     }
 
     p {
@@ -852,7 +867,7 @@ const SectionEcouteVoir = styled.div`
 
     h2 {
       margin-bottom: 5px;
-      font-size: 17px;
+      font-size: 16px;
     }
 
     p{
