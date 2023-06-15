@@ -63,6 +63,7 @@ const projects = [
         pourquoi: [
             "D'ici 2025, les ventes en ligne en Afrique représenteront 10 % des ventes au détail et cela passera par la numérisation du secteur formel et informel.",
             "On assiste à l'émergence d'une classe moyenne. Alors que le paiement mobile explose (27,4 milliards de transactions par Mois)",
+            "<hr/>",
             "By 2025, online sales in Africa will account for 10% of retail sales and this will require the digitization of both the formal and informal sectors of the economy.",
             "We are seeing the emergence of a middle class and the simultaneous expansion of mobile payment (27.4 billion transactions per month)"
         ],
@@ -81,6 +82,10 @@ const projects = [
             },
             {
                 title: "Facilitez les paiements grâce à des outils financiers pour les petites entreprises formelles et informelles",
+                description: []
+            },
+            {
+                title: "<hr/>",
                 description: []
             },
            {
@@ -110,6 +115,10 @@ const projects = [
                 ],
             },
             {
+                title: "<hr/>",
+                description: []
+            },
+            {
                 title: "+22 people",
                 description: [
                     "10 delivery people on permanent contracts",
@@ -136,6 +145,10 @@ const projects = [
                 description: []
             },
             {
+                title: "<hr/>",
+                description: []
+            },
+            {
                 title: "B2C : Delivery fees from 1000 FCFA B2C",
                 description: []
             },
@@ -159,6 +172,10 @@ const projects = [
                 ]
             },
             {
+                title: "<hr/>",
+                description: []
+            },
+            {
                 title: "Since January  2021 :",
                 description: [
                     "+50,000 deliveries made",
@@ -180,6 +197,7 @@ const projects = [
             "Frais de déplacement élevés.",
             "Problème d'organisation des transports : pas d'acteur fiable avec une expérience utilisateur satisfaisante.",
             "Taux de mortalité multiplié par 4",
+            "<hr/>",
             "60% of the population are urban dwellers.",
             "Increased mobility needs, longer distances for deliveries, travel to work",
             "High travel costs.",
@@ -203,6 +221,7 @@ const projects = [
             "Une forte croissance du marché ivoirien de l’automobile couplée à une émergence d’une classe moyenne locale, aujourd’hui estimée à 26,4%de la population.",
             "L’application effective, depuis le 1er Juillet 2018, de la nouvelle loi limitant l’âge des véhicules importés d’occasion à 5 ans et 10 ans a redonné un nouveau souffle au secteur en stimulant le marché du neuf au détriment de celui des véhicules d’occasion.",
             "Une intégration du porteur de projet sur la chaîne de valeur avec l’unité d’assemblage après une expérience réussie au niveau de la distribution.",
+            "<hr/>",
             "A large and dynamic market with strong growth potential",
             "A positive and growing population – local market of 25.6 million inhabitants, regional market of 124 million inhabitants.",
             "Strong growth in the Ivory Coast automotive market coupled with the emergence of a local middle class, now estimated at 26.4% of the population.",
@@ -212,6 +231,10 @@ const projects = [
         solutions: [
             {
                 title: "Création d’une unité d’assemblage, de maintenance et de réparation d’équipements routiers : bennes semi remorques, plateaux semi remorques, citernes carburant, citernes à ciment et autres équipements.",
+                description: []
+            },
+            {
+                title: "<hr/>",
                 description: []
             },
             {
@@ -227,6 +250,10 @@ const projects = [
                 ]
             },
             {
+                title: "<hr/>",
+                description: []
+            },
+            {
                 title: "+10 people",
                 description: [
                     "Fabrice Konan, the founder: 10 years in the vehicle marketing sector - MBA in Management from IAE Paris Sorbonne Business School - MBA from the French Institute of Management (IFG) - PMD (Program for Management Development) from MDE Business school",
@@ -240,6 +267,10 @@ const projects = [
             },
             {
                 title: "Service de réparation et maintenance de véhicules",
+                description: []
+            },
+            {
+                title: "<hr/>",
                 description: []
             },
             {
@@ -261,6 +292,10 @@ const projects = [
                 ]
             },
             {
+                title: "<hr/>",
+                description: []
+            },
+            {
                 title: "The company aims to achieve",
                 description: [
                     "6 million euros in sales from the first year",
@@ -275,6 +310,7 @@ const projects = [
             "Miné par les exportations non réglementées, le secteur des transports de marchandise est exposé à de haut risque d’accident, une pollution accrue et une surconsommation d’énergie",
             "Le continent africain ne dispose que d’environ 2% du parc automobile mondial",
             "Le transport routier supporte 90% des échanges intra-régionaux alors que la ZLECAF prévoit un doublement du fret routier de 201 à 403 millions de tonnes dans les prochaines années",
+            "<hr/>",
             "Undermined by unregulated exports, the freight transport sector is exposed to high accident risk, increased pollution, and over-consumption of energy",
             "The African continent has only about 2% of the world's vehicle fleet",
             "Road transport accounts for 90% of intra-regional trade, while the ZLECAF forecasts a doubling of road freight from 201 to 403 million tons in the coming years"
