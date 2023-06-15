@@ -388,11 +388,9 @@ const AllMedia = styled.div`
     font-size: 10px;
     margin-right: 50px;
   }
-
   .containerClassName li {
     margin: 50px 10px;
   }
-
   .pageClassName {
     background-color: ${(props) => props.theme.colorGrey5};
     border-radius: 50px;
