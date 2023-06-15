@@ -271,7 +271,6 @@ const Media = () => {
               }
               <p className="item-date">Avril 2023</p>
             </div>
-
             <div className="item-consult">
               <div className="title">
                 <a href="https://www.linkedin.com/posts/bheti-connect_entrepreneurs-innovation-entreprises-activity-7004031286008774656-qh9k?utm_source=share&utm_medium=member_desktop">
@@ -309,7 +308,6 @@ const Media = () => {
           <div className="icon-media">
             <img src={VideoMedia} alt="video icon" />
           </div>
-
           <div>
             <h2>Ecouter et voir</h2>
             <p>
@@ -318,7 +316,6 @@ const Media = () => {
             </p>
           </div>
         </div>
-
         <div className="containerMenu">
           <div className="Box">
             {/* Section menu */}
