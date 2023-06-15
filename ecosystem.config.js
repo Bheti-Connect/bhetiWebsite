@@ -1,8 +1,8 @@
 module.exports = {
   apps: [
     {
-      name: "oauth2-api",
-      script: "yarn start",
+      name: "preview site",
+      script: "serve -s build -l 2001",
       watch: "."
     },
   ]
