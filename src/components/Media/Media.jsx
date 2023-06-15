@@ -598,7 +598,6 @@ margin-bottom: 80px;
     width: 800px;
     margin-left: 20px;
 
-
     @media only screen and (max-width: 1280px) {
       flex-direction: column;
       width: 800px;
