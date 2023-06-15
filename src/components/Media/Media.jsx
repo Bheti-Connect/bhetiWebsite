@@ -486,7 +486,6 @@ const Container = styled.div``;
 const SectionUne = styled.div`
 margin-bottom: 80px;
 
-
 .head-text {
   display: flex;
   justify-content: flex-start;
