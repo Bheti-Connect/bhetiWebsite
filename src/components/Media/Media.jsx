@@ -376,7 +376,6 @@ const Media = () => {
 };
 
 // Style CSS
-
 const AllMedia = styled.div`
   margin: auto;
   .containerClassName {
