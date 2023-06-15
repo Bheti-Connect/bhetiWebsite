@@ -7,7 +7,7 @@ import * as Components from "./styles";
 
 const validationSchema = Yup.object().shape({
         companyName: Yup.string().required('Required'),
-        fullName: Yup.string().required('Required'),
+        nom: Yup.string().required('Required'),
         email: Yup.string().email('Invalid email').required('Required'),
     });
 
@@ -19,35 +19,57 @@ const validationSchema = Yup.object().shape({
         onSubmit: (values) => {
         setFormValues({ ...values, step: 2 });
         },
+        validationSchema: Yup.object({
+            companyName: Yup.string()
+                .max(50, 'Doit comporter 50 caractères ou moins')
+                .required('Requis'),
+            nom: Yup.string()
+                .max(50, 'Ce champs comporter 50 caractères ou moins')
+                .required('Requis'),
+            email: Yup.string().email('Adresse électronique invalide').required('Requis'),
+            
+        })
     });
 
     return (
-        <Components.StyledForm onSubmit={formik.handleSubmit}>
+        <Components.StyledForm onSubmit={formik.handleSubmit} autocomplete="off">
         <Components.StyledTitle>Informations sur l'entreprise</Components.StyledTitle>
-        <Components.StyledLabel htmlFor="companyName">Entreprise</Components.StyledLabel>
+        <Components.StyledLabel htmlFor="companyName">Entreprise<span className='required'> *</span> </Components.StyledLabel>
         <Components.StyledInput
             name="companyName"
             placeholder="Nom de l'entreprise"
             type="text"
             onChange={formik.handleChange}
+            onBlur={formik.handleBlur}
             value={formik.values.companyName}
         />
-        <Components.StyledLabel htmlFor="fullName">Nom complet</Components.StyledLabel>
+        <div className='error'>
+            {formik.errors.companyName && formik.touched.companyName && formik.errors.companyName}
+        </div>
+        <Components.StyledLabel htmlFor="nom">Nom complet<span className='required'> *</span> </Components.StyledLabel>
         <Components.StyledInput
-            name="fullName"
+            name="nom"
             placeholder="Votre nom complet"
             type="text"
             onChange={formik.handleChange}
-            value={formik.values.fullName}
+            onBlur={formik.handleBlur}
+            value={formik.values.nom}
         />
-        <Components.StyledLabel htmlFor="email">Adresse Email</Components.StyledLabel>
+        <div className='error'>
+            {formik.errors.nom && formik.touched.nom && formik.errors.nom}
+        </div>
+        <Components.StyledLabel htmlFor="email">Adresse Email<span className='required'> *</span> </Components.StyledLabel>
         <Components.StyledInput
             name="email"
             type="email"
             placeholder="Votre email"
             onChange={formik.handleChange}
+            onBlur={formik.handleBlur}
             value={formik.values.email}
         />
+        <div className='error'>
+            {formik.errors.email && formik.touched.email && formik.errors.email}
+        </div>
         <Components.StyledButtonNext type="submit">Suivant</Components.StyledButtonNext>
         </Components.StyledForm>
     );

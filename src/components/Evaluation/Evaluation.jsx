@@ -17,6 +17,9 @@ const StepContainer = styled.div`
   margin-bottom: 20px;
   width: 40%;
   margin: 5% auto 0%;
+  @media all and (max-width: 500px){
+    width: 70%;
+  }
 `
 
 const Step = styled.div`
@@ -56,20 +59,19 @@ const Progress = styled.div`
 export default function MultiStepForm() {
   const [formValues, setFormValues] = useState({ 
     companyName: '',
-    fullName: '',
+    nom: '',
     email: '',
-    yearsOfActivity: '',
-    country: '',
+    annees_activite: '',
+    pays: '',
     description: '',
-    sector: '',
-    prev_amount: '',
-    prevTurnOver: '',
-    amount: '',
-    delai: '',
-    fullTime: '',
-    numberOfPeople: '',
-    turnover: '',
-    presentationLink: '',
+    secteur_activite: '',
+    financement_precedent: '',
+    montant_voulu: '',
+    delai_financement: '',
+    travail_plein_temps: '',
+    equipe: '',
+    chiffre_precedent: '',
+    lien_presentation: '',
     step: 1 
   });
 

@@ -80,6 +80,7 @@ const AdditionalInfo = () => {
 
 const Div = styled.div`
     .form-container{
+        
         .steps_target{
             .latest-controlls{
                     display: flex;

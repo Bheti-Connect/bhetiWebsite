@@ -4,10 +4,10 @@ import Confetti from 'react-confetti';
 import  {useNavigate}  from 'react-router-dom';
 import { useTheme } from '../../context/themeContext';
 import FormSent from '../../assets/images/waitlistSuccess.svg';
-import Blob from '../../assets/images/img-1.png';
-import Blob2 from '../../assets/images/img-2.png';
-import Blob3 from '../../assets/images/img-3.png';
-import Blob4 from '../../assets/images/img-4.png';
+// import Blob from '../../assets/images/img-1.png';
+// import Blob2 from '../../assets/images/img-2.png';
+// import Blob3 from '../../assets/images/img-3.png';
+// import Blob4 from '../../assets/images/img-4.png';
 import BhetiWhite from '../../assets/images/bheti-white.png';
 
 
