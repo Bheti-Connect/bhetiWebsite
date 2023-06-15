@@ -410,7 +410,6 @@ const AllMedia = styled.div`
       }
     }
   }
-
   .previousLinkClassName {
     color: ${(props) => props.theme.colorBheti};
     padding: 5px;
@@ -423,7 +422,6 @@ const AllMedia = styled.div`
       opacity: 0.7;
     }
   }
-
   .nextLinkClassName {
     color: ${(props) => props.theme.colorBheti};
     padding: 5px;
@@ -460,7 +458,6 @@ const Title = styled.h5`
     width: 85%;
   }
 `;
-
 
 const ArrowIcon = styled(BsArrowDownSquareFill)`
   /* Arrow icon styles */
