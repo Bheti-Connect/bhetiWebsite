@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import ReactPaginate from "react-paginate";
+import { BsArrowDownSquareFill } from 'react-icons/bs';
 import styled from "styled-components";
 import UneMedia from "../../assets/icons/a_la_une_media.svg";
 import VideoMedia from "../../assets/icons/Video_media.svg";
@@ -7,6 +8,7 @@ import { useTheme } from "../../context/themeContext";
 import Search from "./Search";
 import CardMediaModal from "./CardMediaModal";
 import CardsMedia from "./CardsMedia";
+import Img_test from '../../assets/images/Amini-startup.jpg'
 import CardSuccess from "./SuccessStories/CardSuccess";
 import LoaderMedia from "./LoaderMedia";
 import { axios_get, axios_post } from "../../utils/FunctionsComponent";
@@ -35,8 +37,24 @@ const Media = () => {
   // Position change pagination : interview and success stories
   const [paginationSelect, setPaginationSelect] = useState("interview");
   const [displayDataOf, setDisplayDataOf] = useState("interview");
+  const [showFirstParagraph, setshowFirstParagraph] = useState(false);
+  const [showSecondParagraph, setshowSecondParagraph] = useState(false);
+  const [showThirdParagraph, setshowThirdParagraph] = useState(false);
+
   // theme
   const theme = useTheme();
+
+  // initialize
+
+    const handleToggleFirstParagraph = () => {
+      setshowFirstParagraph(!showFirstParagraph);
+    };
+    const handleToggleSecondParagraph = () => {
+      setshowSecondParagraph(!showSecondParagraph);
+    };
+    const handleToggleThirdParagraph = () => {
+      setshowThirdParagraph(!showThirdParagraph);
+    };
 
   // handle for receive data and set in useState
   const handleSetData = (response) => {
@@ -202,13 +220,12 @@ const Media = () => {
         </div>
         <div className="body-une">
         <div className="cards-une">
-            <div className="card-1" onClick={() => { window.location.href = window.location.href='https://www.linkedin.com/posts/bheti-connect_bheticonnect-startup-afrique-activity-7065574379513892865-kPIc?utm_source=share&utm_medium=member_desktop'; }}>
-              <img />
+            <div className="card-1" onClick={() => { window.location.href = window.location.href='https://www.linkedin.com/posts/bheti-connect_bheticonnect-afrique-banque-activity-70736151431289692'; }}>
+              <img  />
             </div>
             <div className="sub-card">
-               <div className="card-2" onClick={() => { window.location.href = window.location.href='https://www.linkedin.com/posts/bheti-connect_fintechs-bheticonnect-startups-activity-7057239472421109760-abyN?utm_source=share&utm_medium=member_desktop'; }}></div>
-               <div className="card-3" onClick={() => { window.location.href = window.location.href='https://www.linkedin.com/posts/bheti-connect_bheticonnect-africa-entreprise-activity-7064124827267158016-s_bH?utm_source=share&utm_medium=member_desktop'; }}></div>
-             
+                <div className="card-2" onClick={() => { window.location.href = window.location.href='https://www.linkedin.com/posts/bheti-connect_bheticonnect-entreprise-innovation-activity-7071774045012160512-HxHW?utm_source=share&utm_medium=member_desktop'; }}></div>
+                <div className="card-3" onClick={() => { window.location.href = window.location.href='https://www.linkedin.com/posts/bheti-connect_bheticonnect-africa-entreprise-activity-7064124827267158016-s_bH?utm_source=share&utm_medium=member_desktop'; }}></div>
             </div>
           </div>
 
@@ -216,38 +233,69 @@ const Media = () => {
             <h2>Les plus consultés</h2>
 
             <div className="item-consult">
-              <a href="https://www.linkedin.com/feed/update/urn:li:activity:7060912715522789377?updateEntityUrn=urn%3Ali%3Afs_feedUpdate%3A%28V2%2Curn%3Ali%3Aactivity%3A7060912715522789377%29">45 startups pré-sélectionnées...</a>
+              <div className="title">
+                <a href="https://www.linkedin.com/feed/update/urn:li:activity:7060912715522789377?updateEntityUrn=urn%3Ali%3Afs_feedUpdate%3A%28V2%2Curn%3Ali%3Aactivity%3A7060912715522789377%29">
+                  <Title>
+                    45 startups pré-sélectionnées pour le programme AfricaTech...
+                  </Title>
+                </a>
+                <ArrowIcon onClick={handleToggleFirstParagraph} />
+              </div>
+              {
+                showFirstParagraph 
+                &&
               <p>
-              La Société financière internationale (IFC) et Viva Technology 
-              ont annoncé les 45 start-ups présélectionnées pour les AfricaTech...
+                La Société financière internationale (IFC) et Viva Technology 
+                ont annoncé les 45 start-ups présélectionnées pour les AfricaTech...
               </p>
+              }
               <p className="item-date">Mai 2023</p>
             </div>
 
             <div className="item-consult">
-              <a href="https://www.linkedin.com/posts/bheti-connect_bheticonnect-afrique-startup-activity-7055795292893237248-Y1QH?utm_source=share&utm_medium=member_desktop">Chargel, une société Sénégalaise lève 2.5 millions $ ... </a>
+              <div className="title">
+                <a href="https://www.linkedin.com/posts/bheti-connect_bheticonnect-afrique-startup-activity-7055795292893237248-Y1QH?utm_source=share&utm_medium=member_desktop">
+                  <Title>
+                    Chargel, une société Sénégalaise lève 2.5 millions $...
+                  </Title>
+                </a>
+                <ArrowIcon onClick={handleToggleSecondParagraph} />
+              </div>
+              {
+                showSecondParagraph
+                &&
               <p>
               Après avoir obtenu un financement de préamorçage de
               750 000 dollars au près de Century Oak Ventures et Logos Venture Partners...
               </p>
+              }
               <p className="item-date">Avril 2023</p>
             </div>
-
             <div className="item-consult">
-              <a href="https://www.linkedin.com/posts/bheti-connect_entrepreneurs-innovation-entreprises-activity-7004031286008774656-qh9k?utm_source=share&utm_medium=member_desktop">Comment les entreprises s’imposent-elles sur leur marché en Afrique ?</a>
+              <div className="title">
+                <a href="https://www.linkedin.com/posts/bheti-connect_entrepreneurs-innovation-entreprises-activity-7004031286008774656-qh9k?utm_source=share&utm_medium=member_desktop">
+                  <Title>
+                    Comment les entreprises s’imposent-elles sur leur marché en Afrique ?
+                  </Title>
+                </a>
+                <ArrowIcon onClick={handleToggleThirdParagraph} />
+              </div>
+              {
+                showThirdParagraph
+                &&
               <p>
-              Merci à AfricAngels de nous avoir fait confiance pour intervenir sur la thématique ... 
-              Ce fut un plaisir d'échanger sur cette thématique au moment où l'entrepreneuriat connait un réel essor sur le continent Africain...
+                Merci à AfricAngels de nous avoir fait confiance pour intervenir sur la thématique ... 
+                Ce fut un plaisir d'échanger sur cette thématique au moment où l'entrepreneuriat connait un réel essor sur le continent Africain...
               </p>
+              }
               <p className="item-date">Décembre 2022</p>
             </div>
-
             <div className="item-consult">
-              <a href="https://www.linkedin.com/posts/bheti-connect_lives-bheti-connect-activity-6971029367661457409-17uq?utm_source=share&utm_medium=member_desktop">Les lives Bheti Connect, c'est ....</a>
+              <a href="https://www.linkedin.com/posts/bheti-connect_lives-bheti-connect-activity-6971029367661457409-17uq?utm_source=share&utm_medium=member_desktop">Les lives Bheti Connect, c'est :</a>
               <p>
-                <li>📌Plus de 500 participants</li> <br />
-                <li> 📌7 lives avec 8 invités qui font bouger les choses sur les marchés africains</li><br />
-                <li>📌Une pluralité de sujets qui portent sur les réels tendances économiques en Afrique</li>
+                <li>📌 Plus de 500 participants</li> <br />
+                <li> 📌 7 lives avec 8 invités qui font bouger les choses sur les marchés africains</li><br />
+                <li>📌 Une pluralité de sujets qui portent sur les réels tendances économiques en Afrique</li>
               </p>
               <p className="item-date">Septembre 2022</p>
             </div>
@@ -260,7 +308,6 @@ const Media = () => {
           <div className="icon-media">
             <img src={VideoMedia} alt="video icon" />
           </div>
-
           <div>
             <h2>Ecouter et voir</h2>
             <p>
@@ -269,7 +316,6 @@ const Media = () => {
             </p>
           </div>
         </div>
-
         <div className="containerMenu">
           <div className="Box">
             {/* Section menu */}
@@ -330,10 +376,8 @@ const Media = () => {
 };
 
 // Style CSS
-
 const AllMedia = styled.div`
   margin: auto;
-
   .containerClassName {
     display: flex;
     flex-wrap: wrap;
@@ -344,18 +388,15 @@ const AllMedia = styled.div`
     font-size: 10px;
     margin-right: 50px;
   }
-
   .containerClassName li {
     margin: 50px 10px;
   }
-
   .pageClassName {
     background-color: ${(props) => props.theme.colorGrey5};
     border-radius: 50px;
     cursor: pointer;
     padding: 4px 7px;
     transition: 0.3s ease;
-
     &:hover {
       background-color: ${(props) => props.theme.colorBheti};
     }
@@ -404,6 +445,31 @@ const AllMedia = styled.div`
   }
   .disabledClassName {
   }
+`;
+
+const Title = styled.h5`
+  display: flex;
+  align-items: center;
+  font-size: 15px;
+  cursor: pointer;
+  margin-left: 15px;
+  margin-bottom: 10px;
+  text-align: left;
+  /* Title styles */
+  @media only screen and (max-width: 500px) {
+    width: 85%;
+  }
+`;
+
+
+const ArrowIcon = styled(BsArrowDownSquareFill)`
+  /* Arrow icon styles */
+  position: absolute;
+  right: 25px;
+  margin-left: 16px;
+  width: 20px;
+  height: 20px;
+  color: #641C1C;
 `;
 
 const AllCards = styled.div`
@@ -475,40 +541,48 @@ margin-bottom: 80px;
     width: 30%;
     
 
-    @media only screen and (max-width: 414px) {
-      width: 100%;
-      background-color: white;
-    }
-
     @media only screen and (max-width: 1280px) {
       width: 80%;
-  
+    }
+    @media only screen and (max-width: 480px) {
+      width: 90%;
+      margin: 15px auto 0;
+      background-color: white;
     }
 
       h2 {
         color: ${(props) => props.theme.colorBheti};
         margin-bottom: 10px;
+
         font-weight: 600;
-        font-family: "Inter", sans-serif;
+        font-family: "Montserrat", sans-serif;
+        @media only screen and (max-width: 480px) {
+          font-size: 23px;
+          text-align: left;
+          margin-left: 15px;
+        }
       }
 
 
     .item-consult {
       a{
-        
+        font-family: "Montserrat", sans-serif;
         font-size: 17px;
-        
         &:hover{
           color:${props => props.theme.colorBheti};
           text-decoration: underline;
         }
       }
       p{
+        font-family: "Montserrat", sans-serif;
         font-size: 14px;
         text-align: start;
         &:hover{
           color:${props => props.theme.colorBheti};
-         
+        }
+        @media only screen and (max-width: 500px){
+          width: 90%;
+          margin-left: 12px;
         }
       }
 
@@ -516,6 +590,9 @@ margin-bottom: 80px;
         text-align: right;
         font-size: 11px;
         margin-top: 10px;
+      }
+      .title{
+        display: flex;
       }
     }
   }
@@ -536,14 +613,18 @@ margin-bottom: 80px;
     @media only screen and (max-width: 1280px) {
       flex-direction: column;
       width: 80%;
-  
     }
+    @media only screen and (max-width: 500px) {
+      margin: auto;
+      width: 90%;
+    }
+
 
     .card-1 {
       width: 100%;
       height: 250px;
       border-radius: 10px;
-      background-image: url("https://media.licdn.com/dms/image/D4E22AQESJf1-PXsAkw/feedshare-shrink_1280/0/1684550172700?e=1687392000&v=beta&t=iGU8Kp2bJ_OJnH22nXI37dHijDyyWNhZIc_N8kdOvzs") ;
+      background-image: url("https://media.licdn.com/dms/image/D4E22AQH-edv2yUXzzw/feedshare-shrink_2048_1536/0/1686481269949?e=1689811200&v=beta&t=NgyfAfnMoBiZPNOTUq_IVr0pdbRitcV6_DeuSw-7AAk") ;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -551,6 +632,10 @@ margin-bottom: 80px;
       background-repeat: no-repeat;
       box-shadow: 5px 3px 3px #b86a6a;
       cursor: pointer;
+      @media only screen and (max-width: 500px) {
+          width: 100% ;
+          height: 340px;
+        }
     }
 
     .sub-card {
@@ -567,11 +652,15 @@ margin-bottom: 80px;
         width: 48%;
         height: 250px;
         border-radius: 20px;
-        background-image: url("https://media.licdn.com/dms/image/D4D22AQEbCKn9KpRsAQ/feedshare-shrink_2048_1536/0/1682566161543?e=1687392000&v=beta&t=xtScCWmGg7quHqUVwU2j6YMWjEe9uBLvn5jhDT8mux8") ;
+        background-image: url("https://media.licdn.com/dms/image/D4E22AQGuZ4qsNZje8Q/feedshare-shrink_1280/0/1686042318022?e=1689811200&v=beta&t=CZk-G45cOZ0MSeCoLVInO1MzGjVqsO5MnKDxndpB3xo") ;
         background-size: cover;
         background-repeat: no-repeat;
         box-shadow: 5px 3px 3px #b86a6a;
         cursor: pointer;
+        @media only screen and (max-width: 500px) {
+          width: 100% ;
+          height: 340px;
+        }
       }
 
       .card-3{
@@ -584,7 +673,15 @@ margin-bottom: 80px;
         background-repeat: no-repeat;
         box-shadow: 5px 3px 3px #b86a6a;
         cursor: pointer;
+        @media only screen and (max-width: 500px) {
+          margin-top: 12px;
+          width: 100%;
+          height: 340px;
+        }
       }
+      @media only screen and (max-width: 500px) {
+          display: block;
+        }
     }
 
   }
@@ -597,7 +694,7 @@ margin-bottom: 80px;
 
     h2 {
       margin-bottom: 5px;
-      font-size: 18px;
+      font-size: 17px;
     }
 
     p {
@@ -612,18 +709,6 @@ margin-bottom: 80px;
       }
     }
   }
-}
-
-@media only screen and (max-width: 578px) {
-}
-
-@media only screen and (max-width: 425px) {
-}
-
-@media only screen and (max-width: 375px) {
-}
-
-@media only screen and (max-width: 320px) {
 }
 `;
 
@@ -764,7 +849,7 @@ const SectionEcouteVoir = styled.div`
     }
   }
   }
-}
+}}
 
 
 @media only screen and (max-width: 428px) {
@@ -776,7 +861,7 @@ const SectionEcouteVoir = styled.div`
 
     h2 {
       margin-bottom: 5px;
-      font-size: 17px;
+      font-size: 16px;
     }
 
     p{

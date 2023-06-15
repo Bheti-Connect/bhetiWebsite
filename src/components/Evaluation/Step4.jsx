@@ -6,8 +6,8 @@ import Select from 'react-select';
 
 
 const validationSchema = Yup.object().shape({
-    fullTime: Yup.string().required('Required'),
-    presentationLink: Yup.string().required('Required'),
+    travail_plein_temps: Yup.string().required('Veuillez choisir entre oui ou non'),
+    lien_presentation: Yup.string(),
     });
 
     const customStyles = {
@@ -33,64 +33,61 @@ export default function Step4({ setFormValues, prevValues }) {
     const formik = useFormik({
         initialValues: prevValues,
         validationSchema,
-        onSubmit: async (values, { setSubmitting }) => {
-            // Here you can handle the form submission.
-            // It's inside an async function, so you can use await if needed.
-            console.log(values);
-            try {
-              // Validate form data
-              // This can be custom validation or an API call to a server-side validation method
-                const validationResponse = await validateData(values);
-        
-                if (validationResponse.isValid) {
-                    // Send form data
-                    // This can be a POST request to your server or any other form of data handling
-                    const submissionResponse = await sendData(values);
-        
-                    if (submissionResponse.success) {
-                    // Navigate to the next step or display a success message
-                    setFormValues({ ...values, step: values.step + 1 });
-                    } else {
-                    // Handle errors during submission
-                    // This could involve setting an error state or displaying an error message
-                    }
-                } else {
-                    // Handle validation errors
-                    // This could involve setting an error state or displaying an error message
-                }
-                } catch (error) {
-                // Handle any other errors
-                } finally {
-                setSubmitting(false);
-                }
+        onSubmit: (values, { setSubmitting }) => {
+            fetch('https://api.bheticonnect.com/api/evaluations', {
+        method: 'POST',
+        headers: {
+        'Content-Type': 'application/json',
+        "Accept": "application/json",
+        // Include any other headers your API requires
+    },
+    body: JSON.stringify(values),
+    })
+    .then(response => {
+    if (response.ok) {
+        console.log("Form data was sent successfully!");
+    } else {
+        console.log("Failed to send form data.");
+        return response.json(); // Convert the response data to JSON
+    }
+    })
+    .then(data => {
+    // If there was an error, the response data is now in the "data" variable
+    console.log(data);
+    })
+    .catch(error => {
+    console.error("An error occurred:", error);
+    })
+    .finally(() => {
+    setSubmitting(false);
+    });
+
             },
         
     });
-
     const options = [
         { value: 'Oui', label: 'Oui' },
         { value: 'Non', label: 'Non' },
     ];
-
     return (
-        <Components.StyledForm onSubmit={formik.handleSubmit}>
+        <Components.StyledForm onSubmit={formik.handleSubmit} autocomplete="off">
             <Components.StyledTitle>Informations sur l'entreprise</Components.StyledTitle>
-            <Components.StyledLabel htmlFor="prevTurnOver">Travaller vous à temps plein sur ce projet?</Components.StyledLabel>
+            <Components.StyledLabel htmlFor="travail_plein_temps">Travaller vous à temps plein sur ce projet ?<span className='required'> *</span></Components.StyledLabel>
             <Select 
-                name="yearsOfActivity"
+                name="travail_plein_temps"
                 options={options}
                 placeholder="Choisir une option..."
-                onChange={option => formik.setFieldValue("yearsOfActivity", option.value)}
-                value = {options.find(option => option.value === formik.values.fullTime)}
+                onChange={option => formik.setFieldValue("travail_plein_temps", option.value)}
+                value = {options.find(option => option.value === formik.values.travail_plein_temps)}
                 styles={customStyles}
             />
-            <Components.StyledLabel htmlFor="presentationLink">Presentation de votre entreprise</Components.StyledLabel>
+            <Components.StyledLabel htmlFor="lien_presentation">Presentation de votre entreprise</Components.StyledLabel>
             <Components.StyledInput
-                name="presentationLink"
+                name="lien_presentation"
                 type="text"
                 placeholder="Mettez le lien de votre presentation ici"
                 onChange={formik.handleChange}
-                value={formik.values.presentationLink}
+                value={formik.values.lien_presentation}
             />
             <Components.ButtonContainer>
                 <Components.StyledButtonBack type="button" onClick={() => setFormValues({ ...prevValues, step: prevValues.step - 1 })}>Retour</Components.StyledButtonBack>
