@@ -94,9 +94,7 @@ const CardModal = ({ select, setModal, connect }) => {
               </h3>
               <ul>
                 {select.pourquoi.map((item, index) => (
-                  <li key={index} /*className="cible-flouter flouter"*/>
-                    {item}
-                  </li>
+                    item == "<hr/>" ? (<hr/>) : <li key={index} /*className="cible-flouter flouter"*/>{item}</li>
                 ))}
               </ul>
             </div>
@@ -108,9 +106,7 @@ const CardModal = ({ select, setModal, connect }) => {
               </h3>
               <ul>
                 {select.problemes.map((item, index) => (
-                  <li key={index} /*className="cible-flouter flouter"*/>
-                    {item}
-                  </li>
+                  item == "<hr/>" ? (<hr/>) : <li key={index} /*className="cible-flouter flouter"*/>{item}</li>
                 ))}
               </ul>
             </div>
@@ -122,7 +118,8 @@ const CardModal = ({ select, setModal, connect }) => {
               </h3>
               <ul className="solutions">
                 {select.solutions.map((item, index) => (
-                  <li key={index} /*className="cible-flouter flouter"*/>
+                  item.title == "<hr/>" ? (<hr/>) : (
+                    <li key={index} /*className="cible-flouter flouter"*/>
                     {item.title}
                     <ul className="description-container">
                       {
@@ -132,6 +129,7 @@ const CardModal = ({ select, setModal, connect }) => {
                       }
                     </ul>
                   </li>
+                  )
                 ))}
               </ul>
             </div>
@@ -143,7 +141,8 @@ const CardModal = ({ select, setModal, connect }) => {
               </h3>
               <ul>
                 {select.equipe.map((item, index) => (
-                  <li key={index} /*className="cible-flouter flouter"*/>
+                  item.title == "<hr/>" ? (<hr/>) : (
+                    <li key={index} /*className="cible-flouter flouter"*/>
                     {item.title}
                     <ul className="description-container">
                       {
@@ -153,6 +152,7 @@ const CardModal = ({ select, setModal, connect }) => {
                       }
                     </ul>
                   </li>
+                  )
                 ))}
               </ul>
             </div>
@@ -164,7 +164,8 @@ const CardModal = ({ select, setModal, connect }) => {
               </h3>
               <ul>
                 {select.business_model.map((item, index) => (
-                  <li key={index} /*className="cible-flouter flouter"*/>
+                  item.title == "<hr/>" ? (<hr/>) : (
+                    <li key={index} /*className="cible-flouter flouter"*/>
                     {item.title}
                     <ul className="description-container">
                       {
@@ -174,6 +175,7 @@ const CardModal = ({ select, setModal, connect }) => {
                       }
                     </ul>
                   </li>
+                  )
                 ))}
               </ul>
             </div>
@@ -184,8 +186,9 @@ const CardModal = ({ select, setModal, connect }) => {
                 <span>&#x2022;</span> KPI
               </h3>
               <ul>
-                {select.business_model.map((item, index) => (
-                  <li key={index} /*className="cible-flouter flouter"*/>
+                {select.kpi.map((item, index) => (
+                  item.title == "<hr/>" ? (<hr/>) : (
+                    <li key={index} /*className="cible-flouter flouter"*/>
                     {item.title}
                     <ul className="description-container">
                       {
@@ -195,6 +198,7 @@ const CardModal = ({ select, setModal, connect }) => {
                       }
                     </ul>
                   </li>
+                  )
                 ))}
               </ul>
             </div>
@@ -456,6 +460,11 @@ const Body = styled.div`
         margin: 10px auto;
       }
     }
+  }
+
+  hr{
+    margin-top: 15px;
+    margin-bottom: 15px;
   }
 `;
 
