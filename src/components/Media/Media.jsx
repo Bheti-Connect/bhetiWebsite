@@ -228,10 +228,8 @@ const Media = () => {
                 <div className="card-3" onClick={() => { window.location.href = window.location.href='https://www.linkedin.com/posts/bheti-connect_bheticonnect-africa-entreprise-activity-7064124827267158016-s_bH?utm_source=share&utm_medium=member_desktop'; }}></div>
             </div>
           </div>
-
           <div className="plus-consulter">
-            {/* <h2>Les plus consultés</h2> */}
-
+            <h2>Les plus consultés</h2>
             <div className="item-consult">
               <div className="title">
                 <a href="https://www.linkedin.com/feed/update/urn:li:activity:7060912715522789377?updateEntityUrn=urn%3Ali%3Afs_feedUpdate%3A%28V2%2Curn%3Ali%3Aactivity%3A7060912715522789377%29">
@@ -291,12 +289,12 @@ const Media = () => {
               <p className="item-date">Décembre 2022</p>
             </div>
             <div className="item-consult">
-              {/* <a href="https://www.linkedin.com/posts/bheti-connect_lives-bheti-connect-activity-6971029367661457409-17uq?utm_source=share&utm_medium=member_desktop">Les lives Bheti Connect, c'est :</a>
+              <a href="https://www.linkedin.com/posts/bheti-connect_lives-bheti-connect-activity-6971029367661457409-17uq?utm_source=share&utm_medium=member_desktop">Les lives Bheti Connect, c'est :</a>
               <p>
                 <li>📌 Plus de 500 participants</li> <br />
                 <li> 📌 7 lives avec 8 invités qui font bouger les choses sur les marchés africains</li><br />
                 <li>📌 Une pluralité de sujets qui portent sur les réels tendances économiques en Afrique</li>
-              </p> */}
+              </p>
               <p className="item-date">Septembre 2022</p>
             </div>
           </div>
