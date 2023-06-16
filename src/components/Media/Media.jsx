@@ -289,12 +289,12 @@ const Media = () => {
               <p className="item-date">Décembre 2022</p>
             </div>
             <div className="item-consult">
-              <a href="https://www.linkedin.com/posts/bheti-connect_lives-bheti-connect-activity-6971029367661457409-17uq?utm_source=share&utm_medium=member_desktop">Les lives Bheti Connect, c'est :</a>
+              {<a href="https://www.linkedin.com/posts/bheti-connect_lives-bheti-connect-activity-6971029367661457409-17uq?utm_source=share&utm_medium=member_desktop">Les lives Bheti Connect, c'est :</a>
               <p>
                 <li>📌 Plus de 500 participants</li> <br />
                 <li> 📌 7 lives avec 8 invités qui font bouger les choses sur les marchés africains</li><br />
                 <li>📌 Une pluralité de sujets qui portent sur les réels tendances économiques en Afrique</li>
-              </p>
+              </p>}
               <p className="item-date">Septembre 2022</p>
             </div>
           </div>
