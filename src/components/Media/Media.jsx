@@ -228,10 +228,8 @@ const Media = () => {
                 <div className="card-3" onClick={() => { window.location.href = window.location.href='https://www.linkedin.com/posts/bheti-connect_bheticonnect-africa-entreprise-activity-7064124827267158016-s_bH?utm_source=share&utm_medium=member_desktop'; }}></div>
             </div>
           </div>
-
           <div className="plus-consulter">
             <h2>Les plus consultés</h2>
-
             <div className="item-consult">
               <div className="title">
                 <a href="https://www.linkedin.com/feed/update/urn:li:activity:7060912715522789377?updateEntityUrn=urn%3Ali%3Afs_feedUpdate%3A%28V2%2Curn%3Ali%3Aactivity%3A7060912715522789377%29">
@@ -559,7 +557,6 @@ margin-bottom: 80px;
         }
       }
 
-
     .item-consult {
       a{
         font-family: "Montserrat", sans-serif;
@@ -598,7 +595,6 @@ margin-bottom: 80px;
     flex-direction: column;
     width: 800px;
     margin-left: 20px;
-
 
     @media only screen and (max-width: 1280px) {
       flex-direction: column;
