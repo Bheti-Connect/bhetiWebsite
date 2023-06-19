@@ -381,7 +381,7 @@ flex-wrap: wrap;
 }
 
 @media only screen and (max-width: 450px) {
-  width: 68%;
+  width: 90%;
 }
 
 `;
