@@ -5,7 +5,7 @@ import { faXmark } from '@fortawesome/free-solid-svg-icons';
 import { useTheme } from '../../../context/themeContext';
 import { closeModal } from '../../../utils/FunctionsComponent';
 import { ReactTinyLink } from 'react-tiny-link'
-import axios from 'axios';
+//import axios from 'axios';
 
 const CardModalSuccess = ({select, setModal}) => {
   const [backColor, setBackColor] = useState(["#406880", "#978840", "#975450", "#636769", "#88456c", "#61534d"]);
