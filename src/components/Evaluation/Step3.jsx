@@ -10,29 +10,22 @@ const validationSchema = Yup.object().shape({
     chiffre_precedent: Yup.string().required("Le chiffre d'affaire est requis"),
 });
 
-const customStyles = {
-    control: (base, state) => ({
-        ...base,
-        border: state.isFocused ? '1px solid #ed8b8b' : '1px solid #ed8b8b',
-        fontSize: '16px',
-        boxShadow: state.isFocused ? '0 0 1px #ed8b8b' : 'none',
-        width: "250px",
-        '&:hover': {
-        border: state.isFocused ? '1px solid #ed8b8b' : '1px solid #ed8b8b'
-        }
-    }),
-    option: (base, state) => ({
-    ...base,
-    backgroundColor: state.isFocused ? '#efdcdc' : 'white'
-    }),
-  // You can add more styles here...
-};
-
-
 export default function Step3({ setFormValues, prevValues }) {
     const formik = useFormik({
     initialValues: prevValues,
     validationSchema,
+    validate: (values) => {
+        const errors = {};
+
+        // Validate montant_voulu field
+        if (!values.montant_voulu) {
+            errors.montant_voulu = 'Amount is required';
+            } else if (!/^\d+(\.\d{1,2})?$/.test(values.montant_voulu)) {
+            errors.montant_voulu = 'Montant invalide';
+            }
+    
+            return errors;
+        },
     onSubmit: (values) => {
         setFormValues({ ...values, step: 4 });
         },
@@ -44,10 +37,12 @@ export default function Step3({ setFormValues, prevValues }) {
         <Components.StyledLabel htmlFor="montant_voulu">Quel est votre besoin de financement?<span className='required'> *</span></Components.StyledLabel>
         <Components.StyledInput
             name="montant_voulu"
-            type="number"
-            placeholder="Quel montant cherchez-vous ?"
-            onChange={formik.handleChange}
+            type="text"
+            id="montant_voulu"
+            placeholder="0.00$"
             value={formik.values.montant_voulu}
+            onChange={formik.handleChange}
+            onBlur={formik.handleBlur}
         />
         <div className='error'>
             {formik.errors.montant_voulu && formik.touched.montant_voulu}
