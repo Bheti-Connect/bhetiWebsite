@@ -300,7 +300,6 @@ const Media = () => {
           </div>
         </div>
       </SectionUne>
-
       <SectionEcouteVoir theme={theme}>
         <div className="head-text">
           <div className="icon-media">
@@ -335,7 +334,6 @@ const Media = () => {
             <Search setQuery={setQuery} />
           </div>
         </div>
-
         <AllMedia theme={theme}>
           <AllCards>
             <div className="container-all-cards">
@@ -361,7 +359,6 @@ const Media = () => {
             activeClassName={"activeClassName"}
           />
         </AllMedia>
-
         {modal &&
           (displayDataOf == "interview" ? (
             <CardMediaModal select={select} setModal={setModal} />
@@ -398,11 +395,9 @@ const AllMedia = styled.div`
     &:hover {
       background-color: ${(props) => props.theme.colorBheti};
     }
-
     a {
       color: white;
       margin: auto;
-
       &:hover {
         color: white;
       }
@@ -491,7 +486,6 @@ margin-bottom: 80px;
   margin: 50px 0;
   margin-left: 55px;
 
-
     h2 {
       color: ${(props) => props.theme.colorBheti};
       margin-bottom: 5px;
@@ -534,7 +528,6 @@ margin-bottom: 80px;
     flex-direction: column;
     width: 30%;
     
-
     @media only screen and (max-width: 1280px) {
       width: 80%;
     }

@@ -89,12 +89,12 @@ cursor: pointer;
 
 @media only screen and (max-width: 428px) {
   text-align: left !important;
-  width: 260px;
+  width: 360px;
 }
-
+/*
 @media only screen and (max-width: 415px) {
-  width: 250px;
-}
+  width: 350px;
+}*/
 
 `
 

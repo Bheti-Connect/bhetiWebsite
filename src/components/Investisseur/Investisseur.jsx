@@ -381,7 +381,7 @@ flex-wrap: wrap;
 }
 
 @media only screen and (max-width: 450px) {
-  width: 68%;
+  width: 90%;
 }
 
 `;
@@ -599,8 +599,11 @@ p {
   margin: 40px;
   .containerMenu .Box{
     flex-direction: column;
+  }
 }
 
+@media only screen and (max-width: 440px) {
+  margin: 10px;
 }
 
 `;
