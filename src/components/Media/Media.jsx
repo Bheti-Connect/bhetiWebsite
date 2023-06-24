@@ -242,7 +242,7 @@ const Media = () => {
               {
                 showFirstParagraph 
                 &&
-              <p>
+              <p className="plusconsultes-subtext">
                 La Société financière internationale (IFC) et Viva Technology 
                 ont annoncé les 45 start-ups présélectionnées pour les AfricaTech...
               </p>
@@ -262,7 +262,7 @@ const Media = () => {
               {
                 showSecondParagraph
                 &&
-              <p>
+              <p className="plusconsultes-subtext">
               Après avoir obtenu un financement de préamorçage de
               750 000 dollars au près de Century Oak Ventures et Logos Venture Partners...
               </p>
@@ -281,7 +281,7 @@ const Media = () => {
               {
                 showThirdParagraph
                 &&
-              <p>
+              <p className="plusconsultes-subtext">
                 Merci à AfricAngels de nous avoir fait confiance pour intervenir sur la thématique ... 
                 Ce fut un plaisir d'échanger sur cette thématique au moment où l'entrepreneuriat connait un réel essor sur le continent Africain...
               </p>
@@ -289,8 +289,8 @@ const Media = () => {
               <p className="item-date">Décembre 2022</p>
             </div>
             <div className="item-consult">
-              <a href="https://www.linkedin.com/posts/bheti-connect_lives-bheti-connect-activity-6971029367661457409-17uq?utm_source=share&utm_medium=member_desktop">Les lives Bheti Connect, c'est :</a>
-              <p>
+              <a href="https://www.linkedin.com/posts/bheti-connect_lives-bheti-connect-activity-6971029367661457409-17uq?utm_source=share&utm_medium=member_desktop" className="live-anchor">Les lives Bheti Connect, c'est :</a>
+              <p className="live-text">
                 <li>📌 Plus de 500 participants</li> <br />
                 <li> 📌 7 lives avec 8 invités qui font bouger les choses sur les marchés africains</li><br />
                 <li>📌 Une pluralité de sujets qui portent sur les réels tendances économiques en Afrique</li>
@@ -438,17 +438,18 @@ const AllMedia = styled.div`
   }
 `;
 
-const Title = styled.h5`
+const Title = styled.p`
   display: flex;
   align-items: center;
-  font-size: 15px;
+  font-size: 16px !important;
+  font-weight: 900;
   cursor: pointer;
   margin-left: 15px;
   margin-bottom: 10px;
   text-align: left;
   /* Title styles */
   @media only screen and (max-width: 500px) {
-    width: 85%;
+    width: 85% !important;
   }
 `;
 
@@ -559,6 +560,14 @@ margin-bottom: 80px;
           text-decoration: underline;
         }
       }
+      .live-anchor{
+        font-size: 16px;
+        margin-left: 12px;
+        font-weight: 600;
+        @media all and (max-width: 480px) {
+          margin-left: -65px;
+        }
+      }
       p{
         font-family: "Montserrat", sans-serif;
         font-size: 14px;
@@ -570,6 +579,16 @@ margin-bottom: 80px;
           width: 90%;
           margin-left: 12px;
         }
+      }
+      .plusconsultes-subtext{
+        width: 88%;
+        font-size: 14px;
+        margin-left:12px;
+      }
+      .live-text{
+        width: 90%;
+        margin-left: 12px;
+        font-weight: 600;
       }
 
       .item-date {

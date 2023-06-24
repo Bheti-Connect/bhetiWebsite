@@ -14,7 +14,7 @@ const Header = () => {
                         Trouvez du <span>financement</span> avec nous
                     </h2>
                     <p className='sub-title'>
-                        Réseaux, outils, stratégie. Un accompagnement pour réussir chaque étape de votre levée de fonds.
+                        Réseaux, outils, stratégie: un accompagnement pour réussir chaque étape de votre levée de fonds.
                     </p>
                     <div className='cta-button'>
                         <Link
