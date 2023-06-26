@@ -225,7 +225,7 @@ const Media = () => {
             </div>
             <div className="sub-card">
                 <div className="card-2" onClick={() => { window.location.href = window.location.href='https://www.linkedin.com/posts/bheti-connect_bheticonnect-entreprise-innovation-activity-7071774045012160512-HxHW?utm_source=share&utm_medium=member_desktop'; }}></div>
-                <div className="card-3" onClick={() => { window.location.href = window.location.href='https://www.linkedin.com/posts/bheti-connect_bheticonnect-africa-entreprise-activity-7064124827267158016-s_bH?utm_source=share&utm_medium=member_desktop'; }}></div>
+                <div className="card-3" onClick={() => { window.location.href = window.location.href='https://www.linkedin.com/feed/update/urn:li:activity:7078683840470233088/'; }}></div>
             </div>
           </div>
           <div className="plus-consulter">
@@ -654,7 +654,7 @@ margin-bottom: 80px;
         justify-content: center;
         align-items: center;
         width: 48%;
-        height: 250px;
+        height: 350px;
         border-radius: 20px;
         background-image: url("https://media.licdn.com/dms/image/D4E22AQGuZ4qsNZje8Q/feedshare-shrink_1280/0/1686042318022?e=1689811200&v=beta&t=CZk-G45cOZ0MSeCoLVInO1MzGjVqsO5MnKDxndpB3xo") ;
         background-size: cover;
@@ -670,9 +670,9 @@ margin-bottom: 80px;
       .card-3{
         background-color: #700b0b;
         width: 48%;
-        height: 250px;
+        height: 350px;
         border-radius: 20px;
-        background-image: url("https://media.licdn.com/dms/image/D4E22AQGL9kpucb9Jkg/feedshare-shrink_1280/0/1684204180071?e=1687392000&v=beta&t=bdXKo7NF2QSX_yA0geJSVi1lUYNSHwvYJQtwXF-fLB8") ;
+        background-image: url("https://media.licdn.com/dms/image/D4E22AQHiN-qBYoRBJg/feedshare-shrink_2048_1536/0/1687689742298?e=1690416000&v=beta&t=bEkwH-fL4k4vNTFQ253nTOVngyDLmT63t2ftS7On5qo") ;
         background-size: cover;
         background-repeat: no-repeat;
         box-shadow: 5px 3px 3px #b86a6a;
