@@ -23,6 +23,17 @@ export default function Step3({ setFormValues, prevValues }) {
             } else if (!/^\d+(\.\d{1,2})?$/.test(values.montant_voulu)) {
             errors.montant_voulu = 'Montant invalide';
             }
+        if (!values.chiffre_precedent) {
+                errors.chiffre_precedent = 'Amount is required';
+                } else if (!/^\d+(\.\d{1,2})?$/.test(values.chiffre_precedent)) {
+                errors.chiffre_precedent = 'Montant invalide';
+            }
+        
+        if (!values.financement_precedent) {
+                    errors.financement_precedent = 'Amount is required';
+                    } else if (!/^\d+(\.\d{1,2})?$/.test(values.financement_precedent)) {
+                    errors.financement_precedent = 'Montant invalide';
+                    }
     
             return errors;
         },
@@ -47,13 +58,15 @@ export default function Step3({ setFormValues, prevValues }) {
         <div className='error'>
             {formik.errors.montant_voulu && formik.touched.montant_voulu}
         </div>
-        <Components.StyledLabel htmlFor="delai_financement">Dans quel délai souhaitez vous recevoir cet somme?<span className='required'> *</span></Components.StyledLabel>
+        <Components.StyledLabel htmlFor="delai_financement">Dans combien des mois souhaitez-vous obtenir cet somme?<span className='required'> *</span></Components.StyledLabel>
         <Components.StyledInput
             name="delai_financement"
-            type="text"
-            placeholder="Dans quel délai souhaitez-vous avoir ce montant"
-            onChange={formik.handleChange}
+            type='text'
+            id="delai_financement"
+            placeholder="0"
             value={formik.values.delai_financement}
+            onChange={formik.handleChange}
+            onBlur={formik.handleBlur}
         />
         <div className='error'>
             {formik.errors.delai_financement && formik.touched.delai_financement}
@@ -61,10 +74,12 @@ export default function Step3({ setFormValues, prevValues }) {
         <Components.StyledLabel htmlFor="financement_precedent">Montant léver précedemment</Components.StyledLabel>
         <Components.StyledInput
             name="financement_precedent"
-            type="number"
-            placeholder="Montant léver précedemment"
-            onChange={formik.handleChange}
+            type="text"
+            id="financement_precedent"
+            placeholder="0.00$"
             value={formik.values.financement_precedent}
+            onChange={formik.handleChange}
+            onBlur={formik.handleBlur}
         />
         <div className='error'>
             {formik.errors.financement_precedent && formik.touched.financement_precedent}
@@ -72,10 +87,12 @@ export default function Step3({ setFormValues, prevValues }) {
         <Components.StyledLabel htmlFor="turnover">Chiffre d'affaire<span className='required'> *</span></Components.StyledLabel>
         <Components.StyledInput
             name="chiffre_precedent"
-            type="number"
-            placeholder="Saisissez votre chiffre d'affaire précédent"
-            onChange={formik.handleChange}
+            type="text"
+            id="chiffre_precedent"
+            placeholder="0.00$"
             value={formik.values.chiffre_precedent}
+            onChange={formik.handleChange}
+            onBlur={formik.handleBlur}
         />
         <div className='error'>
             {formik.errors.chiffre_precedent && formik.touched.chiffre_precedent}

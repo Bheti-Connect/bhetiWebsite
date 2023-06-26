@@ -58,7 +58,7 @@ const Progress = styled.div`
 
 export default function MultiStepForm() {
   const [formValues, setFormValues] = useState({ 
-    companyName: '',
+    nom_entreprise: '',
     nom: '',
     email: '',
     annees_activite: '',
