@@ -25,13 +25,13 @@ html {
 }
 
 @media (min-width: 2560px) {
-    html {
+    .container {
     zoom: 1.7;
   }
 }
 
 @media (min-width: 3860px) {
-  html {
+  .container {
     zoom: 2.5;
   }
 }
@@ -88,11 +88,11 @@ html {
     height: 43rem;
   }
   .swiper-slide {
-    width: 39rem !important;
+    width: 31rem !important;
     height: 36rem !important;
   }
   .swiper-slide img {
-    width: 40rem !important;
+    width: 33rem !important;
     height: 29rem !important;
   }
 }
