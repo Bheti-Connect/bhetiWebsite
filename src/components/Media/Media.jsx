@@ -377,7 +377,7 @@ const AllMedia = styled.div`
     display: flex;
     flex-wrap: wrap;
     list-style: none;
-    justify-content: right;
+    justify-content: center;
     align-items: center;
     user-select: none;
     font-size: 10px;
