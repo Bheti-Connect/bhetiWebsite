@@ -6,7 +6,7 @@ import * as Components from "./styles";
 
 
 const validationSchema = Yup.object().shape({
-        companyName: Yup.string().required('Required'),
+    nom_entreprise: Yup.string().required('Required'),
         nom: Yup.string().required('Required'),
         email: Yup.string().email('Invalid email').required('Required'),
     });
@@ -20,7 +20,7 @@ const validationSchema = Yup.object().shape({
         setFormValues({ ...values, step: 2 });
         },
         validationSchema: Yup.object({
-            companyName: Yup.string()
+            nom_entreprise: Yup.string()
                 .max(50, 'Doit comporter 50 caractères ou moins')
                 .required('Requis'),
             nom: Yup.string()
@@ -34,17 +34,17 @@ const validationSchema = Yup.object().shape({
     return (
         <Components.StyledForm onSubmit={formik.handleSubmit} autocomplete="off">
         <Components.StyledTitle>Informations sur l'entreprise</Components.StyledTitle>
-        <Components.StyledLabel htmlFor="companyName">Entreprise<span className='required'> *</span> </Components.StyledLabel>
+        <Components.StyledLabel htmlFor="nom_entreprise">Entreprise<span className='required'> *</span> </Components.StyledLabel>
         <Components.StyledInput
-            name="companyName"
+            name="nom_entreprise"
             placeholder="Nom de l'entreprise"
             type="text"
             onChange={formik.handleChange}
             onBlur={formik.handleBlur}
-            value={formik.values.companyName}
+            value={formik.values.nom_entreprise}
         />
         <div className='error'>
-            {formik.errors.companyName && formik.touched.companyName && formik.errors.companyName}
+            {formik.errors.nom_entreprise && formik.touched.nom_entreprise && formik.errors.nom_entreprise}
         </div>
         <Components.StyledLabel htmlFor="nom">Nom complet<span className='required'> *</span> </Components.StyledLabel>
         <Components.StyledInput

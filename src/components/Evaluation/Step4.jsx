@@ -3,6 +3,7 @@ import { useFormik } from 'formik';
 import * as Yup from 'yup';
 import * as Components from "./styles";
 import Select from 'react-select';
+// import { useHistory } from 'react-history';
 
 
 const validationSchema = Yup.object().shape({
@@ -34,17 +35,29 @@ export default function Step4({ setFormValues, prevValues }) {
         initialValues: prevValues,
         validationSchema,
         onSubmit: (values, { setSubmitting }) => {
-            fetch('https://api.bheticonnect.com/api/evaluations', {
+              // Access the value of the question field from the values object
+      const questionValue = values.travail_plein_temps;
+
+      // Convert "Yes" or "No" to true or false
+      const convertedQuestionValue = questionValue === 'Oui' ? true : false;
+
+      // Perform any necessary actions with the converted value
+      console.log(convertedQuestionValue);
+        fetch('https://api.bheticonnect.com/api/evaluations', {
         method: 'POST',
         headers: {
         'Content-Type': 'application/json',
         "Accept": "application/json",
         // Include any other headers your API requires
     },
-    body: JSON.stringify(values),
+    body: JSON.stringify({
+        ...values, // Include all other form values
+        travail_plein_temps: convertedQuestionValue, // Update the question value with the converted value
+      }),
     })
     .then(response => {
     if (response.ok) {
+
         console.log("Form data was sent successfully!");
     } else {
         console.log("Failed to send form data.");

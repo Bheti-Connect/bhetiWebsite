@@ -8,6 +8,8 @@ import { FaPhoneAlt } from 'react-icons/fa'
 
 const Footer = () => {
     const theme = useTheme();
+    const currentYear = new Date().getFullYear()  ;
+
     return (
         <FooterContainer theme={theme}>
         <FooterContent>
@@ -71,6 +73,11 @@ const Footer = () => {
             </FooterLinks>
             </FooterBlock>
         </FooterContent>
+        <div className="copyright-div">
+            <p className="copy-right">
+                ©{currentYear} Bheti Connect. Tous droits réservés.
+            </p>
+        </div>
         </FooterContainer>
     );
     };
@@ -78,6 +85,17 @@ const Footer = () => {
     const FooterContainer = styled.footer`
     background-color: #111111;
     padding: 100px 30px;
+        .copyright-div {
+            text-align: center;
+            position: relative;
+            display: flex;
+            width: 270px;
+            margin: 30px auto;
+            .copy-right {
+                text-align: center;
+                font-size: 14px;
+            }
+        }
     `;
 
     const FooterContent = styled.div`
