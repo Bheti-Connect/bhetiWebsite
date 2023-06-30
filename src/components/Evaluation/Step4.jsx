@@ -3,6 +3,7 @@ import { useFormik } from 'formik';
 import * as Yup from 'yup';
 import * as Components from "./styles";
 import Select from 'react-select';
+// import { useHistory } from 'react-history';
 
 
 const validationSchema = Yup.object().shape({
@@ -56,6 +57,7 @@ export default function Step4({ setFormValues, prevValues }) {
     })
     .then(response => {
     if (response.ok) {
+
         console.log("Form data was sent successfully!");
     } else {
         console.log("Failed to send form data.");

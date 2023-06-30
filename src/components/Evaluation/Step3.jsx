@@ -48,7 +48,7 @@ export default function Step3({ setFormValues, prevValues }) {
         <Components.StyledLabel htmlFor="montant_voulu">Quel est votre besoin de financement?<span className='required'> *</span></Components.StyledLabel>
         <Components.StyledInput
             name="montant_voulu"
-            type="text"
+            type="number"
             id="montant_voulu"
             placeholder="0.00$"
             value={formik.values.montant_voulu}
@@ -61,7 +61,7 @@ export default function Step3({ setFormValues, prevValues }) {
         <Components.StyledLabel htmlFor="delai_financement">Dans combien des mois souhaitez-vous obtenir cet somme?<span className='required'> *</span></Components.StyledLabel>
         <Components.StyledInput
             name="delai_financement"
-            type='text'
+            type='number'
             id="delai_financement"
             placeholder="0"
             value={formik.values.delai_financement}
@@ -74,7 +74,7 @@ export default function Step3({ setFormValues, prevValues }) {
         <Components.StyledLabel htmlFor="financement_precedent">Montant léver précedemment</Components.StyledLabel>
         <Components.StyledInput
             name="financement_precedent"
-            type="text"
+            type="number"
             id="financement_precedent"
             placeholder="0.00$"
             value={formik.values.financement_precedent}

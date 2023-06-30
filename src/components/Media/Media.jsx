@@ -521,13 +521,14 @@ margin-bottom: 80px;
   }
 
   @media only screen and (max-width: 1280px) {
-    width: 100%;
+    margin: auto;
+    width: 80%;
   }
 
   .plus-consulter {
     display: flex;
     flex-direction: column;
-    width: 30%;
+    width: 38%;
     
     @media only screen and (max-width: 1280px) {
       width: 80%;
@@ -541,6 +542,7 @@ margin-bottom: 80px;
       h2 {
         color: ${(props) => props.theme.colorBheti};
         margin-bottom: 10px;
+        margin-left: 15px;
 
         font-weight: 600;
         font-family: "Montserrat", sans-serif;
@@ -605,7 +607,7 @@ margin-bottom: 80px;
   .cards-une{
     display:flex;
     flex-direction: column;
-    width: 800px;
+    width: 700px;
     margin-left: 20px;
 
     @media only screen and (max-width: 1280px) {
@@ -626,7 +628,7 @@ margin-bottom: 80px;
 
     .card-1 {
       width: 100%;
-      height: 250px;
+      height: 220px;
       border-radius: 10px;
       background-image: url("https://media.licdn.com/dms/image/D4E22AQH-edv2yUXzzw/feedshare-shrink_2048_1536/0/1686481269949?e=1689811200&v=beta&t=NgyfAfnMoBiZPNOTUq_IVr0pdbRitcV6_DeuSw-7AAk") ;
       display: flex;
@@ -654,7 +656,7 @@ margin-bottom: 80px;
         justify-content: center;
         align-items: center;
         width: 48%;
-        height: 350px;
+        height: 300px;
         border-radius: 20px;
         background-image: url("https://media.licdn.com/dms/image/D4E22AQGuZ4qsNZje8Q/feedshare-shrink_1280/0/1686042318022?e=1689811200&v=beta&t=CZk-G45cOZ0MSeCoLVInO1MzGjVqsO5MnKDxndpB3xo") ;
         background-size: cover;
@@ -670,7 +672,7 @@ margin-bottom: 80px;
       .card-3{
         background-color: #700b0b;
         width: 48%;
-        height: 350px;
+        height: 300px;
         border-radius: 20px;
         background-image: url("https://media.licdn.com/dms/image/D4E22AQHiN-qBYoRBJg/feedshare-shrink_2048_1536/0/1687689742298?e=1690416000&v=beta&t=bEkwH-fL4k4vNTFQ253nTOVngyDLmT63t2ftS7On5qo") ;
         background-size: cover;
