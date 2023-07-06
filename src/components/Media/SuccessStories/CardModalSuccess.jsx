@@ -74,7 +74,7 @@ const CardModalSuccess = ({select, setModal}) => {
                 showGraphic={true}
                 maxLine={2}
                 minLine={1}
-                url="https://www.linkedin.com/feed/update/urn:li:activity:6895647042689933312/"
+                url={select.linkedin}
                 proxyUrl="https://proxy.cors.sh"
                 requestHeaders={{
                   "x-cors-api-key": "temp_ebe1f3e4e94fbfa59696ce8cd28e0210"
