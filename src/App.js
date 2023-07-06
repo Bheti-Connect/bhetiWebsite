@@ -21,6 +21,7 @@ import Formulaire from './components/Forms/Formulaire';
 import Contact from './components/Contact/Contact';
 import PrivacyPolicy from './components/Footer-Elements/PrivacyPolicy';
 import Evaluation from './components/Evaluation/Evaluation';
+import RecevoirDeck from './components/Recevoir-deck/RecevoirDeck';
 
 import Faq from './components/Footer-Elements/Faq';
 
@@ -32,7 +33,6 @@ const App = () => {
   const location = useLocation();
 
   const { pathname } = location;
-
   useEffect(() => {
     if(pathname !== pathname.toLowerCase()) {
       navigate(pathname.toLowerCase())
@@ -42,7 +42,6 @@ const App = () => {
   const [isAuthenticated, setIsAuthenticated] = useState();
 
   return (
-
 
     <ScrollButtonProvider>
       <AppStyled theme={theme}>
@@ -66,6 +65,7 @@ const App = () => {
             {/* Route : form investisseur */}
             <Route path='form-investisseur' exact caseSensitive={false} element={<FormInvestisseur />} />
             <Route path='evaluation' exact caseSensitive={false} element={<Evaluation /> } />
+            <Route path='recevoir-deck' excat caseSensitive={false} element={<RecevoirDeck />} />
 
             {/* Route : success stories media */}
             <Route path='*'  element={<ErrorPage />} />
