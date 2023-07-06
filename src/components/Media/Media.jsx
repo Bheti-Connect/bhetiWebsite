@@ -225,7 +225,7 @@ const Media = () => {
             </div>
             <div className="sub-card">
                 <div className="card-2" onClick={() => { window.location.href = window.location.href='https://www.linkedin.com/posts/bheti-connect_bheticonnect-entreprise-innovation-activity-7071774045012160512-HxHW?utm_source=share&utm_medium=member_desktop'; }}></div>
-                <div className="card-3" onClick={() => { window.location.href = window.location.href='https://www.linkedin.com/posts/bheti-connect_bheticonnect-africa-entreprise-activity-7064124827267158016-s_bH?utm_source=share&utm_medium=member_desktop'; }}></div>
+                <div className="card-3" onClick={() => { window.location.href = window.location.href='https://www.linkedin.com/feed/update/urn:li:activity:7078683840470233088/'; }}></div>
             </div>
           </div>
           <div className="plus-consulter">
@@ -242,7 +242,7 @@ const Media = () => {
               {
                 showFirstParagraph 
                 &&
-              <p>
+              <p className="plusconsultes-subtext">
                 La Société financière internationale (IFC) et Viva Technology 
                 ont annoncé les 45 start-ups présélectionnées pour les AfricaTech...
               </p>
@@ -262,7 +262,7 @@ const Media = () => {
               {
                 showSecondParagraph
                 &&
-              <p>
+              <p className="plusconsultes-subtext">
               Après avoir obtenu un financement de préamorçage de
               750 000 dollars au près de Century Oak Ventures et Logos Venture Partners...
               </p>
@@ -281,26 +281,25 @@ const Media = () => {
               {
                 showThirdParagraph
                 &&
-              <p>
+              <p className="plusconsultes-subtext">
                 Merci à AfricAngels de nous avoir fait confiance pour intervenir sur la thématique ... 
                 Ce fut un plaisir d'échanger sur cette thématique au moment où l'entrepreneuriat connait un réel essor sur le continent Africain...
               </p>
               }
-              <p className="item-date">Décembre 2022</p>
+              <p className="item-date">Déc. 2022</p>
             </div>
             <div className="item-consult">
-              {<a href="https://www.linkedin.com/posts/bheti-connect_lives-bheti-connect-activity-6971029367661457409-17uq?utm_source=share&utm_medium=member_desktop">Les lives Bheti Connect, c'est :</a>
-              <p>
+              <a href="https://www.linkedin.com/posts/bheti-connect_lives-bheti-connect-activity-6971029367661457409-17uq?utm_source=share&utm_medium=member_desktop" className="live-anchor"><b>Les lives Bheti Connect, c'est :</b></a>
+              <p className="live-text">
                 <li>📌 Plus de 500 participants</li> <br />
                 <li> 📌 7 lives avec 8 invités qui font bouger les choses sur les marchés africains</li><br />
                 <li>📌 Une pluralité de sujets qui portent sur les réels tendances économiques en Afrique</li>
-              </p>}
-              <p className="item-date">Septembre 2022</p>
+              </p>
+              <p className="item-date">Sept. 2022</p>
             </div>
           </div>
         </div>
       </SectionUne>
-
       <SectionEcouteVoir theme={theme}>
         <div className="head-text">
           <div className="icon-media">
@@ -335,7 +334,6 @@ const Media = () => {
             <Search setQuery={setQuery} />
           </div>
         </div>
-
         <AllMedia theme={theme}>
           <AllCards>
             <div className="container-all-cards">
@@ -361,7 +359,6 @@ const Media = () => {
             activeClassName={"activeClassName"}
           />
         </AllMedia>
-
         {modal &&
           (displayDataOf == "interview" ? (
             <CardMediaModal select={select} setModal={setModal} />
@@ -380,7 +377,7 @@ const AllMedia = styled.div`
     display: flex;
     flex-wrap: wrap;
     list-style: none;
-    justify-content: right;
+    justify-content: center;
     align-items: center;
     user-select: none;
     font-size: 10px;
@@ -398,11 +395,9 @@ const AllMedia = styled.div`
     &:hover {
       background-color: ${(props) => props.theme.colorBheti};
     }
-
     a {
       color: white;
       margin: auto;
-
       &:hover {
         color: white;
       }
@@ -443,17 +438,18 @@ const AllMedia = styled.div`
   }
 `;
 
-const Title = styled.h5`
+const Title = styled.p`
   display: flex;
   align-items: center;
-  font-size: 15px;
+  font-size: 16px !important;
+  font-weight: 900;
   cursor: pointer;
   margin-left: 15px;
   margin-bottom: 10px;
   text-align: left;
   /* Title styles */
   @media only screen and (max-width: 500px) {
-    width: 85%;
+    width: 85% !important;
   }
 `;
 
@@ -491,7 +487,6 @@ margin-bottom: 80px;
   margin: 50px 0;
   margin-left: 55px;
 
-
     h2 {
       color: ${(props) => props.theme.colorBheti};
       margin-bottom: 5px;
@@ -526,15 +521,15 @@ margin-bottom: 80px;
   }
 
   @media only screen and (max-width: 1280px) {
-    width: 100%;
+    margin: auto;
+    width: 80%;
   }
 
   .plus-consulter {
     display: flex;
     flex-direction: column;
-    width: 30%;
+    width: 38%;
     
-
     @media only screen and (max-width: 1280px) {
       width: 80%;
     }
@@ -547,6 +542,7 @@ margin-bottom: 80px;
       h2 {
         color: ${(props) => props.theme.colorBheti};
         margin-bottom: 10px;
+        margin-left: 15px;
 
         font-weight: 600;
         font-family: "Montserrat", sans-serif;
@@ -566,6 +562,15 @@ margin-bottom: 80px;
           text-decoration: underline;
         }
       }
+      .live-anchor{
+        font-size: 16px;
+        font-weight: 900;
+        margin-left: 12px;
+        font-weight: 600;
+        @media all and (max-width: 480px) {
+          margin-left: -65px;
+        }
+      }
       p{
         font-family: "Montserrat", sans-serif;
         font-size: 14px;
@@ -577,6 +582,16 @@ margin-bottom: 80px;
           width: 90%;
           margin-left: 12px;
         }
+      }
+      .plusconsultes-subtext{
+        width: 88%;
+        font-size: 14px;
+        margin-left:12px;
+      }
+      .live-text{
+        width: 90%;
+        margin-left: 12px;
+        font-weight: 700;
       }
 
       .item-date {
@@ -593,7 +608,7 @@ margin-bottom: 80px;
   .cards-une{
     display:flex;
     flex-direction: column;
-    width: 800px;
+    width: 700px;
     margin-left: 20px;
 
     @media only screen and (max-width: 1280px) {
@@ -614,7 +629,7 @@ margin-bottom: 80px;
 
     .card-1 {
       width: 100%;
-      height: 250px;
+      height: 220px;
       border-radius: 10px;
       background-image: url("https://media.licdn.com/dms/image/D4E22AQH-edv2yUXzzw/feedshare-shrink_2048_1536/0/1686481269949?e=1689811200&v=beta&t=NgyfAfnMoBiZPNOTUq_IVr0pdbRitcV6_DeuSw-7AAk") ;
       display: flex;
@@ -642,7 +657,7 @@ margin-bottom: 80px;
         justify-content: center;
         align-items: center;
         width: 48%;
-        height: 250px;
+        height: 300px;
         border-radius: 20px;
         background-image: url("https://media.licdn.com/dms/image/D4E22AQGuZ4qsNZje8Q/feedshare-shrink_1280/0/1686042318022?e=1689811200&v=beta&t=CZk-G45cOZ0MSeCoLVInO1MzGjVqsO5MnKDxndpB3xo") ;
         background-size: cover;
@@ -658,9 +673,9 @@ margin-bottom: 80px;
       .card-3{
         background-color: #700b0b;
         width: 48%;
-        height: 250px;
+        height: 300px;
         border-radius: 20px;
-        background-image: url("https://media.licdn.com/dms/image/D4E22AQGL9kpucb9Jkg/feedshare-shrink_1280/0/1684204180071?e=1687392000&v=beta&t=bdXKo7NF2QSX_yA0geJSVi1lUYNSHwvYJQtwXF-fLB8") ;
+        background-image: url("https://media.licdn.com/dms/image/D4E22AQHiN-qBYoRBJg/feedshare-shrink_2048_1536/0/1687689742298?e=1690416000&v=beta&t=bEkwH-fL4k4vNTFQ253nTOVngyDLmT63t2ftS7On5qo") ;
         background-size: cover;
         background-repeat: no-repeat;
         box-shadow: 5px 3px 3px #b86a6a;

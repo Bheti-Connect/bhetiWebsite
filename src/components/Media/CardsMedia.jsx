@@ -8,7 +8,6 @@ const CardsMedia = ({item, setSelect, setModal}) => {
   const [backColor, setBackColor] = useState(["#406880", "#978840", "#975450", "#636769", "#88456c", "#61534d"])
   const theme = useTheme()
 
-
   return (
 
     <CardItem onClick={() => handleSelect(setSelect, setModal, item)} theme={theme}>

@@ -3,7 +3,8 @@ import styled from 'styled-components'
 import { useTheme } from '../../context/themeContext';
 import Accueil from './Accueil';
 import Advantages from './Advantages';
-import Satisfaction from './Satisfaction/Satisfaction';
+// import ImageSlider from './ImageSlider';
+// import Satisfaction from './Satisfaction/Satisfaction';
 
 const Entrepreneur = () => {
     const theme = useTheme();
@@ -18,6 +19,9 @@ const Entrepreneur = () => {
             </div> */}
             {/* <div>
                 <Satisfaction />
+            </div> */}
+            {/* <div>
+                <ImageSlider />
             </div> */}
         </EntrepreneurStyled>
     )

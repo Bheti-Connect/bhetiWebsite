@@ -5,7 +5,7 @@ import { faXmark } from '@fortawesome/free-solid-svg-icons';
 import { useTheme } from '../../../context/themeContext';
 import { closeModal } from '../../../utils/FunctionsComponent';
 import { ReactTinyLink } from 'react-tiny-link'
-import axios from 'axios';
+//import axios from 'axios';
 
 const CardModalSuccess = ({select, setModal}) => {
   const [backColor, setBackColor] = useState(["#406880", "#978840", "#975450", "#636769", "#88456c", "#61534d"]);
@@ -74,8 +74,11 @@ const CardModalSuccess = ({select, setModal}) => {
                 showGraphic={true}
                 maxLine={2}
                 minLine={1}
-                url="https://www.google.com/"
-                proxyUrl="http://localhost:3500/proxy?url="
+                url={select.linkedin}
+                proxyUrl="https://proxy.cors.sh"
+                requestHeaders={{
+                  "x-cors-api-key": "temp_ebe1f3e4e94fbfa59696ce8cd28e0210"
+                }}
                  />
                 </div>
 
