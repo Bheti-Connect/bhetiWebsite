@@ -9,14 +9,14 @@ import { BsFillArrowLeftCircleFill, BsFillArrowRightCircleFill } from 'react-ico
 
 import { EffectCoverflow, Pagination, Navigation } from 'swiper';
 
-import slide_image_1 from '../../assets/images/_DSC0114.jpg';
-import slide_image_3 from '../../assets/images/_DSC0160.jpg';
-import slide_image_4 from '../../assets/images/_DSC1244.jpg';
-import slide_image_5 from '../../assets/images/_DSC1311.jpg';
-import slide_image_7 from '../../assets/images/_DSC1651.jpg';
-import slide_image_8 from '../../assets/images/C0001T01.jpg';
-import slide_image_9 from '../../assets/images/C0003T01.jpg';
-import slide_image_10 from '../../assets/images/C0006T01.jpg';
+import slide_image_1 from '../../assets/images/DSC0114.jpg';
+import slide_image_3 from '../../assets/images/DSC0160.jpg';
+import slide_image_4 from '../../assets/images/DSC1244.jpg';
+import slide_image_5 from '../../assets/images/DSC1311.jpg';
+import slide_image_7 from '../../assets/images/DSC1651.jpg';
+import slide_image_8 from '../../assets/images/_C0001T01.jpg';
+import slide_image_9 from '../../assets/images/_C0003T01.jpg';
+import slide_image_10 from '../../assets/images/_C0006T01.jpg';
 
 
 
