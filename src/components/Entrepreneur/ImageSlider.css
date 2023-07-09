@@ -17,9 +17,21 @@
     scroll-behavior: smooth;
 }
 
+@media (min-width: 960px) {
+    .main {
+        zoom: .5;
+    }
+    }
+
+@media (min-width: 1240px) {
+    .main {
+        zoom: .63;
+    }
+    }
+
 @media (min-width: 1440px) {
     .main {
-        zoom: .7;
+        zoom: .68;
     }
     }
 
