@@ -220,11 +220,11 @@ const Media = () => {
         </div>
         <div className="body-une">
         <div className="cards-une">
-            <div className="card-1" onClick={() => { window.location.href = window.location.href='https://www.linkedin.com/posts/bheti-connect_bheticonnect-afrique-banque-activity-70736151431289692'; }}>
+            <div className="card-1" onClick={() => { window.location.href = window.location.href='https://www.linkedin.com/feed/update/urn:li:activity:7088805359523360768/'; }}>
               <img  />
             </div>
             <div className="sub-card">
-                <div className="card-2" onClick={() => { window.location.href = window.location.href='https://www.linkedin.com/posts/bheti-connect_bheticonnect-entreprise-innovation-activity-7071774045012160512-HxHW?utm_source=share&utm_medium=member_desktop'; }}></div>
+                <div className="card-2" onClick={() => { window.location.href = window.location.href='https://www.linkedin.com/feed/update/urn:li:activity:7087743547411456001/'; }}></div>
                 <div className="card-3" onClick={() => { window.location.href = window.location.href='https://www.linkedin.com/feed/update/urn:li:activity:7078683840470233088/'; }}></div>
             </div>
           </div>
@@ -451,6 +451,9 @@ const Title = styled.p`
   @media only screen and (max-width: 500px) {
     width: 85% !important;
   }
+  @media screen and (min-width: 600px) and (max-width:1100px) {
+          width: 80%;
+        }
 `;
 
 const ArrowIcon = styled(BsArrowDownSquareFill)`
@@ -461,6 +464,10 @@ const ArrowIcon = styled(BsArrowDownSquareFill)`
   width: 20px;
   height: 20px;
   color: #641C1C;
+  @media screen and (min-width: 600px) and (max-width:1100px) {
+    right: 165px;
+  }
+
 `;
 
 const AllCards = styled.div`
@@ -470,7 +477,7 @@ const AllCards = styled.div`
     justify-content: space-around;
     flex-wrap: wrap;
     display: flex;
-    width: 75%;
+    width: 80%;
     margin: auto;
   }
 `;
@@ -522,6 +529,11 @@ margin-bottom: 80px;
 
   @media only screen and (max-width: 1280px) {
     margin: auto;
+    width: 90%;
+    flex-wrap: nowrap;
+  }
+  @media only screen and (max-width: 1100px) {
+    flex-wrap: wrap;
     width: 80%;
   }
 
@@ -586,7 +598,7 @@ margin-bottom: 80px;
       .plusconsultes-subtext{
         width: 88%;
         font-size: 14px;
-        margin-left:12px;
+        margin-left: 12px;
       }
       .live-text{
         width: 90%;
@@ -631,7 +643,7 @@ margin-bottom: 80px;
       width: 100%;
       height: 220px;
       border-radius: 10px;
-      background-image: url("https://media.licdn.com/dms/image/D4E22AQH-edv2yUXzzw/feedshare-shrink_2048_1536/0/1686481269949?e=1689811200&v=beta&t=NgyfAfnMoBiZPNOTUq_IVr0pdbRitcV6_DeuSw-7AAk") ;
+      background-image: url("https://media.licdn.com/dms/image/D4E22AQFxBJEL9MLkTg/feedshare-shrink_1280/0/1690102874576?e=1693440000&v=beta&t=IsNTZ8cTx3M7EOtrsMR9SF1totjKR4DfL33Uh9WVaLw") ;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -659,7 +671,7 @@ margin-bottom: 80px;
         width: 48%;
         height: 300px;
         border-radius: 20px;
-        background-image: url("https://media.licdn.com/dms/image/D4E22AQGuZ4qsNZje8Q/feedshare-shrink_1280/0/1686042318022?e=1689811200&v=beta&t=CZk-G45cOZ0MSeCoLVInO1MzGjVqsO5MnKDxndpB3xo") ;
+        background-image: url("https://media.licdn.com/dms/image/D4E22AQFfBDIw2bZ8HA/feedshare-shrink_800/0/1689849744670?e=1693440000&v=beta&t=7HV3m53lsqGwMenL9ShxES4-IkPo7DQKtZ0RWbIWiKU") ;
         background-size: cover;
         background-repeat: no-repeat;
         box-shadow: 5px 3px 3px #b86a6a;
