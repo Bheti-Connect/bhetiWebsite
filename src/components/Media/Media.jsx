@@ -451,6 +451,9 @@ const Title = styled.p`
   @media only screen and (max-width: 500px) {
     width: 85% !important;
   }
+  @media screen and (min-width: 600px) and (max-width:1100px) {
+          width: 80%;
+        }
 `;
 
 const ArrowIcon = styled(BsArrowDownSquareFill)`
@@ -461,6 +464,10 @@ const ArrowIcon = styled(BsArrowDownSquareFill)`
   width: 20px;
   height: 20px;
   color: #641C1C;
+  @media screen and (min-width: 600px) and (max-width:1100px) {
+    right: 165px;
+  }
+
 `;
 
 const AllCards = styled.div`
@@ -470,7 +477,7 @@ const AllCards = styled.div`
     justify-content: space-around;
     flex-wrap: wrap;
     display: flex;
-    width: 75%;
+    width: 80%;
     margin: auto;
   }
 `;
@@ -522,6 +529,11 @@ margin-bottom: 80px;
 
   @media only screen and (max-width: 1280px) {
     margin: auto;
+    width: 90%;
+    flex-wrap: nowrap;
+  }
+  @media only screen and (max-width: 1100px) {
+    flex-wrap: wrap;
     width: 80%;
   }
 
@@ -586,7 +598,7 @@ margin-bottom: 80px;
       .plusconsultes-subtext{
         width: 88%;
         font-size: 14px;
-        margin-left:12px;
+        margin-left: 12px;
       }
       .live-text{
         width: 90%;
