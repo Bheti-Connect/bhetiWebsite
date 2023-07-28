@@ -51,7 +51,7 @@ export default function Step4({ setFormValues, prevValues }) {
         validationSchema,
         onSubmit: (values, { setSubmitting }) => {
               // Access the value of the question field from the values object
-      const questionValue = values.travail_plein_temps;
+        const questionValue = values.travail_plein_temps;
 
       // Convert "Yes" or "No" to true or false
       const convertedQuestionValue = questionValue === 'Oui' ? true : false;
