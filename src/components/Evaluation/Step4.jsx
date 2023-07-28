@@ -3,13 +3,16 @@ import { useFormik } from 'formik';
 import * as Yup from 'yup';
 import * as Components from "./styles";
 import Select from 'react-select';
-// import { useHistory } from 'react-history';
-
+import { ToastContainer } from 'react-toastify';
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import { useNavigate } from 'react-router-dom';
 
 const validationSchema = Yup.object().shape({
     travail_plein_temps: Yup.string().required('Veuillez choisir entre oui ou non'),
     lien_presentation: Yup.string(),
-    });
+});
+
 
     const customStyles = {
     control: (base, state) => ({
@@ -31,12 +34,24 @@ const validationSchema = Yup.object().shape({
 
 
 export default function Step4({ setFormValues, prevValues }) {
+    const navigate = useNavigate();
+
+    const notify = () => toast.success('Bheti Connect a bien reçu vos information 👏🏽', {
+        position: "top-center",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        onClose: () => navigate(-1)
+    });
     const formik = useFormik({
         initialValues: prevValues,
         validationSchema,
         onSubmit: (values, { setSubmitting }) => {
               // Access the value of the question field from the values object
-      const questionValue = values.travail_plein_temps;
+        const questionValue = values.travail_plein_temps;
 
       // Convert "Yes" or "No" to true or false
       const convertedQuestionValue = questionValue === 'Oui' ? true : false;
@@ -53,12 +68,11 @@ export default function Step4({ setFormValues, prevValues }) {
     body: JSON.stringify({
         ...values, // Include all other form values
         travail_plein_temps: convertedQuestionValue, // Update the question value with the converted value
-      }),
+        }),
     })
     .then(response => {
     if (response.ok) {
-
-        console.log("Form data was sent successfully!");
+        notify();  // Add this line
     } else {
         console.log("Failed to send form data.");
         return response.json(); // Convert the response data to JSON
@@ -83,6 +97,8 @@ export default function Step4({ setFormValues, prevValues }) {
         { value: 'Non', label: 'Non' },
     ];
     return (
+        <div>
+        <ToastContainer />
         <Components.StyledForm onSubmit={formik.handleSubmit} autocomplete="off">
             <Components.StyledTitle>Informations sur l'entreprise</Components.StyledTitle>
             <Components.StyledLabel htmlFor="travail_plein_temps">Travaller vous à temps plein sur ce projet ?<span className='required'> *</span></Components.StyledLabel>
@@ -107,5 +123,6 @@ export default function Step4({ setFormValues, prevValues }) {
                 <Components.StyledButtonSend type="submit">Envoyer</Components.StyledButtonSend>
             </Components.ButtonContainer>
         </Components.StyledForm>
+        </div>
     );
 }

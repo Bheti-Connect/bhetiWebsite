@@ -2,6 +2,8 @@ import React from 'react';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
 import * as Components from "./styles";
+import CustomInput from "./CustomInput";
+
 
 const validationSchema = Yup.object().shape({
     montant_voulu: Yup.string().required('Le montant est requis'),
@@ -11,6 +13,11 @@ const validationSchema = Yup.object().shape({
 });
 
 export default function Step3({ setFormValues, prevValues }) {
+    const [value, setValue] = React.useState(0);
+  
+  const handleChange = (val) => {
+    setValue(val);
+  };
     const formik = useFormik({
     initialValues: prevValues,
     validationSchema,
@@ -46,19 +53,21 @@ export default function Step3({ setFormValues, prevValues }) {
         <Components.StyledForm onSubmit={formik.handleSubmit} autocomplete="off">
         <Components.StyledTitle>Informations sur le Financement</Components.StyledTitle>
         <Components.StyledLabel htmlFor="montant_voulu">Quel est votre besoin de financement?<span className='required'> *</span></Components.StyledLabel>
-        <Components.StyledInput
-            name="montant_voulu"
-            type="number"
-            id="montant_voulu"
-            placeholder="0.00$"
-            value={formik.values.montant_voulu}
-            onChange={formik.handleChange}
-            onBlur={formik.handleBlur}
-        />
+        <Components.StyledSpan>
+            <Components.StyledInput
+                name="montant_voulu"
+                type="number"
+                id="montant_voulu"
+                placeholder="0.000"
+                value={formik.values.montant_voulu}
+                onChange={formik.handleChange}
+                onBlur={formik.handleBlur}
+            />
+        </Components.StyledSpan>
         <div className='error'>
             {formik.errors.montant_voulu && formik.touched.montant_voulu}
         </div>
-        <Components.StyledLabel htmlFor="delai_financement">Dans combien des mois souhaitez-vous obtenir cet somme?<span className='required'> *</span></Components.StyledLabel>
+        <Components.StyledLabel htmlFor="delai_financement">Dans combien des mois souhaitez-vous l'obtenir?<span className='required'> *</span></Components.StyledLabel>
         <Components.StyledInput
             name="delai_financement"
             type='number'
@@ -72,28 +81,32 @@ export default function Step3({ setFormValues, prevValues }) {
             {formik.errors.delai_financement && formik.touched.delai_financement}
         </div>
         <Components.StyledLabel htmlFor="financement_precedent">Montant léver précedemment</Components.StyledLabel>
-        <Components.StyledInput
-            name="financement_precedent"
-            type="number"
-            id="financement_precedent"
-            placeholder="0.00$"
-            value={formik.values.financement_precedent}
-            onChange={formik.handleChange}
-            onBlur={formik.handleBlur}
-        />
+        <Components.StyledSpan>
+            <Components.StyledInput
+                name="financement_precedent"
+                type="number"
+                id="financement_precedent"
+                placeholder="0.000"
+                value={formik.values.financement_precedent}
+                onChange={formik.handleChange}
+                onBlur={formik.handleBlur}
+            />
+        </Components.StyledSpan>
         <div className='error'>
             {formik.errors.financement_precedent && formik.touched.financement_precedent}
         </div>
         <Components.StyledLabel htmlFor="turnover">Chiffre d'affaire<span className='required'> *</span></Components.StyledLabel>
-        <Components.StyledInput
-            name="chiffre_precedent"
-            type="text"
-            id="chiffre_precedent"
-            placeholder="0.00$"
-            value={formik.values.chiffre_precedent}
-            onChange={formik.handleChange}
-            onBlur={formik.handleBlur}
-        />
+        <Components.StyledSpan>
+            <Components.StyledInput
+                name="chiffre_precedent"
+                type="text"
+                id="chiffre_precedent"
+                placeholder="0.000"
+                value={formik.values.chiffre_precedent}
+                onChange={formik.handleChange}
+                onBlur={formik.handleBlur}
+            />
+        </Components.StyledSpan>
         <div className='error'>
             {formik.errors.chiffre_precedent && formik.touched.chiffre_precedent}
         </div>

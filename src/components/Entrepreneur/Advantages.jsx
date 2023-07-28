@@ -60,7 +60,7 @@ const Advantages = () => {
 								<div className='need-container'>
 									<div className='need-pitch'>
 										<Link
-											to={'/eligibilite'}
+											to={'/evaluation'}
 										>
 											<Button 
 													name={'J’ai besoin d’un pitch'}
@@ -90,7 +90,7 @@ const Advantages = () => {
 								<div className='need-container'>
 									<div className='need-previsionnel'>
 									<Link
-										to={'/eligibilite'}
+										to={'/evaluation'}
 									> 
 										<Button 
 												name={'J’ai besoin d’un BP'}
