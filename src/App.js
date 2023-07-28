@@ -54,9 +54,7 @@ const App = () => {
             <Route path='entrepreneur' exact element={<Entrepreneur />} />
             <Route path='investisseur' exact element={<Investisseur />} />
             <Route path='media' exact element={<Media />} />
-            {/* <Route path='evaluer-eligibilite' element={<EvaluerEligibilite />} /> */}
             <Route path='decouvrir-bheti-connect' exact caseSensitive={false} element={<FormTwo />} />
-            <Route path='eligibilite' exact caseSensitive={false} element={<FormTwo />} />
             <Route path='waitlist' exact caseSensitive={false} element={<Formulaire />} />
             <Route path='contact' exact caseSensitive={false} element={<Contact />} />
             <Route path='pitch-deck' exact caseSensitive={false} element={<FormOne />} />
