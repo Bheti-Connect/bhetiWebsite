@@ -6,7 +6,8 @@ export const StyledForm = styled.form`
     flex-direction: column;
     align-items: center;
     padding: 20px;
-    margin-bottom: 50px;
+    margin-bottom: 150px;
+    margin-top: 50px;
     .error{
         color: #900D09;
         font-size: 0.8em;
@@ -16,6 +17,19 @@ export const StyledForm = styled.form`
     }
     `;
 
+export const StyledSpan = styled.span`
+    position: relative;
+    input{
+        padding-left: 24px;
+    }
+    &:before {
+        position: absolute;
+        top: 18px;
+        content:"$";
+        left: 10px;
+    }
+`
+
 export const StyledInput = styled.input`
     margin: 10px 0;
     padding: 10px;
@@ -24,6 +38,27 @@ export const StyledInput = styled.input`
     @media all and (max-width: 440px){
         width: 300px;
     }
+    direction: ltr;
+
+  &::-webkit-inner-spin-button,
+  &::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+  }
+
+  &::before {
+    content: attr(value) ',';
+    visibility: visible;
+    display: block;
+    direction: rtl;
+  }
+/* 
+  &::placeholder {
+    color: transparent;
+  } */
+
+  &:focus::before {
+    visibility: hidden;
+  }
     `;
 
 export const StyledTitle = styled.h1`
