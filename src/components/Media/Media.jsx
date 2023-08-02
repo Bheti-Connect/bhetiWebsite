@@ -16,6 +16,7 @@ import CardModalSuccess from "./SuccessStories/CardModalSuccess";
 import LinksAPI from "../../utils/LinksAPI";
 import { interviews, successstories } from "../../data/TestData";
 import LinkedInPosts from "../LinkedinPost/LinkedInPosts";
+import PlusConsultes from "./PlusConsultes"
 
 const Media = () => {
   const [currentPage, setCurrentPage] = useState(0);
@@ -225,69 +226,12 @@ const Media = () => {
             </div>
             <div className="sub-card">
                 <div className="card-2" onClick={() => { window.location.href = window.location.href='https://www.linkedin.com/feed/update/urn:li:activity:7087743547411456001/'; }}></div>
-                <div className="card-3" onClick={() => { window.location.href = window.location.href='https://www.linkedin.com/feed/update/urn:li:activity:7078683840470233088/'; }}></div>
+                <div className="card-3" onClick={() => { window.location.href = window.location.href='https://www.linkedin.com/feed/update/urn:li:activity:7091417971025162240/'; }}></div>
             </div>
           </div>
           <div className="plus-consulter">
             <h2>Les plus consultés</h2>
-            <div className="item-consult">
-              <div className="title">
-                <a href="https://www.linkedin.com/feed/update/urn:li:activity:7060912715522789377?updateEntityUrn=urn%3Ali%3Afs_feedUpdate%3A%28V2%2Curn%3Ali%3Aactivity%3A7060912715522789377%29">
-                  <Title>
-                    45 startups pré-sélectionnées pour le programme AfricaTech...
-                  </Title>
-                </a>
-                <ArrowIcon onClick={handleToggleFirstParagraph} />
-              </div>
-              {
-                showFirstParagraph 
-                &&
-              <p className="plusconsultes-subtext">
-                La Société financière internationale (IFC) et Viva Technology 
-                ont annoncé les 45 start-ups présélectionnées pour les AfricaTech...
-              </p>
-              }
-              <p className="item-date">Mai 2023</p>
-            </div>
-
-            <div className="item-consult">
-              <div className="title">
-                <a href="https://www.linkedin.com/posts/bheti-connect_bheticonnect-afrique-startup-activity-7055795292893237248-Y1QH?utm_source=share&utm_medium=member_desktop">
-                  <Title>
-                    Chargel, une société Sénégalaise lève 2.5 millions $...
-                  </Title>
-                </a>
-                <ArrowIcon onClick={handleToggleSecondParagraph} />
-              </div>
-              {
-                showSecondParagraph
-                &&
-              <p className="plusconsultes-subtext">
-              Après avoir obtenu un financement de préamorçage de
-              750 000 dollars au près de Century Oak Ventures et Logos Venture Partners...
-              </p>
-              }
-              <p className="item-date">Avril 2023</p>
-            </div>
-            <div className="item-consult">
-              <div className="title">
-                <a href="https://www.linkedin.com/posts/bheti-connect_entrepreneurs-innovation-entreprises-activity-7004031286008774656-qh9k?utm_source=share&utm_medium=member_desktop">
-                  <Title>
-                    Comment les entreprises s’imposent-elles sur leur marché en Afrique ?
-                  </Title>
-                </a>
-                <ArrowIcon onClick={handleToggleThirdParagraph} />
-              </div>
-              {
-                showThirdParagraph
-                &&
-              <p className="plusconsultes-subtext">
-                Merci à AfricAngels de nous avoir fait confiance pour intervenir sur la thématique ... 
-                Ce fut un plaisir d'échanger sur cette thématique au moment où l'entrepreneuriat connait un réel essor sur le continent Africain...
-              </p>
-              }
-              <p className="item-date">Déc. 2022</p>
-            </div>
+            <PlusConsultes />
             <div className="item-consult">
               <a href="https://www.linkedin.com/posts/bheti-connect_lives-bheti-connect-activity-6971029367661457409-17uq?utm_source=share&utm_medium=member_desktop" className="live-anchor"><b>Les lives Bheti Connect, c'est :</b></a>
               <p className="live-text">
@@ -295,7 +239,6 @@ const Media = () => {
                 <li> 📌 7 lives avec 8 invités qui font bouger les choses sur les marchés africains</li><br />
                 <li>📌 Une pluralité de sujets qui portent sur les réels tendances économiques en Afrique</li>
               </p>
-              <p className="item-date">Sept. 2022</p>
             </div>
           </div>
         </div>
@@ -529,7 +472,7 @@ margin-bottom: 80px;
 
   @media only screen and (max-width: 1280px) {
     margin: auto;
-    width: 90%;
+    width: 98%;
     flex-wrap: nowrap;
   }
   @media only screen and (max-width: 1100px) {
@@ -540,10 +483,11 @@ margin-bottom: 80px;
   .plus-consulter {
     display: flex;
     flex-direction: column;
-    width: 38%;
+    width: 42%;
     
     @media only screen and (max-width: 1280px) {
-      width: 80%;
+      margin-left: 3%;
+      width: 45%;
     }
     @media only screen and (max-width: 480px) {
       width: 90%;
@@ -687,7 +631,7 @@ margin-bottom: 80px;
         width: 48%;
         height: 300px;
         border-radius: 20px;
-        background-image: url("https://media.licdn.com/dms/image/D4E22AQHiN-qBYoRBJg/feedshare-shrink_2048_1536/0/1687689742298?e=1690416000&v=beta&t=bEkwH-fL4k4vNTFQ253nTOVngyDLmT63t2ftS7On5qo") ;
+        background-image: url("https://media.licdn.com/dms/image/D4E22AQF2K23_ggpq-A/feedshare-shrink_800/0/1690725794901?e=1694044800&v=beta&t=ppR0q-kNOJjEMAWyhA1Zc4jkZ90k-u1XLM6dsJx66wY") ;
         background-size: cover;
         background-repeat: no-repeat;
         box-shadow: 5px 3px 3px #b86a6a;
