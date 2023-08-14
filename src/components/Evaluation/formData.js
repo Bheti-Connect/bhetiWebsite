@@ -80,8 +80,10 @@ export const countriesList = [
 ];
 
 
-export const sector = [
-    
+export const projects = [
+    "Projet 1",
+    "Projet 2",
+    "Projet 3",
 ]
 
 

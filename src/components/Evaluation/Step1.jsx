@@ -4,7 +4,6 @@ import { useFormik } from 'formik';
 import * as Yup from 'yup';
 import * as Components from "./styles";
 
-
 const validationSchema = Yup.object().shape({
     nom_entreprise: Yup.string().required('Required'),
         nom: Yup.string().required('Required'),
