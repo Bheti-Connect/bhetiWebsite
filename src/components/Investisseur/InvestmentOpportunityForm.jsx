@@ -8,7 +8,6 @@ import FormSent from '../../assets/images/waitlistSuccess.svg';
 import * as Components from "../Evaluation/styles"
 import Select from 'react-select';
 import { projects } from "../Evaluation/formData"
-import { project } from 'synonyms/dictionary';
 
 
 const customStyles = {
