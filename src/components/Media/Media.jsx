@@ -483,7 +483,7 @@ margin-bottom: 80px;
   .plus-consulter {
     display: flex;
     flex-direction: column;
-    width: 42%;
+    width: 45%;
     
     @media only screen and (max-width: 1280px) {
       margin-left: 3%;

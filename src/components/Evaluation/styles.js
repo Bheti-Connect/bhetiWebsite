@@ -65,18 +65,24 @@ export const StyledTitle = styled.h1`
         font-family: 'Montserrat', sans-serif;
         font-size: 1.5rem;
         margin-bottom: 40px;
-        @media all and (max-width: 440px){
-            font-size: 1.35rem;
+        @media all and (max-width: 480px){
+            font-size: 1.3rem;
         }
     `
 export const StyledLabel = styled.label`
     font-family: 'Montserrat', sans-serif;
     font-weight: bold;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     float: left;
     @media all and (max-width: 440px){
         font-size: 1.19rem;
         margin-bottom: 7px;
+    }
+`
+export const StyledDiv = styled.div`
+    width: 350px;
+    @media all and (max-width: 440px){
+        width: 300px;
     }
 `
 
@@ -89,6 +95,19 @@ export const StyledTextArea = styled.textarea`
     border-radius: 18px;
     @media all and (max-width: 440px){
         width: 300px;
+    }
+`
+
+export const StyledMessagediv = styled.div`
+    position: relative;
+    margin: auto;
+    margin-top: 50px;
+    width: 40%;
+    .success-image{
+        width: 80%;
+        margin: auto;
+        margin-top: 20px;
+        margin-bottom: 100px;
     }
 `
 

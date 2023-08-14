@@ -24,6 +24,7 @@ import Evaluation from './components/Evaluation/Evaluation';
 import RecevoirDeck from './components/Recevoir-deck/RecevoirDeck';
 
 import Faq from './components/Footer-Elements/Faq';
+import InvestmentOpportunityForm from './components/Investisseur/InvestmentOpportunityForm';
 
 const App = () => {
   const theme = useTheme();
@@ -55,6 +56,7 @@ const App = () => {
             <Route path='investisseur' exact element={<Investisseur />} />
             <Route path='media' exact element={<Media />} />
             <Route path='decouvrir-bheti-connect' exact caseSensitive={false} element={<FormTwo />} />
+            <Route path='accedez-a-des-opportunites-dinvestissements-exclusives' exact caseSensitive={false} element={<InvestmentOpportunityForm />} />
             <Route path='waitlist' exact caseSensitive={false} element={<Formulaire />} />
             <Route path='contact' exact caseSensitive={false} element={<Contact />} />
             <Route path='pitch-deck' exact caseSensitive={false} element={<FormOne />} />
