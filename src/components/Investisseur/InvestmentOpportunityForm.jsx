@@ -9,7 +9,6 @@ import * as Components from "../Evaluation/styles"
 import Select from 'react-select';
 import { projects } from "../Evaluation/formData"
 
-
 const customStyles = {
     control: (base, state) => ({
         ...base,
