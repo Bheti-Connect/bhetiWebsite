@@ -1,7 +1,7 @@
 module.exports = {
   apps: [
     {
-      name: "preview site",
+      name: "bheti-site",
       script: "serve -s build -l 2001",
       watch: "."
     },
