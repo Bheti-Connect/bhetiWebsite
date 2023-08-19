@@ -13,7 +13,6 @@ const Contact = () => {
 }
 
 const ContactStyled = styled.section`
-
 `
 
 export default Contact
